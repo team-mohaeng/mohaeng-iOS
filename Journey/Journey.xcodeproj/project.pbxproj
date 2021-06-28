@@ -31,6 +31,7 @@
 		56DCAA682689BE210056155A /* ViewExmaple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA672689BE210056155A /* ViewExmaple.swift */; };
 		56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA6C2689C0D10056155A /* .swiftlint.yml */; };
 		56DCAA6F2689DB500056155A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA6E2689DB500056155A /* Colors.xcassets */; };
+		56DCAA71268A26F80056155A /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA70268A26F80056155A /* UINavigationController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		56DCAA672689BE210056155A /* ViewExmaple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExmaple.swift; sourceTree = "<group>"; };
 		56DCAA6C2689C0D10056155A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		56DCAA6E2689DB500056155A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		56DCAA70268A26F80056155A /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		7E48B7936113F659E5F3BD09 /* Pods-Journey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journey.release.xcconfig"; path = "Target Support Files/Pods-Journey/Pods-Journey.release.xcconfig"; sourceTree = "<group>"; };
 		9DAC4B8168D442A39A098439 /* Pods_Journey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Journey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE04EE8E2CC2D99FF8A949C4 /* Pods-Journey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journey.debug.xcconfig"; path = "Target Support Files/Pods-Journey/Pods-Journey.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				56DCAA612689BE080056155A /* UIColor+Extension.swift */,
+				56DCAA70268A26F80056155A /* UINavigationController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 			files = (
 				56DCAA4F2689BD110056155A /* ViewController.swift in Sources */,
 				56DCAA532689BD2C0056155A /* Image.swift in Sources */,
+				56DCAA71268A26F80056155A /* UINavigationController+Extension.swift in Sources */,
 				56DCAA642689BE110056155A /* ProtocolsExmaple.swift in Sources */,
 				56DCAA592689BD9F0056155A /* LottieExmaple.swift in Sources */,
 				56DCAA5E2689BDF80056155A /* APIModelsExmaple.swift in Sources */,
