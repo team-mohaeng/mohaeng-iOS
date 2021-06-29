@@ -13,6 +13,15 @@ extension Const {
         
         struct Name {
             static let tabbar = "Tabbar"
+            // 홈 탭
+            static let home = "Home"
+            
+            // 챌린지 탭
+            static let challenge = "Challenge"
+            static let course = "Course"
+            
+            // 피드 탭
+            static let feed = "Feed"
         }
     }
 }

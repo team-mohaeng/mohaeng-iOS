@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Course View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="CourseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="CourseViewController" customModule="Journey" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Na-Wv-A8V">
+                                <rect key="frame" x="0.0" y="44" width="414" height="112"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="journeySmileSampleImg" translatesAutoresizingMaskIntoConstraints="NO" id="KlX-xX-Dl1">
+                                        <rect key="frame" x="24" y="24" width="59.5" height="64"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Iv8-W2-bhj">
+                                        <rect key="frame" x="91.5" y="36" width="147" height="40.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 진행중인 코스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2a8-BI-vGG">
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="뽀득뽀득 세균 퇴치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2q-64-g1e">
+                                                <rect key="frame" x="0.0" y="16.5" width="147" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XV1-xw-72g">
+                                        <rect key="frame" x="345.5" y="52" width="44.5" height="24.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2일차" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4i-Q9-vCx">
+                                                <rect key="frame" x="8" y="5" width="28.5" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="LightPink"/>
+                                        <constraints>
+                                            <constraint firstItem="I4i-Q9-vCx" firstAttribute="leading" secondItem="XV1-xw-72g" secondAttribute="leading" constant="8" id="UPb-My-qdh"/>
+                                            <constraint firstAttribute="bottom" secondItem="I4i-Q9-vCx" secondAttribute="bottom" constant="5" id="UTG-7W-59K"/>
+                                            <constraint firstItem="I4i-Q9-vCx" firstAttribute="top" secondItem="XV1-xw-72g" secondAttribute="top" constant="5" id="nt1-je-A3n"/>
+                                            <constraint firstAttribute="trailing" secondItem="I4i-Q9-vCx" secondAttribute="trailing" constant="8" id="nuM-EV-Njm"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Iv8-W2-bhj" firstAttribute="centerY" secondItem="KlX-xX-Dl1" secondAttribute="centerY" id="3FX-r3-sY4"/>
+                                    <constraint firstItem="KlX-xX-Dl1" firstAttribute="centerY" secondItem="6Na-Wv-A8V" secondAttribute="centerY" id="PLE-v8-txk"/>
+                                    <constraint firstItem="XV1-xw-72g" firstAttribute="bottom" secondItem="Iv8-W2-bhj" secondAttribute="bottom" id="PSM-Kf-fGi"/>
+                                    <constraint firstItem="Iv8-W2-bhj" firstAttribute="leading" secondItem="KlX-xX-Dl1" secondAttribute="trailing" constant="8" id="UX0-Z3-I53"/>
+                                    <constraint firstAttribute="height" constant="112" id="dED-UB-oFq"/>
+                                    <constraint firstAttribute="trailing" secondItem="XV1-xw-72g" secondAttribute="trailing" constant="24" id="paK-FP-tUd"/>
+                                    <constraint firstItem="KlX-xX-Dl1" firstAttribute="leading" secondItem="6Na-Wv-A8V" secondAttribute="leading" constant="24" id="yzC-xA-rkt"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8at-xF-psI">
+                                <rect key="frame" x="0.0" y="156" width="414" height="740"/>
+                                <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="6Na-Wv-A8V" secondAttribute="trailing" id="Shi-k3-X90"/>
+                            <constraint firstAttribute="bottom" secondItem="8at-xF-psI" secondAttribute="bottom" id="WE4-bA-7Ke"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="8at-xF-psI" secondAttribute="trailing" id="ZE2-NB-sg0"/>
+                            <constraint firstItem="6Na-Wv-A8V" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="b0H-td-ioB"/>
+                            <constraint firstItem="6Na-Wv-A8V" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="biX-ha-CDZ"/>
+                            <constraint firstItem="8at-xF-psI" firstAttribute="top" secondItem="6Na-Wv-A8V" secondAttribute="bottom" id="dN4-aO-jVm"/>
+                            <constraint firstItem="8at-xF-psI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="r0L-Ye-4h8"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="67.633928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="journeySmileSampleImg" width="59.5" height="64"/>
+        <namedColor name="LightPink">
+            <color red="1" green="0.83137254901960778" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
