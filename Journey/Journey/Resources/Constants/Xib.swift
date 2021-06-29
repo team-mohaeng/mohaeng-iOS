@@ -12,13 +12,21 @@ extension Const {
     struct Xib {
         
         struct Name {
-            // example
-            static let selectedFilterCollectionViewCell = "SelectedFilterCollectionViewCell"
+            
+            // 챌린지 탭
+            // 코스 뷰
+            static let firstDayTableViewCell = "FirstDayTableViewCell"
+            static let evenDayTableViewCell = "EvenDayTableViewCell"
+            static let oddDayTableViewCell = "OddDayTableViewCell"
         }
         
         struct Identifier {
-            // example
-            static let selectedFilterCollectionViewCell = "SelectedFilterCollectionViewCell"
+            
+            // 챌린지 탭
+            // 코스 뷰
+            static let firstDayTableViewCell = "FirstDayTableViewCell"
+            static let evenDayTableViewCell = "EvenDayTableViewCell"
+            static let oddDayTableViewCell = "OddDayTableViewCell"
         }
         
     }

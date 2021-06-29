@@ -8,6 +8,7 @@
 import UIKit
 
 extension UIColor {
-    // example
-    // static let Black1: UIColor = UIColor(named: "Black1")!
+    static let LightPink: UIColor = UIColor(named: "LightPink")!
+    static let Pink: UIColor = UIColor(named: "Pink")!
+    static let CourseBgGray: UIColor = UIColor(named: "CourseBgGray")!
 }

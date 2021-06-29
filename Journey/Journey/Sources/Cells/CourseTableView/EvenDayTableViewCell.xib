@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="EvenDayTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="EvenDayTableViewCell" rowHeight="188" id="KGk-i7-Jjw" customClass="EvenDayTableViewCell" customModule="Journey" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="188"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="188"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KcE-mo-iO7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="188"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROc-9O-fd3">
+                                <rect key="frame" x="24" y="135" width="48" height="48"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="waterSampleImg" translatesAutoresizingMaskIntoConstraints="NO" id="6eV-ht-Qjc">
+                                        <rect key="frame" x="6" y="6" width="36" height="36"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="CourseUndoneGray"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="50Z-1e-CEI"/>
+                                    <constraint firstAttribute="trailing" secondItem="6eV-ht-Qjc" secondAttribute="trailing" constant="6" id="5Jm-27-RtU"/>
+                                    <constraint firstItem="6eV-ht-Qjc" firstAttribute="leading" secondItem="ROc-9O-fd3" secondAttribute="leading" constant="6" id="DGC-bW-6jH"/>
+                                    <constraint firstAttribute="bottom" secondItem="6eV-ht-Qjc" secondAttribute="bottom" constant="6" id="g6B-oh-f6p"/>
+                                    <constraint firstItem="6eV-ht-Qjc" firstAttribute="top" secondItem="ROc-9O-fd3" secondAttribute="top" constant="6" id="lxh-Zy-T1W"/>
+                                    <constraint firstAttribute="width" constant="48" id="tRv-64-3me"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0Pk-db-TcF">
+                                <rect key="frame" x="92" y="135" width="133.5" height="48"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="2일차" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAN-Yg-Cxx">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="깨끗하게 손 씻기 3회" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7z3-Jf-lbd">
+                                        <rect key="frame" x="0.0" y="33.5" width="133.5" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="UAN-Yg-Cxx" firstAttribute="top" secondItem="0Pk-db-TcF" secondAttribute="top" id="Yed-Yr-3oC"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="CourseBgGray"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ROc-9O-fd3" secondAttribute="bottom" constant="5" id="0LI-Op-zM6"/>
+                            <constraint firstItem="0Pk-db-TcF" firstAttribute="bottom" secondItem="ROc-9O-fd3" secondAttribute="bottom" id="7lP-Qi-l2b"/>
+                            <constraint firstItem="ROc-9O-fd3" firstAttribute="leading" secondItem="KcE-mo-iO7" secondAttribute="leading" constant="24" id="ImL-qB-IvM"/>
+                            <constraint firstItem="0Pk-db-TcF" firstAttribute="leading" secondItem="ROc-9O-fd3" secondAttribute="trailing" constant="20" id="asn-Xb-ZUp"/>
+                            <constraint firstItem="0Pk-db-TcF" firstAttribute="top" secondItem="ROc-9O-fd3" secondAttribute="top" id="y9n-mH-NwK"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="KcE-mo-iO7" secondAttribute="bottom" id="Emm-ql-VYG"/>
+                    <constraint firstAttribute="trailing" secondItem="KcE-mo-iO7" secondAttribute="trailing" id="Gbs-vR-s5K"/>
+                    <constraint firstItem="KcE-mo-iO7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="iq0-dp-4Z8"/>
+                    <constraint firstItem="KcE-mo-iO7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="vAx-AX-FM8"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cellBgView" destination="KcE-mo-iO7" id="GHW-z5-zvg"/>
+                <outlet property="propertyBgView" destination="ROc-9O-fd3" id="fcg-Qe-Mf1"/>
+                <outlet property="propertyImageView" destination="ROc-9O-fd3" id="LU3-jJ-x5D"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="99"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="waterSampleImg" width="36" height="36"/>
+        <namedColor name="CourseBgGray">
+            <color red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CourseUndoneGray">
+            <color red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
