@@ -12,8 +12,7 @@ extension Const {
     struct ViewController {
         
         struct Identifier {
-            // example
-            static let loginMethod = "LoginMethodViewController"
+            static let tabbar = "TabbarViewController"
         }
     }
 }

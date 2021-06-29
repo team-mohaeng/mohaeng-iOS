@@ -12,8 +12,7 @@ extension Const {
     struct Storyboard {
         
         struct Name {
-            // example
-            static let loginMethod = "LoginMethod"
+            static let tabbar = "Tabbar"
         }
     }
 }
