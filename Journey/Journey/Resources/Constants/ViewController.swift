@@ -13,6 +13,16 @@ extension Const {
         
         struct Identifier {
             static let tabbar = "TabbarViewController"
+            
+            // 홈 탭
+            static let home = "HomeViewController"
+            
+            // 챌린지 탭
+            static let challenge = "ChallengeViewController"
+            static let course = "CourseViewController"
+            
+            // 피드 탭
+            static let feed = "FeedViewController"
         }
     }
 }

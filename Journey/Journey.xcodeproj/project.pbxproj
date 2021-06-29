@@ -38,6 +38,8 @@
 		56DCAA80268AE1A50056155A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA7F268AE1A50056155A /* HomeViewController.swift */; };
 		56DCAA82268AE1B10056155A /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA81268AE1B10056155A /* ChallengeViewController.swift */; };
 		56DCAA84268AE1BD0056155A /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA83268AE1BD0056155A /* FeedViewController.swift */; };
+		56DCAA8C268AF6E20056155A /* Course.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA8B268AF6E20056155A /* Course.storyboard */; };
+		56DCAA8E268AF75E0056155A /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA8D268AF75E0056155A /* CourseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +75,8 @@
 		56DCAA7F268AE1A50056155A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		56DCAA81268AE1B10056155A /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		56DCAA83268AE1BD0056155A /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		56DCAA8B268AF6E20056155A /* Course.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Course.storyboard; sourceTree = "<group>"; };
+		56DCAA8D268AF75E0056155A /* CourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
 		7E48B7936113F659E5F3BD09 /* Pods-Journey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journey.release.xcconfig"; path = "Target Support Files/Pods-Journey/Pods-Journey.release.xcconfig"; sourceTree = "<group>"; };
 		9DAC4B8168D442A39A098439 /* Pods_Journey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Journey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE04EE8E2CC2D99FF8A949C4 /* Pods-Journey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journey.debug.xcconfig"; path = "Target Support Files/Pods-Journey/Pods-Journey.debug.xcconfig"; sourceTree = "<group>"; };
@@ -287,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				56DCAA81268AE1B10056155A /* ChallengeViewController.swift */,
+				56DCAA8D268AF75E0056155A /* CourseViewController.swift */,
 			);
 			path = Challenge;
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				56DCAA7B268AE1310056155A /* Challenge.storyboard */,
+				56DCAA8B268AF6E20056155A /* Course.storyboard */,
 			);
 			path = Challenge;
 			sourceTree = "<group>";
@@ -391,6 +397,7 @@
 				56DCAA342689BB9E0056155A /* LaunchScreen.storyboard in Resources */,
 				56DCAA312689BB9E0056155A /* Assets.xcassets in Resources */,
 				56DCAA7C268AE1310056155A /* Challenge.storyboard in Resources */,
+				56DCAA8C268AF6E20056155A /* Course.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +482,7 @@
 				56DCAA682689BE210056155A /* ViewExmaple.swift in Sources */,
 				56DCAA4D2689BCFA0056155A /* Storyboard.swift in Sources */,
 				56DCAA5C2689BDF20056155A /* APIServicesExmaple.swift in Sources */,
+				56DCAA8E268AF75E0056155A /* CourseViewController.swift in Sources */,
 				56DCAA512689BD1E0056155A /* Xib.swift in Sources */,
 				56DCAA552689BD3B0056155A /* Font.swift in Sources */,
 				56DCAA80268AE1A50056155A /* HomeViewController.swift in Sources */,
