@@ -46,6 +46,7 @@
 		56DCAA9A268AFF5B0056155A /* OddDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA98268AFF5B0056155A /* OddDayTableViewCell.swift */; };
 		56DCAA9B268AFF5B0056155A /* OddDayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA99268AFF5B0056155A /* OddDayTableViewCell.xib */; };
 		56DCAA9D268B00910056155A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA9C268B00910056155A /* UIView+Extension.swift */; };
+		56DCAA9F268C51E50056155A /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA9E268C51E50056155A /* Challenge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		56DCAA98268AFF5B0056155A /* OddDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddDayTableViewCell.swift; sourceTree = "<group>"; };
 		56DCAA99268AFF5B0056155A /* OddDayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OddDayTableViewCell.xib; sourceTree = "<group>"; };
 		56DCAA9C268B00910056155A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		56DCAA9E268C51E50056155A /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		7E48B7936113F659E5F3BD09 /* Pods-Journey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journey.release.xcconfig"; path = "Target Support Files/Pods-Journey/Pods-Journey.release.xcconfig"; sourceTree = "<group>"; };
 		9DAC4B8168D442A39A098439 /* Pods_Journey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Journey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE04EE8E2CC2D99FF8A949C4 /* Pods-Journey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journey.debug.xcconfig"; path = "Target Support Files/Pods-Journey/Pods-Journey.debug.xcconfig"; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				56DCAA5D2689BDF80056155A /* APIModelsExmaple.swift */,
+				56DCAA9E268C51E50056155A /* Challenge.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56DCAA4F2689BD110056155A /* ViewController.swift in Sources */,
+				56DCAA9F268C51E50056155A /* Challenge.swift in Sources */,
 				56DCAA532689BD2C0056155A /* Image.swift in Sources */,
 				56DCAA71268A26F80056155A /* UINavigationController+Extension.swift in Sources */,
 				56DCAA642689BE110056155A /* ProtocolsExmaple.swift in Sources */,
