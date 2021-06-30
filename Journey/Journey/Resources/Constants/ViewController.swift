@@ -14,6 +14,9 @@ extension Const {
         struct Identifier {
             static let tabbar = "TabbarViewController"
             
+            // Auth
+            static let login = "LoginViewController"
+            
             // 홈 탭
             static let home = "HomeViewController"
             
