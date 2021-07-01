@@ -21,8 +21,16 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KcE-mo-iO7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="188"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zns-8h-kyc">
+                                <rect key="frame" x="37" y="164" width="20" height="24"/>
+                                <color key="backgroundColor" name="White"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="7ud-TF-95V"/>
+                                    <constraint firstAttribute="height" constant="24" id="W3n-9d-xpC"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROc-9O-fd3">
-                                <rect key="frame" x="24" y="135" width="48" height="48"/>
+                                <rect key="frame" x="24" y="140" width="48" height="48"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="waterSampleImg" translatesAutoresizingMaskIntoConstraints="NO" id="6eV-ht-Qjc">
                                         <rect key="frame" x="6" y="6" width="36" height="36"/>
@@ -39,7 +47,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0Pk-db-TcF">
-                                <rect key="frame" x="92" y="135" width="133.5" height="48"/>
+                                <rect key="frame" x="92" y="140" width="133.5" height="48"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="2일차" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAN-Yg-Cxx">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="25.5"/>
@@ -58,13 +66,35 @@
                                     <constraint firstItem="UAN-Yg-Cxx" firstAttribute="top" secondItem="0Pk-db-TcF" secondAttribute="top" id="Yed-Yr-3oC"/>
                                 </constraints>
                             </stackView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAp-Ts-isd">
+                                <rect key="frame" x="183" y="140.5" width="81.5" height="24.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06.28 완료" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2x0-NQ-DZV">
+                                        <rect key="frame" x="12" y="5" width="57.5" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="Pink"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="2x0-NQ-DZV" secondAttribute="trailing" constant="12" id="a3J-dy-HR4"/>
+                                    <constraint firstItem="2x0-NQ-DZV" firstAttribute="top" secondItem="cAp-Ts-isd" secondAttribute="top" constant="5" id="cX5-qu-8JU"/>
+                                    <constraint firstAttribute="bottom" secondItem="2x0-NQ-DZV" secondAttribute="bottom" constant="5" id="jIF-8I-b85"/>
+                                    <constraint firstItem="2x0-NQ-DZV" firstAttribute="leading" secondItem="cAp-Ts-isd" secondAttribute="leading" constant="12" id="wiD-FJ-qVk"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="CourseBgGray"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="ROc-9O-fd3" secondAttribute="bottom" constant="5" id="0LI-Op-zM6"/>
+                            <constraint firstAttribute="bottom" secondItem="ROc-9O-fd3" secondAttribute="bottom" id="0LI-Op-zM6"/>
                             <constraint firstItem="0Pk-db-TcF" firstAttribute="bottom" secondItem="ROc-9O-fd3" secondAttribute="bottom" id="7lP-Qi-l2b"/>
                             <constraint firstItem="ROc-9O-fd3" firstAttribute="leading" secondItem="KcE-mo-iO7" secondAttribute="leading" constant="24" id="ImL-qB-IvM"/>
+                            <constraint firstAttribute="bottom" secondItem="zns-8h-kyc" secondAttribute="bottom" id="U3B-t3-1lL"/>
+                            <constraint firstItem="cAp-Ts-isd" firstAttribute="leading" secondItem="UAN-Yg-Cxx" secondAttribute="trailing" constant="41" id="X8n-XL-OaI"/>
                             <constraint firstItem="0Pk-db-TcF" firstAttribute="leading" secondItem="ROc-9O-fd3" secondAttribute="trailing" constant="20" id="asn-Xb-ZUp"/>
+                            <constraint firstItem="cAp-Ts-isd" firstAttribute="centerY" secondItem="UAN-Yg-Cxx" secondAttribute="centerY" id="dtR-qd-NJ3"/>
+                            <constraint firstItem="zns-8h-kyc" firstAttribute="leading" secondItem="KcE-mo-iO7" secondAttribute="leading" constant="37" id="txf-qu-2dP"/>
                             <constraint firstItem="0Pk-db-TcF" firstAttribute="top" secondItem="ROc-9O-fd3" secondAttribute="top" id="y9n-mH-NwK"/>
                         </constraints>
                     </view>
@@ -80,6 +110,11 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cellBgView" destination="KcE-mo-iO7" id="GHW-z5-zvg"/>
+                <outlet property="dayCountLabel" destination="UAN-Yg-Cxx" id="XJd-B0-RUN"/>
+                <outlet property="dayLabel" destination="2x0-NQ-DZV" id="3Hd-gv-yL4"/>
+                <outlet property="dayLabelBgView" destination="cAp-Ts-isd" id="znT-Ef-moZ"/>
+                <outlet property="descriptionLabel" destination="7z3-Jf-lbd" id="kFh-Nf-eNj"/>
+                <outlet property="nextDayRoadView" destination="zns-8h-kyc" id="YzH-oQ-ECB"/>
                 <outlet property="propertyBgView" destination="ROc-9O-fd3" id="fcg-Qe-Mf1"/>
                 <outlet property="propertyImageView" destination="ROc-9O-fd3" id="LU3-jJ-x5D"/>
             </connections>
@@ -89,10 +124,16 @@
     <resources>
         <image name="waterSampleImg" width="36" height="36"/>
         <namedColor name="CourseBgGray">
-            <color red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.97600001096725464" green="0.97600001096725464" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="CourseUndoneGray">
-            <color red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.93300002813339233" green="0.93300002813339233" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Pink">
+            <color red="0.95300000905990601" green="0.48600000143051147" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

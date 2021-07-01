@@ -18,6 +18,10 @@ extension Const {
             static let firstDayTableViewCell = "FirstDayTableViewCell"
             static let evenDayTableViewCell = "EvenDayTableViewCell"
             static let oddDayTableViewCell = "OddDayTableViewCell"
+            
+            // 코스 둘러보기 뷰
+            static let doneCourseCollectionViewCell = "DoneCourseCollectionViewCell"
+            static let undoneCourseCollectionViewCell = "UndoneCourseCollectionViewCell"
         }
         
         struct Identifier {
@@ -27,6 +31,10 @@ extension Const {
             static let firstDayTableViewCell = "FirstDayTableViewCell"
             static let evenDayTableViewCell = "EvenDayTableViewCell"
             static let oddDayTableViewCell = "OddDayTableViewCell"
+            
+            // 코스 둘러보기 뷰
+            static let doneCourseCollectionViewCell = "DoneCourseCollectionViewCell"
+            static let undoneCourseCollectionViewCell = "UndoneCourseCollectionViewCell"
         }
         
     }

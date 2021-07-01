@@ -23,6 +23,7 @@ extension Const {
             // 챌린지 탭
             static let challenge = "ChallengeViewController"
             static let course = "CourseViewController"
+            static let courseLibrary = "CourseLibraryViewController"
             
             // 피드 탭
             static let feed = "FeedViewController"
