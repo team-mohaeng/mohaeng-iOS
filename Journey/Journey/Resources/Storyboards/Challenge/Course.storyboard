@@ -70,7 +70,7 @@
                                     <constraint firstItem="KlX-xX-Dl1" firstAttribute="leading" secondItem="6Na-Wv-A8V" secondAttribute="leading" constant="24" id="yzC-xA-rkt"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8at-xF-psI">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8at-xF-psI">
                                 <rect key="frame" x="0.0" y="156" width="414" height="740"/>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
@@ -87,6 +87,13 @@
                             <constraint firstItem="8at-xF-psI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="r0L-Ye-4h8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="courseImageVIew" destination="KlX-xX-Dl1" id="uPd-m9-gmO"/>
+                        <outlet property="courseTableView" destination="8at-xF-psI" id="VAy-u0-i5v"/>
+                        <outlet property="courseTitleLabel" destination="D2q-64-g1e" id="npX-6y-2g0"/>
+                        <outlet property="dayCountLabelBgView" destination="XV1-xw-72g" id="UAJ-PX-1wf"/>
+                        <outlet property="dayLabelBgView" destination="I4i-Q9-vCx" id="OjS-zK-33K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -96,7 +103,7 @@
     <resources>
         <image name="journeySmileSampleImg" width="59.5" height="64"/>
         <namedColor name="LightPink">
-            <color red="1" green="0.83137254901960778" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.83099997043609619" blue="0.86299997568130493" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

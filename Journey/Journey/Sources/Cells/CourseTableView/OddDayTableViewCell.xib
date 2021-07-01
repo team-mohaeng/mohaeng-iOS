@@ -6,6 +6,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -38,6 +39,14 @@
                             <constraint firstItem="JoR-95-xqW" firstAttribute="top" secondItem="QmC-Yq-Uzf" secondAttribute="top" id="27Z-YA-J4w"/>
                         </constraints>
                     </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N6t-IT-2DW">
+                        <rect key="frame" x="262" y="164" width="20" height="24"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="ToV-QN-qRu"/>
+                            <constraint firstAttribute="height" constant="24" id="wsh-tq-yle"/>
+                        </constraints>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HuI-8E-oTC">
                         <rect key="frame" x="248" y="140" width="48" height="48"/>
                         <subviews>
@@ -55,12 +64,34 @@
                             <constraint firstAttribute="trailing" secondItem="TN8-Nk-g1o" secondAttribute="trailing" constant="6" id="wWW-fr-7wk"/>
                         </constraints>
                     </view>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffh-3t-dKY">
+                        <rect key="frame" x="55" y="140.5" width="81.5" height="24.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06.28 완료" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hA5-CL-N1N">
+                                <rect key="frame" x="12" y="5" width="57.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="Pink"/>
+                        <constraints>
+                            <constraint firstItem="hA5-CL-N1N" firstAttribute="leading" secondItem="ffh-3t-dKY" secondAttribute="leading" constant="12" id="7UG-B5-7Bj"/>
+                            <constraint firstAttribute="bottom" secondItem="hA5-CL-N1N" secondAttribute="bottom" constant="5" id="HIB-Ez-ngU"/>
+                            <constraint firstItem="hA5-CL-N1N" firstAttribute="top" secondItem="ffh-3t-dKY" secondAttribute="top" constant="5" id="iur-QT-Pfy"/>
+                            <constraint firstAttribute="trailing" secondItem="hA5-CL-N1N" secondAttribute="trailing" constant="12" id="nex-KO-v6j"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" name="CourseBgGray"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="HuI-8E-oTC" secondAttribute="trailing" constant="24" id="4U9-yE-jQD"/>
+                    <constraint firstItem="JoR-95-xqW" firstAttribute="leading" secondItem="ffh-3t-dKY" secondAttribute="trailing" constant="41" id="K2h-ID-2kM"/>
+                    <constraint firstAttribute="trailing" secondItem="N6t-IT-2DW" secondAttribute="trailing" constant="38" id="MuK-aF-YXb"/>
                     <constraint firstItem="QmC-Yq-Uzf" firstAttribute="bottom" secondItem="HuI-8E-oTC" secondAttribute="bottom" id="V4O-tZ-Qmb"/>
                     <constraint firstItem="HuI-8E-oTC" firstAttribute="leading" secondItem="QmC-Yq-Uzf" secondAttribute="trailing" constant="20" id="Ztb-mj-oWr"/>
+                    <constraint firstAttribute="bottom" secondItem="N6t-IT-2DW" secondAttribute="bottom" id="bPg-Ic-4yQ"/>
+                    <constraint firstItem="ffh-3t-dKY" firstAttribute="centerY" secondItem="JoR-95-xqW" secondAttribute="centerY" id="kHM-rb-D1t"/>
                     <constraint firstItem="QmC-Yq-Uzf" firstAttribute="top" secondItem="HuI-8E-oTC" secondAttribute="top" id="sz2-Jk-eiS"/>
                     <constraint firstAttribute="bottom" secondItem="HuI-8E-oTC" secondAttribute="bottom" id="t80-YK-svh"/>
                 </constraints>
@@ -68,6 +99,11 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" name="CourseBgGray"/>
             <connections>
+                <outlet property="dayCountLabel" destination="JoR-95-xqW" id="44F-VU-sFT"/>
+                <outlet property="dayLabel" destination="hA5-CL-N1N" id="ZmZ-cJ-SKE"/>
+                <outlet property="dayLabelBgView" destination="ffh-3t-dKY" id="1fH-3O-Mpq"/>
+                <outlet property="descriptionLabel" destination="496-Ws-be2" id="FrE-c4-A08"/>
+                <outlet property="nextDayRoadView" destination="N6t-IT-2DW" id="SpM-98-bxD"/>
                 <outlet property="propertyBgView" destination="HuI-8E-oTC" id="s37-lT-Ghs"/>
                 <outlet property="propertyImageView" destination="TN8-Nk-g1o" id="YfX-aB-2hU"/>
             </connections>
@@ -77,10 +113,16 @@
     <resources>
         <image name="waterSampleImg" width="36" height="36"/>
         <namedColor name="CourseBgGray">
-            <color red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.97600001096725464" green="0.97600001096725464" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="CourseUndoneGray">
-            <color red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.93300002813339233" green="0.93300002813339233" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="Pink">
+            <color red="0.95300000905990601" green="0.48600000143051147" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
