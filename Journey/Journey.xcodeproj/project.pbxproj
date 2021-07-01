@@ -46,6 +46,13 @@
 		56DCAA9A268AFF5B0056155A /* OddDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA98268AFF5B0056155A /* OddDayTableViewCell.swift */; };
 		56DCAA9B268AFF5B0056155A /* OddDayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA99268AFF5B0056155A /* OddDayTableViewCell.xib */; };
 		56DCAA9D268B00910056155A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA9C268B00910056155A /* UIView+Extension.swift */; };
+		56DCAAA1268C61810056155A /* CourseLibrary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAAA0268C61810056155A /* CourseLibrary.storyboard */; };
+		56DCAAA3268C61A40056155A /* CourseLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAAA2268C61A40056155A /* CourseLibraryViewController.swift */; };
+		56DCAAAF268C6D690056155A /* UndoneCourseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAAAD268C6D690056155A /* UndoneCourseCollectionViewCell.swift */; };
+		56DCAAB0268C6D690056155A /* UndoneCourseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAAAE268C6D690056155A /* UndoneCourseCollectionViewCell.xib */; };
+		56DCAAB3268C6D760056155A /* DoneCourseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAAB1268C6D760056155A /* DoneCourseCollectionViewCell.swift */; };
+		56DCAAB4268C6D760056155A /* DoneCourseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAAB2268C6D760056155A /* DoneCourseCollectionViewCell.xib */; };
+		56DCAAB6268C6F5D0056155A /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAAB5268C6F5D0056155A /* Course.swift */; };
 		56DCAA9F268C51E50056155A /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA9E268C51E50056155A /* Challenge.swift */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +97,13 @@
 		56DCAA98268AFF5B0056155A /* OddDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddDayTableViewCell.swift; sourceTree = "<group>"; };
 		56DCAA99268AFF5B0056155A /* OddDayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OddDayTableViewCell.xib; sourceTree = "<group>"; };
 		56DCAA9C268B00910056155A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		56DCAAA0268C61810056155A /* CourseLibrary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CourseLibrary.storyboard; sourceTree = "<group>"; };
+		56DCAAA2268C61A40056155A /* CourseLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseLibraryViewController.swift; sourceTree = "<group>"; };
+		56DCAAAD268C6D690056155A /* UndoneCourseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndoneCourseCollectionViewCell.swift; sourceTree = "<group>"; };
+		56DCAAAE268C6D690056155A /* UndoneCourseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UndoneCourseCollectionViewCell.xib; sourceTree = "<group>"; };
+		56DCAAB1268C6D760056155A /* DoneCourseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneCourseCollectionViewCell.swift; sourceTree = "<group>"; };
+		56DCAAB2268C6D760056155A /* DoneCourseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoneCourseCollectionViewCell.xib; sourceTree = "<group>"; };
+		56DCAAB5268C6F5D0056155A /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		56DCAA9E268C51E50056155A /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		7E48B7936113F659E5F3BD09 /* Pods-Journey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journey.release.xcconfig"; path = "Target Support Files/Pods-Journey/Pods-Journey.release.xcconfig"; sourceTree = "<group>"; };
 		9DAC4B8168D442A39A098439 /* Pods_Journey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Journey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				56DCAA8F268AFF100056155A /* CourseTableView */,
+				56DCAAA4268C6BC80056155A /* CourseLibraryCollectionVIew */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -235,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				56DCAA5F2689BDFF0056155A /* AppModelsExmaple.swift */,
+				56DCAAB5268C6F5D0056155A /* Course.swift */,
 			);
 			path = AppModels;
 			sourceTree = "<group>";
@@ -308,6 +324,7 @@
 			children = (
 				56DCAA81268AE1B10056155A /* ChallengeViewController.swift */,
 				56DCAA8D268AF75E0056155A /* CourseViewController.swift */,
+				56DCAAA2268C61A40056155A /* CourseLibraryViewController.swift */,
 			);
 			path = Challenge;
 			sourceTree = "<group>";
@@ -333,6 +350,7 @@
 			children = (
 				56DCAA7B268AE1310056155A /* Challenge.storyboard */,
 				56DCAA8B268AF6E20056155A /* Course.storyboard */,
+				56DCAAA0268C61810056155A /* CourseLibrary.storyboard */,
 			);
 			path = Challenge;
 			sourceTree = "<group>";
@@ -356,6 +374,17 @@
 				56DCAA99268AFF5B0056155A /* OddDayTableViewCell.xib */,
 			);
 			path = CourseTableView;
+			sourceTree = "<group>";
+		};
+		56DCAAA4268C6BC80056155A /* CourseLibraryCollectionVIew */ = {
+			isa = PBXGroup;
+			children = (
+				56DCAAAD268C6D690056155A /* UndoneCourseCollectionViewCell.swift */,
+				56DCAAAE268C6D690056155A /* UndoneCourseCollectionViewCell.xib */,
+				56DCAAB1268C6D760056155A /* DoneCourseCollectionViewCell.swift */,
+				56DCAAB2268C6D760056155A /* DoneCourseCollectionViewCell.xib */,
+			);
+			path = CourseLibraryCollectionVIew;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,8 +452,11 @@
 				56DCAA74268ADE040056155A /* Tabbar.storyboard in Resources */,
 				56DCAA97268AFF510056155A /* EvenDayTableViewCell.xib in Resources */,
 				56DCAA7E268AE13B0056155A /* Feed.storyboard in Resources */,
+				56DCAAA1268C61810056155A /* CourseLibrary.storyboard in Resources */,
 				56DCAA6F2689DB500056155A /* Colors.xcassets in Resources */,
 				56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */,
+				56DCAAB0268C6D690056155A /* UndoneCourseCollectionViewCell.xib in Resources */,
+				56DCAAB4268C6D760056155A /* DoneCourseCollectionViewCell.xib in Resources */,
 				56DCAA93268AFF3A0056155A /* FirstDayTableViewCell.xib in Resources */,
 				56DCAA342689BB9E0056155A /* LaunchScreen.storyboard in Resources */,
 				56DCAA312689BB9E0056155A /* Assets.xcassets in Resources */,
@@ -508,11 +540,14 @@
 				56DCAA82268AE1B10056155A /* ChallengeViewController.swift in Sources */,
 				56DCAA592689BD9F0056155A /* LottieExmaple.swift in Sources */,
 				56DCAA5E2689BDF80056155A /* APIModelsExmaple.swift in Sources */,
+				56DCAAB3268C6D760056155A /* DoneCourseCollectionViewCell.swift in Sources */,
 				56DCAA602689BDFF0056155A /* AppModelsExmaple.swift in Sources */,
 				56DCAA622689BE080056155A /* UIColor+Extension.swift in Sources */,
 				56DCAA78268AE0E40056155A /* TabbarViewController.swift in Sources */,
 				56DCAA682689BE210056155A /* ViewExmaple.swift in Sources */,
+				56DCAAB6268C6F5D0056155A /* Course.swift in Sources */,
 				56DCAA4D2689BCFA0056155A /* Storyboard.swift in Sources */,
+				56DCAAAF268C6D690056155A /* UndoneCourseCollectionViewCell.swift in Sources */,
 				56DCAA5C2689BDF20056155A /* APIServicesExmaple.swift in Sources */,
 				56DCAA8E268AF75E0056155A /* CourseViewController.swift in Sources */,
 				56DCAA9D268B00910056155A /* UIView+Extension.swift in Sources */,
@@ -526,6 +561,7 @@
 				56DCAA282689BB9B0056155A /* AppDelegate.swift in Sources */,
 				56DCAA2A2689BB9B0056155A /* SceneDelegate.swift in Sources */,
 				56DCAA9A268AFF5B0056155A /* OddDayTableViewCell.swift in Sources */,
+				56DCAAA3268C61A40056155A /* CourseLibraryViewController.swift in Sources */,
 				56DCAA572689BD980056155A /* FontExmaple.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
