@@ -46,6 +46,8 @@
 		56DCAA9A268AFF5B0056155A /* OddDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA98268AFF5B0056155A /* OddDayTableViewCell.swift */; };
 		56DCAA9B268AFF5B0056155A /* OddDayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA99268AFF5B0056155A /* OddDayTableViewCell.xib */; };
 		56DCAA9D268B00910056155A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA9C268B00910056155A /* UIView+Extension.swift */; };
+		56DCAAB9268CA02A0056155A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAAB8268CA02A0056155A /* Login.storyboard */; };
+		56DCAABC268CA0FA0056155A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAABB268CA0FA0056155A /* LoginViewController.swift */; };
 		56DCAAA1268C61810056155A /* CourseLibrary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAAA0268C61810056155A /* CourseLibrary.storyboard */; };
 		56DCAAA3268C61A40056155A /* CourseLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAAA2268C61A40056155A /* CourseLibraryViewController.swift */; };
 		56DCAAAF268C6D690056155A /* UndoneCourseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAAAD268C6D690056155A /* UndoneCourseCollectionViewCell.swift */; };
@@ -97,6 +99,8 @@
 		56DCAA98268AFF5B0056155A /* OddDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddDayTableViewCell.swift; sourceTree = "<group>"; };
 		56DCAA99268AFF5B0056155A /* OddDayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OddDayTableViewCell.xib; sourceTree = "<group>"; };
 		56DCAA9C268B00910056155A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		56DCAAB8268CA02A0056155A /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		56DCAABB268CA0FA0056155A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		56DCAAA0268C61810056155A /* CourseLibrary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CourseLibrary.storyboard; sourceTree = "<group>"; };
 		56DCAAA2268C61A40056155A /* CourseLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseLibraryViewController.swift; sourceTree = "<group>"; };
 		56DCAAAD268C6D690056155A /* UndoneCourseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndoneCourseCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 			children = (
 				56DCAA322689BB9E0056155A /* LaunchScreen.storyboard */,
 				56DCAA73268ADE040056155A /* Tabbar.storyboard */,
+				56DCAAB7268C9FDF0056155A /* Auth */,
 				56DCAA88268AE21C0056155A /* Home */,
 				56DCAA89268AE2230056155A /* Challenge */,
 				56DCAA8A268AE2260056155A /* Feed */,
@@ -214,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				56DCAA77268AE0E40056155A /* TabbarViewController.swift */,
+				56DCAABA268CA0550056155A /* Auth */,
 				56DCAA85268AE1E30056155A /* Home */,
 				56DCAA86268AE1EA0056155A /* Challenge */,
 				56DCAA87268AE1EE0056155A /* Feed */,
@@ -376,6 +382,22 @@
 			path = CourseTableView;
 			sourceTree = "<group>";
 		};
+		56DCAAB7268C9FDF0056155A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				56DCAAB8268CA02A0056155A /* Login.storyboard */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		56DCAABA268CA0550056155A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				56DCAABB268CA0FA0056155A /* LoginViewController.swift */,
+			);
+			path = Auth;
+      sourceTree = "<group>";
+		};
 		56DCAAA4268C6BC80056155A /* CourseLibraryCollectionVIew */ = {
 			isa = PBXGroup;
 			children = (
@@ -447,6 +469,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56DCAAB9268CA02A0056155A /* Login.storyboard in Resources */,
 				56DCAA9B268AFF5B0056155A /* OddDayTableViewCell.xib in Resources */,
 				56DCAA7A268AE1280056155A /* Home.storyboard in Resources */,
 				56DCAA74268ADE040056155A /* Tabbar.storyboard in Resources */,
@@ -532,6 +555,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56DCAABC268CA0FA0056155A /* LoginViewController.swift in Sources */,
 				56DCAA4F2689BD110056155A /* ViewController.swift in Sources */,
 				56DCAA9F268C51E50056155A /* Challenge.swift in Sources */,
 				56DCAA532689BD2C0056155A /* Image.swift in Sources */,

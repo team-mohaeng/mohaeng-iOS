@@ -13,6 +13,10 @@ extension Const {
         
         struct Name {
             static let tabbar = "Tabbar"
+            
+            // Auth 관련
+            static let login = "Login"
+            
             // 홈 탭
             static let home = "Home"
             
