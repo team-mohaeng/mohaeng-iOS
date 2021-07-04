@@ -21,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let loginViewController = loginStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.login)
         self.navigationController = UINavigationController(rootViewController: loginViewController)
         self.window?.rootViewController = self.navigationController
+        self.window?.backgroundColor = .white
         
         guard let _ = (scene as? UIWindowScene) else { return }
     }
