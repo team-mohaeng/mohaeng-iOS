@@ -9,6 +9,21 @@ import UIKit
 
 class FirstDayTableViewCell: UITableViewCell {
     
+    // MARK: - Properties
+    
+    private let line = CAShapeLayer()
+    
+    enum Size {
+        static let radius: CGFloat = 80
+        static let horizontalSpacing: CGFloat = 57
+        static let screenWidth: CGFloat = UIScreen.main.bounds.width
+        static let cellHeight: CGFloat = 120
+        static let verticalSpacingWithBottomCell: CGFloat = 33
+    }
+    
+    private let centerPoint: CGPoint = CGPoint(x: Size.screenWidth - Size.horizontalSpacing - Size.radius, y: Size.cellHeight - Size.verticalSpacingWithBottomCell)
+    private let startPoint: CGPoint = CGPoint(x: Size.screenWidth - Size.horizontalSpacing, y: Size.cellHeight - Size.verticalSpacingWithBottomCell)
+    
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var roadView: UIView!
     @IBOutlet weak var circleView: UIView!
@@ -25,6 +40,7 @@ class FirstDayTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         initViewRounding()
+        initFirstPath()
     }
     
     // MARK: - Functions
@@ -32,6 +48,20 @@ class FirstDayTableViewCell: UITableViewCell {
     private func initViewRounding() {
         propertyBgView.makeRounded(radius: propertyBgView.frame.height / 2)
         dayLabelBgView.makeRounded(radius: dayLabelBgView.frame.height / 2)
+    }
+    
+    private func initFirstPath() {
+        let path = UIBezierPath()
+        path.move(to: startPoint)
+        path.addArc(withCenter: centerPoint, radius: Size.radius, startAngle: 0, endAngle: CGFloat.pi / 2, clockwise: true)
+        
+        line.fillMode = .forwards
+        line.fillColor = UIColor.clear.cgColor
+        line.lineWidth = 20.0
+        line.path = path.cgPath
+        
+        self.contentView.layer.insertSublayer(line, at: 0)
+        
     }
     
     func setCell(challenge: Challenge) {
@@ -56,6 +86,14 @@ class FirstDayTableViewCell: UITableViewCell {
         
         // situation에 따른 분기처리
         setColorBySituation(situation: challenge.situation)
+    }
+    
+    func setNextSituation(next: Int) {
+        if next == 0 {
+            line.strokeColor = UIColor.white.cgColor
+        } else if next == 2 {
+            line.strokeColor = UIColor.Pink.cgColor
+        }
     }
     
     private func setColorBySituation(situation: Int) {
