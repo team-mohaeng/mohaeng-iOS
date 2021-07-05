@@ -57,6 +57,8 @@
 		56DCAAB6268C6F5D0056155A /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAAB5268C6F5D0056155A /* Course.swift */; };
 		56DCAAB9268CA02A0056155A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAAB8268CA02A0056155A /* Login.storyboard */; };
 		56DCAABC268CA0FA0056155A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAABB268CA0FA0056155A /* LoginViewController.swift */; };
+		AA1F348E2692FB920011B3FA /* FeedDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1F348D2692FB920011B3FA /* FeedDetail.storyboard */; };
+		AA1F34912692FB9E0011B3FA /* FeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34902692FB9E0011B3FA /* FeedDetailViewController.swift */; };
 		AAFD90C3269048E500CF4707 /* FeedContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFD90C1269048E500CF4707 /* FeedContentsCollectionViewCell.swift */; };
 		AAFD90C4269048E500CF4707 /* FeedContentsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAFD90C2269048E500CF4707 /* FeedContentsCollectionViewCell.xib */; };
 		AAFD90C7269052E100CF4707 /* FeedHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFD90C6269052E100CF4707 /* FeedHeaderView.swift */; };
@@ -118,6 +120,8 @@
 		56DCAAC326907F880056155A /* Journey.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Journey.entitlements; sourceTree = "<group>"; };
 		7E48B7936113F659E5F3BD09 /* Pods-Journey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journey.release.xcconfig"; path = "Target Support Files/Pods-Journey/Pods-Journey.release.xcconfig"; sourceTree = "<group>"; };
 		9DAC4B8168D442A39A098439 /* Pods_Journey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Journey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA1F348D2692FB920011B3FA /* FeedDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedDetail.storyboard; sourceTree = "<group>"; };
+		AA1F34902692FB9E0011B3FA /* FeedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailViewController.swift; sourceTree = "<group>"; };
 		AAFD90C1269048E500CF4707 /* FeedContentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedContentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		AAFD90C2269048E500CF4707 /* FeedContentsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedContentsCollectionViewCell.xib; sourceTree = "<group>"; };
 		AAFD90C6269052E100CF4707 /* FeedHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedHeaderView.swift; sourceTree = "<group>"; };
@@ -355,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				56DCAA83268AE1BD0056155A /* FeedViewController.swift */,
+				AA1F34902692FB9E0011B3FA /* FeedDetailViewController.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -381,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				56DCAA7D268AE13B0056155A /* Feed.storyboard */,
+				AA1F348D2692FB920011B3FA /* FeedDetail.storyboard */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -497,6 +503,7 @@
 				56DCAAB9268CA02A0056155A /* Login.storyboard in Resources */,
 				56DCAA9B268AFF5B0056155A /* OddDayTableViewCell.xib in Resources */,
 				56DCAA7A268AE1280056155A /* Home.storyboard in Resources */,
+				AA1F348E2692FB920011B3FA /* FeedDetail.storyboard in Resources */,
 				56DCAA74268ADE040056155A /* Tabbar.storyboard in Resources */,
 				56DCAA97268AFF510056155A /* EvenDayTableViewCell.xib in Resources */,
 				56DCAA7E268AE13B0056155A /* Feed.storyboard in Resources */,
@@ -602,6 +609,7 @@
 				56DCAAAF268C6D690056155A /* UndoneCourseCollectionViewCell.swift in Sources */,
 				56DCAA5C2689BDF20056155A /* APIServicesExmaple.swift in Sources */,
 				56DCAA8E268AF75E0056155A /* CourseViewController.swift in Sources */,
+				AA1F34912692FB9E0011B3FA /* FeedDetailViewController.swift in Sources */,
 				56DCAA9D268B00910056155A /* UIView+Extension.swift in Sources */,
 				56DCAA92268AFF3A0056155A /* FirstDayTableViewCell.swift in Sources */,
 				56DCAA512689BD1E0056155A /* Xib.swift in Sources */,
