@@ -8,6 +8,7 @@
 import UIKit
 
 extension UIColor {
+    static let HotPink: UIColor = UIColor(named: "hotPink")!
     static let LightPink: UIColor = UIColor(named: "LightPink")!
     static let Pink: UIColor = UIColor(named: "Pink")!
     static let CourseBgGray: UIColor = UIColor(named: "CourseBgGray")!
