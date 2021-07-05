@@ -1,14 +1,116 @@
 PODS:
   - Alamofire (5.4.3)
+  - Firebase/Analytics (8.0.0):
+    - Firebase/Core
+  - Firebase/Core (8.0.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (~> 8.0.0)
+  - Firebase/CoreOnly (8.0.0):
+    - FirebaseCore (= 8.0.0)
+  - Firebase/Messaging (8.0.0):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (~> 8.0.0)
+  - FirebaseAnalytics (8.0.0):
+    - FirebaseAnalytics/AdIdSupport (= 8.0.0)
+    - FirebaseCore (~> 8.0)
+    - FirebaseInstallations (~> 8.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
+    - GoogleUtilities/MethodSwizzler (~> 7.4)
+    - GoogleUtilities/Network (~> 7.4)
+    - "GoogleUtilities/NSData+zlib (~> 7.4)"
+    - nanopb (~> 2.30908.0)
+  - FirebaseAnalytics/AdIdSupport (8.0.0):
+    - FirebaseAnalytics/Base (= 8.0.0)
+    - FirebaseCore (~> 8.0)
+    - FirebaseInstallations (~> 8.0)
+    - GoogleAppMeasurement (= 8.0.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
+    - GoogleUtilities/MethodSwizzler (~> 7.4)
+    - GoogleUtilities/Network (~> 7.4)
+    - "GoogleUtilities/NSData+zlib (~> 7.4)"
+    - nanopb (~> 2.30908.0)
+  - FirebaseAnalytics/Base (8.0.0):
+    - FirebaseCore (~> 8.0)
+    - FirebaseInstallations (~> 8.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
+    - GoogleUtilities/MethodSwizzler (~> 7.4)
+    - GoogleUtilities/Network (~> 7.4)
+    - "GoogleUtilities/NSData+zlib (~> 7.4)"
+    - nanopb (~> 2.30908.0)
+  - FirebaseCore (8.0.0):
+    - FirebaseCoreDiagnostics (~> 8.0)
+    - GoogleUtilities/Environment (~> 7.4)
+    - GoogleUtilities/Logger (~> 7.4)
+  - FirebaseCoreDiagnostics (8.0.0):
+    - GoogleDataTransport (~> 9.0)
+    - GoogleUtilities/Environment (~> 7.4)
+    - GoogleUtilities/Logger (~> 7.4)
+    - nanopb (~> 2.30908.0)
+  - FirebaseInstallations (8.0.0):
+    - FirebaseCore (~> 8.0)
+    - GoogleUtilities/Environment (~> 7.4)
+    - GoogleUtilities/UserDefaults (~> 7.4)
+    - PromisesObjC (~> 1.2)
+  - FirebaseMessaging (8.0.0):
+    - FirebaseCore (~> 8.0)
+    - FirebaseInstallations (~> 8.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
+    - GoogleUtilities/Environment (~> 7.4)
+    - GoogleUtilities/Reachability (~> 7.4)
+    - GoogleUtilities/UserDefaults (~> 7.4)
+  - GoogleAppMeasurement (8.0.0):
+    - GoogleAppMeasurement/AdIdSupport (= 8.0.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
+    - GoogleUtilities/MethodSwizzler (~> 7.4)
+    - GoogleUtilities/Network (~> 7.4)
+    - "GoogleUtilities/NSData+zlib (~> 7.4)"
+    - nanopb (~> 2.30908.0)
+  - GoogleAppMeasurement/AdIdSupport (8.0.0):
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
+    - GoogleUtilities/MethodSwizzler (~> 7.4)
+    - GoogleUtilities/Network (~> 7.4)
+    - "GoogleUtilities/NSData+zlib (~> 7.4)"
+    - nanopb (~> 2.30908.0)
+  - GoogleDataTransport (9.0.0):
+    - GoogleUtilities/Environment (~> 7.2)
+    - nanopb (~> 2.30908.0)
+    - PromisesObjC (~> 1.2)
+  - GoogleUtilities/AppDelegateSwizzler (7.4.1):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (7.4.1):
+    - PromisesObjC (~> 1.2)
+  - GoogleUtilities/Logger (7.4.1):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (7.4.1):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (7.4.1):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (7.4.1)"
+  - GoogleUtilities/Reachability (7.4.1):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (7.4.1):
+    - GoogleUtilities/Logger
   - lottie-ios (3.2.3)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
+  - nanopb (2.30908.0):
+    - nanopb/decode (= 2.30908.0)
+    - nanopb/encode (= 2.30908.0)
+  - nanopb/decode (2.30908.0)
+  - nanopb/encode (2.30908.0)
+  - PromisesObjC (1.2.12)
   - SwiftLint (0.43.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.4)
+  - Firebase/Analytics
+  - Firebase/Messaging
   - lottie-ios
   - Moya (~> 14.0)
   - SwiftLint
@@ -16,16 +118,38 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseCoreDiagnostics
+    - FirebaseInstallations
+    - FirebaseMessaging
+    - GoogleAppMeasurement
+    - GoogleDataTransport
+    - GoogleUtilities
     - lottie-ios
     - Moya
+    - nanopb
+    - PromisesObjC
     - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  Firebase: 73c3e3b216ec1ecbc54d2ffdd4670c65c749edb1
+  FirebaseAnalytics: dcb92c7c9ef4fa7ffac276e8f87bd4fc8c97f1b8
+  FirebaseCore: 3f09591d51292843e2a46f18358d60bf4e996255
+  FirebaseCoreDiagnostics: a31d987ba0fe16d59886a5dbadc2f1de871f88c8
+  FirebaseInstallations: c4aab1005d6547b00a7529777fe52f5d4d45165b
+  FirebaseMessaging: 1a33b4af3c8042ed6ddacb6c031894af2064bfab
+  GoogleAppMeasurement: c6bbc9753d046b5456dd4f940057fbad2c28419e
+  GoogleDataTransport: 11e3a5f2c190327df1a4a5d7e7ae3d4d5b9c9e4c
+  GoogleUtilities: f8a43108b38a68eebe8b3540e1f4f2d28843ce20
   lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
+  PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
 
-PODFILE CHECKSUM: bfaf46783cf04514e067994a9d5ecbd329e4beb5
+PODFILE CHECKSUM: 1e2fec289ca23ec57e8ef8924c74fe0fa7fd775a
 
 COCOAPODS: 1.10.1

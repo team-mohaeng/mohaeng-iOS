@@ -10,4 +10,6 @@ target 'Journey' do
 	pod 'Moya', '~> 14.0'
 	pod 'SwiftLint'
 	pod 'lottie-ios'
+	pod 'Firebase/Analytics'
+	pod 'Firebase/Messaging'
 end
