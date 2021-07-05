@@ -56,6 +56,7 @@
 		56DCAAB4268C6D760056155A /* DoneCourseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAAB2268C6D760056155A /* DoneCourseCollectionViewCell.xib */; };
 		56DCAAB6268C6F5D0056155A /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAAB5268C6F5D0056155A /* Course.swift */; };
 		56DCAA9F268C51E50056155A /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA9E268C51E50056155A /* Challenge.swift */; };
+		56DCAAC226907C940056155A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAAC126907C940056155A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +110,8 @@
 		56DCAAB2268C6D760056155A /* DoneCourseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoneCourseCollectionViewCell.xib; sourceTree = "<group>"; };
 		56DCAAB5268C6F5D0056155A /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		56DCAA9E268C51E50056155A /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		56DCAAC126907C940056155A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		56DCAAC326907F880056155A /* Journey.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Journey.entitlements; sourceTree = "<group>"; };
 		7E48B7936113F659E5F3BD09 /* Pods-Journey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journey.release.xcconfig"; path = "Target Support Files/Pods-Journey/Pods-Journey.release.xcconfig"; sourceTree = "<group>"; };
 		9DAC4B8168D442A39A098439 /* Pods_Journey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Journey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE04EE8E2CC2D99FF8A949C4 /* Pods-Journey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journey.debug.xcconfig"; path = "Target Support Files/Pods-Journey/Pods-Journey.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +168,7 @@
 		56DCAA262689BB9B0056155A /* Journey */ = {
 			isa = PBXGroup;
 			children = (
+				56DCAAC326907F880056155A /* Journey.entitlements */,
 				56DCAA3C2689BC010056155A /* Resources */,
 				56DCAA3B2689BBF90056155A /* Sources */,
 			);
@@ -192,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				56DCAA352689BB9E0056155A /* Info.plist */,
+				56DCAAC126907C940056155A /* GoogleService-Info.plist */,
 				56DCAA302689BB9E0056155A /* Assets.xcassets */,
 				56DCAA6E2689DB500056155A /* Colors.xcassets */,
 				56DCAA472689BCA40056155A /* Lottie */,
@@ -481,6 +486,7 @@
 				56DCAAB0268C6D690056155A /* UndoneCourseCollectionViewCell.xib in Resources */,
 				56DCAAB4268C6D760056155A /* DoneCourseCollectionViewCell.xib in Resources */,
 				56DCAA93268AFF3A0056155A /* FirstDayTableViewCell.xib in Resources */,
+				56DCAAC226907C940056155A /* GoogleService-Info.plist in Resources */,
 				56DCAA342689BB9E0056155A /* LaunchScreen.storyboard in Resources */,
 				56DCAA312689BB9E0056155A /* Assets.xcassets in Resources */,
 				56DCAA7C268AE1310056155A /* Challenge.storyboard in Resources */,
@@ -726,16 +732,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Journey/Journey.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EQ7Z68Z2F2;
+				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				INFOPLIST_FILE = Journey/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.team-journey.Journey";
+				PRODUCT_BUNDLE_IDENTIFIER = com.choyi.Journey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -747,16 +756,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Journey/Journey.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EQ7Z68Z2F2;
+				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				INFOPLIST_FILE = Journey/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.team-journey.Journey";
+				PRODUCT_BUNDLE_IDENTIFIER = com.choyi.Journey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
