@@ -41,7 +41,6 @@ class FeedViewController: UIViewController {
     // MARK: - function
     
     private func initNavigationBar() {
-        self.navigationController?.initNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
         self.navigationController?.hideNavigationBar()
     }
     
