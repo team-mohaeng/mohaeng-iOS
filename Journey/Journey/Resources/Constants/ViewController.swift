@@ -19,6 +19,7 @@ extension Const {
             
             // 홈 탭
             static let home = "HomeViewController"
+            static let medal = "MedalViewController"
             
             // 챌린지 탭
             static let challenge = "ChallengeViewController"
