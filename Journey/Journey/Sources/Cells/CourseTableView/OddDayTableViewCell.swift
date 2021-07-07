@@ -93,15 +93,10 @@ class OddDayTableViewCell: UITableViewCell {
     
     func setCell(challenge: Challenge) {
         // 날짜 label
-        if challenge.date != "" {
+        if challenge.year != "" {
             dayLabelBgView.isHidden = false
             
-            // date string mm.yy 형식으로 가공
-            let start = challenge.date.index(challenge.date.startIndex, offsetBy: 5)
-            let range = start..<challenge.date.endIndex
-            let shortDate = String(challenge.date[range])
-            
-            dayLabel.text = "\(shortDate) 완료"
+            dayLabel.text = "\(challenge.month).\(challenge.day) 완료"
         } else {
             dayLabelBgView.isHidden = true
         }
@@ -109,7 +104,7 @@ class OddDayTableViewCell: UITableViewCell {
         // n일차 label
         dayCountLabel.text = "\(challenge.day)일차"
         // 미션 label
-        descriptionLabel.text = challenge.title
+        descriptionLabel.text = challenge.challengeDescription
         
         // situation에 따른 색상 분기처리
         setColorBySituation(situation: challenge.situation)
