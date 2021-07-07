@@ -77,6 +77,14 @@ extension CourseViewController: UITableViewDelegate {
         
         return 160
     }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
 }
 
 // MARK: - UITableViewDataSource
