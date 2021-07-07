@@ -31,6 +31,7 @@ class FeedViewController: UIViewController {
         setDelegation()
         registerXib()
         initAtrributes()
+        addObserver()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -69,7 +70,17 @@ class FeedViewController: UIViewController {
         let feedContentsCollectionViewCell = UINib(nibName: "FeedContentsCollectionViewCell", bundle: nil)
         feedCollectionView.register(feedContentsCollectionViewCell, forCellWithReuseIdentifier: "FeedContentsCollectionViewCell")
     }
+    
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(dataReceived), name: NSNotification.Name("myDrawerCilcked"), object: nil)
+    }
 
+    @objc func dataReceived(notification: NSNotification) {
+        let myDrawerStoryboard = UIStoryboard(name: Const.Storyboard.Name.myDrawer, bundle: nil)
+        guard let nextVC = myDrawerStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.myDrawer) as? MyDrawerViewController else { return }
+        
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
 }
 
 extension FeedViewController: UICollectionViewDataSource {

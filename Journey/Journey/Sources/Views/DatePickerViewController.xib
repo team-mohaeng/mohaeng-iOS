@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DatePickerViewController" customModule="Journey" customModuleProvider="target">
+            <connections>
+                <outlet property="applyButton" destination="sCu-ic-i1Z" id="ezZ-lx-xZa"/>
+                <outlet property="closeButton" destination="Txx-gb-GLQ" id="sgD-lX-8Jq"/>
+                <outlet property="monthPickerView" destination="o7C-sc-58G" id="fgY-mc-BRB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="yearPickerView" destination="awR-kU-Xeh" id="DIZ-e9-hWC"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="I">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Txx-gb-GLQ">
+                    <rect key="frame" x="332" y="19" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="7Vh-es-84I"/>
+                        <constraint firstAttribute="height" constant="24" id="K99-kk-53C"/>
+                    </constraints>
+                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" image="xmark" catalog="system"/>
+                    <connections>
+                        <action selector="touchCloseButton:" destination="-1" eventType="touchUpInside" id="nzS-WW-fMJ"/>
+                    </connections>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="j1g-uB-Rnf">
+                    <rect key="frame" x="75" y="43" width="225" height="145"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JSS-3D-bsl">
+                            <rect key="frame" x="0.0" y="0.0" width="112.5" height="145"/>
+                            <subviews>
+                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awR-kU-Xeh">
+                                    <rect key="frame" x="0.0" y="0.0" width="84.5" height="145"/>
+                                </pickerView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="년" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Hu-zq-aVK">
+                                    <rect key="frame" x="92.5" y="0.0" width="20" height="145"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="20" id="y0l-TF-UW5"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sp4-Gb-thl">
+                            <rect key="frame" x="112.5" y="0.0" width="112.5" height="145"/>
+                            <subviews>
+                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7C-sc-58G">
+                                    <rect key="frame" x="0.0" y="0.0" width="84.5" height="145"/>
+                                </pickerView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="월" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4M-zw-ZDL">
+                                    <rect key="frame" x="92.5" y="0.0" width="20" height="145"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="20" id="iPU-pf-OHP"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCu-ic-i1Z">
+                    <rect key="frame" x="47" y="205" width="280" height="44"/>
+                    <color key="backgroundColor" name="Pink"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="z1H-DE-Wr4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <inset key="contentEdgeInsets" minX="0.0" minY="14" maxX="0.0" maxY="14"/>
+                    <state key="normal" title="선택">
+                        <color key="titleColor" name="White"/>
+                    </state>
+                    <connections>
+                        <action selector="touchApplyButton:" destination="-1" eventType="touchUpInside" id="Mse-pS-qEf"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="sCu-ic-i1Z" secondAttribute="bottom" constant="51" id="4Lm-fh-tLI"/>
+                <constraint firstItem="sCu-ic-i1Z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="47" id="D5i-dn-bco"/>
+                <constraint firstItem="sCu-ic-i1Z" firstAttribute="top" secondItem="j1g-uB-Rnf" secondAttribute="bottom" constant="17" id="Hau-Aj-Jth"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sCu-ic-i1Z" secondAttribute="trailing" constant="48" id="IRm-KV-izT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="j1g-uB-Rnf" secondAttribute="trailing" constant="75" id="Q5Z-rW-po8"/>
+                <constraint firstItem="Txx-gb-GLQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="19" id="Sgs-13-LEq"/>
+                <constraint firstItem="j1g-uB-Rnf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="75" id="W8O-13-ZOD"/>
+                <constraint firstItem="j1g-uB-Rnf" firstAttribute="top" secondItem="Txx-gb-GLQ" secondAttribute="bottom" id="hFw-it-KCP"/>
+                <constraint firstAttribute="trailing" secondItem="Txx-gb-GLQ" secondAttribute="trailing" constant="19" id="yce-G3-FC4"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="213.768115942029" y="189.17410714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="Pink">
+            <color red="0.95300000905990601" green="0.48600000143051147" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -48,6 +48,9 @@
                             <state key="normal" title="내 서랍장">
                                 <color key="titleColor" systemColor="labelColor"/>
                             </state>
+                            <connections>
+                                <action selector="touchMyDrawerButton:" destination="-1" eventType="touchUpInside" id="EpX-Xm-VdI"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" name="LightPink"/>
@@ -73,6 +76,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="myDrawerButton" destination="R95-9z-LU9" id="cdk-HZ-wMi"/>
                 <outlet property="writeFeedButton" destination="emF-8p-DxI" id="mEr-UN-0bO"/>
             </connections>
             <point key="canvasLocation" x="-84.782608695652186" y="58.258928571428569"/>

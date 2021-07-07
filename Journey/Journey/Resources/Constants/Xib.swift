@@ -22,6 +22,10 @@ extension Const {
             // 코스 둘러보기 뷰
             static let doneCourseCollectionViewCell = "DoneCourseCollectionViewCell"
             static let undoneCourseCollectionViewCell = "UndoneCourseCollectionViewCell"
+            
+            // 피드 뷰
+            static let feedContentsCollectionViewCell = "FeedContentsCollectionViewCell"
+            static let myDrawerCollectionReusableView = "MyDrawerCollectionReusableView"
         }
         
         struct Identifier {
@@ -35,6 +39,10 @@ extension Const {
             // 코스 둘러보기 뷰
             static let doneCourseCollectionViewCell = "DoneCourseCollectionViewCell"
             static let undoneCourseCollectionViewCell = "UndoneCourseCollectionViewCell"
+            
+            // 피드뷰
+            static let feedContentsCollectionViewCell = "FeedContentsCollectionViewCell"
+            static let myDrawerCollectionReusableView = "MyDrawerCollectionReusableView"
         }
         
     }
