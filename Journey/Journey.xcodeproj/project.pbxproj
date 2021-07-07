@@ -62,6 +62,8 @@
 		56DCAAB6268C6F5D0056155A /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAAB5268C6F5D0056155A /* Course.swift */; };
 		56DCAAB9268CA02A0056155A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAAB8268CA02A0056155A /* Login.storyboard */; };
 		56DCAABC268CA0FA0056155A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAABB268CA0FA0056155A /* LoginViewController.swift */; };
+		56EAF7592694BDD300D36105 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EAF7572694BDD300D36105 /* PopUpViewController.swift */; };
+		56EAF75A2694BDD300D36105 /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56EAF7582694BDD300D36105 /* PopUpViewController.xib */; };
 		56EAF7512694AF2E00D36105 /* MedalCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EAF74F2694AF2E00D36105 /* MedalCollectionReusableView.swift */; };
 		56EAF7522694AF2E00D36105 /* MedalCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56EAF7502694AF2E00D36105 /* MedalCollectionReusableView.xib */; };
 		AA1F348E2692FB920011B3FA /* FeedDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1F348D2692FB920011B3FA /* FeedDetail.storyboard */; };
@@ -130,6 +132,8 @@
 		56DCAAB8268CA02A0056155A /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		56DCAABB268CA0FA0056155A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		56DCAAC326907F880056155A /* Journey.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Journey.entitlements; sourceTree = "<group>"; };
+		56EAF7572694BDD300D36105 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		56EAF7582694BDD300D36105 /* PopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpViewController.xib; sourceTree = "<group>"; };
 		56EAF74F2694AF2E00D36105 /* MedalCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalCollectionReusableView.swift; sourceTree = "<group>"; };
 		56EAF7502694AF2E00D36105 /* MedalCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedalCollectionReusableView.xib; sourceTree = "<group>"; };
 		7E48B7936113F659E5F3BD09 /* Pods-Journey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journey.release.xcconfig"; path = "Target Support Files/Pods-Journey/Pods-Journey.release.xcconfig"; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 				56DCAA85268AE1E30056155A /* Home */,
 				56DCAA86268AE1EA0056155A /* Challenge */,
 				56DCAA87268AE1EE0056155A /* Feed */,
+				56EAF75B2694C5DA00D36105 /* PopUp */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -468,6 +473,15 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		56EAF75B2694C5DA00D36105 /* PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				56EAF7572694BDD300D36105 /* PopUpViewController.swift */,
+				56EAF7582694BDD300D36105 /* PopUpViewController.xib */,
+			);
+			path = PopUp;
+			sourceTree = "<group>";
+		};
 		AAFD90BF269047A000CF4707 /* FeedCollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -549,6 +563,7 @@
 				56DCAAA1268C61810056155A /* CourseLibrary.storyboard in Resources */,
 				56DCAA6F2689DB500056155A /* Colors.xcassets in Resources */,
 				56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */,
+				56EAF75A2694BDD300D36105 /* PopUpViewController.xib in Resources */,
 				56DCAAB0268C6D690056155A /* UndoneCourseCollectionViewCell.xib in Resources */,
 				56EAF7522694AF2E00D36105 /* MedalCollectionReusableView.xib in Resources */,
 				568F64C22692F9E20066B9D1 /* GoogleService-Info.plist in Resources */,
@@ -631,6 +646,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56DCAABC268CA0FA0056155A /* LoginViewController.swift in Sources */,
+				56EAF7592694BDD300D36105 /* PopUpViewController.swift in Sources */,
 				56DCAA4F2689BD110056155A /* ViewController.swift in Sources */,
 				56DCAA9F268C51E50056155A /* Challenge.swift in Sources */,
 				56AADEF42694AE2300131D2C /* MedalCollectionViewCell.swift in Sources */,
