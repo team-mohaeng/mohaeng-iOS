@@ -9,6 +9,16 @@ import UIKit
 
 class DoneCourseCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - Properties
+    
+    var courseViewModel: CourseViewModel! {
+        didSet {
+            titleLabel.text = courseViewModel.course.title
+            courseDaysLabel.text = "\(courseViewModel.course.courseDays)"
+            descriptionTextView.text = courseViewModel.course.description
+        }
+    }
+    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var cellBgView: UIView!
@@ -32,12 +42,7 @@ class DoneCourseCollectionViewCell: UICollectionViewCell {
         cellBgView.makeRounded(radius: 14)
     }
     
-    func setCell(course: Course, doingCourse: Bool) {
-        
-        titleLabel.text = course.title
-        courseDaysLabel.text = "\(course.courseDays)"
-        descriptionTextView.text = course.description
-        
+    func setButtonTitle(doingCourse: Bool) {
         if doingCourse {
             startButton.setTitle("코스 변경하기", for: .normal)
         } else {

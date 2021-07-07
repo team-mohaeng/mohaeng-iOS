@@ -13,6 +13,11 @@ extension Const {
         
         struct Name {
             
+            // 홈 탭
+            // 메달 뷰
+            static let medalCollectionReusableView = "MedalCollectionReusableView"
+            static let medalCollectionViewCell = "MedalCollectionViewCell"
+            
             // 챌린지 탭
             // 코스 뷰
             static let firstDayTableViewCell = "FirstDayTableViewCell"
@@ -29,6 +34,11 @@ extension Const {
         }
         
         struct Identifier {
+            
+            // 홈 탭
+            // 메달 뷰
+            static let medalCollectionReusableView = "MedalCollectionReusableView"
+            static let medalCollectionViewCell = "MedalCollectionViewCell"
             
             // 챌린지 탭
             // 코스 뷰

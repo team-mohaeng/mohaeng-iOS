@@ -34,6 +34,10 @@ class FeedViewController: UIViewController {
         addObserver()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.hideNavigationBar()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         headerView.frame = CGRect(x: 0, y: feedCollectionView.safeAreaInsets.top, width: UIScreen.main.bounds.width, height: (205 / 812) * UIScreen.main.bounds.height + 344)
         self.feedCollectionView.insertSubview(self.feedBackgroundFrame, at: 0)
@@ -85,6 +89,7 @@ class FeedViewController: UIViewController {
 
 extension FeedViewController: UICollectionViewDataSource {
     
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 64
     }
@@ -100,6 +105,13 @@ extension FeedViewController: UICollectionViewDataSource {
 }
 
 extension FeedViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let feedDetailStoryboard = UIStoryboard.init(name: Const.Storyboard.Name.feedDetail, bundle: nil)
+        let feedDetailViewController = feedDetailStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.feedDetail)
+        
+        self.navigationController?.pushViewController(feedDetailViewController, animated: true)
+    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offset = scrollView.contentOffset.y
