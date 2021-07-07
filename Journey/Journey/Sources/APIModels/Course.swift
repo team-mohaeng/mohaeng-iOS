@@ -7,20 +7,26 @@
 
 import Foundation
 
-struct Course {
-    let id: Int
-    let title: String
-    let description: String
-    let courseDays: Int
-    let situation: Int
+struct Course: Codable {
+    let id, situation: Int
+    let title, courseDescription: String
+    let totalDays: Int
     let property: String
+    let challenges: [Challenge]
+
+    enum CodingKeys: String, CodingKey {
+        case id, situation, title
+        case courseDescription = "description"
+        case totalDays, property, challenges
+    }
     
-    init(id: Int, title: String, description: String, courseDays: Int, situation: Int, property: String) {
+    init(id: Int, title: String, courseDescription: String, totalDays: Int, situation: Int, property: String, challenges: [Challenge]) {
         self.id = id
-        self.title = title
-        self.description = description
-        self.courseDays = courseDays
         self.situation = situation
+        self.title = title
+        self.courseDescription = courseDescription
+        self.totalDays = totalDays
         self.property = property
+        self.challenges = challenges
     }
 }
