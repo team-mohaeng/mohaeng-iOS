@@ -31,6 +31,11 @@ class FeedViewController: UIViewController {
         setDelegation()
         registerXib()
         initAtrributes()
+        addObserver()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.hideNavigationBar()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -69,10 +74,21 @@ class FeedViewController: UIViewController {
         let feedContentsCollectionViewCell = UINib(nibName: "FeedContentsCollectionViewCell", bundle: nil)
         feedCollectionView.register(feedContentsCollectionViewCell, forCellWithReuseIdentifier: "FeedContentsCollectionViewCell")
     }
+    
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(dataReceived), name: NSNotification.Name("myDrawerCilcked"), object: nil)
+    }
 
+    @objc func dataReceived(notification: NSNotification) {
+        let myDrawerStoryboard = UIStoryboard(name: Const.Storyboard.Name.myDrawer, bundle: nil)
+        guard let nextVC = myDrawerStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.myDrawer) as? MyDrawerViewController else { return }
+        
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
 }
 
 extension FeedViewController: UICollectionViewDataSource {
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 64
@@ -89,6 +105,13 @@ extension FeedViewController: UICollectionViewDataSource {
 }
 
 extension FeedViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let feedDetailStoryboard = UIStoryboard.init(name: Const.Storyboard.Name.feedDetail, bundle: nil)
+        let feedDetailViewController = feedDetailStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.feedDetail)
+        
+        self.navigationController?.pushViewController(feedDetailViewController, animated: true)
+    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offset = scrollView.contentOffset.y

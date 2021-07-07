@@ -13,6 +13,11 @@ extension Const {
         
         struct Name {
             
+            // 홈 탭
+            // 메달 뷰
+            static let medalCollectionReusableView = "MedalCollectionReusableView"
+            static let medalCollectionViewCell = "MedalCollectionViewCell"
+            
             // 챌린지 탭
             // 코스 뷰
             static let firstDayTableViewCell = "FirstDayTableViewCell"
@@ -22,10 +27,19 @@ extension Const {
             // 코스 둘러보기 뷰
             static let doneCourseCollectionViewCell = "DoneCourseCollectionViewCell"
             static let undoneCourseCollectionViewCell = "UndoneCourseCollectionViewCell"
+            
+            // 피드 뷰
+            static let feedContentsCollectionViewCell = "FeedContentsCollectionViewCell"
+            static let myDrawerCollectionReusableView = "MyDrawerCollectionReusableView"
         }
         
         struct Identifier {
             
+            // 홈 탭
+            // 메달 뷰
+            static let medalCollectionReusableView = "MedalCollectionReusableView"
+            static let medalCollectionViewCell = "MedalCollectionViewCell"
+            
             // 챌린지 탭
             // 코스 뷰
             static let firstDayTableViewCell = "FirstDayTableViewCell"
@@ -35,6 +49,10 @@ extension Const {
             // 코스 둘러보기 뷰
             static let doneCourseCollectionViewCell = "DoneCourseCollectionViewCell"
             static let undoneCourseCollectionViewCell = "UndoneCourseCollectionViewCell"
+            
+            // 피드뷰
+            static let feedContentsCollectionViewCell = "FeedContentsCollectionViewCell"
+            static let myDrawerCollectionReusableView = "MyDrawerCollectionReusableView"
         }
         
     }
