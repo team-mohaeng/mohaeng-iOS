@@ -9,7 +9,6 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var subTitleLabel: UILabel!
@@ -29,6 +28,16 @@ class HomeViewController: UIViewController {
         initProgressView()
     }
     
+    // MARK: - @IBAction Functions
+    
+    @objc func touchAwardButton(sender: UIButton) {
+        let medalStoryboard = UIStoryboard(name: Const.Storyboard.Name.medal, bundle: nil)
+        guard let medalViewController = medalStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.medal) as? MedalViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(medalViewController, animated: true)
+    }
+    
     // MARK: - Functions
     
     private func initNavigationBar() {
@@ -45,6 +54,7 @@ class HomeViewController: UIViewController {
         let button: UIButton = UIButton.init(type: .custom)
         button.setImage(UIImage(named: name), for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        button.addTarget(self, action: #selector(touchAwardButton(sender:)), for: .touchUpInside)
         let item = UIBarButtonItem(customView: button)
         
         return item
