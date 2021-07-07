@@ -28,7 +28,6 @@
 		56DCAA572689BD980056155A /* FontExmaple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA562689BD980056155A /* FontExmaple.swift */; };
 		56DCAA592689BD9F0056155A /* LottieExmaple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA582689BD9F0056155A /* LottieExmaple.swift */; };
 		56DCAA5C2689BDF20056155A /* APIServicesExmaple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA5B2689BDF20056155A /* APIServicesExmaple.swift */; };
-		56DCAA5E2689BDF80056155A /* APIModelsExmaple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA5D2689BDF80056155A /* APIModelsExmaple.swift */; };
 		56DCAA602689BDFF0056155A /* AppModelsExmaple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA5F2689BDFF0056155A /* AppModelsExmaple.swift */; };
 		56DCAA622689BE080056155A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA612689BE080056155A /* UIColor+Extension.swift */; };
 		56DCAA642689BE110056155A /* ProtocolsExmaple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA632689BE110056155A /* ProtocolsExmaple.swift */; };
@@ -62,6 +61,8 @@
 		56DCAAB6268C6F5D0056155A /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAAB5268C6F5D0056155A /* Course.swift */; };
 		56DCAAB9268CA02A0056155A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAAB8268CA02A0056155A /* Login.storyboard */; };
 		56DCAABC268CA0FA0056155A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAABB268CA0FA0056155A /* LoginViewController.swift */; };
+		56EAF75F26955B5300D36105 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EAF75E26955B5300D36105 /* User.swift */; };
+		56EAF76126955C0300D36105 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EAF76026955C0300D36105 /* Home.swift */; };
 		AA1F349726935A890011B3FA /* MyDrawer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1F349626935A890011B3FA /* MyDrawer.storyboard */; };
 		AA1F349A2693688F0011B3FA /* MyDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34992693688F0011B3FA /* MyDrawerViewController.swift */; };
 		AA1F34A9269377F30011B3FA /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34A7269377F30011B3FA /* DatePickerViewController.swift */; };
@@ -105,7 +106,6 @@
 		56DCAA562689BD980056155A /* FontExmaple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExmaple.swift; sourceTree = "<group>"; };
 		56DCAA582689BD9F0056155A /* LottieExmaple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieExmaple.swift; sourceTree = "<group>"; };
 		56DCAA5B2689BDF20056155A /* APIServicesExmaple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServicesExmaple.swift; sourceTree = "<group>"; };
-		56DCAA5D2689BDF80056155A /* APIModelsExmaple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModelsExmaple.swift; sourceTree = "<group>"; };
 		56DCAA5F2689BDFF0056155A /* AppModelsExmaple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModelsExmaple.swift; sourceTree = "<group>"; };
 		56DCAA612689BE080056155A /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		56DCAA632689BE110056155A /* ProtocolsExmaple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolsExmaple.swift; sourceTree = "<group>"; };
@@ -140,6 +140,8 @@
 		56DCAAB8268CA02A0056155A /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		56DCAABB268CA0FA0056155A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		56DCAAC326907F880056155A /* Journey.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Journey.entitlements; sourceTree = "<group>"; };
+		56EAF75E26955B5300D36105 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		56EAF76026955C0300D36105 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		56EAF7572694BDD300D36105 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		56EAF7582694BDD300D36105 /* PopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpViewController.xib; sourceTree = "<group>"; };
 		56EAF74F2694AF2E00D36105 /* MedalCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -391,7 +393,8 @@
 		56DCAA5A2689BDC40056155A /* APIModels */ = {
 			isa = PBXGroup;
 			children = (
-				56DCAA5D2689BDF80056155A /* APIModelsExmaple.swift */,
+				56EAF75E26955B5300D36105 /* User.swift */,
+				56EAF76026955C0300D36105 /* Home.swift */,
 				56DCAA9E268C51E50056155A /* Challenge.swift */,
 				56DCAAB5268C6F5D0056155A /* Course.swift */,
 				AA1F34AC26939E260011B3FA /* AppDate.swift */,
@@ -687,7 +690,6 @@
 				56DCAA82268AE1B10056155A /* ChallengeViewController.swift in Sources */,
 				AA1F34AD26939E260011B3FA /* AppDate.swift in Sources */,
 				56DCAA592689BD9F0056155A /* LottieExmaple.swift in Sources */,
-				56DCAA5E2689BDF80056155A /* APIModelsExmaple.swift in Sources */,
 				56DCAAB3268C6D760056155A /* DoneCourseCollectionViewCell.swift in Sources */,
 				56DCAA602689BDFF0056155A /* AppModelsExmaple.swift in Sources */,
 				56DCAA622689BE080056155A /* UIColor+Extension.swift in Sources */,
@@ -707,9 +709,11 @@
 				56DCAA552689BD3B0056155A /* Font.swift in Sources */,
 				56DCAA80268AE1A50056155A /* HomeViewController.swift in Sources */,
 				56DCAA4A2689BCD80056155A /* Const.swift in Sources */,
+				56EAF75F26955B5300D36105 /* User.swift in Sources */,
 				56DCAA84268AE1BD0056155A /* FeedViewController.swift in Sources */,
 				AA1F349A2693688F0011B3FA /* MyDrawerViewController.swift in Sources */,
 				56DCAA96268AFF510056155A /* EvenDayTableViewCell.swift in Sources */,
+				56EAF76126955C0300D36105 /* Home.swift in Sources */,
 				56DCAA282689BB9B0056155A /* AppDelegate.swift in Sources */,
 				56DCAA2A2689BB9B0056155A /* SceneDelegate.swift in Sources */,
 				AA1F34BD26956C400011B3FA /* MyDrawerCollectionReusableView.swift in Sources */,
