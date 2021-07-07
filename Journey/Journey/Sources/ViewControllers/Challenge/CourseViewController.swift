@@ -12,13 +12,13 @@ class CourseViewController: UIViewController {
     // MARK: - Properties
     
     var challenges: [Challenge] = [
-        Challenge(day: 1, date: "2021.06.27", title: "알콜스왑으로 핸드폰 닦기", situation: 2),
-        Challenge(day: 2, date: "2021.06.28", title: "깨끗하게 손 씻기 3회", situation: 2),
-        Challenge(day: 3, date: "2021.06.29", title: "샤워하기", situation: 2),
-        Challenge(day: 4, date: "", title: "세수하고 팩하기", situation: 1),
-        Challenge(day: 5, date: "", title: "알콜스왑으로 핸드폰 닦기", situation: 0),
-        Challenge(day: 6, date: "", title: "알콜스왑으로 핸드폰 닦기", situation: 0),
-        Challenge(day: 7, date: "", title: "알콜스왑으로 핸드폰 닦기", situation: 0)
+        Challenge(id: 1, situation: 2, challengeDescription: "알콜스왑으로 핸드폰 닦기", year: "2021", month: "06", day: "27", currentStamp: 3, totalStamp: 3, userMents: ["알콜스왑으로 핸드폰 닦기"]),
+        Challenge(id: 1, situation: 2, challengeDescription: "알콜스왑으로 핸드폰 닦기", year: "2021", month: "06", day: "27", currentStamp: 3, totalStamp: 3, userMents: ["알콜스왑으로 핸드폰 닦기"]),
+        Challenge(id: 1, situation: 2, challengeDescription: "알콜스왑으로 핸드폰 닦기", year: "2021", month: "06", day: "27", currentStamp: 3, totalStamp: 3, userMents: ["알콜스왑으로 핸드폰 닦기"]),
+        Challenge(id: 1, situation: 1, challengeDescription: "알콜스왑으로 핸드폰 닦기", year: "2021", month: "06", day: "27", currentStamp: 3, totalStamp: 3, userMents: ["알콜스왑으로 핸드폰 닦기"]),
+        Challenge(id: 1, situation: 0, challengeDescription: "알콜스왑으로 핸드폰 닦기", year: "2021", month: "06", day: "27", currentStamp: 3, totalStamp: 3, userMents: ["알콜스왑으로 핸드폰 닦기"]),
+        Challenge(id: 1, situation: 0, challengeDescription: "알콜스왑으로 핸드폰 닦기", year: "2021", month: "06", day: "27", currentStamp: 3, totalStamp: 3, userMents: ["알콜스왑으로 핸드폰 닦기"]),
+        Challenge(id: 1, situation: 0, challengeDescription: "알콜스왑으로 핸드폰 닦기", year: "2021", month: "06", day: "27", currentStamp: 3, totalStamp: 3, userMents: ["알콜스왑으로 핸드폰 닦기"]),
     ]
     
     // MARK: - @IBOutlet Properties
