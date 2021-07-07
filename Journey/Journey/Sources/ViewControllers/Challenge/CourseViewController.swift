@@ -72,10 +72,10 @@ extension CourseViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if indexPath.row == 0 {
-            return 130
+            return 123
         }
         
-        return 188
+        return 160
     }
 }
 
@@ -92,6 +92,7 @@ extension CourseViewController: UITableViewDataSource {
             if let cell = courseTableView.dequeueReusableCell(withIdentifier: Const.Xib.Identifier.firstDayTableViewCell) as? FirstDayTableViewCell {
                 
                 cell.setCell(challenge: challenges[indexPath.row])
+                cell.setNextSituation(next: challenges[indexPath.row + 1].situation)
                 
                 return cell
             }
@@ -104,6 +105,10 @@ extension CourseViewController: UITableViewDataSource {
                 
                 cell.setCell(challenge: challenges[indexPath.row])
                 
+                if indexPath.row < challenges.count-1 {
+                    cell.setNextSituation(next: challenges[indexPath.row + 1].situation)
+                }
+                
                 return cell
             }
             return UITableViewCell()
@@ -112,6 +117,10 @@ extension CourseViewController: UITableViewDataSource {
             if let cell = courseTableView.dequeueReusableCell(withIdentifier: Const.Xib.Identifier.oddDayTableViewCell) as? OddDayTableViewCell {
                 
                 cell.setCell(challenge: challenges[indexPath.row])
+                
+                if indexPath.row < challenges.count-1 {
+                    cell.setNextSituation(next: challenges[indexPath.row + 1].situation)
+                }
                 
                 return cell
             }
