@@ -19,6 +19,7 @@ extension Const {
             
             // 홈 탭
             static let home = "Home"
+            static let medal = "Medal"
             
             // 챌린지 탭
             static let challenge = "Challenge"
@@ -27,6 +28,7 @@ extension Const {
             
             // 피드 탭
             static let feed = "Feed"
+            static let feedDetail = "FeedDetail"
         }
     }
 }
