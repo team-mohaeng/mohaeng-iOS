@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iFT-cS-LYx">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Feed Detail View Controller-->
+        <scene sceneID="h8x-Zb-4ao">
+            <objects>
+                <viewController storyboardIdentifier="FeedDetailViewController" id="iFT-cS-LYx" customClass="FeedDetailViewController" customModule="Journey" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YVV-Uv-i6o">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOB-Xg-u2l">
+                                <rect key="frame" x="24" y="61" width="366" height="780"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleHappinessImg" translatesAutoresizingMaskIntoConstraints="NO" id="SR4-wW-o85">
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="505"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="journeySmileSampleImg" translatesAutoresizingMaskIntoConstraints="NO" id="jNH-U8-g6Q">
+                                        <rect key="frame" x="141.5" y="464" width="83" height="83"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="83" id="1WL-fF-XW5"/>
+                                            <constraint firstAttribute="width" constant="83" id="9fF-ov-sFE"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시원 스쿨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkK-Rh-DUC">
+                                        <rect key="frame" x="142.5" y="607.5" width="81" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <color key="textColor" name="White"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021.06.28 (월)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONW-5R-Ge8">
+                                        <rect key="frame" x="140" y="556" width="86.5" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" name="White"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="맛있는 피자에 시원한 맥주 마시고 신선한 날씨에 담배 한대 폈어요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEV-gq-tN2">
+                                        <rect key="frame" x="36" y="649" width="294" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" name="White"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#여름좋아요 #산책갑시다요 #안녕하세요안 #ㅋㅋㅋㅋㅋㅋ #ㅉㅉㅋㅋㅋㅋ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NO4-28-RnW">
+                                        <rect key="frame" x="36" y="711.5" width="294" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <color key="textColor" name="hashtagPink"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="76" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmd-gQ-7uf">
+                                        <rect key="frame" x="325.5" y="615" width="12.5" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" name="White"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="darkGray"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="NO4-28-RnW" secondAttribute="trailing" constant="36" id="15j-3b-xVX"/>
+                                    <constraint firstItem="mmd-gQ-7uf" firstAttribute="centerY" secondItem="kkK-Rh-DUC" secondAttribute="centerY" id="66w-5p-MSs"/>
+                                    <constraint firstAttribute="bottom" secondItem="NO4-28-RnW" secondAttribute="bottom" constant="35" id="Kwm-xc-ltD"/>
+                                    <constraint firstItem="SR4-wW-o85" firstAttribute="top" secondItem="QOB-Xg-u2l" secondAttribute="top" id="Qaq-qF-KHJ"/>
+                                    <constraint firstItem="ONW-5R-Ge8" firstAttribute="centerX" secondItem="QOB-Xg-u2l" secondAttribute="centerX" id="RVp-ZY-X28"/>
+                                    <constraint firstItem="kkK-Rh-DUC" firstAttribute="top" secondItem="ONW-5R-Ge8" secondAttribute="bottom" constant="37" id="UET-ed-5Ku"/>
+                                    <constraint firstItem="ONW-5R-Ge8" firstAttribute="top" secondItem="jNH-U8-g6Q" secondAttribute="bottom" constant="9" id="WcX-QR-nnJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="MEV-gq-tN2" secondAttribute="trailing" constant="36" id="ceZ-K5-emc"/>
+                                    <constraint firstItem="SR4-wW-o85" firstAttribute="leading" secondItem="QOB-Xg-u2l" secondAttribute="leading" id="czz-lQ-XXS"/>
+                                    <constraint firstItem="jNH-U8-g6Q" firstAttribute="bottom" secondItem="SR4-wW-o85" secondAttribute="bottom" constant="42" id="ezm-6c-1Yi"/>
+                                    <constraint firstItem="NO4-28-RnW" firstAttribute="centerX" secondItem="QOB-Xg-u2l" secondAttribute="centerX" id="ita-Hs-vik"/>
+                                    <constraint firstItem="jNH-U8-g6Q" firstAttribute="centerX" secondItem="QOB-Xg-u2l" secondAttribute="centerX" id="kLG-Rk-VLm"/>
+                                    <constraint firstItem="NO4-28-RnW" firstAttribute="leading" secondItem="QOB-Xg-u2l" secondAttribute="leading" constant="36" id="kfP-em-WzS"/>
+                                    <constraint firstItem="MEV-gq-tN2" firstAttribute="top" secondItem="kkK-Rh-DUC" secondAttribute="bottom" constant="15" id="lhH-rl-EHR"/>
+                                    <constraint firstItem="kkK-Rh-DUC" firstAttribute="centerX" secondItem="QOB-Xg-u2l" secondAttribute="centerX" id="mgw-6m-ajt"/>
+                                    <constraint firstAttribute="trailing" secondItem="SR4-wW-o85" secondAttribute="trailing" id="nON-zh-3Tg"/>
+                                    <constraint firstAttribute="bottom" secondItem="SR4-wW-o85" secondAttribute="bottom" constant="275" id="vlV-cK-wwo"/>
+                                    <constraint firstAttribute="trailing" secondItem="mmd-gQ-7uf" secondAttribute="trailing" constant="28" id="wGj-La-uOA"/>
+                                    <constraint firstItem="MEV-gq-tN2" firstAttribute="leading" secondItem="QOB-Xg-u2l" secondAttribute="leading" constant="36" id="xzb-wj-LYu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="acs-m2-3qM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QOB-Xg-u2l" firstAttribute="top" secondItem="acs-m2-3qM" secondAttribute="top" constant="17" id="4dY-el-jXv"/>
+                            <constraint firstItem="acs-m2-3qM" firstAttribute="trailing" secondItem="QOB-Xg-u2l" secondAttribute="trailing" constant="24" id="Jqs-aP-HMr"/>
+                            <constraint firstItem="acs-m2-3qM" firstAttribute="bottom" secondItem="QOB-Xg-u2l" secondAttribute="bottom" constant="21" id="caT-bC-fR1"/>
+                            <constraint firstItem="QOB-Xg-u2l" firstAttribute="leading" secondItem="acs-m2-3qM" secondAttribute="leading" constant="24" id="kYB-Gh-ffW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="feedContentsLabel" destination="MEV-gq-tN2" id="Ey8-NG-8ie"/>
+                        <outlet property="feedDetailView" destination="QOB-Xg-u2l" id="hJH-2a-YDb"/>
+                        <outlet property="feedNicknameLabel" destination="kkK-Rh-DUC" id="P1S-m0-et3"/>
+                        <outlet property="hashTagLabel" destination="NO4-28-RnW" id="FVJ-1Q-IYl"/>
+                        <outlet property="likeCountLabel" destination="mmd-gQ-7uf" id="ZPe-Kv-jFb"/>
+                        <outlet property="moodImageView" destination="jNH-U8-g6Q" id="nwP-q7-gAe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="57B-CC-MBL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-262.31884057971018" y="-55.580357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="journeySmileSampleImg" width="59.5" height="64"/>
+        <image name="sampleHappinessImg" width="1125" height="1462"/>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="darkGray">
+            <color red="0.16500000655651093" green="0.16500000655651093" blue="0.16500000655651093" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="hashtagPink">
+            <color red="1" green="0.52941176470588236" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
