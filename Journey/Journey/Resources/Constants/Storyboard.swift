@@ -28,6 +28,7 @@ extension Const {
             
             // 피드 탭
             static let feed = "Feed"
+            static let feedDetail = "FeedDetail"
         }
     }
 }
