@@ -42,8 +42,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K6r-Lj-O8f">
-                                <rect key="frame" x="24" y="459" width="327" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K6r-Lj-O8f">
+                                <rect key="frame" x="24" y="461" width="327" height="40"/>
                                 <color key="backgroundColor" name="Pink"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ubf-3W-kz5"/>
@@ -53,7 +53,7 @@
                                 <color key="tintColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="로그인"/>
                                 <connections>
-                                    <action selector="touchGoGoButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="i1X-DR-Asi"/>
+                                    <action selector="touchLoginButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="qOG-cv-Phc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D76-iV-XQ7">
