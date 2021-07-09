@@ -16,7 +16,7 @@ extension Const {
             
             // Auth
             static let login = "LoginViewController"
-            
+            static let signUpFirst = "SignUpFirstViewController"
             // 홈 탭
             static let home = "HomeViewController"
             static let medal = "MedalViewController"
