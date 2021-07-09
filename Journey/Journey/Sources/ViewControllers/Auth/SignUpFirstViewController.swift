@@ -29,6 +29,7 @@ class SignUpFirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         assignDelegate()
+        initNavigationBar()
         initErrorLabel()
         makeUnderLineEmailTextField()
         makeUnderLinePasswordTextField()
@@ -39,12 +40,12 @@ class SignUpFirstViewController: UIViewController {
     // MARK: - @IBAction Function
     
     @IBAction func touchNextFirstButton(_ sender: Any) {
-        let signupSecondStoryboard = UIStoryboard(name: Const.Storyboard.Name.signUpSecond, bundle: nil)
-        
-        guard let signUpSecondViewController  = signupSecondStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.signUpSecond) as? SignUpSecondViewController else {
-            return
-        }
-        self.navigationController?.pushViewController(signUpSecondViewController, animated: true)
+//        let signupSecondStoryboard = UIStoryboard(name: Const.Storyboard.Name.signUpSecond, bundle: nil)
+//
+//        guard let signUpSecondViewController  = signupSecondStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.signUpSecond) as? SignUpSecondViewController else {
+//            return
+//        }
+//        self.navigationController?.pushViewController(signUpSecondViewController, animated: true)
     }
     
     // MARK: - Functions
@@ -56,15 +57,20 @@ class SignUpFirstViewController: UIViewController {
         
     }
     
+    private func initNavigationBar() {
+        self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
+        navigationItem.title = "회원가입"
+    }
+    
     private func initErrorLabel() {
         
-        //처음 뷰 로드 시 error laber hidden 처리
+        // 처음 뷰 로드 시 error laber hidden 처리
         emailCheckErrorLabel.isHidden = true
         passwordCheckErrorLabel.isHidden = true
     }
     
     private func makeUnderLineEmailTextField() {
-        //텍스트필드 밑줄 남기기
+        // 텍스트필드 밑줄 남기기
         emailTextField.borderStyle = .none
         let border = CALayer()
         border.frame = CGRect(x: 0, y: emailTextField.frame.size.height-1, width: emailTextField.frame.width, height: 1)
@@ -74,7 +80,7 @@ class SignUpFirstViewController: UIViewController {
     }
     
     private func makeUnderLinePasswordTextField() {
-        //텍스트필드 밑줄 남기기
+        // 텍스트필드 밑줄 남기기
         passwordTextField.borderStyle = .none
         let border = CALayer()
         border.frame = CGRect(x: 0, y: passwordTextField.frame.size.height-1, width: passwordTextField.frame.width, height: 1)
@@ -84,7 +90,7 @@ class SignUpFirstViewController: UIViewController {
     }
     
     private func makeUnderLineCheckPasswordTextField() {
-        //텍스트필드 밑줄 남기기
+        // 텍스트필드 밑줄 남기기
         checkingpasswordTextField.borderStyle = .none
         let border = CALayer()
         border.frame = CGRect(x: 0, y: checkingpasswordTextField.frame.size.height-1, width: checkingpasswordTextField.frame.width, height: 1)
@@ -98,20 +104,20 @@ class SignUpFirstViewController: UIViewController {
     }
     
     func validateEmail(email: String) -> Bool {
-        //Email 정규식
+        // Email 정규식
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: email)
     }
     
     func validatePassword(password: String) -> Bool {
-        //Password 정규식
+        // Password 정규식
         let passwordRegEx = "(?=.*[A-Za-z])(?=.*[0-9]).{6,20}"
         let predicate = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
         return predicate.evaluate(with: password)
     }
     
-    //Email Errors
+    // Email Errors
     func showEmailBlankError() {
         emailCheckErrorLabel.isHidden = false
         emailCheckErrorLabel.text = "사용 가능하지 않은 이메일입니다"
@@ -132,8 +138,7 @@ class SignUpFirstViewController: UIViewController {
         emailCheckErrorLabel.textColor = UIColor.red
     }
     
-    
-    //Password Errors
+    // Password Errors
     func hidePasswordError() {
         passwordCheckErrorLabel.isHidden = false
         passwordCheckErrorLabel.text = "사용 가능한 비밀번호입니다"
@@ -170,19 +175,19 @@ class SignUpFirstViewController: UIViewController {
         guard let email = emailTextField.text else {
             return false
         }
-        //Email이 공백이 아닐 때
+        // Email이 공백이 아닐 때
         if email != "" {
-            //Email이 정규식에 맞지 않을 때
+            // Email이 정규식에 맞지 않을 때
             if !validateEmail(email: email) {
                 showEmailFormatError()
                 return false
             } else {
-                //Email이 정규식에 맞을 때
+                // Email이 정규식에 맞을 때
                 hideEmailError()
                 return true
             }
         } else {
-            //Email이 공백일 때
+            // Email이 공백일 때
             showEmailBlankError()
             return false
         }
@@ -192,19 +197,19 @@ class SignUpFirstViewController: UIViewController {
         guard let password = passwordTextField.text else {
             return false
         }
-        //Password가 공백이 아닐 때
+        // Password가 공백이 아닐 때
         if password != "" {
-            //Password가 정규식에 맞지 않을 때
+            // Password가 정규식에 맞지 않을 때
             if !validatePassword(password: password) {
                 self.showPasswordCheckFormatError()
                 return false
             } else {
-                //Password가 정규식에 맞을 때
+                // Password가 정규식에 맞을 때
                 self.hidePasswordError()
                 return true
             }
         } else {
-            //Password가 공백일 때
+            // Password가 공백일 때
             self.showPasswordCheckBlankError()
             return false
         }
@@ -266,4 +271,3 @@ extension SignUpFirstViewController: UITextFieldDelegate {
     }
     
 }
-

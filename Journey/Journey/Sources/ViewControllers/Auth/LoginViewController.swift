@@ -25,11 +25,12 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         makeButtonRound()
+        initNavigationBar()
     }
     
     // MARK: - @IBAction Functions
     
-    @IBAction func touchGoGoButton(_ sender: Any) {
+    @IBAction func touchLoginButton(_ sender: Any) {
         if emailTextField.text != "" && passwordTextField.text != "" {
             let tabbarStoryboard = UIStoryboard(name: Const.Storyboard.Name.tabbar, bundle: nil)
             guard let tabbarViewController = tabbarStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.tabbar) as? TabbarViewController else {
@@ -40,6 +41,7 @@ class LoginViewController: UIViewController {
             self.present(tabbarViewController, animated: true, completion: nil)
         }
     }
+    
     @IBAction func findPasswordButton(_ sender: Any) {
         
     }
@@ -61,6 +63,10 @@ class LoginViewController: UIViewController {
     
     private func makeButtonRound() {
         loginButton.makeRounded(radius: 20)
+    }
+    
+    private func initNavigationBar() {
+        self.navigationController?.hideNavigationBar()
     }
     
 }
