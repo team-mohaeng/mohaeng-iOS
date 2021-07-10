@@ -23,6 +23,7 @@ class WritingViewController: UIViewController {
     
     var currentTextfieldBottom: CGFloat = 0.0
     var hashTagList: [String] = []
+    var hashTagPopUp: PopUpViewController = PopUpViewController()
     
     // MARK: - Life Cycle
     
@@ -199,14 +200,15 @@ extension WritingViewController: UITextFieldDelegate {
             textField.text = ""
             hashTagCollectionView.reloadData()
         } else {
-            let hashTagPopUp = PopUpViewController(nibName: "PopUpViewController", bundle: nil)
+            hashTagPopUp = PopUpViewController(nibName: "PopUpViewController", bundle: nil)
             hashTagPopUp.modalPresentationStyle = .overCurrentContext
             hashTagPopUp.modalTransitionStyle = .crossDissolve
             hashTagPopUp.popUpUsage = .noTitle
+            hashTagPopUp.popUpActionDelegate = self
             tabBarController?.present(hashTagPopUp, animated: true, completion: nil)
             
             hashTagPopUp.pinkButton?.setTitle("확인", for: .normal)
-            hashTagPopUp.descriptionLabel?.text = "해시태그 입력할 수 있는 개수 제한\n 안내해주는 문구 2줄"
+            hashTagPopUp.descriptionLabel?.text = "태그는 최대 5개까지\n 입력할 수 있어요!"
         }
         return true
     }
@@ -247,4 +249,14 @@ extension WritingViewController: UICollectionViewDataSource {
         return cell
     }
 
+}
+
+extension WritingViewController: PopUpActionDelegate {
+    func touchPinkButton(button: UIButton) {
+        self.hashTagPopUp.dismiss(animated: true, completion: nil)
+    }
+    
+    func touchWhiteButton(button: UIButton) {
+        return
+    }
 }
