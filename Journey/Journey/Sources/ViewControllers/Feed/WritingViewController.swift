@@ -203,7 +203,7 @@ extension WritingViewController: UITextFieldDelegate {
             hashTagPopUp.modalPresentationStyle = .overCurrentContext
             hashTagPopUp.modalTransitionStyle = .crossDissolve
             hashTagPopUp.popUpUsage = .noTitle
-            present(hashTagPopUp, animated: true, completion: nil)
+            tabBarController?.present(hashTagPopUp, animated: true, completion: nil)
             
             hashTagPopUp.pinkButton?.setTitle("확인", for: .normal)
             hashTagPopUp.descriptionLabel?.text = "해시태그 입력할 수 있는 개수 제한\n 안내해주는 문구 2줄"
