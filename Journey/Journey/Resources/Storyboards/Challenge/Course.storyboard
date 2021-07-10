@@ -91,8 +91,8 @@
                         <outlet property="courseImageVIew" destination="KlX-xX-Dl1" id="uPd-m9-gmO"/>
                         <outlet property="courseTableView" destination="8at-xF-psI" id="VAy-u0-i5v"/>
                         <outlet property="courseTitleLabel" destination="D2q-64-g1e" id="npX-6y-2g0"/>
+                        <outlet property="dayCountLabel" destination="I4i-Q9-vCx" id="cDm-rR-bAR"/>
                         <outlet property="dayCountLabelBgView" destination="XV1-xw-72g" id="UAJ-PX-1wf"/>
-                        <outlet property="dayLabelBgView" destination="I4i-Q9-vCx" id="OjS-zK-33K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
