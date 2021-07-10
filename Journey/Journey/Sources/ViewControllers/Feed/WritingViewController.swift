@@ -132,8 +132,11 @@ extension WritingViewController: UITextViewDelegate {
     
     // 텍스트뷰 PlaceHolder 생성
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if writingTextView.text! == "오늘의 소확행을 작성해 주세요." {
-            writingTextView.text = ""
+        
+        if let text = writingTextView.text {
+            if text == "오늘의 소확행을 작성해 주세요." {
+                writingTextView.text = ""
+            }
         }
         writingTextView.textColor = .black
     }
@@ -156,7 +159,7 @@ extension WritingViewController: UITextViewDelegate {
         }
         
         // 텍스트뷰 글자수 카운트
-        writingCountLabel.text = String(writingTextView.text!.count) + "자"
+        writingCountLabel.text = String(writingTextView.text?.count ?? 0) + "자"
     }
     
     // 텍스트뷰 글자수 제한
@@ -171,8 +174,11 @@ extension WritingViewController: UITextFieldDelegate {
     
     // 텍스트필드 글자수 제한
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let newLenth = textField.text!.count + string.count - range.length
-        return newLenth <= 6
+        if let text = textField.text {
+            let newLength = text.count + string.count - range.length
+            return newLength <= 6
+        }
+        return false
     }
     
     // 키보드에서 return 선택 시 해시태그 추가
@@ -185,8 +191,15 @@ extension WritingViewController: UITextFieldDelegate {
     
     // 띄어쓰기 입력 들어올 때 띄어쓰기 삭제
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        if textField.text!.count > 0 && textField.text?.last == " " {
-            textField.text!.removeLast()
+//        if var text = textField.text {
+//            if text.count > 0 && text.last == " " {
+//                print(text)
+//                text.removeLast()
+//            }
+//        }
+
+        if textField.text?.count ?? 0 > 0 && textField.text?.last == " " {
+            textField.text?.removeLast()
         }
     }
 }
