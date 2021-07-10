@@ -35,4 +35,8 @@ class FeedHeaderView: UIView {
         NotificationCenter.default.post(name: NSNotification.Name("myDrawerCilcked"), object: nil)
     }
     
+    @IBAction func touchWriteHappinessButton(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name("writeHappinessClicked"), object: nil)
+    }
+    
 }

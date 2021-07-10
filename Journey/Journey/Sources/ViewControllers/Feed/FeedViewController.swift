@@ -76,19 +76,26 @@ class FeedViewController: UIViewController {
     }
     
     private func addObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(dataReceived), name: NSNotification.Name("myDrawerCilcked"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(pushToMyDrawerViewController), name: NSNotification.Name("myDrawerCilcked"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(pushToMoodViewController), name: NSNotification.Name("writeHappinessClicked"), object: nil)
     }
 
-    @objc func dataReceived(notification: NSNotification) {
+    @objc func pushToMyDrawerViewController(notification: NSNotification) {
         let myDrawerStoryboard = UIStoryboard(name: Const.Storyboard.Name.myDrawer, bundle: nil)
         guard let nextVC = myDrawerStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.myDrawer) as? MyDrawerViewController else { return }
+        
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    @objc func pushToMoodViewController(notification: NSNotification) {
+        let myDrawerStoryboard = UIStoryboard(name: Const.Storyboard.Name.mood, bundle: nil)
+        guard let nextVC = myDrawerStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.mood) as? MoodViewController else { return }
         
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }
 
 extension FeedViewController: UICollectionViewDataSource {
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 64

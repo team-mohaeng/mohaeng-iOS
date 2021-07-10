@@ -16,7 +16,7 @@ extension Const {
             
             // Auth
             static let login = "LoginViewController"
-            
+            static let signUpFirst = "SignUpFirstViewController"
             // 홈 탭
             static let home = "HomeViewController"
             static let medal = "MedalViewController"
@@ -31,6 +31,7 @@ extension Const {
             static let myDrawer = "MyDrawerViewController"
             static let feedDetail = "FeedDetailViewController"
             static let writing = "WritingViewController"
+            static let mood = "MoodViewController"
         }
     }
 }
