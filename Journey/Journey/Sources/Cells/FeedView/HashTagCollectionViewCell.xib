@@ -28,6 +28,9 @@
                                 </constraints>
                                 <color key="tintColor" name="Pink"/>
                                 <state key="normal" image="btnX"/>
+                                <connections>
+                                    <action selector="touchRemoveButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="g6w-1A-alG"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="키워드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyZ-QT-3q0">
                                 <rect key="frame" x="12" y="19" width="57" height="15"/>
@@ -62,7 +65,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="btnX" width="12" height="12.5"/>
+        <image name="btnX" width="8" height="8.5"/>
         <namedColor name="Pink">
             <color red="0.95300000905990601" green="0.48600000143051147" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
