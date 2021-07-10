@@ -80,6 +80,10 @@
 		AA1F34B02694B2F20011B3FA /* ModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34AF2694B2F20011B3FA /* ModalPresentationController.swift */; };
 		AA1F34BD26956C400011B3FA /* MyDrawerCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34BB26956C400011B3FA /* MyDrawerCollectionReusableView.swift */; };
 		AA1F34BE26956C400011B3FA /* MyDrawerCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1F34BC26956C400011B3FA /* MyDrawerCollectionReusableView.xib */; };
+		AA1F34E02695D28C0011B3FA /* Writing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1F34DF2695D28C0011B3FA /* Writing.storyboard */; };
+		AA1F34E32695D2BD0011B3FA /* WritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34E22695D2BD0011B3FA /* WritingViewController.swift */; };
+		AA1F352526976E670011B3FA /* HashTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F352326976E670011B3FA /* HashTagCollectionViewCell.swift */; };
+		AA1F352626976E670011B3FA /* HashTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1F352426976E670011B3FA /* HashTagCollectionViewCell.xib */; };
 		AA1F34C426959BD50011B3FA /* Mood.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1F34C326959BD50011B3FA /* Mood.storyboard */; };
 		AA1F34C726959BFC0011B3FA /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34C626959BFC0011B3FA /* MoodViewController.swift */; };
 		AAFD90C3269048E500CF4707 /* FeedContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFD90C1269048E500CF4707 /* FeedContentsCollectionViewCell.swift */; };
@@ -168,6 +172,10 @@
 		AA1F34AF2694B2F20011B3FA /* ModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresentationController.swift; sourceTree = "<group>"; };
 		AA1F34BB26956C400011B3FA /* MyDrawerCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDrawerCollectionReusableView.swift; sourceTree = "<group>"; };
 		AA1F34BC26956C400011B3FA /* MyDrawerCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyDrawerCollectionReusableView.xib; sourceTree = "<group>"; };
+		AA1F34DF2695D28C0011B3FA /* Writing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Writing.storyboard; sourceTree = "<group>"; };
+		AA1F34E22695D2BD0011B3FA /* WritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingViewController.swift; sourceTree = "<group>"; };
+		AA1F352326976E670011B3FA /* HashTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagCollectionViewCell.swift; sourceTree = "<group>"; };
+		AA1F352426976E670011B3FA /* HashTagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HashTagCollectionViewCell.xib; sourceTree = "<group>"; };
 		AA1F34C326959BD50011B3FA /* Mood.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mood.storyboard; sourceTree = "<group>"; };
 		AA1F34C626959BFC0011B3FA /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
 		AAFD90C1269048E500CF4707 /* FeedContentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedContentsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -331,6 +339,7 @@
 		56DCAA402689BC470056155A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				AA1F352126976E390011B3FA /* FeedView */,
 				56AADEE5269494D200131D2C /* MedalCollectionView */,
 				AAFD90BF269047A000CF4707 /* FeedCollectionView */,
 				56DCAA8F268AFF100056155A /* CourseTableView */,
@@ -442,6 +451,7 @@
 				56DCAA83268AE1BD0056155A /* FeedViewController.swift */,
 				AA1F34992693688F0011B3FA /* MyDrawerViewController.swift */,
 				AA1F34902692FB9E0011B3FA /* FeedDetailViewController.swift */,
+				AA1F34E22695D2BD0011B3FA /* WritingViewController.swift */,
 				AA1F34C626959BFC0011B3FA /* MoodViewController.swift */,
 			);
 			path = Feed;
@@ -472,6 +482,7 @@
 				56DCAA7D268AE13B0056155A /* Feed.storyboard */,
 				AA1F349626935A890011B3FA /* MyDrawer.storyboard */,
 				AA1F348D2692FB920011B3FA /* FeedDetail.storyboard */,
+				AA1F34DF2695D28C0011B3FA /* Writing.storyboard */,
 				AA1F34C326959BD50011B3FA /* Mood.storyboard */,
 			);
 			path = Feed;
@@ -526,6 +537,15 @@
 				56EAF7582694BDD300D36105 /* PopUpViewController.xib */,
 			);
 			path = PopUp;
+			sourceTree = "<group>";
+		};
+		AA1F352126976E390011B3FA /* FeedView */ = {
+			isa = PBXGroup;
+			children = (
+				AA1F352326976E670011B3FA /* HashTagCollectionViewCell.swift */,
+				AA1F352426976E670011B3FA /* HashTagCollectionViewCell.xib */,
+			);
+			path = FeedView;
 			sourceTree = "<group>";
 		};
 		AAFD90BF269047A000CF4707 /* FeedCollectionView */ = {
@@ -611,6 +631,7 @@
 				56DCAA6F2689DB500056155A /* Colors.xcassets in Resources */,
 				AA1F349726935A890011B3FA /* MyDrawer.storyboard in Resources */,
 				56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */,
+				AA1F34E02695D28C0011B3FA /* Writing.storyboard in Resources */,
 				56EAF75A2694BDD300D36105 /* PopUpViewController.xib in Resources */,
 				56DCAAB0268C6D690056155A /* UndoneCourseCollectionViewCell.xib in Resources */,
 				AA1F34AA269377F30011B3FA /* DatePickerViewController.xib in Resources */,
@@ -618,6 +639,7 @@
 				56DCAAB4268C6D760056155A /* DoneCourseCollectionViewCell.xib in Resources */,
 				56DCAA93268AFF3A0056155A /* FirstDayTableViewCell.xib in Resources */,
 				AA1F34BE26956C400011B3FA /* MyDrawerCollectionReusableView.xib in Resources */,
+				AA1F352626976E670011B3FA /* HashTagCollectionViewCell.xib in Resources */,
 				56EAF7522694AF2E00D36105 /* MedalCollectionReusableView.xib in Resources */,
 				568F64C22692F9E20066B9D1 /* GoogleService-Info.plist in Resources */,
 				56DCAAB4268C6D760056155A /* DoneCourseCollectionViewCell.xib in Resources */,
@@ -735,12 +757,14 @@
 				56DCAA4A2689BCD80056155A /* Const.swift in Sources */,
 				56EAF75F26955B5300D36105 /* User.swift in Sources */,
 				56DCAA84268AE1BD0056155A /* FeedViewController.swift in Sources */,
+				AA1F352526976E670011B3FA /* HashTagCollectionViewCell.swift in Sources */,
 				AA1F349A2693688F0011B3FA /* MyDrawerViewController.swift in Sources */,
 				56DCAA96268AFF510056155A /* EvenDayTableViewCell.swift in Sources */,
 				56EAF76126955C0300D36105 /* Home.swift in Sources */,
 				56DCAA282689BB9B0056155A /* AppDelegate.swift in Sources */,
 				56DCAA2A2689BB9B0056155A /* SceneDelegate.swift in Sources */,
 				AA1F34BD26956C400011B3FA /* MyDrawerCollectionReusableView.swift in Sources */,
+				AA1F34E32695D2BD0011B3FA /* WritingViewController.swift in Sources */,
 				568F64C02692DF2C0066B9D1 /* CourseListViewModel.swift in Sources */,
 				AAFD90C7269052E100CF4707 /* FeedHeaderView.swift in Sources */,
 				564D5D8C26942F260056E468 /* URL.swift in Sources */,

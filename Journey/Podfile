@@ -12,4 +12,5 @@ target 'Journey' do
 	pod 'lottie-ios'
 	pod 'Firebase/Analytics'
 	pod 'Firebase/Messaging'
+	pod 'IQKeyboardManagerSwift'
 end
