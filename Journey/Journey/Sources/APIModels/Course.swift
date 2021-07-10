@@ -7,6 +7,18 @@
 
 import Foundation
 
+// MARK: - CourseResponseData
+struct CourseResponseData: Codable {
+    let status: Int
+    let data: CourseData
+}
+
+// MARK: - CourseData
+struct CourseData: Codable {
+    let course: Course
+}
+
+// MARK: - Course
 struct Course: Codable {
     let id, situation: Int
     let title, courseDescription: String
@@ -15,7 +27,8 @@ struct Course: Codable {
     let challenges: [Challenge]
 
     enum CodingKeys: String, CodingKey {
-        case id, situation, title
+        case id = "id"
+        case situation, title
         case courseDescription = "description"
         case totalDays, property, challenges
     }
