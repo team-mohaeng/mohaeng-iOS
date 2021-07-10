@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "messageIcon.png",
+      "filename" : "bggraphic.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "messageIcon-1.png",
+      "filename" : "bggraphic@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "messageIcon-2.png",
+      "filename" : "bggraphic@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

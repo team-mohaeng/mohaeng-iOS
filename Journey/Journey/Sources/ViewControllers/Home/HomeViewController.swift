@@ -17,6 +17,12 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var courseDayLabel: UILabel!
     @IBOutlet weak var densityProgressView: UIProgressView!
     @IBOutlet weak var percentDescriptionButton: UIButton!
+    @IBOutlet weak var firstIndicatiorLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var thirdIndicatorLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var densityPercentLabel: UILabel!
+    
+    // MARK: - Properties
+    var densityPercent: CGFloat = 0.5
     
     // MARK: - View Life Cycle
     
@@ -26,6 +32,8 @@ class HomeViewController: UIViewController {
         initNavigationBar()
         initAttributes()
         initProgressView()
+        setDensityPercent()
+        setIndicatorPosition()
     }
     
     // MARK: - @IBAction Functions
@@ -38,23 +46,26 @@ class HomeViewController: UIViewController {
         self.navigationController?.pushViewController(medalViewController, animated: true)
     }
     
+    @objc func touchSettingButton(sender: UIButton) {
+        
+    }
+    
     // MARK: - Functions
     
     private func initNavigationBar() {
-        let awardItem = initNavigationIconWithSpacing(name: "awardIcon")
-        let chatItem = initNavigationIconWithSpacing(name: "messageIcon")
-        let settingItem = initNavigationIconWithSpacing(name: "settingsIcon")
+        let awardItem = initNavigationIconWithSpacing(name: "tempImg", buttonEvent: #selector(touchAwardButton(sender:)))
+        let settingItem = initNavigationIconWithSpacing(name: "tempImg", buttonEvent: #selector(touchSettingButton(sender:)))
         
-        self.navigationItem.rightBarButtonItems = [settingItem, chatItem, awardItem]
+        self.navigationItem.rightBarButtonItems = [settingItem, awardItem]
         self.navigationController?.navigationBar.tintColor = UIColor.black
         self.navigationController?.initNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
     }
     
-    private func initNavigationIconWithSpacing(name: String) -> UIBarButtonItem {
+    private func initNavigationIconWithSpacing(name: String, buttonEvent: Selector) -> UIBarButtonItem {
         let button: UIButton = UIButton.init(type: .custom)
         button.setImage(UIImage(named: name), for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
-        button.addTarget(self, action: #selector(touchAwardButton(sender:)), for: .touchUpInside)
+        button.addTarget(self, action: buttonEvent, for: .touchUpInside)
         let item = UIBarButtonItem(customView: button)
         
         return item
@@ -66,14 +77,26 @@ class HomeViewController: UIViewController {
         
         percentDescriptionButton.layer.cornerRadius = percentDescriptionButton.frame.width / 2
         
+        courseTitleButton.contentEdgeInsets = UIEdgeInsets(top: 0.01, left: 0, bottom: 0.01, right: 0)
     }
     
     private func initProgressView() {
-        densityProgressView.progressViewStyle = .default
-        densityProgressView.layer.cornerRadius = 5
-        densityProgressView.clipsToBounds = true
-        densityProgressView.layer.sublayers![1].cornerRadius = 0
+        let indicatorWidth = 8 / (UIScreen.main.bounds.width - 48)
+        densityProgressView.makeRounded(radius: 7)
+        densityProgressView.layer.sublayers![1].cornerRadius = 7
         densityProgressView.subviews[1].clipsToBounds = true
-        densityProgressView.progress = 0.75
+        densityProgressView.progress = Float(densityPercent + indicatorWidth)
+    }
+    
+    private func setIndicatorPosition() {
+        let progressViewWidth = (UIScreen.main.bounds.width - 48)
+        firstIndicatiorLeadingConstraint.constant = progressViewWidth / 4
+        thirdIndicatorLeadingConstraint.constant = progressViewWidth * 3 / 4
+    }
+    
+    private func setDensityPercent() {
+        print(densityPercent)
+        densityPercentLabel.text = "\(Int(densityPercent * 100))%"
+        
     }
 }
