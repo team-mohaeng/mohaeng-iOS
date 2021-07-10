@@ -13,4 +13,5 @@ extension UIColor {
     static let Pink: UIColor = UIColor(named: "Pink")!
     static let CourseBgGray: UIColor = UIColor(named: "CourseBgGray")!
     static let CourseUndoneGray: UIColor = UIColor(named: "CourseUndoneGray")!
+    static let TabbarBorderGray: UIColor = UIColor(named: "TabbarBorderGray")!
 }
