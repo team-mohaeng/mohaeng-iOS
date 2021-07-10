@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "awardIcon.png",
+      "filename" : "progressIndicator.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "awardIcon-1.png",
+      "filename" : "progressIndicator@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "awardIcon-2.png",
+      "filename" : "progressIndicator@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
