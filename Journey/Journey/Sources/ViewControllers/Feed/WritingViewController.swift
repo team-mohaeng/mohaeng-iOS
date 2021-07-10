@@ -37,6 +37,7 @@ class WritingViewController: UIViewController {
         setTextFieldDelegation()
         initAttriutes()
         addGestureRecognizer()
+        addObserver()
     }
     
     // MARK: - function
@@ -100,6 +101,16 @@ class WritingViewController: UIViewController {
         return NSString(string: text).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font: font], context: nil)
     }
     
+    func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(touchHashTagRemoveButton), name: NSNotification.Name("hashTagRemoveButtonClicked"), object: nil)
+    }
+    
+    @objc func touchHashTagRemoveButton(notification: NSNotification) {
+        if let index = notification.object as? Int {
+            hashTagList.remove(at: index)
+            hashTagCollectionView.reloadData()
+        }
+    }
     // MARK: - @IBAction
     
     @IBAction func touchPhotoRemoveButton(_ sender: Any) {
@@ -181,23 +192,27 @@ extension WritingViewController: UITextFieldDelegate {
         return false
     }
     
-    // 키보드에서 return 선택 시 해시태그 추가
+    // 키보드에서 return 선택 시 해시태그 추가, 5개 초과 시 팝업
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        hashTagList.append(textField.text!)
-        textField.text = ""
-        hashTagCollectionView.reloadData()
+        if hashTagList.count < 5 {
+            hashTagList.append(textField.text!)
+            textField.text = ""
+            hashTagCollectionView.reloadData()
+        } else {
+            let hashTagPopUp = PopUpViewController(nibName: "PopUpViewController", bundle: nil)
+            hashTagPopUp.modalPresentationStyle = .overCurrentContext
+            hashTagPopUp.modalTransitionStyle = .crossDissolve
+            hashTagPopUp.popUpUsage = .noTitle
+            present(hashTagPopUp, animated: true, completion: nil)
+            
+            hashTagPopUp.pinkButton?.setTitle("확인", for: .normal)
+            hashTagPopUp.descriptionLabel?.text = "해시태그 입력할 수 있는 개수 제한\n 안내해주는 문구 2줄"
+        }
         return true
     }
     
     // 띄어쓰기 입력 들어올 때 띄어쓰기 삭제
     func textFieldDidChangeSelection(_ textField: UITextField) {
-//        if var text = textField.text {
-//            if text.count > 0 && text.last == " " {
-//                print(text)
-//                text.removeLast()
-//            }
-//        }
-
         if textField.text?.count ?? 0 > 0 && textField.text?.last == " " {
             textField.text?.removeLast()
         }
