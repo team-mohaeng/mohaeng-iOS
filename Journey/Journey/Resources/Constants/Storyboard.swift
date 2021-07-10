@@ -16,6 +16,7 @@ extension Const {
             
             // Auth 관련
             static let login = "Login"
+            static let signUpFirst = "SignUpFirst"
             
             // 홈 탭
             static let home = "Home"
@@ -31,6 +32,7 @@ extension Const {
             static let myDrawer = "MyDrawer"
             static let feedDetail = "FeedDetail"
             static let writing = "Writing"
+            static let mood = "Mood"
         }
     }
 }

@@ -81,10 +81,14 @@
 		AA1F34E32695D2BD0011B3FA /* WritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34E22695D2BD0011B3FA /* WritingViewController.swift */; };
 		AA1F352526976E670011B3FA /* HashTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F352326976E670011B3FA /* HashTagCollectionViewCell.swift */; };
 		AA1F352626976E670011B3FA /* HashTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1F352426976E670011B3FA /* HashTagCollectionViewCell.xib */; };
+		AA1F34C426959BD50011B3FA /* Mood.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1F34C326959BD50011B3FA /* Mood.storyboard */; };
+		AA1F34C726959BFC0011B3FA /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34C626959BFC0011B3FA /* MoodViewController.swift */; };
 		AAFD90C3269048E500CF4707 /* FeedContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFD90C1269048E500CF4707 /* FeedContentsCollectionViewCell.swift */; };
 		AAFD90C4269048E500CF4707 /* FeedContentsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAFD90C2269048E500CF4707 /* FeedContentsCollectionViewCell.xib */; };
 		AAFD90C7269052E100CF4707 /* FeedHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFD90C6269052E100CF4707 /* FeedHeaderView.swift */; };
 		AAFD90CA269052EE00CF4707 /* FeedHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAFD90C9269052EE00CF4707 /* FeedHeaderView.xib */; };
+		ECB617F926949256005E62B0 /* SignUpFirst.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB617F826949256005E62B0 /* SignUpFirst.storyboard */; };
+		ECB617FF269492A8005E62B0 /* SignUpFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB617FE269492A8005E62B0 /* SignUpFirstViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -166,11 +170,15 @@
 		AA1F34E22695D2BD0011B3FA /* WritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingViewController.swift; sourceTree = "<group>"; };
 		AA1F352326976E670011B3FA /* HashTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA1F352426976E670011B3FA /* HashTagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HashTagCollectionViewCell.xib; sourceTree = "<group>"; };
+		AA1F34C326959BD50011B3FA /* Mood.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mood.storyboard; sourceTree = "<group>"; };
+		AA1F34C626959BFC0011B3FA /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
 		AAFD90C1269048E500CF4707 /* FeedContentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedContentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		AAFD90C2269048E500CF4707 /* FeedContentsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedContentsCollectionViewCell.xib; sourceTree = "<group>"; };
 		AAFD90C6269052E100CF4707 /* FeedHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedHeaderView.swift; sourceTree = "<group>"; };
 		AAFD90C9269052EE00CF4707 /* FeedHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedHeaderView.xib; sourceTree = "<group>"; };
 		AE04EE8E2CC2D99FF8A949C4 /* Pods-Journey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journey.debug.xcconfig"; path = "Target Support Files/Pods-Journey/Pods-Journey.debug.xcconfig"; sourceTree = "<group>"; };
+		ECB617F826949256005E62B0 /* SignUpFirst.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpFirst.storyboard; sourceTree = "<group>"; };
+		ECB617FE269492A8005E62B0 /* SignUpFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFirstViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -437,6 +445,7 @@
 				AA1F34992693688F0011B3FA /* MyDrawerViewController.swift */,
 				AA1F34902692FB9E0011B3FA /* FeedDetailViewController.swift */,
 				AA1F34E22695D2BD0011B3FA /* WritingViewController.swift */,
+				AA1F34C626959BFC0011B3FA /* MoodViewController.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -467,6 +476,7 @@
 				AA1F349626935A890011B3FA /* MyDrawer.storyboard */,
 				AA1F348D2692FB920011B3FA /* FeedDetail.storyboard */,
 				AA1F34DF2695D28C0011B3FA /* Writing.storyboard */,
+				AA1F34C326959BD50011B3FA /* Mood.storyboard */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -499,6 +509,7 @@
 			isa = PBXGroup;
 			children = (
 				56DCAAB8268CA02A0056155A /* Login.storyboard */,
+				ECB617F826949256005E62B0 /* SignUpFirst.storyboard */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -507,6 +518,7 @@
 			isa = PBXGroup;
 			children = (
 				56DCAABB268CA0FA0056155A /* LoginViewController.swift */,
+				ECB617FE269492A8005E62B0 /* SignUpFirstViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -607,6 +619,7 @@
 				56DCAA97268AFF510056155A /* EvenDayTableViewCell.xib in Resources */,
 				56DCAA7E268AE13B0056155A /* Feed.storyboard in Resources */,
 				AAFD90C4269048E500CF4707 /* FeedContentsCollectionViewCell.xib in Resources */,
+				AA1F34C426959BD50011B3FA /* Mood.storyboard in Resources */,
 				56DCAAA1268C61810056155A /* CourseLibrary.storyboard in Resources */,
 				56DCAA6F2689DB500056155A /* Colors.xcassets in Resources */,
 				AA1F349726935A890011B3FA /* MyDrawer.storyboard in Resources */,
@@ -627,6 +640,7 @@
 				564D5D8E2694454A0056E468 /* Medal.storyboard in Resources */,
 				56DCAA342689BB9E0056155A /* LaunchScreen.storyboard in Resources */,
 				56DCAA312689BB9E0056155A /* Assets.xcassets in Resources */,
+				ECB617F926949256005E62B0 /* SignUpFirst.storyboard in Resources */,
 				56DCAA7C268AE1310056155A /* Challenge.storyboard in Resources */,
 				56DCAA8C268AF6E20056155A /* Course.storyboard in Resources */,
 				AAFD90CA269052EE00CF4707 /* FeedHeaderView.xib in Resources */,
@@ -709,6 +723,7 @@
 				56DCAA532689BD2C0056155A /* Image.swift in Sources */,
 				56DCAA71268A26F80056155A /* UINavigationController+Extension.swift in Sources */,
 				56DCAA642689BE110056155A /* ProtocolsExmaple.swift in Sources */,
+				ECB617FF269492A8005E62B0 /* SignUpFirstViewController.swift in Sources */,
 				56DCAA82268AE1B10056155A /* ChallengeViewController.swift in Sources */,
 				AA1F34AD26939E260011B3FA /* AppDate.swift in Sources */,
 				56DCAA592689BD9F0056155A /* LottieExmaple.swift in Sources */,
@@ -722,6 +737,7 @@
 				56DCAA4D2689BCFA0056155A /* Storyboard.swift in Sources */,
 				56DCAAAF268C6D690056155A /* UndoneCourseCollectionViewCell.swift in Sources */,
 				56DCAA5C2689BDF20056155A /* APIServicesExmaple.swift in Sources */,
+				AA1F34C726959BFC0011B3FA /* MoodViewController.swift in Sources */,
 				56DCAA8E268AF75E0056155A /* CourseViewController.swift in Sources */,
 				AA1F34912692FB9E0011B3FA /* FeedDetailViewController.swift in Sources */,
 				56DCAA9D268B00910056155A /* UIView+Extension.swift in Sources */,

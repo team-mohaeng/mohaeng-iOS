@@ -34,6 +34,9 @@
                             <state key="normal" title="소확행 작성하기">
                                 <color key="titleColor" systemColor="labelColor"/>
                             </state>
+                            <connections>
+                                <action selector="touchWriteHappinessButton:" destination="-1" eventType="touchUpInside" id="GGa-r6-T07"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소확행 구경하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Km0-OS-LrM">
                             <rect key="frame" x="24" y="49" width="151" height="29"/>
