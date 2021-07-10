@@ -13,4 +13,6 @@ extension UIColor {
     static let Pink: UIColor = UIColor(named: "Pink")!
     static let CourseBgGray: UIColor = UIColor(named: "CourseBgGray")!
     static let CourseUndoneGray: UIColor = UIColor(named: "CourseUndoneGray")!
+    static let textViewBorderColor: UIColor = UIColor(named: "textViewBorderColor")!
+    static let placeHolderColor: UIColor = UIColor(named: "placeHolderColor")!
 }

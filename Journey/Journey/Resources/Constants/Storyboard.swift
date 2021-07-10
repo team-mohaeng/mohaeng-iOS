@@ -31,6 +31,7 @@ extension Const {
             static let feed = "Feed"
             static let myDrawer = "MyDrawer"
             static let feedDetail = "FeedDetail"
+            static let writing = "Writing"
             static let mood = "Mood"
         }
     }

@@ -11,9 +11,9 @@ extension Const {
     struct URL {
         
         // base url
-        static let baseURL = "https://3.36.55.247:5000/api"
+        static let baseURL = "http://3.36.55.247:5000/api"
         
-        // MARK: - Auth
+        // MARK: - Auth -  Auth Service
         
         // 회원가입 (POST)
         static let signUpURL = "/signup"
@@ -23,17 +23,21 @@ extension Const {
         
         // 비밀번호 찾기 (POST)
         
-        // MARK: - HOME
+        // MARK: - HOME - Home Service
         
         // 홈 (GET)
         static let homeURL = "/home"
         
         // MARK: - Challenge
         
+        // MARK: - Course Service
+        
         // 코스 전체 조회 (GET)
         static let coursesURL = "/courses"
         
         // 코스 진행하기 (PUT) : "/courses/:id"
+        
+        // MARK: - Challenge Service
         
         // 전체 챌린지 지도 조회 (GET)
         static let challengesURL = "/challenges"
@@ -44,7 +48,7 @@ extension Const {
         // 완료한 코스 메달 (GET)
         static let medalURL = "/course/complete"
         
-        // MARK: - 소확행
+        // MARK: - 소확행 - Happy Service
         
         // 소확행 입력(POST), 커뮤니티(GET)
         static let happyURL = "/smallSatisfaction"

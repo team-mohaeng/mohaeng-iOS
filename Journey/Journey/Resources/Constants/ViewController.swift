@@ -30,6 +30,7 @@ extension Const {
             static let feed = "FeedViewController"
             static let myDrawer = "MyDrawerViewController"
             static let feedDetail = "FeedDetailViewController"
+            static let writing = "WritingViewController"
             static let mood = "MoodViewController"
         }
     }
