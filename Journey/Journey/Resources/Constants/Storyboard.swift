@@ -20,7 +20,7 @@ extension Const {
             static let findPassword = "FindPassword"
             static let code = "Code"
             static let newPassword = "NewPassword"
-            
+          
             // 홈 탭
             static let home = "Home"
             static let medal = "Medal"
