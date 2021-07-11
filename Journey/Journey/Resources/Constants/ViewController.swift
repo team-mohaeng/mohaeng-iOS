@@ -17,8 +17,10 @@ extension Const {
             // Auth
             static let login = "LoginViewController"
             static let signUpFirst = "SignUpFirstViewController"
+            static let findPassword = "FindPasswordViewController"
             static let code = "CodeViewController"
             static let findPassword = "FindPasswordViewController"
+
 
             // 홈 탭
             static let home = "HomeViewController"

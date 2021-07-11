@@ -13,6 +13,10 @@
 		564D5D8C26942F260056E468 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564D5D8B26942F260056E468 /* URL.swift */; };
 		564D5D8E2694454A0056E468 /* Medal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564D5D8D2694454A0056E468 /* Medal.storyboard */; };
 		564D5D90269446760056E468 /* MedalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564D5D8F269446760056E468 /* MedalViewController.swift */; };
+		5667D4C9269ACB910071D7AD /* NewPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5667D4C8269ACB910071D7AD /* NewPassword.storyboard */; };
+		5667D4CB269ACBA70071D7AD /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667D4CA269ACBA70071D7AD /* CodeViewController.swift */; };
+		5667D4CD269AD1370071D7AD /* Code.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5667D4CC269AD1370071D7AD /* Code.storyboard */; };
+		5667D4CF269AD1620071D7AD /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667D4CE269AD1620071D7AD /* NewPasswordViewController.swift */; };
 		5667D4CB269ACBA70071D7AD /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667D4CA269ACBA70071D7AD /* CodeViewController.swift */; };
 		5667D4CD269AD1370071D7AD /* Code.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5667D4CC269AD1370071D7AD /* Code.storyboard */; };
 		568F64C02692DF2C0066B9D1 /* CourseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568F64BF2692DF2C0066B9D1 /* CourseListViewModel.swift */; };
@@ -103,6 +107,10 @@
 		564D5D8B26942F260056E468 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		564D5D8D2694454A0056E468 /* Medal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Medal.storyboard; sourceTree = "<group>"; };
 		564D5D8F269446760056E468 /* MedalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalViewController.swift; sourceTree = "<group>"; };
+		5667D4C8269ACB910071D7AD /* NewPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewPassword.storyboard; sourceTree = "<group>"; };
+		5667D4CA269ACBA70071D7AD /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
+		5667D4CC269AD1370071D7AD /* Code.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Code.storyboard; sourceTree = "<group>"; };
+		5667D4CE269AD1620071D7AD /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
 		5667D4CA269ACBA70071D7AD /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		5667D4CC269AD1370071D7AD /* Code.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Code.storyboard; sourceTree = "<group>"; };
 		568F64BF2692DF2C0066B9D1 /* CourseListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListViewModel.swift; sourceTree = "<group>"; };
@@ -533,6 +541,7 @@
 				56DCAAB8268CA02A0056155A /* Login.storyboard */,
 				ECB617F826949256005E62B0 /* SignUpFirst.storyboard */,
 				5667D4CC269AD1370071D7AD /* Code.storyboard */,
+				5667D4C8269ACB910071D7AD /* NewPassword.storyboard */,
 				56026136269AC7590079F1D9 /* FindPassword.storyboard */,
 			);
 			path = Auth;
@@ -544,6 +553,7 @@
 				56DCAABB268CA0FA0056155A /* LoginViewController.swift */,
 				ECB617FE269492A8005E62B0 /* SignUpFirstViewController.swift */,
 				5667D4CA269ACBA70071D7AD /* CodeViewController.swift */,
+				5667D4CE269AD1620071D7AD /* NewPasswordViewController.swift */,
 				56026138269AC7690079F1D9 /* FindPasswordViewController.swift */,
 			);
 			path = Auth;
@@ -638,6 +648,7 @@
 			files = (
 				56DCAAB9268CA02A0056155A /* Login.storyboard in Resources */,
 				5667D4CD269AD1370071D7AD /* Code.storyboard in Resources */,
+				5667D4C9269ACB910071D7AD /* NewPassword.storyboard in Resources */,
 				56DCAA9B268AFF5B0056155A /* OddDayTableViewCell.xib in Resources */,
 				56026137269AC7590079F1D9 /* FindPassword.storyboard in Resources */,
 				56AADEF52694AE2300131D2C /* MedalCollectionViewCell.xib in Resources */,
@@ -786,6 +797,7 @@
 				56DCAA282689BB9B0056155A /* AppDelegate.swift in Sources */,
 				56DCAA2A2689BB9B0056155A /* SceneDelegate.swift in Sources */,
 				AA1F34BD26956C400011B3FA /* MyDrawerCollectionReusableView.swift in Sources */,
+				5667D4CF269AD1620071D7AD /* NewPasswordViewController.swift in Sources */,
 				AA1F34E32695D2BD0011B3FA /* WritingViewController.swift in Sources */,
 				568F64C02692DF2C0066B9D1 /* CourseListViewModel.swift in Sources */,
 				AAFD90C7269052E100CF4707 /* FeedHeaderView.swift in Sources */,
