@@ -88,7 +88,7 @@ class EvenDayTableViewCell: UITableViewCell {
         afterLine.fillColor = UIColor.clear.cgColor
         afterLine.lineWidth = 20.0
         afterLine.path = path.cgPath
-        afterLine.strokeColor = UIColor.Pink.cgColor
+        afterLine.strokeColor = UIColor.Pink2.cgColor
     }
     
     func setCell(challenge: Challenge) {
@@ -120,7 +120,7 @@ class EvenDayTableViewCell: UITableViewCell {
             afterLine.strokeColor = UIColor.white.cgColor
             cellBgView.layer.insertSublayer(afterLine, at: 0)
         } else if next == 2 {
-            afterLine.strokeColor = UIColor.Pink.cgColor
+            afterLine.strokeColor = UIColor.Pink2.cgColor
             cellBgView.layer.insertSublayer(afterLine, at: 0)
         }
     }
@@ -129,13 +129,13 @@ class EvenDayTableViewCell: UITableViewCell {
         switch situation {
         case 0: // 진행 전 챌린지
             beforeLine.strokeColor = UIColor.white.cgColor
-            propertyBgView.backgroundColor = UIColor.CourseUndoneGray
+            propertyBgView.backgroundColor = UIColor.Grey1Bg
         case 1: // 진행 중인 챌린지
-            beforeLine.strokeColor = UIColor.Pink.cgColor
-            propertyBgView.backgroundColor = UIColor.CourseUndoneGray
+            beforeLine.strokeColor = UIColor.Pink2.cgColor
+            propertyBgView.backgroundColor = UIColor.Pink2
         case 2: // 완료 된 챌린지
-            beforeLine.strokeColor = UIColor.Pink.cgColor
-            propertyBgView.backgroundColor = UIColor.Pink
+            beforeLine.strokeColor = UIColor.Pink2.cgColor
+            propertyBgView.backgroundColor = UIColor.Pink2
         default:
             break
         }
