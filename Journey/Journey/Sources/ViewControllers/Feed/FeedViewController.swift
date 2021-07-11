@@ -18,9 +18,11 @@ class FeedViewController: UIViewController {
     var feedBackgroundFrame: UIView = UIView(frame: CGRect(x: 0, y: 249, width: UIScreen.main.bounds.width, height: 224 * (64 / 2) + 200))
     var feedTitleLabel = UILabel()
     
-    // MARK: - IBOutlet Properties
+    // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var feedCollectionView: UICollectionView!
+    @IBOutlet weak var statusBarView: UIView!
+    @IBOutlet weak var floatingTopButton: UIButton!
     
     // MARK: - View Life Cycle
     
@@ -68,6 +70,11 @@ class FeedViewController: UIViewController {
         feedTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         feedTitleLabel.topAnchor.constraint(equalTo: feedBackgroundFrame.topAnchor, constant: 38).isActive = true
         feedTitleLabel.leftAnchor.constraint(equalTo: feedBackgroundFrame.leftAnchor, constant: 24).isActive = true
+        
+        floatingTopButton.contentEdgeInsets = UIEdgeInsets(top: 0.01, left: 0, bottom: 0.01, right: 0)
+        floatingTopButton.layer.shadowOffset = CGSize(width: 2, height: 3)
+        floatingTopButton.layer.shadowColor = UIColor.black.cgColor
+        floatingTopButton.layer.shadowOpacity = 0.1
     }
     
     private func registerXib() {
@@ -92,6 +99,11 @@ class FeedViewController: UIViewController {
         guard let nextVC = myDrawerStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.mood) as? MoodViewController else { return }
         
         self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    @IBAction func touchFloatingTopButton(_ sender: Any) {
+        let topOffset = CGPoint(x: 0, y: 0)
+        self.feedCollectionView.setContentOffset(topOffset, animated: true)
     }
 }
 
@@ -126,6 +138,18 @@ extension FeedViewController: UICollectionViewDelegate {
         
         if offset < 245 {
             headerView.alpha = max(percent, 0.3)
+            statusBarView.alpha = percent
+        }
+        
+        if feedCollectionView.contentOffset.y > 10 {
+            UIView.animate(withDuration: 1.0) {
+                self.floatingTopButton.alpha = 1.0
+                self.floatingTopButton.isHidden = false
+            }
+        } else {
+            UIView.animate(withDuration: 1.0) {
+                self.floatingTopButton.alpha = 0.0
+            }
         }
     }
 

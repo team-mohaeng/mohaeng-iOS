@@ -31,6 +31,7 @@ extension Const {
             // 피드 뷰
             static let feedContentsCollectionViewCell = "FeedContentsCollectionViewCell"
             static let myDrawerCollectionReusableView = "MyDrawerCollectionReusableView"
+            static let hashTagCollectionViewCell = "HashTagCollectionViewCell"
         }
         
         struct Identifier {
@@ -53,6 +54,7 @@ extension Const {
             // 피드뷰
             static let feedContentsCollectionViewCell = "FeedContentsCollectionViewCell"
             static let myDrawerCollectionReusableView = "MyDrawerCollectionReusableView"
+            static let hashTagCollectionViewCell = "HashTagCollectionViewCell"
         }
         
     }

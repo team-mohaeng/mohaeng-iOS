@@ -38,7 +38,6 @@ class OddDayTableViewCell: UITableViewCell {
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var propertyBgView: UIView!
     @IBOutlet weak var propertyImageView: UIImageView!
-    @IBOutlet weak var nextDayRoadView: UIView!
     @IBOutlet weak var dayCountLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
@@ -88,7 +87,7 @@ class OddDayTableViewCell: UITableViewCell {
         afterLine.fillColor = UIColor.clear.cgColor
         afterLine.lineWidth = 20.0
         afterLine.path = path.cgPath
-        afterLine.strokeColor = UIColor.Pink.cgColor
+        afterLine.strokeColor = UIColor.Pink2.cgColor
     }
     
     func setCell(challenge: Challenge) {
@@ -102,9 +101,9 @@ class OddDayTableViewCell: UITableViewCell {
         }
         
         // n일차 label
-        dayCountLabel.text = "\(challenge.day)일차"
+        dayCountLabel.text = "\(challenge.id)일차"
         // 미션 label
-        descriptionLabel.text = challenge.challengeDescription
+        descriptionLabel.text = challenge.title
         
         // situation에 따른 색상 분기처리
         setColorBySituation(situation: challenge.situation)
@@ -120,7 +119,7 @@ class OddDayTableViewCell: UITableViewCell {
             afterLine.strokeColor = UIColor.white.cgColor
             self.contentView.layer.insertSublayer(afterLine, at: 0)
         } else if next == 2 || next == 1 {
-            afterLine.strokeColor = UIColor.Pink.cgColor
+            afterLine.strokeColor = UIColor.Pink2.cgColor
             self.contentView.layer.insertSublayer(afterLine, at: 0)
         }
     }
@@ -129,13 +128,13 @@ class OddDayTableViewCell: UITableViewCell {
         switch situation {
         case 0: // 진행 전 챌린지
             beforeLine.strokeColor = UIColor.white.cgColor
-            propertyBgView.backgroundColor = UIColor.CourseUndoneGray
+            propertyBgView.backgroundColor = UIColor.Grey1Bg
         case 1: // 진행 중인 챌린지
-            beforeLine.strokeColor = UIColor.Pink.cgColor
-            propertyBgView.backgroundColor = UIColor.CourseUndoneGray
+            beforeLine.strokeColor = UIColor.Pink2.cgColor
+            propertyBgView.backgroundColor = UIColor.Pink2
         case 2: // 완료 된 챌린지
-            beforeLine.strokeColor = UIColor.Pink.cgColor
-            propertyBgView.backgroundColor = UIColor.Pink
+            beforeLine.strokeColor = UIColor.Pink2.cgColor
+            propertyBgView.backgroundColor = UIColor.Pink2
         default:
             break
         }

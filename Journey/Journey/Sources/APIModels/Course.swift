@@ -7,6 +7,29 @@
 
 import Foundation
 
+// MARK: - CourseResponseData
+struct CourseResponseData: Codable {
+    let status: Int
+    let data: CourseData
+}
+
+// MARK: - CourseData
+struct CourseData: Codable {
+    let course: Course
+}
+
+// MARK: - CoursesResponseData
+struct CoursesResponseData: Codable {
+    let status: Int
+    let data: CoursesData
+}
+
+// MARK: - DataClass
+struct CoursesData: Codable {
+    let courses: [Course]
+}
+
+// MARK: - Course
 struct Course: Codable {
     let id, situation: Int
     let title, courseDescription: String

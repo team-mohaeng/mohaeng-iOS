@@ -43,7 +43,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func findPasswordButton(_ sender: Any) {
-        
+        pushToFindPasswordViewController()
     }
     
     @IBAction func signUpButton(_ sender: Any) {
@@ -67,6 +67,13 @@ class LoginViewController: UIViewController {
     
     private func initNavigationBar() {
         self.navigationController?.hideNavigationBar()
+    }
+    
+    func pushToFindPasswordViewController() {
+        let findPasswordStoryboard = UIStoryboard(name: Const.Storyboard.Name.findPassword, bundle: nil)
+        guard let findPasswordViewController = findPasswordStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.findPassword) as? FindPasswordViewController else { return }
+        
+        self.navigationController?.pushViewController(findPasswordViewController, animated: true)
     }
     
 }
