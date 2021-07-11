@@ -40,12 +40,12 @@ class SignUpFirstViewController: UIViewController {
     // MARK: - @IBAction Function
     
     @IBAction func touchNextFirstButton(_ sender: Any) {
-//        let signupSecondStoryboard = UIStoryboard(name: Const.Storyboard.Name.signUpSecond, bundle: nil)
-//
-//        guard let signUpSecondViewController  = signupSecondStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.signUpSecond) as? SignUpSecondViewController else {
-//            return
-//        }
-//        self.navigationController?.pushViewController(signUpSecondViewController, animated: true)
+        let signupSecondStoryboard = UIStoryboard(name: Const.Storyboard.Name.signUpSecond, bundle: nil)
+
+        guard let signUpSecondViewController  = signupSecondStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.signUpSecond) as? SignUpSecondViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(signUpSecondViewController, animated: true)
     }
     
     // MARK: - Functions
