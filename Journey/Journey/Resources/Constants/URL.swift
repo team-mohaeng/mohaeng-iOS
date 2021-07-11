@@ -21,7 +21,11 @@ extension Const {
         // 로그인 (POST)
         static let signInURL = "/signin"
         
-        // 비밀번호 찾기 (POST)
+        // 비밀번호 변경 (PUT)
+        static let passwordURL = "/password"
+
+        // 이메일 인증 (GET)
+        // "/password/:userId"
         
         // MARK: - HOME - Home Service
         
@@ -32,21 +36,24 @@ extension Const {
         
         // MARK: - Course Service
         
-        // 코스 전체 조회 (GET)
+        // 코스 라이브러리 조회 (GET)
         static let coursesURL = "/courses"
         
         // 코스 진행하기 (PUT) : "/courses/:id"
+        
+        // 완료한 코스 메달 조회 (GET)
+        static let medalURL = "/complete"
         
         // MARK: - Challenge Service
         
         // 전체 챌린지 지도 조회 (GET)
         static let challengesURL = "/challenges"
         
-        // 오늘의 챌린지 조회 (GET), 챌린지 인증 (PUT) :
-        // "/challenges/:courseId/:challengeId
+        // 오늘의 챌린지 조회 (GET) :
+        // "/challenges/:courseId"
         
-        // 완료한 코스 메달 (GET)
-        static let medalURL = "/course/complete"
+        // 챌린지 인증 (PUT)
+        // "/challenges/:courseId/:challengeId"
         
         // MARK: - 소확행 - Happy Service
         

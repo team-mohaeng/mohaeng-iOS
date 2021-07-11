@@ -18,6 +18,17 @@ struct CourseData: Codable {
     let course: Course
 }
 
+// MARK: - CoursesResponseData
+struct CoursesResponseData: Codable {
+    let status: Int
+    let data: CoursesData
+}
+
+// MARK: - DataClass
+struct CoursesData: Codable {
+    let courses: [Course]
+}
+
 // MARK: - Course
 struct Course: Codable {
     let id, situation: Int
@@ -27,8 +38,7 @@ struct Course: Codable {
     let challenges: [Challenge]
 
     enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case situation, title
+        case id, situation, title
         case courseDescription = "description"
         case totalDays, property, challenges
     }

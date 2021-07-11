@@ -6,9 +6,36 @@
 //
 
 import Foundation
+import Moya
 
-struct CourseListViewModel {
-    let courses: [Course]
+class CourseListViewModel {
+    
+    var courses = [Course]()
+    
+    func getCourseLibrary(completion: @escaping ((ViewModelState) -> Void)) {
+        CourseAPI.shared.getCourseLibrary { (response) in
+            switch response {
+            case .success(let courses):
+                if let data = courses as? CoursesData {
+                    self.courses = data.courses
+                    print(self.courses)
+                    completion(.success)
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+                completion(.failure)
+            case .pathErr:
+                print(".pathErr")
+                completion(.failure)
+            case .serverErr:
+                print("serverErr")
+                completion(.failure)
+            case .networkFail:
+                print("networkFail")
+                completion(.failure)
+            }
+        }
+    }
 }
 
 struct CourseViewModel {
