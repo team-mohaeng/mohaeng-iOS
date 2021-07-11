@@ -19,6 +19,10 @@ extension Const {
             static let signUpFirst = "SignUpFirst"
             static let signUpSecond = "SignUpSecond"
             
+            static let findPassword = "FindPassword"
+            static let code = "Code"
+            static let newPassword = "NewPassword"
+          
             // 홈 탭
             static let home = "Home"
             static let medal = "Medal"
@@ -32,6 +36,7 @@ extension Const {
             static let feed = "Feed"
             static let myDrawer = "MyDrawer"
             static let feedDetail = "FeedDetail"
+            static let writing = "Writing"
             static let mood = "Mood"
         }
     }

@@ -68,6 +68,10 @@ class MoodViewController: UIViewController {
     }
     
     @IBAction func touchNextButton(_ sender: Any) {
+        let writingStoryboard = UIStoryboard(name: Const.Storyboard.Name.writing, bundle: nil)
+        guard let nextVC = writingStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.writing) as? WritingViewController else { return }
+        
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
 }

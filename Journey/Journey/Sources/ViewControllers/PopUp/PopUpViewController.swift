@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol PopUpActionDelegate {
+    func touchPinkButton(button: UIButton)
+    func touchWhiteButton(button: UIButton)
+}
+
 class PopUpViewController: UIViewController {
     
     // MARK: - Properties
@@ -16,6 +21,7 @@ class PopUpViewController: UIViewController {
     }
     
     var popUpUsage: PopUpUsage?
+    var popUpActionDelegate: PopUpActionDelegate?
     
     // MARK: - @IBOutlet Properties
     
@@ -50,10 +56,12 @@ class PopUpViewController: UIViewController {
         whiteButton.makeRounded(radius: whiteButton.frame.height / 2)
     }
 
-    @IBAction func touchPinkButton(_ sender: Any) {
+    @IBAction func touchPinkButton(_ sender: UIButton) {
+        self.popUpActionDelegate?.touchPinkButton(button: sender)
     }
     
-    @IBAction func touchWhiteButton(_ sender: Any) {
+    @IBAction func touchWhiteButton(_ sender: UIButton) {
+        self.popUpActionDelegate?.touchPinkButton(button: sender)
     }
     
     @IBAction func touchCloseButton(_ sender: Any) {
@@ -62,7 +70,7 @@ class PopUpViewController: UIViewController {
     
     // case functions
     
-    private func initCase(usage: PopUpUsage){
+    private func initCase(usage: PopUpUsage) {
         switch usage {
         case .oneButton:
             self.initCaseOneButton()
@@ -74,8 +82,6 @@ class PopUpViewController: UIViewController {
             self.initCaseNoIamge()
         case .noTitle:
             self.initCaseNoTitle()
-        default:
-            break;
         }
     }
     
@@ -112,14 +118,5 @@ class PopUpViewController: UIViewController {
         titleLabel.removeFromSuperview()
         popUpImageView.removeFromSuperview()
         whiteButton.removeFromSuperview()
-    }
-}
-
-extension UIView {
-    func clearConstraints() {
-        for subview in self.subviews {
-            subview.clearConstraints()
-        }
-        self.removeConstraints(self.constraints)
     }
 }

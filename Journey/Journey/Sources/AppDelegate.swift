@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FirebaseMessaging
 import UserNotifications
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,6 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 options: authOptions,completionHandler: { (_, _) in }
             )
         application.registerForRemoteNotifications()
+        
+        // 키보드 내려가는 현상 방지
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = false
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         
         return true
     }

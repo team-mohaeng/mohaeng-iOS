@@ -7,21 +7,24 @@
 
 import Foundation
 
+// MARK: - Challenge
 struct Challenge: Codable {
     let id, situation: Int
-    let challengeDescription, year, month, day: String
+    let title, challengeDescription, year, month: String
+    let day: String
     let currentStamp, totalStamp: Int
     let userMents: [String]
 
     enum CodingKeys: String, CodingKey {
-        case id, situation
+        case id, situation, title
         case challengeDescription = "description"
         case year, month, day, currentStamp, totalStamp, userMents
     }
     
-    init(id: Int, situation: Int, challengeDescription: String, year: String, month: String, day: String, currentStamp: Int, totalStamp: Int, userMents: [String]) {
+    init(id: Int, situation: Int, title: String, challengeDescription: String, year: String, month: String, day: String, currentStamp: Int, totalStamp: Int, userMents: [String]) {
         self.id = id
         self.situation = situation
+        self.title = title
         self.challengeDescription = challengeDescription
         self.year = year
         self.month = month
@@ -31,4 +34,3 @@ struct Challenge: Codable {
         self.userMents = userMents
     }
 }
-

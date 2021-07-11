@@ -71,7 +71,7 @@
                                                     <constraint firstAttribute="height" constant="100" id="R0q-dE-vWj"/>
                                                     <constraint firstAttribute="width" constant="100" id="lye-EH-Vdk"/>
                                                 </constraints>
-                                                <state key="normal" image="flwGraphic"/>
+                                                <state key="normal" image="sampleMoodImg"/>
                                                 <connections>
                                                     <action selector="touchFineDayButton:" destination="IUt-4F-g28" eventType="touchUpInside" id="C05-un-s3b"/>
                                                 </connections>
@@ -100,7 +100,7 @@
                                                     <constraint firstAttribute="width" constant="100" id="3eR-eG-neZ"/>
                                                     <constraint firstAttribute="height" constant="100" id="gYe-hE-kS0"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="flwGraphic"/>
+                                                <state key="normal" title="Button" image="sampleMoodImg"/>
                                                 <connections>
                                                     <action selector="touchGoodDayButton:" destination="IUt-4F-g28" eventType="touchUpInside" id="VfX-bx-XPM"/>
                                                 </connections>
@@ -185,10 +185,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="circleGray" width="3" height="2.6666667461395264"/>
+        <image name="circleGray" width="8.3333330154418945" height="8"/>
         <image name="circlePink" width="8.3333330154418945" height="8"/>
-        <image name="flwGraphic" width="101" height="101"/>
-        <image name="sampleMoodImg" width="100" height="100"/>
+        <image name="sampleMoodImg" width="300" height="300"/>
         <namedColor name="Pink">
             <color red="0.95300000905990601" green="0.48600000143051147" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -52,7 +52,7 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUv-Ed-G37">
                             <rect key="frame" x="28" y="351.33333333333326" width="272" height="44"/>
-                            <color key="backgroundColor" name="Pink"/>
+                            <color key="backgroundColor" name="Pink2"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="uTs-gg-Xh3"/>
                             </constraints>
@@ -118,7 +118,7 @@
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.29999999999999999" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="YgR-Uh-m6x" secondAttribute="trailing" constant="43" id="6kh-s7-rdc"/>
                 <constraint firstItem="YgR-Uh-m6x" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="JXU-ju-vH5"/>
@@ -134,6 +134,9 @@
         <image name="journeyMainSampleImg" width="310" height="308"/>
         <namedColor name="Pink">
             <color red="0.95300000905990601" green="0.48600000143051147" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Pink2">
+            <color red="1" green="0.52899998426437378" blue="0.6470000147819519" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
