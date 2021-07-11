@@ -11,6 +11,10 @@
 		564D5D8C26942F260056E468 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564D5D8B26942F260056E468 /* URL.swift */; };
 		564D5D8E2694454A0056E468 /* Medal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564D5D8D2694454A0056E468 /* Medal.storyboard */; };
 		564D5D90269446760056E468 /* MedalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564D5D8F269446760056E468 /* MedalViewController.swift */; };
+		5667D4C9269ACB910071D7AD /* NewPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5667D4C8269ACB910071D7AD /* NewPassword.storyboard */; };
+		5667D4CB269ACBA70071D7AD /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667D4CA269ACBA70071D7AD /* CodeViewController.swift */; };
+		5667D4CD269AD1370071D7AD /* Code.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5667D4CC269AD1370071D7AD /* Code.storyboard */; };
+		5667D4CF269AD1620071D7AD /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667D4CE269AD1620071D7AD /* NewPasswordViewController.swift */; };
 		568F64C02692DF2C0066B9D1 /* CourseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568F64BF2692DF2C0066B9D1 /* CourseListViewModel.swift */; };
 		568F64C22692F9E20066B9D1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */; };
 		56AADEF42694AE2300131D2C /* MedalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */; };
@@ -79,12 +83,12 @@
 		AA1F34B02694B2F20011B3FA /* ModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34AF2694B2F20011B3FA /* ModalPresentationController.swift */; };
 		AA1F34BD26956C400011B3FA /* MyDrawerCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34BB26956C400011B3FA /* MyDrawerCollectionReusableView.swift */; };
 		AA1F34BE26956C400011B3FA /* MyDrawerCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1F34BC26956C400011B3FA /* MyDrawerCollectionReusableView.xib */; };
+		AA1F34C426959BD50011B3FA /* Mood.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1F34C326959BD50011B3FA /* Mood.storyboard */; };
+		AA1F34C726959BFC0011B3FA /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34C626959BFC0011B3FA /* MoodViewController.swift */; };
 		AA1F34E02695D28C0011B3FA /* Writing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1F34DF2695D28C0011B3FA /* Writing.storyboard */; };
 		AA1F34E32695D2BD0011B3FA /* WritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34E22695D2BD0011B3FA /* WritingViewController.swift */; };
 		AA1F352526976E670011B3FA /* HashTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F352326976E670011B3FA /* HashTagCollectionViewCell.swift */; };
 		AA1F352626976E670011B3FA /* HashTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1F352426976E670011B3FA /* HashTagCollectionViewCell.xib */; };
-		AA1F34C426959BD50011B3FA /* Mood.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1F34C326959BD50011B3FA /* Mood.storyboard */; };
-		AA1F34C726959BFC0011B3FA /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34C626959BFC0011B3FA /* MoodViewController.swift */; };
 		AAFD90C3269048E500CF4707 /* FeedContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFD90C1269048E500CF4707 /* FeedContentsCollectionViewCell.swift */; };
 		AAFD90C4269048E500CF4707 /* FeedContentsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAFD90C2269048E500CF4707 /* FeedContentsCollectionViewCell.xib */; };
 		AAFD90C7269052E100CF4707 /* FeedHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFD90C6269052E100CF4707 /* FeedHeaderView.swift */; };
@@ -97,6 +101,10 @@
 		564D5D8B26942F260056E468 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		564D5D8D2694454A0056E468 /* Medal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Medal.storyboard; sourceTree = "<group>"; };
 		564D5D8F269446760056E468 /* MedalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalViewController.swift; sourceTree = "<group>"; };
+		5667D4C8269ACB910071D7AD /* NewPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewPassword.storyboard; sourceTree = "<group>"; };
+		5667D4CA269ACBA70071D7AD /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
+		5667D4CC269AD1370071D7AD /* Code.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Code.storyboard; sourceTree = "<group>"; };
+		5667D4CE269AD1620071D7AD /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
 		568F64BF2692DF2C0066B9D1 /* CourseListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListViewModel.swift; sourceTree = "<group>"; };
 		568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -170,12 +178,12 @@
 		AA1F34AF2694B2F20011B3FA /* ModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresentationController.swift; sourceTree = "<group>"; };
 		AA1F34BB26956C400011B3FA /* MyDrawerCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDrawerCollectionReusableView.swift; sourceTree = "<group>"; };
 		AA1F34BC26956C400011B3FA /* MyDrawerCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyDrawerCollectionReusableView.xib; sourceTree = "<group>"; };
+		AA1F34C326959BD50011B3FA /* Mood.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mood.storyboard; sourceTree = "<group>"; };
+		AA1F34C626959BFC0011B3FA /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
 		AA1F34DF2695D28C0011B3FA /* Writing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Writing.storyboard; sourceTree = "<group>"; };
 		AA1F34E22695D2BD0011B3FA /* WritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingViewController.swift; sourceTree = "<group>"; };
 		AA1F352326976E670011B3FA /* HashTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA1F352426976E670011B3FA /* HashTagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HashTagCollectionViewCell.xib; sourceTree = "<group>"; };
-		AA1F34C326959BD50011B3FA /* Mood.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mood.storyboard; sourceTree = "<group>"; };
-		AA1F34C626959BFC0011B3FA /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
 		AAFD90C1269048E500CF4707 /* FeedContentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedContentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		AAFD90C2269048E500CF4707 /* FeedContentsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedContentsCollectionViewCell.xib; sourceTree = "<group>"; };
 		AAFD90C6269052E100CF4707 /* FeedHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedHeaderView.swift; sourceTree = "<group>"; };
@@ -524,6 +532,8 @@
 			children = (
 				56DCAAB8268CA02A0056155A /* Login.storyboard */,
 				ECB617F826949256005E62B0 /* SignUpFirst.storyboard */,
+				5667D4CC269AD1370071D7AD /* Code.storyboard */,
+				5667D4C8269ACB910071D7AD /* NewPassword.storyboard */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -533,6 +543,8 @@
 			children = (
 				56DCAABB268CA0FA0056155A /* LoginViewController.swift */,
 				ECB617FE269492A8005E62B0 /* SignUpFirstViewController.swift */,
+				5667D4CA269ACBA70071D7AD /* CodeViewController.swift */,
+				5667D4CE269AD1620071D7AD /* NewPasswordViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -625,6 +637,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				56DCAAB9268CA02A0056155A /* Login.storyboard in Resources */,
+				5667D4CD269AD1370071D7AD /* Code.storyboard in Resources */,
+				5667D4C9269ACB910071D7AD /* NewPassword.storyboard in Resources */,
 				56DCAA9B268AFF5B0056155A /* OddDayTableViewCell.xib in Resources */,
 				56AADEF52694AE2300131D2C /* MedalCollectionViewCell.xib in Resources */,
 				56DCAA7A268AE1280056155A /* Home.storyboard in Resources */,
@@ -771,6 +785,7 @@
 				56DCAA282689BB9B0056155A /* AppDelegate.swift in Sources */,
 				56DCAA2A2689BB9B0056155A /* SceneDelegate.swift in Sources */,
 				AA1F34BD26956C400011B3FA /* MyDrawerCollectionReusableView.swift in Sources */,
+				5667D4CF269AD1620071D7AD /* NewPasswordViewController.swift in Sources */,
 				AA1F34E32695D2BD0011B3FA /* WritingViewController.swift in Sources */,
 				568F64C02692DF2C0066B9D1 /* CourseListViewModel.swift in Sources */,
 				AAFD90C7269052E100CF4707 /* FeedHeaderView.swift in Sources */,
