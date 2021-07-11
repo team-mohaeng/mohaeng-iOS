@@ -63,7 +63,6 @@ class CourseLibraryViewController: UIViewController {
     
     private func fetchCourses() {
         courseListViewModel.getCourseLibrary { state in
-            print(state)
             switch state {
             case .success:
                 return self.updateUI()

@@ -50,12 +50,9 @@ public class CourseAPI {
     private func isValidData(data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
         
-        let decodedData = try! decoder.decode(CoursesResponseData.self, from: data)
-        print(decodedData)
-        
-//        guard let decodedData = try? decoder.decode(CourseResponseData.self, from: data) else {
-//            return .pathErr
-//        }
+        guard let decodedData = try? decoder.decode(CourseResponseData.self, from: data) else {
+            return .pathErr
+        }
         
         return .success(decodedData.data)
     }

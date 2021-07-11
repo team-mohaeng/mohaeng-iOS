@@ -13,15 +13,15 @@
 		564D5D8C26942F260056E468 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564D5D8B26942F260056E468 /* URL.swift */; };
 		564D5D8E2694454A0056E468 /* Medal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564D5D8D2694454A0056E468 /* Medal.storyboard */; };
 		564D5D90269446760056E468 /* MedalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564D5D8F269446760056E468 /* MedalViewController.swift */; };
-		5667D4D2269AE3650071D7AD /* CourseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667D4D1269AE3650071D7AD /* CourseService.swift */; };
-		5667D4D4269AF7310071D7AD /* CourseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667D4D3269AF7310071D7AD /* CourseAPI.swift */; };
-		5667D4D8269B0EB30071D7AD /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667D4D7269B0EB30071D7AD /* ViewModelState.swift */; };
 		5667D4C9269ACB910071D7AD /* NewPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5667D4C8269ACB910071D7AD /* NewPassword.storyboard */; };
 		5667D4CB269ACBA70071D7AD /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667D4CA269ACBA70071D7AD /* CodeViewController.swift */; };
 		5667D4CD269AD1370071D7AD /* Code.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5667D4CC269AD1370071D7AD /* Code.storyboard */; };
 		5667D4CF269AD1620071D7AD /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667D4CE269AD1620071D7AD /* NewPasswordViewController.swift */; };
-		5667D4CB269ACBA70071D7AD /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667D4CA269ACBA70071D7AD /* CodeViewController.swift */; };
-		5667D4CD269AD1370071D7AD /* Code.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5667D4CC269AD1370071D7AD /* Code.storyboard */; };
+		5667D4D2269AE3650071D7AD /* CourseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667D4D1269AE3650071D7AD /* CourseService.swift */; };
+		5667D4D4269AF7310071D7AD /* CourseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667D4D3269AF7310071D7AD /* CourseAPI.swift */; };
+		5667D4D8269B0EB30071D7AD /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667D4D7269B0EB30071D7AD /* ViewModelState.swift */; };
+		5667D4DB269B41520071D7AD /* ChallengeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667D4D9269B41520071D7AD /* ChallengeAPI.swift */; };
+		5667D4DC269B41520071D7AD /* ChallengeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667D4DA269B41520071D7AD /* ChallengeService.swift */; };
 		568F64C02692DF2C0066B9D1 /* CourseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568F64BF2692DF2C0066B9D1 /* CourseListViewModel.swift */; };
 		568F64C22692F9E20066B9D1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */; };
 		56AADEF42694AE2300131D2C /* MedalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */; };
@@ -103,12 +103,10 @@
 		EC0DB03F269A3CC200DB7980 /* AppYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB03E269A3CC200DB7980 /* AppYear.swift */; };
 		ECB617F926949256005E62B0 /* SignUpFirst.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB617F826949256005E62B0 /* SignUpFirst.storyboard */; };
 		ECB617FB2694926E005E62B0 /* SignUpSecond.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB617FA2694926E005E62B0 /* SignUpSecond.storyboard */; };
-
 		ECB617FD2694927A005E62B0 /* SignUpThird.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB617FC2694927A005E62B0 /* SignUpThird.storyboard */; };
 		ECB617FF269492A8005E62B0 /* SignUpFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB617FE269492A8005E62B0 /* SignUpFirstViewController.swift */; };
 		ECB61802269492BC005E62B0 /* SignUpSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB61801269492BC005E62B0 /* SignUpSecondViewController.swift */; };
 		ECB61804269492CD005E62B0 /* SignUpThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB61803269492CD005E62B0 /* SignUpThirdViewController.swift */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,15 +115,15 @@
 		564D5D8B26942F260056E468 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		564D5D8D2694454A0056E468 /* Medal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Medal.storyboard; sourceTree = "<group>"; };
 		564D5D8F269446760056E468 /* MedalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalViewController.swift; sourceTree = "<group>"; };
-		5667D4D1269AE3650071D7AD /* CourseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseService.swift; sourceTree = "<group>"; };
-		5667D4D3269AF7310071D7AD /* CourseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseAPI.swift; sourceTree = "<group>"; };
-		5667D4D7269B0EB30071D7AD /* ViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelState.swift; sourceTree = "<group>"; };
 		5667D4C8269ACB910071D7AD /* NewPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewPassword.storyboard; sourceTree = "<group>"; };
 		5667D4CA269ACBA70071D7AD /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		5667D4CC269AD1370071D7AD /* Code.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Code.storyboard; sourceTree = "<group>"; };
 		5667D4CE269AD1620071D7AD /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
-		5667D4CA269ACBA70071D7AD /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
-		5667D4CC269AD1370071D7AD /* Code.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Code.storyboard; sourceTree = "<group>"; };
+		5667D4D1269AE3650071D7AD /* CourseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseService.swift; sourceTree = "<group>"; };
+		5667D4D3269AF7310071D7AD /* CourseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseAPI.swift; sourceTree = "<group>"; };
+		5667D4D7269B0EB30071D7AD /* ViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelState.swift; sourceTree = "<group>"; };
+		5667D4D9269B41520071D7AD /* ChallengeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeAPI.swift; sourceTree = "<group>"; };
+		5667D4DA269B41520071D7AD /* ChallengeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeService.swift; sourceTree = "<group>"; };
 		568F64BF2692DF2C0066B9D1 /* CourseListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListViewModel.swift; sourceTree = "<group>"; };
 		568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -217,7 +215,6 @@
 		ECB617FE269492A8005E62B0 /* SignUpFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFirstViewController.swift; sourceTree = "<group>"; };
 		ECB61801269492BC005E62B0 /* SignUpSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSecondViewController.swift; sourceTree = "<group>"; };
 		ECB61803269492CD005E62B0 /* SignUpThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpThirdViewController.swift; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,8 +276,8 @@
 		56D6EF3F26997FD20011F3FE /* ChallengeAPI */ = {
 			isa = PBXGroup;
 			children = (
-				56D6EF3A269960F40011F3FE /* ChallengeService.swift */,
-				56D6EF42269980010011F3FE /* ChallengeAPI.swift */,
+				5667D4D9269B41520071D7AD /* ChallengeAPI.swift */,
+				5667D4DA269B41520071D7AD /* ChallengeService.swift */,
 			);
 			path = ChallengeAPI;
 			sourceTree = "<group>";
@@ -838,8 +835,9 @@
 				AA1F352526976E670011B3FA /* HashTagCollectionViewCell.swift in Sources */,
 				AA1F349A2693688F0011B3FA /* MyDrawerViewController.swift in Sources */,
 				56DCAA96268AFF510056155A /* EvenDayTableViewCell.swift in Sources */,
+				5667D4DC269B41520071D7AD /* ChallengeService.swift in Sources */,
+				5667D4DB269B41520071D7AD /* ChallengeAPI.swift in Sources */,
 				56EAF76126955C0300D36105 /* Home.swift in Sources */,
-				56D6EF43269980010011F3FE /* ChallengeAPI.swift in Sources */,
 				56DCAA282689BB9B0056155A /* AppDelegate.swift in Sources */,
 				56DCAA2A2689BB9B0056155A /* SceneDelegate.swift in Sources */,
 				AA1F34BD26956C400011B3FA /* MyDrawerCollectionReusableView.swift in Sources */,
@@ -848,7 +846,6 @@
 				568F64C02692DF2C0066B9D1 /* CourseListViewModel.swift in Sources */,
 				AAFD90C7269052E100CF4707 /* FeedHeaderView.swift in Sources */,
 				564D5D8C26942F260056E468 /* URL.swift in Sources */,
-				56D6EF3B269960F40011F3FE /* ChallengeService.swift in Sources */,
 				5667D4D8269B0EB30071D7AD /* ViewModelState.swift in Sources */,
 				56DCAA9A268AFF5B0056155A /* OddDayTableViewCell.swift in Sources */,
 				AAFD90C3269048E500CF4707 /* FeedContentsCollectionViewCell.swift in Sources */,
