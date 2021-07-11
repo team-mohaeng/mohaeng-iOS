@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0476068C7AE8148858867E65 /* Pods_Journey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAC4B8168D442A39A098439 /* Pods_Journey.framework */; };
+		56026137269AC7590079F1D9 /* FindPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56026136269AC7590079F1D9 /* FindPassword.storyboard */; };
+		56026139269AC7690079F1D9 /* FindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56026138269AC7690079F1D9 /* FindPasswordViewController.swift */; };
 		564D5D8C26942F260056E468 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564D5D8B26942F260056E468 /* URL.swift */; };
 		564D5D8E2694454A0056E468 /* Medal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564D5D8D2694454A0056E468 /* Medal.storyboard */; };
 		564D5D90269446760056E468 /* MedalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564D5D8F269446760056E468 /* MedalViewController.swift */; };
@@ -79,12 +81,12 @@
 		AA1F34B02694B2F20011B3FA /* ModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34AF2694B2F20011B3FA /* ModalPresentationController.swift */; };
 		AA1F34BD26956C400011B3FA /* MyDrawerCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34BB26956C400011B3FA /* MyDrawerCollectionReusableView.swift */; };
 		AA1F34BE26956C400011B3FA /* MyDrawerCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1F34BC26956C400011B3FA /* MyDrawerCollectionReusableView.xib */; };
+		AA1F34C426959BD50011B3FA /* Mood.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1F34C326959BD50011B3FA /* Mood.storyboard */; };
+		AA1F34C726959BFC0011B3FA /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34C626959BFC0011B3FA /* MoodViewController.swift */; };
 		AA1F34E02695D28C0011B3FA /* Writing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1F34DF2695D28C0011B3FA /* Writing.storyboard */; };
 		AA1F34E32695D2BD0011B3FA /* WritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34E22695D2BD0011B3FA /* WritingViewController.swift */; };
 		AA1F352526976E670011B3FA /* HashTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F352326976E670011B3FA /* HashTagCollectionViewCell.swift */; };
 		AA1F352626976E670011B3FA /* HashTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1F352426976E670011B3FA /* HashTagCollectionViewCell.xib */; };
-		AA1F34C426959BD50011B3FA /* Mood.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1F34C326959BD50011B3FA /* Mood.storyboard */; };
-		AA1F34C726959BFC0011B3FA /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34C626959BFC0011B3FA /* MoodViewController.swift */; };
 		AAFD90C3269048E500CF4707 /* FeedContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFD90C1269048E500CF4707 /* FeedContentsCollectionViewCell.swift */; };
 		AAFD90C4269048E500CF4707 /* FeedContentsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAFD90C2269048E500CF4707 /* FeedContentsCollectionViewCell.xib */; };
 		AAFD90C7269052E100CF4707 /* FeedHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFD90C6269052E100CF4707 /* FeedHeaderView.swift */; };
@@ -94,6 +96,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		56026136269AC7590079F1D9 /* FindPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FindPassword.storyboard; sourceTree = "<group>"; };
+		56026138269AC7690079F1D9 /* FindPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPasswordViewController.swift; sourceTree = "<group>"; };
 		564D5D8B26942F260056E468 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		564D5D8D2694454A0056E468 /* Medal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Medal.storyboard; sourceTree = "<group>"; };
 		564D5D8F269446760056E468 /* MedalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalViewController.swift; sourceTree = "<group>"; };
@@ -170,12 +174,12 @@
 		AA1F34AF2694B2F20011B3FA /* ModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresentationController.swift; sourceTree = "<group>"; };
 		AA1F34BB26956C400011B3FA /* MyDrawerCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDrawerCollectionReusableView.swift; sourceTree = "<group>"; };
 		AA1F34BC26956C400011B3FA /* MyDrawerCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyDrawerCollectionReusableView.xib; sourceTree = "<group>"; };
+		AA1F34C326959BD50011B3FA /* Mood.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mood.storyboard; sourceTree = "<group>"; };
+		AA1F34C626959BFC0011B3FA /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
 		AA1F34DF2695D28C0011B3FA /* Writing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Writing.storyboard; sourceTree = "<group>"; };
 		AA1F34E22695D2BD0011B3FA /* WritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingViewController.swift; sourceTree = "<group>"; };
 		AA1F352326976E670011B3FA /* HashTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA1F352426976E670011B3FA /* HashTagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HashTagCollectionViewCell.xib; sourceTree = "<group>"; };
-		AA1F34C326959BD50011B3FA /* Mood.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mood.storyboard; sourceTree = "<group>"; };
-		AA1F34C626959BFC0011B3FA /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
 		AAFD90C1269048E500CF4707 /* FeedContentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedContentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		AAFD90C2269048E500CF4707 /* FeedContentsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedContentsCollectionViewCell.xib; sourceTree = "<group>"; };
 		AAFD90C6269052E100CF4707 /* FeedHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedHeaderView.swift; sourceTree = "<group>"; };
@@ -524,6 +528,7 @@
 			children = (
 				56DCAAB8268CA02A0056155A /* Login.storyboard */,
 				ECB617F826949256005E62B0 /* SignUpFirst.storyboard */,
+				56026136269AC7590079F1D9 /* FindPassword.storyboard */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -533,6 +538,7 @@
 			children = (
 				56DCAABB268CA0FA0056155A /* LoginViewController.swift */,
 				ECB617FE269492A8005E62B0 /* SignUpFirstViewController.swift */,
+				56026138269AC7690079F1D9 /* FindPasswordViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -626,6 +632,7 @@
 			files = (
 				56DCAAB9268CA02A0056155A /* Login.storyboard in Resources */,
 				56DCAA9B268AFF5B0056155A /* OddDayTableViewCell.xib in Resources */,
+				56026137269AC7590079F1D9 /* FindPassword.storyboard in Resources */,
 				56AADEF52694AE2300131D2C /* MedalCollectionViewCell.xib in Resources */,
 				56DCAA7A268AE1280056155A /* Home.storyboard in Resources */,
 				AA1F348E2692FB920011B3FA /* FeedDetail.storyboard in Resources */,
@@ -778,6 +785,7 @@
 				56D6EF3B269960F40011F3FE /* ChallengeService.swift in Sources */,
 				56DCAA9A268AFF5B0056155A /* OddDayTableViewCell.swift in Sources */,
 				AAFD90C3269048E500CF4707 /* FeedContentsCollectionViewCell.swift in Sources */,
+				56026139269AC7690079F1D9 /* FindPasswordViewController.swift in Sources */,
 				56DCAAA3268C61A40056155A /* CourseLibraryViewController.swift in Sources */,
 				56DCAA572689BD980056155A /* FontExmaple.swift in Sources */,
 			);
