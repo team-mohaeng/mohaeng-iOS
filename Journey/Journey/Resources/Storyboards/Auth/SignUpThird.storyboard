@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign Up Third View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="SignUpThirdViewController" id="Y6W-OH-hqX" customClass="SignUpThirdViewController" customModule="Journey" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용한 닉네임을 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isb-rg-SOW">
+                                <rect key="frame" x="24" y="161" width="211" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="한글 2~6자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wNY-BH-ZHc">
+                                <rect key="frame" x="24" y="214" width="327" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="PWE-VN-2F6"/>
+                                    <constraint firstAttribute="width" constant="327" id="lwH-v4-i1I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용 가능한 닉네임입니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoP-u8-ZlG">
+                                <rect key="frame" x="249.66666666666666" y="252" width="101.33333333333334" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" systemColor="systemGreenColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시작하기를 누르면 쟈니의 서비스 이용 약관과 개인정보 보호정책에 동의하게 됩니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fS0-wD-5wq">
+                                <rect key="frame" x="49" y="593" width="277" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="inT-Zj-Aq2"/>
+                                    <constraint firstAttribute="width" constant="277" id="n46-cp-gs4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="indicator3" translatesAutoresizingMaskIntoConstraints="NO" id="J6W-j1-Ayr">
+                                <rect key="frame" x="165.66666666666666" y="651" width="44" height="8"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="8" id="Tzh-JX-oRf"/>
+                                    <constraint firstAttribute="width" constant="44" id="dO0-dv-NKi"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kf-Nu-phn">
+                                <rect key="frame" x="24" y="670" width="327" height="48"/>
+                                <color key="backgroundColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="327" id="Gtk-td-DIK"/>
+                                    <constraint firstAttribute="height" constant="48" id="x4L-be-d5n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <state key="normal" title="시작하기">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="J6W-j1-Ayr" firstAttribute="top" secondItem="fS0-wD-5wq" secondAttribute="bottom" constant="31" id="9kU-va-unZ"/>
+                            <constraint firstItem="J6W-j1-Ayr" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Al5-bu-ShD"/>
+                            <constraint firstItem="wNY-BH-ZHc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="QWa-iB-SRe"/>
+                            <constraint firstItem="wNY-BH-ZHc" firstAttribute="top" secondItem="isb-rg-SOW" secondAttribute="bottom" constant="32" id="X40-1b-UxK"/>
+                            <constraint firstItem="0kf-Nu-phn" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="bvw-LP-i7g"/>
+                            <constraint firstItem="isb-rg-SOW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="gX2-X9-4lO"/>
+                            <constraint firstItem="fS0-wD-5wq" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="h14-rs-UqE"/>
+                            <constraint firstItem="WoP-u8-ZlG" firstAttribute="top" secondItem="wNY-BH-ZHc" secondAttribute="bottom" constant="12" id="iJi-5y-cDy"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="fS0-wD-5wq" secondAttribute="bottom" constant="158" id="luW-C2-c5W"/>
+                            <constraint firstItem="isb-rg-SOW" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="117" id="n6Q-TM-yFH"/>
+                            <constraint firstAttribute="trailing" secondItem="WoP-u8-ZlG" secondAttribute="trailing" constant="24" id="qdD-VH-xqa"/>
+                            <constraint firstItem="0kf-Nu-phn" firstAttribute="top" secondItem="J6W-j1-Ayr" secondAttribute="bottom" constant="11" id="s0A-tH-Zoi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="inputNicknameTextField" destination="wNY-BH-ZHc" id="QZR-DM-Oeu"/>
+                        <outlet property="touchNextPage3Button" destination="0kf-Nu-phn" id="wfb-Dy-eyj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="53.523238380809602"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="indicator3" width="44" height="8"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

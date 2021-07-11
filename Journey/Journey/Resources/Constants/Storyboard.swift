@@ -18,7 +18,7 @@ extension Const {
             static let login = "Login"
             static let signUpFirst = "SignUpFirst"
             static let signUpSecond = "SignUpSecond"
-            
+            static let signUpThird = "SignUpThird"
             static let findPassword = "FindPassword"
             static let code = "Code"
             static let newPassword = "NewPassword"

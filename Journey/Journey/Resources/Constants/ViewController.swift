@@ -18,6 +18,7 @@ extension Const {
             static let login = "LoginViewController"
             static let signUpFirst = "SignUpFirstViewController"
             static let signUpSecond = "SignUpSecondViewController"
+            static let signUpThird = "SignUpThirdViewController"
             static let findPassword = "FindPasswordViewController"
             static let code = "CodeViewController"
             static let findPassword = "FindPasswordViewController"

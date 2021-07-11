@@ -26,8 +26,6 @@
 		568F64C22692F9E20066B9D1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */; };
 		56AADEF42694AE2300131D2C /* MedalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */; };
 		56AADEF52694AE2300131D2C /* MedalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AADEF32694AE2300131D2C /* MedalCollectionViewCell.xib */; };
-		56D6EF3B269960F40011F3FE /* ChallengeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6EF3A269960F40011F3FE /* ChallengeService.swift */; };
-		56D6EF43269980010011F3FE /* ChallengeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6EF42269980010011F3FE /* ChallengeAPI.swift */; };
 		56D6EF45269981720011F3FE /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6EF44269981720011F3FE /* NetworkResult.swift */; };
 		56DCAA282689BB9B0056155A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA272689BB9B0056155A /* AppDelegate.swift */; };
 		56DCAA2A2689BB9B0056155A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA292689BB9B0056155A /* SceneDelegate.swift */; };
@@ -105,8 +103,12 @@
 		EC0DB03F269A3CC200DB7980 /* AppYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB03E269A3CC200DB7980 /* AppYear.swift */; };
 		ECB617F926949256005E62B0 /* SignUpFirst.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB617F826949256005E62B0 /* SignUpFirst.storyboard */; };
 		ECB617FB2694926E005E62B0 /* SignUpSecond.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB617FA2694926E005E62B0 /* SignUpSecond.storyboard */; };
+
+		ECB617FD2694927A005E62B0 /* SignUpThird.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB617FC2694927A005E62B0 /* SignUpThird.storyboard */; };
 		ECB617FF269492A8005E62B0 /* SignUpFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB617FE269492A8005E62B0 /* SignUpFirstViewController.swift */; };
 		ECB61802269492BC005E62B0 /* SignUpSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB61801269492BC005E62B0 /* SignUpSecondViewController.swift */; };
+		ECB61804269492CD005E62B0 /* SignUpThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB61803269492CD005E62B0 /* SignUpThirdViewController.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,8 +130,6 @@
 		568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalCollectionViewCell.swift; sourceTree = "<group>"; };
 		56AADEF32694AE2300131D2C /* MedalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedalCollectionViewCell.xib; sourceTree = "<group>"; };
-		56D6EF3A269960F40011F3FE /* ChallengeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeService.swift; sourceTree = "<group>"; };
-		56D6EF42269980010011F3FE /* ChallengeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeAPI.swift; sourceTree = "<group>"; };
 		56D6EF44269981720011F3FE /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		56DCAA242689BB9B0056155A /* Journey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCAA272689BB9B0056155A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -213,8 +213,11 @@
 		EC0DB03E269A3CC200DB7980 /* AppYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppYear.swift; sourceTree = "<group>"; };
 		ECB617F826949256005E62B0 /* SignUpFirst.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpFirst.storyboard; sourceTree = "<group>"; };
 		ECB617FA2694926E005E62B0 /* SignUpSecond.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpSecond.storyboard; sourceTree = "<group>"; };
+		ECB617FC2694927A005E62B0 /* SignUpThird.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpThird.storyboard; sourceTree = "<group>"; };
 		ECB617FE269492A8005E62B0 /* SignUpFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFirstViewController.swift; sourceTree = "<group>"; };
 		ECB61801269492BC005E62B0 /* SignUpSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSecondViewController.swift; sourceTree = "<group>"; };
+		ECB61803269492CD005E62B0 /* SignUpThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpThirdViewController.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -571,6 +574,7 @@
 				56DCAAB8268CA02A0056155A /* Login.storyboard */,
 				ECB617F826949256005E62B0 /* SignUpFirst.storyboard */,
 				ECB617FA2694926E005E62B0 /* SignUpSecond.storyboard */,
+				ECB617FC2694927A005E62B0 /* SignUpThird.storyboard */,
 				5667D4CC269AD1370071D7AD /* Code.storyboard */,
 				5667D4C8269ACB910071D7AD /* NewPassword.storyboard */,
 				56026136269AC7590079F1D9 /* FindPassword.storyboard */,
@@ -584,6 +588,7 @@
 				56DCAABB268CA0FA0056155A /* LoginViewController.swift */,
 				ECB617FE269492A8005E62B0 /* SignUpFirstViewController.swift */,
 				ECB61801269492BC005E62B0 /* SignUpSecondViewController.swift */,
+				ECB61803269492CD005E62B0 /* SignUpThirdViewController.swift */,
 				5667D4CA269ACBA70071D7AD /* CodeViewController.swift */,
 				5667D4CE269AD1620071D7AD /* NewPasswordViewController.swift */,
 				56026138269AC7690079F1D9 /* FindPasswordViewController.swift */,
@@ -689,6 +694,7 @@
 				56DCAA74268ADE040056155A /* Tabbar.storyboard in Resources */,
 				ECB617FB2694926E005E62B0 /* SignUpSecond.storyboard in Resources */,
 				56DCAA97268AFF510056155A /* EvenDayTableViewCell.xib in Resources */,
+				ECB617FD2694927A005E62B0 /* SignUpThird.storyboard in Resources */,
 				56DCAA7E268AE13B0056155A /* Feed.storyboard in Resources */,
 				AAFD90C4269048E500CF4707 /* FeedContentsCollectionViewCell.xib in Resources */,
 				AA1F34C426959BD50011B3FA /* Mood.storyboard in Resources */,
@@ -803,6 +809,7 @@
 				56DCAA82268AE1B10056155A /* ChallengeViewController.swift in Sources */,
 				5667D4D2269AE3650071D7AD /* CourseService.swift in Sources */,
 				AA1F34AD26939E260011B3FA /* AppDate.swift in Sources */,
+				ECB61804269492CD005E62B0 /* SignUpThirdViewController.swift in Sources */,
 				56DCAA592689BD9F0056155A /* LottieExmaple.swift in Sources */,
 				56DCAAB3268C6D760056155A /* DoneCourseCollectionViewCell.swift in Sources */,
 				56DCAA602689BDFF0056155A /* AppModelsExmaple.swift in Sources */,
