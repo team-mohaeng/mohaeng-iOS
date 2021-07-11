@@ -100,8 +100,13 @@
 		AAFD90C4269048E500CF4707 /* FeedContentsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAFD90C2269048E500CF4707 /* FeedContentsCollectionViewCell.xib */; };
 		AAFD90C7269052E100CF4707 /* FeedHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFD90C6269052E100CF4707 /* FeedHeaderView.swift */; };
 		AAFD90CA269052EE00CF4707 /* FeedHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAFD90C9269052EE00CF4707 /* FeedHeaderView.xib */; };
+		EC0DB03C269A0FBD00DB7980 /* YearPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB03A269A0FBD00DB7980 /* YearPickerViewController.swift */; };
+		EC0DB03D269A0FBD00DB7980 /* YearPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC0DB03B269A0FBD00DB7980 /* YearPickerViewController.xib */; };
+		EC0DB03F269A3CC200DB7980 /* AppYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB03E269A3CC200DB7980 /* AppYear.swift */; };
 		ECB617F926949256005E62B0 /* SignUpFirst.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB617F826949256005E62B0 /* SignUpFirst.storyboard */; };
+		ECB617FB2694926E005E62B0 /* SignUpSecond.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB617FA2694926E005E62B0 /* SignUpSecond.storyboard */; };
 		ECB617FF269492A8005E62B0 /* SignUpFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB617FE269492A8005E62B0 /* SignUpFirstViewController.swift */; };
+		ECB61802269492BC005E62B0 /* SignUpSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB61801269492BC005E62B0 /* SignUpSecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -203,8 +208,13 @@
 		AAFD90C6269052E100CF4707 /* FeedHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedHeaderView.swift; sourceTree = "<group>"; };
 		AAFD90C9269052EE00CF4707 /* FeedHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedHeaderView.xib; sourceTree = "<group>"; };
 		AE04EE8E2CC2D99FF8A949C4 /* Pods-Journey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journey.debug.xcconfig"; path = "Target Support Files/Pods-Journey/Pods-Journey.debug.xcconfig"; sourceTree = "<group>"; };
+		EC0DB03A269A0FBD00DB7980 /* YearPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearPickerViewController.swift; sourceTree = "<group>"; };
+		EC0DB03B269A0FBD00DB7980 /* YearPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YearPickerViewController.xib; sourceTree = "<group>"; };
+		EC0DB03E269A3CC200DB7980 /* AppYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppYear.swift; sourceTree = "<group>"; };
 		ECB617F826949256005E62B0 /* SignUpFirst.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpFirst.storyboard; sourceTree = "<group>"; };
+		ECB617FA2694926E005E62B0 /* SignUpSecond.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpSecond.storyboard; sourceTree = "<group>"; };
 		ECB617FE269492A8005E62B0 /* SignUpFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFirstViewController.swift; sourceTree = "<group>"; };
+		ECB61801269492BC005E62B0 /* SignUpSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -371,6 +381,8 @@
 				AA1F34BC26956C400011B3FA /* MyDrawerCollectionReusableView.xib */,
 				56EAF74F2694AF2E00D36105 /* MedalCollectionReusableView.swift */,
 				56EAF7502694AF2E00D36105 /* MedalCollectionReusableView.xib */,
+				EC0DB03A269A0FBD00DB7980 /* YearPickerViewController.swift */,
+				EC0DB03B269A0FBD00DB7980 /* YearPickerViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -399,6 +411,7 @@
 			isa = PBXGroup;
 			children = (
 				56DCAA5F2689BDFF0056155A /* AppModelsExmaple.swift */,
+				EC0DB03E269A3CC200DB7980 /* AppYear.swift */,
 			);
 			path = AppModels;
 			sourceTree = "<group>";
@@ -557,6 +570,7 @@
 			children = (
 				56DCAAB8268CA02A0056155A /* Login.storyboard */,
 				ECB617F826949256005E62B0 /* SignUpFirst.storyboard */,
+				ECB617FA2694926E005E62B0 /* SignUpSecond.storyboard */,
 				5667D4CC269AD1370071D7AD /* Code.storyboard */,
 				5667D4C8269ACB910071D7AD /* NewPassword.storyboard */,
 				56026136269AC7590079F1D9 /* FindPassword.storyboard */,
@@ -569,6 +583,7 @@
 			children = (
 				56DCAABB268CA0FA0056155A /* LoginViewController.swift */,
 				ECB617FE269492A8005E62B0 /* SignUpFirstViewController.swift */,
+				ECB61801269492BC005E62B0 /* SignUpSecondViewController.swift */,
 				5667D4CA269ACBA70071D7AD /* CodeViewController.swift */,
 				5667D4CE269AD1620071D7AD /* NewPasswordViewController.swift */,
 				56026138269AC7690079F1D9 /* FindPasswordViewController.swift */,
@@ -672,6 +687,7 @@
 				56DCAA7A268AE1280056155A /* Home.storyboard in Resources */,
 				AA1F348E2692FB920011B3FA /* FeedDetail.storyboard in Resources */,
 				56DCAA74268ADE040056155A /* Tabbar.storyboard in Resources */,
+				ECB617FB2694926E005E62B0 /* SignUpSecond.storyboard in Resources */,
 				56DCAA97268AFF510056155A /* EvenDayTableViewCell.xib in Resources */,
 				56DCAA7E268AE13B0056155A /* Feed.storyboard in Resources */,
 				AAFD90C4269048E500CF4707 /* FeedContentsCollectionViewCell.xib in Resources */,
@@ -680,6 +696,7 @@
 				56DCAA6F2689DB500056155A /* Colors.xcassets in Resources */,
 				AA1F349726935A890011B3FA /* MyDrawer.storyboard in Resources */,
 				56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */,
+				EC0DB03D269A0FBD00DB7980 /* YearPickerViewController.xib in Resources */,
 				AA1F34E02695D28C0011B3FA /* Writing.storyboard in Resources */,
 				56EAF75A2694BDD300D36105 /* PopUpViewController.xib in Resources */,
 				56DCAAB0268C6D690056155A /* UndoneCourseCollectionViewCell.xib in Resources */,
@@ -777,7 +794,10 @@
 				56DCAA9F268C51E50056155A /* Challenge.swift in Sources */,
 				56AADEF42694AE2300131D2C /* MedalCollectionViewCell.swift in Sources */,
 				56DCAA532689BD2C0056155A /* Image.swift in Sources */,
+				EC0DB03C269A0FBD00DB7980 /* YearPickerViewController.swift in Sources */,
+				ECB61802269492BC005E62B0 /* SignUpSecondViewController.swift in Sources */,
 				56DCAA71268A26F80056155A /* UINavigationController+Extension.swift in Sources */,
+				EC0DB03F269A3CC200DB7980 /* AppYear.swift in Sources */,
 				56DCAA642689BE110056155A /* ProtocolsExmaple.swift in Sources */,
 				ECB617FF269492A8005E62B0 /* SignUpFirstViewController.swift in Sources */,
 				56DCAA82268AE1B10056155A /* ChallengeViewController.swift in Sources */,
