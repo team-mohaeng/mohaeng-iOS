@@ -87,7 +87,7 @@ class FirstDayTableViewCell: UITableViewCell {
         if next == 0 {
             line.strokeColor = UIColor.white.cgColor
         } else if next == 2 {
-            line.strokeColor = UIColor.Pink.cgColor
+            line.strokeColor = UIColor.Pink2.cgColor
         }
     }
     
@@ -97,11 +97,11 @@ class FirstDayTableViewCell: UITableViewCell {
             // 진입 X
             roadView.backgroundColor = UIColor.white
         case 1: // 진행 중인 챌린지
-            roadView.backgroundColor = UIColor.Pink
-            propertyBgView.backgroundColor = UIColor.CourseUndoneGray
+            roadView.backgroundColor = UIColor.Pink2
+            propertyBgView.backgroundColor = UIColor.Pink2
         case 2: // 완료 된 챌린지
-            roadView.backgroundColor = UIColor.Pink
-            propertyBgView.backgroundColor = UIColor.Pink
+            roadView.backgroundColor = UIColor.Pink2
+            propertyBgView.backgroundColor = UIColor.Pink2
         default:
             break
         }
