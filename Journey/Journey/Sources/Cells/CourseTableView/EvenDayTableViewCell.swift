@@ -102,9 +102,9 @@ class EvenDayTableViewCell: UITableViewCell {
         }
         
         // n일차 label
-        dayCountLabel.text = "\(challenge.day)일차"
+        dayCountLabel.text = "\(challenge.id)일차"
         // 미션 label
-        descriptionLabel.text = challenge.challengeDescription
+        descriptionLabel.text = challenge.title
         
         // situation에 따른 색상 분기처리
         setColorBySituation(situation: challenge.situation)
