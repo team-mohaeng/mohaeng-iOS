@@ -21,7 +21,7 @@ extension Const {
             static let signUpThird = "SignUpThirdViewController"
             static let findPassword = "FindPasswordViewController"
             static let code = "CodeViewController"
-            static let findPassword = "FindPasswordViewController"
+            static let newPassword = "NewPasswordViewController"
 
             // 홈 탭
             static let home = "HomeViewController"
