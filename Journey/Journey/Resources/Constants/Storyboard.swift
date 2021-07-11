@@ -17,6 +17,7 @@ extension Const {
             // Auth 관련
             static let login = "Login"
             static let signUpFirst = "SignUpFirst"
+            static let code = "Code"
             static let findPassword = "FindPassword"
             
             // 홈 탭

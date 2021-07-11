@@ -13,6 +13,8 @@
 		564D5D8C26942F260056E468 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564D5D8B26942F260056E468 /* URL.swift */; };
 		564D5D8E2694454A0056E468 /* Medal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564D5D8D2694454A0056E468 /* Medal.storyboard */; };
 		564D5D90269446760056E468 /* MedalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564D5D8F269446760056E468 /* MedalViewController.swift */; };
+		5667D4CB269ACBA70071D7AD /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667D4CA269ACBA70071D7AD /* CodeViewController.swift */; };
+		5667D4CD269AD1370071D7AD /* Code.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5667D4CC269AD1370071D7AD /* Code.storyboard */; };
 		568F64C02692DF2C0066B9D1 /* CourseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568F64BF2692DF2C0066B9D1 /* CourseListViewModel.swift */; };
 		568F64C22692F9E20066B9D1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */; };
 		56AADEF42694AE2300131D2C /* MedalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */; };
@@ -101,6 +103,8 @@
 		564D5D8B26942F260056E468 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		564D5D8D2694454A0056E468 /* Medal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Medal.storyboard; sourceTree = "<group>"; };
 		564D5D8F269446760056E468 /* MedalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalViewController.swift; sourceTree = "<group>"; };
+		5667D4CA269ACBA70071D7AD /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
+		5667D4CC269AD1370071D7AD /* Code.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Code.storyboard; sourceTree = "<group>"; };
 		568F64BF2692DF2C0066B9D1 /* CourseListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListViewModel.swift; sourceTree = "<group>"; };
 		568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -528,6 +532,7 @@
 			children = (
 				56DCAAB8268CA02A0056155A /* Login.storyboard */,
 				ECB617F826949256005E62B0 /* SignUpFirst.storyboard */,
+				5667D4CC269AD1370071D7AD /* Code.storyboard */,
 				56026136269AC7590079F1D9 /* FindPassword.storyboard */,
 			);
 			path = Auth;
@@ -538,6 +543,7 @@
 			children = (
 				56DCAABB268CA0FA0056155A /* LoginViewController.swift */,
 				ECB617FE269492A8005E62B0 /* SignUpFirstViewController.swift */,
+				5667D4CA269ACBA70071D7AD /* CodeViewController.swift */,
 				56026138269AC7690079F1D9 /* FindPasswordViewController.swift */,
 			);
 			path = Auth;
@@ -631,6 +637,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56DCAAB9268CA02A0056155A /* Login.storyboard in Resources */,
+				5667D4CD269AD1370071D7AD /* Code.storyboard in Resources */,
 				56DCAA9B268AFF5B0056155A /* OddDayTableViewCell.xib in Resources */,
 				56026137269AC7590079F1D9 /* FindPassword.storyboard in Resources */,
 				56AADEF52694AE2300131D2C /* MedalCollectionViewCell.xib in Resources */,
@@ -768,6 +775,7 @@
 				56DCAA552689BD3B0056155A /* Font.swift in Sources */,
 				56DCAA80268AE1A50056155A /* HomeViewController.swift in Sources */,
 				56DCAA4A2689BCD80056155A /* Const.swift in Sources */,
+				5667D4CB269ACBA70071D7AD /* CodeViewController.swift in Sources */,
 				56EAF75F26955B5300D36105 /* User.swift in Sources */,
 				56DCAA84268AE1BD0056155A /* FeedViewController.swift in Sources */,
 				AA1F352526976E670011B3FA /* HashTagCollectionViewCell.swift in Sources */,
