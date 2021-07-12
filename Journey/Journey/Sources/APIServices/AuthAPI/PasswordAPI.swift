@@ -42,7 +42,6 @@ public class PasswordAPI {
             case .success(let response):
                 let statusCode = response.statusCode
                 let data = response.data
-                
                 let networkResult = self.judgeStatus(by: statusCode, data, responseData: .code)
                 completion(networkResult)
                 
@@ -57,7 +56,7 @@ public class PasswordAPI {
         case 200:
             return isValidData(data: data, responseData: responseData)
         case 400..<500:
-            return .pathErr
+            return .requestErr(data)
         case 500:
             return .serverErr
         default:

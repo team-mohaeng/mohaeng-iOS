@@ -13,6 +13,7 @@ class FindPasswordViewController: UIViewController {
     
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
     
     // MARK: - View Life Cycle
 
@@ -104,9 +105,11 @@ extension FindPasswordViewController {
                 case .success(let code):
                     
                     if let data = code as? CodeData {
+                        self.errorLabel.isHidden = true
                         self.pushToCodeViewController(code: data.number)
                     }
                 case .requestErr(let message):
+                    self.errorLabel.isHidden = false
                     print("requestErr", message)
                 case .pathErr:
                     print(".pathErr")

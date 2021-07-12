@@ -580,9 +580,9 @@
 				ECB617F826949256005E62B0 /* SignUpFirst.storyboard */,
 				ECB617FA2694926E005E62B0 /* SignUpSecond.storyboard */,
 				ECB617FC2694927A005E62B0 /* SignUpThird.storyboard */,
-				5667D4C8269ACB910071D7AD /* NewPassword.storyboard */,
-				5667D4CC269AD1370071D7AD /* Code.storyboard */,
 				56026136269AC7590079F1D9 /* FindPassword.storyboard */,
+				5667D4CC269AD1370071D7AD /* Code.storyboard */,
+				5667D4C8269ACB910071D7AD /* NewPassword.storyboard */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
