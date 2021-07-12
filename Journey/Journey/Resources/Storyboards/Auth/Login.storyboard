@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="journeyMainSampleImg" translatesAutoresizingMaskIntoConstraints="NO" id="lvQ-qD-3Mp">
-                                <rect key="frame" x="88" y="122" width="200" height="200"/>
+                                <rect key="frame" x="87.666666666666686" y="122" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="8yo-1L-act"/>
                                     <constraint firstAttribute="height" constant="200" id="WIY-CL-ut9"/>
@@ -56,18 +56,8 @@
                                     <action selector="touchLoginButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="qOG-cv-Phc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D76-iV-XQ7">
-                                <rect key="frame" x="110" y="521" width="83" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="비밀번호 찾기  ㅣ">
-                                    <color key="titleColor" systemColor="systemGray2Color"/>
-                                </state>
-                                <connections>
-                                    <action selector="findPasswordButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zou-xg-Hk3"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAt-3L-jxc">
-                                <rect key="frame" x="203" y="521" width="42" height="27"/>
+                                <rect key="frame" x="198" y="521" width="42" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="회원가입">
                                     <color key="titleColor" systemColor="systemGray2Color"/>
@@ -76,22 +66,43 @@
                                     <action selector="signUpButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Ieq-p3-6fg"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="l " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBD-8D-N51">
+                                <rect key="frame" x="183" y="527" width="7" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D76-iV-XQ7">
+                                <rect key="frame" x="107" y="521" width="70" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="비밀번호 찾기 ">
+                                    <color key="titleColor" systemColor="systemGray2Color"/>
+                                </state>
+                                <connections>
+                                    <action selector="findPasswordButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zou-xg-Hk3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Lnf-3u-DHh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="0a3-a8-Fxx"/>
-                            <constraint firstItem="D76-iV-XQ7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="110" id="9CT-OD-ed6"/>
+                            <constraint firstItem="OAt-3L-jxc" firstAttribute="leading" secondItem="QBD-8D-N51" secondAttribute="trailing" constant="7" id="0LG-sL-cPA"/>
+                            <constraint firstItem="TXe-88-DED" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="0eF-FD-Mrm"/>
+                            <constraint firstItem="QBD-8D-N51" firstAttribute="firstBaseline" secondItem="D76-iV-XQ7" secondAttribute="firstBaseline" id="1DT-dd-fgy"/>
+                            <constraint firstItem="K6r-Lj-O8f" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="9Go-eh-V2f"/>
                             <constraint firstItem="TXe-88-DED" firstAttribute="top" secondItem="Lnf-3u-DHh" secondAttribute="bottom" constant="8" id="AYs-Yn-4hP"/>
-                            <constraint firstItem="TXe-88-DED" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="GmO-sQ-aMq"/>
-                            <constraint firstItem="K6r-Lj-O8f" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="Kl8-uf-oNS"/>
+                            <constraint firstItem="QBD-8D-N51" firstAttribute="firstBaseline" secondItem="OAt-3L-jxc" secondAttribute="firstBaseline" id="CLd-0r-yn9"/>
+                            <constraint firstItem="QBD-8D-N51" firstAttribute="baseline" secondItem="OAt-3L-jxc" secondAttribute="baseline" id="IB7-vL-dnF"/>
                             <constraint firstItem="OAt-3L-jxc" firstAttribute="top" secondItem="K6r-Lj-O8f" secondAttribute="bottom" constant="20" id="LST-fN-4Ax"/>
                             <constraint firstItem="Lnf-3u-DHh" firstAttribute="top" secondItem="lvQ-qD-3Mp" secondAttribute="bottom" constant="24" id="NNX-dY-87k"/>
                             <constraint firstItem="K6r-Lj-O8f" firstAttribute="top" secondItem="TXe-88-DED" secondAttribute="bottom" constant="27" id="NcP-02-fzb"/>
-                            <constraint firstItem="lvQ-qD-3Mp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="88" id="Va2-qB-d6u"/>
+                            <constraint firstItem="QBD-8D-N51" firstAttribute="baseline" secondItem="D76-iV-XQ7" secondAttribute="baseline" id="SZh-nP-pnM"/>
+                            <constraint firstItem="lvQ-qD-3Mp" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="WqF-Iq-B1v"/>
+                            <constraint firstItem="Lnf-3u-DHh" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Xtc-Cc-50H"/>
                             <constraint firstItem="D76-iV-XQ7" firstAttribute="top" secondItem="K6r-Lj-O8f" secondAttribute="bottom" constant="20" id="hYL-ef-EGQ"/>
+                            <constraint firstItem="QBD-8D-N51" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="iTl-dj-ZM2"/>
                             <constraint firstItem="lvQ-qD-3Mp" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="78" id="iaC-bv-c7t"/>
-                            <constraint firstItem="OAt-3L-jxc" firstAttribute="leading" secondItem="D76-iV-XQ7" secondAttribute="trailing" constant="10" id="jue-WA-oAA"/>
+                            <constraint firstItem="QBD-8D-N51" firstAttribute="leading" secondItem="D76-iV-XQ7" secondAttribute="trailing" constant="7" id="ybY-in-fwg"/>
                         </constraints>
                     </view>
                     <connections>
