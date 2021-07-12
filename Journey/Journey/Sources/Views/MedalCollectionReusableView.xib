@@ -37,7 +37,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nVy-5Y-jUd">
                             <rect key="frame" x="0.0" y="0.0" width="193.5" height="214.5"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flwGraphic" translatesAutoresizingMaskIntoConstraints="NO" id="vOx-t9-zfN">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleMoodImg" translatesAutoresizingMaskIntoConstraints="NO" id="vOx-t9-zfN">
                                     <rect key="frame" x="47" y="30" width="100" height="100"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="OeR-S1-rcA"/>
@@ -73,7 +73,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" name="CourseUndoneGray"/>
+                            <color key="backgroundColor" name="Grey2Bg"/>
                             <constraints>
                                 <constraint firstItem="KXi-2d-LOa" firstAttribute="centerY" secondItem="vOx-t9-zfN" secondAttribute="centerY" constant="10" id="BuA-Fb-6y8"/>
                                 <constraint firstItem="vOx-t9-zfN" firstAttribute="centerX" secondItem="nVy-5Y-jUd" secondAttribute="centerX" id="SsX-m3-UA3"/>
@@ -87,7 +87,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDl-j0-3o5">
                             <rect key="frame" x="208.5" y="0.0" width="193.5" height="214.5"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flwGraphic" translatesAutoresizingMaskIntoConstraints="NO" id="62W-Bk-nt7">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleMoodImg" translatesAutoresizingMaskIntoConstraints="NO" id="62W-Bk-nt7">
                                     <rect key="frame" x="47" y="30" width="100" height="100"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="100" id="91N-py-Ywh"/>
@@ -121,7 +121,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" name="CourseUndoneGray"/>
+                            <color key="backgroundColor" name="Grey2Bg"/>
                             <constraints>
                                 <constraint firstItem="mhD-PF-nnt" firstAttribute="leading" secondItem="uDl-j0-3o5" secondAttribute="leading" constant="16" id="2Cd-fo-QSc"/>
                                 <constraint firstItem="mhD-PF-nnt" firstAttribute="top" secondItem="62W-Bk-nt7" secondAttribute="bottom" constant="16" id="HSA-6J-D4v"/>
@@ -155,16 +155,18 @@
                 <constraint firstItem="yeu-Q2-bCV" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="zba-dR-ceW"/>
             </constraints>
             <connections>
+                <outlet property="affectionLabel" destination="tmw-0w-7kk" id="zYB-t7-q5e"/>
                 <outlet property="affectionView" destination="nVy-5Y-jUd" id="ahz-Ie-d59"/>
+                <outlet property="bestContinueLabel" destination="R66-Ce-HiY" id="iaq-MV-HOM"/>
                 <outlet property="bestContinueView" destination="uDl-j0-3o5" id="03x-uf-E1U"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="163.72767857142856"/>
         </collectionReusableView>
     </objects>
     <resources>
-        <image name="flwGraphic" width="101" height="101"/>
-        <namedColor name="CourseUndoneGray">
-            <color red="0.93300002813339233" green="0.93300002813339233" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="sampleMoodImg" width="300" height="300"/>
+        <namedColor name="Grey2Bg">
+            <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
