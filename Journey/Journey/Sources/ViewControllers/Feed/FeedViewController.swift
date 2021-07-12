@@ -60,6 +60,7 @@ class FeedViewController: UIViewController {
         feedCollectionView.backgroundView = UIView()
         feedCollectionView.backgroundView?.addSubview(headerView)
         feedCollectionView.contentInset = .zero
+        
         feedBackgroundFrame.backgroundColor = .white
         feedBackgroundFrame.makeRounded(radius: 24)
         feedBackgroundFrame.addSubview(feedTitleLabel)
@@ -78,8 +79,7 @@ class FeedViewController: UIViewController {
     }
     
     private func registerXib() {
-        let feedContentsCollectionViewCell = UINib(nibName: "FeedContentsCollectionViewCell", bundle: nil)
-        feedCollectionView.register(feedContentsCollectionViewCell, forCellWithReuseIdentifier: "FeedContentsCollectionViewCell")
+        feedCollectionView.register(ContentsCollectionViewCell.self, forCellWithReuseIdentifier: Const.Xib.Identifier.contentsCollectionViewCell)
     }
     
     private func addObserver() {
@@ -114,7 +114,7 @@ extension FeedViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedContentsCollectionViewCell", for: indexPath) as? FeedContentsCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Name.contentsCollectionViewCell, for: indexPath) as? ContentsCollectionViewCell else { return UICollectionViewCell() }
         
         cell.makeRounded(radius: 14)
         

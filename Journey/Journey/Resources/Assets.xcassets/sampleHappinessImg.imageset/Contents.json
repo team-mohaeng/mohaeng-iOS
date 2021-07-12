@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "sampleHappinessImg.jpg",
+      "filename" : "sampless.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "sampless-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "sampless-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

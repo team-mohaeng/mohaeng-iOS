@@ -30,9 +30,9 @@ class MyDrawerViewController: UIViewController {
     
     // MARK: - function
     private func registerXib() {
-        myHappinessCollectionView.register(UINib(nibName: Const.Xib.Name.feedContentsCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.feedContentsCollectionViewCell)
+        myHappinessCollectionView.register(ContentsCollectionViewCell.self, forCellWithReuseIdentifier: Const.Xib.Identifier.contentsCollectionViewCell)
         
-        myHappinessCollectionView.register(UINib(nibName:  Const.Xib.Name.myDrawerCollectionReusableView, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Const.Xib.Identifier.myDrawerCollectionReusableView)
+        myHappinessCollectionView.register(UINib(nibName: Const.Xib.Name.myDrawerCollectionReusableView, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Const.Xib.Identifier.myDrawerCollectionReusableView)
     }
 
     private func initNavigationBar() {
@@ -93,7 +93,7 @@ extension MyDrawerViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = myHappinessCollectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.feedContentsCollectionViewCell, for: indexPath) as? FeedContentsCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = myHappinessCollectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.contentsCollectionViewCell, for: indexPath) as? ContentsCollectionViewCell else { return UICollectionViewCell() }
         
         cell.makeRounded(radius: 14)
         

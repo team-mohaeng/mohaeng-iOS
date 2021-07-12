@@ -11,12 +11,17 @@ import Moya
 public class CourseAPI {
     
     static let shared = CourseAPI()
-    var challengeProvider = MoyaProvider<CourseService>()
+    var courseProvider = MoyaProvider<CourseService>()
+    
+    enum ResponseData {
+        case course
+        case courses
+    }
     
     public init() { }
     
     func getCourseLibrary(completion: @escaping (NetworkResult<Any>) -> Void) {
-        challengeProvider.request(.getCourseLibrary) { (result) in
+        courseProvider.request(.getCourseLibrary) { (result) in
             
             switch result {
             case.success(let response):
@@ -24,7 +29,7 @@ public class CourseAPI {
                 let statusCode = response.statusCode
                 let data = response.data
                 
-                let networkResult = self.judgeStatus(by: statusCode, data)
+                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .course)
                 completion(networkResult)
                 
             case .failure(let err):
@@ -34,10 +39,28 @@ public class CourseAPI {
         }
     }
     
-    private func judgeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
+    func getMedal(completion: @escaping (NetworkResult<Any>) -> Void) {
+        courseProvider.request(.getMedal) { (result) in
+            
+            switch result {
+            case .success(let response):
+                
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .courses)
+                completion(networkResult)
+                
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
+    private func judgeStatus(by statusCode: Int, _ data: Data, responseData: ResponseData) -> NetworkResult<Any> {
         switch statusCode {
         case 200:
-            return isValidData(data: data)
+            return isValidData(data: data, responseData: responseData)
         case 400..<500:
             return .pathErr
         case 500:
@@ -47,13 +70,20 @@ public class CourseAPI {
         }
     }
     
-    private func isValidData(data: Data) -> NetworkResult<Any> {
+    private func isValidData(data: Data, responseData: ResponseData) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
         
-        guard let decodedData = try? decoder.decode(CourseResponseData.self, from: data) else {
-            return .pathErr
+        switch responseData {
+        case .course:
+            guard let decodedData = try? decoder.decode(CourseResponseData.self, from: data) else {
+                return .pathErr
+            }
+            return .success(decodedData.data)
+        case .courses:
+            guard let decodedData = try? decoder.decode(MedalResponseData.self, from: data) else {
+                return .pathErr
+            }
+            return .success(decodedData.data)
         }
-        
-        return .success(decodedData.data)
     }
 }

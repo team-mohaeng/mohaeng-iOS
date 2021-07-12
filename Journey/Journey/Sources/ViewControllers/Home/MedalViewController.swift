@@ -9,6 +9,12 @@ import UIKit
 
 class MedalViewController: UIViewController {
     
+    // MARK: - Properties
+    
+    var totalIncreasedAffinity = 0
+    var maxSuccessCount = 0
+    var courses = [Course(id: 0, title: "", courseDescription: "", totalDays: 0, situation: 0, property: "", challenges: [])]
+    
     // MARK: - @IBOutlet Properties
 
     @IBOutlet weak var medalCollectionView: UICollectionView!
@@ -21,6 +27,7 @@ class MedalViewController: UIViewController {
         initNavigationBar()
         assignDelegate()
         registerXib()
+        getMedal()
     }
     
     private func initNavigationBar() {
@@ -38,6 +45,13 @@ class MedalViewController: UIViewController {
         
         self.medalCollectionView.register(UINib(nibName: Const.Xib.Name.medalCollectionReusableView, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Const.Xib.Identifier.medalCollectionReusableView)
     }
+    
+    private func updateData(data: MedalData) {
+        self.totalIncreasedAffinity = data.totalIncreasedAffinity
+        self.maxSuccessCount = data.maxSuccessCount
+        self.courses = data.courses
+        self.medalCollectionView.reloadData()
+    }
 
 }
 
@@ -54,6 +68,8 @@ extension MedalViewController: UICollectionViewDelegateFlowLayout {
                 
         if let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Const.Xib.Identifier.medalCollectionReusableView, for: indexPath) as? MedalCollectionReusableView {
             
+            headerView.setText(affinity: self.totalIncreasedAffinity, successCount: self.maxSuccessCount)
+            
             return headerView
         }
         
@@ -64,22 +80,47 @@ extension MedalViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: collectionView.frame.width, height: 300)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 50)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
     }
 }
 
 extension MedalViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return courses.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.medalCollectionViewCell, for: indexPath) as? MedalCollectionViewCell {
             
+            cell.setCell(course: courses[indexPath.row])
+            
             return cell
         }
         
         return UICollectionViewCell()
+    }
+}
+
+extension MedalViewController {
+    
+    func getMedal() {
+        CourseAPI.shared.getMedal { (response) in
+            
+            switch response {
+            case .success(let medalData):
+                if let data = medalData as? MedalData {
+                    self.updateData(data: data)
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
     }
 }
