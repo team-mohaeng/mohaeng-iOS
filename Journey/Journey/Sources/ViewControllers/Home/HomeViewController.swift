@@ -21,18 +21,14 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var thirdIndicatorLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var densityPercentLabel: UILabel!
     
-    // MARK: - Properties
-    var densityPercent: CGFloat = 0.5
-    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        getHomeInfo()
         initNavigationBar()
         initAttributes()
-        initProgressView()
-        setDensityPercent()
         setIndicatorPosition()
     }
     
@@ -80,12 +76,34 @@ class HomeViewController: UIViewController {
         courseTitleButton.contentEdgeInsets = UIEdgeInsets(top: 0.01, left: 0, bottom: 0.01, right: 0)
     }
     
-    private func initProgressView() {
+    private func initProgressView(densityPercent: CGFloat) {
         let indicatorWidth = 8 / (UIScreen.main.bounds.width - 48)
         densityProgressView.makeRounded(radius: 7)
         densityProgressView.layer.sublayers![1].cornerRadius = 7
         densityProgressView.subviews[1].clipsToBounds = true
-        densityProgressView.progress = Float(densityPercent + indicatorWidth)
+        densityProgressView.progress = Float((densityPercent / 100) + indicatorWidth)
+    }
+    
+    private func setDensityPercent(densityPercent: CGFloat) {
+        densityPercentLabel.text = "\(Int(densityPercent))%"
+        initProgressView(densityPercent: densityPercent)
+    }
+    
+    private func updateData(data: HomeData) {
+        courseTitleButton.setTitle(data.course.title, for: .normal)
+        courseDayLabel.text = "\(findCurrentChallengesDay(challenges: data.course.challenges)) 일차"
+        setDensityPercent(densityPercent: CGFloat(data.affinity))
+    }
+    
+    private func findCurrentChallengesDay(challenges: [Challenge]) -> Int {
+        var day = 0
+        for challenges in challenges {
+            if challenges.situation == 0 {
+                return day
+            }
+            day += 1
+        }
+        return day
     }
     
     private func setIndicatorPosition() {
@@ -93,10 +111,28 @@ class HomeViewController: UIViewController {
         firstIndicatiorLeadingConstraint.constant = progressViewWidth / 4
         thirdIndicatorLeadingConstraint.constant = progressViewWidth * 3 / 4
     }
+}
+
+extension HomeViewController {
     
-    private func setDensityPercent() {
-        print(densityPercent)
-        densityPercentLabel.text = "\(Int(densityPercent * 100))%"
-        
+    func getHomeInfo() {
+        HomeAPI.shared.getHomeInfo { (response) in
+            switch response {
+            case .success(let home):
+                if let data = home as? HomeData {
+                    self.updateData(data: data)
+                }
+
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
     }
+    
 }

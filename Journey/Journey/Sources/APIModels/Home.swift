@@ -7,13 +7,20 @@
 
 import Foundation
 
-struct Home: Codable {
+// MARK: - HomeResponseData
+struct HomeResponseData: Codable {
+    let status: Int
+    let data: HomeData
+}
+
+// MARK: - HomeData
+struct HomeData: Codable {
     let situation, affinity: Int
-    let courses: [Course]
+    let course: Course
     
-    init(situation: Int, affinity: Int, courses: [Course]) {
+    init(situation: Int, affinity: Int, course: Course) {
         self.situation = situation
         self.affinity = affinity
-        self.courses = courses
+        self.course = course
     }
 }

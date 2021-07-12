@@ -94,6 +94,8 @@
 		AA1F34E32695D2BD0011B3FA /* WritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34E22695D2BD0011B3FA /* WritingViewController.swift */; };
 		AA1F352526976E670011B3FA /* HashTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F352326976E670011B3FA /* HashTagCollectionViewCell.swift */; };
 		AA1F352626976E670011B3FA /* HashTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1F352426976E670011B3FA /* HashTagCollectionViewCell.xib */; };
+		AAD770D1269C6F4B00EC3598 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD770D0269C6F4B00EC3598 /* HomeService.swift */; };
+		AAD770D5269C706B00EC3598 /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD770D4269C706B00EC3598 /* HomeAPI.swift */; };
 		AAFD90C3269048E500CF4707 /* FeedContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFD90C1269048E500CF4707 /* FeedContentsCollectionViewCell.swift */; };
 		AAFD90C4269048E500CF4707 /* FeedContentsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAFD90C2269048E500CF4707 /* FeedContentsCollectionViewCell.xib */; };
 		AAFD90C7269052E100CF4707 /* FeedHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFD90C6269052E100CF4707 /* FeedHeaderView.swift */; };
@@ -201,6 +203,8 @@
 		AA1F34E22695D2BD0011B3FA /* WritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingViewController.swift; sourceTree = "<group>"; };
 		AA1F352326976E670011B3FA /* HashTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA1F352426976E670011B3FA /* HashTagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HashTagCollectionViewCell.xib; sourceTree = "<group>"; };
+		AAD770D0269C6F4B00EC3598 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		AAD770D4269C706B00EC3598 /* HomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
 		AAFD90C1269048E500CF4707 /* FeedContentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedContentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		AAFD90C2269048E500CF4707 /* FeedContentsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedContentsCollectionViewCell.xib; sourceTree = "<group>"; };
 		AAFD90C6269052E100CF4707 /* FeedHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedHeaderView.swift; sourceTree = "<group>"; };
@@ -430,6 +434,7 @@
 		56DCAA442689BC5B0056155A /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				AAD770CF269C6F3000EC3598 /* HomeAPI */,
 				56D6EF44269981720011F3FE /* NetworkResult.swift */,
 				5667D4D0269ADE300071D7AD /* CourseAPI */,
 				56D6EF3F26997FD20011F3FE /* ChallengeAPI */,
@@ -609,6 +614,15 @@
 				AA1F352426976E670011B3FA /* HashTagCollectionViewCell.xib */,
 			);
 			path = FeedView;
+			sourceTree = "<group>";
+		};
+		AAD770CF269C6F3000EC3598 /* HomeAPI */ = {
+			isa = PBXGroup;
+			children = (
+				AAD770D0269C6F4B00EC3598 /* HomeService.swift */,
+				AAD770D4269C706B00EC3598 /* HomeAPI.swift */,
+			);
+			path = HomeAPI;
 			sourceTree = "<group>";
 		};
 		AAFD90BF269047A000CF4707 /* FeedCollectionView */ = {
@@ -801,6 +815,7 @@
 				ECB61802269492BC005E62B0 /* SignUpSecondViewController.swift in Sources */,
 				56DCAA71268A26F80056155A /* UINavigationController+Extension.swift in Sources */,
 				EC0DB03F269A3CC200DB7980 /* AppYear.swift in Sources */,
+				AAD770D5269C706B00EC3598 /* HomeAPI.swift in Sources */,
 				56DCAA642689BE110056155A /* ProtocolsExmaple.swift in Sources */,
 				ECB617FF269492A8005E62B0 /* SignUpFirstViewController.swift in Sources */,
 				56DCAA82268AE1B10056155A /* ChallengeViewController.swift in Sources */,
@@ -832,6 +847,7 @@
 				5667D4CB269ACBA70071D7AD /* CodeViewController.swift in Sources */,
 				56EAF75F26955B5300D36105 /* User.swift in Sources */,
 				56DCAA84268AE1BD0056155A /* FeedViewController.swift in Sources */,
+				AAD770D1269C6F4B00EC3598 /* HomeService.swift in Sources */,
 				AA1F352526976E670011B3FA /* HashTagCollectionViewCell.swift in Sources */,
 				AA1F349A2693688F0011B3FA /* MyDrawerViewController.swift in Sources */,
 				56DCAA96268AFF510056155A /* EvenDayTableViewCell.swift in Sources */,
