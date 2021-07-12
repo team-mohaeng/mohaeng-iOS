@@ -1,54 +1,48 @@
 //
-//  CourseAPI.swift
+//  PasswordAPI.swift
 //  Journey
 //
-//  Created by 초이 on 2021/07/11.
+//  Created by 초이 on 2021/07/12.
 //
 
 import Foundation
 import Moya
 
-public class CourseAPI {
+public class PasswordAPI {
     
-    static let shared = CourseAPI()
-    var courseProvider = MoyaProvider<CourseService>()
+    static let shared = PasswordAPI()
+    var courseProvider = MoyaProvider<PasswordService>()
     
     enum ResponseData {
-        case course
-        case courses
+        case jwt
+        case code
     }
     
     public init() { }
     
-    func getCourseLibrary(completion: @escaping (NetworkResult<Any>) -> Void) {
-        courseProvider.request(.getCourseLibrary) { (result) in
-            
+    func putNewPassword(completion: @escaping (NetworkResult<Any>) -> Void, email: String, password: String) {
+        courseProvider.request(.putChangedPassword(email: email, password: password)) { (result) in
             switch result {
-            case.success(let response):
-                
+            case .success(let response):
                 let statusCode = response.statusCode
                 let data = response.data
                 
-                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .course)
+                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .jwt)
                 completion(networkResult)
                 
             case .failure(let err):
                 print(err)
             }
-            
         }
     }
     
-    func getMedal(completion: @escaping (NetworkResult<Any>) -> Void) {
-        courseProvider.request(.getMedal) { (result) in
-            
+    func getEmailCode(completion: @escaping (NetworkResult<Any>) -> Void, email: String) {
+        courseProvider.request(.getEmailCode(email: email)) { (result) in
             switch result {
             case .success(let response):
-                
                 let statusCode = response.statusCode
                 let data = response.data
-                
-                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .courses)
+                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .code)
                 completion(networkResult)
                 
             case .failure(let err):
@@ -62,7 +56,7 @@ public class CourseAPI {
         case 200:
             return isValidData(data: data, responseData: responseData)
         case 400..<500:
-            return .pathErr
+            return .requestErr(data)
         case 500:
             return .serverErr
         default:
@@ -74,13 +68,13 @@ public class CourseAPI {
         let decoder = JSONDecoder()
         
         switch responseData {
-        case .course:
-            guard let decodedData = try? decoder.decode(CourseResponseData.self, from: data) else {
+        case .jwt:
+            guard let decodedData = try? decoder.decode(JwtResponseData.self, from: data) else {
                 return .pathErr
             }
             return .success(decodedData.data)
-        case .courses:
-            guard let decodedData = try? decoder.decode(MedalResponseData.self, from: data) else {
+        case .code:
+            guard let decodedData = try? decoder.decode(CodeResponseData.self, from: data) else {
                 return .pathErr
             }
             return .success(decodedData.data)
