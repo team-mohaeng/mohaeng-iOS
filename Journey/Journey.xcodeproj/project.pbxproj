@@ -37,7 +37,6 @@
 		56DCAA512689BD1E0056155A /* Xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA502689BD1E0056155A /* Xib.swift */; };
 		56DCAA532689BD2C0056155A /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA522689BD2C0056155A /* Image.swift */; };
 		56DCAA552689BD3B0056155A /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA542689BD3B0056155A /* Font.swift */; };
-		56DCAA572689BD980056155A /* FontExmaple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA562689BD980056155A /* FontExmaple.swift */; };
 		56DCAA592689BD9F0056155A /* LottieExmaple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA582689BD9F0056155A /* LottieExmaple.swift */; };
 		56DCAA602689BDFF0056155A /* AppModelsExmaple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA5F2689BDFF0056155A /* AppModelsExmaple.swift */; };
 		56DCAA622689BE080056155A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA612689BE080056155A /* UIColor+Extension.swift */; };
@@ -78,6 +77,12 @@
 		56EAF75A2694BDD300D36105 /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56EAF7582694BDD300D36105 /* PopUpViewController.xib */; };
 		56EAF75F26955B5300D36105 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EAF75E26955B5300D36105 /* User.swift */; };
 		56EAF76126955C0300D36105 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EAF76026955C0300D36105 /* Home.swift */; };
+		56F13A50269C745B0006F9A0 /* BMHANNA_11yrs_otf.otf in Resources */ = {isa = PBXBuildFile; fileRef = 56F13A4F269C745B0006F9A0 /* BMHANNA_11yrs_otf.otf */; };
+		56F13A56269C74680006F9A0 /* SpoqaHanSansNeo-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 56F13A51269C74660006F9A0 /* SpoqaHanSansNeo-Light.otf */; };
+		56F13A57269C74680006F9A0 /* SpoqaHanSansNeo-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 56F13A52269C74670006F9A0 /* SpoqaHanSansNeo-Thin.otf */; };
+		56F13A58269C74680006F9A0 /* SpoqaHanSansNeo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 56F13A53269C74670006F9A0 /* SpoqaHanSansNeo-Regular.otf */; };
+		56F13A59269C74680006F9A0 /* SpoqaHanSansNeo-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 56F13A54269C74680006F9A0 /* SpoqaHanSansNeo-Medium.otf */; };
+		56F13A5A269C74680006F9A0 /* SpoqaHanSansNeo-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 56F13A55269C74680006F9A0 /* SpoqaHanSansNeo-Bold.otf */; };
 		AA1F348E2692FB920011B3FA /* FeedDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1F348D2692FB920011B3FA /* FeedDetail.storyboard */; };
 		AA1F34912692FB9E0011B3FA /* FeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34902692FB9E0011B3FA /* FeedDetailViewController.swift */; };
 		AA1F349726935A890011B3FA /* MyDrawer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1F349626935A890011B3FA /* MyDrawer.storyboard */; };
@@ -141,7 +146,6 @@
 		56DCAA502689BD1E0056155A /* Xib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xib.swift; sourceTree = "<group>"; };
 		56DCAA522689BD2C0056155A /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		56DCAA542689BD3B0056155A /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
-		56DCAA562689BD980056155A /* FontExmaple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExmaple.swift; sourceTree = "<group>"; };
 		56DCAA582689BD9F0056155A /* LottieExmaple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieExmaple.swift; sourceTree = "<group>"; };
 		56DCAA5F2689BDFF0056155A /* AppModelsExmaple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModelsExmaple.swift; sourceTree = "<group>"; };
 		56DCAA612689BE080056155A /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -183,6 +187,12 @@
 		56EAF7582694BDD300D36105 /* PopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpViewController.xib; sourceTree = "<group>"; };
 		56EAF75E26955B5300D36105 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		56EAF76026955C0300D36105 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		56F13A4F269C745B0006F9A0 /* BMHANNA_11yrs_otf.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMHANNA_11yrs_otf.otf; sourceTree = "<group>"; };
+		56F13A51269C74660006F9A0 /* SpoqaHanSansNeo-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Light.otf"; sourceTree = "<group>"; };
+		56F13A52269C74670006F9A0 /* SpoqaHanSansNeo-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Thin.otf"; sourceTree = "<group>"; };
+		56F13A53269C74670006F9A0 /* SpoqaHanSansNeo-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Regular.otf"; sourceTree = "<group>"; };
+		56F13A54269C74680006F9A0 /* SpoqaHanSansNeo-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Medium.otf"; sourceTree = "<group>"; };
+		56F13A55269C74680006F9A0 /* SpoqaHanSansNeo-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Bold.otf"; sourceTree = "<group>"; };
 		7E48B7936113F659E5F3BD09 /* Pods-Journey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journey.release.xcconfig"; path = "Target Support Files/Pods-Journey/Pods-Journey.release.xcconfig"; sourceTree = "<group>"; };
 		9DAC4B8168D442A39A098439 /* Pods_Journey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Journey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA1F348D2692FB920011B3FA /* FeedDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedDetail.storyboard; sourceTree = "<group>"; };
@@ -454,7 +464,12 @@
 		56DCAA462689BC850056155A /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				56DCAA562689BD980056155A /* FontExmaple.swift */,
+				56F13A55269C74680006F9A0 /* SpoqaHanSansNeo-Bold.otf */,
+				56F13A51269C74660006F9A0 /* SpoqaHanSansNeo-Light.otf */,
+				56F13A54269C74680006F9A0 /* SpoqaHanSansNeo-Medium.otf */,
+				56F13A53269C74670006F9A0 /* SpoqaHanSansNeo-Regular.otf */,
+				56F13A52269C74670006F9A0 /* SpoqaHanSansNeo-Thin.otf */,
+				56F13A4F269C745B0006F9A0 /* BMHANNA_11yrs_otf.otf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -685,11 +700,15 @@
 				5667D4C9269ACB910071D7AD /* NewPassword.storyboard in Resources */,
 				56DCAA9B268AFF5B0056155A /* OddDayTableViewCell.xib in Resources */,
 				56026137269AC7590079F1D9 /* FindPassword.storyboard in Resources */,
+				56F13A50269C745B0006F9A0 /* BMHANNA_11yrs_otf.otf in Resources */,
 				56AADEF52694AE2300131D2C /* MedalCollectionViewCell.xib in Resources */,
 				56DCAA7A268AE1280056155A /* Home.storyboard in Resources */,
+				56F13A59269C74680006F9A0 /* SpoqaHanSansNeo-Medium.otf in Resources */,
 				AA1F348E2692FB920011B3FA /* FeedDetail.storyboard in Resources */,
 				56DCAA74268ADE040056155A /* Tabbar.storyboard in Resources */,
 				ECB617FB2694926E005E62B0 /* SignUpSecond.storyboard in Resources */,
+				56F13A58269C74680006F9A0 /* SpoqaHanSansNeo-Regular.otf in Resources */,
+				56F13A5A269C74680006F9A0 /* SpoqaHanSansNeo-Bold.otf in Resources */,
 				56DCAA97268AFF510056155A /* EvenDayTableViewCell.xib in Resources */,
 				ECB617FD2694927A005E62B0 /* SignUpThird.storyboard in Resources */,
 				56DCAA7E268AE13B0056155A /* Feed.storyboard in Resources */,
@@ -698,6 +717,7 @@
 				56DCAAA1268C61810056155A /* CourseLibrary.storyboard in Resources */,
 				56DCAA6F2689DB500056155A /* Colors.xcassets in Resources */,
 				AA1F349726935A890011B3FA /* MyDrawer.storyboard in Resources */,
+				56F13A56269C74680006F9A0 /* SpoqaHanSansNeo-Light.otf in Resources */,
 				56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */,
 				EC0DB03D269A0FBD00DB7980 /* YearPickerViewController.xib in Resources */,
 				AA1F34E02695D28C0011B3FA /* Writing.storyboard in Resources */,
@@ -717,6 +737,7 @@
 				56DCAA342689BB9E0056155A /* LaunchScreen.storyboard in Resources */,
 				56DCAA312689BB9E0056155A /* Assets.xcassets in Resources */,
 				ECB617F926949256005E62B0 /* SignUpFirst.storyboard in Resources */,
+				56F13A57269C74680006F9A0 /* SpoqaHanSansNeo-Thin.otf in Resources */,
 				56DCAA7C268AE1310056155A /* Challenge.storyboard in Resources */,
 				56DCAA8C268AF6E20056155A /* Course.storyboard in Resources */,
 				AAFD90CA269052EE00CF4707 /* FeedHeaderView.xib in Resources */,
@@ -851,7 +872,6 @@
 				AAFD90C3269048E500CF4707 /* FeedContentsCollectionViewCell.swift in Sources */,
 				56026139269AC7690079F1D9 /* FindPasswordViewController.swift in Sources */,
 				56DCAAA3268C61A40056155A /* CourseLibraryViewController.swift in Sources */,
-				56DCAA572689BD980056155A /* FontExmaple.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
