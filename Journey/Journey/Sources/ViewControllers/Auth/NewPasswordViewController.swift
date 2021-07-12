@@ -9,6 +9,8 @@ import UIKit
 
 class NewPasswordViewController: UIViewController {
     
+    // MARK: - Properties
+    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var passwordTextField: UITextField!
@@ -22,6 +24,7 @@ class NewPasswordViewController: UIViewController {
         super.viewDidLoad()
 
         initNavigationBar()
+        initViewRounding()
         setDelegation()
     }
     
@@ -41,29 +44,42 @@ class NewPasswordViewController: UIViewController {
         passwordCheckTextField.delegate = self
     }
     
-    private func checkPasswordFormat(password: String) {
-        if validatePassword(password: password) {
-            errorLabel.isHidden = false
-            errorLabel.text = "사용 가능한 비밀번호입니다"
-            errorLabel.tintColor = UIColor.Green
-        } else {
-            errorLabel.isHidden = false
-            errorLabel.text = "사용 가능하지 않은 비밀번호입니다"
-            errorLabel.tintColor = UIColor.Red
-        }
+    private func showFormatError() {
+        errorLabel.isHidden = false
+        errorLabel.text = "사용 가능하지 않은 비밀번호입니다"
+        errorLabel.textColor = UIColor.Red
+        makeCompleteButtonDisable()
+    }
+    
+    private func hideFormatError() {
+        errorLabel.isHidden = false
+        errorLabel.text = "사용 가능한 비밀번호입니다"
+        errorLabel.textColor = UIColor.Green
+        makeCompleteButtonDisable()
     }
     
     private func checkPasswordSameness() {
         if passwordTextField.text == passwordCheckTextField.text {
             errorLabel.isHidden = false
             errorLabel.text = "비밀번호가 일치합니다"
-            errorLabel.tintColor = UIColor.Green
-            
+            errorLabel.textColor = UIColor.Green
+            makeCompleteButtonEnable()
         } else {
             errorLabel.isHidden = false
             errorLabel.text = "비밀번호가 일치하지 않습니다"
-            errorLabel.tintColor = UIColor.Red
+            errorLabel.textColor = UIColor.Red
+            makeCompleteButtonDisable()
         }
+    }
+    
+    private func makeCompleteButtonEnable() {
+        completeButton.isEnabled = true
+        completeButton.backgroundColor = UIColor.Pink2
+    }
+    
+    private func makeCompleteButtonDisable() {
+        completeButton.isEnabled = false
+        completeButton.backgroundColor = UIColor.Grey1Bg
     }
     
     func validatePassword(password: String) -> Bool {
@@ -86,20 +102,25 @@ class NewPasswordViewController: UIViewController {
 
 extension NewPasswordViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        guard let password = passwordTextField.text  else {
+            return
+        }
+
         // 비밀번호
-        if passwordTextField.text != "" {
-            // 비밀번호 확인
-            if passwordCheckTextField.text != "" {
-                checkPasswordSameness()
+        if password != "" {
+            
+            if validatePassword(password: password) {
+                if passwordCheckTextField.text != "" {
+                    checkPasswordSameness()
+                } else {
+                    hideFormatError()
+                }
             } else {
-                checkPasswordFormat(password: passwordTextField.text ?? "")
+                showFormatError()
             }
         } else {
-            if passwordCheckTextField.text != "" {
-                checkPasswordSameness()
-            } else {
-                errorLabel.isHidden = true
-            }
+            errorLabel.isHidden = true
         }
     }
 }

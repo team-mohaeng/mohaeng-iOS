@@ -104,4 +104,8 @@ extension CodeViewController: UITextFieldDelegate {
         }
         checkCodeFormat(userInput: text)
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        errorLabel.isHidden = true
+    }
 }
