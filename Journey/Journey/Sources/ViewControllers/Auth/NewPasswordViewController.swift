@@ -11,6 +11,8 @@ class NewPasswordViewController: UIViewController {
     
     // MARK: - Properties
     
+    var user = User.shared
+    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var passwordTextField: UITextField!
@@ -96,7 +98,7 @@ class NewPasswordViewController: UIViewController {
     // MARK: - @IBAction Functions
     
     @IBAction func touchCompleteButton(_ sender: Any) {
-        popToRootViewController()
+        putNewPassword()
     }
 }
 
@@ -122,5 +124,36 @@ extension NewPasswordViewController: UITextFieldDelegate {
         } else {
             errorLabel.isHidden = true
         }
+    }
+}
+
+extension NewPasswordViewController {
+    func putNewPassword() {
+        
+        guard let password = passwordTextField.text else {
+            return
+        }
+        user.password = password
+        
+        guard let email = user.email else {
+            return
+        }
+        
+        PasswordAPI.shared.putNewPassword(completion: { (response) in
+            switch response {
+            case .success(let jwt):
+                if let data = jwt as? JwtData {
+                    self.popToRootViewController()
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }, email: email, password: password)
     }
 }

@@ -81,6 +81,7 @@
 		56EAF76126955C0300D36105 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EAF76026955C0300D36105 /* Home.swift */; };
 		56F13A45269C15300006F9A0 /* PasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F13A44269C15300006F9A0 /* PasswordService.swift */; };
 		56F13A47269C243D0006F9A0 /* PasswordAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F13A46269C243D0006F9A0 /* PasswordAPI.swift */; };
+		56F13A4E269C6D840006F9A0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F13A4D269C6D840006F9A0 /* User.swift */; };
 		AA1F348E2692FB920011B3FA /* FeedDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1F348D2692FB920011B3FA /* FeedDetail.storyboard */; };
 		AA1F34912692FB9E0011B3FA /* FeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34902692FB9E0011B3FA /* FeedDetailViewController.swift */; };
 		AA1F349726935A890011B3FA /* MyDrawer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1F349626935A890011B3FA /* MyDrawer.storyboard */; };
@@ -189,6 +190,7 @@
 		56EAF76026955C0300D36105 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		56F13A44269C15300006F9A0 /* PasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordService.swift; sourceTree = "<group>"; };
 		56F13A46269C243D0006F9A0 /* PasswordAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordAPI.swift; sourceTree = "<group>"; };
+		56F13A4D269C6D840006F9A0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7E48B7936113F659E5F3BD09 /* Pods-Journey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journey.release.xcconfig"; path = "Target Support Files/Pods-Journey/Pods-Journey.release.xcconfig"; sourceTree = "<group>"; };
 		9DAC4B8168D442A39A098439 /* Pods_Journey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Journey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA1F348D2692FB920011B3FA /* FeedDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedDetail.storyboard; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 			children = (
 				56DCAA5F2689BDFF0056155A /* AppModelsExmaple.swift */,
 				EC0DB03E269A3CC200DB7980 /* AppYear.swift */,
+				56F13A4D269C6D840006F9A0 /* User.swift */,
 			);
 			path = AppModels;
 			sourceTree = "<group>";
@@ -839,6 +842,7 @@
 				56DCAAAF268C6D690056155A /* UndoneCourseCollectionViewCell.swift in Sources */,
 				AA1F34C726959BFC0011B3FA /* MoodViewController.swift in Sources */,
 				56DCAA8E268AF75E0056155A /* CourseViewController.swift in Sources */,
+				56F13A4E269C6D840006F9A0 /* User.swift in Sources */,
 				AA1F34912692FB9E0011B3FA /* FeedDetailViewController.swift in Sources */,
 				56DCAA9D268B00910056155A /* UIView+Extension.swift in Sources */,
 				AA1F34A9269377F30011B3FA /* DatePickerViewController.swift in Sources */,

@@ -9,6 +9,10 @@ import UIKit
 
 class FindPasswordViewController: UIViewController {
     
+    // MARK: - Properties
+    
+    let user = User.shared
+    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var nextButton: UIButton!
@@ -107,6 +111,7 @@ extension FindPasswordViewController {
                     if let data = code as? CodeData {
                         self.errorLabel.isHidden = true
                         self.pushToCodeViewController(code: data.number)
+                        self.user.email = email
                     }
                 case .requestErr(let message):
                     self.errorLabel.isHidden = false
