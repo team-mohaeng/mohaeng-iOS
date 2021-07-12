@@ -98,8 +98,8 @@
 		AA1F34E32695D2BD0011B3FA /* WritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34E22695D2BD0011B3FA /* WritingViewController.swift */; };
 		AA1F352526976E670011B3FA /* HashTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F352326976E670011B3FA /* HashTagCollectionViewCell.swift */; };
 		AA1F352626976E670011B3FA /* HashTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1F352426976E670011B3FA /* HashTagCollectionViewCell.xib */; };
-		AAFD90C3269048E500CF4707 /* FeedContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFD90C1269048E500CF4707 /* FeedContentsCollectionViewCell.swift */; };
-		AAFD90C4269048E500CF4707 /* FeedContentsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAFD90C2269048E500CF4707 /* FeedContentsCollectionViewCell.xib */; };
+		AAD77084269B710E00EC3598 /* CustomIntensityVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD77083269B710E00EC3598 /* CustomIntensityVisualEffectView.swift */; };
+		AAD7709A269B8B3F00EC3598 /* ContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD77099269B8B3F00EC3598 /* ContentsCollectionViewCell.swift */; };
 		AAFD90C7269052E100CF4707 /* FeedHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFD90C6269052E100CF4707 /* FeedHeaderView.swift */; };
 		AAFD90CA269052EE00CF4707 /* FeedHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAFD90C9269052EE00CF4707 /* FeedHeaderView.xib */; };
 		EC0DB03C269A0FBD00DB7980 /* YearPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB03A269A0FBD00DB7980 /* YearPickerViewController.swift */; };
@@ -209,8 +209,8 @@
 		AA1F34E22695D2BD0011B3FA /* WritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingViewController.swift; sourceTree = "<group>"; };
 		AA1F352326976E670011B3FA /* HashTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA1F352426976E670011B3FA /* HashTagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HashTagCollectionViewCell.xib; sourceTree = "<group>"; };
-		AAFD90C1269048E500CF4707 /* FeedContentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedContentsCollectionViewCell.swift; sourceTree = "<group>"; };
-		AAFD90C2269048E500CF4707 /* FeedContentsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedContentsCollectionViewCell.xib; sourceTree = "<group>"; };
+		AAD77083269B710E00EC3598 /* CustomIntensityVisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIntensityVisualEffectView.swift; sourceTree = "<group>"; };
+		AAD77099269B8B3F00EC3598 /* ContentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		AAFD90C6269052E100CF4707 /* FeedHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedHeaderView.swift; sourceTree = "<group>"; };
 		AAFD90C9269052EE00CF4707 /* FeedHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedHeaderView.xib; sourceTree = "<group>"; };
 		AE04EE8E2CC2D99FF8A949C4 /* Pods-Journey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journey.debug.xcconfig"; path = "Target Support Files/Pods-Journey/Pods-Journey.debug.xcconfig"; sourceTree = "<group>"; };
@@ -391,6 +391,7 @@
 				56EAF7502694AF2E00D36105 /* MedalCollectionReusableView.xib */,
 				EC0DB03A269A0FBD00DB7980 /* YearPickerViewController.swift */,
 				EC0DB03B269A0FBD00DB7980 /* YearPickerViewController.xib */,
+				AAD77083269B710E00EC3598 /* CustomIntensityVisualEffectView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -634,8 +635,7 @@
 		AAFD90BF269047A000CF4707 /* FeedCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				AAFD90C1269048E500CF4707 /* FeedContentsCollectionViewCell.swift */,
-				AAFD90C2269048E500CF4707 /* FeedContentsCollectionViewCell.xib */,
+				AAD77099269B8B3F00EC3598 /* ContentsCollectionViewCell.swift */,
 			);
 			path = FeedCollectionView;
 			sourceTree = "<group>";
@@ -713,7 +713,6 @@
 				56DCAA97268AFF510056155A /* EvenDayTableViewCell.xib in Resources */,
 				ECB617FD2694927A005E62B0 /* SignUpThird.storyboard in Resources */,
 				56DCAA7E268AE13B0056155A /* Feed.storyboard in Resources */,
-				AAFD90C4269048E500CF4707 /* FeedContentsCollectionViewCell.xib in Resources */,
 				AA1F34C426959BD50011B3FA /* Mood.storyboard in Resources */,
 				56DCAAA1268C61810056155A /* CourseLibrary.storyboard in Resources */,
 				56DCAA6F2689DB500056155A /* Colors.xcassets in Resources */,
@@ -845,6 +844,7 @@
 				56F13A4E269C6D840006F9A0 /* User.swift in Sources */,
 				AA1F34912692FB9E0011B3FA /* FeedDetailViewController.swift in Sources */,
 				56DCAA9D268B00910056155A /* UIView+Extension.swift in Sources */,
+				AAD7709A269B8B3F00EC3598 /* ContentsCollectionViewCell.swift in Sources */,
 				AA1F34A9269377F30011B3FA /* DatePickerViewController.swift in Sources */,
 				5667D4D4269AF7310071D7AD /* CourseAPI.swift in Sources */,
 				56DCAA92268AFF3A0056155A /* FirstDayTableViewCell.swift in Sources */,
@@ -854,6 +854,8 @@
 				56DCAA80268AE1A50056155A /* HomeViewController.swift in Sources */,
 				56DCAA4A2689BCD80056155A /* Const.swift in Sources */,
 				5667D4CB269ACBA70071D7AD /* CodeViewController.swift in Sources */,
+				56EAF75F26955B5300D36105 /* User.swift in Sources */,
+				AAD77084269B710E00EC3598 /* CustomIntensityVisualEffectView.swift in Sources */,
 				56EAF75F26955B5300D36105 /* Auth.swift in Sources */,
 				56DCAA84268AE1BD0056155A /* FeedViewController.swift in Sources */,
 				AA1F352526976E670011B3FA /* HashTagCollectionViewCell.swift in Sources */,
@@ -872,7 +874,6 @@
 				564D5D8C26942F260056E468 /* URL.swift in Sources */,
 				5667D4D8269B0EB30071D7AD /* ViewModelState.swift in Sources */,
 				56DCAA9A268AFF5B0056155A /* OddDayTableViewCell.swift in Sources */,
-				AAFD90C3269048E500CF4707 /* FeedContentsCollectionViewCell.swift in Sources */,
 				56026139269AC7690079F1D9 /* FindPasswordViewController.swift in Sources */,
 				56DCAAA3268C61A40056155A /* CourseLibraryViewController.swift in Sources */,
 				56DCAA572689BD980056155A /* FontExmaple.swift in Sources */,
