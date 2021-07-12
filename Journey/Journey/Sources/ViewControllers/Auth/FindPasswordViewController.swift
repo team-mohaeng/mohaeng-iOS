@@ -56,9 +56,11 @@ class FindPasswordViewController: UIViewController {
         return emailTest.evaluate(with: email)
     }
     
-    func pushToCodeViewController() {
+    func pushToCodeViewController(code: Int) {
         let codeStoryboard = UIStoryboard(name: Const.Storyboard.Name.code, bundle: nil)
         guard let codeViewController = codeStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.code) as? CodeViewController else { return }
+        
+        codeViewController.rightCode = code
         
         self.navigationController?.pushViewController(codeViewController, animated: true)
     }
@@ -66,7 +68,7 @@ class FindPasswordViewController: UIViewController {
     // MARK: - @IBAction Functions
     
     @IBAction func touchNextButton(_ sender: Any) {
-        pushToCodeViewController()
+        getCode()
     }
     
 }
@@ -89,4 +91,33 @@ extension FindPasswordViewController: UITextFieldDelegate {
         }
         checkEmailFormat(email: text)
     }
+}
+
+extension FindPasswordViewController {
+    
+    func getCode() {
+        
+        if let email = self.emailTextField.text {
+            
+            PasswordAPI.shared.getEmailCode(completion: { (result) in
+                switch result {
+                case .success(let code):
+                    
+                    if let data = code as? CodeData {
+                        self.pushToCodeViewController(code: data.number)
+                    }
+                case .requestErr(let message):
+                    print("requestErr", message)
+                case .pathErr:
+                    print(".pathErr")
+                case .serverErr:
+                    print("serverErr")
+                case .networkFail:
+                    print("networkFail")
+                }
+            }, email: email)
+            
+        }
+    }
+    
 }

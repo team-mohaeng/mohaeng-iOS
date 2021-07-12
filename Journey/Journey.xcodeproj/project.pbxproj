@@ -77,8 +77,10 @@
 		56EAF7522694AF2E00D36105 /* MedalCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56EAF7502694AF2E00D36105 /* MedalCollectionReusableView.xib */; };
 		56EAF7592694BDD300D36105 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EAF7572694BDD300D36105 /* PopUpViewController.swift */; };
 		56EAF75A2694BDD300D36105 /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56EAF7582694BDD300D36105 /* PopUpViewController.xib */; };
-		56EAF75F26955B5300D36105 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EAF75E26955B5300D36105 /* User.swift */; };
+		56EAF75F26955B5300D36105 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EAF75E26955B5300D36105 /* Auth.swift */; };
 		56EAF76126955C0300D36105 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EAF76026955C0300D36105 /* Home.swift */; };
+		56F13A45269C15300006F9A0 /* PasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F13A44269C15300006F9A0 /* PasswordService.swift */; };
+		56F13A47269C243D0006F9A0 /* PasswordAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F13A46269C243D0006F9A0 /* PasswordAPI.swift */; };
 		AA1F348E2692FB920011B3FA /* FeedDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1F348D2692FB920011B3FA /* FeedDetail.storyboard */; };
 		AA1F34912692FB9E0011B3FA /* FeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34902692FB9E0011B3FA /* FeedDetailViewController.swift */; };
 		AA1F349726935A890011B3FA /* MyDrawer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1F349626935A890011B3FA /* MyDrawer.storyboard */; };
@@ -183,8 +185,10 @@
 		56EAF7502694AF2E00D36105 /* MedalCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedalCollectionReusableView.xib; sourceTree = "<group>"; };
 		56EAF7572694BDD300D36105 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		56EAF7582694BDD300D36105 /* PopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpViewController.xib; sourceTree = "<group>"; };
-		56EAF75E26955B5300D36105 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		56EAF75E26955B5300D36105 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		56EAF76026955C0300D36105 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		56F13A44269C15300006F9A0 /* PasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordService.swift; sourceTree = "<group>"; };
+		56F13A46269C243D0006F9A0 /* PasswordAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordAPI.swift; sourceTree = "<group>"; };
 		7E48B7936113F659E5F3BD09 /* Pods-Journey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journey.release.xcconfig"; path = "Target Support Files/Pods-Journey/Pods-Journey.release.xcconfig"; sourceTree = "<group>"; };
 		9DAC4B8168D442A39A098439 /* Pods_Journey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Journey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA1F348D2692FB920011B3FA /* FeedDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedDetail.storyboard; sourceTree = "<group>"; };
@@ -433,6 +437,7 @@
 			isa = PBXGroup;
 			children = (
 				56D6EF44269981720011F3FE /* NetworkResult.swift */,
+				56F13A41269C15140006F9A0 /* AuthAPI */,
 				5667D4D0269ADE300071D7AD /* CourseAPI */,
 				56D6EF3F26997FD20011F3FE /* ChallengeAPI */,
 			);
@@ -472,7 +477,7 @@
 		56DCAA5A2689BDC40056155A /* APIModels */ = {
 			isa = PBXGroup;
 			children = (
-				56EAF75E26955B5300D36105 /* User.swift */,
+				56EAF75E26955B5300D36105 /* Auth.swift */,
 				56EAF76026955C0300D36105 /* Home.swift */,
 				56DCAA9E268C51E50056155A /* Challenge.swift */,
 				56DCAAB5268C6F5D0056155A /* Course.swift */,
@@ -575,8 +580,8 @@
 				ECB617F826949256005E62B0 /* SignUpFirst.storyboard */,
 				ECB617FA2694926E005E62B0 /* SignUpSecond.storyboard */,
 				ECB617FC2694927A005E62B0 /* SignUpThird.storyboard */,
-				5667D4CC269AD1370071D7AD /* Code.storyboard */,
 				5667D4C8269ACB910071D7AD /* NewPassword.storyboard */,
+				5667D4CC269AD1370071D7AD /* Code.storyboard */,
 				56026136269AC7590079F1D9 /* FindPassword.storyboard */,
 			);
 			path = Auth;
@@ -589,9 +594,9 @@
 				ECB617FE269492A8005E62B0 /* SignUpFirstViewController.swift */,
 				ECB61801269492BC005E62B0 /* SignUpSecondViewController.swift */,
 				ECB61803269492CD005E62B0 /* SignUpThirdViewController.swift */,
+				56026138269AC7690079F1D9 /* FindPasswordViewController.swift */,
 				5667D4CA269ACBA70071D7AD /* CodeViewController.swift */,
 				5667D4CE269AD1620071D7AD /* NewPasswordViewController.swift */,
-				56026138269AC7690079F1D9 /* FindPasswordViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -603,6 +608,15 @@
 				56EAF7582694BDD300D36105 /* PopUpViewController.xib */,
 			);
 			path = PopUp;
+			sourceTree = "<group>";
+		};
+		56F13A41269C15140006F9A0 /* AuthAPI */ = {
+			isa = PBXGroup;
+			children = (
+				56F13A44269C15300006F9A0 /* PasswordService.swift */,
+				56F13A46269C243D0006F9A0 /* PasswordAPI.swift */,
+			);
+			path = AuthAPI;
 			sourceTree = "<group>";
 		};
 		AA1F352126976E390011B3FA /* FeedView */ = {
@@ -819,6 +833,7 @@
 				564D5D90269446760056E468 /* MedalViewController.swift in Sources */,
 				56DCAAB6268C6F5D0056155A /* Course.swift in Sources */,
 				56DCAA4D2689BCFA0056155A /* Storyboard.swift in Sources */,
+				56F13A47269C243D0006F9A0 /* PasswordAPI.swift in Sources */,
 				5667D4DE269B624C0071D7AD /* Medal.swift in Sources */,
 				56D6EF45269981720011F3FE /* NetworkResult.swift in Sources */,
 				56DCAAAF268C6D690056155A /* UndoneCourseCollectionViewCell.swift in Sources */,
@@ -830,11 +845,12 @@
 				5667D4D4269AF7310071D7AD /* CourseAPI.swift in Sources */,
 				56DCAA92268AFF3A0056155A /* FirstDayTableViewCell.swift in Sources */,
 				56DCAA512689BD1E0056155A /* Xib.swift in Sources */,
+				56F13A45269C15300006F9A0 /* PasswordService.swift in Sources */,
 				56DCAA552689BD3B0056155A /* Font.swift in Sources */,
 				56DCAA80268AE1A50056155A /* HomeViewController.swift in Sources */,
 				56DCAA4A2689BCD80056155A /* Const.swift in Sources */,
 				5667D4CB269ACBA70071D7AD /* CodeViewController.swift in Sources */,
-				56EAF75F26955B5300D36105 /* User.swift in Sources */,
+				56EAF75F26955B5300D36105 /* Auth.swift in Sources */,
 				56DCAA84268AE1BD0056155A /* FeedViewController.swift in Sources */,
 				AA1F352526976E670011B3FA /* HashTagCollectionViewCell.swift in Sources */,
 				AA1F349A2693688F0011B3FA /* MyDrawerViewController.swift in Sources */,
