@@ -29,9 +29,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="690-zu-ul9">
-                                        <rect key="frame" x="24" y="77.666666666666671" width="235" height="51.000000000000014"/>
+                                        <rect key="frame" x="24" y="77.666666666666671" width="118" height="51.000000000000014"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
-                                        <state key="normal" title="뽀득뽀득 세균 퇴치">
+                                        <state key="normal" title="코스 이름">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
