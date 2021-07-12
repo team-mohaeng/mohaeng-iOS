@@ -13,4 +13,6 @@ target 'Journey' do
 	pod 'Firebase/Analytics'
 	pod 'Firebase/Messaging'
 	pod 'IQKeyboardManagerSwift'
+	pod 'SnapKit'
+	pod 'Then'
 end

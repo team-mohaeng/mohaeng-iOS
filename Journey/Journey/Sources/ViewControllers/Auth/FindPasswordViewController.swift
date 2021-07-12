@@ -9,10 +9,15 @@ import UIKit
 
 class FindPasswordViewController: UIViewController {
     
+    // MARK: - Properties
+    
+    let user = User.shared
+    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
     
     // MARK: - View Life Cycle
 
@@ -56,9 +61,11 @@ class FindPasswordViewController: UIViewController {
         return emailTest.evaluate(with: email)
     }
     
-    func pushToCodeViewController() {
+    func pushToCodeViewController(code: Int) {
         let codeStoryboard = UIStoryboard(name: Const.Storyboard.Name.code, bundle: nil)
         guard let codeViewController = codeStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.code) as? CodeViewController else { return }
+        
+        codeViewController.rightCode = code
         
         self.navigationController?.pushViewController(codeViewController, animated: true)
     }
@@ -66,7 +73,7 @@ class FindPasswordViewController: UIViewController {
     // MARK: - @IBAction Functions
     
     @IBAction func touchNextButton(_ sender: Any) {
-        pushToCodeViewController()
+        getCode()
     }
     
 }
@@ -89,4 +96,36 @@ extension FindPasswordViewController: UITextFieldDelegate {
         }
         checkEmailFormat(email: text)
     }
+}
+
+extension FindPasswordViewController {
+    
+    func getCode() {
+        
+        if let email = self.emailTextField.text {
+            
+            PasswordAPI.shared.getEmailCode(completion: { (result) in
+                switch result {
+                case .success(let code):
+                    
+                    if let data = code as? CodeData {
+                        self.errorLabel.isHidden = true
+                        self.pushToCodeViewController(code: data.number)
+                        self.user.email = email
+                    }
+                case .requestErr(let message):
+                    self.errorLabel.isHidden = false
+                    print("requestErr", message)
+                case .pathErr:
+                    print(".pathErr")
+                case .serverErr:
+                    print("serverErr")
+                case .networkFail:
+                    print("networkFail")
+                }
+            }, email: email)
+            
+        }
+    }
+    
 }

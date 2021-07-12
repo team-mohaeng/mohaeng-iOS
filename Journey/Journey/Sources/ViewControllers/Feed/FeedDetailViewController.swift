@@ -36,8 +36,6 @@ class FeedDetailViewController: UIViewController {
     
     private func initAttribute() {
         feedDetailView.makeRounded(radius: 20)
-        feedDetailView.layer.borderColor = UIColor.black.cgColor
-        feedDetailView.layer.borderWidth = 1
         
         moodImageView.layer.borderWidth = 1.0
         moodImageView.layer.borderColor = UIColor.black.cgColor
@@ -46,8 +44,9 @@ class FeedDetailViewController: UIViewController {
     
     private func initNavigationBar() {
         self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
-        
-        navigationItem.title = "소확행 자세히 보기"
+        let item = UIBarButtonItem(image: UIImage(named: "gnbIconTrash"), style: .plain, target: self, action: nil)
+        item.tintColor = .black
+        self.navigationItem.rightBarButtonItem = item
     }
 
     // 해시태그 배열 합치고 3개 이상일 때 줄바꿈
