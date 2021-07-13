@@ -30,7 +30,7 @@ extension UINavigationController {
         navigationBar.isTranslucent = false
         
         // back button 설정
-        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(touchBackButton))
+        let backButton = UIBarButtonItem(image: Const.Image.gnbIcnBack, style: .plain, target: self, action: #selector(touchBackButton))
         backButton.tintColor = UIColor.black
 
         navigationItem?.leftBarButtonItem = backButton
