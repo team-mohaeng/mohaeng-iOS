@@ -114,6 +114,7 @@
 		EC0DB03C269A0FBD00DB7980 /* YearPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB03A269A0FBD00DB7980 /* YearPickerViewController.swift */; };
 		EC0DB03D269A0FBD00DB7980 /* YearPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC0DB03B269A0FBD00DB7980 /* YearPickerViewController.xib */; };
 		EC0DB03F269A3CC200DB7980 /* AppYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB03E269A3CC200DB7980 /* AppYear.swift */; };
+		EC0DB042269C331700DB7980 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB041269C331700DB7980 /* UIDevice+Extension.swift */; };
 		ECB617F926949256005E62B0 /* SignUpFirst.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB617F826949256005E62B0 /* SignUpFirst.storyboard */; };
 		ECB617FB2694926E005E62B0 /* SignUpSecond.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB617FA2694926E005E62B0 /* SignUpSecond.storyboard */; };
 		ECB617FD2694927A005E62B0 /* SignUpThird.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB617FC2694927A005E62B0 /* SignUpThird.storyboard */; };
@@ -235,6 +236,7 @@
 		EC0DB03A269A0FBD00DB7980 /* YearPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearPickerViewController.swift; sourceTree = "<group>"; };
 		EC0DB03B269A0FBD00DB7980 /* YearPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YearPickerViewController.xib; sourceTree = "<group>"; };
 		EC0DB03E269A3CC200DB7980 /* AppYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppYear.swift; sourceTree = "<group>"; };
+		EC0DB041269C331700DB7980 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		ECB617F826949256005E62B0 /* SignUpFirst.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpFirst.storyboard; sourceTree = "<group>"; };
 		ECB617FA2694926E005E62B0 /* SignUpSecond.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpSecond.storyboard; sourceTree = "<group>"; };
 		ECB617FC2694927A005E62B0 /* SignUpThird.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpThird.storyboard; sourceTree = "<group>"; };
@@ -451,6 +453,7 @@
 				56DCAA70268A26F80056155A /* UINavigationController+Extension.swift */,
 				56DCAA9C268B00910056155A /* UIView+Extension.swift */,
 				AA1F34AF2694B2F20011B3FA /* ModalPresentationController.swift */,
+				EC0DB041269C331700DB7980 /* UIDevice+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -871,6 +874,7 @@
 				56DCAA602689BDFF0056155A /* AppModelsExmaple.swift in Sources */,
 				56DCAA622689BE080056155A /* UIColor+Extension.swift in Sources */,
 				56DCAA78268AE0E40056155A /* TabbarViewController.swift in Sources */,
+				EC0DB042269C331700DB7980 /* UIDevice+Extension.swift in Sources */,
 				56EAF7512694AF2E00D36105 /* MedalCollectionReusableView.swift in Sources */,
 				564D5D90269446760056E468 /* MedalViewController.swift in Sources */,
 				56DCAAB6268C6F5D0056155A /* Course.swift in Sources */,
