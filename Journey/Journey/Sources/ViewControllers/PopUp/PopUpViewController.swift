@@ -119,4 +119,10 @@ class PopUpViewController: UIViewController {
         popUpImageView.removeFromSuperview()
         whiteButton.removeFromSuperview()
     }
+    
+    // set functions
+    
+    func setTitle(text: String) {
+        titleLabel.text = text
+    }
 }
