@@ -24,6 +24,12 @@ class SignUpThirdViewController: UIViewController {
         chgangeTextAttribute()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        makeUnderLineinputNicknameTextField()
+      
+    }
+    
     // MARK: - Functions
     
     private func makeUnderLineinputNicknameTextField() {
