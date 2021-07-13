@@ -115,6 +115,8 @@
 		EC0DB03D269A0FBD00DB7980 /* YearPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC0DB03B269A0FBD00DB7980 /* YearPickerViewController.xib */; };
 		EC0DB03F269A3CC200DB7980 /* AppYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB03E269A3CC200DB7980 /* AppYear.swift */; };
 		EC0DB042269C331700DB7980 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB041269C331700DB7980 /* UIDevice+Extension.swift */; };
+		EC0DB044269D8FB700DB7980 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB043269D8FB700DB7980 /* LoginService.swift */; };
+		EC0DB046269D9A5100DB7980 /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB045269D9A5100DB7980 /* LoginAPI.swift */; };
 		ECB617F926949256005E62B0 /* SignUpFirst.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB617F826949256005E62B0 /* SignUpFirst.storyboard */; };
 		ECB617FB2694926E005E62B0 /* SignUpSecond.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB617FA2694926E005E62B0 /* SignUpSecond.storyboard */; };
 		ECB617FD2694927A005E62B0 /* SignUpThird.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB617FC2694927A005E62B0 /* SignUpThird.storyboard */; };
@@ -237,6 +239,8 @@
 		EC0DB03B269A0FBD00DB7980 /* YearPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YearPickerViewController.xib; sourceTree = "<group>"; };
 		EC0DB03E269A3CC200DB7980 /* AppYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppYear.swift; sourceTree = "<group>"; };
 		EC0DB041269C331700DB7980 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
+		EC0DB043269D8FB700DB7980 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		EC0DB045269D9A5100DB7980 /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
 		ECB617F826949256005E62B0 /* SignUpFirst.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpFirst.storyboard; sourceTree = "<group>"; };
 		ECB617FA2694926E005E62B0 /* SignUpSecond.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpSecond.storyboard; sourceTree = "<group>"; };
 		ECB617FC2694927A005E62B0 /* SignUpThird.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpThird.storyboard; sourceTree = "<group>"; };
@@ -646,6 +650,8 @@
 			children = (
 				56F13A44269C15300006F9A0 /* PasswordService.swift */,
 				56F13A46269C243D0006F9A0 /* PasswordAPI.swift */,
+				EC0DB043269D8FB700DB7980 /* LoginService.swift */,
+				EC0DB045269D9A5100DB7980 /* LoginAPI.swift */,
 			);
 			path = AuthAPI;
 			sourceTree = "<group>";
@@ -855,6 +861,7 @@
 				AA1F34B02694B2F20011B3FA /* ModalPresentationController.swift in Sources */,
 				56EAF7592694BDD300D36105 /* PopUpViewController.swift in Sources */,
 				56DCAA4F2689BD110056155A /* ViewController.swift in Sources */,
+				EC0DB046269D9A5100DB7980 /* LoginAPI.swift in Sources */,
 				56DCAA9F268C51E50056155A /* Challenge.swift in Sources */,
 				56AADEF42694AE2300131D2C /* MedalCollectionViewCell.swift in Sources */,
 				56DCAA532689BD2C0056155A /* Image.swift in Sources */,
@@ -876,6 +883,7 @@
 				56DCAA78268AE0E40056155A /* TabbarViewController.swift in Sources */,
 				EC0DB042269C331700DB7980 /* UIDevice+Extension.swift in Sources */,
 				56EAF7512694AF2E00D36105 /* MedalCollectionReusableView.swift in Sources */,
+				EC0DB044269D8FB700DB7980 /* LoginService.swift in Sources */,
 				564D5D90269446760056E468 /* MedalViewController.swift in Sources */,
 				56DCAAB6268C6F5D0056155A /* Course.swift in Sources */,
 				56DCAA4D2689BCFA0056155A /* Storyboard.swift in Sources */,
