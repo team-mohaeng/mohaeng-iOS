@@ -16,23 +16,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용한 닉네임을 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isb-rg-SOW">
-                                <rect key="frame" x="24" y="161" width="211" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앞으로 쟈기를 뭐라고 불러야하지?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isb-rg-SOW">
+                                <rect key="frame" x="24" y="97" width="240" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="한글 2~6자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wNY-BH-ZHc">
-                                <rect key="frame" x="24" y="214" width="327" height="26"/>
+                                <rect key="frame" x="24" y="150" width="327" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="PWE-VN-2F6"/>
-                                    <constraint firstAttribute="width" constant="327" id="lwH-v4-i1I"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용 가능한 닉네임입니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoP-u8-ZlG">
-                                <rect key="frame" x="249.66666666666666" y="252" width="101.33333333333334" height="12"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용 가능한 닉네임입니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoP-u8-ZlG">
+                                <rect key="frame" x="249.66666666666666" y="188" width="101.33333333333334" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" systemColor="systemGreenColor"/>
                                 <nil key="highlightedColor"/>
@@ -70,17 +69,18 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="WoP-u8-ZlG" firstAttribute="trailing" secondItem="wNY-BH-ZHc" secondAttribute="trailing" id="1l7-an-jN2"/>
                             <constraint firstItem="J6W-j1-Ayr" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Al5-bu-ShD"/>
                             <constraint firstItem="wNY-BH-ZHc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="QWa-iB-SRe"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wNY-BH-ZHc" secondAttribute="trailing" constant="24" id="UWe-yk-XgU"/>
                             <constraint firstItem="wNY-BH-ZHc" firstAttribute="top" secondItem="isb-rg-SOW" secondAttribute="bottom" constant="32" id="X40-1b-UxK"/>
                             <constraint firstItem="0kf-Nu-phn" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="bvw-LP-i7g"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="0kf-Nu-phn" secondAttribute="bottom" constant="26" id="cMZ-ga-9NO"/>
                             <constraint firstItem="isb-rg-SOW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="gX2-X9-4lO"/>
                             <constraint firstItem="fS0-wD-5wq" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="h14-rs-UqE"/>
                             <constraint firstItem="WoP-u8-ZlG" firstAttribute="top" secondItem="wNY-BH-ZHc" secondAttribute="bottom" constant="12" id="iJi-5y-cDy"/>
-                            <constraint firstItem="isb-rg-SOW" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="117" id="n6Q-TM-yFH"/>
+                            <constraint firstItem="isb-rg-SOW" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="53" id="n6Q-TM-yFH"/>
                             <constraint firstItem="J6W-j1-Ayr" firstAttribute="top" secondItem="fS0-wD-5wq" secondAttribute="bottom" constant="31" id="pOA-FR-Zkc"/>
-                            <constraint firstAttribute="trailing" secondItem="WoP-u8-ZlG" secondAttribute="trailing" constant="24" id="qdD-VH-xqa"/>
                             <constraint firstItem="0kf-Nu-phn" firstAttribute="top" secondItem="J6W-j1-Ayr" secondAttribute="bottom" constant="11" id="w1g-AD-1mv"/>
                         </constraints>
                     </view>

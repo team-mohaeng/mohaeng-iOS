@@ -31,10 +31,14 @@ class SignUpFirstViewController: UIViewController {
         assignDelegate()
         initNavigationBar()
         initErrorLabel()
+        makeButtonRound()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         makeUnderLineEmailTextField()
         makeUnderLinePasswordTextField()
         makeUnderLineCheckPasswordTextField()
-        makeButtonRound()
     }
     
     // MARK: - @IBAction Function
