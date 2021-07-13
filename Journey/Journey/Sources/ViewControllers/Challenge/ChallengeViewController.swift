@@ -35,15 +35,15 @@ class ChallengeViewController: UIViewController {
     
     // MARK: - Properties
     
-    var totalStamp = 1
+    var totalStamp = 2
     var stampTouchCount = 0
     
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        journeyView()
-        stampBackgroundView()
+        initJourneyView()
+        initStampBackgroundView()
         addtouchGesture()
         notchCase()
         
@@ -57,13 +57,13 @@ class ChallengeViewController: UIViewController {
     
     // MARK: - Functions
     
-    private func journeyView() {
-        journeyNameView.layer.cornerRadius = 12.5
+    private func initJourneyView() {
+        journeyNameView.makeRounded(radius: journeyNameView.frame.height / 2)
         journeyDescriptionView.makeRoundedSpecificCorner(corners: [.bottomLeft, .bottomRight, .topRight], cornerRadius: 25)
     }
     
-    private func stampBackgroundView() {
-        stampView.layer.cornerRadius = 18
+    private func initStampBackgroundView() {
+        stampView.makeRounded(radius: 18)
     }
     
     private func addtouchGesture() {
@@ -79,15 +79,15 @@ class ChallengeViewController: UIViewController {
         stampImageView3.isUserInteractionEnabled = true
         stampImageView3.addGestureRecognizer(stampGesture3)
         
-        let stampGesture4 = UITapGestureRecognizer(target: self, action: #selector(self.touchstampAction4(_:)))
+        let stampGesture4 = UITapGestureRecognizer(target: self, action: #selector(self.touchStampActionTriangle1(_:)))
         triangleStampImageView1.isUserInteractionEnabled = true
         triangleStampImageView1.addGestureRecognizer(stampGesture3)
         
-        let stampGesture5 = UITapGestureRecognizer(target: self, action: #selector(self.touchstampAction5(_:)))
+        let stampGesture5 = UITapGestureRecognizer(target: self, action: #selector(self.touchStampActionTriangle2(_:)))
         triangleStampImageView2.isUserInteractionEnabled = true
         triangleStampImageView2.addGestureRecognizer(stampGesture3)
         
-        let stampGesture6 = UITapGestureRecognizer(target: self, action: #selector(self.touchstampAction6(_:)))
+        let stampGesture6 = UITapGestureRecognizer(target: self, action: #selector(self.touchStampActionTriangle3(_:)))
         triangleStampImageView3.isUserInteractionEnabled = true
         triangleStampImageView3.addGestureRecognizer(stampGesture3)
     }
@@ -155,17 +155,17 @@ class ChallengeViewController: UIViewController {
         
     }
     
-    @objc func touchstampAction4(_ gesture: UITapGestureRecognizer) {
+    @objc func touchStampActionTriangle1(_ gesture: UITapGestureRecognizer) {
         print("게")
         
     }
     
-    @objc func touchstampAction5(_ gesture: UITapGestureRecognizer) {
+    @objc func touchStampActionTriangle2(_ gesture: UITapGestureRecognizer) {
         print("요")
         
     }
     
-    @objc func touchstampAction6(_ gesture: UITapGestureRecognizer) {
+    @objc func touchStampActionTriangle3(_ gesture: UITapGestureRecognizer) {
         print("ㅋ")
         
     }
