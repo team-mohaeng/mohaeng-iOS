@@ -16,6 +16,7 @@ public class CourseAPI {
     enum ResponseData {
         case course
         case courses
+        case medal
     }
     
     public init() { }
@@ -29,7 +30,7 @@ public class CourseAPI {
                 let statusCode = response.statusCode
                 let data = response.data
                 
-                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .course)
+                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .courses)
                 completion(networkResult)
                 
             case .failure(let err):
@@ -48,7 +49,7 @@ public class CourseAPI {
                 let statusCode = response.statusCode
                 let data = response.data
                 
-                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .courses)
+                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .medal)
                 completion(networkResult)
                 
             case .failure(let err):
@@ -62,7 +63,7 @@ public class CourseAPI {
         case 200:
             return isValidData(data: data, responseData: responseData)
         case 400..<500:
-            return .pathErr
+            return .requestErr(data)
         case 500:
             return .serverErr
         default:
@@ -75,15 +76,26 @@ public class CourseAPI {
         
         switch responseData {
         case .course:
+            
             guard let decodedData = try? decoder.decode(CourseResponseData.self, from: data) else {
                 return .pathErr
             }
             return .success(decodedData.data)
+            
         case .courses:
+            
+            guard let decodedData = try? decoder.decode(CoursesResponseData.self, from: data) else {
+                return .pathErr
+            }
+            return .success(decodedData.data)
+            
+        case .medal:
+            
             guard let decodedData = try? decoder.decode(MedalResponseData.self, from: data) else {
                 return .pathErr
             }
             return .success(decodedData.data)
+            
         }
     }
 }

@@ -16,6 +16,8 @@ class DoneCourseCollectionViewCell: UICollectionViewCell {
             titleLabel.text = courseViewModel.course.title
             courseDaysLabel.text = "\(courseViewModel.course.totalDays)"
             descriptionTextView.text = courseViewModel.course.courseDescription
+            
+            // TODO: - property 따라 이미지, 배경색 변경
         }
     }
     
@@ -26,7 +28,8 @@ class DoneCourseCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var courseDaysLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var propertyImageView: UIImageView!
-    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var startCourseView: UIView!
+    @IBOutlet weak var startLabel: UILabel!
     
     // MARK: - View Life Cycle
 
@@ -34,6 +37,8 @@ class DoneCourseCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         initViewRounding()
+        initTextView()
+        addActionToStartCourseView()
     }
     
     // MARK: - Functions
@@ -42,11 +47,24 @@ class DoneCourseCollectionViewCell: UICollectionViewCell {
         cellBgView.makeRounded(radius: 14)
     }
     
+    private func initTextView() {
+        descriptionTextView.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    private func addActionToStartCourseView() {
+        let startViewGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(touchStartCourseView(_:)))
+        startCourseView.addGestureRecognizer(startViewGesture)
+    }
+    
+    @objc func touchStartCourseView(_ gesture: UITapGestureRecognizer) {
+          // 동작
+    }
+    
     func setButtonTitle(doingCourse: Bool) {
         if doingCourse {
-            startButton.setTitle("코스 변경하기", for: .normal)
+            startLabel.text = "코스 변경하기"
         } else {
-            startButton.setTitle("코스 시작하기", for: .normal)
+            startLabel.text = "코스 시작하기"
         }
     }
 

@@ -26,7 +26,8 @@ class UndoneCourseCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var courseDaysLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var propertyImageView: UIImageView!
-    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var startCourseView: UIView!
+    @IBOutlet weak var startLabel: UILabel!
     
     // MARK: - View Life Cycle
 
@@ -34,6 +35,7 @@ class UndoneCourseCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         initViewRounding()
+        initTextView()
     }
     
     // MARK: - Functions
@@ -42,11 +44,15 @@ class UndoneCourseCollectionViewCell: UICollectionViewCell {
         cellBgView.makeRounded(radius: 14)
     }
     
+    private func initTextView() {
+        descriptionTextView.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
     func setButtonTitle(doingCourse: Bool) {
         if doingCourse {
-            startButton.setTitle("코스 변경하기", for: .normal)
+            startLabel.text = "코스 변경하기"
         } else {
-            startButton.setTitle("코스 시작하기", for: .normal)
+            startLabel.text = "코스 시작하기"
         }
     }
 
