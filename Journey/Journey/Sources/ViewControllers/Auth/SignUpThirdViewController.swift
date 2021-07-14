@@ -101,17 +101,10 @@ extension SignUpThirdViewController {
         guard let nickname = inputNicknameTextField.text else {
             return
         }
-        print(email)
-        print(password)
-        print(gender)
-        print(birthyear)
-        print(nickname)
-        
         SignUpAPI.shared.postSignUp(completion: { (response) in
             switch response {
             case .success(let jwt):
                 if let data = jwt as? JwtData {
-                    print("sss")
                     self.popToRootViewController()
                 }
             case .requestErr(let message):

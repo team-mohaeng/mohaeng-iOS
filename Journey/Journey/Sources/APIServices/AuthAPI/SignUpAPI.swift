@@ -40,7 +40,6 @@ public class SignUpAPI {
         case 200:
             return isValidData(data: data, responseData: responseData)
         case 400..<500:
-            print(statusCode)
             return .requestErr(data)
         case 500:
             return .serverErr
