@@ -57,12 +57,27 @@ extension Const {
         
         // MARK: - 소확행 - Happy Service
         
-        // 소확행 입력(POST), 커뮤니티(GET)
         static let happyURL = "/smallSatisfaction"
+        
+        // 소확행 입력(POST)
+        static let writeURL = "/write"
+        
+        // 소확행 커뮤니티(GET)
+        static let feedURL = "/community"
+        
+        // 소확행 커뮤니티 정렬(좋아요, 최신순) (GET)
+        // "/smallStatisfaction/community/:sort"
         
         // 내 서랍장(GET)
         static let myDrawerURL = "/myDrawer" // "/myDrawer/:month"
         
-        // 상세보기(GET), 좋아요(PUT), 좋아요 취소(PUT) : "/smallSatisfaction/:postId"
+        // 상세보기(GET) : "/smallSatisfaction/detail/:postId"
+        static let detailURL = "/detail"
+        
+        // 좋아요(PUT) : "/smallSatisfaction/like/:postId"
+        static let likeURL = "/like"
+        
+        // 좋아요 취소(PUT) : "/smallSatisfaction/unlike/:postId"
+        static let unlikeURL = "/unlike"
     }
 }
