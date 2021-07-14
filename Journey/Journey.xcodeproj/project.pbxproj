@@ -30,11 +30,11 @@
 		568F64C22692F9E20066B9D1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */; };
 		56AADEF42694AE2300131D2C /* MedalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */; };
 		56AADEF52694AE2300131D2C /* MedalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AADEF32694AE2300131D2C /* MedalCollectionViewCell.xib */; };
-		56BF36A0269ED2AD009D8CCC /* HappyPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF369E269ED2AD009D8CCC /* HappyPopUpViewController.swift */; };
-		56BF36A1269ED2AD009D8CCC /* HappyPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56BF369F269ED2AD009D8CCC /* HappyPopUpViewController.xib */; };
 		56BF3699269EBEB3009D8CCC /* EmptyChallenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56BF3698269EBEB3009D8CCC /* EmptyChallenge.storyboard */; };
 		56BF369B269EBECB009D8CCC /* EmptyChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF369A269EBECB009D8CCC /* EmptyChallengeViewController.swift */; };
 		56BF369D269EC947009D8CCC /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF369C269EC947009D8CCC /* UIViewController+Extension.swift */; };
+		56BF36A0269ED2AD009D8CCC /* HappyPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF369E269ED2AD009D8CCC /* HappyPopUpViewController.swift */; };
+		56BF36A1269ED2AD009D8CCC /* HappyPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56BF369F269ED2AD009D8CCC /* HappyPopUpViewController.xib */; };
 		56D6EF45269981720011F3FE /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6EF44269981720011F3FE /* NetworkResult.swift */; };
 		56DCAA282689BB9B0056155A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA272689BB9B0056155A /* AppDelegate.swift */; };
 		56DCAA2A2689BB9B0056155A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA292689BB9B0056155A /* SceneDelegate.swift */; };
@@ -125,11 +125,11 @@
 		EC0DB03D269A0FBD00DB7980 /* YearPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC0DB03B269A0FBD00DB7980 /* YearPickerViewController.xib */; };
 		EC0DB03F269A3CC200DB7980 /* AppYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB03E269A3CC200DB7980 /* AppYear.swift */; };
 		EC0DB042269C331700DB7980 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB041269C331700DB7980 /* UIDevice+Extension.swift */; };
+		EC0DB044269D8FB700DB7980 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB043269D8FB700DB7980 /* LoginService.swift */; };
+		EC0DB046269D9A5100DB7980 /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB045269D9A5100DB7980 /* LoginAPI.swift */; };
 		EC628958269DF0990041F43A /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC628957269DF0990041F43A /* SignUpService.swift */; };
 		EC62895A269DF5CF0041F43A /* SignUpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC628959269DF5CF0041F43A /* SignUpAPI.swift */; };
 		EC62895C269DFA380041F43A /* SignUpUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC62895B269DFA380041F43A /* SignUpUser.swift */; };
-		EC0DB044269D8FB700DB7980 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB043269D8FB700DB7980 /* LoginService.swift */; };
-		EC0DB046269D9A5100DB7980 /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB045269D9A5100DB7980 /* LoginAPI.swift */; };
 		ECB617F926949256005E62B0 /* SignUpFirst.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB617F826949256005E62B0 /* SignUpFirst.storyboard */; };
 		ECB617FB2694926E005E62B0 /* SignUpSecond.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB617FA2694926E005E62B0 /* SignUpSecond.storyboard */; };
 		ECB617FD2694927A005E62B0 /* SignUpThird.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB617FC2694927A005E62B0 /* SignUpThird.storyboard */; };
@@ -161,11 +161,11 @@
 		568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalCollectionViewCell.swift; sourceTree = "<group>"; };
 		56AADEF32694AE2300131D2C /* MedalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedalCollectionViewCell.xib; sourceTree = "<group>"; };
-		56BF369E269ED2AD009D8CCC /* HappyPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyPopUpViewController.swift; sourceTree = "<group>"; };
-		56BF369F269ED2AD009D8CCC /* HappyPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HappyPopUpViewController.xib; sourceTree = "<group>"; };
 		56BF3698269EBEB3009D8CCC /* EmptyChallenge.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmptyChallenge.storyboard; sourceTree = "<group>"; };
 		56BF369A269EBECB009D8CCC /* EmptyChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyChallengeViewController.swift; sourceTree = "<group>"; };
 		56BF369C269EC947009D8CCC /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		56BF369E269ED2AD009D8CCC /* HappyPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyPopUpViewController.swift; sourceTree = "<group>"; };
+		56BF369F269ED2AD009D8CCC /* HappyPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HappyPopUpViewController.xib; sourceTree = "<group>"; };
 		56D6EF44269981720011F3FE /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		56DCAA242689BB9B0056155A /* Journey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCAA272689BB9B0056155A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -262,11 +262,11 @@
 		EC0DB03B269A0FBD00DB7980 /* YearPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YearPickerViewController.xib; sourceTree = "<group>"; };
 		EC0DB03E269A3CC200DB7980 /* AppYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppYear.swift; sourceTree = "<group>"; };
 		EC0DB041269C331700DB7980 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
+		EC0DB043269D8FB700DB7980 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		EC0DB045269D9A5100DB7980 /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
 		EC628957269DF0990041F43A /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		EC628959269DF5CF0041F43A /* SignUpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAPI.swift; sourceTree = "<group>"; };
 		EC62895B269DFA380041F43A /* SignUpUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUser.swift; sourceTree = "<group>"; };
-		EC0DB043269D8FB700DB7980 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
-		EC0DB045269D9A5100DB7980 /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
 		ECB617F826949256005E62B0 /* SignUpFirst.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpFirst.storyboard; sourceTree = "<group>"; };
 		ECB617FA2694926E005E62B0 /* SignUpSecond.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpSecond.storyboard; sourceTree = "<group>"; };
 		ECB617FC2694927A005E62B0 /* SignUpThird.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpThird.storyboard; sourceTree = "<group>"; };
@@ -334,8 +334,8 @@
 		56D6EF3F26997FD20011F3FE /* ChallengeAPI */ = {
 			isa = PBXGroup;
 			children = (
-				5667D4D9269B41520071D7AD /* ChallengeAPI.swift */,
 				5667D4DA269B41520071D7AD /* ChallengeService.swift */,
+				5667D4D9269B41520071D7AD /* ChallengeAPI.swift */,
 			);
 			path = ChallengeAPI;
 			sourceTree = "<group>";

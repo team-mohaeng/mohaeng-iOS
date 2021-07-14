@@ -8,8 +8,6 @@
 import Foundation
 import Moya
 
-let testToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiZXA0UmhZcmJUSE9uaHpBUldOVFNTMTpBUEE5MWJIS1pGdkJuUkV1dEEtYzQxSmN6dDBITzVJQkNyMFhzM0VadjFFcUZSVl9jY05semtDbFQtaWxmT3FGTUFWTmFPUFYxaVhIQjIybHhrcHZJRWNTNW4tMjQtZzY2SVR1d0o1aW9aWlJtYVd5R1Q3XzZiUDhlR1BOZHd2SkNwUWxZb1daQlhHVCJ9LCJpYXQiOjE2MjYwMDYyOTF9.5bzzxZxI2TpOOAHjWHQrbYMgrBOZoZI-e24R9te0_NM "
-
 enum ChallengeService {
     // 전체 챌린지 지도 조회
     case getAllChallenges
@@ -70,7 +68,7 @@ extension ChallengeService: TargetType {
     var headers: [String: String]? {
         return [
             "Content-Type": "application/json",
-            "Bearer": testToken
+            "Bearer": UserDefaults.standard.string(forKey: "jwtToken") ?? ""
         ]
     }
 }

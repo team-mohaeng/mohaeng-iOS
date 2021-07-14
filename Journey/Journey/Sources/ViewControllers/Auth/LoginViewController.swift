@@ -107,6 +107,7 @@ extension LoginViewController {
             switch response {
             case .success(let jwt):
                 if let data = jwt as? JwtData {
+                    UserDefaults.standard.set(data.jwt, forKey: "jwtToken")
                     self.presentHomeViewController()
                 }
             case .requestErr(let message):

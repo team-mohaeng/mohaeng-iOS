@@ -23,7 +23,6 @@ extension LoginService: TargetType {
         switch self {
         case .postSignIn(_, _):
             return Const.URL.signInURL
-//                + "/\(email)/\(password)"
         }
     }
     
@@ -44,7 +43,7 @@ extension LoginService: TargetType {
             return .requestParameters(parameters: [
                 "userId": email,
                 "userPw": password,
-                "userToken": "fcm token"
+                "userToken": UserDefaults.standard.string(forKey: "fcmToken")
             ], encoding: JSONEncoding.default)
         }
     }
