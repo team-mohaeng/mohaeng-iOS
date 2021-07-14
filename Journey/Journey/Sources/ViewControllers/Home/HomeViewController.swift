@@ -56,7 +56,11 @@ class HomeViewController: UIViewController {
     }
     
     @objc func touchSettingButton(sender: UIButton) {
-        
+        let settingStoryboard = UIStoryboard(name: Const.Storyboard.Name.setting, bundle: nil)
+        guard let settingViewController = settingStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.setting) as? SettingViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(settingViewController, animated: true)
     }
     
     // MARK: - Functions

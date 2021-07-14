@@ -26,6 +26,7 @@ extension Const {
             // 홈 탭
             static let home = "Home"
             static let medal = "Medal"
+            static let setting = "Setting"
             
             // 챌린지 탭
             static let emptyChallenge = "EmptyChallenge"
