@@ -13,7 +13,7 @@ class FeedViewController: UIViewController {
     
     // MARK: - Properties
     
-    var community = [Community(postID: 0, nickname: "", moodImage: "", mainImage: "", likeCount: 0, content: "", hasLike: false, hashtags: [""], year: "", month: "", day: "")]
+    var community = [Community(postID: 0, nickname: "", mood: 0, mainImage: "", likeCount: 0, content: "", hasLike: false, hashtags: [""], year: "", month: "", day: "", week: "")]
     var likeButtonClicked: Bool = true
     var isEnableWriting: Int = 0
     

@@ -26,6 +26,7 @@
 		5667D4DB269B41520071D7AD /* ChallengeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667D4D9269B41520071D7AD /* ChallengeAPI.swift */; };
 		5667D4DC269B41520071D7AD /* ChallengeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667D4DA269B41520071D7AD /* ChallengeService.swift */; };
 		5667D4DE269B624C0071D7AD /* Medal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667D4DD269B624C0071D7AD /* Medal.swift */; };
+		5678E72D269F77A60049FF0C /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5678E72C269F77A60049FF0C /* Community.swift */; };
 		568F64C02692DF2C0066B9D1 /* CourseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568F64BF2692DF2C0066B9D1 /* CourseListViewModel.swift */; };
 		568F64C22692F9E20066B9D1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */; };
 		56AADEF42694AE2300131D2C /* MedalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */; };
@@ -157,6 +158,7 @@
 		5667D4D9269B41520071D7AD /* ChallengeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeAPI.swift; sourceTree = "<group>"; };
 		5667D4DA269B41520071D7AD /* ChallengeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeService.swift; sourceTree = "<group>"; };
 		5667D4DD269B624C0071D7AD /* Medal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medal.swift; sourceTree = "<group>"; };
+		5678E72C269F77A60049FF0C /* Community.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Community.swift; sourceTree = "<group>"; };
 		568F64BF2692DF2C0066B9D1 /* CourseListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListViewModel.swift; sourceTree = "<group>"; };
 		568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -550,6 +552,7 @@
 				56DCAAB5268C6F5D0056155A /* Course.swift */,
 				AA1F34AC26939E260011B3FA /* AppDate.swift */,
 				5667D4DD269B624C0071D7AD /* Medal.swift */,
+				5678E72C269F77A60049FF0C /* Community.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -944,6 +947,7 @@
 				56DCAAB6268C6F5D0056155A /* Course.swift in Sources */,
 				56DCAA4D2689BCFA0056155A /* Storyboard.swift in Sources */,
 				56F13A47269C243D0006F9A0 /* PasswordAPI.swift in Sources */,
+				5678E72D269F77A60049FF0C /* Community.swift in Sources */,
 				5667D4DE269B624C0071D7AD /* Medal.swift in Sources */,
 				56D6EF45269981720011F3FE /* NetworkResult.swift in Sources */,
 				56DCAAAF268C6D690056155A /* UndoneCourseCollectionViewCell.swift in Sources */,
