@@ -20,6 +20,16 @@ extension Const {
         static let typeSwithColor = UIImage(named: "typeSwithColor")
         static let typeMwithColor = UIImage(named: "typeMwithColor")
         
+        // journey main image
+        static let level1Journey = UIImage(named: "lv1")
+        static let level2Journey = UIImage(named: "lv2")
+        static let level3Journey = UIImage(named: "lv3")
+        static let level4Journey = UIImage(named: "lv4")
+     
+        // main home icon
+        static let medalIcon = UIImage(named: "icnMedal")!
+        static let settingIcon = UIImage(named: "icnSetting")!
+      
         // mood images
         static let happyCFaceGraphic1 = UIImage(named: "happyCFaceGraphic1")
         static let happyCFaceGraphic2 = UIImage(named: "happyCFaceGraphic2")
