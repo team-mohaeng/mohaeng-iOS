@@ -11,11 +11,13 @@ class MyDrawerViewController: UIViewController {
 
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var myHappinessCollectionView: UICollectionView!
+    @IBOutlet weak var emptyView: UIView!
     
     // MARK: - Properties
     private var modalDateView: DatePickerViewController?
     private var currentDate: AppDate?
     private var selectedDate: AppDate?
+    private var feedCount = 0
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -24,6 +26,7 @@ class MyDrawerViewController: UIViewController {
         initNavigationBar()
         registerXib()
         initCurrentDate()
+        setEmptyView()
         setDelegation()
         addObservers()
     }
@@ -67,6 +70,14 @@ class MyDrawerViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(dataReceived), name: NSNotification.Name("calendarButtonClicked"), object: nil)
     }
     
+    private func setEmptyView() {
+        if feedCount == 0 {
+            emptyView.isHidden = false
+        } else {
+            emptyView.isHidden = true
+        }
+    }
+    
     @objc func dataReceived(notification: NSNotification) {
         guard let selectedDate = self.selectedDate else { return }
         self.presentDatePickerView(year: selectedDate.getYear(), month: selectedDate.getMonth())
@@ -89,7 +100,7 @@ extension MyDrawerViewController: DatePickerViewDelegate {
 
 extension MyDrawerViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

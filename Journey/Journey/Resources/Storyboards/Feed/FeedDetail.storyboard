@@ -130,7 +130,7 @@
     <resources>
         <image name="icnHeart" width="14" height="14"/>
         <image name="journeySmileSampleImg" width="59.5" height="64"/>
-        <image name="sampleHappinessImg" width="1125" height="1462"/>
+        <image name="sampleHappinessImg" width="192" height="291"/>
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
