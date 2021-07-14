@@ -14,7 +14,8 @@ class DoneCourseCollectionViewCell: UICollectionViewCell {
     var courseViewModel: CourseViewModel! {
         didSet {
             titleLabel.text = courseViewModel.course.title
-            courseDaysLabel.text = "\(courseViewModel.course.totalDays)"
+            coursePropertyLabel.text = courseViewModel.course.property
+            courseDaysLabel.text = "\(courseViewModel.course.totalDays)일"
             descriptionTextView.text = courseViewModel.course.courseDescription
             
             // TODO: - property 따라 이미지, 배경색 변경
@@ -25,11 +26,13 @@ class DoneCourseCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var cellBgView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var courseDaysLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var propertyImageView: UIImageView!
     @IBOutlet weak var startCourseView: UIView!
     @IBOutlet weak var startLabel: UILabel!
+    @IBOutlet weak var courseDescriptionView: UIView!
+    @IBOutlet weak var coursePropertyLabel: UILabel!
+    @IBOutlet weak var courseDaysLabel: UILabel!
     
     // MARK: - View Life Cycle
 
@@ -45,6 +48,7 @@ class DoneCourseCollectionViewCell: UICollectionViewCell {
     
     private func initViewRounding() {
         cellBgView.makeRounded(radius: 14)
+        courseDescriptionView.makeRounded(radius: courseDescriptionView.frame.height / 2)
     }
     
     private func initTextView() {

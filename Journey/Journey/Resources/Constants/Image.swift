@@ -29,5 +29,10 @@ extension Const {
         // main home icon
         static let medalIcon = UIImage(named: "icnMedal")!
         static let settingIcon = UIImage(named: "icnSetting")!
+      
+        // mood images
+        static let happyCFaceGraphic1 = UIImage(named: "happyCFaceGraphic1")
+        static let happyCFaceGraphic2 = UIImage(named: "happyCFaceGraphic2")
+        static let happyCFaceGraphic3 = UIImage(named: "happyCFaceGraphic3")
     }
 }
