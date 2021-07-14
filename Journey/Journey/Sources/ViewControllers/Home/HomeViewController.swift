@@ -21,6 +21,18 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var thirdIndicatorLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var densityPercentLabel: UILabel!
     
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        activityIndicator.center = CGPoint(x: self.view.center.x, y: self.view.center.y - self.topbarHeight)
+        activityIndicator.hidesWhenStopped = false
+        activityIndicator.style = UIActivityIndicatorView.Style.medium
+        activityIndicator.startAnimating()
+        return activityIndicator
+    }()
+    
+    var backgroundView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -93,6 +105,7 @@ class HomeViewController: UIViewController {
         courseTitleButton.setTitle(data.course.title, for: .normal)
         courseDayLabel.text = "\(findCurrentChallengesDay(challenges: data.course.challenges)) 일차"
         setDensityPercent(densityPercent: CGFloat(data.affinity))
+        self.detachActivityIndicator()
     }
     
     private func findCurrentChallengesDay(challenges: [Challenge]) -> Int {
@@ -111,11 +124,26 @@ class HomeViewController: UIViewController {
         firstIndicatiorLeadingConstraint.constant = progressViewWidth / 4
         thirdIndicatorLeadingConstraint.constant = progressViewWidth * 3 / 4
     }
+    
+    private func attachActivityIndicator() {
+        backgroundView.backgroundColor = UIColor.white
+        self.view.addSubview(backgroundView)
+        self.view.addSubview(self.activityIndicator)
+    }
+    
+    private func detachActivityIndicator() {
+        if self.activityIndicator.isAnimating {
+            self.activityIndicator.stopAnimating()
+        }
+        self.backgroundView.removeFromSuperview()
+        self.activityIndicator.removeFromSuperview()
+    }
 }
 
 extension HomeViewController {
     
     func getHomeInfo() {
+        self.attachActivityIndicator()
         HomeAPI.shared.getHomeInfo { (response) in
             switch response {
             case .success(let home):

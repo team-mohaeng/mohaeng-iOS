@@ -30,6 +30,7 @@
 		568F64C22692F9E20066B9D1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */; };
 		56AADEF42694AE2300131D2C /* MedalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */; };
 		56AADEF52694AE2300131D2C /* MedalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AADEF32694AE2300131D2C /* MedalCollectionViewCell.xib */; };
+		56BF369D269EC947009D8CCC /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF369C269EC947009D8CCC /* UIViewController+Extension.swift */; };
 		56D6EF45269981720011F3FE /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6EF44269981720011F3FE /* NetworkResult.swift */; };
 		56DCAA282689BB9B0056155A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA272689BB9B0056155A /* AppDelegate.swift */; };
 		56DCAA2A2689BB9B0056155A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA292689BB9B0056155A /* SceneDelegate.swift */; };
@@ -153,6 +154,7 @@
 		568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalCollectionViewCell.swift; sourceTree = "<group>"; };
 		56AADEF32694AE2300131D2C /* MedalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedalCollectionViewCell.xib; sourceTree = "<group>"; };
+		56BF369C269EC947009D8CCC /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		56D6EF44269981720011F3FE /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		56DCAA242689BB9B0056155A /* Journey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCAA272689BB9B0056155A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 				AA1F34AF2694B2F20011B3FA /* ModalPresentationController.swift */,
 				AAD77113269E84D800EC3598 /* UIFont+Extension.swift */,
 				EC0DB041269C331700DB7980 /* UIDevice+Extension.swift */,
+				56BF369C269EC947009D8CCC /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -919,6 +922,7 @@
 				5667D4DE269B624C0071D7AD /* Medal.swift in Sources */,
 				56D6EF45269981720011F3FE /* NetworkResult.swift in Sources */,
 				56DCAAAF268C6D690056155A /* UndoneCourseCollectionViewCell.swift in Sources */,
+				56BF369D269EC947009D8CCC /* UIViewController+Extension.swift in Sources */,
 				562A9965269D987A006F2DA3 /* AnimationPopUpViewController.swift in Sources */,
 				AA1F34C726959BFC0011B3FA /* MoodViewController.swift in Sources */,
 				56DCAA8E268AF75E0056155A /* CourseViewController.swift in Sources */,
