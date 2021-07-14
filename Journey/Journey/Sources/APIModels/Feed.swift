@@ -19,20 +19,3 @@ struct FeedData: Codable {
 
     let community: [Community]
 }
-
-// MARK: - Community
-struct Community: Codable {
-    let postID: Int
-    let nickname: String
-    let moodImage, mainImage: String
-    let likeCount: Int
-    let content: String
-    let hasLike: Bool
-    let hashtags: [String]
-    let year, month, day: String
-
-    enum CodingKeys: String, CodingKey {
-        case postID = "postId"
-        case nickname, moodImage, mainImage, likeCount, content, hasLike, hashtags, year, month, day
-    }
-}

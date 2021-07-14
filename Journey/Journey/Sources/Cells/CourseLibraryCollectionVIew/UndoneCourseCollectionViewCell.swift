@@ -14,7 +14,7 @@ class UndoneCourseCollectionViewCell: UICollectionViewCell {
     var courseViewModel: CourseViewModel! {
         didSet {
             titleLabel.text = courseViewModel.course.title
-            coursePropertyLabel.text = courseViewModel.course.property
+            coursePropertyLabel.text = "\(courseViewModel.course.property)"
             courseDaysLabel.text = "\(courseViewModel.course.totalDays)일"
             descriptionTextView.text = courseViewModel.course.courseDescription
         }

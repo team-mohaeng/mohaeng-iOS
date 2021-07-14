@@ -29,6 +29,7 @@
 		5678E727269F305A0049FF0C /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5678E726269F305A0049FF0C /* Setting.storyboard */; };
 		5678E729269F306D0049FF0C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5678E728269F306D0049FF0C /* SettingViewController.swift */; };
 		5678E72B269F33580049FF0C /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5678E72A269F33580049FF0C /* SettingTableViewCell.swift */; };
+		5678E72D269F77A60049FF0C /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5678E72C269F77A60049FF0C /* Community.swift */; };
 		568F64C02692DF2C0066B9D1 /* CourseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568F64BF2692DF2C0066B9D1 /* CourseListViewModel.swift */; };
 		568F64C22692F9E20066B9D1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */; };
 		56AADEF42694AE2300131D2C /* MedalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */; };
@@ -163,6 +164,7 @@
 		5678E726269F305A0049FF0C /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		5678E728269F306D0049FF0C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		5678E72A269F33580049FF0C /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		5678E72C269F77A60049FF0C /* Community.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Community.swift; sourceTree = "<group>"; };
 		568F64BF2692DF2C0066B9D1 /* CourseListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListViewModel.swift; sourceTree = "<group>"; };
 		568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -557,6 +559,7 @@
 				56DCAAB5268C6F5D0056155A /* Course.swift */,
 				AA1F34AC26939E260011B3FA /* AppDate.swift */,
 				5667D4DD269B624C0071D7AD /* Medal.swift */,
+				5678E72C269F77A60049FF0C /* Community.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -955,6 +958,7 @@
 				56DCAAB6268C6F5D0056155A /* Course.swift in Sources */,
 				56DCAA4D2689BCFA0056155A /* Storyboard.swift in Sources */,
 				56F13A47269C243D0006F9A0 /* PasswordAPI.swift in Sources */,
+				5678E72D269F77A60049FF0C /* Community.swift in Sources */,
 				5667D4DE269B624C0071D7AD /* Medal.swift in Sources */,
 				56D6EF45269981720011F3FE /* NetworkResult.swift in Sources */,
 				56DCAAAF268C6D690056155A /* UndoneCourseCollectionViewCell.swift in Sources */,
