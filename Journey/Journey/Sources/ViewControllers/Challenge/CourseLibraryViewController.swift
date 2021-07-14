@@ -21,7 +21,7 @@ class CourseLibraryViewController: UIViewController {
         Course(id: 8, title: "어제 끝난 코스임", courseDescription: "마지막 셀입니다요. 마지막 셀입니다요. 마지막 셀입니다요. 마지막 셀입니다요. 마지막 셀입니다요. 마지막 셀입니다요. ", totalDays: 5, situation: 2, property: "water", challenges: [])
     ]
     
-    let doingCourse: Bool = true
+    var doingCourse: Bool = true
     var courseListViewModel = CourseListViewModel()
     
     // MARK: - @IBOutlet Properties

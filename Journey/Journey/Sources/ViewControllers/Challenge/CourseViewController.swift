@@ -67,10 +67,21 @@ class CourseViewController: UIViewController {
         
         // view
         courseTitleLabel.text = course.title
-        dayCountLabel.text = "\(course.totalDays)일차"
+        dayCountLabel.text = "\(findCourseProgressDay(challenges: data.course.challenges))일차"
         
         // table view
         self.courseTableView.reloadData()
+    }
+    
+    func findCourseProgressDay(challenges: [Challenge]) -> Int {
+        var day = 0
+        for challenges in challenges {
+            if challenges.situation == 0 {
+                return day
+            }
+            day += 1
+        }
+        return day
     }
     
 }
