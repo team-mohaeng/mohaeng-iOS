@@ -13,7 +13,7 @@ class MedalViewController: UIViewController {
     
     var totalIncreasedAffinity = 0
     var maxSuccessCount = 0
-    var courses = [Course(id: 0, title: "", courseDescription: "", totalDays: 0, situation: 0, property: "", challenges: [])]
+    var courses = [Course(id: 0, title: "", courseDescription: "", totalDays: 0, situation: 0, property: 0, challenges: [])]
     
     // MARK: - @IBOutlet Properties
 
