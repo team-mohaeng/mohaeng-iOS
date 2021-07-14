@@ -1,0 +1,88 @@
+//
+//  FeedService.swift
+//  Journey
+//
+//  Created by 윤예지 on 2021/07/13.
+//
+
+import Foundation
+import Moya
+
+let testToken4 = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiZXA0UmhZcmJUSE9uaHpBUldOVFNTMTpBUEE5MWJIS1pGdkJuUkV1dEEtYzQxSmN6dDBITzVJQkNyMFhzM0VadjFFcUZSVl9jY05semtDbFQtaWxmT3FGTUFWTmFPUFYxaVhIQjIybHhrcHZJRWNTNW4tMjQtZzY2SVR1d0o1aW9aWlJtYVd5R1Q3XzZiUDhlR1BOZHd2SkNwUWxZb1daQlhHVCJ9LCJpYXQiOjE2MjYwMDYyOTF9.5bzzxZxI2TpOOAHjWHQrbYMgrBOZoZI-e24R9te0_NM"
+
+enum FeedService {
+    case getMyDrawer(year: Int, month: Int)
+    case getFeedDetail(postId: Int)
+    case getAllFeed(sort: String)
+    case postFeedContents(moodImage: String, moodText: String, content: String, hashtags: [String], mainImage: String, isPrivate: Bool)
+    case putFeedLike(postId: Int)
+    case putFeedUnlike(postId: Int)
+}
+
+extension FeedService: TargetType {
+    var baseURL: URL {
+        return URL(string: Const.URL.baseURL)!
+    }
+    
+    var path: String {
+        switch self {
+        case .getMyDrawer(let year, let month):
+            return Const.URL.myDrawerURL + "/\(year)/\(month)"
+        case .getFeedDetail(let postId):
+            return Const.URL.happyURL + "/\(postId)"
+        case .getAllFeed(let sort):
+            return Const.URL.happyURL + Const.URL.feedURL + "/\(sort)"
+        case .postFeedContents(_, _, _, _, _, _):
+            return Const.URL.happyURL + Const.URL.writeURL
+        case .putFeedLike(let postId):
+            return Const.URL.happyURL + Const.URL.likeURL + "/\(postId)"
+        case .putFeedUnlike(let postId):
+            return Const.URL.happyURL + Const.URL.unlikeURL + "/\(postId)"
+        }
+    }
+    
+    var method: Moya.Method {
+        switch self {
+        case .getMyDrawer(_, _):
+            return .get
+        case .getFeedDetail(_):
+            return .get
+        case .getAllFeed(_):
+            return .get
+        case .postFeedContents(_, _, _, _, _, _):
+            return .post
+        case .putFeedLike(_):
+            return .put
+        case .putFeedUnlike(_):
+            return .put
+        }
+    }
+    
+    var sampleData: Data {
+        return Data()
+    }
+    
+    var task: Task {
+        switch self {
+        case .getAllFeed(_), .getMyDrawer(_, _), .getFeedDetail(_), .putFeedUnlike(_), .putFeedLike(_):
+            return .requestPlain
+        case .postFeedContents(let moodImage, let moodText, let content, let hashtags, let mainImage, let isPrivate):
+            return .requestParameters(parameters: [
+                "moodImage": moodImage,
+                "moodText": moodText,
+                "content": content,
+                "hashtags": hashtags,
+                "mainImage": mainImage,
+                "isPrivate": isPrivate
+            ], encoding: JSONEncoding.default)
+        }
+    }
+    
+    var headers: [String : String]? {
+        return [
+            "Content-Type": "application/json",
+            "Bearer": testToken4
+        ]
+    }
+    
+}
