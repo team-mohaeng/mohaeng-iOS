@@ -26,6 +26,9 @@
 		5667D4DB269B41520071D7AD /* ChallengeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667D4D9269B41520071D7AD /* ChallengeAPI.swift */; };
 		5667D4DC269B41520071D7AD /* ChallengeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667D4DA269B41520071D7AD /* ChallengeService.swift */; };
 		5667D4DE269B624C0071D7AD /* Medal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667D4DD269B624C0071D7AD /* Medal.swift */; };
+		5678E727269F305A0049FF0C /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5678E726269F305A0049FF0C /* Setting.storyboard */; };
+		5678E729269F306D0049FF0C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5678E728269F306D0049FF0C /* SettingViewController.swift */; };
+		5678E72B269F33580049FF0C /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5678E72A269F33580049FF0C /* SettingTableViewCell.swift */; };
 		568F64C02692DF2C0066B9D1 /* CourseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568F64BF2692DF2C0066B9D1 /* CourseListViewModel.swift */; };
 		568F64C22692F9E20066B9D1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */; };
 		56AADEF42694AE2300131D2C /* MedalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */; };
@@ -157,6 +160,9 @@
 		5667D4D9269B41520071D7AD /* ChallengeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeAPI.swift; sourceTree = "<group>"; };
 		5667D4DA269B41520071D7AD /* ChallengeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeService.swift; sourceTree = "<group>"; };
 		5667D4DD269B624C0071D7AD /* Medal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medal.swift; sourceTree = "<group>"; };
+		5678E726269F305A0049FF0C /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		5678E728269F306D0049FF0C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		5678E72A269F33580049FF0C /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		568F64BF2692DF2C0066B9D1 /* CourseListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListViewModel.swift; sourceTree = "<group>"; };
 		568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -454,6 +460,7 @@
 				AAFD90BF269047A000CF4707 /* FeedCollectionView */,
 				56DCAA8F268AFF100056155A /* CourseTableView */,
 				56DCAAA4268C6BC80056155A /* CourseLibraryCollectionVIew */,
+				5678E72A269F33580049FF0C /* SettingTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -559,6 +566,7 @@
 			children = (
 				56DCAA7F268AE1A50056155A /* HomeViewController.swift */,
 				564D5D8F269446760056E468 /* MedalViewController.swift */,
+				5678E728269F306D0049FF0C /* SettingViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -591,6 +599,7 @@
 			children = (
 				56DCAA79268AE1280056155A /* Home.storyboard */,
 				564D5D8D2694454A0056E468 /* Medal.storyboard */,
+				5678E726269F305A0049FF0C /* Setting.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -821,6 +830,7 @@
 				56EAF75A2694BDD300D36105 /* PopUpViewController.xib in Resources */,
 				56DCAAB0268C6D690056155A /* UndoneCourseCollectionViewCell.xib in Resources */,
 				AA1F34AA269377F30011B3FA /* DatePickerViewController.xib in Resources */,
+				5678E727269F305A0049FF0C /* Setting.storyboard in Resources */,
 				56BF3699269EBEB3009D8CCC /* EmptyChallenge.storyboard in Resources */,
 				568F64C22692F9E20066B9D1 /* GoogleService-Info.plist in Resources */,
 				56DCAAB4268C6D760056155A /* DoneCourseCollectionViewCell.xib in Resources */,
@@ -914,6 +924,7 @@
 				AA1F34B02694B2F20011B3FA /* ModalPresentationController.swift in Sources */,
 				56EAF7592694BDD300D36105 /* PopUpViewController.swift in Sources */,
 				56BF36A0269ED2AD009D8CCC /* HappyPopUpViewController.swift in Sources */,
+				5678E729269F306D0049FF0C /* SettingViewController.swift in Sources */,
 				56DCAA4F2689BD110056155A /* ViewController.swift in Sources */,
 				EC0DB046269D9A5100DB7980 /* LoginAPI.swift in Sources */,
 				56DCAA9F268C51E50056155A /* Challenge.swift in Sources */,
@@ -984,6 +995,7 @@
 				AA1F34BD26956C400011B3FA /* MyDrawerCollectionReusableView.swift in Sources */,
 				5667D4CF269AD1620071D7AD /* NewPasswordViewController.swift in Sources */,
 				56BF369B269EBECB009D8CCC /* EmptyChallengeViewController.swift in Sources */,
+				5678E72B269F33580049FF0C /* SettingTableViewCell.swift in Sources */,
 				562A9968269DF2E5006F2DA3 /* Property.swift in Sources */,
 				AA1F34E32695D2BD0011B3FA /* WritingViewController.swift in Sources */,
 				568F64C02692DF2C0066B9D1 /* CourseListViewModel.swift in Sources */,
