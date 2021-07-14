@@ -141,33 +141,84 @@ class ChallengeViewController: UIViewController {
     // MARK: - Action Properties
     
     @objc func touchstampAction1(_ gesture: UITapGestureRecognizer) {
-        print("수")
         
     }
     
     @objc func touchstampAction2(_ gesture: UITapGestureRecognizer) {
-        print("정")
         
     }
     
     @objc func touchstampAction3(_ gesture: UITapGestureRecognizer) {
-        print("할")
         
     }
     
     @objc func touchStampActionTriangle1(_ gesture: UITapGestureRecognizer) {
-        print("게")
         
     }
     
     @objc func touchStampActionTriangle2(_ gesture: UITapGestureRecognizer) {
-        print("요")
         
     }
     
     @objc func touchStampActionTriangle3(_ gesture: UITapGestureRecognizer) {
-        print("ㅋ")
         
     }
     
+}
+
+extension ChallengeViewController {
+    func getTodayChallenge() {
+        if UserDefaults.standard.integer(forKey: "courseId") != nil {
+            let courseId = UserDefaults.standard.integer(forKey: "courseId")
+            
+            ChallengeAPI.shared.getTodayChallenge(completion: { (response) in
+            switch response {
+            case .success(let jwt):
+                if let data = jwt as? JwtData {
+                  
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            
+                }
+            }, courseId: courseId)
+        }
+    }
+    
+    func putTodayChallenge() {
+        
+        guard let challengeId = challengeDescriptionLabel.text else {
+            return
+        }
+        
+        if UserDefaults.standard.integer(forKey: "courseId") != nil {
+            
+            let courseId = UserDefaults.standard.integer(forKey: "courseId")
+            
+            ChallengeAPI.shared.putTodayChallenge(completion: { (response) in
+                switch response {
+                case .success(let jwt):
+                    if let data = jwt as? JwtData {
+                      
+                    }
+                case .requestErr(let message):
+                    print("requestErr", message)
+                case .pathErr:
+                    print("pathErr")
+                case .serverErr:
+                    print("serverErr")
+                case .networkFail:
+                    print("networkFail")
+                }
+            }, courseId: courseId, challengeId: challengeId)
+            
+        }
+
+    }
 }

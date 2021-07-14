@@ -34,6 +34,43 @@ public class ChallengeAPI {
         }
     }
     
+    func getTodayChallenge(completion: @escaping (NetworkResult<Any>) -> Void, courseId: Int) {
+        challengeProvider.request(.getTodayChallenge(courseId: courseId)) { (result) in
+            
+            switch result {
+            case.success(let response):
+                
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                let networkResult = self.judgeStatus(by: statusCode, data)
+                completion(networkResult)
+                
+            case .failure(let err):
+                print(err)
+            }
+            
+        }
+    }
+    
+    func putTodayChallenge(completion: @escaping (NetworkResult<Any>) -> Void, courseId: Int, challengeId: String) {
+        challengeProvider.request(.putTodayChallenge(courseId: courseId, challengeId: challengeId)) { (result) in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                let networkResult = self.judgeStatus(by: statusCode, data)
+                completion(networkResult)
+                
+            case .failure(let err):
+                print(err)
+            }
+        }
+        
+    }
+    
+    
     private func judgeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
         switch statusCode {
         case 200:
