@@ -10,6 +10,9 @@
 		0476068C7AE8148858867E65 /* Pods_Journey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAC4B8168D442A39A098439 /* Pods_Journey.framework */; };
 		56026137269AC7590079F1D9 /* FindPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56026136269AC7590079F1D9 /* FindPassword.storyboard */; };
 		56026139269AC7690079F1D9 /* FindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56026138269AC7690079F1D9 /* FindPasswordViewController.swift */; };
+		562A9968269DF2E5006F2DA3 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562A9967269DF2E5006F2DA3 /* Property.swift */; };
+		562A9965269D987A006F2DA3 /* AnimationPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562A9963269D987A006F2DA3 /* AnimationPopUpViewController.swift */; };
+		562A9966269D987A006F2DA3 /* AnimationPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 562A9964269D987A006F2DA3 /* AnimationPopUpViewController.xib */; };
 		564D5D8C26942F260056E468 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564D5D8B26942F260056E468 /* URL.swift */; };
 		564D5D8E2694454A0056E468 /* Medal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564D5D8D2694454A0056E468 /* Medal.storyboard */; };
 		564D5D90269446760056E468 /* MedalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564D5D8F269446760056E468 /* MedalViewController.swift */; };
@@ -108,12 +111,18 @@
 		AAD7709A269B8B3F00EC3598 /* ContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD77099269B8B3F00EC3598 /* ContentsCollectionViewCell.swift */; };
 		AAD770D1269C6F4B00EC3598 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD770D0269C6F4B00EC3598 /* HomeService.swift */; };
 		AAD770D5269C706B00EC3598 /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD770D4269C706B00EC3598 /* HomeAPI.swift */; };
+		AAD770F5269CA8A100EC3598 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD770F4269CA8A100EC3598 /* FeedService.swift */; };
+		AAD770F9269CB45000EC3598 /* FeedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD770F8269CB45000EC3598 /* FeedAPI.swift */; };
+		AAD770FC269CB6EF00EC3598 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD770FB269CB6EF00EC3598 /* Feed.swift */; };
+		AAD77114269E84D800EC3598 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD77113269E84D800EC3598 /* UIFont+Extension.swift */; };
 		AAFD90C7269052E100CF4707 /* FeedHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFD90C6269052E100CF4707 /* FeedHeaderView.swift */; };
 		AAFD90CA269052EE00CF4707 /* FeedHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAFD90C9269052EE00CF4707 /* FeedHeaderView.xib */; };
 		EC0DB03C269A0FBD00DB7980 /* YearPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB03A269A0FBD00DB7980 /* YearPickerViewController.swift */; };
 		EC0DB03D269A0FBD00DB7980 /* YearPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC0DB03B269A0FBD00DB7980 /* YearPickerViewController.xib */; };
 		EC0DB03F269A3CC200DB7980 /* AppYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB03E269A3CC200DB7980 /* AppYear.swift */; };
 		EC0DB042269C331700DB7980 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB041269C331700DB7980 /* UIDevice+Extension.swift */; };
+		EC0DB044269D8FB700DB7980 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB043269D8FB700DB7980 /* LoginService.swift */; };
+		EC0DB046269D9A5100DB7980 /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB045269D9A5100DB7980 /* LoginAPI.swift */; };
 		ECB617F926949256005E62B0 /* SignUpFirst.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB617F826949256005E62B0 /* SignUpFirst.storyboard */; };
 		ECB617FB2694926E005E62B0 /* SignUpSecond.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB617FA2694926E005E62B0 /* SignUpSecond.storyboard */; };
 		ECB617FD2694927A005E62B0 /* SignUpThird.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB617FC2694927A005E62B0 /* SignUpThird.storyboard */; };
@@ -125,6 +134,9 @@
 /* Begin PBXFileReference section */
 		56026136269AC7590079F1D9 /* FindPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FindPassword.storyboard; sourceTree = "<group>"; };
 		56026138269AC7690079F1D9 /* FindPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPasswordViewController.swift; sourceTree = "<group>"; };
+		562A9967269DF2E5006F2DA3 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		562A9963269D987A006F2DA3 /* AnimationPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPopUpViewController.swift; sourceTree = "<group>"; };
+		562A9964269D987A006F2DA3 /* AnimationPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimationPopUpViewController.xib; sourceTree = "<group>"; };
 		564D5D8B26942F260056E468 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		564D5D8D2694454A0056E468 /* Medal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Medal.storyboard; sourceTree = "<group>"; };
 		564D5D8F269446760056E468 /* MedalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +240,10 @@
 		AAD77099269B8B3F00EC3598 /* ContentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		AAD770D0269C6F4B00EC3598 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		AAD770D4269C706B00EC3598 /* HomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
+		AAD770F4269CA8A100EC3598 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
+		AAD770F8269CB45000EC3598 /* FeedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAPI.swift; sourceTree = "<group>"; };
+		AAD770FB269CB6EF00EC3598 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		AAD77113269E84D800EC3598 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		AAFD90C6269052E100CF4707 /* FeedHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedHeaderView.swift; sourceTree = "<group>"; };
 		AAFD90C9269052EE00CF4707 /* FeedHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedHeaderView.xib; sourceTree = "<group>"; };
 		AE04EE8E2CC2D99FF8A949C4 /* Pods-Journey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journey.debug.xcconfig"; path = "Target Support Files/Pods-Journey/Pods-Journey.debug.xcconfig"; sourceTree = "<group>"; };
@@ -235,6 +251,8 @@
 		EC0DB03B269A0FBD00DB7980 /* YearPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YearPickerViewController.xib; sourceTree = "<group>"; };
 		EC0DB03E269A3CC200DB7980 /* AppYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppYear.swift; sourceTree = "<group>"; };
 		EC0DB041269C331700DB7980 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
+		EC0DB043269D8FB700DB7980 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		EC0DB045269D9A5100DB7980 /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
 		ECB617F826949256005E62B0 /* SignUpFirst.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpFirst.storyboard; sourceTree = "<group>"; };
 		ECB617FA2694926E005E62B0 /* SignUpSecond.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpSecond.storyboard; sourceTree = "<group>"; };
 		ECB617FC2694927A005E62B0 /* SignUpThird.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpThird.storyboard; sourceTree = "<group>"; };
@@ -440,6 +458,7 @@
 				56DCAA5F2689BDFF0056155A /* AppModelsExmaple.swift */,
 				EC0DB03E269A3CC200DB7980 /* AppYear.swift */,
 				56F13A4D269C6D840006F9A0 /* User.swift */,
+				562A9967269DF2E5006F2DA3 /* Property.swift */,
 			);
 			path = AppModels;
 			sourceTree = "<group>";
@@ -451,6 +470,7 @@
 				56DCAA70268A26F80056155A /* UINavigationController+Extension.swift */,
 				56DCAA9C268B00910056155A /* UIView+Extension.swift */,
 				AA1F34AF2694B2F20011B3FA /* ModalPresentationController.swift */,
+				AAD77113269E84D800EC3598 /* UIFont+Extension.swift */,
 				EC0DB041269C331700DB7980 /* UIDevice+Extension.swift */,
 				56BF369C269EC947009D8CCC /* UIViewController+Extension.swift */,
 			);
@@ -460,6 +480,7 @@
 		56DCAA442689BC5B0056155A /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				AAD770F3269CA88F00EC3598 /* FeedAPI */,
 				AAD770CF269C6F3000EC3598 /* HomeAPI */,
 				56D6EF44269981720011F3FE /* NetworkResult.swift */,
 				56F13A41269C15140006F9A0 /* AuthAPI */,
@@ -508,6 +529,7 @@
 			isa = PBXGroup;
 			children = (
 				56EAF75E26955B5300D36105 /* Auth.swift */,
+				AAD770FB269CB6EF00EC3598 /* Feed.swift */,
 				56EAF76026955C0300D36105 /* Home.swift */,
 				56DCAA9E268C51E50056155A /* Challenge.swift */,
 				56DCAAB5268C6F5D0056155A /* Course.swift */,
@@ -636,6 +658,8 @@
 			children = (
 				56EAF7572694BDD300D36105 /* PopUpViewController.swift */,
 				56EAF7582694BDD300D36105 /* PopUpViewController.xib */,
+				562A9963269D987A006F2DA3 /* AnimationPopUpViewController.swift */,
+				562A9964269D987A006F2DA3 /* AnimationPopUpViewController.xib */,
 			);
 			path = PopUp;
 			sourceTree = "<group>";
@@ -645,6 +669,8 @@
 			children = (
 				56F13A44269C15300006F9A0 /* PasswordService.swift */,
 				56F13A46269C243D0006F9A0 /* PasswordAPI.swift */,
+				EC0DB043269D8FB700DB7980 /* LoginService.swift */,
+				EC0DB045269D9A5100DB7980 /* LoginAPI.swift */,
 			);
 			path = AuthAPI;
 			sourceTree = "<group>";
@@ -665,6 +691,15 @@
 				AAD770D4269C706B00EC3598 /* HomeAPI.swift */,
 			);
 			path = HomeAPI;
+			sourceTree = "<group>";
+		};
+		AAD770F3269CA88F00EC3598 /* FeedAPI */ = {
+			isa = PBXGroup;
+			children = (
+				AAD770F4269CA8A100EC3598 /* FeedService.swift */,
+				AAD770F8269CB45000EC3598 /* FeedAPI.swift */,
+			);
+			path = FeedAPI;
 			sourceTree = "<group>";
 		};
 		AAFD90BF269047A000CF4707 /* FeedCollectionView */ = {
@@ -754,6 +789,7 @@
 				56DCAA7E268AE13B0056155A /* Feed.storyboard in Resources */,
 				AA1F34C426959BD50011B3FA /* Mood.storyboard in Resources */,
 				56DCAAA1268C61810056155A /* CourseLibrary.storyboard in Resources */,
+				562A9966269D987A006F2DA3 /* AnimationPopUpViewController.xib in Resources */,
 				56DCAA6F2689DB500056155A /* Colors.xcassets in Resources */,
 				AA1F349726935A890011B3FA /* MyDrawer.storyboard in Resources */,
 				56F13A56269C74680006F9A0 /* SpoqaHanSansNeo-Light.otf in Resources */,
@@ -851,14 +887,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				56DCAABC268CA0FA0056155A /* LoginViewController.swift in Sources */,
+				AAD770FC269CB6EF00EC3598 /* Feed.swift in Sources */,
 				AA1F34B02694B2F20011B3FA /* ModalPresentationController.swift in Sources */,
 				56EAF7592694BDD300D36105 /* PopUpViewController.swift in Sources */,
 				56DCAA4F2689BD110056155A /* ViewController.swift in Sources */,
+				EC0DB046269D9A5100DB7980 /* LoginAPI.swift in Sources */,
 				56DCAA9F268C51E50056155A /* Challenge.swift in Sources */,
 				56AADEF42694AE2300131D2C /* MedalCollectionViewCell.swift in Sources */,
 				56DCAA532689BD2C0056155A /* Image.swift in Sources */,
 				EC0DB03C269A0FBD00DB7980 /* YearPickerViewController.swift in Sources */,
 				ECB61802269492BC005E62B0 /* SignUpSecondViewController.swift in Sources */,
+				AAD770F5269CA8A100EC3598 /* FeedService.swift in Sources */,
 				56DCAA71268A26F80056155A /* UINavigationController+Extension.swift in Sources */,
 				EC0DB03F269A3CC200DB7980 /* AppYear.swift in Sources */,
 				AAD770D5269C706B00EC3598 /* HomeAPI.swift in Sources */,
@@ -875,6 +914,7 @@
 				56DCAA78268AE0E40056155A /* TabbarViewController.swift in Sources */,
 				EC0DB042269C331700DB7980 /* UIDevice+Extension.swift in Sources */,
 				56EAF7512694AF2E00D36105 /* MedalCollectionReusableView.swift in Sources */,
+				EC0DB044269D8FB700DB7980 /* LoginService.swift in Sources */,
 				564D5D90269446760056E468 /* MedalViewController.swift in Sources */,
 				56DCAAB6268C6F5D0056155A /* Course.swift in Sources */,
 				56DCAA4D2689BCFA0056155A /* Storyboard.swift in Sources */,
@@ -883,6 +923,7 @@
 				56D6EF45269981720011F3FE /* NetworkResult.swift in Sources */,
 				56DCAAAF268C6D690056155A /* UndoneCourseCollectionViewCell.swift in Sources */,
 				56BF369D269EC947009D8CCC /* UIViewController+Extension.swift in Sources */,
+				562A9965269D987A006F2DA3 /* AnimationPopUpViewController.swift in Sources */,
 				AA1F34C726959BFC0011B3FA /* MoodViewController.swift in Sources */,
 				56DCAA8E268AF75E0056155A /* CourseViewController.swift in Sources */,
 				56F13A4E269C6D840006F9A0 /* User.swift in Sources */,
@@ -900,6 +941,7 @@
 				5667D4CB269ACBA70071D7AD /* CodeViewController.swift in Sources */,
 				56EAF75F26955B5300D36105 /* Auth.swift in Sources */,
 				AAD77084269B710E00EC3598 /* CustomIntensityVisualEffectView.swift in Sources */,
+				AAD770F9269CB45000EC3598 /* FeedAPI.swift in Sources */,
 				56EAF75F26955B5300D36105 /* Auth.swift in Sources */,
 				56DCAA84268AE1BD0056155A /* FeedViewController.swift in Sources */,
 				AAD770D1269C6F4B00EC3598 /* HomeService.swift in Sources */,
@@ -907,12 +949,14 @@
 				AA1F349A2693688F0011B3FA /* MyDrawerViewController.swift in Sources */,
 				56DCAA96268AFF510056155A /* EvenDayTableViewCell.swift in Sources */,
 				5667D4DC269B41520071D7AD /* ChallengeService.swift in Sources */,
+				AAD77114269E84D800EC3598 /* UIFont+Extension.swift in Sources */,
 				5667D4DB269B41520071D7AD /* ChallengeAPI.swift in Sources */,
 				56EAF76126955C0300D36105 /* Home.swift in Sources */,
 				56DCAA282689BB9B0056155A /* AppDelegate.swift in Sources */,
 				56DCAA2A2689BB9B0056155A /* SceneDelegate.swift in Sources */,
 				AA1F34BD26956C400011B3FA /* MyDrawerCollectionReusableView.swift in Sources */,
 				5667D4CF269AD1620071D7AD /* NewPasswordViewController.swift in Sources */,
+				562A9968269DF2E5006F2DA3 /* Property.swift in Sources */,
 				AA1F34E32695D2BD0011B3FA /* WritingViewController.swift in Sources */,
 				568F64C02692DF2C0066B9D1 /* CourseListViewModel.swift in Sources */,
 				AAFD90C7269052E100CF4707 /* FeedHeaderView.swift in Sources */,
