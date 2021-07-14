@@ -30,6 +30,8 @@
 		568F64C22692F9E20066B9D1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */; };
 		56AADEF42694AE2300131D2C /* MedalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */; };
 		56AADEF52694AE2300131D2C /* MedalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AADEF32694AE2300131D2C /* MedalCollectionViewCell.xib */; };
+		56BF3699269EBEB3009D8CCC /* EmptyChallenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56BF3698269EBEB3009D8CCC /* EmptyChallenge.storyboard */; };
+		56BF369B269EBECB009D8CCC /* EmptyChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF369A269EBECB009D8CCC /* EmptyChallengeViewController.swift */; };
 		56BF369D269EC947009D8CCC /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF369C269EC947009D8CCC /* UIViewController+Extension.swift */; };
 		56D6EF45269981720011F3FE /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6EF44269981720011F3FE /* NetworkResult.swift */; };
 		56DCAA282689BB9B0056155A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DCAA272689BB9B0056155A /* AppDelegate.swift */; };
@@ -154,6 +156,8 @@
 		568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalCollectionViewCell.swift; sourceTree = "<group>"; };
 		56AADEF32694AE2300131D2C /* MedalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedalCollectionViewCell.xib; sourceTree = "<group>"; };
+		56BF3698269EBEB3009D8CCC /* EmptyChallenge.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmptyChallenge.storyboard; sourceTree = "<group>"; };
+		56BF369A269EBECB009D8CCC /* EmptyChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyChallengeViewController.swift; sourceTree = "<group>"; };
 		56BF369C269EC947009D8CCC /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		56D6EF44269981720011F3FE /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		56DCAA242689BB9B0056155A /* Journey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journey.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -554,6 +558,7 @@
 				56DCAA81268AE1B10056155A /* ChallengeViewController.swift */,
 				56DCAA8D268AF75E0056155A /* CourseViewController.swift */,
 				56DCAAA2268C61A40056155A /* CourseLibraryViewController.swift */,
+				56BF369A269EBECB009D8CCC /* EmptyChallengeViewController.swift */,
 			);
 			path = Challenge;
 			sourceTree = "<group>";
@@ -582,6 +587,7 @@
 		56DCAA89268AE2230056155A /* Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				56BF3698269EBEB3009D8CCC /* EmptyChallenge.storyboard */,
 				56DCAA7B268AE1310056155A /* Challenge.storyboard */,
 				56DCAA8B268AF6E20056155A /* Course.storyboard */,
 				56DCAAA0268C61810056155A /* CourseLibrary.storyboard */,
@@ -799,6 +805,7 @@
 				56EAF75A2694BDD300D36105 /* PopUpViewController.xib in Resources */,
 				56DCAAB0268C6D690056155A /* UndoneCourseCollectionViewCell.xib in Resources */,
 				AA1F34AA269377F30011B3FA /* DatePickerViewController.xib in Resources */,
+				56BF3699269EBEB3009D8CCC /* EmptyChallenge.storyboard in Resources */,
 				568F64C22692F9E20066B9D1 /* GoogleService-Info.plist in Resources */,
 				56DCAAB4268C6D760056155A /* DoneCourseCollectionViewCell.xib in Resources */,
 				56DCAA93268AFF3A0056155A /* FirstDayTableViewCell.xib in Resources */,
@@ -956,6 +963,7 @@
 				56DCAA2A2689BB9B0056155A /* SceneDelegate.swift in Sources */,
 				AA1F34BD26956C400011B3FA /* MyDrawerCollectionReusableView.swift in Sources */,
 				5667D4CF269AD1620071D7AD /* NewPasswordViewController.swift in Sources */,
+				56BF369B269EBECB009D8CCC /* EmptyChallengeViewController.swift in Sources */,
 				562A9968269DF2E5006F2DA3 /* Property.swift in Sources */,
 				AA1F34E32695D2BD0011B3FA /* WritingViewController.swift in Sources */,
 				568F64C02692DF2C0066B9D1 /* CourseListViewModel.swift in Sources */,

@@ -28,6 +28,7 @@ extension Const {
             static let medal = "Medal"
             
             // 챌린지 탭
+            static let emptyChallenge = "EmptyChallenge"
             static let challenge = "Challenge"
             static let course = "Course"
             static let courseLibrary = "CourseLibrary"
