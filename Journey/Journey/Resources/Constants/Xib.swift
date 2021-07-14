@@ -32,6 +32,9 @@ extension Const {
             static let contentsCollectionViewCell = "ContentsCollectionViewCell"
             static let myDrawerCollectionReusableView = "MyDrawerCollectionReusableView"
             static let hashTagCollectionViewCell = "HashTagCollectionViewCell"
+            
+            // 팝업
+            static let animationPopUp = "AnimationPopUpViewController"
         }
         
         struct Identifier {
@@ -55,6 +58,9 @@ extension Const {
             static let contentsCollectionViewCell = "ContentsCollectionViewCell"
             static let myDrawerCollectionReusableView = "MyDrawerCollectionReusableView"
             static let hashTagCollectionViewCell = "HashTagCollectionViewCell"
+            
+            // 팝업
+            static let animationPopUp = "AnimationPopUpViewController"
         }
         
     }
