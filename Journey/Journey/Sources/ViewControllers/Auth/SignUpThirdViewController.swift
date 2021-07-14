@@ -14,6 +14,7 @@ class SignUpThirdViewController: UIViewController {
     @IBOutlet weak var inputNicknameTextField: UITextField!
     @IBOutlet weak var touchNextPage3Button: UIButton!
     @IBOutlet weak var serviceLabel: UILabel!
+    var signupuser = SignUpUser.shared
     
     // MARK: - View Life Cycle
     
@@ -28,6 +29,11 @@ class SignUpThirdViewController: UIViewController {
         super.viewDidLayoutSubviews()
         makeUnderLineinputNicknameTextField()
       
+    }
+    
+    @IBAction func touchNextButton(_ sender: Any) {
+        
+        postSignUp()
     }
     
     // MARK: - Functions
@@ -71,5 +77,52 @@ class SignUpThirdViewController: UIViewController {
         self.serviceLabel.attributedText = attributeString
         
     }
+    
+    func popToRootViewController() {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
 
+}
+
+extension SignUpThirdViewController {
+    func postSignUp() {
+        guard let email = signupuser.email else {
+            return
+        }
+        guard let password = signupuser.password else {
+            return
+        }
+        guard let gender = signupuser.gender else {
+            return
+        }
+        guard let birthyear = signupuser.birthyear else {
+            return
+        }
+        guard let nickname = inputNicknameTextField.text else {
+            return
+        }
+        print(email)
+        print(password)
+        print(gender)
+        print(birthyear)
+        print(nickname)
+        
+        SignUpAPI.shared.postSignUp(completion: { (response) in
+            switch response {
+            case .success(let jwt):
+                if let data = jwt as? JwtData {
+                    print("sss")
+                    self.popToRootViewController()
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }, email: email, password: password, nickname: nickname, gender: gender, birthyear: birthyear)
+    }
 }

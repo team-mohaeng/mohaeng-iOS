@@ -57,6 +57,9 @@
                                 <state key="normal" title="시작하기">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="touchNextButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zbe-rX-eRc"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="indicator3" translatesAutoresizingMaskIntoConstraints="NO" id="J6W-j1-Ayr">
                                 <rect key="frame" x="165.66666666666666" y="685" width="44" height="8"/>

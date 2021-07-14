@@ -125,6 +125,9 @@
 		EC0DB03D269A0FBD00DB7980 /* YearPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC0DB03B269A0FBD00DB7980 /* YearPickerViewController.xib */; };
 		EC0DB03F269A3CC200DB7980 /* AppYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB03E269A3CC200DB7980 /* AppYear.swift */; };
 		EC0DB042269C331700DB7980 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB041269C331700DB7980 /* UIDevice+Extension.swift */; };
+		EC628958269DF0990041F43A /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC628957269DF0990041F43A /* SignUpService.swift */; };
+		EC62895A269DF5CF0041F43A /* SignUpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC628959269DF5CF0041F43A /* SignUpAPI.swift */; };
+		EC62895C269DFA380041F43A /* SignUpUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC62895B269DFA380041F43A /* SignUpUser.swift */; };
 		EC0DB044269D8FB700DB7980 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB043269D8FB700DB7980 /* LoginService.swift */; };
 		EC0DB046269D9A5100DB7980 /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB045269D9A5100DB7980 /* LoginAPI.swift */; };
 		ECB617F926949256005E62B0 /* SignUpFirst.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB617F826949256005E62B0 /* SignUpFirst.storyboard */; };
@@ -259,6 +262,9 @@
 		EC0DB03B269A0FBD00DB7980 /* YearPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YearPickerViewController.xib; sourceTree = "<group>"; };
 		EC0DB03E269A3CC200DB7980 /* AppYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppYear.swift; sourceTree = "<group>"; };
 		EC0DB041269C331700DB7980 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
+		EC628957269DF0990041F43A /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
+		EC628959269DF5CF0041F43A /* SignUpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAPI.swift; sourceTree = "<group>"; };
+		EC62895B269DFA380041F43A /* SignUpUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUser.swift; sourceTree = "<group>"; };
 		EC0DB043269D8FB700DB7980 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		EC0DB045269D9A5100DB7980 /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
 		ECB617F826949256005E62B0 /* SignUpFirst.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpFirst.storyboard; sourceTree = "<group>"; };
@@ -466,6 +472,7 @@
 				56DCAA5F2689BDFF0056155A /* AppModelsExmaple.swift */,
 				EC0DB03E269A3CC200DB7980 /* AppYear.swift */,
 				56F13A4D269C6D840006F9A0 /* User.swift */,
+				EC62895B269DFA380041F43A /* SignUpUser.swift */,
 				562A9967269DF2E5006F2DA3 /* Property.swift */,
 			);
 			path = AppModels;
@@ -681,6 +688,8 @@
 			children = (
 				56F13A44269C15300006F9A0 /* PasswordService.swift */,
 				56F13A46269C243D0006F9A0 /* PasswordAPI.swift */,
+				EC628957269DF0990041F43A /* SignUpService.swift */,
+				EC628959269DF5CF0041F43A /* SignUpAPI.swift */,
 				EC0DB043269D8FB700DB7980 /* LoginService.swift */,
 				EC0DB045269D9A5100DB7980 /* LoginAPI.swift */,
 			);
@@ -931,6 +940,7 @@
 				56EAF7512694AF2E00D36105 /* MedalCollectionReusableView.swift in Sources */,
 				EC0DB044269D8FB700DB7980 /* LoginService.swift in Sources */,
 				564D5D90269446760056E468 /* MedalViewController.swift in Sources */,
+				EC62895A269DF5CF0041F43A /* SignUpAPI.swift in Sources */,
 				56DCAAB6268C6F5D0056155A /* Course.swift in Sources */,
 				56DCAA4D2689BCFA0056155A /* Storyboard.swift in Sources */,
 				56F13A47269C243D0006F9A0 /* PasswordAPI.swift in Sources */,
@@ -951,6 +961,7 @@
 				56DCAA512689BD1E0056155A /* Xib.swift in Sources */,
 				56F13A45269C15300006F9A0 /* PasswordService.swift in Sources */,
 				56DCAA552689BD3B0056155A /* Font.swift in Sources */,
+				EC62895C269DFA380041F43A /* SignUpUser.swift in Sources */,
 				56DCAA80268AE1A50056155A /* HomeViewController.swift in Sources */,
 				56DCAA4A2689BCD80056155A /* Const.swift in Sources */,
 				5667D4CB269ACBA70071D7AD /* CodeViewController.swift in Sources */,
@@ -969,6 +980,7 @@
 				56EAF76126955C0300D36105 /* Home.swift in Sources */,
 				56DCAA282689BB9B0056155A /* AppDelegate.swift in Sources */,
 				56DCAA2A2689BB9B0056155A /* SceneDelegate.swift in Sources */,
+				EC628958269DF0990041F43A /* SignUpService.swift in Sources */,
 				AA1F34BD26956C400011B3FA /* MyDrawerCollectionReusableView.swift in Sources */,
 				5667D4CF269AD1620071D7AD /* NewPasswordViewController.swift in Sources */,
 				56BF369B269EBECB009D8CCC /* EmptyChallengeViewController.swift in Sources */,

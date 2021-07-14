@@ -14,14 +14,14 @@ class SignUpSecondViewController: UIViewController {
     private var modalYearView: YearPickerViewController?
     private var currentYear: AppYear?
     private var selectedYear: AppYear?
-    
+    var signupuser = SignUpUser.shared
     // MARK: - @IBOutlet Properties**
     
     @IBOutlet weak var womanButton: UIButton!
     @IBOutlet weak var manButton: UIButton!
     @IBOutlet weak var touchNextPage2Button: UIButton!
     @IBOutlet weak var yearLabel: UILabel!
-    
+
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -63,19 +63,20 @@ class SignUpSecondViewController: UIViewController {
     
     @IBAction func touchNextSecondButton(_ sender: Any) {
         
-        let signupThirdStoryboard = UIStoryboard(name: Const.Storyboard.Name.signUpThird, bundle: nil)
-        
-        guard let signUpThirdViewController  = signupThirdStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.signUpThird) as? SignUpThirdViewController else {
-            return
+        if womanButton.isSelected == true {
+            signupuser.gender = 0
+        } else {
+            signupuser.gender = 1
         }
-        self.navigationController?.pushViewController(signUpThirdViewController, animated: true)
+        signupuser.birthyear = Int(yearLabel.text!)
+        
+        pushSignUpThirdViewController()
     }
     
     // MARK: - Functions
     
     private func changeButtonAttribute() {
         womanButton.makeRoundedWithBorder(radius: 10, color: UIColor.lightGray.cgColor )
-        
         manButton.makeRoundedWithBorder(radius: 10, color: UIColor.lightGray.cgColor )
     }
     
@@ -125,6 +126,15 @@ class SignUpSecondViewController: UIViewController {
         modalYearView.modalPresentationStyle = .custom
         modalYearView.transitioningDelegate = self
         self.present(modalYearView, animated: true, completion: nil)
+    }
+    
+    private func pushSignUpThirdViewController() {
+       
+        let signupThirdStoryboard = UIStoryboard(name: Const.Storyboard.Name.signUpThird, bundle: nil)
+        guard let signUpThirdViewController  = signupThirdStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.signUpThird) as? SignUpThirdViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(signUpThirdViewController, animated: true)
     }
     
 }
