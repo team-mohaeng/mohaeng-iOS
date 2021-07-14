@@ -38,18 +38,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일 코스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3JW-LD-Yf6">
-                                <rect key="frame" x="257" y="43" width="42" height="18"/>
-                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQa-0g-vEg">
-                                <rect key="frame" x="248.5" y="43" width="8.5" height="18"/>
-                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="나 쟈니가 인간세계에 처음 도착했을 때 사람들이 청결에 대해 은근히 무심한 것이 신기했쟈니. 내가 사는 별에서는 상상도 할 수 없쟈니." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLM-tM-cPP">
                                 <rect key="frame" x="28" y="82" width="271" height="69"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -89,9 +77,47 @@
                                     <constraint firstAttribute="height" constant="50" id="a1K-jl-TCM"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHp-JZ-V6r">
+                                <rect key="frame" x="233" y="41" width="66" height="17"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Zc1-Bb-DBa">
+                                        <rect key="frame" x="9" y="3" width="48" height="11"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="건강" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhR-Um-04f">
+                                                <rect key="frame" x="0.0" y="0.0" width="18.5" height="11"/>
+                                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="10"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="courseLibrarySeparator" translatesAutoresizingMaskIntoConstraints="NO" id="W6s-tN-xd5">
+                                                <rect key="frame" x="21.5" y="0.0" width="8" height="11"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="8" id="rHS-3H-Dcd"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ka-Xq-NZ1">
+                                                <rect key="frame" x="32.5" y="0.0" width="15.5" height="11"/>
+                                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="10"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="crsD"/>
+                                <constraints>
+                                    <constraint firstItem="Zc1-Bb-DBa" firstAttribute="top" secondItem="MHp-JZ-V6r" secondAttribute="top" constant="3" id="X6c-Mw-J7M"/>
+                                    <constraint firstAttribute="height" constant="17" id="aow-3u-nYt"/>
+                                    <constraint firstItem="Zc1-Bb-DBa" firstAttribute="leading" secondItem="MHp-JZ-V6r" secondAttribute="leading" constant="9" id="nmi-RE-Ibu"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zc1-Bb-DBa" secondAttribute="trailing" constant="9" id="uJa-iu-dDb"/>
+                                    <constraint firstAttribute="bottom" secondItem="Zc1-Bb-DBa" secondAttribute="bottom" constant="3" id="uRB-2Y-dlm"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="Grey2Bg"/>
                         <constraints>
+                            <constraint firstItem="MHp-JZ-V6r" firstAttribute="top" secondItem="rFc-Yo-UTI" secondAttribute="top" constant="41" id="7yv-jh-k2u"/>
+                            <constraint firstAttribute="trailing" secondItem="MHp-JZ-V6r" secondAttribute="trailing" constant="28" id="G90-pX-8rY"/>
                             <constraint firstItem="fZ7-IS-Zhh" firstAttribute="leading" secondItem="rFc-Yo-UTI" secondAttribute="leading" constant="28" id="Raw-rw-rwV"/>
                             <constraint firstItem="ASN-xv-T6P" firstAttribute="top" secondItem="k1J-YT-mmS" secondAttribute="bottom" constant="19" id="Xk3-bL-U7p"/>
                             <constraint firstItem="fZ7-IS-Zhh" firstAttribute="top" secondItem="rFc-Yo-UTI" secondAttribute="top" constant="36" id="ZJu-7V-goJ"/>
@@ -99,13 +125,9 @@
                             <constraint firstAttribute="trailing" secondItem="ASN-xv-T6P" secondAttribute="trailing" id="aBU-QO-7DB"/>
                             <constraint firstAttribute="bottom" secondItem="ASN-xv-T6P" secondAttribute="bottom" id="b1I-RT-5lE"/>
                             <constraint firstItem="ASN-xv-T6P" firstAttribute="leading" secondItem="rFc-Yo-UTI" secondAttribute="leading" id="egU-2K-ikt"/>
-                            <constraint firstItem="HQa-0g-vEg" firstAttribute="centerY" secondItem="3JW-LD-Yf6" secondAttribute="centerY" id="fAT-Kn-26e"/>
                             <constraint firstItem="qLM-tM-cPP" firstAttribute="top" secondItem="fZ7-IS-Zhh" secondAttribute="bottom" constant="25" id="hAO-Tg-Zdq"/>
                             <constraint firstItem="qLM-tM-cPP" firstAttribute="leading" secondItem="rFc-Yo-UTI" secondAttribute="leading" constant="28" id="hV6-UT-EPL"/>
                             <constraint firstItem="k1J-YT-mmS" firstAttribute="centerX" secondItem="rFc-Yo-UTI" secondAttribute="centerX" id="rw7-dl-aUD"/>
-                            <constraint firstAttribute="trailing" secondItem="3JW-LD-Yf6" secondAttribute="trailing" constant="28" id="sCx-B3-TC8"/>
-                            <constraint firstItem="3JW-LD-Yf6" firstAttribute="top" secondItem="rFc-Yo-UTI" secondAttribute="top" constant="43" id="v3q-DM-eiD"/>
-                            <constraint firstItem="3JW-LD-Yf6" firstAttribute="leading" secondItem="HQa-0g-vEg" secondAttribute="trailing" id="xnx-eX-GRR"/>
                             <constraint firstItem="k1J-YT-mmS" firstAttribute="top" secondItem="qLM-tM-cPP" secondAttribute="bottom" constant="20" id="xoi-f5-5Jq"/>
                         </constraints>
                     </view>
@@ -121,7 +143,9 @@
             <size key="customSize" width="430" height="249"/>
             <connections>
                 <outlet property="cellBgView" destination="rFc-Yo-UTI" id="de3-fp-4Jx"/>
-                <outlet property="courseDaysLabel" destination="HQa-0g-vEg" id="87k-EM-br4"/>
+                <outlet property="courseDaysLabel" destination="2ka-Xq-NZ1" id="fMC-ue-o58"/>
+                <outlet property="courseDescriptionView" destination="MHp-JZ-V6r" id="tgS-19-nM9"/>
+                <outlet property="coursePropertyLabel" destination="nhR-Um-04f" id="E7a-m7-XaD"/>
                 <outlet property="descriptionTextView" destination="qLM-tM-cPP" id="cnz-Za-fNM"/>
                 <outlet property="propertyImageView" destination="k1J-YT-mmS" id="UhB-Gg-NjY"/>
                 <outlet property="startCourseView" destination="ASN-xv-T6P" id="yha-ef-Rut"/>
@@ -133,12 +157,13 @@
     </objects>
     <resources>
         <image name="btnSide" width="12" height="12"/>
+        <image name="courseLibrarySeparator" width="8" height="8"/>
         <image name="typeSforLibraryGrey" width="76" height="76"/>
         <namedColor name="Grey2Bg">
             <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="crsD">
-            <color red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.93300002813339233" green="0.93300002813339233" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
