@@ -14,6 +14,7 @@ class SignUpFirstViewController: UIViewController {
     var isEmailError = false
     var isPasswordError = false
     var isPasswordCheckError = false
+    var signupuser = SignUpUser.shared
     
     // MARK: - @IBOutlet Properties
     
@@ -44,12 +45,9 @@ class SignUpFirstViewController: UIViewController {
     // MARK: - @IBAction Function
     
     @IBAction func touchNextFirstButton(_ sender: Any) {
-        let signupSecondStoryboard = UIStoryboard(name: Const.Storyboard.Name.signUpSecond, bundle: nil)
-
-        guard let signUpSecondViewController  = signupSecondStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.signUpSecond) as? SignUpSecondViewController else {
-            return
-        }
-        self.navigationController?.pushViewController(signUpSecondViewController, animated: true)
+        signupuser.email = emailTextField.text
+        signupuser.password = passwordTextField.text
+        pushSignUpSecondViewController()
     }
     
     // MARK: - Functions
@@ -173,6 +171,15 @@ class SignUpFirstViewController: UIViewController {
         isPasswordCheckError = false
     }
     
+    private func pushSignUpSecondViewController() {
+        
+        let signupSecondStoryboard = UIStoryboard(name: Const.Storyboard.Name.signUpSecond, bundle: nil)
+        guard let signUpSecondViewController  = signupSecondStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.signUpSecond) as? SignUpSecondViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(signUpSecondViewController, animated: true)
+        
+    }
     // MARK: - Check Functions
     
     func checkEmail() -> Bool {
