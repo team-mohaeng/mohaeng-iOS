@@ -15,4 +15,5 @@ target 'Journey' do
 	pod 'IQKeyboardManagerSwift'
 	pod 'SnapKit'
 	pod 'Then'
+	pod 'Kingfisher'
 end
