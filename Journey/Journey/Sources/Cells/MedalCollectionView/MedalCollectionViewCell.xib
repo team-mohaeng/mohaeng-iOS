@@ -106,7 +106,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="sampleMoodImg" width="300" height="300"/>
+        <image name="sampleMoodImg" width="150" height="150"/>
         <namedColor name="Black1">
             <color red="0.071000002324581146" green="0.071000002324581146" blue="0.078000001609325409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
