@@ -149,6 +149,7 @@ extension HomeViewController {
             case .success(let home):
                 if let data = home as? HomeData {
                     self.updateData(data: data)
+                    UserDefaults.standard.set(data.course.id, forKey: "courseId")
                 }
 
             case .requestErr(let message):

@@ -14,9 +14,9 @@ enum ChallengeService {
     // 전체 챌린지 지도 조회
     case getAllChallenges
     // 오늘의 챌린지 조회
-    case getTodayChallenge(courseId: String)
+    case getTodayChallenge(courseId: Int)
     // 챌린지 인증
-    case putTodayChallenge(courseId: String, challengeId: String)
+    case putTodayChallenge(courseId: Int, challengeId: String)
 }
 
 extension ChallengeService: TargetType {
