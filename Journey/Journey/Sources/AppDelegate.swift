@@ -57,7 +57,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate : MessagingDelegate {
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        print("Firebase registration token: \(fcmToken)")
+        guard let fcmTokenString = fcmToken else {
+            return
+        }
+        print("Firebase registration token: \(fcmTokenString)")
+        UserDefaults.standard.set(fcmTokenString, forKey: "fcmToken")
     }
     func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingDelegate) {
         print("Received data message: \(remoteMessage.description)")

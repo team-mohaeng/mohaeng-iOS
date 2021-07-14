@@ -10,16 +10,6 @@ import Moya
 
 // MARK: - Course Service
 
-// 코스 라이브러리 조회 (GET)
-// static let coursesURL = "/courses"
-
-// 코스 진행하기 (PUT) : "/courses/:id"
-
-// 완료한 코스 메달 조회 (GET)
-// static let medalURL = "/complete"
-
-let testToken2 = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiZXA0UmhZcmJUSE9uaHpBUldOVFNTMTpBUEE5MWJIS1pGdkJuUkV1dEEtYzQxSmN6dDBITzVJQkNyMFhzM0VadjFFcUZSVl9jY05semtDbFQtaWxmT3FGTUFWTmFPUFYxaVhIQjIybHhrcHZJRWNTNW4tMjQtZzY2SVR1d0o1aW9aWlJtYVd5R1Q3XzZiUDhlR1BOZHd2SkNwUWxZb1daQlhHVCJ9LCJpYXQiOjE2MjYwODk5OTZ9.fZoVLz1W-C9RNklV0ZPx6yZeysJWfiuOOPhoAlMtG5k"
-
 enum CourseService {
     // 코스 라이브러리 조회
     case getCourseLibrary
@@ -70,7 +60,7 @@ extension CourseService: TargetType {
     var headers: [String: String]? {
         return [
             "Content-Type": "application/json",
-            "Bearer": testToken2
+            "Bearer": UserDefaults.standard.string(forKey: "jwtToken") ?? ""
         ]
     }
 }

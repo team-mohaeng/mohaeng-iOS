@@ -16,14 +16,38 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+                
+        if !hasJwtToken() {
+            setRootViewControllerToLogin()
+        } else {
+            print(UserDefaults.standard.string(forKey: "jwtToken"))
+            setRootViewControllerToTabbar()
+        }
+        self.window?.backgroundColor = .white
         
+        
+        guard let _ = (scene as? UIWindowScene) else { return }
+    }
+    
+    private func hasJwtToken() -> Bool {
+        return UserDefaults.standard.object(forKey: "jwtToken") != nil
+    }
+    
+    private func setRootViewControllerToLogin() {
         let loginStoryboard = UIStoryboard(name: Const.Storyboard.Name.login, bundle: nil)
         let loginViewController = loginStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.login)
         self.navigationController = UINavigationController(rootViewController: loginViewController)
         self.window?.rootViewController = self.navigationController
-        self.window?.backgroundColor = .white
-        
-        guard let _ = (scene as? UIWindowScene) else { return }
+    }
+    
+    private func setRootViewControllerToTabbar() {
+        let tabbarStoryboard = UIStoryboard(name: Const.Storyboard.Name.tabbar, bundle: nil)
+        guard let tabbarViewController = tabbarStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.tabbar) as? TabbarViewController else {
+            return
+        }
+        tabbarViewController.modalPresentationStyle = .fullScreen
+        tabbarViewController.modalTransitionStyle = .crossDissolve
+        self.window?.rootViewController = tabbarViewController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
