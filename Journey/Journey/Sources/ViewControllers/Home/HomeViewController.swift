@@ -20,6 +20,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var firstIndicatiorLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var thirdIndicatorLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var densityPercentLabel: UILabel!
+    @IBOutlet weak var journeyImageView: UIImageView!
     
     private lazy var activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView()
@@ -61,20 +62,25 @@ class HomeViewController: UIViewController {
     // MARK: - Functions
     
     private func initNavigationBar() {
-        let awardItem = initNavigationIconWithSpacing(name: "tempImg", buttonEvent: #selector(touchAwardButton(sender:)))
-        let settingItem = initNavigationIconWithSpacing(name: "tempImg", buttonEvent: #selector(touchSettingButton(sender:)))
+        let awardItem = initNavigationIconWithSpacing(image: Const.Image.medalIcon, buttonEvent: #selector(touchAwardButton(sender:)))
+        let settingItem = initNavigationIconWithSpacing(image: Const.Image.settingIcon, buttonEvent: #selector(touchSettingButton(sender:)))
         
         self.navigationItem.rightBarButtonItems = [settingItem, awardItem]
         self.navigationController?.navigationBar.tintColor = UIColor.black
         self.navigationController?.initNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
     }
     
-    private func initNavigationIconWithSpacing(name: String, buttonEvent: Selector) -> UIBarButtonItem {
+    private func initNavigationIconWithSpacing(image: UIImage, buttonEvent: Selector) -> UIBarButtonItem {
         let button: UIButton = UIButton.init(type: .custom)
-        button.setImage(UIImage(named: name), for: .normal)
-        button.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        button.setImage(image, for: .normal)
+        button.frame = CGRect(x: 0, y: 0, width: 48, height: 48)
         button.addTarget(self, action: buttonEvent, for: .touchUpInside)
+        
         let item = UIBarButtonItem(customView: button)
+        let currWidth = item.customView?.widthAnchor.constraint(equalToConstant: 40)
+        currWidth?.isActive = true
+        let currHeight = item.customView?.heightAnchor.constraint(equalToConstant: 40)
+        currHeight?.isActive = true
         
         return item
     }
@@ -102,10 +108,45 @@ class HomeViewController: UIViewController {
     }
     
     private func updateData(data: HomeData) {
-        courseTitleButton.setTitle(data.course.title, for: .normal)
-        courseDayLabel.text = "\(findCurrentChallengesDay(challenges: data.course.challenges)) 일차"
+        setMainJourneyImage(affinity: data.affinity)
+        setMainTitleTextButton(situation: data.situation, courseTitle: data.course.title)
+        setCourseDayLabel(situation: data.situation, challenges: data.course.challenges)
         setDensityPercent(densityPercent: CGFloat(data.affinity))
         self.detachActivityIndicator()
+    }
+    
+    private func setMainJourneyImage(affinity: Int) {
+        switch affinity {
+        case 0...25:
+            journeyImageView.image = Const.Image.level1Journey
+        case 26...50:
+            journeyImageView.image = Const.Image.level2Journey
+        case 51...75:
+            journeyImageView.image = Const.Image.level3Journey
+        case 76...100:
+            journeyImageView.image = Const.Image.level4Journey
+        default:
+            break
+        }
+    }
+    
+    private func setMainTitleTextButton(situation: Int, courseTitle: String) {
+        // 0: 코스 시작 전, 1: 코스 진행 중
+        if situation == 0 {
+            courseTitleButton.setTitle("나와 함께해보겠어?", for: .normal)
+            courseTitleButton.isEnabled = false
+        } else {
+            courseTitleButton.setTitle(courseTitle, for: .normal)
+            courseTitleButton.isEnabled = true
+        }
+    }
+    
+    private func setCourseDayLabel(situation: Int, challenges: [Challenge]) {
+        if situation == 0 {
+            courseDayBoxView.isHidden = true
+        } else {
+            courseDayLabel.text = "\(findCurrentChallengesDay(challenges: challenges)) 일차"
+        }
     }
     
     private func findCurrentChallengesDay(challenges: [Challenge]) -> Int {
