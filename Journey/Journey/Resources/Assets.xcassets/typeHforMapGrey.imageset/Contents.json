@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "bggraphic.png",
+      "filename" : "Property 1=typeHmap.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "bggraphic@2x.png",
+      "filename" : "Property 1=typeHmap@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "bggraphic@3x.png",
+      "filename" : "Property 1=typeHmap@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -18,7 +18,6 @@ class CourseListViewModel {
             case .success(let courses):
                 if let data = courses as? CoursesData {
                     self.courses = data.courses
-                    print(self.courses)
                     completion(.success)
                 }
             case .requestErr(let message):

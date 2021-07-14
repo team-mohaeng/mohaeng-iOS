@@ -10,7 +10,6 @@ import UIKit
 extension Const {
     
     struct Image {
-        // example
-        static let btnFilter = UIImage(named: "btnFilter")
+        static let gnbIcnBack = UIImage(named: "gnbIcnBack")
     }
 }
