@@ -8,6 +8,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="BMHANNA_11yrs_otf.otf">
+            <string>BMHANNA11yrsoldOTF</string>
+        </array>
+        <array key="SpoqaHanSansNeo-Bold.otf">
+            <string>SpoqaHanSansNeo-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -18,9 +26,9 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yeu-Q2-bCV">
                     <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업적을 달성했쟈니" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTh-uG-qta">
-                            <rect key="frame" x="24" y="266.5" width="115" height="19.5"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지금까지 완료한 코스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTh-uG-qta">
+                            <rect key="frame" x="24" y="265.5" width="133.5" height="20.5"/>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -32,12 +40,12 @@
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="9cc-kx-Wnm">
-                    <rect key="frame" x="24" y="12" width="402" height="214.5"/>
+                    <rect key="frame" x="24" y="12" width="402" height="213.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nVy-5Y-jUd">
-                            <rect key="frame" x="0.0" y="0.0" width="193.5" height="214.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="193.5" height="213.5"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleMoodImg" translatesAutoresizingMaskIntoConstraints="NO" id="vOx-t9-zfN">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flwGraphic" translatesAutoresizingMaskIntoConstraints="NO" id="vOx-t9-zfN">
                                     <rect key="frame" x="47" y="30" width="100" height="100"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="OeR-S1-rcA"/>
@@ -45,17 +53,17 @@
                                     </constraints>
                                 </imageView>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="KXi-2d-LOa">
-                                    <rect key="frame" x="63.5" y="75" width="67" height="30"/>
+                                    <rect key="frame" x="68" y="75" width="58" height="30"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmw-0w-7kk">
-                                            <rect key="frame" x="0.0" y="0.0" width="48.5" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="34"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="38" height="30"/>
+                                            <fontDescription key="fontDescription" name="BMHANNA11yrsoldOTF" family="BM HANNA 11yrs old OTF" pointSize="34"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ck-Gc-jKP">
-                                            <rect key="frame" x="52.5" y="10.5" width="14.5" height="19.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <rect key="frame" x="42" y="11" width="16" height="19"/>
+                                            <fontDescription key="fontDescription" name="BMHANNA11yrsoldOTF" family="BM HANNA 11yrs old OTF" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -65,10 +73,10 @@
                                     </constraints>
                                 </stackView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEc-hr-hzf">
-                                    <rect key="frame" x="16" y="146" width="161.5" height="29"/>
+                                    <rect key="frame" x="16" y="146" width="161.5" height="33.5"/>
                                     <string key="text">총 증가시킨
 쟈니와의 애정도</string>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="12"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -79,15 +87,16 @@
                                 <constraint firstItem="vOx-t9-zfN" firstAttribute="centerX" secondItem="nVy-5Y-jUd" secondAttribute="centerX" id="SsX-m3-UA3"/>
                                 <constraint firstItem="WEc-hr-hzf" firstAttribute="leading" secondItem="nVy-5Y-jUd" secondAttribute="leading" constant="16" id="Tkj-AC-Una"/>
                                 <constraint firstItem="WEc-hr-hzf" firstAttribute="top" secondItem="vOx-t9-zfN" secondAttribute="bottom" constant="16" id="Ywl-sN-4UA"/>
+                                <constraint firstAttribute="bottom" secondItem="WEc-hr-hzf" secondAttribute="bottom" constant="34" id="d2g-3w-vMw"/>
                                 <constraint firstItem="KXi-2d-LOa" firstAttribute="centerX" secondItem="vOx-t9-zfN" secondAttribute="centerX" id="r3i-oc-vXf"/>
                                 <constraint firstItem="vOx-t9-zfN" firstAttribute="top" secondItem="nVy-5Y-jUd" secondAttribute="top" constant="30" id="vIq-cS-8KT"/>
                                 <constraint firstAttribute="trailing" secondItem="WEc-hr-hzf" secondAttribute="trailing" constant="16" id="zdQ-cw-GqL"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDl-j0-3o5">
-                            <rect key="frame" x="208.5" y="0.0" width="193.5" height="214.5"/>
+                            <rect key="frame" x="208.5" y="0.0" width="193.5" height="213.5"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleMoodImg" translatesAutoresizingMaskIntoConstraints="NO" id="62W-Bk-nt7">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flwGraphic" translatesAutoresizingMaskIntoConstraints="NO" id="62W-Bk-nt7">
                                     <rect key="frame" x="47" y="30" width="100" height="100"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="100" id="91N-py-Ywh"/>
@@ -95,17 +104,17 @@
                                     </constraints>
                                 </imageView>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="O9F-av-Ove">
-                                    <rect key="frame" x="63.5" y="75" width="66.5" height="30"/>
+                                    <rect key="frame" x="69" y="75" width="56" height="30"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R66-Ce-HiY">
-                                            <rect key="frame" x="0.0" y="0.0" width="48.5" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="34"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="38" height="30"/>
+                                            <fontDescription key="fontDescription" name="BMHANNA11yrsoldOTF" family="BM HANNA 11yrs old OTF" pointSize="34"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lC-b1-BaG">
-                                            <rect key="frame" x="52.5" y="10.5" width="14" height="19.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <rect key="frame" x="42" y="11" width="14" height="19"/>
+                                            <fontDescription key="fontDescription" name="BMHANNA11yrsoldOTF" family="BM HANNA 11yrs old OTF" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -115,8 +124,8 @@
                                     </constraints>
                                 </stackView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="챌린지 연속 성공 최고 기록" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhD-PF-nnt">
-                                    <rect key="frame" x="16" y="146" width="161.5" height="29"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                    <rect key="frame" x="16" y="146" width="161.5" height="33.5"/>
+                                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="12"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -124,6 +133,7 @@
                             <color key="backgroundColor" name="Grey2Bg"/>
                             <constraints>
                                 <constraint firstItem="mhD-PF-nnt" firstAttribute="leading" secondItem="uDl-j0-3o5" secondAttribute="leading" constant="16" id="2Cd-fo-QSc"/>
+                                <constraint firstAttribute="bottom" secondItem="mhD-PF-nnt" secondAttribute="bottom" constant="34" id="8oP-yz-820"/>
                                 <constraint firstItem="mhD-PF-nnt" firstAttribute="top" secondItem="62W-Bk-nt7" secondAttribute="bottom" constant="16" id="HSA-6J-D4v"/>
                                 <constraint firstItem="O9F-av-Ove" firstAttribute="centerX" secondItem="62W-Bk-nt7" secondAttribute="centerX" id="II7-Ij-HW7"/>
                                 <constraint firstItem="O9F-av-Ove" firstAttribute="centerY" secondItem="62W-Bk-nt7" secondAttribute="centerY" constant="10" id="Keg-IX-zm5"/>
@@ -164,7 +174,7 @@
         </collectionReusableView>
     </objects>
     <resources>
-        <image name="sampleMoodImg" width="300" height="300"/>
+        <image name="flwGraphic" width="101" height="101"/>
         <namedColor name="Grey2Bg">
             <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -38,4 +38,10 @@ extension UIColor {
     static let Green: UIColor = UIColor(named: "Green")!
     static let Red: UIColor = UIColor(named: "Red")!
     static let Icon: UIColor = UIColor(named: "Icon")!
+    
+    // property
+    static let typeC: UIColor = UIColor(named: "typeC")!
+    static let typeH: UIColor = UIColor(named: "typeH")!
+    static let typeM: UIColor = UIColor(named: "typeM")!
+    static let typeS: UIColor = UIColor(named: "typeS")!
 }
