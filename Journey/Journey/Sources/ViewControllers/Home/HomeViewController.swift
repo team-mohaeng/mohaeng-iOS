@@ -145,6 +145,7 @@ class HomeViewController: UIViewController {
         if situation == 0 {
             courseDayBoxView.isHidden = true
         } else {
+            courseDayBoxView.isHidden = false
             courseDayLabel.text = "\(findCurrentChallengesDay(challenges: challenges)) 일차"
         }
     }
