@@ -95,6 +95,7 @@ PODS:
   - GoogleUtilities/UserDefaults (7.4.1):
     - GoogleUtilities/Logger
   - IQKeyboardManagerSwift (6.5.6)
+  - Kingfisher (6.3.0)
   - lottie-ios (3.2.3)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
@@ -115,6 +116,7 @@ DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Messaging
   - IQKeyboardManagerSwift
+  - Kingfisher
   - lottie-ios
   - Moya (~> 14.0)
   - SnapKit
@@ -134,6 +136,7 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleUtilities
     - IQKeyboardManagerSwift
+    - Kingfisher
     - lottie-ios
     - Moya
     - nanopb
@@ -154,6 +157,7 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 11e3a5f2c190327df1a4a5d7e7ae3d4d5b9c9e4c
   GoogleUtilities: f8a43108b38a68eebe8b3540e1f4f2d28843ce20
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
   lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
@@ -162,6 +166,6 @@ SPEC CHECKSUMS:
   SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: ea68dc8e68c099fef13e2c8b1af0fc16fd2d8b77
+PODFILE CHECKSUM: 388a23f9484dc2ffc83bfe2966add2c3c90b1dbd
 
 COCOAPODS: 1.10.1
