@@ -14,9 +14,9 @@ class UndoneCourseCollectionViewCell: UICollectionViewCell {
     var courseViewModel: CourseViewModel! {
         didSet {
             titleLabel.text = courseViewModel.course.title
-            coursePropertyLabel.text = "\(courseViewModel.course.property)"
             courseDaysLabel.text = "\(courseViewModel.course.totalDays)일"
             descriptionTextView.text = courseViewModel.course.courseDescription
+            setProperty(by: courseViewModel.course.property)
         }
     }
     
@@ -58,6 +58,56 @@ class UndoneCourseCollectionViewCell: UICollectionViewCell {
         } else {
             startLabel.text = "코스 시작하기"
         }
+    }
+    
+    // set property functions
+    
+    func setProperty(by property: Int) {
+        switch property {
+        case Property.health.rawValue:
+            setProperty0()
+        case Property.memory.rawValue:
+            setProperty1()
+        case Property.observation.rawValue:
+            setProperty2()
+        case Property.challenge.rawValue:
+            setProperty3()
+        default:
+            return
+        }
+    }
+    
+    // 0: 건강 1: 기억 2: 관찰 3: 도전
+    func setProperty0() {
+        coursePropertyLabel.text = "건강"
+        cellBgView.backgroundColor = UIColor.typeH
+        courseDescriptionView.backgroundColor = UIColor.typeHD
+        startCourseView.backgroundColor = UIColor.typeHD
+        propertyImageView.image = Const.Image.typeHwithColor
+    }
+    
+    func setProperty1() {
+        coursePropertyLabel.text = "기억"
+        cellBgView.backgroundColor = UIColor.typeM
+        courseDescriptionView.backgroundColor = UIColor.typeMD
+        startCourseView.backgroundColor = UIColor.typeMD
+        propertyImageView.image = Const.Image.typeMwithColor
+    }
+    
+    func setProperty2() {
+        coursePropertyLabel.text = "관찰"
+        cellBgView.backgroundColor = UIColor.typeS
+        courseDescriptionView.backgroundColor = UIColor.typeSD
+        startCourseView.backgroundColor = UIColor.typeSD
+        propertyImageView.image = Const.Image.typeSwithColor
+    }
+    
+    func setProperty3() {
+        coursePropertyLabel.text = "도전"
+        cellBgView.backgroundColor = UIColor.typeC
+        courseDescriptionView.backgroundColor = UIColor.typeCD
+        startCourseView.backgroundColor = UIColor.typeCD
+        propertyImageView.image = Const.Image.typeCwithColor
     }
 
 }
