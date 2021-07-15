@@ -50,6 +50,9 @@ class ChallengeViewController: UIViewController {
     
     var triangleStampImageViews: [UIImageView] = []
     
+    var course: Course?
+    var selectedStampImageView: UIImageView = UIImageView()
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -358,33 +361,38 @@ class ChallengeViewController: UIViewController {
     // MARK: - @IBAction Properties
     
     @objc func touchstampAction1(_ gesture: UITapGestureRecognizer) {
-        putTodayChallenge()
-        stampImageView1.image = completeStampImage
+        
+        guard let course = self.course else { return }
+        presentStampPopUp(description: course.challenges[currentChallengeIdx].userMents[currentChallengeIdx])
+        selectedStampImageView = stampImageView1
     }
     
     @objc func touchstampAction2(_ gesture: UITapGestureRecognizer) {
         putTodayChallenge()
-        stampImageView2.image = completeStampImage
+        selectedStampImageView = stampImageView2
     }
     
     @objc func touchstampAction3(_ gesture: UITapGestureRecognizer) {
         putTodayChallenge()
-        stampImageView3.image = completeStampImage
+        selectedStampImageView = stampImageView3
     }
     
     @objc func touchStampActionTriangle1(_ gesture: UITapGestureRecognizer) {
-        putTodayChallenge()
-        triangleStampImageView1.image = completeStampImage
+        guard let course = self.course else { return }
+        presentStampPopUp(description: course.challenges[currentChallengeIdx].userMents[currentChallengeIdx])
+        selectedStampImageView = triangleStampImageView1
     }
     
     @objc func touchStampActionTriangle2(_ gesture: UITapGestureRecognizer) {
-        putTodayChallenge()
-        triangleStampImageView2.image = completeStampImage
+        guard let course = self.course else { return }
+        presentStampPopUp(description: course.challenges[currentChallengeIdx].userMents[currentChallengeIdx])
+        selectedStampImageView = triangleStampImageView2
     }
     
     @objc func touchStampActionTriangle3(_ gesture: UITapGestureRecognizer) {
-        putTodayChallenge()
-        triangleStampImageView3.image = completeStampImage
+        guard let course = self.course else { return }
+        presentStampPopUp(description: course.challenges[currentChallengeIdx].userMents[currentChallengeIdx])
+        selectedStampImageView = triangleStampImageView3
     }
     
     @objc func touchMapButton(sender: UIButton) {
@@ -411,9 +419,9 @@ class ChallengeViewController: UIViewController {
 
 extension ChallengeViewController: PopUpActionDelegate {
     func touchPinkButton(button: UIButton) {
-        self.dismiss(animated: true) {
-            self.presentCompletePopUp()
-        }
+        putTodayChallenge()
+        selectedStampImageView.image = completeStampImage
+        dismiss(animated: true, completion: nil)
     }
     
     func touchWhiteButton(button: UIButton) {
@@ -444,12 +452,14 @@ extension ChallengeViewController {
             
             doingCourse = true
             let courseId = UserDefaults.standard.integer(forKey: "courseId")
+            emptyView.isHidden = true
             
             ChallengeAPI.shared.getTodayChallenge(completion: { (response) in
                 switch response {
                 case .success(let data):
                     if let data = data as? CourseData {
                         
+                        self.course = data.course
                         self.updateData(data: data)
                     }
                 case .requestErr(let message):
@@ -489,7 +499,8 @@ extension ChallengeViewController {
                         
                         if currentStamp == totalStamp {
                             // 챌린지 완료 팝업
-                            self.presentStampPopUp(description: data.course.challenges[self.currentChallengeIdx].userMents[currentStamp-1])
+                            self.presentCompletePopUp()
+//                            self.presentStampPopUp(description: data.course.challenges[self.currentChallengeIdx].userMents[currentStamp-1])
                             // 쟈니 이미지 바꾸기
                             self.journeyImageView.image = Const.Image.talkjhappyiOS
                             // 축하 이미지 넣기
