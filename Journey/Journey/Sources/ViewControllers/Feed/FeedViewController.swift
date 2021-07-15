@@ -85,6 +85,7 @@ class FeedViewController: UIViewController {
         
         feedTitleLabel.numberOfLines = 2
         feedTitleLabel.font = UIFont.spoqaHanSansNeo(weight: .bold, size: 16)
+        feedTitleLabel.tintColor = UIColor.Black1Text
         feedTitleLabel.text = "오늘은 n명의 쟈기들이 \n행복을 기록했어요"
         
         filterLabel.text = "좋아요 순"
