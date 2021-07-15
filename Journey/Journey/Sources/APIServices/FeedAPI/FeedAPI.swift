@@ -16,6 +16,7 @@ public class FeedAPI {
     enum ResponseData {
         case community
         case myDrawer
+        case feedDetail
         case statusCode
     }
     
@@ -30,6 +31,23 @@ public class FeedAPI {
                 let data = response.data
                 
                 let networkResult = self.judgeStatus(by: statusCode, data, responseData: .community)
+                completion(networkResult)
+                
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
+    func getFeedDetail(postId: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
+        feedProvider.request(.getFeedDetail(postId: postId)) { (result) in
+            switch result {
+            case .success(let response) :
+                
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .feedDetail)
                 completion(networkResult)
                 
             case .failure(let err):
@@ -95,6 +113,8 @@ public class FeedAPI {
                 return isValidData(data: data, responseData: responseData)
             case .myDrawer:
                 return isValidData(data: data, responseData: responseData)
+            case .feedDetail:
+                return isValidData(data: data, responseData: responseData)
             case .statusCode:
                 return .success(statusCode)
             }
@@ -118,6 +138,11 @@ public class FeedAPI {
             return .success(decodedData.data)
         case .myDrawer:
             guard let decodedData = try? decoder.decode(MyDrawerResponseData.self, from: data) else {
+                return .pathErr
+            }
+            return .success(decodedData.data)
+        case .feedDetail:
+            guard let decodedData = try? decoder.decode(FeedDetailResonpseData.self, from: data) else {
                 return .pathErr
             }
             return .success(decodedData.data)

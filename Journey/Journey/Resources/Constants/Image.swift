@@ -39,6 +39,10 @@ extension Const {
         static let happyCFaceGraphic2 = UIImage(named: "happyCFaceGraphic2")
         static let happyCFaceGraphic3 = UIImage(named: "happyCFaceGraphic3")
         
+        static let imgFaceGraphic1 = UIImage(named: "imgFaceGraphic1")
+        static let imgFaceGraphic2 = UIImage(named: "imgFaceGraphic2")
+        static let imgFaceGraphic3 = UIImage(named: "imgFaceGraphic3")
+        
         // challenge stamps
         static let typeCchallenge = UIImage(named: "typeCchallenge")!
         static let typeHchallenge = UIImage(named: "typeHchallenge")!
@@ -53,5 +57,9 @@ extension Const {
         // challenge journey image
         static let talkjiOS = UIImage(named: "talkjiOS")
         static let talkjhappyiOS = UIImage(named: "talkjhappyiOS")
+        
+        // heart image
+        static let heartImg = UIImage(named: "icnHeart")
+        static let heartFullImg = UIImage(named: "icnHeartfull")
     }
 }

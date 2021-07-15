@@ -94,6 +94,7 @@ extension MedalViewController: UICollectionViewDataSource {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.medalCollectionViewCell, for: indexPath) as? MedalCollectionViewCell {
             
             cell.setCell(course: courses[indexPath.row])
+            cell.setProperty(by: courses[indexPath.row].property)
             
             return cell
         }

@@ -15,6 +15,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginImageView: UIImageView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailStackView: UIStackView!
+    @IBOutlet weak var passwordStackView: UIStackView!
     
     // MARK: - View Life Cycle
     
@@ -25,6 +27,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         makeButtonRound()
+        changeEmailStackViewAttributes()
+        changePasswordStackViewAttributes()
         initNavigationBar()
     }
     
@@ -57,6 +61,16 @@ class LoginViewController: UIViewController {
         loginButton.makeRounded(radius: 20)
     }
     
+    private func changeEmailStackViewAttributes() {
+        emailStackView.makeRounded(radius: 10)
+        emailStackView.layer.borderColor = UIColor.CourseBgGray.cgColor
+        emailStackView.layer.borderWidth = 1
+    }
+    private func changePasswordStackViewAttributes() {
+        passwordStackView.makeRounded(radius: 10)
+        passwordStackView.layer.borderColor = UIColor.CourseBgGray.cgColor
+        passwordStackView.layer.borderWidth = 1
+    }
     private func initNavigationBar() {
         self.navigationController?.hideNavigationBar()
     }
