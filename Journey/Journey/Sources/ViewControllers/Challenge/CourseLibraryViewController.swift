@@ -168,7 +168,17 @@ extension CourseLibraryViewController: UICollectionViewDataSource {
 extension CourseLibraryViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width - 48, height: 306)
+        
+        //return CGSize(width: collectionView.frame.width - 48, height: 310)
+        
+        switch courseListViewModel.courseAtIndex(indexPath.row).course.situation {
+        case 0:
+            return unDoneCellSize(for: indexPath)
+        case 1:
+            return doneCellSize(for: indexPath)
+        default:
+            return CGSize(width: collectionView.frame.width - 48, height: 310)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -178,6 +188,58 @@ extension CourseLibraryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presentAskPopUp(doingCourse: doingCourse)
         selectedCourseId = courseListViewModel.courseAtIndex(indexPath.row).course.id
+    }
+    
+    private func unDoneCellSize(for indexPath: IndexPath) -> CGSize {
+        // load cell from Xib
+        guard let cell = Bundle.main.loadNibNamed(Const.Xib.Name.undoneCourseCollectionViewCell, owner: self, options: nil)?.first as? UndoneCourseCollectionViewCell else {return CGSize(width: 0, height: 0)}
+        
+        // configure cell with data in it
+        let viewModel = courseListViewModel.courseAtIndex(indexPath.row)
+        cell.courseViewModel = viewModel
+        cell.setButtonTitle(doingCourse: doingCourse)
+        
+        cell.setNeedsLayout()
+        cell.layoutIfNeeded()
+        
+        // width that you want
+        let width = courseLibraryCollectionView.frame.width - 48
+        let height: CGFloat = 0
+        
+        let targetSize = CGSize(width: width, height: height)
+        
+        // get size with width that you want and automatic height
+        let size = cell.contentView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .defaultHigh, verticalFittingPriority: .fittingSizeLevel)
+        // if you want height and width both to be dynamic use below
+        // let size = cell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        
+        return size
+    }
+    
+    private func doneCellSize(for indexPath: IndexPath) -> CGSize {
+        // load cell from Xib
+        guard let cell = Bundle.main.loadNibNamed(Const.Xib.Name.doneCourseCollectionViewCell, owner: self, options: nil)?.first as? DoneCourseCollectionViewCell else {return CGSize(width: 0, height: 0)}
+        
+        // configure cell with data in it
+        let viewModel = courseListViewModel.courseAtIndex(indexPath.row)
+        cell.courseViewModel = viewModel
+        cell.setButtonTitle(doingCourse: doingCourse)
+        
+        cell.setNeedsLayout()
+        cell.layoutIfNeeded()
+        
+        // width that you want
+        let width = courseLibraryCollectionView.frame.width - 48
+        let height: CGFloat = 0
+        
+        let targetSize = CGSize(width: width, height: height)
+        
+        // get size with width that you want and automatic height
+        let size = cell.contentView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .defaultHigh, verticalFittingPriority: .fittingSizeLevel)
+        // if you want height and width both to be dynamic use below
+        // let size = cell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        
+        return size
     }
     
 }
