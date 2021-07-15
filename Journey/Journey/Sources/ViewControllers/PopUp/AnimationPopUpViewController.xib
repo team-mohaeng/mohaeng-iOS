@@ -98,7 +98,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lct-dA-Wx9">
                     <rect key="frame" x="90.5" y="337" width="233" height="232"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_5732" translatesAutoresizingMaskIntoConstraints="NO" id="0nS-U5-bMC">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="graphicCongrats" translatesAutoresizingMaskIntoConstraints="NO" id="0nS-U5-bMC">
                             <rect key="frame" x="0.0" y="0.0" width="233" height="232"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="233" id="QgO-Hm-5TT"/>
@@ -106,7 +106,7 @@
                             </constraints>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="0nS-U5-bMC" firstAttribute="leading" secondItem="lct-dA-Wx9" secondAttribute="leading" id="FAE-rJ-4GK"/>
                         <constraint firstAttribute="bottom" secondItem="0nS-U5-bMC" secondAttribute="bottom" id="hwI-0h-cWF"/>
@@ -129,7 +129,7 @@
         </view>
     </objects>
     <resources>
-        <image name="IMG_5732" width="95" height="120"/>
+        <image name="graphicCongrats" width="233" height="232"/>
         <namedColor name="Black2Text">
             <color red="0.25900000333786011" green="0.25900000333786011" blue="0.25900000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

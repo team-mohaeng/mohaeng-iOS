@@ -63,11 +63,17 @@ class ChallengeViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        print("viewwillappear")
+        initJourneyView()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
+        print("viewdidappear")
         stampWidth.constant = triangleStampView.frame.height / 2
         underTriangleStackViewHeight.constant = triangleStampView.frame.height / 2
-        
         initJourneyView()
     }
     
@@ -99,7 +105,9 @@ class ChallengeViewController: UIViewController {
     
     private func initJourneyView() {
         journeyNameView.makeRounded(radius: journeyNameView.frame.height / 2)
+        print("어어어ㅣㅁ나")
         journeyDescriptionView.makeRoundedSpecificCorner(corners: [.bottomLeft, .bottomRight, .topRight], cornerRadius: 25)
+        journeyDescriptionView.invalidateIntrinsicContentSize()
     }
     
     private func initStampBackgroundView() {
@@ -291,9 +299,8 @@ class ChallengeViewController: UIViewController {
         challengeSubTitleLabel.text = data.course.title
         challengeTitleLabel.text = data.course.challenges[currentChallengeIdx].title
         challengeDescriptionLabel.text = data.course.courseDescription
-        // challengeDescriptionLabel.invalidateIntrinsicContentSize() // 다시 점검
-        // initJourneyView()
-        self.journeyDescriptionView.layoutIfNeeded()
+        challengeDescriptionLabel.invalidateIntrinsicContentSize() // 다시 점검
+        self.journeyDescriptionView.invalidateIntrinsicContentSize()
         self.challengeId = data.course.challenges[currentChallengeIdx].id
         
         // stamp stack view
@@ -492,7 +499,7 @@ extension ChallengeViewController {
                             self.presentStampPopUp(description: data.course.challenges[self.currentChallengeIdx].userMents[currentStamp-1])
                             // 쟈니 이미지 바꾸기
                             self.journeyImageView.image = Const.Image.talkjhappyiOS
-                            // 축하 이미지 넣기
+                            // VC에 축하 이미지 넣기
                             // 설명 label 축하 메세지로 바꾸기
                             self.stampStatusLabel.text = "오늘의 챌린지 성공!\n내일 새로운 챌린지로 다시 만나요!"
                             // 챌린지 description label 바꾸기
@@ -507,7 +514,7 @@ extension ChallengeViewController {
                             // TODO: - 코스 완료 팝업
                             // 쟈니 이미지 바꾸기
                             self.journeyImageView.image = Const.Image.talkjhappyiOS
-                            // 축하 이미지 넣기
+                            // VC에 축하 이미지 넣기
                             // 설명 label 축하 메세지로 바꾸기
                             self.stampStatusLabel.text = "오늘의 챌린지 성공!\n내일 새로운 챌린지로 다시 만나요!"
                             // 챌린지 description label 바꾸기
