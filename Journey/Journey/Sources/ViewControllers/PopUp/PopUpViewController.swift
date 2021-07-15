@@ -27,6 +27,7 @@ class PopUpViewController: UIViewController {
     @IBOutlet weak var pinkButton: UIButton!
     @IBOutlet weak var whiteButton: UIButton!
     @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var stampCloseButton: UIButton!
     
     // constraints
     
@@ -63,6 +64,10 @@ class PopUpViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func touchStampCloseButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     // case functions
     
     private func initCase(usage: PopUpUsage) {
@@ -85,6 +90,7 @@ class PopUpViewController: UIViewController {
         closeButton.isHidden = true
         whiteButtonHeightConstraint.isActive = false
         pinkButtonBottomConstraint.constant = 24
+        stampCloseButton.isHidden = false
     }
     
     private func initCaseTwoButton() {
