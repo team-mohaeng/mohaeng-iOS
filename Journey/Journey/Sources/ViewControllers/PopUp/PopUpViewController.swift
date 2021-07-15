@@ -7,11 +7,6 @@
 
 import UIKit
 
-protocol PopUpActionDelegate {
-    func touchPinkButton(button: UIButton)
-    func touchWhiteButton(button: UIButton)
-}
-
 class PopUpViewController: UIViewController {
     
     // MARK: - Properties

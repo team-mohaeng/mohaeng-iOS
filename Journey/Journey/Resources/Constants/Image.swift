@@ -29,10 +29,29 @@ extension Const {
         // main home icon
         static let medalIcon = UIImage(named: "icnMedal")!
         static let settingIcon = UIImage(named: "icnSetting")!
+        
+        // challenge nav icon
+        static let mapIcon = UIImage(named: "icnMap")!
+        static let listIcon = UIImage(named: "icnList")!
       
         // mood images
         static let happyCFaceGraphic1 = UIImage(named: "happyCFaceGraphic1")
         static let happyCFaceGraphic2 = UIImage(named: "happyCFaceGraphic2")
         static let happyCFaceGraphic3 = UIImage(named: "happyCFaceGraphic3")
+        
+        // challenge stamps
+        static let typeCchallenge = UIImage(named: "typeCchallenge")!
+        static let typeHchallenge = UIImage(named: "typeHchallenge")!
+        static let typeMchallenge = UIImage(named: "typeMchallenge")!
+        static let typeSchallenge = UIImage(named: "typeSchallenge")!
+
+        static let typeCchallengeC = UIImage(named: "typeCchallengeC")!
+        static let typeHchallengeC = UIImage(named: "typeHchallengeC")!
+        static let typeMchallengeC = UIImage(named: "typeMchallengeC")!
+        static let typeSchallengeC = UIImage(named: "typeSchallengeC")!
+        
+        // challenge journey image
+        static let talkjiOS = UIImage(named: "talkjiOS")
+        static let talkjhappyiOS = UIImage(named: "talkjhappyiOS")
     }
 }
