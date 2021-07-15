@@ -8,6 +8,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoqaHanSansNeo-Bold.otf">
+            <string>SpoqaHanSansNeo-Bold</string>
+        </array>
+        <array key="SpoqaHanSansNeo-Regular.otf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Feed Detail View Controller-->
         <scene sceneID="h8x-Zb-4ao">
@@ -24,7 +32,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="505"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dcL-tH-a0E">
-                                        <rect key="frame" x="0.0" y="570.5" width="366" height="125.5"/>
+                                        <rect key="frame" x="0.0" y="571.5" width="366" height="123"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="journeySmileSampleImg" translatesAutoresizingMaskIntoConstraints="NO" id="jNH-U8-g6Q">
@@ -35,32 +43,32 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021.06.28 (월)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONW-5R-Ge8">
-                                        <rect key="frame" x="140" y="556" width="86.5" height="14.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <rect key="frame" x="140.5" y="556" width="85" height="15.5"/>
+                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
                                         <color key="textColor" name="White"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XiP-Ee-iqh">
-                                        <rect key="frame" x="36" y="598.5" width="294" height="70"/>
+                                        <rect key="frame" x="36" y="596.5" width="294" height="73.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시원 스쿨" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkK-Rh-DUC">
-                                                <rect key="frame" x="0.0" y="0.0" width="294" height="21.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="294" height="23"/>
+                                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="18"/>
                                                 <color key="textColor" name="White"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="맛있는 피자에 시원한 맥주 마시고 맛있는 피자에 시원한 맥주 마시고" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEV-gq-tN2">
-                                                <rect key="frame" x="0.0" y="31.5" width="294" height="38.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <rect key="frame" x="0.0" y="33" width="294" height="40.5"/>
+                                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="16"/>
                                                 <color key="textColor" name="White"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#여름좋아요 #산책갑시다요 #안녕하세요안 #ㅋㅋㅋㅋㅋㅋ #ㅉㅉㅋㅋㅋㅋ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NO4-28-RnW">
-                                        <rect key="frame" x="36" y="696" width="294" height="29"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                        <color key="textColor" name="hashtagPink"/>
+                                        <rect key="frame" x="36" y="694.5" width="294" height="30.5"/>
+                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                        <color key="textColor" name="Pink2"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ci1-gR-hHB">
@@ -69,10 +77,13 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2F0-sU-1IS">
                                                 <rect key="frame" x="0.0" y="0.0" width="14" height="22"/>
                                                 <state key="normal" image="icnHeart"/>
+                                                <connections>
+                                                    <action selector="touchLikeButton:" destination="iFT-cS-LYx" eventType="touchUpInside" id="dXZ-xA-Syu"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="76" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIc-eg-Bsn">
                                                 <rect key="frame" x="18" y="0.0" width="14" height="22"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="10"/>
                                                 <color key="textColor" name="White"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -115,10 +126,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dayLabel" destination="ONW-5R-Ge8" id="TDN-pX-z35"/>
                         <outlet property="feedContentsLabel" destination="MEV-gq-tN2" id="Ey8-NG-8ie"/>
                         <outlet property="feedDetailView" destination="QOB-Xg-u2l" id="hJH-2a-YDb"/>
                         <outlet property="feedNicknameLabel" destination="kkK-Rh-DUC" id="P1S-m0-et3"/>
                         <outlet property="hashTagLabel" destination="NO4-28-RnW" id="FVJ-1Q-IYl"/>
+                        <outlet property="likeButton" destination="2F0-sU-1IS" id="fcJ-Ru-hQ9"/>
+                        <outlet property="likeCountLabel" destination="mIc-eg-Bsn" id="faw-Gc-MLF"/>
+                        <outlet property="mainImageView" destination="SR4-wW-o85" id="Rbf-6j-aQL"/>
                         <outlet property="moodImageView" destination="jNH-U8-g6Q" id="nwP-q7-gAe"/>
                     </connections>
                 </viewController>
@@ -130,15 +145,15 @@
     <resources>
         <image name="icnHeart" width="14" height="14"/>
         <image name="journeySmileSampleImg" width="59.5" height="64"/>
-        <image name="sampleHappinessImg" width="1125" height="1462"/>
+        <image name="sampleHappinessImg" width="192" height="291"/>
+        <namedColor name="Pink2">
+            <color red="1" green="0.52899998426437378" blue="0.6470000147819519" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="darkGray">
             <color red="0.16500000655651093" green="0.16500000655651093" blue="0.16500000655651093" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="hashtagPink">
-            <color red="1" green="0.52899998426437378" blue="0.6470000147819519" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -43,19 +43,25 @@ class FeedHeaderView: UIView {
     }
 
     @objc private func initWriteButton(notification: Notification) {
-        // 0: 소확행 작성 불가능, 1: 소확행 작성 가능, 2: 소확행 작성완료
+        //0: 소확행 작성 가능 1: 소확행 이미 작성, 2: 챌린지 시작 전, 3:챌린지 성공 전
         guard let writeStatus = notification.object as? FeedData else { return }
         switch writeStatus.hasSmallSatisfaction {
         case 0:
-            writeButtonLabel.textColor = .Black3Text
-            writeButtonImageView.image = UIImage(named: "imgLock")
-        case 1:
+            writeButtonLabel.text = "소확행 작성하기"
             writeButtonLabel.textColor = .Black1Text
             writeButtonImageView.image = UIImage(named: "imgUnlock")
-        case 2:
+        case 1:
+            writeButtonLabel.text = "소확행 작성완료"
             writeButtonLabel.textColor = .Black1Text
             writeButtonImageView.image = UIImage(named: "iconCongratulations")
-            writeButtonLabel.text = "소확행 작성완료"
+        case 2:
+            writeButtonLabel.text = "소확행 작성하기"
+            writeButtonLabel.textColor = .Black3Text
+            writeButtonImageView.image = UIImage(named: "imgLock")
+        case 3:
+            writeButtonLabel.text = "소확행 작성하기"
+            writeButtonLabel.textColor = .Black3Text
+            writeButtonImageView.image = UIImage(named: "imgLock")
         default:
             break
         }

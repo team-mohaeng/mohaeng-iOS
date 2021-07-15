@@ -16,6 +16,7 @@ class FeedViewController: UIViewController {
     var community = [Community(postID: 0, nickname: "", mood: 0, mainImage: "", likeCount: 0, content: "", hasLike: false, hashtags: [""], year: "", month: "", day: "", week: "")]
     var likeButtonClicked: Bool = true
     var isEnableWriting: Int = 0
+    var moodStatus: Int = 0
     
     // MARK: - UI Properties
     
@@ -161,17 +162,42 @@ class FeedViewController: UIViewController {
     }
     
     @objc func pushToMoodViewController(notification: NSNotification) {
-        // 0: 소확행 작성 불가능, 1: 소확행 작성 가능, 2: 소확행 작성완료
+        // 0:소확행 작성 가능 1: 소확행 이미 작성, 2: 챌린지 시작 전, 3:챌린지 성공 전
+        var disablePopUp: PopUpViewController = PopUpViewController()
+        disablePopUp = PopUpViewController(nibName: "PopUpViewController", bundle: nil)
+        disablePopUp.modalPresentationStyle = .overCurrentContext
+        disablePopUp.modalTransitionStyle = .crossDissolve
         switch isEnableWriting {
         case 0:
-            print("소확행 작성 불가능")
-        case 1:
             let moodStoryboard = UIStoryboard(name: Const.Storyboard.Name.mood, bundle: nil)
             guard let nextVC = moodStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.mood) as? MoodViewController else { return }
 
             self.navigationController?.pushViewController(nextVC, animated: true)
+        case 1:
+            disablePopUp.popUpUsage = .oneButton
+            tabBarController?.present(disablePopUp, animated: true, completion: nil)
+            
+            disablePopUp.titleLabel.text = "쟈기, 이미 작성했잖아!"
+            disablePopUp.descriptionLabel.text = "오늘은 행복한 일이 많았나보군.\n아쉽지만 하루에 하나만 쓸 수 있어.\n당신의 내일을 기대하도록 하지!"
+            disablePopUp.pinkButton?.setTitle("알았어", for: .normal)
         case 2:
-            print("소확행 작성 완료")
+            moodStatus = 2
+            disablePopUp.popUpUsage = .oneButtonWithClose
+            disablePopUp.popUpActionDelegate = self
+            tabBarController?.present(disablePopUp, animated: true, completion: nil)
+            
+            disablePopUp.titleLabel.text = "챌린지를 시작해보겠어?"
+            disablePopUp.descriptionLabel.text = "소확행은 오늘의 챌린지를\n성공해야 작성할 수 있어.\n나와 함께 챌린지를 수행해보겠어?"
+            disablePopUp.pinkButton?.setTitle("코스 선택하러 가기", for: .normal)
+        case 3:
+            moodStatus = 3
+            disablePopUp.popUpUsage = .oneButtonWithClose
+            disablePopUp.popUpActionDelegate = self
+            tabBarController?.present(disablePopUp, animated: true, completion: nil)
+            
+            disablePopUp.titleLabel.text = "이런, 아직 작성할 수 없어!"
+            disablePopUp.descriptionLabel.text = "소확행은 오늘의 챌린지를\n 성공해야 작성할 수 있어.\n나와 함께 챌린지를 수행해보겠어?"
+            disablePopUp.pinkButton?.setTitle("오늘의 챌린지로 이동하기", for: .normal)
         default:
             break
         }
@@ -224,8 +250,9 @@ extension FeedViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let feedDetailStoryboard = UIStoryboard.init(name: Const.Storyboard.Name.feedDetail, bundle: nil)
-        let feedDetailViewController = feedDetailStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.feedDetail)
+        guard let feedDetailViewController = feedDetailStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.feedDetail) as? FeedDetailViewController else { return }
         
+        feedDetailViewController.feedInfo = community[indexPath.row]
         self.navigationController?.pushViewController(feedDetailViewController, animated: true)
     }
     
@@ -272,6 +299,30 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 16
+    }
+    
+}
+
+extension FeedViewController: PopUpActionDelegate {
+    func touchPinkButton(button: UIButton) {
+        if moodStatus == 2 {
+            print("axzzdsds")
+            let cousreStoryboard = UIStoryboard(name: Const.Storyboard.Name.courseLibrary, bundle: nil)
+            guard let courseViewController = cousreStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.courseLibrary) as? CourseLibraryViewController else { return }
+            
+            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.pushViewController(courseViewController, animated: true)
+        } else if moodStatus == 3 {
+            let challengeStoryboard = UIStoryboard(name: Const.Storyboard.Name.challenge, bundle: nil)
+            guard let challengeViewController = challengeStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.challenge) as? ChallengeViewController else { return }
+            
+            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.pushViewController(challengeViewController, animated: true)
+        }
+    }
+    
+    func touchWhiteButton(button: UIButton) {
+        return
     }
     
 }
