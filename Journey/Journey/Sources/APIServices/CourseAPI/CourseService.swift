@@ -29,7 +29,7 @@ extension CourseService: TargetType {
         case .getCourseLibrary:
             return Const.URL.coursesURL
         case .putCourseProgress(let id):
-            return Const.URL.coursesURL + "\(id)"
+            return Const.URL.coursesURL + "/\(id)"
         case .getMedal:
             return Const.URL.coursesURL + Const.URL.medalURL
         }

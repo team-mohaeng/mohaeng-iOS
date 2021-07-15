@@ -34,6 +34,7 @@ extension Const {
             static let hashTagCollectionViewCell = "HashTagCollectionViewCell"
             
             // 팝업
+            static let popUp = "PopUpViewController"
             static let animationPopUp = "AnimationPopUpViewController"
             static let happyPopUp = "HappyPopUpViewController"
         }

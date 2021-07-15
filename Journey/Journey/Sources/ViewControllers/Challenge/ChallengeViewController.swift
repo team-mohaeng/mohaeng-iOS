@@ -44,6 +44,7 @@ class ChallengeViewController: UIViewController {
     var currentChallengeIdx = 0
     var completePopUp: AnimationPopUpViewController = AnimationPopUpViewController()
     var stampPopUp: PopUpViewController = PopUpViewController()
+    var doingCourse: Bool = false
     
     var triangleStampImageViews: [UIImageView] = []
     
@@ -374,6 +375,7 @@ class ChallengeViewController: UIViewController {
         guard let courseLibraryViewController = courseLibraryStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.courseLibrary) as? CourseLibraryViewController else {
             return
         }
+        courseLibraryViewController.doingCourse = self.doingCourse
         self.navigationController?.pushViewController(courseLibraryViewController, animated: true)
     }
     
@@ -411,28 +413,31 @@ extension ChallengeViewController: AnimationPopUpDelegate {
 extension ChallengeViewController {
     func getTodayChallenge() {
         if UserDefaults.standard.integer(forKey: "courseId") != nil {
+            doingCourse = true
             let courseId = UserDefaults.standard.integer(forKey: "courseId")
             
             ChallengeAPI.shared.getTodayChallenge(completion: { (response) in
-            switch response {
-            case .success(let data):
-                if let data = data as? CourseData {
-                    
-                    DispatchQueue.main.async {
+                switch response {
+                case .success(let data):
+                    if let data = data as? CourseData {
+                        
                         self.updateData(data: data)
                     }
-                }
-            case .requestErr(let message):
-                print("requestErr", message)
-            case .pathErr:
-                print("pathErr")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
-            
+                case .requestErr(let message):
+                    print("requestErr", message)
+                case .pathErr:
+                    print("pathErr")
+                case .serverErr:
+                    print("serverErr")
+                case .networkFail:
+                    print("networkFail")
+                    
                 }
             }, courseId: courseId)
+        } else {
+            doingCourse = false
+            // empty page 띄우기
+            
         }
     }
     
