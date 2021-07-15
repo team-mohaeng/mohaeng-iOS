@@ -33,6 +33,8 @@ class ChallengeViewController: UIViewController {
     @IBOutlet weak var stackviewToChallengeLabel: NSLayoutConstraint!
     @IBOutlet weak var underTriangleStackViewHeight: NSLayoutConstraint!
     @IBOutlet weak var journeyImageView: UIImageView!
+    @IBOutlet weak var emptyView: UIView!
+    @IBOutlet weak var selectCourseButton: UIButton!
     
     // MARK: - Properties
     
@@ -55,6 +57,7 @@ class ChallengeViewController: UIViewController {
         initStampBackgroundView()
         addtouchGesture()
         initNavigationBar()
+        initEmptyView()
         appendImageViewsToArray()
         getTodayChallenge()
         
@@ -101,6 +104,11 @@ class ChallengeViewController: UIViewController {
     
     private func initStampBackgroundView() {
         stampView.makeRounded(radius: 18)
+    }
+    
+    private func initEmptyView() {
+        emptyView.isHidden = true
+        selectCourseButton.makeRounded(radius: selectCourseButton.frame.height / 2)
     }
     
     private func appendImageViewsToArray() {
@@ -152,7 +160,6 @@ class ChallengeViewController: UIViewController {
                 }
             }
         } else {
-            // 노치없을 때
             for idx in 0..<currentStamp {
                 guard let imageview = stampStackView.subviews[idx] as? UIImageView else {
                     return
@@ -163,14 +170,22 @@ class ChallengeViewController: UIViewController {
     }
     
     private func initInitialStamp(totalStamp: Int) {
-        if UIDevice.current.hasNotch {
-            // triangle
-            for idx in 0..<totalStamp {
-                guard let imageview = triangleStampView.subviews[idx] as? UIImageView else {
-                    return
+        if totalStamp == 3 {
+            if UIDevice.current.hasNotch {
+                // triangle
+                for idx in 0..<totalStamp {
+                    let imageview = triangleStampImageViews[idx]
+                    imageview.image = initialStampImage
                 }
-                imageview.image = initialStampImage
+            } else {
+                for idx in 0..<totalStamp {
+                    guard let imageview = stampStackView.subviews[idx] as? UIImageView else {
+                        return
+                    }
+                    imageview.image = initialStampImage
+                }
             }
+        } else {
             for idx in 0..<totalStamp {
                 guard let imageview = stampStackView.subviews[idx] as? UIImageView else {
                     return
@@ -293,6 +308,7 @@ class ChallengeViewController: UIViewController {
         completeStampImage = setCompleteStamp(property: data.course.property)
         
         // set current stamp
+        initInitialStamp(totalStamp: data.course.challenges[currentChallengeIdx].totalStamp)
         currentStamp = data.course.challenges[currentChallengeIdx].currentStamp
         initCompleteStamp(totalStamp: totalStamp, currentStamp: data.course.challenges[currentChallengeIdx].currentStamp)
         
@@ -328,6 +344,15 @@ class ChallengeViewController: UIViewController {
         completePopUp.modalPresentationStyle = .overCurrentContext
         completePopUp.popUpActionDelegate = self
         tabBarController?.present(completePopUp, animated: true, completion: nil)
+    }
+    
+    private func pushToCourseLibraryViewController() {
+        let courseLibraryStoryabord = UIStoryboard(name: Const.Storyboard.Name.courseLibrary, bundle: nil)
+        guard let courseLibarayViewController = courseLibraryStoryabord.instantiateViewController(withIdentifier: Const.ViewController.Identifier.courseLibrary) as? CourseLibraryViewController else { return }
+        
+        courseLibarayViewController.doingCourse = false
+        
+        self.navigationController?.pushViewController(courseLibarayViewController, animated: true)
     }
 
     // MARK: - @IBAction Properties
@@ -379,6 +404,9 @@ class ChallengeViewController: UIViewController {
         self.navigationController?.pushViewController(courseLibraryViewController, animated: true)
     }
     
+    @IBAction func touchSelectCourseButton(_ sender: Any) {
+        pushToCourseLibraryViewController()
+    }
 }
 
 extension ChallengeViewController: PopUpActionDelegate {
@@ -412,7 +440,8 @@ extension ChallengeViewController: AnimationPopUpDelegate {
 
 extension ChallengeViewController {
     func getTodayChallenge() {
-        if UserDefaults.standard.integer(forKey: "courseId") != nil {
+        if UserDefaults.standard.object(forKey: "courseId") != nil {
+            
             doingCourse = true
             let courseId = UserDefaults.standard.integer(forKey: "courseId")
             
@@ -437,7 +466,7 @@ extension ChallengeViewController {
         } else {
             doingCourse = false
             // empty page 띄우기
-            
+            emptyView.isHidden = false
         }
     }
     
@@ -446,7 +475,6 @@ extension ChallengeViewController {
         if UserDefaults.standard.integer(forKey: "courseId") != nil {
             
             let courseId = UserDefaults.standard.integer(forKey: "courseId")
-            
             ChallengeAPI.shared.putTodayChallenge(completion: { (response) in
                 switch response {
                 case .success(let data):
