@@ -40,6 +40,23 @@ public class CourseAPI {
         }
     }
     
+    func putCourseProgress(completion: @escaping (NetworkResult<Any>) -> Void, courseId: Int) {
+        courseProvider.request(.putCourseProgress(id: courseId)) { (result) in
+            switch result {
+            case .success(let response):
+                
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .course)
+                completion(networkResult)
+                
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
     func getMedal(completion: @escaping (NetworkResult<Any>) -> Void) {
         courseProvider.request(.getMedal) { (result) in
             

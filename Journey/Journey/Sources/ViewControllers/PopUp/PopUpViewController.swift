@@ -56,7 +56,7 @@ class PopUpViewController: UIViewController {
     }
     
     @IBAction func touchWhiteButton(_ sender: UIButton) {
-        self.popUpActionDelegate?.touchPinkButton(button: sender)
+        self.popUpActionDelegate?.touchWhiteButton(button: sender)
     }
     
     @IBAction func touchCloseButton(_ sender: Any) {
