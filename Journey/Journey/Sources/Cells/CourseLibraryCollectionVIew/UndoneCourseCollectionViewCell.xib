@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -38,13 +37,13 @@
                                     <constraint firstAttribute="height" constant="24" id="vnY-fP-Ouk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BMHANNA11yrsoldOTF" family="BM HANNA 11yrs old OTF" pointSize="24"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="Black1Text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="나 쟈니가 인간세계에 처음 도착했을 때 사람들이 청결에 대해 은근히 무심한 것이 신기했쟈니. 내가 사는 별에서는 상상도 할 수 없쟈니.가나다라마바사잖니.아아.그러러러러러" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHc-vq-9d4">
                                 <rect key="frame" x="23" y="80" width="308" height="77"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" systemColor="labelColor"/>
+                                <color key="textColor" name="Black1Text"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -64,11 +63,12 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코스 시작하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpR-bV-dQb">
                                                 <rect key="frame" x="0.0" y="0.0" width="77" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="14"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="Black1Text"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnSide" translatesAutoresizingMaskIntoConstraints="NO" id="fKL-UD-BOB">
                                                 <rect key="frame" x="79" y="2" width="12" height="12"/>
+                                                <color key="tintColor" name="Black1Text"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
@@ -89,11 +89,12 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="건강" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUf-94-3jk">
                                                 <rect key="frame" x="0.0" y="0.0" width="17.5" height="11"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="10"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="Black1Text"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="courseLibrarySeparator" translatesAutoresizingMaskIntoConstraints="NO" id="B1y-2i-mLc">
                                                 <rect key="frame" x="20.5" y="0.0" width="8" height="11"/>
+                                                <color key="tintColor" name="Black1Text"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="8" id="dq9-Kv-DFG"/>
                                                 </constraints>
@@ -101,7 +102,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dU0-pK-CUA">
                                                 <rect key="frame" x="31.5" y="0.0" width="14.5" height="11"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="10"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="Black1Text"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -162,14 +163,14 @@
         <image name="btnSide" width="12" height="12"/>
         <image name="courseLibrarySeparator" width="8" height="8"/>
         <image name="typeHwithColor" width="76" height="76"/>
+        <namedColor name="Black1Text">
+            <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="typeH">
             <color red="1" green="0.94099998474121094" blue="0.89399999380111694" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="typeHD">
             <color red="1" green="0.85500001907348633" blue="0.74099999666213989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

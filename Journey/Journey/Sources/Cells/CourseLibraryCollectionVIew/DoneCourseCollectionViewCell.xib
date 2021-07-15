@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -33,18 +32,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="354" height="322"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="뽀득뽀득 세균 퇴치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZ7-IS-Zhh">
-                                <rect key="frame" x="28" y="36" width="179" height="24"/>
+                                <rect key="frame" x="28" y="36" width="179.5" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Xfv-yr-QaH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BMHANNA11yrsoldOTF" family="BM HANNA 11yrs old OTF" pointSize="24"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="Black3Text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="나 쟈니가 인간세계에 처음 도착했을 때 사람들이 청결에 대해 은근히 무심한 것이 신기했쟈니. 내가 사는 별에서는 상상도 할 수 없쟈니." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLM-tM-cPP">
                                 <rect key="frame" x="23" y="80" width="308" height="77"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" systemColor="labelColor"/>
+                                <color key="textColor" name="black4Text"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -59,16 +58,17 @@
                                 <rect key="frame" x="0.0" y="272" width="354" height="50"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="GTO-si-MEZ">
-                                        <rect key="frame" x="130" y="16" width="94.5" height="18"/>
+                                        <rect key="frame" x="131.5" y="17" width="91" height="16.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코스 시작하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wx8-DL-YRL">
                                                 <rect key="frame" x="0.0" y="0.0" width="77" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="14"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="black4Text"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnSide" translatesAutoresizingMaskIntoConstraints="NO" id="jKt-gd-60E">
                                                 <rect key="frame" x="79" y="2" width="12" height="12"/>
+                                                <color key="tintColor" name="black4Text"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
@@ -81,7 +81,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHp-JZ-V6r">
-                                <rect key="frame" x="260" y="41" width="66" height="17"/>
+                                <rect key="frame" x="262" y="41" width="64" height="17"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Zc1-Bb-DBa">
                                         <rect key="frame" x="9" y="3" width="46" height="11"/>
@@ -89,11 +89,12 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="건강" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhR-Um-04f">
                                                 <rect key="frame" x="0.0" y="0.0" width="17.5" height="11"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="10"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="black4Text"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="courseLibrarySeparator" translatesAutoresizingMaskIntoConstraints="NO" id="W6s-tN-xd5">
                                                 <rect key="frame" x="20.5" y="0.0" width="8" height="11"/>
+                                                <color key="tintColor" name="black4Text"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="8" id="rHS-3H-Dcd"/>
                                                 </constraints>
@@ -101,7 +102,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ka-Xq-NZ1">
                                                 <rect key="frame" x="31.5" y="0.0" width="14.5" height="11"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="10"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="black4Text"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -162,14 +163,17 @@
         <image name="btnSide" width="12" height="12"/>
         <image name="courseLibrarySeparator" width="8" height="8"/>
         <image name="typeSforLibraryGrey" width="76" height="76"/>
+        <namedColor name="Black3Text">
+            <color red="0.49799999594688416" green="0.49799999594688416" blue="0.49799999594688416" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Grey2Bg">
             <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="black4Text">
+            <color red="0.67500001192092896" green="0.67500001192092896" blue="0.67500001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="crsD">
             <color red="0.93300002813339233" green="0.93300002813339233" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

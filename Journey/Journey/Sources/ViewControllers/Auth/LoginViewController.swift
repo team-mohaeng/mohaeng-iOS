@@ -20,10 +20,6 @@ class LoginViewController: UIViewController {
     
     // MARK: - View Life Cycle
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.passwordTextField.becomeFirstResponder()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         makeButtonRound()
@@ -52,10 +48,6 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - Functions
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.passwordTextField.resignFirstResponder()
-    }
     
     private func makeButtonRound() {
         loginButton.makeRounded(radius: 20)
@@ -95,16 +87,6 @@ class LoginViewController: UIViewController {
 }
 
 // MARK: - Extension
-
-// MARK: - UITextFieldDelegate
-
-extension LoginViewController: UITextFieldDelegate {
-    func passwordTextFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.passwordTextField.resignFirstResponder()
-        self.dismiss(animated: true, completion: nil)
-        return true
-    }
-}
 
 extension LoginViewController {
     

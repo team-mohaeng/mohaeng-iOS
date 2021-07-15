@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -29,11 +28,11 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지금까지 완료한 코스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTh-uG-qta">
                             <rect key="frame" x="24" y="265.5" width="133.5" height="20.5"/>
                             <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="16"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" name="Black1Text"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="lTh-uG-qta" firstAttribute="leading" secondItem="yeu-Q2-bCV" secondAttribute="leading" constant="24" id="t7z-D6-YKr"/>
                         <constraint firstAttribute="bottom" secondItem="lTh-uG-qta" secondAttribute="bottom" constant="14" id="ty1-Rc-gZr"/>
@@ -58,13 +57,13 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmw-0w-7kk">
                                             <rect key="frame" x="0.0" y="0.0" width="38" height="30"/>
                                             <fontDescription key="fontDescription" name="BMHANNA11yrsoldOTF" family="BM HANNA 11yrs old OTF" pointSize="34"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" name="Black1Text"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ck-Gc-jKP">
                                             <rect key="frame" x="42" y="11" width="16" height="19"/>
                                             <fontDescription key="fontDescription" name="BMHANNA11yrsoldOTF" family="BM HANNA 11yrs old OTF" pointSize="16"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" name="Black1Text"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -77,7 +76,7 @@
                                     <string key="text">총 증가시킨
 쟈니와의 애정도</string>
                                     <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="12"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" name="Black1Text"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -109,13 +108,13 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R66-Ce-HiY">
                                             <rect key="frame" x="0.0" y="0.0" width="38" height="30"/>
                                             <fontDescription key="fontDescription" name="BMHANNA11yrsoldOTF" family="BM HANNA 11yrs old OTF" pointSize="34"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" name="Black1Text"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lC-b1-BaG">
                                             <rect key="frame" x="42" y="11" width="14" height="19"/>
                                             <fontDescription key="fontDescription" name="BMHANNA11yrsoldOTF" family="BM HANNA 11yrs old OTF" pointSize="16"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" name="Black1Text"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -126,7 +125,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="챌린지 연속 성공 최고 기록" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhD-PF-nnt">
                                     <rect key="frame" x="16" y="146" width="161.5" height="33.5"/>
                                     <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="12"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" name="Black1Text"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -175,11 +174,11 @@
     </objects>
     <resources>
         <image name="flwGraphic" width="101" height="101"/>
+        <namedColor name="Black1Text">
+            <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Grey2Bg">
             <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

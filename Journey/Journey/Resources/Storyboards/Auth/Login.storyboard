@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -51,7 +50,7 @@
                                                 </constraints>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="5VJ-xh-sK4"/>
                                             <constraint firstItem="Wez-Bu-MOu" firstAttribute="centerY" secondItem="hjX-VT-Xec" secondAttribute="centerY" id="Aj3-AT-Iex"/>
@@ -71,7 +70,7 @@
                                                 <state key="normal" image="loginXButton"/>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="aPV-Rd-ID2" firstAttribute="centerX" secondItem="9rm-dq-CXo" secondAttribute="centerX" id="A9D-Pj-IXb"/>
                                             <constraint firstAttribute="width" constant="50" id="crw-WN-lMV"/>
@@ -97,7 +96,7 @@
                                                 </constraints>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="XsA-jQ-MGt"/>
                                             <constraint firstItem="4cm-zL-HFd" firstAttribute="centerX" secondItem="sdz-wt-s2R" secondAttribute="centerX" id="hKw-dE-v3W"/>
@@ -118,10 +117,12 @@
                                                     <constraint firstAttribute="height" constant="24" id="Kzj-bW-PUO"/>
                                                     <constraint firstAttribute="width" constant="24" id="xGr-4b-svp"/>
                                                 </constraints>
-                                                <state key="normal" image="loginXButton"/>
+                                                <state key="normal" image="loginXButton">
+                                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="kfP-J7-W1T" firstAttribute="centerY" secondItem="gPj-ME-zSv" secondAttribute="centerY" id="Kmf-ig-fmO"/>
                                             <constraint firstItem="kfP-J7-W1T" firstAttribute="centerX" secondItem="gPj-ME-zSv" secondAttribute="centerX" id="LSO-DJ-vea"/>
@@ -140,7 +141,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="31"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="비밀번호 찾기 ">
-                                            <color key="titleColor" systemColor="systemGray2Color"/>
+                                            <color key="titleColor" name="black4Text"/>
                                         </state>
                                         <connections>
                                             <action selector="findPasswordButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zou-xg-Hk3"/>
@@ -149,14 +150,14 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="l " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBD-8D-N51">
                                         <rect key="frame" x="80.000000000000014" y="0.0" width="6.6666666666666714" height="31"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" systemColor="systemGray2Color"/>
+                                        <color key="textColor" name="black4Text"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAt-3L-jxc">
                                         <rect key="frame" x="96.666666666666671" y="0.0" width="42.000000000000014" height="31"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="회원가입">
-                                            <color key="titleColor" systemColor="systemGray2Color"/>
+                                            <color key="titleColor" name="black4Text"/>
                                         </state>
                                         <connections>
                                             <action selector="signUpButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Ieq-p3-6fg"/>
@@ -169,7 +170,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="K6r-Lj-O8f" firstAttribute="top" secondItem="Go9-gf-e6q" secondAttribute="bottom" constant="27" id="3Sn-eJ-XxI"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Go9-gf-e6q" secondAttribute="trailing" constant="24" id="8tu-x5-Bcp"/>
@@ -211,11 +212,8 @@
         <namedColor name="Pink2">
             <color red="1" green="0.52899998426437378" blue="0.6470000147819519" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <namedColor name="black4Text">
+            <color red="0.67500001192092896" green="0.67500001192092896" blue="0.67500001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
