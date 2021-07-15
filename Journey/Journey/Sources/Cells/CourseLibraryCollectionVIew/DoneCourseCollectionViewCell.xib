@@ -62,13 +62,13 @@
                                         <rect key="frame" x="130" y="16" width="94.5" height="18"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코스 시작하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wx8-DL-YRL">
-                                                <rect key="frame" x="0.0" y="0.0" width="80.5" height="18"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="77" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnSide" translatesAutoresizingMaskIntoConstraints="NO" id="jKt-gd-60E">
-                                                <rect key="frame" x="82.5" y="3" width="12" height="12"/>
+                                                <rect key="frame" x="79" y="2" width="12" height="12"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
@@ -84,22 +84,22 @@
                                 <rect key="frame" x="260" y="41" width="66" height="17"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Zc1-Bb-DBa">
-                                        <rect key="frame" x="9" y="3" width="48" height="11"/>
+                                        <rect key="frame" x="9" y="3" width="46" height="11"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="건강" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhR-Um-04f">
-                                                <rect key="frame" x="0.0" y="0.0" width="18.5" height="11"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="17.5" height="11"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="10"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="courseLibrarySeparator" translatesAutoresizingMaskIntoConstraints="NO" id="W6s-tN-xd5">
-                                                <rect key="frame" x="21.5" y="0.0" width="8" height="11"/>
+                                                <rect key="frame" x="20.5" y="0.0" width="8" height="11"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="8" id="rHS-3H-Dcd"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ka-Xq-NZ1">
-                                                <rect key="frame" x="32.5" y="0.0" width="15.5" height="11"/>
+                                                <rect key="frame" x="31.5" y="0.0" width="14.5" height="11"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="10"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

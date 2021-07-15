@@ -188,6 +188,7 @@ extension CourseLibraryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presentAskPopUp(doingCourse: doingCourse)
         selectedCourseId = courseListViewModel.courseAtIndex(indexPath.row).course.id
+        UserDefaults.standard.setValue(selectedCourseId, forKey: "courseId")
     }
     
     private func unDoneCellSize(for indexPath: IndexPath) -> CGSize {
