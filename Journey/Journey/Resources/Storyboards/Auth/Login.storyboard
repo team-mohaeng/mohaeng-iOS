@@ -60,10 +60,6 @@
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일 주소" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lnf-3u-DHh">
                                         <rect key="frame" x="50" y="0.0" width="227" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="hEg-zm-9rZ"/>
-                                            <constraint firstAttribute="width" constant="227" id="kEM-zi-xW1"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                     </textField>
@@ -83,6 +79,9 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="L4S-6i-agI"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Go9-gf-e6q">
                                 <rect key="frame" x="24" y="395" width="327" height="40"/>
@@ -105,12 +104,8 @@
                                             <constraint firstItem="4cm-zL-HFd" firstAttribute="centerY" secondItem="sdz-wt-s2R" secondAttribute="centerY" id="taB-gY-0KA"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TXe-88-DED">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TXe-88-DED">
                                         <rect key="frame" x="50" y="0.0" width="227" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="equ-8Y-GVP"/>
-                                            <constraint firstAttribute="width" constant="227" id="qjr-49-FpJ"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
