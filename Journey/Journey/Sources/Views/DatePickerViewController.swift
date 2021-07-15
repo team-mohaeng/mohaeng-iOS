@@ -117,10 +117,8 @@ class DatePickerViewController: UIViewController {
         }
         let selectedDate = AppDate(year: unwrappedYear,
                                    month: unwrappedMonth)
-        let startIndex: String.Index = selectedDate.getYearToString().index(selectedDate.getYearToString().startIndex, offsetBy: 2)
-        let stringYear = String(selectedDate.getYear())[startIndex...]
         let stringMonth = String(format: "%02d", selectedDate.getMonth())
-        self.datePickerDataDelegate?.passData("\(stringYear)년 \(stringMonth)월")
+        self.datePickerDataDelegate?.passData("\(selectedDate.getYear()). \(stringMonth)")
         dismissDatePicker()
     }
 }

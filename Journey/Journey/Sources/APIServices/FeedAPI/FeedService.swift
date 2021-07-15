@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 enum FeedService {
-    case getMyDrawer(year: Int, month: Int)
+    case getMyDrawer(year: String, month: String)
     case getFeedDetail(postId: Int)
     case getAllFeed(sort: String)
     case postFeedContents(moodImage: String, moodText: String, content: String, hashtags: [String], mainImage: String, isPrivate: Bool)
@@ -25,7 +25,7 @@ extension FeedService: TargetType {
     var path: String {
         switch self {
         case .getMyDrawer(let year, let month):
-            return Const.URL.myDrawerURL + "/\(year)/\(month)"
+            return Const.URL.happyURL + Const.URL.myDrawerURL + "/\(year)/\(month)"
         case .getFeedDetail(let postId):
             return Const.URL.happyURL + "/\(postId)"
         case .getAllFeed(let sort):

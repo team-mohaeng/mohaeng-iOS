@@ -213,7 +213,7 @@ extension FeedViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Name.contentsCollectionViewCell, for: indexPath) as? ContentsCollectionViewCell else { return UICollectionViewCell() }
         
         cell.makeRounded(radius: 14)
-        cell.setData(data: community[indexPath.row])
+        cell.setData(data: community[indexPath.row], viewController: .community)
         
         return cell
     }

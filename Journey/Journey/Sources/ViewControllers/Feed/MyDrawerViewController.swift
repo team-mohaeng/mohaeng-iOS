@@ -11,19 +11,23 @@ class MyDrawerViewController: UIViewController {
 
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var myHappinessCollectionView: UICollectionView!
+    @IBOutlet weak var emptyView: UIView!
     
     // MARK: - Properties
+    private var myDrawer = [Community(postID: 0, nickname: "", mood: 0, mainImage: "", likeCount: 0, content: "", hasLike: false, hashtags: [""], year: "", month: "", day: "", week: "")]
     private var modalDateView: DatePickerViewController?
     private var currentDate: AppDate?
     private var selectedDate: AppDate?
+    private var feedCount = 0
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        initCurrentDate()
+        checkEmptyView()
         initNavigationBar()
         registerXib()
-        initCurrentDate()
         setDelegation()
         addObservers()
     }
@@ -39,7 +43,6 @@ class MyDrawerViewController: UIViewController {
         self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
         
         navigationItem.title = "내 서랍장"
-        
     }
     
     private func initCurrentDate() {
@@ -47,6 +50,10 @@ class MyDrawerViewController: UIViewController {
         self.selectedDate = AppDate()
         self.modalDateView = DatePickerViewController()
         self.modalDateView?.datePickerDataDelegate = self
+        
+        guard let year = currentDate?.getYearToString() else { return }
+        guard let month = currentDate?.getMonthToString() else { return }
+        getMyDrawer(year: year, month: month)
     }
     
     private func setDelegation() {
@@ -65,6 +72,21 @@ class MyDrawerViewController: UIViewController {
     
     private func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(dataReceived), name: NSNotification.Name("calendarButtonClicked"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(putLikeCount), name: NSNotification.Name("myDrawerLikeClicked"), object: nil)
+    }
+    
+    private func checkEmptyView() {
+        if myDrawer.count == 0 {
+            emptyView.isHidden = false
+        } else {
+            emptyView.isHidden = true
+        }
+    }
+    
+    private func updateData(data: MyDrawerData) {
+        self.myDrawer = data.myDrawerSmallSatisfactions
+        checkEmptyView()
+        myHappinessCollectionView.reloadData()
     }
     
     @objc func dataReceived(notification: NSNotification) {
@@ -72,6 +94,15 @@ class MyDrawerViewController: UIViewController {
         self.presentDatePickerView(year: selectedDate.getYear(), month: selectedDate.getMonth())
     }
     
+    @objc func putLikeCount(notification: Notification) {
+        if let likeInfo = notification.object as? LikeButtonInfo {
+            if likeInfo.isButtonClicked {
+                putFeedLike(postId: myDrawer[likeInfo.cellIndex].postID)
+            } else {
+                putFeedUnlike(postId: myDrawer[likeInfo.cellIndex].postID)
+            }
+        }
+    }
 }
 
 extension MyDrawerViewController: UIViewControllerTransitioningDelegate {
@@ -83,19 +114,26 @@ extension MyDrawerViewController: UIViewControllerTransitioningDelegate {
 extension MyDrawerViewController: DatePickerViewDelegate {
     func passData(_ date: String) {
         self.selectedDate = AppDate(formattedDate: date, with: ". ")
-        NotificationCenter.default.post(name: NSNotification.Name("datePickerSelected"), object: date)
+        NotificationCenter.default.post(name: NSNotification.Name("datePickerSelected"), object: selectedDate)
+        
+        guard let year = selectedDate?.getYearToString() else { return }
+        guard let month = selectedDate?.getMonthToString() else { return }
+        
+        getMyDrawer(year: year, month: month)
+        myHappinessCollectionView.reloadData()
     }
 }
 
 extension MyDrawerViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return myDrawer.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = myHappinessCollectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.contentsCollectionViewCell, for: indexPath) as? ContentsCollectionViewCell else { return UICollectionViewCell() }
         
         cell.makeRounded(radius: 14)
+        cell.setData(data: myDrawer[indexPath.row], viewController: .myDrawer)
         
         return cell
     }
@@ -105,7 +143,7 @@ extension MyDrawerViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "MyDrawerCollectionReusableView", for: indexPath)
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Const.Xib.Identifier.myDrawerCollectionReusableView, for: indexPath)
             return headerView
         default:
             assert(false, "에러")
@@ -137,6 +175,67 @@ extension MyDrawerViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 16
+    }
+    
+}
+
+extension MyDrawerViewController {
+    func getMyDrawer(year: String, month: String) {
+        FeedAPI.shared.getMyDrawer(year: year, month: month) { (response) in
+            switch response {
+            case .success(let myDrawer):
+                if let data = myDrawer as? MyDrawerData {
+                    self.updateData(data: data)
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+}
+
+
+extension MyDrawerViewController {
+    
+    func putFeedLike(postId: Int) {
+        FeedAPI.shared.putFeedLike(postId: postId) { (response) in
+            switch response {
+            case .success(_):
+                break
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+        
+    }
+    
+    func putFeedUnlike(postId: Int) {
+        FeedAPI.shared.putFeedUnlike(postId: postId) { (response) in
+            switch response {
+            case .success(_):
+                break
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
     }
     
 }
