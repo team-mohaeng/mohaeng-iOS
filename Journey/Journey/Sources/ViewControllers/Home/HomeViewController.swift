@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var thirdIndicatorLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var densityPercentLabel: UILabel!
     @IBOutlet weak var journeyImageView: UIImageView!
+    @IBOutlet weak var propertyImageView: UIImageView!
     
     private lazy var activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView()
@@ -117,6 +118,9 @@ class HomeViewController: UIViewController {
         setCourseDayLabel(data: data)
         setDensityPercent(densityPercent: CGFloat(data.affinity))
         self.detachActivityIndicator()
+        
+        guard let course = data.course else { return }
+        setProperty(by: course.property)
     }
     
     private func setMainJourneyImage(affinity: Int) {
@@ -185,6 +189,38 @@ class HomeViewController: UIViewController {
         }
         self.backgroundView.removeFromSuperview()
         self.activityIndicator.removeFromSuperview()
+    }
+    
+    private func setProperty(by property: Int) {
+        switch property {
+        case Property.health.rawValue:
+            setProperty0()
+        case Property.memory.rawValue:
+            setProperty1()
+        case Property.observation.rawValue:
+            setProperty2()
+        case Property.challenge.rawValue:
+            setProperty3()
+        default:
+            return
+        }
+    }
+    
+    // 0: 건강 1: 기억 2: 관찰 3: 도전
+    func setProperty0() {
+        propertyImageView.image = Const.Image.typeHwithColor
+    }
+    
+    func setProperty1() {
+        propertyImageView.image = Const.Image.typeMwithColor
+    }
+    
+    func setProperty2() {
+        propertyImageView.image = Const.Image.typeSwithColor
+    }
+    
+    func setProperty3() {
+        propertyImageView.image = Const.Image.typeCwithColor
     }
 }
 
