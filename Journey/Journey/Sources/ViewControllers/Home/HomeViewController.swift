@@ -113,8 +113,8 @@ class HomeViewController: UIViewController {
     
     private func updateData(data: HomeData) {
         setMainJourneyImage(affinity: data.affinity)
-        setMainTitleTextButton(situation: data.situation, courseTitle: data.course.title)
-        setCourseDayLabel(situation: data.situation, challenges: data.course.challenges)
+        setMainTitleTextButton(data: data)
+        setCourseDayLabel(data: data)
         setDensityPercent(densityPercent: CGFloat(data.affinity))
         self.detachActivityIndicator()
     }
@@ -134,23 +134,25 @@ class HomeViewController: UIViewController {
         }
     }
     
-    private func setMainTitleTextButton(situation: Int, courseTitle: String) {
+    private func setMainTitleTextButton(data: HomeData) {
         // 0: 코스 시작 전, 1: 코스 진행 중
-        if situation == 0 {
+        if data.situation == 0 {
             courseTitleButton.setTitle("나와 함께해보겠어?", for: .normal)
             courseTitleButton.isEnabled = false
         } else {
-            courseTitleButton.setTitle(courseTitle, for: .normal)
+            guard let course = data.course else { return }
+            courseTitleButton.setTitle(course.title, for: .normal)
             courseTitleButton.isEnabled = true
         }
     }
     
-    private func setCourseDayLabel(situation: Int, challenges: [Challenge]) {
-        if situation == 0 {
+    private func setCourseDayLabel(data: HomeData) {
+        if data.situation == 0 {
             courseDayBoxView.isHidden = true
         } else {
+            guard let course = data.course else { return }
             courseDayBoxView.isHidden = false
-            courseDayLabel.text = "\(findCurrentChallengesDay(challenges: challenges)) 일차"
+            courseDayLabel.text = "\(findCurrentChallengesDay(challenges: course.challenges)) 일차"
         }
     }
     
@@ -195,7 +197,8 @@ extension HomeViewController {
             case .success(let home):
                 if let data = home as? HomeData {
                     self.updateData(data: data)
-                    UserDefaults.standard.set(data.course.id, forKey: "courseId")
+                    guard let data = data.course else { return }
+                    UserDefaults.standard.set(data.id, forKey: "courseId")
                 }
 
             case .requestErr(let message):
