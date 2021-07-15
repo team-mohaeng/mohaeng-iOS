@@ -50,7 +50,7 @@
                         <constraint firstAttribute="width" constant="24" id="7g7-8q-ylW"/>
                         <constraint firstAttribute="height" constant="24" id="C3p-Hs-KPs"/>
                     </constraints>
-                    <state key="normal" image="sampleMoodImg"/>
+                    <state key="normal" image="yearPickerX"/>
                     <connections>
                         <action selector="closeModalButton:" destination="-1" eventType="touchUpInside" id="3Nb-CE-otO"/>
                     </connections>
@@ -75,7 +75,7 @@
         </view>
     </objects>
     <resources>
-        <image name="sampleMoodImg" width="300" height="300"/>
+        <image name="yearPickerX" width="13" height="12.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
