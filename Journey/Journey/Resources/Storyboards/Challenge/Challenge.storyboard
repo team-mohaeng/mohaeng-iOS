@@ -201,6 +201,55 @@
                                 <color key="textColor" red="0.67450980392156867" green="0.67450980392156867" blue="0.67450980392156867" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGM-ez-60b">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="FbQ-5i-grU">
+                                        <rect key="frame" x="92.5" y="152" width="229" height="421.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgcrsselect" translatesAutoresizingMaskIntoConstraints="NO" id="2A2-47-nwI">
+                                                <rect key="frame" x="0.0" y="0.0" width="229" height="264"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="h4c-Xz-3RB">
+                                                <rect key="frame" x="0.0" y="298" width="229" height="123.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osz-us-8pD">
+                                                        <rect key="frame" x="0.0" y="0.0" width="229" height="30.5"/>
+                                                        <string key="text">나와의 농도를 진하게 만들고 싶다고?
+챌린지를 성공하면 끈적해질 수 있어</string>
+                                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                                        <color key="textColor" name="Black3Text"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XH-ot-oiO">
+                                                        <rect key="frame" x="0.0" y="75.5" width="229" height="48"/>
+                                                        <color key="backgroundColor" name="Black2"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="48" id="0ga-7K-aqD"/>
+                                                        </constraints>
+                                                        <state key="normal" title="코스 선택하기">
+                                                            <color key="titleColor" name="White"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="touchSelectCourseButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NZe-l0-2WF"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="7XH-ot-oiO" secondAttribute="trailing" id="Ret-qV-uxu"/>
+                                                    <constraint firstItem="osz-us-8pD" firstAttribute="leading" secondItem="h4c-Xz-3RB" secondAttribute="leading" id="XAo-cR-36V"/>
+                                                    <constraint firstAttribute="trailing" secondItem="osz-us-8pD" secondAttribute="trailing" id="zeo-EH-Xf2"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="FbQ-5i-grU" firstAttribute="centerY" secondItem="eGM-ez-60b" secondAttribute="centerY" id="4TN-fo-WjB"/>
+                                    <constraint firstItem="FbQ-5i-grU" firstAttribute="centerX" secondItem="eGM-ez-60b" secondAttribute="centerX" id="lAv-4k-Ogv"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -211,16 +260,20 @@
                             <constraint firstItem="aWm-8Z-OQK" firstAttribute="top" secondItem="pZW-nb-Vls" secondAttribute="bottom" id="J2O-7v-qTf"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="BRn-Of-1A8" secondAttribute="bottom" constant="10" id="K8P-Ig-y2l"/>
                             <constraint firstItem="BRn-Of-1A8" firstAttribute="leading" secondItem="aWm-8Z-OQK" secondAttribute="trailing" constant="-20" id="KRw-yL-umz"/>
+                            <constraint firstItem="eGM-ez-60b" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="KjO-bZ-KUq"/>
                             <constraint firstItem="aWm-8Z-OQK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="NX2-ec-foa"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="BRn-Of-1A8" secondAttribute="trailing" constant="24" id="Omq-Fi-C4N"/>
                             <constraint firstItem="pZW-nb-Vls" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="QHc-BT-Rqd"/>
                             <constraint firstItem="e4i-6z-CRP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="URh-0k-QT2"/>
                             <constraint firstItem="pZW-nb-Vls" firstAttribute="top" secondItem="e4i-6z-CRP" secondAttribute="bottom" constant="35" id="Yoy-11-Bdz"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pZW-nb-Vls" secondAttribute="trailing" constant="24" id="ZUQ-xK-Odc"/>
+                            <constraint firstItem="eGM-ez-60b" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="amm-OF-xDo"/>
                             <constraint firstItem="o0R-vl-jXr" firstAttribute="leading" secondItem="BRn-Of-1A8" secondAttribute="leading" constant="15" id="jfM-ve-vK1"/>
                             <constraint firstItem="e4i-6z-CRP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="mSA-9U-Y6y"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="aWm-8Z-OQK" secondAttribute="bottom" id="tvB-mG-c9p"/>
+                            <constraint firstItem="eGM-ez-60b" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="vfy-aT-bGh"/>
                             <constraint firstItem="BRn-Of-1A8" firstAttribute="top" secondItem="o0R-vl-jXr" secondAttribute="bottom" constant="-8" id="yrg-vH-dkt"/>
+                            <constraint firstItem="eGM-ez-60b" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="z69-5J-T57"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qaQ-ua-hNL"/>
@@ -230,9 +283,11 @@
                         <outlet property="challengeSubTitleLabel" destination="pzX-TS-HxP" id="9Ht-9G-G8A"/>
                         <outlet property="challengeTitleLabel" destination="1rR-xA-DB9" id="1HV-y1-k5c"/>
                         <outlet property="challengeToStampViewBottom" destination="J19-vp-0VS" id="Ocm-zg-7cX"/>
+                        <outlet property="emptyView" destination="eGM-ez-60b" id="2dr-Wz-07t"/>
                         <outlet property="journeyDescriptionView" destination="BRn-Of-1A8" id="cLQ-dn-Why"/>
                         <outlet property="journeyImageView" destination="aWm-8Z-OQK" id="hU1-SW-eOP"/>
                         <outlet property="journeyNameView" destination="o0R-vl-jXr" id="1sQ-JN-RHX"/>
+                        <outlet property="selectCourseButton" destination="7XH-ot-oiO" id="DkU-LO-u5x"/>
                         <outlet property="stackviewToChallengeLabel" destination="J19-vp-0VS" id="zHy-9K-2GD"/>
                         <outlet property="stampImageView1" destination="wFl-SY-TGe" id="GF7-m5-HTw"/>
                         <outlet property="stampImageView2" destination="O25-vF-Tus" id="dnX-AM-woX"/>
@@ -275,14 +330,24 @@
         </scene>
     </scenes>
     <resources>
-        <image name="challengeIcon" width="28" height="28"/>
+        <image name="bgcrsselect" width="229" height="264"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="stampSampling" width="124" height="124"/>
         <image name="talkjiOS" width="144" height="164"/>
         <namedColor name="Black1Text">
             <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="Black2">
+            <color red="0.2199999988079071" green="0.2199999988079071" blue="0.2199999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Black3Text">
+            <color red="0.49799999594688416" green="0.49799999594688416" blue="0.49799999594688416" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Pink2">
             <color red="1" green="0.52899998426437378" blue="0.6470000147819519" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
