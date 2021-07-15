@@ -91,26 +91,6 @@
 | `Etc`       | 커스텀 팝업         | ✅    | 정초이 |
 | `Etc`       | 애니메이션 팝업     | ✅    | 정초이 |
 
-## Animation
-
-<img src="https://user-images.githubusercontent.com/28949235/125817385-b517e864-d65f-48b5-8f62-508d0def7b56.gif" alt="Untitled" width=200 />
-
-위와 같은 애니메이션 팝업 구현을 위해 `UIView.animate()` 를 사용했습니다.
-
-```swift
-UIView.animate(withDuration: 1, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn) {
-        let originFrame = self.animationImageView.frame
-        let offset = self.popUpView.frame.origin.y - 50          
-  			// y값만 이동하기 위해 y값 외에는 originFrame과 동일하게 설정
-        self.animationImageView.frame = CGRect(x: originFrame.origin.x, y: offset, width: originFrame.width, height: originFrame.height)   
-    } completion: { _ in
-        UIView.animate(withDuration: 0.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
-        // y값 이동이 끝난 후 popUpView alpha 조정 애니메이션 실행
-        self.popUpView.alpha = 1.0
-        }, completion: nil)
-}
-```
-
 
 
 </p><div align=center>
