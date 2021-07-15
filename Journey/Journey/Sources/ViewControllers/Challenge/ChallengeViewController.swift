@@ -59,13 +59,12 @@ class ChallengeViewController: UIViewController {
         initNavigationBar()
         initEmptyView()
         appendImageViewsToArray()
-        getTodayChallenge()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        print("viewwillappear")
+        initNavigationBar()
+        getTodayChallenge()
         initJourneyView()
     }
     
@@ -105,7 +104,6 @@ class ChallengeViewController: UIViewController {
     
     private func initJourneyView() {
         journeyNameView.makeRounded(radius: journeyNameView.frame.height / 2)
-        print("어어어ㅣㅁ나")
         journeyDescriptionView.makeRoundedSpecificCorner(corners: [.bottomLeft, .bottomRight, .topRight], cornerRadius: 25)
         journeyDescriptionView.invalidateIntrinsicContentSize()
     }
@@ -295,20 +293,20 @@ class ChallengeViewController: UIViewController {
         // 진행중인 챌린지 인덱스 찾기
         currentChallengeIdx = findCourseProgressDay(challenges: data.course.challenges)
         
+        // current stamp
+        currentStamp = data.course.challenges[currentChallengeIdx].currentStamp
+        
         // get 해서 data 반영하기
         challengeSubTitleLabel.text = data.course.title
         challengeTitleLabel.text = data.course.challenges[currentChallengeIdx].title
-        challengeDescriptionLabel.text = data.course.courseDescription
-        challengeDescriptionLabel.invalidateIntrinsicContentSize() // 다시 점검
-        self.journeyDescriptionView.invalidateIntrinsicContentSize()
+        challengeDescriptionLabel.text = data.course.challenges[currentChallengeIdx].challengeDescription
+        
+        // 현재 챌린지 id값
         self.challengeId = data.course.challenges[currentChallengeIdx].id
         
         // stamp stack view
         totalStamp = data.course.challenges[currentChallengeIdx].totalStamp
         self.notchCase(totalStamp: totalStamp)
-        
-        print("currentStamp1 \(data.course.challenges[currentChallengeIdx].currentStamp)")
-        print("totalStamp1 \(data.course.challenges[currentChallengeIdx].totalStamp)")
         
         // stamp image
         initialStampImage = setInitialStamp(property: data.course.property)
@@ -316,10 +314,9 @@ class ChallengeViewController: UIViewController {
         
         // set current stamp
         initInitialStamp(totalStamp: data.course.challenges[currentChallengeIdx].totalStamp)
-        currentStamp = data.course.challenges[currentChallengeIdx].currentStamp
         initCompleteStamp(totalStamp: totalStamp, currentStamp: data.course.challenges[currentChallengeIdx].currentStamp)
         
-        // 챌린 완료시 완료처리
+        // 챌린지 완료시 완료처리
         if data.course.challenges[currentChallengeIdx].situation == 2 {
             // 쟈니 이미지 바꾸기
             self.journeyImageView.image = Const.Image.talkjhappyiOS
@@ -327,6 +324,11 @@ class ChallengeViewController: UIViewController {
             self.stampStatusLabel.text = "오늘의 챌린지 성공!\n내일 새로운 챌린지로 다시 만나요!"
             // 챌린지 description label 바꾸기
             self.challengeDescriptionLabel.text = data.course.challenges[self.currentChallengeIdx].successDescription
+        } else {
+            // 쟈니 이미지 바꾸기
+            self.journeyImageView.image = Const.Image.talkjiOS
+            // 설명 label
+            self.stampStatusLabel.text = "아이콘을 터치해 인증을 완료할 수 있어요\n자정 전까지 오늘의 챌린지를 성공해보세요!"
         }
     }
     
@@ -351,6 +353,9 @@ class ChallengeViewController: UIViewController {
         completePopUp.modalPresentationStyle = .overCurrentContext
         completePopUp.popUpActionDelegate = self
         tabBarController?.present(completePopUp, animated: true, completion: nil)
+        
+        completePopUp.titleLabel.text = "오늘의 챌린지 성공"
+        completePopUp.descriptionLabel.text = "챌린지를 성공했으니 나와 함께\n당신의 소확행을 작성하러 가보겠어?"
     }
     
     private func pushToCourseLibraryViewController() {
@@ -362,6 +367,8 @@ class ChallengeViewController: UIViewController {
         self.navigationController?.pushViewController(courseLibarayViewController, animated: true)
     }
 
+    // MARK: - Fetch Functions
+    
     // MARK: - @IBAction Properties
     
     @objc func touchstampAction1(_ gesture: UITapGestureRecognizer) {
@@ -474,6 +481,7 @@ extension ChallengeViewController {
             doingCourse = false
             // empty page 띄우기
             emptyView.isHidden = false
+            self.navigationController?.hideNavigationBar()
         }
     }
     

@@ -153,7 +153,6 @@
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stampSampling" translatesAutoresizingMaskIntoConstraints="NO" id="uR2-xc-3RU">
                                                         <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="104" id="2SK-pE-fbb"/>
                                                             <constraint firstAttribute="width" secondItem="uR2-xc-3RU" secondAttribute="height" multiplier="1:1" id="dQF-m4-bAc"/>
                                                         </constraints>
                                                     </imageView>
@@ -185,9 +184,7 @@
                                     <constraint firstItem="pzX-TS-HxP" firstAttribute="top" secondItem="pZW-nb-Vls" secondAttribute="top" constant="48" id="BDO-x4-iS4"/>
                                     <constraint firstItem="pzX-TS-HxP" firstAttribute="centerX" secondItem="pZW-nb-Vls" secondAttribute="centerX" id="EaY-nD-t6E"/>
                                     <constraint firstItem="yo7-Qq-5Ki" firstAttribute="leading" secondItem="pZW-nb-Vls" secondAttribute="leading" id="IOm-XH-gCQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="x9X-ow-MaY" secondAttribute="bottom" constant="68" id="NBb-nX-kny"/>
                                     <constraint firstItem="x9X-ow-MaY" firstAttribute="top" secondItem="pZW-nb-Vls" secondAttribute="top" constant="134" id="O4A-mX-PTE"/>
-                                    <constraint firstAttribute="bottom" secondItem="yo7-Qq-5Ki" secondAttribute="bottom" constant="68" id="XSF-wV-gG8"/>
                                     <constraint firstItem="1rR-xA-DB9" firstAttribute="centerX" secondItem="pZW-nb-Vls" secondAttribute="centerX" id="aSZ-Pi-zrj"/>
                                     <constraint firstItem="x9X-ow-MaY" firstAttribute="leading" secondItem="pZW-nb-Vls" secondAttribute="leading" id="lkv-OQ-ge5"/>
                                     <constraint firstItem="yo7-Qq-5Ki" firstAttribute="centerX" secondItem="pZW-nb-Vls" secondAttribute="centerX" id="n1N-c1-rjB"/>
@@ -205,10 +202,10 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BRn-Of-1A8">
-                                <rect key="frame" x="140" y="723.5" width="250" height="79.5"/>
+                                <rect key="frame" x="140" y="738.5" width="250" height="64.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="손을 씻는 것은 청결에 있어서 가장 기본적이지만 잊기 쉬운 ㅓ일이쟈니 가나다라마바사아자차ㅋ" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pH8-K8-HtA">
-                                        <rect key="frame" x="16" y="17" width="218" height="45.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쟈니의멘트가나옵니다요쟈니의멘트가근데왜자꾸바뀌는데" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pH8-K8-HtA">
+                                        <rect key="frame" x="16" y="17" width="218" height="30.5"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -223,7 +220,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o0R-vl-jXr">
-                                <rect key="frame" x="155" y="706.5" width="53" height="25"/>
+                                <rect key="frame" x="155" y="721.5" width="53" height="25"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쟈니" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJI-2j-UjW">
                                         <rect key="frame" x="17.5" y="6" width="18.5" height="13"/>
@@ -256,11 +253,13 @@
                         <constraints>
                             <constraint firstItem="pZW-nb-Vls" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="43G-uM-aug"/>
                             <constraint firstItem="vGa-mA-gpg" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="4i7-oy-DBP"/>
+                            <constraint firstItem="vGa-mA-gpg" firstAttribute="top" secondItem="yo7-Qq-5Ki" secondAttribute="bottom" constant="18" id="63c-a8-hPF"/>
                             <constraint firstItem="aWm-8Z-OQK" firstAttribute="top" secondItem="vGa-mA-gpg" secondAttribute="bottom" constant="23" id="J19-vp-0VS"/>
                             <constraint firstItem="aWm-8Z-OQK" firstAttribute="top" secondItem="pZW-nb-Vls" secondAttribute="bottom" id="J2O-7v-qTf"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="BRn-Of-1A8" secondAttribute="bottom" constant="10" id="K8P-Ig-y2l"/>
                             <constraint firstItem="BRn-Of-1A8" firstAttribute="leading" secondItem="aWm-8Z-OQK" secondAttribute="trailing" constant="-20" id="KRw-yL-umz"/>
                             <constraint firstItem="eGM-ez-60b" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="KjO-bZ-KUq"/>
+                            <constraint firstItem="vGa-mA-gpg" firstAttribute="top" secondItem="x9X-ow-MaY" secondAttribute="bottom" constant="18" id="LyK-bj-VzW"/>
                             <constraint firstItem="aWm-8Z-OQK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="NX2-ec-foa"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="BRn-Of-1A8" secondAttribute="trailing" constant="24" id="Omq-Fi-C4N"/>
                             <constraint firstItem="pZW-nb-Vls" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="QHc-BT-Rqd"/>
