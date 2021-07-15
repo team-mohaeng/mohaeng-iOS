@@ -28,7 +28,7 @@
                                     <constraint firstAttribute="height" constant="26" id="PWE-VN-2F6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="nickname"/>
                             </textField>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용 가능한 닉네임입니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoP-u8-ZlG">
                                 <rect key="frame" x="249.66666666666666" y="188" width="101.33333333333334" height="12"/>
@@ -89,6 +89,7 @@
                     </view>
                     <connections>
                         <outlet property="inputNicknameTextField" destination="wNY-BH-ZHc" id="QZR-DM-Oeu"/>
+                        <outlet property="nicknameErrorLabel" destination="WoP-u8-ZlG" id="MXF-WC-kMF"/>
                         <outlet property="serviceLabel" destination="fS0-wD-5wq" id="9is-kL-LNP"/>
                         <outlet property="touchNextPage3Button" destination="0kf-Nu-phn" id="wfb-Dy-eyj"/>
                     </connections>

@@ -14,7 +14,9 @@ class SignUpThirdViewController: UIViewController {
     @IBOutlet weak var inputNicknameTextField: UITextField!
     @IBOutlet weak var touchNextPage3Button: UIButton!
     @IBOutlet weak var serviceLabel: UILabel!
+    @IBOutlet weak var nicknameErrorLabel: UILabel!
     var signupuser = SignUpUser.shared
+    var isNickNameError = false
     
     // MARK: - View Life Cycle
     
@@ -23,17 +25,19 @@ class SignUpThirdViewController: UIViewController {
         makeUnderLineinputNicknameTextField()
         makeButton3Round()
         chgangeTextAttribute()
+        setDelegation()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         makeUnderLineinputNicknameTextField()
-      
+        
     }
     
     @IBAction func touchNextButton(_ sender: Any) {
         
         postSignUp()
+        checkNickName()
     }
     
     // MARK: - Functions
@@ -49,6 +53,31 @@ class SignUpThirdViewController: UIViewController {
     
     private func makeButton3Round() {
         touchNextPage3Button.makeRounded(radius: 24)
+    }
+    
+    func showNickNameBlankError() {
+        nicknameErrorLabel.isHidden = false
+        nicknameErrorLabel.text = "사용 가능하지 않은 닉네임입니다"
+        nicknameErrorLabel.textColor = UIColor.red
+        isNickNameError = true
+    }
+    
+    func hideNickNameError() {
+        nicknameErrorLabel.isHidden = false
+        nicknameErrorLabel.text = "사용가능한 닉네임입니다"
+        nicknameErrorLabel.textColor = UIColor.green
+        isNickNameError = false
+    }
+    
+    func showNickNameFormatError() {
+        nicknameErrorLabel.isHidden = false
+        nicknameErrorLabel.text = "사용 가능하지 않은 닉네임입니다"
+        nicknameErrorLabel.textColor = UIColor.red
+        isNickNameError = true
+    }
+    
+    private func setDelegation() {
+        self.inputNicknameTextField.delegate = self
     }
     
     private func chgangeTextAttribute() {
@@ -77,11 +106,38 @@ class SignUpThirdViewController: UIViewController {
         self.serviceLabel.attributedText = attributeString
         
     }
+    func validateNickName(nickname: String) -> Bool {
+        // 닉네임 정규식
+        let nicknameRegEx = "[가-힣]{1,6}"
+        let nicknameTest = NSPredicate(format: "SELF MATCHES %@", nicknameRegEx)
+        return nicknameTest.evaluate(with: nickname)
+    }
     
     func popToRootViewController() {
         self.navigationController?.popToRootViewController(animated: true)
     }
-
+    
+    func checkNickName() -> Bool {
+        guard let nickname = inputNicknameTextField.text else {
+            return false
+        }
+        // 닉네임이 공백이 아닐 때
+        if nickname != "" {
+            // 닉네임이 정규식에 맞지 않을 때
+            if !validateNickName(nickname: nickname) {
+                showNickNameFormatError()
+                return false
+            } else {
+                // 닉네임이 정규식에 맞을 때
+                hideNickNameError()
+                return true
+            }
+        } else {
+            // 닉네임이 공백일 때
+            showNickNameBlankError()
+            return false
+        }
+    }
 }
 
 extension SignUpThirdViewController {
@@ -118,4 +174,25 @@ extension SignUpThirdViewController {
             }
         }, email: email, password: password, nickname: nickname, gender: gender, birthyear: birthyear)
     }
+}
+
+// MARK: - Extensions
+
+extension SignUpThirdViewController: UITextFieldDelegate {
+    
+    // DidEndEditing -> 손을 떼고 나서 호출
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        
+        if textField == inputNicknameTextField {
+            self.isNickNameError = checkNickName()
+        }
+        if isNickNameError == true {
+            self.touchNextPage3Button.backgroundColor = UIColor.HotPink
+            touchNextPage3Button.isEnabled = true
+        } else {
+            self.touchNextPage3Button.backgroundColor = UIColor.CourseBgGray
+            touchNextPage3Button.isEnabled = false
+        }
+    }
+    
 }
