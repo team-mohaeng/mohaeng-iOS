@@ -26,7 +26,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="오늘의 챌린지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4i-6z-CRP">
-                                <rect key="frame" x="24" y="88" width="138" height="24"/>
+                                <rect key="frame" x="24" y="88" width="131.5" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="SUn-WN-VIb"/>
                                 </constraints>
@@ -38,7 +38,7 @@
                                 <rect key="frame" x="24" y="147" width="366" height="502"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="뽀득뽀득 세균 퇴치" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzX-TS-HxP">
-                                        <rect key="frame" x="124.5" y="48" width="117.5" height="16"/>
+                                        <rect key="frame" x="127" y="48" width="112.5" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="y1a-dT-T2l"/>
                                         </constraints>
@@ -47,7 +47,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="깨끗하게 손 씻기 3회" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rR-xA-DB9">
-                                        <rect key="frame" x="70.5" y="74" width="225" height="33"/>
+                                        <rect key="frame" x="75" y="74" width="216.5" height="30.5"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="26"/>
                                         <color key="textColor" red="1" green="0.3411764705882353" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -156,10 +156,10 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BRn-Of-1A8">
-                                <rect key="frame" x="140" y="723.5" width="250" height="79.5"/>
+                                <rect key="frame" x="140" y="727" width="250" height="76"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="손을 씻는 것은 청결에 있어서 가장 기본적이지만 잊기 쉬운 ㅓ일이쟈니 가나다라마바사아자차ㅋ" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pH8-K8-HtA">
-                                        <rect key="frame" x="16" y="17" width="218" height="45.5"/>
+                                        <rect key="frame" x="16" y="17" width="218" height="42"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -174,10 +174,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o0R-vl-jXr">
-                                <rect key="frame" x="155" y="706.5" width="53" height="25"/>
+                                <rect key="frame" x="155" y="710" width="53" height="25"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쟈니" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJI-2j-UjW">
-                                        <rect key="frame" x="17.5" y="6" width="18.5" height="13"/>
+                                        <rect key="frame" x="18" y="6.5" width="17.5" height="12"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="10"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -258,7 +258,7 @@
         <scene sceneID="agm-ky-Dd0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PFp-2z-kOC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="챌린지" image="heart" catalog="system" id="rMN-kF-x81"/>
+                    <tabBarItem key="tabBarItem" title="챌린지" image="challengeIcon" id="rMN-kF-x81"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="w76-jy-tHu">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -275,7 +275,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="challengeIcon" width="28" height="28"/>
         <image name="stampSampling" width="124" height="124"/>
         <image name="talkjiOS" width="144" height="164"/>
         <namedColor name="Black1Text">
