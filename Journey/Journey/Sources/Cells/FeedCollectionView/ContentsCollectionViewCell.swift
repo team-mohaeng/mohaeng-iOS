@@ -10,6 +10,11 @@ import SnapKit
 import Then
 import Kingfisher
 
+enum SuperController {
+    case community
+    case myDrawer
+}
+
 class ContentsCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properties
@@ -22,6 +27,7 @@ class ContentsCollectionViewCell: UICollectionViewCell {
     var likeButton = UIButton()
     var likeCountLabel = UILabel()
     var blackTransparentView = UIView()
+    var viewController: SuperController?
     
     // MARK: - init function
     
@@ -153,7 +159,9 @@ class ContentsCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func setData(data: Community) {
+    func setData(data: Community, viewController: SuperController) {
+        // 호출한 뷰컨이 어딘지 알기 위함
+        self.viewController = viewController
         hashTagLabel.text = data.hashtags.joined(separator: " ")
         contentsLabel.text = data.content
         nicknameLabel.text = data.nickname
@@ -181,7 +189,14 @@ class ContentsCollectionViewCell: UICollectionViewCell {
     
     private func addLikeEventNotification(buttonStatus: Bool, cellIndex: Int) {
         let likeInfo = LikeButtonInfo(isButtonClicked: buttonStatus, cellIndex: cellIndex)
-        NotificationCenter.default.post(name: NSNotification.Name("likeButtonClicked"), object: likeInfo)
+        switch viewController {
+        case .community:
+            NotificationCenter.default.post(name: NSNotification.Name("likeButtonClicked"), object: likeInfo)
+        case .myDrawer:
+            NotificationCenter.default.post(name: NSNotification.Name("myDrawerLikeClicked"), object: likeInfo)
+        case .none:
+            return
+        }
     }
     
     private func plusLikeCount() {

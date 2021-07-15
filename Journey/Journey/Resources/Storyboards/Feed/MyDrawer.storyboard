@@ -3,11 +3,17 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoqaHanSansNeo-Regular.otf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--My Drawer View Controller-->
         <scene sceneID="dZO-iT-hyL">
@@ -17,9 +23,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ukv-yO-ePW">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgemptyhappy" translatesAutoresizingMaskIntoConstraints="NO" id="Reb-8C-0zW">
+                                        <rect key="frame" x="127" y="329" width="160" height="160"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="Nlb-bA-Fib"/>
+                                            <constraint firstAttribute="height" constant="160" id="YpC-zS-AZl"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 당신의 소확행을 담아두지 않았군 챌린지를 성공하고 소확행을 작성해보겠어?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGa-F4-ecv">
+                                        <rect key="frame" x="105" y="527" width="204" height="28"/>
+                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                        <color key="textColor" name="black4Text"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="jGa-F4-ecv" firstAttribute="centerX" secondItem="Reb-8C-0zW" secondAttribute="centerX" id="9XM-Gk-twy"/>
+                                    <constraint firstItem="Reb-8C-0zW" firstAttribute="centerY" secondItem="Ukv-yO-ePW" secondAttribute="centerY" id="Ec6-pI-adN"/>
+                                    <constraint firstItem="jGa-F4-ecv" firstAttribute="top" secondItem="Reb-8C-0zW" secondAttribute="bottom" constant="38" id="nCF-At-dbA"/>
+                                    <constraint firstItem="Reb-8C-0zW" firstAttribute="centerX" secondItem="Ukv-yO-ePW" secondAttribute="centerX" id="su6-FD-2OL"/>
+                                </constraints>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="33I-LQ-tdY">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ph7-Nz-irN">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="50" height="80"/>
@@ -46,12 +77,17 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="33I-LQ-tdY" firstAttribute="top" secondItem="NUb-FW-no3" secondAttribute="top" id="BRb-j1-a8U"/>
+                            <constraint firstItem="NUb-FW-no3" firstAttribute="bottom" secondItem="Ukv-yO-ePW" secondAttribute="bottom" id="HZd-CG-nzo"/>
+                            <constraint firstItem="Ukv-yO-ePW" firstAttribute="leading" secondItem="NUb-FW-no3" secondAttribute="leading" id="RfH-eS-ci9"/>
+                            <constraint firstItem="Ukv-yO-ePW" firstAttribute="top" secondItem="NUb-FW-no3" secondAttribute="top" id="RiL-KR-cjG"/>
                             <constraint firstItem="NUb-FW-no3" firstAttribute="bottom" secondItem="33I-LQ-tdY" secondAttribute="bottom" id="fOt-Z2-XpA"/>
+                            <constraint firstItem="NUb-FW-no3" firstAttribute="trailing" secondItem="Ukv-yO-ePW" secondAttribute="trailing" id="hD8-Lh-B7N"/>
                             <constraint firstItem="NUb-FW-no3" firstAttribute="trailing" secondItem="33I-LQ-tdY" secondAttribute="trailing" id="hr5-9U-Hca"/>
                             <constraint firstItem="33I-LQ-tdY" firstAttribute="leading" secondItem="NUb-FW-no3" secondAttribute="leading" id="rLP-8a-ntF"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emptyView" destination="Ukv-yO-ePW" id="Y3F-Tu-oJk"/>
                         <outlet property="myHappinessCollectionView" destination="33I-LQ-tdY" id="sWk-LA-vOy"/>
                     </connections>
                 </viewController>
@@ -61,6 +97,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bgemptyhappy" width="160" height="160"/>
+        <namedColor name="black4Text">
+            <color red="0.67500001192092896" green="0.67500001192092896" blue="0.67500001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

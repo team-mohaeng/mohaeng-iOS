@@ -115,6 +115,7 @@
 		AA1F34E32695D2BD0011B3FA /* WritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34E22695D2BD0011B3FA /* WritingViewController.swift */; };
 		AA1F352526976E670011B3FA /* HashTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F352326976E670011B3FA /* HashTagCollectionViewCell.swift */; };
 		AA1F352626976E670011B3FA /* HashTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1F352426976E670011B3FA /* HashTagCollectionViewCell.xib */; };
+		AA4B7942269F8ACF00B447A1 /* MyDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4B7941269F8ACF00B447A1 /* MyDrawer.swift */; };
 		AAD77084269B710E00EC3598 /* CustomIntensityVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD77083269B710E00EC3598 /* CustomIntensityVisualEffectView.swift */; };
 		AAD7709A269B8B3F00EC3598 /* ContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD77099269B8B3F00EC3598 /* ContentsCollectionViewCell.swift */; };
 		AAD770D1269C6F4B00EC3598 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD770D0269C6F4B00EC3598 /* HomeService.swift */; };
@@ -255,6 +256,7 @@
 		AA1F34E22695D2BD0011B3FA /* WritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingViewController.swift; sourceTree = "<group>"; };
 		AA1F352326976E670011B3FA /* HashTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA1F352426976E670011B3FA /* HashTagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HashTagCollectionViewCell.xib; sourceTree = "<group>"; };
+		AA4B7941269F8ACF00B447A1 /* MyDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDrawer.swift; sourceTree = "<group>"; };
 		AAD77083269B710E00EC3598 /* CustomIntensityVisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIntensityVisualEffectView.swift; sourceTree = "<group>"; };
 		AAD77099269B8B3F00EC3598 /* ContentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		AAD770D0269C6F4B00EC3598 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
@@ -560,6 +562,7 @@
 				AA1F34AC26939E260011B3FA /* AppDate.swift */,
 				5667D4DD269B624C0071D7AD /* Medal.swift */,
 				5678E72C269F77A60049FF0C /* Community.swift */,
+				AA4B7941269F8ACF00B447A1 /* MyDrawer.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -934,6 +937,7 @@
 				56AADEF42694AE2300131D2C /* MedalCollectionViewCell.swift in Sources */,
 				56DCAA532689BD2C0056155A /* Image.swift in Sources */,
 				EC0DB03C269A0FBD00DB7980 /* YearPickerViewController.swift in Sources */,
+				AA4B7942269F8ACF00B447A1 /* MyDrawer.swift in Sources */,
 				ECB61802269492BC005E62B0 /* SignUpSecondViewController.swift in Sources */,
 				AAD770F5269CA8A100EC3598 /* FeedService.swift in Sources */,
 				56DCAA71268A26F80056155A /* UINavigationController+Extension.swift in Sources */,

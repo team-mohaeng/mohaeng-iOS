@@ -15,6 +15,7 @@ public class FeedAPI {
     
     enum ResponseData {
         case community
+        case myDrawer
         case statusCode
     }
     
@@ -31,6 +32,21 @@ public class FeedAPI {
                 let networkResult = self.judgeStatus(by: statusCode, data, responseData: .community)
                 completion(networkResult)
                 
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
+    func getMyDrawer(year: String, month: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+        feedProvider.request(.getMyDrawer(year: year, month: month)) { (result) in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .myDrawer)
+                completion(networkResult)
             case .failure(let err):
                 print(err)
             }
@@ -77,6 +93,8 @@ public class FeedAPI {
             switch responseData {
             case .community:
                 return isValidData(data: data, responseData: responseData)
+            case .myDrawer:
+                return isValidData(data: data, responseData: responseData)
             case .statusCode:
                 return .success(statusCode)
             }
@@ -92,10 +110,19 @@ public class FeedAPI {
     private func isValidData(data: Data, responseData: ResponseData) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
         
-        guard let decodedData = try? decoder.decode(FeedResponseData.self, from: data) else {
+        switch responseData {
+        case .community:
+            guard let decodedData = try? decoder.decode(FeedResponseData.self, from: data) else {
+                return .pathErr
+            }
+            return .success(decodedData.data)
+        case .myDrawer:
+            guard let decodedData = try? decoder.decode(MyDrawerResponseData.self, from: data) else {
+                return .pathErr
+            }
+            return .success(decodedData.data)
+        default:
             return .pathErr
         }
-        
-        return .success(decodedData.data)
     }
 }
