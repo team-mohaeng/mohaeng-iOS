@@ -16,11 +16,16 @@ struct HomeResponseData: Codable {
 // MARK: - HomeData
 struct HomeData: Codable {
     let situation, affinity: Int
-    let course: Course
+    var course: Course?
     
-    init(situation: Int, affinity: Int, course: Course) {
-        self.situation = situation
-        self.affinity = affinity
-        self.course = course
+    enum CodingKeys: String, CodingKey {
+        case situation, affinity, course
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        self.situation = (try? values.decode(Int.self, forKey: .situation)) ?? 0
+        self.affinity = (try? values.decode(Int.self, forKey: .affinity)) ?? 0
+        self.course = (try? values.decode(Course.self, forKey: .course)) ?? nil
     }
 }
