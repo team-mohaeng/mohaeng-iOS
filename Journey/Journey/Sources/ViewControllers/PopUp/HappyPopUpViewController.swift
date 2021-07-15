@@ -14,9 +14,12 @@ class HappyPopUpViewController: UIViewController {
     var mood: Int = 2
     var hasImage: Bool = true
     var image: UIImage?
+    var delegate: PopUpActionDelegate?
     
     // MARK: - @IBOutlet Properties
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var moodImageView: UIImageView!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
@@ -67,12 +70,12 @@ class HappyPopUpViewController: UIViewController {
     
     // MARK: - @IBAction Functions
 
-    @IBAction func touchShareButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func touchShareButton(_ sender: UIButton) {
+        self.delegate?.touchPinkButton(button: sender)
     }
     
-    @IBAction func touchSaveButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func touchSaveButton(_ sender: UIButton) {
+        self.delegate?.touchWhiteButton(button: sender)
     }
     
 }

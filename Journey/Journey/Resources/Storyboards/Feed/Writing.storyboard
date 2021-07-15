@@ -66,6 +66,9 @@
                                 <state key="normal" title="작성완료">
                                     <color key="titleColor" name="White"/>
                                 </state>
+                                <connections>
+                                    <action selector="touchDoneButton:" destination="MzT-HS-eDi" eventType="touchUpInside" id="N7B-HI-tZj"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Jm6-Pu-UHR">
                                 <rect key="frame" x="196.5" y="842" width="21" height="8"/>

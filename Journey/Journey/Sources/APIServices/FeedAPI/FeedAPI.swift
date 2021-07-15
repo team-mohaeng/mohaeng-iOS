@@ -18,6 +18,7 @@ public class FeedAPI {
         case myDrawer
         case feedDetail
         case statusCode
+        case writing
     }
     
     public init() { }
@@ -105,6 +106,40 @@ public class FeedAPI {
         }
     }
     
+    func postFeed(mood: Int, content: String, hashtags: [String],mainImage: UIImage? = nil, isPrivate: Bool, completion: @escaping (NetworkResult<Any>) -> Void) {
+        feedProvider.request(.postFeedContents(mood: mood, content: content, hashtags: hashtags, mainImage: mainImage, isPrivate: isPrivate)) { (result) in
+            switch result {
+            case .success(let response):
+                
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .writing)
+                completion(networkResult)
+                
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
+    func postFeedWithoutImage(mood: Int, content: String, hashtags: [String],mainImage: UIImage? = nil, isPrivate: Bool, completion: @escaping (NetworkResult<Any>) -> Void) {
+        feedProvider.request(.postFeedContentsWithoutImage(mood: mood, content: content, hashtags: hashtags, isPrivate: isPrivate)) { (result) in
+            switch result {
+            case .success(let response):
+                
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .writing)
+                completion(networkResult)
+                
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
     private func judgeStatus(by statusCode: Int, _ data: Data, responseData: ResponseData) -> NetworkResult<Any> {
         switch statusCode {
         case 200:
@@ -114,6 +149,8 @@ public class FeedAPI {
             case .myDrawer:
                 return isValidData(data: data, responseData: responseData)
             case .feedDetail:
+                return isValidData(data: data, responseData: responseData)
+            case .writing:
                 return isValidData(data: data, responseData: responseData)
             case .statusCode:
                 return .success(statusCode)
@@ -143,6 +180,11 @@ public class FeedAPI {
             return .success(decodedData.data)
         case .feedDetail:
             guard let decodedData = try? decoder.decode(FeedDetailResonpseData.self, from: data) else {
+                return .pathErr
+            }
+            return .success(decodedData.data)
+        case .writing:
+            guard let decodedData = try? decoder.decode(WritingResponseData.self, from: data) else {
                 return .pathErr
             }
             return .success(decodedData.data)
