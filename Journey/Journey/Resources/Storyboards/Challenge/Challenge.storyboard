@@ -25,55 +25,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGM-ez-60b">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="FbQ-5i-grU">
-                                        <rect key="frame" x="92.5" y="152" width="229" height="421.5"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgcrsselect" translatesAutoresizingMaskIntoConstraints="NO" id="2A2-47-nwI">
-                                                <rect key="frame" x="0.0" y="0.0" width="229" height="264"/>
-                                            </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="h4c-Xz-3RB">
-                                                <rect key="frame" x="0.0" y="298" width="229" height="123.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osz-us-8pD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="229" height="30.5"/>
-                                                        <string key="text">나와의 농도를 진하게 만들고 싶다고?
-챌린지를 성공하면 끈적해질 수 있어</string>
-                                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
-                                                        <color key="textColor" name="Black3Text"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XH-ot-oiO">
-                                                        <rect key="frame" x="0.0" y="75.5" width="229" height="48"/>
-                                                        <color key="backgroundColor" name="Black2"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="48" id="0ga-7K-aqD"/>
-                                                        </constraints>
-                                                        <state key="normal" title="코스 선택하기">
-                                                            <color key="titleColor" name="White"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="touchSelectCourseButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NZe-l0-2WF"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="7XH-ot-oiO" secondAttribute="trailing" id="Ret-qV-uxu"/>
-                                                    <constraint firstItem="osz-us-8pD" firstAttribute="leading" secondItem="h4c-Xz-3RB" secondAttribute="leading" id="XAo-cR-36V"/>
-                                                    <constraint firstAttribute="trailing" secondItem="osz-us-8pD" secondAttribute="trailing" id="zeo-EH-Xf2"/>
-                                                </constraints>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="FbQ-5i-grU" firstAttribute="centerY" secondItem="eGM-ez-60b" secondAttribute="centerY" id="4TN-fo-WjB"/>
-                                    <constraint firstItem="FbQ-5i-grU" firstAttribute="centerX" secondItem="eGM-ez-60b" secondAttribute="centerX" id="lAv-4k-Ogv"/>
-                                </constraints>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="오늘의 챌린지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4i-6z-CRP">
                                 <rect key="frame" x="24" y="88" width="131.5" height="24"/>
                                 <constraints>
@@ -202,10 +153,10 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BRn-Of-1A8">
-                                <rect key="frame" x="140" y="738.5" width="250" height="64.5"/>
+                                <rect key="frame" x="140" y="741" width="250" height="62"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쟈니의멘트가나옵니다요쟈니의멘트가근데왜자꾸바뀌는데" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pH8-K8-HtA">
-                                        <rect key="frame" x="16" y="17" width="218" height="30.5"/>
+                                        <rect key="frame" x="16" y="17" width="218" height="28"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -220,7 +171,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o0R-vl-jXr">
-                                <rect key="frame" x="155" y="721.5" width="53" height="25"/>
+                                <rect key="frame" x="155" y="724" width="53" height="25"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쟈니" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJI-2j-UjW">
                                         <rect key="frame" x="18" y="6.5" width="17.5" height="12"/>
@@ -247,6 +198,55 @@
                                 <color key="textColor" red="0.67450980392156867" green="0.67450980392156867" blue="0.67450980392156867" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGM-ez-60b">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="FbQ-5i-grU">
+                                        <rect key="frame" x="92.5" y="153" width="229" height="419"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgcrsselect" translatesAutoresizingMaskIntoConstraints="NO" id="2A2-47-nwI">
+                                                <rect key="frame" x="0.0" y="0.0" width="229" height="264"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="h4c-Xz-3RB">
+                                                <rect key="frame" x="0.0" y="298" width="229" height="121"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osz-us-8pD">
+                                                        <rect key="frame" x="0.0" y="0.0" width="229" height="28"/>
+                                                        <string key="text">나와의 농도를 진하게 만들고 싶다고?
+챌린지를 성공하면 끈적해질 수 있어</string>
+                                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                                        <color key="textColor" name="Black3Text"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XH-ot-oiO">
+                                                        <rect key="frame" x="0.0" y="73" width="229" height="48"/>
+                                                        <color key="backgroundColor" name="Black2"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="48" id="0ga-7K-aqD"/>
+                                                        </constraints>
+                                                        <state key="normal" title="코스 선택하기">
+                                                            <color key="titleColor" name="White"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="touchSelectCourseButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NZe-l0-2WF"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="7XH-ot-oiO" secondAttribute="trailing" id="Ret-qV-uxu"/>
+                                                    <constraint firstItem="osz-us-8pD" firstAttribute="leading" secondItem="h4c-Xz-3RB" secondAttribute="leading" id="XAo-cR-36V"/>
+                                                    <constraint firstAttribute="trailing" secondItem="osz-us-8pD" secondAttribute="trailing" id="zeo-EH-Xf2"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="FbQ-5i-grU" firstAttribute="centerY" secondItem="eGM-ez-60b" secondAttribute="centerY" id="4TN-fo-WjB"/>
+                                    <constraint firstItem="FbQ-5i-grU" firstAttribute="centerX" secondItem="eGM-ez-60b" secondAttribute="centerX" id="lAv-4k-Ogv"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -330,7 +330,7 @@
     </scenes>
     <resources>
         <image name="bgcrsselect" width="229" height="264"/>
-        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="challengeIcon" width="28" height="28"/>
         <image name="stampSampling" width="124" height="124"/>
         <image name="talkjiOS" width="144" height="164"/>
         <namedColor name="Black1Text">
