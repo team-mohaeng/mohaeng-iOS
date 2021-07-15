@@ -34,16 +34,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wgW-Ud-Mg9">
-                    <rect key="frame" x="43" y="239" width="328" height="428"/>
+                    <rect key="frame" x="43" y="242" width="328" height="422.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당신도 나와 지독하게 진해지고 싶나 보군 나와 함께 소확행을 작성해보겠어?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ro6-a3-Z5y">
-                            <rect key="frame" x="22" y="284" width="284" height="28"/>
+                            <rect key="frame" x="22" y="276" width="284" height="30.5"/>
                             <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
                             <color key="textColor" name="Black2Text"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQA-8T-EIn">
-                            <rect key="frame" x="28" y="330" width="272" height="44"/>
+                            <rect key="frame" x="28" y="324.5" width="272" height="44"/>
                             <color key="backgroundColor" name="Pink2"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="cTL-c5-kMw"/>
@@ -57,7 +57,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggF-kH-1He">
-                            <rect key="frame" x="28" y="374" width="272" height="44"/>
+                            <rect key="frame" x="28" y="368.5" width="272" height="44"/>
                             <color key="backgroundColor" name="White"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="lmK-bS-mLT"/>
@@ -71,7 +71,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="뽀득뽀득 세균 퇴치 코스 완료" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQs-WO-IFb">
-                            <rect key="frame" x="29" y="212" width="270" height="56"/>
+                            <rect key="frame" x="29" y="212" width="270" height="48"/>
                             <fontDescription key="fontDescription" name="BMHANNA11yrsoldOTF" family="BM HANNA 11yrs old OTF" pointSize="24"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>

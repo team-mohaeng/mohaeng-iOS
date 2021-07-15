@@ -15,6 +15,10 @@ class AnimationPopUpViewController: UIViewController {
     @IBOutlet weak var animationImageView: UIView!
     @IBOutlet weak var pinkButton: UIButton!
     
+    // MARK: - Properties
+    
+    var popUpActionDelegate: AnimationPopUpDelegate?
+    
     // MARK: - View Life Cycle
 
     override func viewDidLoad() {
@@ -32,18 +36,11 @@ class AnimationPopUpViewController: UIViewController {
     
     // MARK: - @IBAction Functions
     
-    @IBAction func touchPinkButton(_ sender: Any) {
-        // let navigationController2 = UINavigationController()
-        
-        // TODO: - delegate로 pop하고 전 VC에서 push
-        
-        let writingStoryboard = UIStoryboard(name: Const.Storyboard.Name.writing, bundle: nil)
-        let writingViewController = writingStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.writing)
-        
-        // navigationController.pushViewController(writingViewController, animated: true)
+    @IBAction func touchPinkButton(_ sender: UIButton) {
+        self.popUpActionDelegate?.touchPinkButtonInAnimation(button: sender)
     }
     
-    @IBAction func touchWhiteButton(_ sender: Any) {
+    @IBAction func touchWhiteButton(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     

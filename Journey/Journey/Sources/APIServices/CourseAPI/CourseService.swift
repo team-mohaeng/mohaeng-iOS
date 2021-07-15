@@ -14,7 +14,7 @@ enum CourseService {
     // 코스 라이브러리 조회
     case getCourseLibrary
     // 코스 진행하기
-    case putCourseProgress(id: String)
+    case putCourseProgress(id: Int)
     // 완료한 코스 메달 조회
     case getMedal
 }

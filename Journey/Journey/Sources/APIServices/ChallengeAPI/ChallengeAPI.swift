@@ -13,6 +13,11 @@ public class ChallengeAPI {
     static let shared = ChallengeAPI()
     var challengeProvider = MoyaProvider<ChallengeService>()
     
+    enum ResponseData {
+        case courses
+        case course
+    }
+    
     public init() { }
     
     func getAllChallenges(completion: @escaping (NetworkResult<Any>) -> Void) {
@@ -53,7 +58,7 @@ public class ChallengeAPI {
         }
     }
     
-    func putTodayChallenge(completion: @escaping (NetworkResult<Any>) -> Void, courseId: Int, challengeId: String) {
+    func putTodayChallenge(completion: @escaping (NetworkResult<Any>) -> Void, courseId: Int, challengeId: Int) {
         challengeProvider.request(.putTodayChallenge(courseId: courseId, challengeId: challengeId)) { (result) in
             switch result {
             case .success(let response):
@@ -70,13 +75,18 @@ public class ChallengeAPI {
         
     }
     
-    
     private func judgeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
+        let decoder = JSONDecoder()
+        
+        guard let decodedData = try? decoder.decode(GenericResponse<CourseData>.self, from: data) else {
+            return .pathErr
+        }
+        
         switch statusCode {
         case 200:
             return isValidData(data: data)
         case 400..<500:
-            return .pathErr
+            return .requestErr(decodedData.message)
         case 500:
             return .serverErr
         default:
@@ -87,7 +97,8 @@ public class ChallengeAPI {
     private func isValidData(data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
         
-        guard let decodedData = try? decoder.decode(CourseResponseData.self, from: data) else {
+        guard let decodedData = try? decoder.decode(GenericResponse<CourseData>.self, from: data) else {
+            print("아니드라..")
             return .pathErr
         }
         
