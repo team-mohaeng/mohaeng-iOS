@@ -52,7 +52,7 @@ class FeedDetailViewController: UIViewController {
     }
     
     private func setData() {
-        if feedInfo.mainImage != nil {
+        if feedInfo.mainImage != "" {
             mainImageView.kf.setImage(with: URL(string: feedInfo.mainImage))
         } else { 
             mainImageView.image = Const.Image.happyfeedX
