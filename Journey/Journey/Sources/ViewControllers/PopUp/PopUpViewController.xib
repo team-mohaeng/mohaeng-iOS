@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -29,6 +28,7 @@
                 <outlet property="pinkButtonBottomConstraint" destination="O9E-Mg-4xI" id="B82-aJ-bOb"/>
                 <outlet property="popUpBgView" destination="YgR-Uh-m6x" id="eg6-dm-gng"/>
                 <outlet property="popUpImageView" destination="bVj-gL-3It" id="gQq-mQ-DrO"/>
+                <outlet property="stampCloseButton" destination="5DT-Wz-vlA" id="wzR-nc-F32"/>
                 <outlet property="titleLabel" destination="L6P-UJ-Jpl" id="zmk-gP-HbB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="whiteButton" destination="2Xe-hI-X8j" id="k0s-zh-kDm"/>
@@ -46,7 +46,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인증하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6P-UJ-Jpl">
                             <rect key="frame" x="29" y="44.999999999999972" width="270" height="28.666666666666671"/>
                             <fontDescription key="fontDescription" name="BMHANNA11yrsoldOTF" family="BM HANNA 11yrs old OTF" pointSize="24"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" name="Black1Text"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="journeyMainSampleImg" translatesAutoresizingMaskIntoConstraints="NO" id="bVj-gL-3It">
@@ -89,11 +89,19 @@
                                 <action selector="touchWhiteButton:" destination="-1" eventType="touchUpInside" id="T03-5K-r84"/>
                             </connections>
                         </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DT-Wz-vlA">
+                            <rect key="frame" x="280" y="4" width="44" height="44"/>
+                            <state key="normal" image="gnbIconX"/>
+                            <connections>
+                                <action selector="touchStampCloseButton:" destination="-1" eventType="touchUpInside" id="7UB-0Y-jwv"/>
+                            </connections>
+                        </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="2Xe-hI-X8j" firstAttribute="top" secondItem="cUv-Ed-G37" secondAttribute="bottom" constant="2" id="2zi-ti-RwI"/>
                         <constraint firstItem="cUv-Ed-G37" firstAttribute="top" secondItem="6qs-4Q-Jxx" secondAttribute="bottom" constant="18" id="4gu-5U-rI4"/>
+                        <constraint firstAttribute="trailing" secondItem="5DT-Wz-vlA" secondAttribute="trailing" constant="4" id="6Xf-xf-Das"/>
                         <constraint firstItem="cUv-Ed-G37" firstAttribute="leading" secondItem="YgR-Uh-m6x" secondAttribute="leading" constant="28" id="7U8-q4-Uo2"/>
                         <constraint firstItem="bVj-gL-3It" firstAttribute="leading" secondItem="YgR-Uh-m6x" secondAttribute="leading" constant="28" id="9li-Pe-tV3"/>
                         <constraint firstItem="L6P-UJ-Jpl" firstAttribute="top" secondItem="YgR-Uh-m6x" secondAttribute="top" constant="45" id="BHr-HN-b9l"/>
@@ -105,6 +113,7 @@
                         <constraint firstAttribute="trailing" secondItem="L6P-UJ-Jpl" secondAttribute="trailing" constant="29" id="SM5-ju-mQk"/>
                         <constraint firstAttribute="trailing" secondItem="bVj-gL-3It" secondAttribute="trailing" constant="28" id="Uw7-b9-RY7"/>
                         <constraint firstItem="bVj-gL-3It" firstAttribute="top" secondItem="L6P-UJ-Jpl" secondAttribute="bottom" constant="23" id="VFz-R4-65n"/>
+                        <constraint firstItem="5DT-Wz-vlA" firstAttribute="top" secondItem="YgR-Uh-m6x" secondAttribute="top" constant="4" id="WU5-LQ-T2S"/>
                         <constraint firstItem="6qs-4Q-Jxx" firstAttribute="leading" secondItem="YgR-Uh-m6x" secondAttribute="leading" constant="22" id="Xxf-0H-1e1"/>
                         <constraint firstItem="2Xe-hI-X8j" firstAttribute="leading" secondItem="YgR-Uh-m6x" secondAttribute="leading" constant="28" id="nid-t8-3ko"/>
                         <constraint firstAttribute="bottom" secondItem="2Xe-hI-X8j" secondAttribute="bottom" constant="10" id="q5x-SH-zbj"/>
@@ -142,7 +151,11 @@
         </view>
     </objects>
     <resources>
+        <image name="gnbIconX" width="44" height="44"/>
         <image name="journeyMainSampleImg" width="310" height="308"/>
+        <namedColor name="Black1Text">
+            <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Black2Text">
             <color red="0.25900000333786011" green="0.25900000333786011" blue="0.25900000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -152,8 +165,5 @@
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

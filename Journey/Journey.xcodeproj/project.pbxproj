@@ -118,7 +118,9 @@
 		AA1F34E32695D2BD0011B3FA /* WritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34E22695D2BD0011B3FA /* WritingViewController.swift */; };
 		AA1F352526976E670011B3FA /* HashTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F352326976E670011B3FA /* HashTagCollectionViewCell.swift */; };
 		AA1F352626976E670011B3FA /* HashTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1F352426976E670011B3FA /* HashTagCollectionViewCell.xib */; };
+		AA45C83026A0B78200C572B6 /* Writing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA45C82F26A0B78200C572B6 /* Writing.swift */; };
 		AA4B7942269F8ACF00B447A1 /* MyDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4B7941269F8ACF00B447A1 /* MyDrawer.swift */; };
+		AA4B794626A046C100B447A1 /* FeedDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4B794526A046C100B447A1 /* FeedDetail.swift */; };
 		AAD77084269B710E00EC3598 /* CustomIntensityVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD77083269B710E00EC3598 /* CustomIntensityVisualEffectView.swift */; };
 		AAD7709A269B8B3F00EC3598 /* ContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD77099269B8B3F00EC3598 /* ContentsCollectionViewCell.swift */; };
 		AAD770D1269C6F4B00EC3598 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD770D0269C6F4B00EC3598 /* HomeService.swift */; };
@@ -262,7 +264,9 @@
 		AA1F34E22695D2BD0011B3FA /* WritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingViewController.swift; sourceTree = "<group>"; };
 		AA1F352326976E670011B3FA /* HashTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA1F352426976E670011B3FA /* HashTagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HashTagCollectionViewCell.xib; sourceTree = "<group>"; };
+		AA45C82F26A0B78200C572B6 /* Writing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Writing.swift; sourceTree = "<group>"; };
 		AA4B7941269F8ACF00B447A1 /* MyDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDrawer.swift; sourceTree = "<group>"; };
+		AA4B794526A046C100B447A1 /* FeedDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetail.swift; sourceTree = "<group>"; };
 		AAD77083269B710E00EC3598 /* CustomIntensityVisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIntensityVisualEffectView.swift; sourceTree = "<group>"; };
 		AAD77099269B8B3F00EC3598 /* ContentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		AAD770D0269C6F4B00EC3598 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
@@ -488,6 +492,7 @@
 		56DCAA422689BC4E0056155A /* AppModels */ = {
 			isa = PBXGroup;
 			children = (
+				AA1F34AC26939E260011B3FA /* AppDate.swift */,
 				56DCAA5F2689BDFF0056155A /* AppModelsExmaple.swift */,
 				EC0DB03E269A3CC200DB7980 /* AppYear.swift */,
 				56F13A4D269C6D840006F9A0 /* User.swift */,
@@ -568,10 +573,11 @@
 				56EAF76026955C0300D36105 /* Home.swift */,
 				56DCAA9E268C51E50056155A /* Challenge.swift */,
 				56DCAAB5268C6F5D0056155A /* Course.swift */,
-				AA1F34AC26939E260011B3FA /* AppDate.swift */,
 				5667D4DD269B624C0071D7AD /* Medal.swift */,
 				5678E72C269F77A60049FF0C /* Community.swift */,
 				AA4B7941269F8ACF00B447A1 /* MyDrawer.swift */,
+				AA4B794526A046C100B447A1 /* FeedDetail.swift */,
+				AA45C82F26A0B78200C572B6 /* Writing.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -991,6 +997,7 @@
 				56DCAA92268AFF3A0056155A /* FirstDayTableViewCell.swift in Sources */,
 				56DCAA512689BD1E0056155A /* Xib.swift in Sources */,
 				56F13A45269C15300006F9A0 /* PasswordService.swift in Sources */,
+				AA45C83026A0B78200C572B6 /* Writing.swift in Sources */,
 				56DCAA552689BD3B0056155A /* Font.swift in Sources */,
 				EC62895C269DFA380041F43A /* SignUpUser.swift in Sources */,
 				56DCAA80268AE1A50056155A /* HomeViewController.swift in Sources */,
@@ -1012,6 +1019,7 @@
 				56DCAA282689BB9B0056155A /* AppDelegate.swift in Sources */,
 				56DCAA2A2689BB9B0056155A /* SceneDelegate.swift in Sources */,
 				EC628958269DF0990041F43A /* SignUpService.swift in Sources */,
+				AA4B794626A046C100B447A1 /* FeedDetail.swift in Sources */,
 				AA1F34BD26956C400011B3FA /* MyDrawerCollectionReusableView.swift in Sources */,
 				5667D4CF269AD1620071D7AD /* NewPasswordViewController.swift in Sources */,
 				56BF369B269EBECB009D8CCC /* EmptyChallengeViewController.swift in Sources */,

@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -23,37 +22,40 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="UndoneCourseCollectionViewCell" reuseIdentifier="UndoneCourseCollectionViewCell" id="gTV-IL-0wX" customClass="UndoneCourseCollectionViewCell" customModule="Journey" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="354" height="306"/>
+            <rect key="frame" x="0.0" y="0.0" width="354" height="322"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="354" height="306"/>
+                <rect key="frame" x="0.0" y="0.0" width="354" height="322"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9MH-Zf-ZLT">
-                        <rect key="frame" x="0.0" y="0.0" width="354" height="306"/>
+                        <rect key="frame" x="0.0" y="0.0" width="354" height="322"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="뽀득뽀득 세균 퇴치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhB-Zq-yiF">
-                                <rect key="frame" x="28" y="36" width="179.5" height="18.5"/>
+                                <rect key="frame" x="28" y="36" width="179.5" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="vnY-fP-Ouk"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="BMHANNA11yrsoldOTF" family="BM HANNA 11yrs old OTF" pointSize="24"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="Black1Text"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="나 쟈니가 인간세계에 처음 도착했을 때 사람들이 청결에 대해 은근히 무심한 것이 신기했쟈니. 내가 사는 별에서는 상상도 할 수 없쟈니." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHc-vq-9d4">
-                                <rect key="frame" x="28" y="74.5" width="298" height="66.5"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="나 쟈니가 인간세계에 처음 도착했을 때 사람들이 청결에 대해 은근히 무심한 것이 신기했쟈니. 내가 사는 별에서는 상상도 할 수 없쟈니.가나다라마바사잖니.아아.그러러러러러" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHc-vq-9d4">
+                                <rect key="frame" x="23" y="80" width="308" height="77"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" systemColor="labelColor"/>
+                                <color key="textColor" name="Black1Text"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="typeHwithColor" translatesAutoresizingMaskIntoConstraints="NO" id="8xM-Ca-p4y">
-                                <rect key="frame" x="139" y="161" width="76" height="76"/>
+                                <rect key="frame" x="139" y="177" width="76" height="76"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="76" id="TF9-Zh-nAh"/>
                                     <constraint firstAttribute="width" constant="76" id="kYW-sq-zGB"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="usk-wx-1yp">
-                                <rect key="frame" x="0.0" y="256" width="354" height="50"/>
+                                <rect key="frame" x="0.0" y="272" width="354" height="50"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="bCW-He-NF1">
                                         <rect key="frame" x="131.5" y="17" width="91" height="16.5"/>
@@ -61,11 +63,12 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코스 시작하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpR-bV-dQb">
                                                 <rect key="frame" x="0.0" y="0.0" width="77" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="14"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="Black1Text"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnSide" translatesAutoresizingMaskIntoConstraints="NO" id="fKL-UD-BOB">
                                                 <rect key="frame" x="79" y="2" width="12" height="12"/>
+                                                <color key="tintColor" name="Black1Text"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
@@ -86,11 +89,12 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="건강" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUf-94-3jk">
                                                 <rect key="frame" x="0.0" y="0.0" width="17.5" height="11"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="10"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="Black1Text"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="courseLibrarySeparator" translatesAutoresizingMaskIntoConstraints="NO" id="B1y-2i-mLc">
                                                 <rect key="frame" x="20.5" y="0.0" width="8" height="11"/>
+                                                <color key="tintColor" name="Black1Text"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="8" id="dq9-Kv-DFG"/>
                                                 </constraints>
@@ -98,7 +102,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dU0-pK-CUA">
                                                 <rect key="frame" x="31.5" y="0.0" width="14.5" height="11"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="10"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="Black1Text"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -116,7 +120,7 @@
                         </subviews>
                         <color key="backgroundColor" name="typeH"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="AHc-vq-9d4" secondAttribute="trailing" constant="28" id="22F-en-ojm"/>
+                            <constraint firstAttribute="trailing" secondItem="AHc-vq-9d4" secondAttribute="trailing" constant="23" id="22F-en-ojm"/>
                             <constraint firstItem="9e7-6V-LcO" firstAttribute="top" secondItem="9MH-Zf-ZLT" secondAttribute="top" constant="41" id="34K-a1-RBv"/>
                             <constraint firstItem="AHc-vq-9d4" firstAttribute="top" secondItem="EhB-Zq-yiF" secondAttribute="bottom" constant="20" id="BZZ-kk-IT9"/>
                             <constraint firstItem="8xM-Ca-p4y" firstAttribute="top" secondItem="AHc-vq-9d4" secondAttribute="bottom" constant="20" id="Btt-3o-6BA"/>
@@ -127,7 +131,7 @@
                             <constraint firstItem="usk-wx-1yp" firstAttribute="leading" secondItem="9MH-Zf-ZLT" secondAttribute="leading" id="fYi-bf-F4E"/>
                             <constraint firstItem="8xM-Ca-p4y" firstAttribute="centerX" secondItem="9MH-Zf-ZLT" secondAttribute="centerX" id="qam-H6-3iD"/>
                             <constraint firstAttribute="bottom" secondItem="usk-wx-1yp" secondAttribute="bottom" id="sqx-ED-Njf"/>
-                            <constraint firstItem="AHc-vq-9d4" firstAttribute="leading" secondItem="9MH-Zf-ZLT" secondAttribute="leading" constant="28" id="wtA-vC-j9F"/>
+                            <constraint firstItem="AHc-vq-9d4" firstAttribute="leading" secondItem="9MH-Zf-ZLT" secondAttribute="leading" constant="23" id="wtA-vC-j9F"/>
                             <constraint firstItem="usk-wx-1yp" firstAttribute="top" secondItem="8xM-Ca-p4y" secondAttribute="bottom" constant="19" id="z6j-hB-mrC"/>
                         </constraints>
                     </view>
@@ -140,7 +144,7 @@
                 <constraint firstItem="9MH-Zf-ZLT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bWi-cG-02o"/>
                 <constraint firstAttribute="trailing" secondItem="9MH-Zf-ZLT" secondAttribute="trailing" id="mRM-XP-FZc"/>
             </constraints>
-            <size key="customSize" width="354" height="221"/>
+            <size key="customSize" width="354" height="237"/>
             <connections>
                 <outlet property="cellBgView" destination="9MH-Zf-ZLT" id="bxm-Pq-lWf"/>
                 <outlet property="courseDaysLabel" destination="dU0-pK-CUA" id="Lc4-pQ-Zz1"/>
@@ -152,21 +156,21 @@
                 <outlet property="startLabel" destination="wpR-bV-dQb" id="JHa-9e-rXv"/>
                 <outlet property="titleLabel" destination="EhB-Zq-yiF" id="Nay-GU-oBh"/>
             </connections>
-            <point key="canvasLocation" x="352.17391304347831" y="162.72321428571428"/>
+            <point key="canvasLocation" x="353.62318840579712" y="156.02678571428569"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="btnSide" width="12" height="12"/>
         <image name="courseLibrarySeparator" width="8" height="8"/>
         <image name="typeHwithColor" width="76" height="76"/>
+        <namedColor name="Black1Text">
+            <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="typeH">
             <color red="1" green="0.94099998474121094" blue="0.89399999380111694" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="typeHD">
             <color red="1" green="0.85500001907348633" blue="0.74099999666213989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

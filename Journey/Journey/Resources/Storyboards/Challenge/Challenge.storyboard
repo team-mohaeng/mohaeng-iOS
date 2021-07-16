@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -31,7 +30,7 @@
                                     <constraint firstAttribute="height" constant="24" id="SUn-WN-VIb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="24"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="Black1Text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pZW-nb-Vls">
@@ -49,7 +48,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="깨끗하게 손 씻기 3회" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rR-xA-DB9">
                                         <rect key="frame" x="70.5" y="74" width="225" height="33"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="26"/>
-                                        <color key="textColor" red="1" green="0.3411764705882353" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" name="pink1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9X-ow-MaY">
@@ -104,7 +103,6 @@
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stampSampling" translatesAutoresizingMaskIntoConstraints="NO" id="uR2-xc-3RU">
                                                         <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="104" id="2SK-pE-fbb"/>
                                                             <constraint firstAttribute="width" secondItem="uR2-xc-3RU" secondAttribute="height" multiplier="1:1" id="dQF-m4-bAc"/>
                                                         </constraints>
                                                     </imageView>
@@ -136,9 +134,7 @@
                                     <constraint firstItem="pzX-TS-HxP" firstAttribute="top" secondItem="pZW-nb-Vls" secondAttribute="top" constant="48" id="BDO-x4-iS4"/>
                                     <constraint firstItem="pzX-TS-HxP" firstAttribute="centerX" secondItem="pZW-nb-Vls" secondAttribute="centerX" id="EaY-nD-t6E"/>
                                     <constraint firstItem="yo7-Qq-5Ki" firstAttribute="leading" secondItem="pZW-nb-Vls" secondAttribute="leading" id="IOm-XH-gCQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="x9X-ow-MaY" secondAttribute="bottom" constant="68" id="NBb-nX-kny"/>
                                     <constraint firstItem="x9X-ow-MaY" firstAttribute="top" secondItem="pZW-nb-Vls" secondAttribute="top" constant="134" id="O4A-mX-PTE"/>
-                                    <constraint firstAttribute="bottom" secondItem="yo7-Qq-5Ki" secondAttribute="bottom" constant="68" id="XSF-wV-gG8"/>
                                     <constraint firstItem="1rR-xA-DB9" firstAttribute="centerX" secondItem="pZW-nb-Vls" secondAttribute="centerX" id="aSZ-Pi-zrj"/>
                                     <constraint firstItem="x9X-ow-MaY" firstAttribute="leading" secondItem="pZW-nb-Vls" secondAttribute="leading" id="lkv-OQ-ge5"/>
                                     <constraint firstItem="yo7-Qq-5Ki" firstAttribute="centerX" secondItem="pZW-nb-Vls" secondAttribute="centerX" id="n1N-c1-rjB"/>
@@ -156,16 +152,16 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BRn-Of-1A8">
-                                <rect key="frame" x="140" y="723.5" width="250" height="79.5"/>
+                                <rect key="frame" x="140" y="738.5" width="250" height="64.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="손을 씻는 것은 청결에 있어서 가장 기본적이지만 잊기 쉬운 ㅓ일이쟈니 가나다라마바사아자차ㅋ" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pH8-K8-HtA">
-                                        <rect key="frame" x="16" y="17" width="218" height="45.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쟈니의멘트가나옵니다요쟈니의멘트가근데왜자꾸바뀌는데" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pH8-K8-HtA">
+                                        <rect key="frame" x="16" y="17" width="218" height="30.5"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="Black1Text"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.82745098039215681" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="PinkMood"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="pH8-K8-HtA" secondAttribute="bottom" constant="17" id="0at-rl-BHc"/>
                                     <constraint firstItem="pH8-K8-HtA" firstAttribute="leading" secondItem="BRn-Of-1A8" secondAttribute="leading" constant="16" id="621-Te-umJ"/>
@@ -174,12 +170,12 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o0R-vl-jXr">
-                                <rect key="frame" x="155" y="706.5" width="53" height="25"/>
+                                <rect key="frame" x="155" y="721.5" width="53" height="25"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쟈니" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJI-2j-UjW">
                                         <rect key="frame" x="17.5" y="6" width="18.5" height="13"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="10"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -198,29 +194,84 @@
                                     <constraint firstAttribute="height" constant="27" id="hRC-Sq-EDK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="10"/>
-                                <color key="textColor" red="0.67450980392156867" green="0.67450980392156867" blue="0.67450980392156867" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" name="black4Text"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGM-ez-60b">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="FbQ-5i-grU">
+                                        <rect key="frame" x="92.5" y="152" width="229" height="421.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgcrsselect" translatesAutoresizingMaskIntoConstraints="NO" id="2A2-47-nwI">
+                                                <rect key="frame" x="0.0" y="0.0" width="229" height="264"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="h4c-Xz-3RB">
+                                                <rect key="frame" x="0.0" y="298" width="229" height="123.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osz-us-8pD" userLabel="나와의 농도를 진하게 만들고 싶다고? 챌린지를 성공하면 끈적해질 수 있어">
+                                                        <rect key="frame" x="0.0" y="0.0" width="229" height="30.5"/>
+                                                        <string key="text">나와의 농도를 진하게 만들고 싶다고?
+챌린지를 성공하면 끈적해질 수 있어</string>
+                                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                                        <color key="textColor" name="Black3Text"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XH-ot-oiO">
+                                                        <rect key="frame" x="0.0" y="75.5" width="229" height="48"/>
+                                                        <color key="backgroundColor" name="Black2"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="48" id="0ga-7K-aqD"/>
+                                                        </constraints>
+                                                        <state key="normal" title="코스 선택하기">
+                                                            <color key="titleColor" name="White"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="touchSelectCourseButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NZe-l0-2WF"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="7XH-ot-oiO" secondAttribute="trailing" id="Ret-qV-uxu"/>
+                                                    <constraint firstItem="osz-us-8pD" firstAttribute="leading" secondItem="h4c-Xz-3RB" secondAttribute="leading" id="XAo-cR-36V"/>
+                                                    <constraint firstAttribute="trailing" secondItem="osz-us-8pD" secondAttribute="trailing" id="zeo-EH-Xf2"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="FbQ-5i-grU" firstAttribute="centerY" secondItem="eGM-ez-60b" secondAttribute="centerY" id="4TN-fo-WjB"/>
+                                    <constraint firstItem="FbQ-5i-grU" firstAttribute="centerX" secondItem="eGM-ez-60b" secondAttribute="centerX" id="lAv-4k-Ogv"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pZW-nb-Vls" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="43G-uM-aug"/>
                             <constraint firstItem="vGa-mA-gpg" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="4i7-oy-DBP"/>
+                            <constraint firstItem="vGa-mA-gpg" firstAttribute="top" secondItem="yo7-Qq-5Ki" secondAttribute="bottom" constant="18" id="63c-a8-hPF"/>
                             <constraint firstItem="aWm-8Z-OQK" firstAttribute="top" secondItem="vGa-mA-gpg" secondAttribute="bottom" constant="23" id="J19-vp-0VS"/>
                             <constraint firstItem="aWm-8Z-OQK" firstAttribute="top" secondItem="pZW-nb-Vls" secondAttribute="bottom" id="J2O-7v-qTf"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="BRn-Of-1A8" secondAttribute="bottom" constant="10" id="K8P-Ig-y2l"/>
                             <constraint firstItem="BRn-Of-1A8" firstAttribute="leading" secondItem="aWm-8Z-OQK" secondAttribute="trailing" constant="-20" id="KRw-yL-umz"/>
+                            <constraint firstItem="eGM-ez-60b" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="KjO-bZ-KUq"/>
+                            <constraint firstItem="vGa-mA-gpg" firstAttribute="top" secondItem="x9X-ow-MaY" secondAttribute="bottom" constant="18" id="LyK-bj-VzW"/>
                             <constraint firstItem="aWm-8Z-OQK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="NX2-ec-foa"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="BRn-Of-1A8" secondAttribute="trailing" constant="24" id="Omq-Fi-C4N"/>
                             <constraint firstItem="pZW-nb-Vls" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="QHc-BT-Rqd"/>
                             <constraint firstItem="e4i-6z-CRP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="URh-0k-QT2"/>
                             <constraint firstItem="pZW-nb-Vls" firstAttribute="top" secondItem="e4i-6z-CRP" secondAttribute="bottom" constant="35" id="Yoy-11-Bdz"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pZW-nb-Vls" secondAttribute="trailing" constant="24" id="ZUQ-xK-Odc"/>
+                            <constraint firstItem="eGM-ez-60b" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="amm-OF-xDo"/>
                             <constraint firstItem="o0R-vl-jXr" firstAttribute="leading" secondItem="BRn-Of-1A8" secondAttribute="leading" constant="15" id="jfM-ve-vK1"/>
                             <constraint firstItem="e4i-6z-CRP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="mSA-9U-Y6y"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="aWm-8Z-OQK" secondAttribute="bottom" id="tvB-mG-c9p"/>
+                            <constraint firstItem="eGM-ez-60b" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="vfy-aT-bGh"/>
                             <constraint firstItem="BRn-Of-1A8" firstAttribute="top" secondItem="o0R-vl-jXr" secondAttribute="bottom" constant="-8" id="yrg-vH-dkt"/>
+                            <constraint firstItem="eGM-ez-60b" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="z69-5J-T57"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qaQ-ua-hNL"/>
@@ -230,9 +281,11 @@
                         <outlet property="challengeSubTitleLabel" destination="pzX-TS-HxP" id="9Ht-9G-G8A"/>
                         <outlet property="challengeTitleLabel" destination="1rR-xA-DB9" id="1HV-y1-k5c"/>
                         <outlet property="challengeToStampViewBottom" destination="J19-vp-0VS" id="Ocm-zg-7cX"/>
+                        <outlet property="emptyView" destination="eGM-ez-60b" id="2dr-Wz-07t"/>
                         <outlet property="journeyDescriptionView" destination="BRn-Of-1A8" id="cLQ-dn-Why"/>
                         <outlet property="journeyImageView" destination="aWm-8Z-OQK" id="hU1-SW-eOP"/>
                         <outlet property="journeyNameView" destination="o0R-vl-jXr" id="1sQ-JN-RHX"/>
+                        <outlet property="selectCourseButton" destination="7XH-ot-oiO" id="DkU-LO-u5x"/>
                         <outlet property="stackviewToChallengeLabel" destination="J19-vp-0VS" id="zHy-9K-2GD"/>
                         <outlet property="stampImageView1" destination="wFl-SY-TGe" id="GF7-m5-HTw"/>
                         <outlet property="stampImageView2" destination="O25-vF-Tus" id="dnX-AM-woX"/>
@@ -258,7 +311,7 @@
         <scene sceneID="agm-ky-Dd0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PFp-2z-kOC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="챌린지" image="heart" catalog="system" id="rMN-kF-x81"/>
+                    <tabBarItem key="tabBarItem" title="챌린지" image="challengeIcon" id="rMN-kF-x81"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="w76-jy-tHu">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -275,17 +328,33 @@
         </scene>
     </scenes>
     <resources>
-        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="bgcrsselect" width="229" height="264"/>
+        <image name="challengeIcon" width="28" height="28"/>
         <image name="stampSampling" width="124" height="124"/>
         <image name="talkjiOS" width="144" height="164"/>
         <namedColor name="Black1Text">
             <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="Black2">
+            <color red="0.2199999988079071" green="0.2199999988079071" blue="0.2199999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Black3Text">
+            <color red="0.49799999594688416" green="0.49799999594688416" blue="0.49799999594688416" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Pink2">
             <color red="1" green="0.52899998426437378" blue="0.6470000147819519" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="PinkMood">
+            <color red="1" green="0.82700002193450928" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="black4Text">
+            <color red="0.67500001192092896" green="0.67500001192092896" blue="0.67500001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="pink1">
+            <color red="1" green="0.34099999070167542" blue="0.56099998950958252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

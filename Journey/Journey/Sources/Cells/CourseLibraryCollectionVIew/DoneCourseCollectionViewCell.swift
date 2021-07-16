@@ -17,8 +17,7 @@ class DoneCourseCollectionViewCell: UICollectionViewCell {
             coursePropertyLabel.text = "\(courseViewModel.course.property)"
             courseDaysLabel.text = "\(courseViewModel.course.totalDays)일"
             descriptionTextView.text = courseViewModel.course.courseDescription
-            
-            // TODO: - property 따라 이미지, 배경색 변경
+            setProperty(by: courseViewModel.course.property)
         }
     }
     
@@ -41,7 +40,6 @@ class DoneCourseCollectionViewCell: UICollectionViewCell {
         
         initViewRounding()
         initTextView()
-        addActionToStartCourseView()
     }
     
     // MARK: - Functions
@@ -53,15 +51,7 @@ class DoneCourseCollectionViewCell: UICollectionViewCell {
     
     private func initTextView() {
         descriptionTextView.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    }
-    
-    private func addActionToStartCourseView() {
-        let startViewGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(touchStartCourseView(_:)))
-        startCourseView.addGestureRecognizer(startViewGesture)
-    }
-    
-    @objc func touchStartCourseView(_ gesture: UITapGestureRecognizer) {
-          // 동작
+        descriptionTextView.textContainer.maximumNumberOfLines = 0
     }
     
     func setButtonTitle(doingCourse: Bool) {
@@ -71,5 +61,42 @@ class DoneCourseCollectionViewCell: UICollectionViewCell {
             startLabel.text = "코스 시작하기"
         }
     }
-
+    
+    // set property functions
+    
+    func setProperty(by property: Int) {
+        switch property {
+        case Property.health.rawValue:
+            setProperty0()
+        case Property.memory.rawValue:
+            setProperty1()
+        case Property.observation.rawValue:
+            setProperty2()
+        case Property.challenge.rawValue:
+            setProperty3()
+        default:
+            return
+        }
+    }
+    
+    // 0: 건강 1: 기억 2: 관찰 3: 도전
+    func setProperty0() {
+        coursePropertyLabel.text = "건강"
+        propertyImageView.image = Const.Image.typeHforLibraryGrey
+    }
+    
+    func setProperty1() {
+        coursePropertyLabel.text = "기억"
+        propertyImageView.image = Const.Image.typeMforLibraryGrey
+    }
+    
+    func setProperty2() {
+        coursePropertyLabel.text = "관찰"
+        propertyImageView.image = Const.Image.typeSforLibraryGrey
+    }
+    
+    func setProperty3() {
+        coursePropertyLabel.text = "도전"
+        propertyImageView.image = Const.Image.typeCforLibraryGrey
+    }
 }
