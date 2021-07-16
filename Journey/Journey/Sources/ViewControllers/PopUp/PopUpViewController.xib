@@ -41,28 +41,28 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YgR-Uh-m6x">
-                    <rect key="frame" x="43" y="230.33333333333334" width="328" height="445.66666666666663"/>
+                    <rect key="frame" x="43" y="229" width="328" height="448"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인증하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6P-UJ-Jpl">
-                            <rect key="frame" x="29" y="44.999999999999972" width="270" height="28.666666666666671"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인증하기" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6P-UJ-Jpl">
+                            <rect key="frame" x="29" y="45" width="270" height="29"/>
                             <fontDescription key="fontDescription" name="BMHANNA11yrsoldOTF" family="BM HANNA 11yrs old OTF" pointSize="24"/>
                             <color key="textColor" name="Black1Text"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="journeyMainSampleImg" translatesAutoresizingMaskIntoConstraints="NO" id="bVj-gL-3It">
-                            <rect key="frame" x="28" y="96.666666666666657" width="272" height="186.99999999999997"/>
+                            <rect key="frame" x="28" y="96.999999999999986" width="272" height="186.66666666666663"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="bVj-gL-3It" secondAttribute="height" multiplier="233:160" id="9Wr-Ez-rVY"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="챌린지를 성공해서 소확행을 작성할 수 있어.  나와 함께 쓰러갈래, 쟈기?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qs-4Q-Jxx">
-                            <rect key="frame" x="22" y="299.66666666666663" width="284" height="28"/>
+                            <rect key="frame" x="22" y="299.66666666666663" width="284" height="30.333333333333314"/>
                             <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
                             <color key="textColor" name="Black2Text"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUv-Ed-G37">
-                            <rect key="frame" x="28" y="345.66666666666663" width="272" height="44"/>
+                            <rect key="frame" x="28" y="348" width="272" height="44"/>
                             <color key="backgroundColor" name="Pink2"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="uTs-gg-Xh3"/>
@@ -76,7 +76,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Xe-hI-X8j">
-                            <rect key="frame" x="28" y="391.66666666666663" width="272" height="44"/>
+                            <rect key="frame" x="28" y="394" width="272" height="44"/>
                             <color key="backgroundColor" name="White"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="OHd-Tt-E71"/>
@@ -123,7 +123,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1PY-Du-VKW">
-                    <rect key="frame" x="128.66666666666666" y="683" width="156.99999999999997" height="41"/>
+                    <rect key="frame" x="128.66666666666666" y="684" width="156.99999999999997" height="41"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="157" id="Lg0-PO-ccS"/>
                         <constraint firstAttribute="height" constant="41" id="YMy-rj-ZW9"/>

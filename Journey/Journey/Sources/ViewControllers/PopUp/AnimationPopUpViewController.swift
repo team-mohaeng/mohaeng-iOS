@@ -20,13 +20,14 @@ class AnimationPopUpViewController: UIViewController {
     // MARK: - Properties
     
     var popUpActionDelegate: AnimationPopUpDelegate?
+    var titleLabelText = ""
     
     // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         initViewRounding()
-
+        titleLabel.text = titleLabelText
         popUpView.alpha = 0.0
         
     }
