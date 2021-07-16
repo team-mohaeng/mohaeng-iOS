@@ -124,6 +124,7 @@
                         <outlet property="emailTextField" destination="GZh-YO-r6P" id="N0f-Bf-WzD"/>
                         <outlet property="nextButton" destination="6lM-AR-6s3" id="gLU-H7-Hk0"/>
                         <outlet property="passwordCheckErrorLabel" destination="NGP-w7-xuU" id="Woe-mo-SQa"/>
+                        <outlet property="passwordLabel" destination="Vzx-nN-o6L" id="XKW-0h-K93"/>
                         <outlet property="passwordTextField" destination="53R-c3-5Kt" id="fcs-f2-80u"/>
                     </connections>
                 </viewController>

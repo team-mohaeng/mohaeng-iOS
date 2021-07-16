@@ -52,9 +52,9 @@ class SignUpThirdViewController: UIViewController {
         inputNicknameTextField.borderStyle = .none
         let border = CALayer()
         border.frame = CGRect(x: 0, y: inputNicknameTextField.frame.size.height-1, width: inputNicknameTextField.frame.width, height: 1)
-        border.backgroundColor = UIColor.lightGray.cgColor
+        border.backgroundColor = UIColor.Grey1Line.cgColor
         inputNicknameTextField.layer.addSublayer((border))
-        inputNicknameTextField.textColor = UIColor.black
+        inputNicknameTextField.textColor = UIColor.Black1Text
     }
     
     private func makeButton3Round() {
@@ -64,21 +64,21 @@ class SignUpThirdViewController: UIViewController {
     func showNickNameBlankError() {
         nicknameErrorLabel.isHidden = false
         nicknameErrorLabel.text = "사용 가능하지 않은 닉네임입니다"
-        nicknameErrorLabel.textColor = UIColor.red
+        nicknameErrorLabel.textColor = UIColor.Red
         isNickNameError = true
     }
     
     func hideNickNameError() {
         nicknameErrorLabel.isHidden = false
         nicknameErrorLabel.text = "사용가능한 닉네임입니다"
-        nicknameErrorLabel.textColor = UIColor.green
+        nicknameErrorLabel.textColor = UIColor.Green
         isNickNameError = false
     }
     
     func showNickNameFormatError() {
         nicknameErrorLabel.isHidden = false
         nicknameErrorLabel.text = "사용 가능하지 않은 닉네임입니다"
-        nicknameErrorLabel.textColor = UIColor.red
+        nicknameErrorLabel.textColor = UIColor.Red
         isNickNameError = true
     }
     
