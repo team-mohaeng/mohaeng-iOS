@@ -52,7 +52,11 @@ class FeedDetailViewController: UIViewController {
     }
     
     private func setData() {
-        mainImageView.kf.setImage(with: URL(string: feedInfo.mainImage))
+        if feedInfo.mainImage != nil {
+            mainImageView.kf.setImage(with: URL(string: feedInfo.mainImage))
+        } else { 
+            mainImageView.image = Const.Image.happyfeedX
+        }
         feedContentsLabel.text = feedInfo.content
         feedNicknameLabel.text = feedInfo.nickname
         likeCountLabel.text = String(feedInfo.likeCount)
@@ -81,7 +85,7 @@ class FeedDetailViewController: UIViewController {
         if hashTagList.count > 3 {
             joinedHashTag = hashTagList[0..<3].joined(separator: " ")
             joinedHashTag.append("\n")
-            joinedHashTag.append(hashTagList[3..<5].joined(separator: " "))
+            joinedHashTag.append(hashTagList[3..<hashTagList.count].joined(separator: " "))
             hashTagLabel.text = joinedHashTag
         } else {
             hashTagLabel.text = hashTagList.joined(separator: " ")
