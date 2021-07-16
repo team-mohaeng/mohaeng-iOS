@@ -159,7 +159,7 @@ extension FeedDetailViewController: PopUpActionDelegate {
     }
     
     func touchWhiteButton(button: UIButton) {
-        deleteFeed(postId: feedInfo.postID)
+        // deleteFeed(postId: feedInfo.postID)
         
         let feedStoryboard = UIStoryboard(name: Const.Storyboard.Name.feed, bundle: nil)
         guard let feedViewController = feedStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.feed) as? FeedViewController else { return }
@@ -224,20 +224,20 @@ extension FeedDetailViewController {
         }
     }
     
-    func deleteFeed(postId: Int) {
-        FeedAPI.shared.deleteFeed(postId: postId) { (response) in
-            switch response {
-            case  .success(_):
-                break
-            case .requestErr(let message):
-                print("requestErr", message)
-            case .pathErr:
-                print(".pathErr")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
-            }
-        }
-    }
+//    func deleteFeed(postId: Int) {
+//        FeedAPI.shared.deleteFeed(postId: postId) { (response) in
+//            switch response {
+//            case  .success(_):
+//                break
+//            case .requestErr(let message):
+//                print("requestErr", message)
+//            case .pathErr:
+//                print(".pathErr")
+//            case .serverErr:
+//                print("serverErr")
+//            case .networkFail:
+//                print("networkFail")
+//            }
+//        }
+//    }
 }

@@ -26,6 +26,7 @@ class SignUpThirdViewController: UIViewController {
         makeButton3Round()
         chgangeTextAttribute()
         setDelegation()
+        initNavigationBar()
     }
     
     override func viewDidLayoutSubviews() {
@@ -41,6 +42,11 @@ class SignUpThirdViewController: UIViewController {
     }
     
     // MARK: - Functions
+    
+    private func initNavigationBar() {
+        self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
+        navigationItem.title = "회원가입"
+    }
     
     private func makeUnderLineinputNicknameTextField() {
         inputNicknameTextField.borderStyle = .none
