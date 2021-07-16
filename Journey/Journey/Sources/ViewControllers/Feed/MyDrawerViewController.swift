@@ -65,7 +65,7 @@ class MyDrawerViewController: UIViewController {
         guard let year = currentDate?.getYearToString() else { return }
         guard let month = currentDate?.getMonth() else { return }
         
-        getMyDrawer(year: year, month: "07")
+        getMyDrawer(year: year, month: convertMonthFormat(month: month))
     }
     
     private func setDelegation() {
@@ -124,7 +124,6 @@ class MyDrawerViewController: UIViewController {
         self.activityIndicator.removeFromSuperview()
     }
     
-    
     @objc func dataReceived(notification: NSNotification) {
         guard let selectedDate = self.selectedDate else { return }
         self.presentDatePickerView(year: selectedDate.getYear(), month: selectedDate.getMonth())
@@ -153,9 +152,9 @@ extension MyDrawerViewController: DatePickerViewDelegate {
         NotificationCenter.default.post(name: NSNotification.Name("datePickerSelected"), object: selectedDate)
         
         guard let year = selectedDate?.getYearToString() else { return }
-        guard let month = selectedDate?.getMonthToString() else { return }
+        guard let month = selectedDate?.getMonth() else { return }
         
-        getMyDrawer(year: year, month: month)
+        getMyDrawer(year: year, month: convertMonthFormat(month: month))
         myHappinessCollectionView.reloadData()
     }
 }
