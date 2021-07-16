@@ -35,6 +35,7 @@ class ChallengeViewController: UIViewController {
     @IBOutlet weak var journeyImageView: UIImageView!
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var selectCourseButton: UIButton!
+    @IBOutlet weak var allConfettiStackView: UIStackView!
     
     // MARK: - Properties
     
@@ -69,10 +70,8 @@ class ChallengeViewController: UIViewController {
         initNavigationBar()
         getTodayChallenge()
         initJourneyView()
-        print("viewWillAppear")
         initInitialStamp(totalStamp: totalStamp)
-        print("토탈은")
-        print(totalStamp)
+        allConfettiStackView.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -80,7 +79,6 @@ class ChallengeViewController: UIViewController {
         stampWidth.constant = triangleStampView.frame.height / 2
         underTriangleStackViewHeight.constant = triangleStampView.frame.height / 2
         initJourneyView()
-        print("viewDidAppear")
     }
     
     // MARK: - Functions
@@ -338,6 +336,7 @@ class ChallengeViewController: UIViewController {
             self.stampStatusLabel.text = "오늘의 챌린지 성공!\n내일 새로운 챌린지로 다시 만나요!"
             // 챌린지 description label 바꾸기
             self.challengeDescriptionLabel.text = data.course.challenges[self.currentChallengeIdx].successDescription
+            self.allConfettiStackView.isHidden = false
         } else {
             // 쟈니 이미지 바꾸기
             self.journeyImageView.image = Const.Image.talkjiOS
@@ -529,14 +528,20 @@ extension ChallengeViewController {
                         if currentStamp == totalStamp {
                             // 챌린지 완료 팝업
                             self.presentCompletePopUp()
-//                            self.presentStampPopUp(description: data.course.challenges[self.currentChallengeIdx].userMents[currentStamp-1])
+                            
                             // 쟈니 이미지 바꾸기
                             self.journeyImageView.image = Const.Image.talkjhappyiOS
                             // VC에 축하 이미지 넣기
+                            self.allConfettiStackView.isHidden = false
                             // 설명 label 축하 메세지로 바꾸기
                             self.stampStatusLabel.text = "오늘의 챌린지 성공!\n내일 새로운 챌린지로 다시 만나요!"
                             // 챌린지 description label 바꾸기
                             self.challengeDescriptionLabel.text = data.course.challenges[self.currentChallengeIdx].successDescription
+                            
+                            DispatchQueue.main.async {
+                                self.challengeDescriptionLabel.invalidateIntrinsicContentSize()
+                                self.initJourneyView()
+                            }
                         }
                         
                         // 코스 완료 확인 : totalDays == 방금 완료한 challenge id인지 확인하기
