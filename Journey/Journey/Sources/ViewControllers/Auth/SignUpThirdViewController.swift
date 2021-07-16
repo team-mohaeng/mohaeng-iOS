@@ -37,7 +37,7 @@ class SignUpThirdViewController: UIViewController {
     @IBAction func touchNextButton(_ sender: Any) {
         
         postSignUp()
-        checkNickName()
+        
     }
     
     // MARK: - Functions
@@ -183,14 +183,11 @@ extension SignUpThirdViewController: UITextFieldDelegate {
     // DidEndEditing -> 손을 떼고 나서 호출
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         
-        if textField == inputNicknameTextField {
-            self.isNickNameError = checkNickName()
-        }
-        if isNickNameError == true {
-            self.touchNextPage3Button.backgroundColor = UIColor.HotPink
+        if checkNickName() {
+            self.touchNextPage3Button.backgroundColor = UIColor.Pink2
             touchNextPage3Button.isEnabled = true
         } else {
-            self.touchNextPage3Button.backgroundColor = UIColor.CourseBgGray
+            self.touchNextPage3Button.backgroundColor = UIColor.Grey1Bg
             touchNextPage3Button.isEnabled = false
         }
     }
