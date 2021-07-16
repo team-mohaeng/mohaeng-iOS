@@ -10,7 +10,7 @@ import UIKit
 class LoginViewController: UIViewController {
     
     // MARK: - @IBOutlet Properties
-  
+    
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var loginImageView: UIImageView!
     @IBOutlet weak var emailTextField: UITextField!
@@ -18,8 +18,20 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailStackView: UIStackView!
     @IBOutlet weak var passwordStackView: UIStackView!
     
-    // MARK: - View Life Cycle
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        activityIndicator.center = CGPoint(x: self.view.center.x, y: self.view.center.y - self.topbarHeight)
+        activityIndicator.hidesWhenStopped = false
+        activityIndicator.style = UIActivityIndicatorView.Style.medium
+        activityIndicator.startAnimating()
+        return activityIndicator
+    }()
     
+    var backgroundView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+    
+    // MARK: - View Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         makeButtonRound()
@@ -48,6 +60,20 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - Functions
+    
+    private func attachActivityIndicator() {
+        backgroundView.backgroundColor = UIColor.white
+        self.view.addSubview(backgroundView)
+        self.view.addSubview(self.activityIndicator)
+    }
+    
+    private func detachActivityIndicator() {
+        if self.activityIndicator.isAnimating {
+            self.activityIndicator.stopAnimating()
+        }
+        self.backgroundView.removeFromSuperview()
+        self.activityIndicator.removeFromSuperview()
+    }
     
     private func makeButtonRound() {
         loginButton.makeRounded(radius: 20)
@@ -94,17 +120,18 @@ extension LoginViewController {
         guard let password = passwordTextField.text else {
             return
         }
-    
+        
         guard let email = emailTextField.text else {
             return
         }
-        
-       LoginAPI.shared.postSignIn(completion: { (response) in
+        self.attachActivityIndicator()
+        LoginAPI.shared.postSignIn(completion: { (response) in
             switch response {
             case .success(let jwt):
                 if let data = jwt as? JwtData {
                     UserDefaults.standard.setValue(data.jwt, forKey: "jwtToken")
                     print(data.jwt)
+                    self.detachActivityIndicator()
                     self.presentHomeViewController()
                 }
             case .requestErr(let message):
