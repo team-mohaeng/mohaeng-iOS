@@ -76,7 +76,16 @@ extension Const {
         static let imgFaceGraphicIn2 = UIImage(named: "imgFaceGraphicIn2")
         static let imgFaceGraphicIn3 = UIImage(named: "imgFaceGraphicIn3")
         
-        // joureny detail default image
+        // journey detail default image
         static let happyfeedX = UIImage(named: "happyfeedX")
+        
+        // journey popup image
+        static let bgGraphicAlready = UIImage(named: "bgGraphicAlready")
+        static let bgGrahpicHappy = UIImage(named: "bgGrahpicHappy")
+        static let bgGrahpicStart = UIImage(named: "bgGraphicStart")
+        static let bgGraphicYet = UIImage(named: "bgGraphicYet")
+        static let bgPopOk = UIImage(named: "bgpopok")
+        static let bgPopGiveUp = UIImage(named: "bgpopgiveup")
+        static let bgStartCourse = UIImage(named: "bgStartCourse")
     }
 }

@@ -369,6 +369,7 @@ class ChallengeViewController: UIViewController {
         
         stampPopUp.pinkButton?.setTitle("완료", for: .normal)
         stampPopUp.descriptionLabel?.text = description
+        stampPopUp.image = Const.Image.bgPopOk
     }
     
     // 챌린지 완료 팝업

@@ -50,8 +50,7 @@ class FeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        getAllFeed(sort: "like")
+    
         initNavigationBar()
         initFrameViewLayout()
         setDelegation()
@@ -208,6 +207,7 @@ class FeedViewController: UIViewController {
             disablePopUp.titleLabel.text = "쟈기, 이미 작성했잖아!"
             disablePopUp.descriptionLabel.text = "오늘은 행복한 일이 많았나보군.\n아쉽지만 하루에 하나만 쓸 수 있어.\n당신의 내일을 기대하도록 하지!"
             disablePopUp.pinkButton?.setTitle("알았어", for: .normal)
+            disablePopUp.image = Const.Image.bgGraphicAlready
         case 2:
             moodStatus = 2
             disablePopUp.popUpUsage = .oneButtonWithClose
@@ -217,6 +217,7 @@ class FeedViewController: UIViewController {
             disablePopUp.titleLabel.text = "챌린지를 시작해보겠어?"
             disablePopUp.descriptionLabel.text = "소확행은 오늘의 챌린지를\n성공해야 작성할 수 있어.\n나와 함께 챌린지를 수행해보겠어?"
             disablePopUp.pinkButton?.setTitle("코스 선택하러 가기", for: .normal)
+            disablePopUp.image = Const.Image.bgGraphicYet
         case 3:
             moodStatus = 3
             disablePopUp.popUpUsage = .oneButtonWithClose
@@ -226,6 +227,7 @@ class FeedViewController: UIViewController {
             disablePopUp.titleLabel.text = "이런, 아직 작성할 수 없어!"
             disablePopUp.descriptionLabel.text = "소확행은 오늘의 챌린지를\n 성공해야 작성할 수 있어.\n나와 함께 챌린지를 수행해보겠어?"
             disablePopUp.pinkButton?.setTitle("오늘의 챌린지로 이동하기", for: .normal)
+            disablePopUp.image = Const.Image.bgGrahpicStart
         default:
             break
         }
