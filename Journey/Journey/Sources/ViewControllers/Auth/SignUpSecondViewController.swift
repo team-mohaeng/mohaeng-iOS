@@ -45,7 +45,6 @@ class SignUpSecondViewController: UIViewController {
                 if yearLabel.text == "출생연도 선택" {
                     touchNextPage2Button.backgroundColor = UIColor.Grey1Bg
                     touchNextPage2Button.isEnabled = false
-
                 } else {
                     touchNextPage2Button.backgroundColor = UIColor.Pink2
                     touchNextPage2Button.isEnabled = true
@@ -58,50 +57,44 @@ class SignUpSecondViewController: UIViewController {
                 } else {
                     touchNextPage2Button.backgroundColor = UIColor.Pink2
                     touchNextPage2Button.isEnabled = true
-
                 }
-                
             }
         } else {
             changeWomanGreyColor()
-            print("1")
             touchNextPage2Button.backgroundColor = UIColor.Grey1Bg
             touchNextPage2Button.isEnabled = false
-            
         }
     }
     @IBAction func touchManButton(_ sender: Any) {
         manButton.isSelected = !manButton.isSelected
         if manButton.isSelected == true {
             changeManPinkColor()
-            
             if womanButton.isSelected == true {
                 changeWomanGreyColor()
                 if yearLabel.text == "출생연도 선택" {
                     touchNextPage2Button.backgroundColor = UIColor.Grey1Bg
-                    print("e")
                     touchNextPage2Button.isEnabled = false
                     
                 } else {
                     touchNextPage2Button.backgroundColor = UIColor.Pink2
                     touchNextPage2Button.isEnabled = true
-                    print("f")
+                    
                 }
             } else {
                 if yearLabel.text == "출생연도 선택" {
                     touchNextPage2Button.backgroundColor = UIColor.Grey1Bg
-                    print("g")
+                    
                     touchNextPage2Button.isEnabled = false
                 } else {
                     touchNextPage2Button.backgroundColor = UIColor.Pink2
                     touchNextPage2Button.isEnabled = true
-                    print("h")
+                    
                 }
             }
             
         } else {
             changeManGreyColor()
-            print("2")
+            
             touchNextPage2Button.backgroundColor = UIColor.Grey1Bg
             touchNextPage2Button.isEnabled = false
             
@@ -166,7 +159,7 @@ class SignUpSecondViewController: UIViewController {
         self.currentYear = AppYear()
         self.selectedYear = AppYear()
         self.modalYearView = YearPickerViewController()
-
+        
     }
     
     private func presentYearPickerView(year: Int) {
