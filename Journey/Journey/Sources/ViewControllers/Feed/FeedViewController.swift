@@ -29,6 +29,7 @@ class FeedViewController: UIViewController {
     var filterView = UIView()
     var filterLabel = UILabel()
     var filterImageView = UIImageView()
+    var disablePopUp: PopUpViewController = PopUpViewController()
     
     // MARK: - @IBOutlet Properties
     
@@ -41,7 +42,7 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getAllFeed(sort: "like")
+//        getAllFeed(sort: "like")
         initNavigationBar()
         initFrameViewLayout()
         setDelegation()
@@ -52,6 +53,7 @@ class FeedViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        getAllFeed(sort: "like")
         self.navigationController?.hideNavigationBar()
     }
     
@@ -164,8 +166,7 @@ class FeedViewController: UIViewController {
     
     @objc func pushToMoodViewController(notification: NSNotification) {
         // 0:소확행 작성 가능 1: 소확행 이미 작성, 2: 챌린지 시작 전, 3:챌린지 성공 전
-        var disablePopUp: PopUpViewController = PopUpViewController()
-        disablePopUp = PopUpViewController(nibName: "PopUpViewController", bundle: nil)
+        disablePopUp = PopUpViewController(nibName: Const.Xib.Name.popUp, bundle: nil)
         disablePopUp.modalPresentationStyle = .overCurrentContext
         disablePopUp.modalTransitionStyle = .crossDissolve
         switch isEnableWriting {
@@ -175,7 +176,9 @@ class FeedViewController: UIViewController {
 
             self.navigationController?.pushViewController(nextVC, animated: true)
         case 1:
+            moodStatus = 1
             disablePopUp.popUpUsage = .oneButton
+            disablePopUp.popUpActionDelegate = self
             tabBarController?.present(disablePopUp, animated: true, completion: nil)
             
             disablePopUp.titleLabel.text = "쟈기, 이미 작성했잖아!"
@@ -306,19 +309,25 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
 
 extension FeedViewController: PopUpActionDelegate {
     func touchPinkButton(button: UIButton) {
-        if moodStatus == 2 {
-            print("axzzdsds")
+        switch moodStatus {
+        case 1:
+            self.disablePopUp.dismiss(animated: true, completion: nil)
+        case 2:
             let cousreStoryboard = UIStoryboard(name: Const.Storyboard.Name.courseLibrary, bundle: nil)
             guard let courseViewController = cousreStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.courseLibrary) as? CourseLibraryViewController else { return }
             
-            self.dismiss(animated: true, completion: nil)
+            courseViewController.doingCourse = false
+            
+            self.disablePopUp.dismiss(animated: true, completion: nil)
             self.navigationController?.pushViewController(courseViewController, animated: true)
-        } else if moodStatus == 3 {
+        case 3:
             let challengeStoryboard = UIStoryboard(name: Const.Storyboard.Name.challenge, bundle: nil)
             guard let challengeViewController = challengeStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.challenge) as? ChallengeViewController else { return }
             
-            self.dismiss(animated: true, completion: nil)
+            self.disablePopUp.dismiss(animated: true, completion: nil)
             self.navigationController?.pushViewController(challengeViewController, animated: true)
+        default:
+            break
         }
     }
     

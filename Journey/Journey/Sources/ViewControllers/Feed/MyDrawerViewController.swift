@@ -52,8 +52,9 @@ class MyDrawerViewController: UIViewController {
         self.modalDateView?.datePickerDataDelegate = self
         
         guard let year = currentDate?.getYearToString() else { return }
-        guard let month = currentDate?.getMonthToString() else { return }
-        getMyDrawer(year: year, month: month)
+        guard let month = currentDate?.getMonth() else { return }
+        
+        getMyDrawer(year: year, month: "07")
     }
     
     private func setDelegation() {
@@ -87,6 +88,14 @@ class MyDrawerViewController: UIViewController {
         self.myDrawer = data.myDrawerSmallSatisfactions
         checkEmptyView()
         myHappinessCollectionView.reloadData()
+    }
+    
+    private func convertMonthFormat(month: Int) -> String {
+        if String(month).count < 2 {
+            return "0\(month)"
+        } else {
+            return String(month)
+        }
     }
     
     @objc func dataReceived(notification: NSNotification) {

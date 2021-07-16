@@ -34,7 +34,11 @@ class HappyPopUpViewController: UIViewController {
 
         initViewRounding()
         setMoodImage(by: mood)
-        setUploadedImage(hasImage: true, image: Const.Image.typeMwithColor)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setUploadedImage(hasImage: true, image: image)
     }
     
     // MARK: - Functions

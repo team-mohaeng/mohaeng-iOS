@@ -17,9 +17,16 @@ class DatePickerViewController: UIViewController {
     
     var year: Int? = 0
     var month: Int? = 0
+    var day: Int? = 0
     
     var yearList: [String] = []
     var monthList: [String] = []
+    var dayList: [[String]] = [
+        (1...31).map {String($0)},
+        (1...30).map {String($0)},
+        (1...29).map {String($0)},
+        (1...28).map {String($0)}
+    ]
     
     var currentMonthList: [String] = []
     var currentDayList: [String] = []
@@ -78,6 +85,7 @@ class DatePickerViewController: UIViewController {
         yearList = (2000...currentDate.getYear()).map({String($0)})
         monthList = (1...12).map({String($0)})
         currentMonthList = (1...currentDate.getMonth()).map({String($0)})
+        currentDayList = (1...currentDate.getDay()).map({String($0)})
     }
     
     private func initAttribute() {
@@ -112,11 +120,13 @@ class DatePickerViewController: UIViewController {
     
     @IBAction func touchApplyButton(_ sender: Any) {
         guard let unwrappedYear = self.year,
-              let unwrappedMonth = self.month else {
+              let unwrappedMonth = self.month,
+              let upwrappedDay = self.day else {
             return
         }
         let selectedDate = AppDate(year: unwrappedYear,
                                    month: unwrappedMonth)
+//                                   day: upwrappedDay)
         let stringMonth = String(format: "%02d", selectedDate.getMonth())
         self.datePickerDataDelegate?.passData("\(selectedDate.getYear()). \(stringMonth)")
         dismissDatePicker()

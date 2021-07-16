@@ -225,19 +225,19 @@ extension FeedDetailViewController {
     }
     
     func deleteFeed(postId: Int) {
-        FeedAPI.shared.deleteFeed(postId: postId) { (response) in
-            switch response {
-            case  .success(_):
-                break
-            case .requestErr(let message):
-                print("requestErr", message)
-            case .pathErr:
-                print(".pathErr")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
-            }
-        }
+//        FeedAPI.shared.deleteFeed(postId: postId) { (response) in
+//            switch response {
+//            case  .success(_):
+//                break
+//            case .requestErr(let message):
+//                print("requestErr", message)
+//            case .pathErr:
+//                print(".pathErr")
+//            case .serverErr:
+//                print("serverErr")
+//            case .networkFail:
+//                print("networkFail")
+//            }
+//        }
     }
 }
