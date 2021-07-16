@@ -13,7 +13,13 @@ class MoodViewController: UIViewController {
     @IBOutlet weak var sosoDayButton: UIButton!
     @IBOutlet weak var fineDayButton: UIButton!
     @IBOutlet weak var goodDayButton: UIButton!
+    @IBOutlet weak var sosoDayLabel: UILabel!
+    @IBOutlet weak var findDayLabel: UILabel!
+    @IBOutlet weak var goodDayLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
+    
+    // MARK: - Properties
+    var moodStatus: Int = 0
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -39,39 +45,69 @@ class MoodViewController: UIViewController {
         nextButton.makeRounded(radius: nextButton.frame.height / 2)
     }
     
+    private func setOpacityLow(button: UIButton, label: UILabel) {
+        button.alpha = 0.1
+        label.alpha = 0.1
+    }
+    
+    private func setOpacityHigh(button: UIButton, label: UILabel) {
+        button.alpha = 1.0
+        label.alpha = 1.0
+    }
+    
     // MARK: - @IBAction Properties
     @IBAction func touchSosoDayButton(_ sender: Any) {
         nextButton.isEnabled = true
         nextButton.alpha = 1.0
         
-        sosoDayButton.setImage(UIImage(named: "sampleMoodImg"), for: .normal)
-        fineDayButton.setImage(UIImage(named: "sampleMoodUnselectedImg"), for: .normal)
-        goodDayButton.setImage(UIImage(named: "sampleMoodUnselectedImg"), for: .normal)
+        sosoDayButton.setImage(UIImage(named: "imgFaceGraphic1circle"), for: .normal)
+        fineDayButton.setImage(UIImage(named: "imgFaceGraphicIn1"), for: .normal)
+        goodDayButton.setImage(UIImage(named: "imgFaceGraphicIn3"), for: .normal)
+        
+        setOpacityHigh(button: sosoDayButton, label: sosoDayLabel)
+        setOpacityLow(button: fineDayButton, label: findDayLabel)
+        setOpacityLow(button: goodDayButton, label: goodDayLabel)
+        
+        moodStatus = 0
     }
     
     @IBAction func touchFineDayButton(_ sender: Any) {
         nextButton.isEnabled = true
         nextButton.alpha = 1.0
         
-        sosoDayButton.setImage(UIImage(named: "sampleMoodUnselectedImg"), for: .normal)
-        fineDayButton.setImage(UIImage(named: "sampleMoodImg"), for: .normal)
-        goodDayButton.setImage(UIImage(named: "sampleMoodUnselectedImg"), for: .normal)
+        sosoDayButton.setImage(UIImage(named: "imgFaceGraphicIn2"), for: .normal)
+        fineDayButton.setImage(UIImage(named: "imgFaceGraphic2circle"), for: .normal)
+        goodDayButton.setImage(UIImage(named: "imgFaceGraphicIn3"), for: .normal)
+        
+        setOpacityHigh(button: fineDayButton, label: findDayLabel)
+        setOpacityLow(button: sosoDayButton, label: sosoDayLabel)
+        setOpacityLow(button: goodDayButton, label: goodDayLabel)
+        
+        moodStatus = 1
     }
     
     @IBAction func touchGoodDayButton(_ sender: Any) {
         nextButton.isEnabled = true
         nextButton.alpha = 1.0
         
-        sosoDayButton.setImage(UIImage(named: "sampleMoodUnselectedImg"), for: .normal)
-        fineDayButton.setImage(UIImage(named: "sampleMoodUnselectedImg"), for: .normal)
-        goodDayButton.setImage(UIImage(named: "sampleMoodImg"), for: .normal)
+        sosoDayButton.setImage(UIImage(named: "imgFaceGraphicIn2"), for: .normal)
+        fineDayButton.setImage(UIImage(named: "imgFaceGraphicIn1"), for: .normal)
+        goodDayButton.setImage(UIImage(named: "imgFaceGraphic3circle"), for: .normal)
+        
+        setOpacityHigh(button: goodDayButton, label: goodDayLabel)
+        setOpacityLow(button: fineDayButton, label: findDayLabel)
+        setOpacityLow(button: sosoDayButton, label: sosoDayLabel)
+        
+        moodStatus = 2
     }
     
     @IBAction func touchNextButton(_ sender: Any) {
         let writingStoryboard = UIStoryboard(name: Const.Storyboard.Name.writing, bundle: nil)
-        guard let nextVC = writingStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.writing) as? WritingViewController else { return }
+        guard let writingViewController = writingStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.writing) as? WritingViewController else { return }
         
-        self.navigationController?.pushViewController(nextVC, animated: true)
+        writingViewController.moodStatus = moodStatus
+        
+        self.navigationController?.pushViewController(writingViewController, animated: true)
     }
     
 }

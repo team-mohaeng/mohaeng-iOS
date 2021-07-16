@@ -66,5 +66,14 @@ extension Const {
         // heart image
         static let heartImg = UIImage(named: "icnHeart")
         static let heartFullImg = UIImage(named: "icnHeartfull")
+        
+        // journey mood image
+        static let imgFaceGraphic1circle = UIImage(named: "imgFaceGraphic1circle")
+        static let imgFaceGraphic2circle = UIImage(named: "imgFaceGraphic2circle")
+        static let imgFaceGraphic3circle = UIImage(named: "imgFaceGraphic3circle")
+        
+        static let imgFaceGraphicIn1 = UIImage(named: "imgFaceGraphicIn1")
+        static let imgFaceGraphicIn2 = UIImage(named: "imgFaceGraphicIn2")
+        static let imgFaceGraphicIn3 = UIImage(named: "imgFaceGraphicIn3")
     }
 }
