@@ -54,6 +54,11 @@ extension Const {
         static let typeMchallengeC = UIImage(named: "typeMchallengeC")!
         static let typeSchallengeC = UIImage(named: "typeSchallengeC")!
         
+        static let typeCforLibraryGrey = UIImage(named: "typeCforLibraryGrey")!
+        static let typeHforLibraryGrey = UIImage(named: "typeHforLibraryGrey")!
+        static let typeMforLibraryGrey = UIImage(named: "typeMforLibraryGrey")!
+        static let typeSforLibraryGrey = UIImage(named: "typeSforLibraryGrey")!
+        
         // challenge journey image
         static let talkjiOS = UIImage(named: "talkjiOS")
         static let talkjhappyiOS = UIImage(named: "talkjhappyiOS")
