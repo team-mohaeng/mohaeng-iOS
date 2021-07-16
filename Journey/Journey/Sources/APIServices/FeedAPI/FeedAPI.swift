@@ -18,6 +18,7 @@ public class FeedAPI {
         case myDrawer
         case feedDetail
         case statusCode
+        case delete
     }
     
     public init() { }
@@ -105,6 +106,23 @@ public class FeedAPI {
         }
     }
     
+    func deleteFeed(postId: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
+        feedProvider.request(.deleteFeed(postId: postId)) { (result) in
+            switch result {
+            case .success(let response):
+                
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .delete)
+                completion(networkResult)
+                
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
     private func judgeStatus(by statusCode: Int, _ data: Data, responseData: ResponseData) -> NetworkResult<Any> {
         switch statusCode {
         case 200:
@@ -115,6 +133,8 @@ public class FeedAPI {
                 return isValidData(data: data, responseData: responseData)
             case .feedDetail:
                 return isValidData(data: data, responseData: responseData)
+            case .delete:
+                return .success(statusCode)
             case .statusCode:
                 return .success(statusCode)
             }

@@ -15,6 +15,7 @@ enum FeedService {
     case postFeedContents(moodImage: String, moodText: String, content: String, hashtags: [String], mainImage: String, isPrivate: Bool)
     case putFeedLike(postId: Int)
     case putFeedUnlike(postId: Int)
+    case deleteFeed(postId: Int)
 }
 
 extension FeedService: TargetType {
@@ -36,6 +37,8 @@ extension FeedService: TargetType {
             return Const.URL.happyURL + Const.URL.likeURL + "/\(postId)"
         case .putFeedUnlike(let postId):
             return Const.URL.happyURL + Const.URL.unlikeURL + "/\(postId)"
+        case .deleteFeed(let postId):
+            return Const.URL.happyURL + Const.URL.deleteURL + "/\(postId)"
         }
     }
     
@@ -53,6 +56,8 @@ extension FeedService: TargetType {
             return .put
         case .putFeedUnlike(_):
             return .put
+        case .deleteFeed(_):
+            return .delete
         }
     }
     
@@ -62,7 +67,7 @@ extension FeedService: TargetType {
     
     var task: Task {
         switch self {
-        case .getAllFeed(_), .getMyDrawer(_, _), .getFeedDetail(_), .putFeedUnlike(_), .putFeedLike(_):
+        case .getAllFeed(_), .getMyDrawer(_, _), .getFeedDetail(_), .putFeedUnlike(_), .putFeedLike(_), .deleteFeed(_):
             return .requestPlain
         case .postFeedContents(let moodImage, let moodText, let content, let hashtags, let mainImage, let isPrivate):
             return .requestParameters(parameters: [
