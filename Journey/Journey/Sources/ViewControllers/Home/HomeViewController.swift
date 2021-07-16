@@ -39,11 +39,14 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        getHomeInfo()
+        
         initNavigationBar()
         initAttributes()
         setIndicatorPosition()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getHomeInfo()
     }
     
     // MARK: - @IBAction Functions
