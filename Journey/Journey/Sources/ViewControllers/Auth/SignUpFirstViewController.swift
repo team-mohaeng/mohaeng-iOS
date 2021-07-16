@@ -33,6 +33,7 @@ class SignUpFirstViewController: UIViewController {
         initNavigationBar()
         initErrorLabel()
         makeButtonRound()
+        hideTextField()
     }
     
     override func viewDidLayoutSubviews() {
@@ -171,6 +172,18 @@ class SignUpFirstViewController: UIViewController {
         isPasswordCheckError = false
     }
     
+    func hideTextField() {
+        passwordCheckErrorLabel.isHidden = true
+        passwordTextField.isHidden = true
+        checkingpasswordTextField.isHidden = true
+    }
+    
+    func presentIsHidden() {
+        passwordCheckErrorLabel.isHidden = false
+        passwordTextField.isHidden = false
+        checkingpasswordTextField.isHidden = false
+        
+    }
     private func pushSignUpSecondViewController() {
         
         let signupSecondStoryboard = UIStoryboard(name: Const.Storyboard.Name.signUpSecond, bundle: nil)
@@ -195,6 +208,7 @@ class SignUpFirstViewController: UIViewController {
             } else {
                 // Email이 정규식에 맞을 때
                 hideEmailError()
+                presentIsHidden()
                 return true
             }
         } else {
@@ -270,13 +284,12 @@ extension SignUpFirstViewController: UITextFieldDelegate {
             self.isPasswordError = checkPassword()
             self.isPasswordCheckError = checkPasswordCheck()
         }
-        
         // 모두 true -> 시작하기 버튼색 바꾸기
         if isEmailError && isPasswordError && isPasswordCheckError {
-            self.nextButton.backgroundColor = UIColor.HotPink
+            self.nextButton.backgroundColor = UIColor.Pink2
             nextButton.isEnabled = true
         } else {
-            self.nextButton.backgroundColor = UIColor.CourseBgGray
+            self.nextButton.backgroundColor = UIColor.Grey1Bg
             nextButton.isEnabled = false
         }
     }

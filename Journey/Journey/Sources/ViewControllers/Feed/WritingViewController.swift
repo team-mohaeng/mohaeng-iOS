@@ -8,7 +8,7 @@
 import UIKit
 
 class WritingViewController: UIViewController {
-
+    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var writingTextView: UITextView!
@@ -21,15 +21,18 @@ class WritingViewController: UIViewController {
     
     // MARK: - Properties
     
-    var currentTextfieldBottom: CGFloat = 0.0
     var hashTagList: [String] = []
     var hashTagPopUp: PopUpViewController = PopUpViewController()
+    var donePopUp: HappyPopUpViewController = HappyPopUpViewController()
+    var moodStatus: Int = 0
+    var doneStatus: Bool = false
+    var uploadImage: UIImageView?
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         initNavigationBar()
         registerXib()
@@ -51,7 +54,7 @@ class WritingViewController: UIViewController {
         let hashTagCollectionViewCell = UINib(nibName: "HashTagCollectionViewCell", bundle: nil)
         hashTagCollectionView.register(hashTagCollectionViewCell, forCellWithReuseIdentifier: "HashTagCollectionViewCell")
     }
-
+    
     private func setDelegation() {
         hashTagCollectionView.dataSource = self
         hashTagCollectionView.delegate = self
@@ -116,9 +119,25 @@ class WritingViewController: UIViewController {
     
     @IBAction func touchPhotoRemoveButton(_ sender: Any) {
         photoUploadImageView.image = UIImage(named: "btnPhotoUp")
+        uploadImage?.image = nil
         photoRemoveButton.isHidden = true
     }
-
+    
+    @IBAction func touchDoneButton(_ sender: Any) {
+        doneStatus = true
+        
+        donePopUp = HappyPopUpViewController(nibName: Const.Xib.Name.happyPopUp, bundle: nil)
+        donePopUp.modalPresentationStyle = .overCurrentContext
+        donePopUp.modalTransitionStyle = .crossDissolve
+        donePopUp.delegate = self
+        tabBarController?.present(donePopUp, animated: true, completion: nil)
+        
+        donePopUp.titleLabel.text = "소확행 작성 완료!"
+        donePopUp.descriptionLabel.text = "당신의 행복이 하나 더 늘었군.\n다른 쟈기들과 함께하면 기쁨이 배가 될거야.\n함께 행복을 공유해보겠어?"
+        donePopUp.shareButton?.setTitle("피드에 공유하기", for: .normal)
+        donePopUp.saveButton?.setTitle("내 서랍장에만 저장하기", for: .normal)
+    }
+    
 }
 
 // 갤러리에서 이미지 가져오기
@@ -127,6 +146,7 @@ extension WritingViewController: UIImagePickerControllerDelegate, UINavigationCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
             photoUploadImageView.image = image
+            uploadImage?.image = image
         }
         
         photoRemoveButton.isHidden = false
@@ -171,7 +191,7 @@ extension WritingViewController: UITextViewDelegate {
         }
         
         // 텍스트뷰 글자수 카운트
-        writingCountLabel.text = String(writingTextView.text?.count ?? 0) + "자"
+        writingCountLabel.text = String(writingTextView.text?.count ?? 0)
     }
     
     // 텍스트뷰 글자수 제한
@@ -195,20 +215,22 @@ extension WritingViewController: UITextFieldDelegate {
     
     // 키보드에서 return 선택 시 해시태그 추가, 5개 초과 시 팝업
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if hashTagList.count < 5 {
-            hashTagList.append(textField.text!)
-            textField.text = ""
-            hashTagCollectionView.reloadData()
-        } else {
-            hashTagPopUp = PopUpViewController(nibName: "PopUpViewController", bundle: nil)
-            hashTagPopUp.modalPresentationStyle = .overCurrentContext
-            hashTagPopUp.modalTransitionStyle = .crossDissolve
-            hashTagPopUp.popUpUsage = .noTitle
-            hashTagPopUp.popUpActionDelegate = self
-            tabBarController?.present(hashTagPopUp, animated: true, completion: nil)
-            
-            hashTagPopUp.pinkButton?.setTitle("확인", for: .normal)
-            hashTagPopUp.descriptionLabel?.text = "태그는 최대 5개까지\n 입력할 수 있어요!"
+        if textField == hashTagTextField {
+            if hashTagList.count < 5 {
+                hashTagList.append("#\(textField.text!)")
+                textField.text = ""
+                hashTagCollectionView.reloadData()
+            } else {
+                hashTagPopUp = PopUpViewController(nibName: "PopUpViewController", bundle: nil)
+                hashTagPopUp.modalPresentationStyle = .overCurrentContext
+                hashTagPopUp.modalTransitionStyle = .crossDissolve
+                hashTagPopUp.popUpUsage = .noTitle
+                hashTagPopUp.popUpActionDelegate = self
+                tabBarController?.present(hashTagPopUp, animated: true, completion: nil)
+                
+                hashTagPopUp.pinkButton?.setTitle("확인", for: .normal)
+                hashTagPopUp.descriptionLabel?.text = "태그는 최대 5개까지\n 입력할 수 있어요!"
+            }
         }
         return true
     }
@@ -248,15 +270,68 @@ extension WritingViewController: UICollectionViewDataSource {
         
         return cell
     }
-
+    
 }
 
 extension WritingViewController: PopUpActionDelegate {
+    
     func touchPinkButton(button: UIButton) {
-        self.hashTagPopUp.dismiss(animated: true, completion: nil)
+        if !doneStatus {
+            self.hashTagPopUp.dismiss(animated: true, completion: nil)
+        } else {
+            if uploadImage?.image != nil {
+                postFeed(mood: moodStatus, content: writingTextView.text, hashtags: hashTagList, mainImage: uploadImage!.image!, isPrivate: false)
+            } else {
+                postFeedWithoutImage(mood: moodStatus, content: writingTextView.text, hashtags: hashTagList, isPrivate: false)
+            }
+            self.donePopUp.dismiss(animated: true, completion: nil)
+        }
     }
     
     func touchWhiteButton(button: UIButton) {
-        return
+        if uploadImage?.image != nil {
+            postFeed(mood: moodStatus, content: writingTextView.text, hashtags: hashTagList, mainImage: uploadImage!.image!, isPrivate: true)
+        } else {
+            postFeedWithoutImage(mood: moodStatus, content: writingTextView.text, hashtags: hashTagList, isPrivate: true)
+        }
+    }
+    
+}
+
+extension WritingViewController {
+    
+    func postFeed(mood: Int, content: String, hashtags: [String], mainImage: UIImage, isPrivate: Bool) {
+        FeedAPI.shared.postFeed(mood: mood, content: content, hashtags: hashtags, mainImage: mainImage, isPrivate: isPrivate) { (response) in
+            switch response {
+            case .success(_):
+                break
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+    
+    func postFeedWithoutImage(mood: Int, content: String, hashtags: [String], isPrivate: Bool) {
+        FeedAPI.shared.postFeedWithoutImage(mood: mood, content: content, hashtags: hashtags, isPrivate: isPrivate) { (response) in
+            switch response {
+            case .success(_):
+                break
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
     }
 }
+

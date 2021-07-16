@@ -54,6 +54,11 @@ extension Const {
         static let typeMchallengeC = UIImage(named: "typeMchallengeC")!
         static let typeSchallengeC = UIImage(named: "typeSchallengeC")!
         
+        static let typeCforLibraryGrey = UIImage(named: "typeCforLibraryGrey")!
+        static let typeHforLibraryGrey = UIImage(named: "typeHforLibraryGrey")!
+        static let typeMforLibraryGrey = UIImage(named: "typeMforLibraryGrey")!
+        static let typeSforLibraryGrey = UIImage(named: "typeSforLibraryGrey")!
+        
         // challenge journey image
         static let talkjiOS = UIImage(named: "talkjiOS")
         static let talkjhappyiOS = UIImage(named: "talkjhappyiOS")
@@ -61,5 +66,14 @@ extension Const {
         // heart image
         static let heartImg = UIImage(named: "icnHeart")
         static let heartFullImg = UIImage(named: "icnHeartfull")
+        
+        // journey mood image
+        static let imgFaceGraphic1circle = UIImage(named: "imgFaceGraphic1circle")
+        static let imgFaceGraphic2circle = UIImage(named: "imgFaceGraphic2circle")
+        static let imgFaceGraphic3circle = UIImage(named: "imgFaceGraphic3circle")
+        
+        static let imgFaceGraphicIn1 = UIImage(named: "imgFaceGraphicIn1")
+        static let imgFaceGraphicIn2 = UIImage(named: "imgFaceGraphicIn2")
+        static let imgFaceGraphicIn3 = UIImage(named: "imgFaceGraphicIn3")
     }
 }
