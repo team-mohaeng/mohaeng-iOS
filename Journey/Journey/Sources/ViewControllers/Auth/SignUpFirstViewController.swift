@@ -281,10 +281,10 @@ extension SignUpFirstViewController: UITextFieldDelegate {
         }
         // 모두 true -> 시작하기 버튼색 바꾸기
         if isEmailError && isPasswordError && isPasswordCheckError {
-            self.nextButton.backgroundColor = UIColor.HotPink
+            self.nextButton.backgroundColor = UIColor.Pink2
             nextButton.isEnabled = true
         } else {
-            self.nextButton.backgroundColor = UIColor.CourseBgGray
+            self.nextButton.backgroundColor = UIColor.Grey1Bg
             nextButton.isEnabled = false
         }
     }
