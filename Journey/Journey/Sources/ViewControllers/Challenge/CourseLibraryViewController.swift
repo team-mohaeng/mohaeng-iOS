@@ -18,6 +18,18 @@ class CourseLibraryViewController: UIViewController {
     var askPopUp: PopUpViewController = PopUpViewController()
     var selectedCourseId = 0
     
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+            let activityIndicator = UIActivityIndicatorView()
+            activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+            activityIndicator.center = CGPoint(x: self.view.center.x, y: self.view.center.y - self.topbarHeight)
+            activityIndicator.hidesWhenStopped = false
+            activityIndicator.style = UIActivityIndicatorView.Style.medium
+            activityIndicator.startAnimating()
+            return activityIndicator
+        }()
+
+    var backgroundView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var courseLibraryCollectionView: UICollectionView!
@@ -68,6 +80,7 @@ class CourseLibraryViewController: UIViewController {
     
     private func updateUI() {
         self.courseLibraryCollectionView.reloadData()
+        self.detachActivityIndicator()
     }
     
     private func presentAskPopUp(doingCourse: Bool) {
@@ -94,6 +107,20 @@ class CourseLibraryViewController: UIViewController {
             askPopUp.pinkButton.setTitle("좋아!", for: .normal)
             askPopUp.whiteButton.setTitle("다시 생각해볼게", for: .normal)
         }
+    }
+    
+    private func attachActivityIndicator() {
+        backgroundView.backgroundColor = UIColor.white
+        self.view.addSubview(backgroundView)
+        self.view.addSubview(self.activityIndicator)
+    }
+    
+    private func detachActivityIndicator() {
+        if self.activityIndicator.isAnimating {
+            self.activityIndicator.stopAnimating()
+        }
+        self.backgroundView.removeFromSuperview()
+        self.activityIndicator.removeFromSuperview()
     }
 }
 
@@ -247,6 +274,7 @@ extension CourseLibraryViewController: UICollectionViewDelegateFlowLayout {
 
 extension CourseLibraryViewController {
     func startCourse(courseId: Int) {
+        self.attachActivityIndicator()
         CourseAPI.shared.putCourseProgress(completion: { (response) in
             switch response {
             case .success(let course):
