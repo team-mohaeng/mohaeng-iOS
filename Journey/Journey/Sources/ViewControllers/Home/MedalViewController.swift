@@ -15,6 +15,18 @@ class MedalViewController: UIViewController {
     var maxSuccessCount = 0
     var courses = [Course(id: 0, title: "", courseDescription: "", totalDays: 0, situation: 0, property: 0, challenges: [])]
     
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+            let activityIndicator = UIActivityIndicatorView()
+            activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+            activityIndicator.center = CGPoint(x: self.view.center.x, y: self.view.center.y - self.topbarHeight)
+            activityIndicator.hidesWhenStopped = false
+            activityIndicator.style = UIActivityIndicatorView.Style.medium
+            activityIndicator.startAnimating()
+            return activityIndicator
+        }()
+
+    var backgroundView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+    
     // MARK: - @IBOutlet Properties
 
     @IBOutlet weak var medalCollectionView: UICollectionView!
@@ -51,8 +63,23 @@ class MedalViewController: UIViewController {
         self.maxSuccessCount = data.maxSuccessCount
         self.courses = data.courses
         self.medalCollectionView.reloadData()
+        self.detachActivityIndicator()
     }
-
+    
+    private func attachActivityIndicator() {
+        backgroundView.backgroundColor = UIColor.white
+        self.view.addSubview(backgroundView)
+        self.view.addSubview(self.activityIndicator)
+    }
+    
+    private func detachActivityIndicator() {
+        if self.activityIndicator.isAnimating {
+            self.activityIndicator.stopAnimating()
+        }
+        self.backgroundView.removeFromSuperview()
+        self.activityIndicator.removeFromSuperview()
+    }
+    
 }
 
 extension MedalViewController: UICollectionViewDelegateFlowLayout {
@@ -106,6 +133,7 @@ extension MedalViewController: UICollectionViewDataSource {
 extension MedalViewController {
     
     func getMedal() {
+        self.attachActivityIndicator()
         CourseAPI.shared.getMedal { (response) in
             
             switch response {
