@@ -75,5 +75,8 @@ extension Const {
         static let imgFaceGraphicIn1 = UIImage(named: "imgFaceGraphicIn1")
         static let imgFaceGraphicIn2 = UIImage(named: "imgFaceGraphicIn2")
         static let imgFaceGraphicIn3 = UIImage(named: "imgFaceGraphicIn3")
+        
+        // joureny detail default image
+        static let happyfeedX = UIImage(named: "happyfeedX")
     }
 }
