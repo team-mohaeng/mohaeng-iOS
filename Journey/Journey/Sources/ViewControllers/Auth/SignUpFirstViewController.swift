@@ -33,8 +33,7 @@ class SignUpFirstViewController: UIViewController {
         initNavigationBar()
         initErrorLabel()
         makeButtonRound()
-        passwordTextField.isHidden = true
-        checkingpasswordTextField.isHidden = true
+        hideTextField()
     }
     
     override func viewDidLayoutSubviews() {
@@ -171,6 +170,12 @@ class SignUpFirstViewController: UIViewController {
         passwordCheckErrorLabel.text = "비밀번호가 일치합니다"
         passwordCheckErrorLabel.textColor = UIColor.green
         isPasswordCheckError = false
+    }
+    
+    func hideTextField() {
+        passwordCheckErrorLabel.isHidden = true
+        passwordTextField.isHidden = true
+        checkingpasswordTextField.isHidden = true
     }
     
     func presentIsHidden() {
