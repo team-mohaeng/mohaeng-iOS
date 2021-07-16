@@ -33,7 +33,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="O3w-Pl-ORs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Cig-bx-4Ff"/>
                             <constraint firstItem="O3w-Pl-ORs" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="SaR-0i-NUD"/>

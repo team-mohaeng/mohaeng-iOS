@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -23,8 +22,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnimationPopUpViewController" customModule="Journey" customModuleProvider="target">
             <connections>
                 <outlet property="animationImageView" destination="lct-dA-Wx9" id="fuv-nl-8vU"/>
+                <outlet property="descriptionLabel" destination="Ro6-a3-Z5y" id="FOD-Jt-q4p"/>
                 <outlet property="pinkButton" destination="eQA-8T-EIn" id="8kA-TG-n4Y"/>
                 <outlet property="popUpView" destination="wgW-Ud-Mg9" id="tMY-tN-3Sm"/>
+                <outlet property="titleLabel" destination="MQs-WO-IFb" id="Zja-xy-TM0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -73,11 +74,11 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="뽀득뽀득 세균 퇴치 코스 완료" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQs-WO-IFb">
                             <rect key="frame" x="29" y="212" width="270" height="48"/>
                             <fontDescription key="fontDescription" name="BMHANNA11yrsoldOTF" family="BM HANNA 11yrs old OTF" pointSize="24"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" name="Black1Text"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="ggF-kH-1He" secondAttribute="trailing" constant="28" id="490-2P-FJo"/>
                         <constraint firstItem="eQA-8T-EIn" firstAttribute="leading" secondItem="wgW-Ud-Mg9" secondAttribute="leading" constant="28" id="6Ak-tZ-GeQ"/>
@@ -98,7 +99,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lct-dA-Wx9">
                     <rect key="frame" x="90.5" y="337" width="233" height="232"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_5732" translatesAutoresizingMaskIntoConstraints="NO" id="0nS-U5-bMC">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="graphicCongrats" translatesAutoresizingMaskIntoConstraints="NO" id="0nS-U5-bMC">
                             <rect key="frame" x="0.0" y="0.0" width="233" height="232"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="233" id="QgO-Hm-5TT"/>
@@ -106,7 +107,7 @@
                             </constraints>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="0nS-U5-bMC" firstAttribute="leading" secondItem="lct-dA-Wx9" secondAttribute="leading" id="FAE-rJ-4GK"/>
                         <constraint firstAttribute="bottom" secondItem="0nS-U5-bMC" secondAttribute="bottom" id="hwI-0h-cWF"/>
@@ -129,7 +130,10 @@
         </view>
     </objects>
     <resources>
-        <image name="IMG_5732" width="95" height="120"/>
+        <image name="graphicCongrats" width="233" height="232"/>
+        <namedColor name="Black1Text">
+            <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Black2Text">
             <color red="0.25900000333786011" green="0.25900000333786011" blue="0.25900000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -139,8 +143,5 @@
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

@@ -33,6 +33,8 @@ class ChallengeViewController: UIViewController {
     @IBOutlet weak var stackviewToChallengeLabel: NSLayoutConstraint!
     @IBOutlet weak var underTriangleStackViewHeight: NSLayoutConstraint!
     @IBOutlet weak var journeyImageView: UIImageView!
+    @IBOutlet weak var emptyView: UIView!
+    @IBOutlet weak var selectCourseButton: UIButton!
     
     // MARK: - Properties
     
@@ -48,6 +50,9 @@ class ChallengeViewController: UIViewController {
     
     var triangleStampImageViews: [UIImageView] = []
     
+    var course: Course?
+    var selectedStampImageView: UIImageView = UIImageView()
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -55,16 +60,22 @@ class ChallengeViewController: UIViewController {
         initStampBackgroundView()
         addtouchGesture()
         initNavigationBar()
+        initEmptyView()
         appendImageViewsToArray()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        initNavigationBar()
         getTodayChallenge()
-        
+        initJourneyView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
+        print("viewdidappear")
         stampWidth.constant = triangleStampView.frame.height / 2
         underTriangleStackViewHeight.constant = triangleStampView.frame.height / 2
-        
         initJourneyView()
     }
     
@@ -97,10 +108,16 @@ class ChallengeViewController: UIViewController {
     private func initJourneyView() {
         journeyNameView.makeRounded(radius: journeyNameView.frame.height / 2)
         journeyDescriptionView.makeRoundedSpecificCorner(corners: [.bottomLeft, .bottomRight, .topRight], cornerRadius: 25)
+        journeyDescriptionView.invalidateIntrinsicContentSize()
     }
     
     private func initStampBackgroundView() {
         stampView.makeRounded(radius: 18)
+    }
+    
+    private func initEmptyView() {
+        emptyView.isHidden = true
+        selectCourseButton.makeRounded(radius: selectCourseButton.frame.height / 2)
     }
     
     private func appendImageViewsToArray() {
@@ -152,7 +169,6 @@ class ChallengeViewController: UIViewController {
                 }
             }
         } else {
-            // 노치없을 때
             for idx in 0..<currentStamp {
                 guard let imageview = stampStackView.subviews[idx] as? UIImageView else {
                     return
@@ -163,14 +179,22 @@ class ChallengeViewController: UIViewController {
     }
     
     private func initInitialStamp(totalStamp: Int) {
-        if UIDevice.current.hasNotch {
-            // triangle
-            for idx in 0..<totalStamp {
-                guard let imageview = triangleStampView.subviews[idx] as? UIImageView else {
-                    return
+        if totalStamp == 3 {
+            if UIDevice.current.hasNotch {
+                // triangle
+                for idx in 0..<totalStamp {
+                    let imageview = triangleStampImageViews[idx]
+                    imageview.image = initialStampImage
                 }
-                imageview.image = initialStampImage
+            } else {
+                for idx in 0..<totalStamp {
+                    guard let imageview = stampStackView.subviews[idx] as? UIImageView else {
+                        return
+                    }
+                    imageview.image = initialStampImage
+                }
             }
+        } else {
             for idx in 0..<totalStamp {
                 guard let imageview = stampStackView.subviews[idx] as? UIImageView else {
                     return
@@ -272,31 +296,30 @@ class ChallengeViewController: UIViewController {
         // 진행중인 챌린지 인덱스 찾기
         currentChallengeIdx = findCourseProgressDay(challenges: data.course.challenges)
         
+        // current stamp
+        currentStamp = data.course.challenges[currentChallengeIdx].currentStamp
+        
         // get 해서 data 반영하기
         challengeSubTitleLabel.text = data.course.title
         challengeTitleLabel.text = data.course.challenges[currentChallengeIdx].title
-        challengeDescriptionLabel.text = data.course.courseDescription
-        // challengeDescriptionLabel.invalidateIntrinsicContentSize() // 다시 점검
-        // initJourneyView()
-        self.journeyDescriptionView.layoutIfNeeded()
+        challengeDescriptionLabel.text = data.course.challenges[currentChallengeIdx].challengeDescription
+        
+        // 현재 챌린지 id값
         self.challengeId = data.course.challenges[currentChallengeIdx].id
         
         // stamp stack view
         totalStamp = data.course.challenges[currentChallengeIdx].totalStamp
         self.notchCase(totalStamp: totalStamp)
         
-        print("currentStamp1 \(data.course.challenges[currentChallengeIdx].currentStamp)")
-        print("totalStamp1 \(data.course.challenges[currentChallengeIdx].totalStamp)")
-        
         // stamp image
         initialStampImage = setInitialStamp(property: data.course.property)
         completeStampImage = setCompleteStamp(property: data.course.property)
         
         // set current stamp
-        currentStamp = data.course.challenges[currentChallengeIdx].currentStamp
+        initInitialStamp(totalStamp: data.course.challenges[currentChallengeIdx].totalStamp)
         initCompleteStamp(totalStamp: totalStamp, currentStamp: data.course.challenges[currentChallengeIdx].currentStamp)
         
-        // 챌린 완료시 완료처리
+        // 챌린지 완료시 완료처리
         if data.course.challenges[currentChallengeIdx].situation == 2 {
             // 쟈니 이미지 바꾸기
             self.journeyImageView.image = Const.Image.talkjhappyiOS
@@ -304,6 +327,11 @@ class ChallengeViewController: UIViewController {
             self.stampStatusLabel.text = "오늘의 챌린지 성공!\n내일 새로운 챌린지로 다시 만나요!"
             // 챌린지 description label 바꾸기
             self.challengeDescriptionLabel.text = data.course.challenges[self.currentChallengeIdx].successDescription
+        } else {
+            // 쟈니 이미지 바꾸기
+            self.journeyImageView.image = Const.Image.talkjiOS
+            // 설명 label
+            self.stampStatusLabel.text = "아이콘을 터치해 인증을 완료할 수 있어요\n자정 전까지 오늘의 챌린지를 성공해보세요!"
         }
     }
     
@@ -328,38 +356,57 @@ class ChallengeViewController: UIViewController {
         completePopUp.modalPresentationStyle = .overCurrentContext
         completePopUp.popUpActionDelegate = self
         tabBarController?.present(completePopUp, animated: true, completion: nil)
+        
+        completePopUp.titleLabel.text = "오늘의 챌린지 성공"
+        completePopUp.descriptionLabel.text = "챌린지를 성공했으니 나와 함께\n당신의 소확행을 작성하러 가보겠어?"
+    }
+    
+    private func pushToCourseLibraryViewController() {
+        let courseLibraryStoryabord = UIStoryboard(name: Const.Storyboard.Name.courseLibrary, bundle: nil)
+        guard let courseLibarayViewController = courseLibraryStoryabord.instantiateViewController(withIdentifier: Const.ViewController.Identifier.courseLibrary) as? CourseLibraryViewController else { return }
+        
+        courseLibarayViewController.doingCourse = false
+        
+        self.navigationController?.pushViewController(courseLibarayViewController, animated: true)
     }
 
+    // MARK: - Fetch Functions
+    
     // MARK: - @IBAction Properties
     
     @objc func touchstampAction1(_ gesture: UITapGestureRecognizer) {
-        putTodayChallenge()
-        stampImageView1.image = completeStampImage
+        
+        guard let course = self.course else { return }
+        presentStampPopUp(description: course.challenges[currentChallengeIdx].userMents[currentChallengeIdx])
+        selectedStampImageView = stampImageView1
     }
     
     @objc func touchstampAction2(_ gesture: UITapGestureRecognizer) {
         putTodayChallenge()
-        stampImageView2.image = completeStampImage
+        selectedStampImageView = stampImageView2
     }
     
     @objc func touchstampAction3(_ gesture: UITapGestureRecognizer) {
         putTodayChallenge()
-        stampImageView3.image = completeStampImage
+        selectedStampImageView = stampImageView3
     }
     
     @objc func touchStampActionTriangle1(_ gesture: UITapGestureRecognizer) {
-        putTodayChallenge()
-        triangleStampImageView1.image = completeStampImage
+        guard let course = self.course else { return }
+        presentStampPopUp(description: course.challenges[currentChallengeIdx].userMents[currentChallengeIdx])
+        selectedStampImageView = triangleStampImageView1
     }
     
     @objc func touchStampActionTriangle2(_ gesture: UITapGestureRecognizer) {
-        putTodayChallenge()
-        triangleStampImageView2.image = completeStampImage
+        guard let course = self.course else { return }
+        presentStampPopUp(description: course.challenges[currentChallengeIdx].userMents[currentChallengeIdx])
+        selectedStampImageView = triangleStampImageView2
     }
     
     @objc func touchStampActionTriangle3(_ gesture: UITapGestureRecognizer) {
-        putTodayChallenge()
-        triangleStampImageView3.image = completeStampImage
+        guard let course = self.course else { return }
+        presentStampPopUp(description: course.challenges[currentChallengeIdx].userMents[currentChallengeIdx])
+        selectedStampImageView = triangleStampImageView3
     }
     
     @objc func touchMapButton(sender: UIButton) {
@@ -379,13 +426,16 @@ class ChallengeViewController: UIViewController {
         self.navigationController?.pushViewController(courseLibraryViewController, animated: true)
     }
     
+    @IBAction func touchSelectCourseButton(_ sender: Any) {
+        pushToCourseLibraryViewController()
+    }
 }
 
 extension ChallengeViewController: PopUpActionDelegate {
     func touchPinkButton(button: UIButton) {
-        self.dismiss(animated: true) {
-            self.presentCompletePopUp()
-        }
+        putTodayChallenge()
+        selectedStampImageView.image = completeStampImage
+        dismiss(animated: true, completion: nil)
     }
     
     func touchWhiteButton(button: UIButton) {
@@ -412,15 +462,18 @@ extension ChallengeViewController: AnimationPopUpDelegate {
 
 extension ChallengeViewController {
     func getTodayChallenge() {
-        if UserDefaults.standard.integer(forKey: "courseId") != nil {
+        if UserDefaults.standard.object(forKey: "courseId") != nil {
+            
             doingCourse = true
             let courseId = UserDefaults.standard.integer(forKey: "courseId")
+            emptyView.isHidden = true
             
             ChallengeAPI.shared.getTodayChallenge(completion: { (response) in
                 switch response {
                 case .success(let data):
                     if let data = data as? CourseData {
                         
+                        self.course = data.course
                         self.updateData(data: data)
                     }
                 case .requestErr(let message):
@@ -437,7 +490,8 @@ extension ChallengeViewController {
         } else {
             doingCourse = false
             // empty page 띄우기
-            
+            emptyView.isHidden = false
+            self.navigationController?.hideNavigationBar()
         }
     }
     
@@ -446,7 +500,6 @@ extension ChallengeViewController {
         if UserDefaults.standard.integer(forKey: "courseId") != nil {
             
             let courseId = UserDefaults.standard.integer(forKey: "courseId")
-            
             ChallengeAPI.shared.putTodayChallenge(completion: { (response) in
                 switch response {
                 case .success(let data):
@@ -461,10 +514,11 @@ extension ChallengeViewController {
                         
                         if currentStamp == totalStamp {
                             // 챌린지 완료 팝업
-                            self.presentStampPopUp(description: data.course.challenges[self.currentChallengeIdx].userMents[currentStamp-1])
+                            self.presentCompletePopUp()
+//                            self.presentStampPopUp(description: data.course.challenges[self.currentChallengeIdx].userMents[currentStamp-1])
                             // 쟈니 이미지 바꾸기
                             self.journeyImageView.image = Const.Image.talkjhappyiOS
-                            // 축하 이미지 넣기
+                            // VC에 축하 이미지 넣기
                             // 설명 label 축하 메세지로 바꾸기
                             self.stampStatusLabel.text = "오늘의 챌린지 성공!\n내일 새로운 챌린지로 다시 만나요!"
                             // 챌린지 description label 바꾸기
@@ -479,7 +533,7 @@ extension ChallengeViewController {
                             // TODO: - 코스 완료 팝업
                             // 쟈니 이미지 바꾸기
                             self.journeyImageView.image = Const.Image.talkjhappyiOS
-                            // 축하 이미지 넣기
+                            // VC에 축하 이미지 넣기
                             // 설명 label 축하 메세지로 바꾸기
                             self.stampStatusLabel.text = "오늘의 챌린지 성공!\n내일 새로운 챌린지로 다시 만나요!"
                             // 챌린지 description label 바꾸기

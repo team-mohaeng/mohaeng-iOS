@@ -15,16 +15,16 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginImageView: UIImageView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailStackView: UIStackView!
+    @IBOutlet weak var passwordStackView: UIStackView!
     
     // MARK: - View Life Cycle
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.passwordTextField.becomeFirstResponder()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         makeButtonRound()
+        changeEmailStackViewAttributes()
+        changePasswordStackViewAttributes()
         initNavigationBar()
     }
     
@@ -49,14 +49,20 @@ class LoginViewController: UIViewController {
     
     // MARK: - Functions
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.passwordTextField.resignFirstResponder()
-    }
-    
     private func makeButtonRound() {
         loginButton.makeRounded(radius: 20)
     }
     
+    private func changeEmailStackViewAttributes() {
+        emailStackView.makeRounded(radius: 10)
+        emailStackView.layer.borderColor = UIColor.CourseBgGray.cgColor
+        emailStackView.layer.borderWidth = 1
+    }
+    private func changePasswordStackViewAttributes() {
+        passwordStackView.makeRounded(radius: 10)
+        passwordStackView.layer.borderColor = UIColor.CourseBgGray.cgColor
+        passwordStackView.layer.borderWidth = 1
+    }
     private func initNavigationBar() {
         self.navigationController?.hideNavigationBar()
     }
@@ -81,16 +87,6 @@ class LoginViewController: UIViewController {
 }
 
 // MARK: - Extension
-
-// MARK: - UITextFieldDelegate
-
-extension LoginViewController: UITextFieldDelegate {
-    func passwordTextFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.passwordTextField.resignFirstResponder()
-        self.dismiss(animated: true, completion: nil)
-        return true
-    }
-}
 
 extension LoginViewController {
     

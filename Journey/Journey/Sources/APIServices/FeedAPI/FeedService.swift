@@ -27,7 +27,7 @@ extension FeedService: TargetType {
         case .getMyDrawer(let year, let month):
             return Const.URL.happyURL + Const.URL.myDrawerURL + "/\(year)/\(month)"
         case .getFeedDetail(let postId):
-            return Const.URL.happyURL + "/\(postId)"
+            return Const.URL.happyURL + Const.URL.detailURL + "/\(postId)"
         case .getAllFeed(let sort):
             return Const.URL.happyURL + Const.URL.feedURL + "/\(sort)"
         case .postFeedContents(_, _, _, _, _, _):

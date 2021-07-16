@@ -44,4 +44,8 @@ extension UIColor {
     static let typeH: UIColor = UIColor(named: "typeH")!
     static let typeM: UIColor = UIColor(named: "typeM")!
     static let typeS: UIColor = UIColor(named: "typeS")!
+    static let typeCD: UIColor = UIColor(named: "typeCD")!
+    static let typeHD: UIColor = UIColor(named: "typeHD")!
+    static let typeMD: UIColor = UIColor(named: "typeMD")!
+    static let typeSD: UIColor = UIColor(named: "typeSD")!
 }

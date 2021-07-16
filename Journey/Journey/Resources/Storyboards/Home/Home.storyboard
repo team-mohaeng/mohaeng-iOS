@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hev-nF-z4D">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hev-nF-z4D">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -35,18 +35,18 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="689"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcg-qq-1f1">
-                                        <rect key="frame" x="24" y="16.999999999999996" width="170.66666666666666" height="37.666666666666657"/>
-                                        <string key="text">Hi, 쟈기~ 오늘도 안녕하니? 
-끈적한 우리 관계를 위해</string>
+                                        <rect key="frame" x="24" y="16.999999999999996" width="224" height="37.666666666666657"/>
+                                        <string key="text">안녕, 쟈기?
+오늘도 당신과 지독하게 엮여 보려 해</string>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="Black1Text"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="690-zu-ul9">
                                         <rect key="frame" x="24" y="74.666666666666671" width="30" height="48"/>
                                         <fontDescription key="fontDescription" name="BMHANNA11yrsoldOTF" family="BM HANNA 11yrs old OTF" pointSize="36"/>
                                         <state key="normal">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" name="Black1Text"/>
                                         </state>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6j6-R8-Ky9">
@@ -66,7 +66,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" name="darkGray"/>
+                                        <color key="backgroundColor" name="Black2"/>
                                         <constraints>
                                             <constraint firstItem="iWG-dc-0NX" firstAttribute="centerY" secondItem="6j6-R8-Ky9" secondAttribute="centerY" id="OwI-Yk-hgV"/>
                                             <constraint firstItem="iWG-dc-0NX" firstAttribute="leading" secondItem="jqj-dH-DmL" secondAttribute="trailing" constant="9" id="R6a-p5-BSc"/>
@@ -97,7 +97,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="너와 나의 농도" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YE5-Bw-ZtF">
                                         <rect key="frame" x="29" y="17" width="91" height="16"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="Black1Text"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RDF-PX-kcc">
@@ -170,7 +170,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QRv-uR-Wd3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="07F-Wr-d4x"/>
                             <constraint firstItem="SyF-RU-IsE" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="1P9-MP-y5T"/>
@@ -192,6 +192,7 @@
                         <outlet property="firstIndicatiorLeadingConstraint" destination="ic8-0r-ViE" id="lbk-Yn-fp2"/>
                         <outlet property="journeyImageView" destination="CYq-uQ-Oxb" id="fy2-JU-ieh"/>
                         <outlet property="percentDescriptionButton" destination="7pt-9w-MQF" id="POP-d2-lnD"/>
+                        <outlet property="propertyImageView" destination="jqj-dH-DmL" id="i3z-nT-KtN"/>
                         <outlet property="subTitleLabel" destination="zcg-qq-1f1" id="tju-E5-PoT"/>
                         <outlet property="thirdIndicatorLeadingConstraint" destination="ja2-1f-iwZ" id="Yeg-vJ-rie"/>
                     </connections>
@@ -204,7 +205,7 @@
         <scene sceneID="lmj-xh-HBQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Hev-nF-z4D" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" id="QLy-Nz-Kmc"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="homeIcon" id="QLy-Nz-Kmc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pxm-te-vy3">
                         <autoresizingMask key="autoresizingMask"/>
@@ -220,14 +221,17 @@
         </scene>
     </scenes>
     <resources>
-        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="homeIcon" width="28" height="28"/>
         <image name="progressIndicator" width="8" height="10"/>
         <image name="waterSampleImg" width="36" height="36"/>
+        <namedColor name="Black1Text">
+            <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Black2">
+            <color red="0.2199999988079071" green="0.2199999988079071" blue="0.2199999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="darkGray">
-            <color red="0.16500000655651093" green="0.16500000655651093" blue="0.16500000655651093" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="hotPink">
             <color red="1" green="0.34099999070167542" blue="0.56099998950958252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -240,9 +244,6 @@
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

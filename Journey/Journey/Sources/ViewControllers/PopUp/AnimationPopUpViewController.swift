@@ -14,6 +14,8 @@ class AnimationPopUpViewController: UIViewController {
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var animationImageView: UIView!
     @IBOutlet weak var pinkButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     // MARK: - Properties
     
