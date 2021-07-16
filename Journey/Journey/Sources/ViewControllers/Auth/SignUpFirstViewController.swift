@@ -24,6 +24,7 @@ class SignUpFirstViewController: UIViewController {
     @IBOutlet weak var emailCheckErrorLabel: UILabel!
     @IBOutlet weak var passwordCheckErrorLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var passwordLabel: UILabel!
     
     // MARK: - View Life Cycle
     
@@ -77,9 +78,10 @@ class SignUpFirstViewController: UIViewController {
         emailTextField.borderStyle = .none
         let border = CALayer()
         border.frame = CGRect(x: 0, y: emailTextField.frame.size.height-1, width: emailTextField.frame.width, height: 1)
-        border.backgroundColor = UIColor.lightGray.cgColor
+        border.backgroundColor = UIColor.Grey1Line.cgColor
         emailTextField.layer.addSublayer((border))
-        emailTextField.textColor = UIColor.black
+        emailTextField.textColor = UIColor.Black1Text
+        
     }
     
     private func makeUnderLinePasswordTextField() {
@@ -87,9 +89,9 @@ class SignUpFirstViewController: UIViewController {
         passwordTextField.borderStyle = .none
         let border = CALayer()
         border.frame = CGRect(x: 0, y: passwordTextField.frame.size.height-1, width: passwordTextField.frame.width, height: 1)
-        border.backgroundColor = UIColor.lightGray.cgColor
+        border.backgroundColor = UIColor.Grey1Line.cgColor
         passwordTextField.layer.addSublayer((border))
-        passwordTextField.textColor = UIColor.black
+        passwordTextField.textColor = UIColor.Black1Text
     }
     
     private func makeUnderLineCheckPasswordTextField() {
@@ -97,9 +99,9 @@ class SignUpFirstViewController: UIViewController {
         checkingpasswordTextField.borderStyle = .none
         let border = CALayer()
         border.frame = CGRect(x: 0, y: checkingpasswordTextField.frame.size.height-1, width: checkingpasswordTextField.frame.width, height: 1)
-        border.backgroundColor = UIColor.lightGray.cgColor
+        border.backgroundColor = UIColor.Grey1Line.cgColor
         checkingpasswordTextField.layer.addSublayer((border))
-        checkingpasswordTextField.textColor = UIColor.black
+        checkingpasswordTextField.textColor = UIColor.Black1Text
     }
     
     private func makeButtonRound() {
@@ -124,35 +126,35 @@ class SignUpFirstViewController: UIViewController {
     func showEmailBlankError() {
         emailCheckErrorLabel.isHidden = false
         emailCheckErrorLabel.text = "사용 가능하지 않은 이메일입니다"
-        emailCheckErrorLabel.textColor = UIColor.red
+        emailCheckErrorLabel.textColor = UIColor.Red
         isEmailError = true
     }
     
     func hideEmailError() {
         emailCheckErrorLabel.isHidden = false
         emailCheckErrorLabel.text = "사용가능한 이메일입니다"
-        emailCheckErrorLabel.textColor = UIColor.green
+        emailCheckErrorLabel.textColor = UIColor.Green
         isEmailError = false
     }
     
     func showEmailFormatError() {
         emailCheckErrorLabel.isHidden = false
         emailCheckErrorLabel.text = "사용 가능하지 않은 이메일입니다"
-        emailCheckErrorLabel.textColor = UIColor.red
+        emailCheckErrorLabel.textColor = UIColor.Red
     }
     
     // Password Errors
     func hidePasswordError() {
         passwordCheckErrorLabel.isHidden = false
         passwordCheckErrorLabel.text = "사용 가능한 비밀번호입니다"
-        passwordCheckErrorLabel.textColor = UIColor.green
+        passwordCheckErrorLabel.textColor = UIColor.Green
         isPasswordError = false
     }
     
     func showPasswordCheckFormatError() {
         passwordCheckErrorLabel.isHidden = false
         passwordCheckErrorLabel.text = "비밀번호가 일치하지 않습니다"
-        passwordCheckErrorLabel.textColor = UIColor.red
+        passwordCheckErrorLabel.textColor = UIColor.Red
         
         isPasswordCheckError = true
         
@@ -161,14 +163,14 @@ class SignUpFirstViewController: UIViewController {
     func showPasswordCheckBlankError() {
         passwordCheckErrorLabel.isHidden = false
         passwordCheckErrorLabel.text = "사용 가능한 비밀번호입니다."
-        passwordCheckErrorLabel.textColor = UIColor.green
+        passwordCheckErrorLabel.textColor = UIColor.Green
         isPasswordCheckError = true
     }
     
     func hidePasswordCheckError() {
         passwordCheckErrorLabel.isHidden = false
         passwordCheckErrorLabel.text = "비밀번호가 일치합니다"
-        passwordCheckErrorLabel.textColor = UIColor.green
+        passwordCheckErrorLabel.textColor = UIColor.Green
         isPasswordCheckError = false
     }
     
@@ -182,6 +184,7 @@ class SignUpFirstViewController: UIViewController {
         passwordCheckErrorLabel.isHidden = false
         passwordTextField.isHidden = false
         checkingpasswordTextField.isHidden = false
+        passwordLabel.isHidden = false
         
     }
     private func pushSignUpSecondViewController() {

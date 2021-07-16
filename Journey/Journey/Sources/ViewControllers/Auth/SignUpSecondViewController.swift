@@ -124,8 +124,8 @@ class SignUpSecondViewController: UIViewController {
     }
     
     private func changeButtonAttribute() {
-        womanButton.makeRoundedWithBorder(radius: 10, color: UIColor.lightGray.cgColor )
-        manButton.makeRoundedWithBorder(radius: 10, color: UIColor.lightGray.cgColor )
+        womanButton.makeRoundedWithBorder(radius: 10, color: UIColor.Grey1Line.cgColor )
+        manButton.makeRoundedWithBorder(radius: 10, color: UIColor.Grey1Line.cgColor )
     }
     
     private func makeButtonRound() {
@@ -134,29 +134,29 @@ class SignUpSecondViewController: UIViewController {
     
     private func changeManGreyColor() {
         manButton.isSelected = false
-        manButton.layer.borderColor = UIColor.lightGray.cgColor
-        manButton.setTitleColor(.lightGray, for: .normal)
+        manButton.layer.borderColor = UIColor.Grey1Line.cgColor
+        manButton.setTitleColor(.Grey1Line, for: .normal)
         manButton.layer.borderWidth = 1
     }
     
     private func changeManPinkColor() {
         manButton.isSelected = true
-        manButton.layer.borderColor = UIColor.HotPink.cgColor
-        manButton.setTitleColor(.HotPink, for: .selected)
+        manButton.layer.borderColor = UIColor.Pink2.cgColor
+        manButton.setTitleColor(.Pink2, for: .selected)
         manButton.layer.borderWidth = 3
     }
     
     private func changeWomanGreyColor() {
         womanButton.isSelected = false
-        womanButton.layer.borderColor = UIColor.lightGray.cgColor
-        womanButton.setTitleColor(.lightGray, for: .normal)
+        womanButton.layer.borderColor = UIColor.Grey1Line.cgColor
+        womanButton.setTitleColor(.Grey1Line, for: .normal)
         womanButton.layer.borderWidth = 1
     }
     
     private func changeWomanPinkColor() {
         womanButton.isSelected = true
-        womanButton.layer.borderColor = UIColor.HotPink.cgColor
-        womanButton.setTitleColor(.HotPink, for: .selected)
+        womanButton.layer.borderColor = UIColor.Pink2.cgColor
+        womanButton.setTitleColor(.Pink2, for: .selected)
         womanButton.layer.borderWidth = 3
     }
     
