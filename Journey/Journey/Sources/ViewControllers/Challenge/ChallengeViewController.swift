@@ -54,6 +54,18 @@ class ChallengeViewController: UIViewController {
     var course: Course?
     var selectedStampImageView: UIImageView = UIImageView()
     
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+            let activityIndicator = UIActivityIndicatorView()
+            activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+            activityIndicator.center = CGPoint(x: self.view.center.x, y: self.view.center.y - self.topbarHeight)
+            activityIndicator.hidesWhenStopped = false
+            activityIndicator.style = UIActivityIndicatorView.Style.medium
+            activityIndicator.startAnimating()
+            return activityIndicator
+        }()
+
+    var backgroundView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -341,6 +353,8 @@ class ChallengeViewController: UIViewController {
             // 설명 label
             self.stampStatusLabel.text = "아이콘을 터치해 인증을 완료할 수 있어요\n자정 전까지 오늘의 챌린지를 성공해보세요!"
         }
+        
+        self.detachActivityIndicator()
     }
     
     // 도장 인증 팝업
@@ -377,8 +391,20 @@ class ChallengeViewController: UIViewController {
         
         self.navigationController?.pushViewController(courseLibarayViewController, animated: true)
     }
-
-    // MARK: - Fetch Functions
+    
+    private func attachActivityIndicator() {
+        backgroundView.backgroundColor = UIColor.white
+        self.view.addSubview(backgroundView)
+        self.view.addSubview(self.activityIndicator)
+    }
+    
+    private func detachActivityIndicator() {
+        if self.activityIndicator.isAnimating {
+            self.activityIndicator.stopAnimating()
+        }
+        self.backgroundView.removeFromSuperview()
+        self.activityIndicator.removeFromSuperview()
+    }
     
     // MARK: - @IBAction Properties
     
@@ -477,6 +503,7 @@ extension ChallengeViewController {
             doingCourse = true
             let courseId = UserDefaults.standard.integer(forKey: "courseId")
             emptyView.isHidden = true
+            self.attachActivityIndicator()
             
             ChallengeAPI.shared.getTodayChallenge(completion: { (response) in
                 switch response {
@@ -510,6 +537,8 @@ extension ChallengeViewController {
         if UserDefaults.standard.integer(forKey: "courseId") != nil {
             
             let courseId = UserDefaults.standard.integer(forKey: "courseId")
+            self.attachActivityIndicator()
+            
             ChallengeAPI.shared.putTodayChallenge(completion: { (response) in
                 switch response {
                 case .success(let data):
@@ -556,6 +585,8 @@ extension ChallengeViewController {
                             self.challengeDescriptionLabel.text = data.course.challenges[self.currentChallengeIdx].successDescription
                             print("코스끝")
                         }
+                        
+                        self.detachActivityIndicator()
                     }
                 case .requestErr(let message):
                     print("requestErr", message)

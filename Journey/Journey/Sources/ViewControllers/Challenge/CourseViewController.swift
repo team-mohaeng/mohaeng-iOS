@@ -18,6 +18,18 @@ class CourseViewController: UIViewController {
         Challenge(id: 0, situation: 0, title: "", challengeDescription: "", successDescription: "", year: "", month: "", day: "", currentStamp: 0, totalStamp: 0, userMents: []),
     ])
     
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+            let activityIndicator = UIActivityIndicatorView()
+            activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+            activityIndicator.center = CGPoint(x: self.view.center.x, y: self.view.center.y - self.topbarHeight)
+            activityIndicator.hidesWhenStopped = false
+            activityIndicator.style = UIActivityIndicatorView.Style.medium
+            activityIndicator.startAnimating()
+            return activityIndicator
+        }()
+
+    var backgroundView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var courseImageVIew: UIImageView!
@@ -71,6 +83,8 @@ class CourseViewController: UIViewController {
         
         // table view
         self.courseTableView.reloadData()
+        
+        self.detachActivityIndicator()
     }
     
     func findCourseProgressDay(challenges: [Challenge]) -> Int {
@@ -82,6 +96,20 @@ class CourseViewController: UIViewController {
             day += 1
         }
         return day
+    }
+    
+    private func attachActivityIndicator() {
+        backgroundView.backgroundColor = UIColor.white
+        self.view.addSubview(backgroundView)
+        self.view.addSubview(self.activityIndicator)
+    }
+    
+    private func detachActivityIndicator() {
+        if self.activityIndicator.isAnimating {
+            self.activityIndicator.stopAnimating()
+        }
+        self.backgroundView.removeFromSuperview()
+        self.activityIndicator.removeFromSuperview()
     }
     
 }
@@ -166,6 +194,8 @@ extension CourseViewController: UITableViewDataSource {
 extension CourseViewController {
 
     func getCourse() {
+        
+        self.attachActivityIndicator()
         
         ChallengeAPI.shared.getAllChallenges { (response) in
             
