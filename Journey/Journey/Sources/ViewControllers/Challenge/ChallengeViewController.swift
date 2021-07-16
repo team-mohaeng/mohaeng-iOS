@@ -73,7 +73,6 @@ class ChallengeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
-        print("viewdidappear")
         stampWidth.constant = triangleStampView.frame.height / 2
         underTriangleStackViewHeight.constant = triangleStampView.frame.height / 2
         initJourneyView()
@@ -303,6 +302,11 @@ class ChallengeViewController: UIViewController {
         challengeSubTitleLabel.text = data.course.title
         challengeTitleLabel.text = data.course.challenges[currentChallengeIdx].title
         challengeDescriptionLabel.text = data.course.challenges[currentChallengeIdx].challengeDescription
+        
+        DispatchQueue.main.async {
+            self.challengeDescriptionLabel.invalidateIntrinsicContentSize()
+            self.initJourneyView()
+        }
         
         // 현재 챌린지 id값
         self.challengeId = data.course.challenges[currentChallengeIdx].id
