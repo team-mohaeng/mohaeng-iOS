@@ -173,6 +173,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dateLabel" destination="adI-yg-IlZ" id="Ik7-PB-pcB"/>
                         <outlet property="findDayLabel" destination="l8y-1n-7bf" id="97N-fT-rTy"/>
                         <outlet property="fineDayButton" destination="MDc-8X-IIb" id="gpm-ni-9AP"/>
                         <outlet property="goodDayButton" destination="oQW-GO-uiq" id="dmW-BH-Th8"/>

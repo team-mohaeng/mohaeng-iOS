@@ -18,9 +18,10 @@ class AppDate {
         }
         set(newDate) {
             _date = newDate
-            
+            self.setWeekday()
         }
     }
+    private var weekday: AppWeekday?
     private let dateFormatter: DateFormatter?
     
     init() {
@@ -33,6 +34,7 @@ class AppDate {
         self.init()
         
         let dateComponents = NSDateComponents()
+//        dateComponents.day = day
         dateComponents.month = month
         dateComponents.year = year
         
@@ -46,9 +48,12 @@ class AppDate {
         
         guard let year = Int(dateArray[0]),
               let month = Int(dateArray[1]),
+//              let day = Int(dateArray[2]),
               year >= 0 && year <= 9999,
-              month >= 1 && month <= 12
-        else { return }
+              month >= 1 && month <= 12 else {
+//              day >= 1 && day <= 31 else {
+            return
+        }
         
         self.init(year: year, month: month)
     }
@@ -69,6 +74,17 @@ class AppDate {
         return self.getDateComponent(with: "yyyy\(separator)MM\(separator)")
     }
     
+    func getFormattedDateAndWeekday(with separator: String) -> String {
+        let formattedDate = self.getDateComponent(with: "yyyy\(separator)MM\(separator)dd")
+        guard let weekday = self.weekday?.toKorean() else { return "000" }
+        return "\(formattedDate)\(separator)\(weekday)"
+    }
+    
+    func getDay() -> Int {
+        guard let day = Int(self.getDateComponent(with: "dd")) else { return 0 }
+        return day
+    }
+    
     func getMonth() -> Int {
         guard let month = Int(self.getDateComponent(with: "MM")) else { return 0 }
         return month
@@ -77,6 +93,15 @@ class AppDate {
     func getYear() -> Int {
         guard let year = Int(self.getDateComponent(with: "yyyy")) else { return 0 }
         return year
+    }
+    
+    func getWeekday() -> AppWeekday {
+        guard let weekday = self.weekday else { return AppWeekday.monday }
+        return weekday
+    }
+
+    func getDayToString() -> String {
+        return "\(self.getDay())"
     }
     
     func getMonthToString() -> String {
@@ -92,10 +117,57 @@ class AppDate {
         dateFormatter.dateFormat = format
         return dateFormatter.string(from: safeDate)
     }
+    
+    private func setWeekday() {
+        guard let weekday = AppWeekday.init(rawValue: self.getDateComponent(with: "EEEE")) else { return }
+        self.weekday = weekday
+    }
 }
 
 extension AppDate: Equatable {
     static func == (lhs: AppDate, rhs: AppDate) -> Bool {
         return lhs.getFormattedDate(with: ". ") == rhs.getFormattedDate(with: ". ")
+    }
+}
+
+enum AppWeekday: String {
+    case monday = "Monday", tuesday = "Tuesday", wednesday = "Wednesday", thursday = "Thursday", friday = "Friday", saturday = "Saturday", sunday = "Sunday"
+    
+    func toKorean() -> String {
+        switch self {
+        case .monday:
+            return "월요일"
+        case .tuesday:
+            return "화요일"
+        case .wednesday:
+            return "수요일"
+        case .thursday:
+            return "목요일"
+        case .friday:
+            return "금요일"
+        case .saturday:
+            return "토요일"
+        case .sunday:
+            return "일요일"
+        }
+    }
+    
+    func toSimpleKorean() -> String {
+        switch self {
+        case .monday:
+            return "월"
+        case .tuesday:
+            return "화"
+        case .wednesday:
+            return "수"
+        case .thursday:
+            return "목"
+        case .friday:
+            return "금"
+        case .saturday:
+            return "토"
+        case .sunday:
+            return "일"
+        }
     }
 }

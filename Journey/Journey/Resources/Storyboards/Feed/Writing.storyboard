@@ -168,6 +168,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="VeK-Ak-qJS"/>
                     <connections>
+                        <outlet property="dateLabel" destination="gQI-IF-PRz" id="wub-KR-Hin"/>
                         <outlet property="doneButton" destination="zIF-NM-f5H" id="hEl-of-SeA"/>
                         <outlet property="hashTagCollectionView" destination="9Ey-ld-KWO" id="mij-AR-K4z"/>
                         <outlet property="hashTagTextField" destination="bge-06-txO" id="mKv-AZ-iwb"/>

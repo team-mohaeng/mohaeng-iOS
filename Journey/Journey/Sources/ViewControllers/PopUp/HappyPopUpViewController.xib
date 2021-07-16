@@ -74,12 +74,6 @@
                                 <action selector="touchSaveButton:" destination="-1" eventType="touchUpInside" id="1v8-kj-1RG"/>
                             </connections>
                         </button>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_5732" translatesAutoresizingMaskIntoConstraints="NO" id="myr-i4-ZfU">
-                            <rect key="frame" x="66" y="169" width="196" height="196"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="myr-i4-ZfU" secondAttribute="height" multiplier="1:1" id="y5p-WZ-vJe"/>
-                            </constraints>
-                        </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLg-ol-DGp">
                             <rect key="frame" x="32" y="95" width="264" height="42"/>
                             <string key="text">당신의 행복이 하나 더 늘었군.
@@ -89,6 +83,12 @@
                             <color key="textColor" name="Black2Text"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="myr-i4-ZfU">
+                            <rect key="frame" x="66" y="169" width="196" height="196"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="myr-i4-ZfU" secondAttribute="height" multiplier="1:1" id="y5p-WZ-vJe"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -131,7 +131,6 @@
         </view>
     </objects>
     <resources>
-        <image name="IMG_5732" width="63.333332061767578" height="80"/>
         <image name="happyCFaceGraphic1" width="149" height="132"/>
         <namedColor name="Black1Text">
             <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

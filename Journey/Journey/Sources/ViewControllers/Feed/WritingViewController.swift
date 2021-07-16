@@ -18,15 +18,17 @@ class WritingViewController: UIViewController {
     @IBOutlet weak var photoRemoveButton: UIButton!
     @IBOutlet weak var hashTagCollectionView: UICollectionView!
     @IBOutlet weak var writingCountLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     // MARK: - Properties
     
     var hashTagList: [String] = []
+    var sendHashTagList: [String] = [] // 서버 전송용
     var hashTagPopUp: PopUpViewController = PopUpViewController()
     var donePopUp: HappyPopUpViewController = HappyPopUpViewController()
     var moodStatus: Int = 0
     var doneStatus: Bool = false
-    var uploadImage: UIImageView?
+    var hasImage: Bool = false
     
     // MARK: - Life Cycle
     
@@ -35,6 +37,7 @@ class WritingViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         initNavigationBar()
+        initCurruentDay()
         registerXib()
         setDelegation()
         setTextViewDelegation()
@@ -48,6 +51,16 @@ class WritingViewController: UIViewController {
     
     private func initNavigationBar() {
         self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
+    }
+    
+    private func initCurruentDay() {
+        var currentDay = AppDate()
+        
+        var formatter = DateFormatter()
+        formatter.dateFormat = "dd"
+        var day = formatter.string(from: Date())
+        
+        dateLabel.text = "\(currentDay.getYear()).\(currentDay.getMonth()).\(day) (\(currentDay.getWeekday().toSimpleKorean()))"
     }
     
     private func registerXib() {
@@ -119,7 +132,7 @@ class WritingViewController: UIViewController {
     
     @IBAction func touchPhotoRemoveButton(_ sender: Any) {
         photoUploadImageView.image = UIImage(named: "btnPhotoUp")
-        uploadImage?.image = nil
+        hasImage = false
         photoRemoveButton.isHidden = true
     }
     
@@ -131,6 +144,13 @@ class WritingViewController: UIViewController {
         donePopUp.modalTransitionStyle = .crossDissolve
         donePopUp.delegate = self
         tabBarController?.present(donePopUp, animated: true, completion: nil)
+        
+        if hasImage {
+            donePopUp.hasImage = true
+            donePopUp.image = photoUploadImageView.image
+        } else {
+            donePopUp.hasImage = false
+        }
         
         donePopUp.titleLabel.text = "소확행 작성 완료!"
         donePopUp.descriptionLabel.text = "당신의 행복이 하나 더 늘었군.\n다른 쟈기들과 함께하면 기쁨이 배가 될거야.\n함께 행복을 공유해보겠어?"
@@ -146,10 +166,10 @@ extension WritingViewController: UIImagePickerControllerDelegate, UINavigationCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
             photoUploadImageView.image = image
-            uploadImage?.image = image
         }
         
         photoRemoveButton.isHidden = false
+        hasImage = true
         
         picker.dismiss(animated: true, completion: nil)
     }
@@ -217,7 +237,8 @@ extension WritingViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == hashTagTextField {
             if hashTagList.count < 5 {
-                hashTagList.append("#\(textField.text!)")
+                hashTagList.append("\(textField.text!)")
+                sendHashTagList.append("#\(textField.text!)")
                 textField.text = ""
                 hashTagCollectionView.reloadData()
             } else {
@@ -279,21 +300,27 @@ extension WritingViewController: PopUpActionDelegate {
         if !doneStatus {
             self.hashTagPopUp.dismiss(animated: true, completion: nil)
         } else {
-            if uploadImage?.image != nil {
-                postFeed(mood: moodStatus, content: writingTextView.text, hashtags: hashTagList, mainImage: uploadImage!.image!, isPrivate: false)
+            if hasImage {
+                postFeed(mood: moodStatus, content: writingTextView.text, hashtags: sendHashTagList, mainImage: photoUploadImageView!.image!, isPrivate: false)
             } else {
-                postFeedWithoutImage(mood: moodStatus, content: writingTextView.text, hashtags: hashTagList, isPrivate: false)
+                postFeedWithoutImage(mood: moodStatus, content: writingTextView.text, hashtags: sendHashTagList, isPrivate: false)
             }
             self.donePopUp.dismiss(animated: true, completion: nil)
+            let feedStoryboard = UIStoryboard(name: Const.Storyboard.Name.feed, bundle: nil)
+            guard let feedViewController = feedStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.feed) as? FeedViewController else { return }
+            self.navigationController?.pushViewController(feedViewController, animated: true)
         }
     }
     
     func touchWhiteButton(button: UIButton) {
-        if uploadImage?.image != nil {
-            postFeed(mood: moodStatus, content: writingTextView.text, hashtags: hashTagList, mainImage: uploadImage!.image!, isPrivate: true)
+        if hasImage {
+            postFeed(mood: moodStatus, content: writingTextView.text, hashtags: sendHashTagList, mainImage: photoUploadImageView!.image!, isPrivate: true)
         } else {
-            postFeedWithoutImage(mood: moodStatus, content: writingTextView.text, hashtags: hashTagList, isPrivate: true)
+            postFeedWithoutImage(mood: moodStatus, content: writingTextView.text, hashtags: sendHashTagList, isPrivate: true)
         }
+        let myDrawerStoryboard = UIStoryboard(name: Const.Storyboard.Name.myDrawer, bundle: nil)
+        guard let myDrawerViewController = myDrawerStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.myDrawer) as? MyDrawerViewController else { return }
+        self.navigationController?.pushViewController(myDrawerViewController, animated: true)
     }
     
 }
@@ -334,4 +361,3 @@ extension WritingViewController {
         }
     }
 }
-

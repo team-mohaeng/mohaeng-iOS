@@ -17,6 +17,7 @@ class MoodViewController: UIViewController {
     @IBOutlet weak var findDayLabel: UILabel!
     @IBOutlet weak var goodDayLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var dateLabel: UILabel!
     
     // MARK: - Properties
     var moodStatus: Int = 0
@@ -27,6 +28,7 @@ class MoodViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         initNavigationBar()
+        initCurruentDay()
         makeNextButtonDisable()
         makeNextButtonRound()
     }
@@ -35,6 +37,11 @@ class MoodViewController: UIViewController {
     private func initNavigationBar() {
         self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
         navigationItem.title = "소확행 작성하기"
+    }
+    
+    private func initCurruentDay() {
+        var currentDay = AppDate()
+        dateLabel.text = "\(currentDay.getYear()).\(currentDay.getMonth()).\(currentDay.getDay()) (\(currentDay.getWeekday().toSimpleKorean()))"
     }
     
     private func makeNextButtonDisable() {
