@@ -406,6 +406,18 @@ class ChallengeViewController: UIViewController {
         self.activityIndicator.removeFromSuperview()
     }
     
+    private func attachStampActivityIndicator() {
+        backgroundView.backgroundColor = UIColor.white
+        self.view.addSubview(self.activityIndicator)
+    }
+    
+    private func detachStampActivityIndicator() {
+        if self.activityIndicator.isAnimating {
+            self.activityIndicator.stopAnimating()
+        }
+        self.activityIndicator.removeFromSuperview()
+    }
+    
     // MARK: - @IBAction Properties
     
     @objc func touchstampAction1(_ gesture: UITapGestureRecognizer) {
@@ -537,7 +549,7 @@ extension ChallengeViewController {
         if UserDefaults.standard.integer(forKey: "courseId") != nil {
             
             let courseId = UserDefaults.standard.integer(forKey: "courseId")
-            self.attachActivityIndicator()
+            self.attachStampActivityIndicator()
             
             ChallengeAPI.shared.putTodayChallenge(completion: { (response) in
                 switch response {
@@ -586,7 +598,7 @@ extension ChallengeViewController {
                             print("코스끝")
                         }
                         
-                        self.detachActivityIndicator()
+                        self.detachStampActivityIndicator()
                     }
                 case .requestErr(let message):
                     print("requestErr", message)
