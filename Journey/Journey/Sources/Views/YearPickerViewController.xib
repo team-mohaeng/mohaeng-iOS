@@ -75,7 +75,7 @@
         </view>
     </objects>
     <resources>
-        <image name="sampleMoodImg" width="300" height="300"/>
+        <image name="sampleMoodImg" width="150" height="150"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

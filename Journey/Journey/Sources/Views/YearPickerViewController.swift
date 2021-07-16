@@ -55,7 +55,6 @@ class YearPickerViewController: UIViewController {
         guard let year = self.year else {
             return
         }
-        print(year)
         self.yearPickerDataDelegate?.passData("\(year)")
         dismissDatePicker()
         

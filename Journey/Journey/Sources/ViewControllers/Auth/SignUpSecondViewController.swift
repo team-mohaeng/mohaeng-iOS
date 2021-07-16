@@ -21,7 +21,7 @@ class SignUpSecondViewController: UIViewController {
     @IBOutlet weak var manButton: UIButton!
     @IBOutlet weak var touchNextPage2Button: UIButton!
     @IBOutlet weak var yearLabel: UILabel!
-
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -30,7 +30,7 @@ class SignUpSecondViewController: UIViewController {
         changeButtonAttribute()
         makeButtonRound()
         initCurrentYear()
-
+        //        changeNextButtonColor()
     }
     
     // MARK: - @IBAction Properties
@@ -39,22 +39,72 @@ class SignUpSecondViewController: UIViewController {
         womanButton.isSelected = !womanButton.isSelected
         if womanButton.isSelected == true {
             changeWomanPinkColor()
+            
             if manButton.isSelected == true {
                 changeManGreyColor()
+                if yearLabel.text == "출생연도 선택" {
+                    touchNextPage2Button.backgroundColor = UIColor.Grey1Bg
+                    touchNextPage2Button.isEnabled = false
+
+                } else {
+                    touchNextPage2Button.backgroundColor = UIColor.Pink2
+                    touchNextPage2Button.isEnabled = true
+                }
+                
+            } else {
+                if yearLabel.text == "출생연도 선택" {
+                    touchNextPage2Button.backgroundColor = UIColor.Grey1Bg
+                    touchNextPage2Button.isEnabled = false
+                } else {
+                    touchNextPage2Button.backgroundColor = UIColor.Pink2
+                    touchNextPage2Button.isEnabled = true
+
+                }
+                
             }
         } else {
             changeWomanGreyColor()
+            print("1")
+            touchNextPage2Button.backgroundColor = UIColor.Grey1Bg
+            touchNextPage2Button.isEnabled = false
+            
         }
     }
     @IBAction func touchManButton(_ sender: Any) {
         manButton.isSelected = !manButton.isSelected
         if manButton.isSelected == true {
             changeManPinkColor()
+            
             if womanButton.isSelected == true {
                 changeWomanGreyColor()
+                if yearLabel.text == "출생연도 선택" {
+                    touchNextPage2Button.backgroundColor = UIColor.Grey1Bg
+                    print("e")
+                    touchNextPage2Button.isEnabled = false
+                    
+                } else {
+                    touchNextPage2Button.backgroundColor = UIColor.Pink2
+                    touchNextPage2Button.isEnabled = true
+                    print("f")
+                }
+            } else {
+                if yearLabel.text == "출생연도 선택" {
+                    touchNextPage2Button.backgroundColor = UIColor.Grey1Bg
+                    print("g")
+                    touchNextPage2Button.isEnabled = false
+                } else {
+                    touchNextPage2Button.backgroundColor = UIColor.Pink2
+                    touchNextPage2Button.isEnabled = true
+                    print("h")
+                }
             }
+            
         } else {
             changeManGreyColor()
+            print("2")
+            touchNextPage2Button.backgroundColor = UIColor.Grey1Bg
+            touchNextPage2Button.isEnabled = false
+            
         }
     }
     @IBAction func touchModalButton(_ sender: Any) {
@@ -129,7 +179,7 @@ class SignUpSecondViewController: UIViewController {
     }
     
     private func pushSignUpThirdViewController() {
-       
+        
         let signupThirdStoryboard = UIStoryboard(name: Const.Storyboard.Name.signUpThird, bundle: nil)
         guard let signUpThirdViewController  = signupThirdStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.signUpThird) as? SignUpThirdViewController else {
             return
@@ -148,8 +198,12 @@ extension SignUpSecondViewController: YearPickerViewDelegate {
         self.selectedYear = AppYear(formattedDate: year, with: "")
         yearLabel.text = year
         yearLabel.textColor = .black
-    
+        if womanButton.isSelected || manButton.isSelected {
+            touchNextPage2Button.isEnabled = true
+            touchNextPage2Button.backgroundColor = UIColor.Pink2
+        }
     }
+    
 }
 
 // MARK: - UIViewControllerTransitioningDelegate
