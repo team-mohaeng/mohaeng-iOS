@@ -18,7 +18,11 @@ class FeedViewController: UIViewController {
     var isEnableWriting: Int = 0
     var moodStatus: Int = 0
     
-    // MARK: - UI Properties
+    // MARK: - @IBOutlet Properties
+    
+    @IBOutlet weak var feedCollectionView: UICollectionView!
+    @IBOutlet weak var statusBarView: UIView!
+    @IBOutlet weak var floatingTopButton: UIButton!
     
     var headerView: FeedHeaderView = {
         guard let nib = UINib(nibName: "FeedHeaderView", bundle: nil).instantiate(withOwner: self, options: nil).first as? FeedHeaderView else { return FeedHeaderView() }
@@ -30,12 +34,17 @@ class FeedViewController: UIViewController {
     var filterLabel = UILabel()
     var filterImageView = UIImageView()
     var disablePopUp: PopUpViewController = PopUpViewController()
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        activityIndicator.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
+        activityIndicator.hidesWhenStopped = false
+        activityIndicator.style = UIActivityIndicatorView.Style.medium
+        activityIndicator.startAnimating()
+        return activityIndicator
+    }()
     
-    // MARK: - @IBOutlet Properties
-    
-    @IBOutlet weak var feedCollectionView: UICollectionView!
-    @IBOutlet weak var statusBarView: UIView!
-    @IBOutlet weak var floatingTopButton: UIButton!
+    var backgroundView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
     
     // MARK: - View Life Cycle
     
@@ -61,7 +70,7 @@ class FeedViewController: UIViewController {
         headerView.frame = CGRect(x: 0, y: feedCollectionView.safeAreaInsets.top, width: UIScreen.main.bounds.width, height: (205 / 812) * UIScreen.main.bounds.height + UIScreen.main.bounds.height)
         self.feedCollectionView.insertSubview(self.feedBackgroundFrame, at: 0)
     }
-
+    
     // MARK: - function
     
     private func initNavigationBar() {
@@ -148,11 +157,26 @@ class FeedViewController: UIViewController {
         label.text = text
     }
     
+    private func attachActivityIndicator() {
+        backgroundView.backgroundColor = UIColor.white
+        self.view.addSubview(backgroundView)
+        self.view.addSubview(self.activityIndicator)
+    }
+    
+    private func detachActivityIndicator() {
+        if self.activityIndicator.isAnimating {
+            self.activityIndicator.stopAnimating()
+        }
+        self.backgroundView.removeFromSuperview()
+        self.activityIndicator.removeFromSuperview()
+    }
+    
     private func updateData(data: FeedData) {
         self.community = data.community
         feedTitleLabel.text = "오늘은 \(data.community.count)명의 쟈기들이 \n행복을 기록했어요"
         feedCollectionView.reloadData()
         isEnableWriting = data.hasSmallSatisfaction
+        self.detachActivityIndicator()
     }
     
     // MARK: - @IBAction Properties
@@ -173,7 +197,7 @@ class FeedViewController: UIViewController {
         case 0:
             let moodStoryboard = UIStoryboard(name: Const.Storyboard.Name.mood, bundle: nil)
             guard let nextVC = moodStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.mood) as? MoodViewController else { return }
-
+            
             self.navigationController?.pushViewController(nextVC, animated: true)
         case 1:
             moodStatus = 1
@@ -226,7 +250,7 @@ class FeedViewController: UIViewController {
             getAllFeed(sort: "like")
         }
     }
-
+    
     @IBAction func touchFloatingTopButton(_ sender: Any) {
         let topOffset = CGPoint(x: 0, y: 0)
         self.feedCollectionView.setContentOffset(topOffset, animated: true)
@@ -340,6 +364,7 @@ extension FeedViewController: PopUpActionDelegate {
 extension FeedViewController {
     
     func getAllFeed(sort: String) {
+        self.attachActivityIndicator()
         FeedAPI.shared.getAllFeed(sort: sort) { (response) in
             switch response {
             case .success(let feeds):
@@ -394,5 +419,4 @@ extension FeedViewController {
             }
         }
     }
-    
 }
