@@ -8,10 +8,21 @@
 import UIKit
 
 class MyDrawerViewController: UIViewController {
-
+    
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var myHappinessCollectionView: UICollectionView!
     @IBOutlet weak var emptyView: UIView!
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        activityIndicator.center = CGPoint(x: self.view.center.x, y: self.view.center.y - self.topbarHeight)
+        activityIndicator.hidesWhenStopped = false
+        activityIndicator.style = UIActivityIndicatorView.Style.medium
+        activityIndicator.startAnimating()
+        return activityIndicator
+    }()
+    
+    var backgroundView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
     
     // MARK: - Properties
     private var myDrawer = [Community(postID: 0, nickname: "", mood: 0, mainImage: "", likeCount: 0, content: "", hasLike: false, hashtags: [""], year: "", month: "", day: "", week: "")]
@@ -23,7 +34,7 @@ class MyDrawerViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         initCurrentDate()
         checkEmptyView()
         initNavigationBar()
@@ -38,7 +49,7 @@ class MyDrawerViewController: UIViewController {
         
         myHappinessCollectionView.register(UINib(nibName: Const.Xib.Name.myDrawerCollectionReusableView, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Const.Xib.Identifier.myDrawerCollectionReusableView)
     }
-
+    
     private func initNavigationBar() {
         self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
         
@@ -88,6 +99,7 @@ class MyDrawerViewController: UIViewController {
         self.myDrawer = data.myDrawerSmallSatisfactions
         checkEmptyView()
         myHappinessCollectionView.reloadData()
+        self.detachActivityIndicator()
     }
     
     private func convertMonthFormat(month: Int) -> String {
@@ -97,6 +109,21 @@ class MyDrawerViewController: UIViewController {
             return String(month)
         }
     }
+    
+    private func attachActivityIndicator() {
+        backgroundView.backgroundColor = UIColor.white
+        self.view.addSubview(backgroundView)
+        self.view.addSubview(self.activityIndicator)
+    }
+    
+    private func detachActivityIndicator() {
+        if self.activityIndicator.isAnimating {
+            self.activityIndicator.stopAnimating()
+        }
+        self.backgroundView.removeFromSuperview()
+        self.activityIndicator.removeFromSuperview()
+    }
+    
     
     @objc func dataReceived(notification: NSNotification) {
         guard let selectedDate = self.selectedDate else { return }
@@ -190,6 +217,7 @@ extension MyDrawerViewController: UICollectionViewDelegateFlowLayout {
 
 extension MyDrawerViewController {
     func getMyDrawer(year: String, month: String) {
+        self.attachActivityIndicator()
         FeedAPI.shared.getMyDrawer(year: year, month: month) { (response) in
             switch response {
             case .success(let myDrawer):
