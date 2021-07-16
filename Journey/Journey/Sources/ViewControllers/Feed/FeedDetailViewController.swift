@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 class FeedDetailViewController: UIViewController {
-
+    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var feedDetailView: UIView!
@@ -30,14 +30,14 @@ class FeedDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         setData()
         getFeedDetail(postId: feedInfo.postID)
         initNavigationBar()
         initAttribute()
     }
-
+    
     // MARK: - function
     
     private func initAttribute() {
@@ -46,11 +46,11 @@ class FeedDetailViewController: UIViewController {
     
     private func initNavigationBar() {
         self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
-        let item = UIBarButtonItem(image: UIImage(named: "gnbIconTrash"), style: .plain, target: self, action: nil)
+        let item = UIBarButtonItem(image: UIImage(named: "gnbIconTrash"), style: .plain, target: self, action: #selector(touchRemoveButton))
         item.tintColor = .black
-        self.navigationItem.rightBarButtonItem = item
+//        self.navigationItem.rightBarButtonItem = item
     }
-
+    
     private func setData() {
         mainImageView.kf.setImage(with: URL(string: feedInfo.mainImage))
         feedContentsLabel.text = feedInfo.content
@@ -123,6 +123,7 @@ class FeedDetailViewController: UIViewController {
     }
     
     // MARK: - @IBAction Properties
+    
     @IBAction func touchLikeButton(_ sender: Any) {
         likeButton.isSelected = !likeButton.isSelected
         if likeButton.isSelected {
@@ -134,6 +135,36 @@ class FeedDetailViewController: UIViewController {
             setLikeButtonBackgroundImage(buttonStatus: likeButton.isSelected)
             minusLikeCount()
         }
+    }
+    
+    @objc func touchRemoveButton() {
+        var removePopUp = PopUpViewController(nibName: Const.Xib.Name.popUp, bundle: nil)
+        removePopUp.modalPresentationStyle = .overCurrentContext
+        removePopUp.modalTransitionStyle = .crossDissolve
+        removePopUp.popUpUsage = .noImage
+        removePopUp.popUpActionDelegate = self
+        tabBarController?.present(removePopUp, animated: true, completion: nil)
+        
+        removePopUp.titleLabel.text = "당신, 정말 삭제할거야?"
+        removePopUp.descriptionLabel.text = "지금 삭제하면 다시 볼 수 없어. \n그래도 소확행을 삭제하겠어?"
+        removePopUp.pinkButton?.setTitle("아니!", for: .normal)
+        removePopUp.whiteButton?.setTitle("삭제할래", for: .normal)
+        removePopUp.popUpImageView.isHidden = true
+    }
+}
+
+extension FeedDetailViewController: PopUpActionDelegate {
+    func touchPinkButton(button: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func touchWhiteButton(button: UIButton) {
+        deleteFeed(postId: feedInfo.postID)
+        
+        let feedStoryboard = UIStoryboard(name: Const.Storyboard.Name.feed, bundle: nil)
+        guard let feedViewController = feedStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.feed) as? FeedViewController else { return }
+        
+        self.navigationController?.pushViewController(feedViewController, animated: true)
     }
 }
 
@@ -180,6 +211,23 @@ extension FeedDetailViewController {
         FeedAPI.shared.putFeedUnlike(postId: postId) { (response) in
             switch response {
             case .success(_):
+                break
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+    
+    func deleteFeed(postId: Int) {
+        FeedAPI.shared.deleteFeed(postId: postId) { (response) in
+            switch response {
+            case  .success(_):
                 break
             case .requestErr(let message):
                 print("requestErr", message)

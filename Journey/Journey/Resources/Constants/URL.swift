@@ -79,5 +79,7 @@ extension Const {
         
         // 좋아요 취소(PUT) : "/smallSatisfaction/unlike/:postId"
         static let unlikeURL = "/unlike"
+        
+        static let deleteURL = "/delete"
     }
 }
