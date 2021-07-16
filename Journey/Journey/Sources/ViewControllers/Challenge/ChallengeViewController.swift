@@ -196,7 +196,6 @@ class ChallengeViewController: UIViewController {
                         return
                     }
                     imageview.image = initialStampImage
-                    print("아아아")
                 }
             }
         } else {
@@ -320,7 +319,6 @@ class ChallengeViewController: UIViewController {
         // stamp stack view
         totalStamp = data.course.challenges[currentChallengeIdx].totalStamp
         self.notchCase(totalStamp: totalStamp)
-        print(totalStamp)
         
         // stamp image
         initialStampImage = setInitialStamp(property: data.course.property)
@@ -388,38 +386,37 @@ class ChallengeViewController: UIViewController {
     @objc func touchstampAction1(_ gesture: UITapGestureRecognizer) {
         
         guard let course = self.course else { return }
-        print(currentChallengeIdx)
-        presentStampPopUp(description: course.challenges[currentChallengeIdx].userMents[currentChallengeIdx])
+        presentStampPopUp(description: course.challenges[currentChallengeIdx].userMents[currentStamp])
         selectedStampImageView = stampImageView1
     }
     
     @objc func touchstampAction2(_ gesture: UITapGestureRecognizer) {
         guard let course = self.course else { return }
-        presentStampPopUp(description: course.challenges[currentChallengeIdx].userMents[currentChallengeIdx])
+        presentStampPopUp(description: course.challenges[currentChallengeIdx].userMents[currentStamp])
         selectedStampImageView = stampImageView2
     }
     
     @objc func touchstampAction3(_ gesture: UITapGestureRecognizer) {
         guard let course = self.course else { return }
-        presentStampPopUp(description: course.challenges[currentChallengeIdx].userMents[currentChallengeIdx])
+        presentStampPopUp(description: course.challenges[currentChallengeIdx].userMents[currentStamp])
         selectedStampImageView = stampImageView3
     }
     
     @objc func touchStampActionTriangle1(_ gesture: UITapGestureRecognizer) {
         guard let course = self.course else { return }
-        presentStampPopUp(description: course.challenges[currentChallengeIdx].userMents[currentChallengeIdx])
+        presentStampPopUp(description: course.challenges[currentChallengeIdx].userMents[currentStamp])
         selectedStampImageView = triangleStampImageView1
     }
     
     @objc func touchStampActionTriangle2(_ gesture: UITapGestureRecognizer) {
         guard let course = self.course else { return }
-        presentStampPopUp(description: course.challenges[currentChallengeIdx].userMents[currentChallengeIdx])
+        presentStampPopUp(description: course.challenges[currentChallengeIdx].userMents[currentStamp])
         selectedStampImageView = triangleStampImageView2
     }
     
     @objc func touchStampActionTriangle3(_ gesture: UITapGestureRecognizer) {
         guard let course = self.course else { return }
-        presentStampPopUp(description: course.challenges[currentChallengeIdx].userMents[currentChallengeIdx])
+        presentStampPopUp(description: course.challenges[currentChallengeIdx].userMents[currentStamp])
         selectedStampImageView = triangleStampImageView3
     }
     
