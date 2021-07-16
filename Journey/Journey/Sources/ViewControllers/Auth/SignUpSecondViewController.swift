@@ -27,10 +27,10 @@ class SignUpSecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        initNavigationBar()
         changeButtonAttribute()
         makeButtonRound()
         initCurrentYear()
-        //        changeNextButtonColor()
     }
     
     // MARK: - @IBAction Properties
@@ -117,6 +117,11 @@ class SignUpSecondViewController: UIViewController {
     }
     
     // MARK: - Functions
+    
+    private func initNavigationBar() {
+        self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
+        navigationItem.title = "회원가입"
+    }
     
     private func changeButtonAttribute() {
         womanButton.makeRoundedWithBorder(radius: 10, color: UIColor.lightGray.cgColor )
