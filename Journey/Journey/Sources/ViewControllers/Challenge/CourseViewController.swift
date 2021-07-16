@@ -121,6 +121,7 @@ extension CourseViewController: UITableViewDataSource {
                 
                 cell.setCell(challenge: course.challenges[indexPath.row])
                 cell.setNextSituation(next: course.challenges[indexPath.row + 1].situation)
+                cell.property = course.property
                 
                 return cell
             }
@@ -136,6 +137,7 @@ extension CourseViewController: UITableViewDataSource {
                 if indexPath.row < course.challenges.count-1 {
                     cell.setNextSituation(next: course.challenges[indexPath.row + 1].situation)
                 }
+                cell.property = course.property
                 
                 return cell
             }
@@ -149,6 +151,7 @@ extension CourseViewController: UITableViewDataSource {
                 if indexPath.row < course.challenges.count-1 {
                     cell.setNextSituation(next: course.challenges[indexPath.row + 1].situation)
                 }
+                cell.property = course.property
                 
                 return cell
             }

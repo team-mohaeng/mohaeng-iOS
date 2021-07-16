@@ -24,10 +24,13 @@ class FirstDayTableViewCell: UITableViewCell {
     private let centerPoint: CGPoint = CGPoint(x: Size.screenWidth - Size.horizontalSpacing - Size.radius, y: Size.cellHeight - Size.verticalSpacingWithBottomCell)
     private let startPoint: CGPoint = CGPoint(x: Size.screenWidth - Size.horizontalSpacing, y: Size.cellHeight - Size.verticalSpacingWithBottomCell)
     
+    var property: Int = 0
+    
     // MARK: - @IBOutlet Properties
+    
     @IBOutlet weak var roadView: UIView!
     @IBOutlet weak var circleView: UIView!
-    @IBOutlet weak var propertyImageView: UIView!
+    @IBOutlet weak var propertyImageView: UIImageView!
     @IBOutlet weak var propertyBgView: UIView!
     @IBOutlet weak var dayCountLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -41,6 +44,7 @@ class FirstDayTableViewCell: UITableViewCell {
         
         initViewRounding()
         initFirstPath()
+        setProperty(by: property)
     }
     
     // MARK: - Functions
@@ -81,12 +85,15 @@ class FirstDayTableViewCell: UITableViewCell {
         
         // situation에 따른 분기처리
         setColorBySituation(situation: challenge.situation)
+        
+        // property에 따라 속성 아이콘 변경
+        
     }
     
     func setNextSituation(next: Int) {
         if next == 0 {
             line.strokeColor = UIColor.white.cgColor
-        } else if next == 2 {
+        } else {
             line.strokeColor = UIColor.Pink2.cgColor
         }
     }
@@ -105,6 +112,40 @@ class FirstDayTableViewCell: UITableViewCell {
         default:
             break
         }
+    }
+    
+    // set property functions
+    
+    func setProperty(by property: Int) {
+        switch property {
+        case Property.health.rawValue:
+            setProperty0()
+        case Property.memory.rawValue:
+            setProperty1()
+        case Property.observation.rawValue:
+            setProperty2()
+        case Property.challenge.rawValue:
+            setProperty3()
+        default:
+            return
+        }
+    }
+    
+    // 0: 건강 1: 기억 2: 관찰 3: 도전
+    func setProperty0() {
+        propertyImageView.image = Const.Image.typeHwithColor
+    }
+    
+    func setProperty1() {
+        propertyImageView.image = Const.Image.typeMwithColor
+    }
+    
+    func setProperty2() {
+        propertyImageView.image = Const.Image.typeSwithColor
+    }
+    
+    func setProperty3() {
+        propertyImageView.image = Const.Image.typeCwithColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
