@@ -103,7 +103,7 @@
                 <outlet property="dayLabelBgView" destination="cAp-Ts-isd" id="znT-Ef-moZ"/>
                 <outlet property="descriptionLabel" destination="7z3-Jf-lbd" id="kFh-Nf-eNj"/>
                 <outlet property="propertyBgView" destination="ROc-9O-fd3" id="fcg-Qe-Mf1"/>
-                <outlet property="propertyImageView" destination="ROc-9O-fd3" id="LU3-jJ-x5D"/>
+                <outlet property="propertyImageView" destination="6eV-ht-Qjc" id="wIc-2U-a78"/>
             </connections>
             <point key="canvasLocation" x="132" y="99"/>
         </tableViewCell>

@@ -35,11 +35,13 @@ class EvenDayTableViewCell: UITableViewCell {
     let circle3CenterPoint: CGPoint = CGPoint(x: Size.horizontalSpacing + Size.radius, y: Size.cellHeight - Size.verticalSpacingWithTopCell)
     let circle3StartPoint: CGPoint = CGPoint(x: Size.horizontalSpacing, y: Size.cellHeight - Size.verticalSpacingWithBottomCell)
     
+    var property: Int = 0
+    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var cellBgView: UIView!
     @IBOutlet weak var propertyBgView: UIView!
-    @IBOutlet weak var propertyImageView: UIView!
+    @IBOutlet weak var propertyImageView: UIImageView!
     @IBOutlet weak var dayCountLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
@@ -53,6 +55,7 @@ class EvenDayTableViewCell: UITableViewCell {
         initViewRounding()
         initEvenPath()
         initNextPath()
+        setProperty(by: property)
     }
     
     // MARK: - Functions
@@ -119,7 +122,7 @@ class EvenDayTableViewCell: UITableViewCell {
         if next == 0 {
             afterLine.strokeColor = UIColor.white.cgColor
             cellBgView.layer.insertSublayer(afterLine, at: 0)
-        } else if next == 2 {
+        } else {
             afterLine.strokeColor = UIColor.Pink2.cgColor
             cellBgView.layer.insertSublayer(afterLine, at: 0)
         }
@@ -140,6 +143,41 @@ class EvenDayTableViewCell: UITableViewCell {
             break
         }
     }
+    
+    // set property functions
+    
+    func setProperty(by property: Int) {
+        switch property {
+        case Property.health.rawValue:
+            setProperty0()
+        case Property.memory.rawValue:
+            setProperty1()
+        case Property.observation.rawValue:
+            setProperty2()
+        case Property.challenge.rawValue:
+            setProperty3()
+        default:
+            return
+        }
+    }
+    
+    // 0: 건강 1: 기억 2: 관찰 3: 도전
+    func setProperty0() {
+        propertyImageView.image = Const.Image.typeHwithColor
+    }
+    
+    func setProperty1() {
+        propertyImageView.image = Const.Image.typeMwithColor
+    }
+    
+    func setProperty2() {
+        propertyImageView.image = Const.Image.typeSwithColor
+    }
+    
+    func setProperty3() {
+        propertyImageView.image = Const.Image.typeCwithColor
+    }
+
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

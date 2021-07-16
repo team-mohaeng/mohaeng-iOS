@@ -101,7 +101,7 @@
                 <outlet property="dayLabelBgView" destination="W98-sa-HWL" id="Vm0-6K-fB9"/>
                 <outlet property="descriptionLabel" destination="wcm-tR-8hh" id="fAH-j2-VL1"/>
                 <outlet property="propertyBgView" destination="CCZ-df-TIz" id="CFJ-Ua-WHd"/>
-                <outlet property="propertyImageView" destination="CCZ-df-TIz" id="6l6-D9-SWm"/>
+                <outlet property="propertyImageView" destination="t29-ZG-jYv" id="GkM-Rq-uOX"/>
                 <outlet property="roadView" destination="ayN-lo-PQE" id="nNX-bh-J8S"/>
             </connections>
             <point key="canvasLocation" x="45.652173913043484" y="125.89285714285714"/>
