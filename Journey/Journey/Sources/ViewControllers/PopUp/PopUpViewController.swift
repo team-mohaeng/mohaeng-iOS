@@ -17,6 +17,7 @@ class PopUpViewController: UIViewController {
     
     var popUpUsage: PopUpUsage?
     var popUpActionDelegate: PopUpActionDelegate?
+    var image: UIImage?
     
     // MARK: - @IBOutlet Properties
     
@@ -41,6 +42,9 @@ class PopUpViewController: UIViewController {
         super.viewDidLoad()
 
         initViewRounding()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         initCase(usage: self.popUpUsage ?? .oneButton)
     }
     
@@ -79,7 +83,7 @@ class PopUpViewController: UIViewController {
         case .oneButtonWithClose:
             self.initCaseOneButtonWithClose()
         case .noImage:
-            self.initCaseNoIamge()
+            self.initCaseNoImage()
         case .noTitle:
             self.initCaseNoTitle()
         }
@@ -91,20 +95,23 @@ class PopUpViewController: UIViewController {
         whiteButtonHeightConstraint.isActive = false
         pinkButtonBottomConstraint.constant = 24
         stampCloseButton.isHidden = false
+        setImage(image: image)
     }
     
     private func initCaseTwoButton() {
         closeButton.isHidden = true
         pinkButtonBottomConstraint.isActive = false
+        setImage(image: image)
     }
     
     private func initCaseOneButtonWithClose() {
         whiteButton.isHidden = true
         whiteButtonHeightConstraint.isActive = false
         pinkButtonBottomConstraint.constant = 24
+        setImage(image: image)
     }
     
-    private func initCaseNoIamge() {
+    private func initCaseNoImage() {
         closeButton.isHidden = true
         descriptionTopConstraint.constant = 93
         popUpImageView.removeFromSuperview()
@@ -125,5 +132,11 @@ class PopUpViewController: UIViewController {
     
     func setTitle(text: String) {
         titleLabel.text = text
+    }
+    
+    func setImage(image: UIImage?) {
+        if let image = image {
+            popUpImageView.image = image
+        }
     }
 }
