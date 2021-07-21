@@ -46,7 +46,7 @@ class FeedDetailViewController: UIViewController {
     
     private func initNavigationBar() {
         self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
-        let item = UIBarButtonItem(image: UIImage(named: "gnbIconTrash"), style: .plain, target: self, action: #selector(touchRemoveButton))
+        let item = UIBarButtonItem(image: Const.Image.gnbIcnBack, style: .plain, target: self, action: #selector(touchRemoveButton))
         item.tintColor = .black
 //        self.navigationItem.rightBarButtonItem = item
     }

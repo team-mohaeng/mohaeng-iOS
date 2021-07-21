@@ -125,7 +125,7 @@ class ContentsCollectionViewCell: UICollectionViewCell {
     
     private func initLikeButton() {
         likeButton.then {
-            $0.setBackgroundImage(UIImage(named: "icnHeart"), for: .normal)
+            $0.setBackgroundImage(Const.Image.heartImg, for: .normal)
         }
     }
     
@@ -215,12 +215,12 @@ class ContentsCollectionViewCell: UICollectionViewCell {
         switch buttonStatus {
         case true:
             likeButton.isSelected = true
-            likeButton.setBackgroundImage(UIImage(named: "icnHeartfull"), for: .normal)
+            likeButton.setBackgroundImage(Const.Image.heartFullImg, for: .normal)
             likeCountLabel.textColor = .Pink2
             likeCountLabel.font = UIFont.spoqaHanSansNeo(weight: .bold, size: 10)
         case false:
             likeButton.isSelected = false
-            likeButton.setBackgroundImage(UIImage(named: "icnHeart"), for: .normal)
+            likeButton.setBackgroundImage(Const.Image.heartImg, for: .normal)
             likeCountLabel.textColor = .white
         }
     }

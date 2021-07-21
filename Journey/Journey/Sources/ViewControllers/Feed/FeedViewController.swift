@@ -101,7 +101,7 @@ class FeedViewController: UIViewController {
         filterLabel.text = "좋아요 순"
         filterLabel.textColor = .Black2Text
         filterLabel.font = UIFont.spoqaHanSansNeo(weight: .regular, size: 12)
-        filterImageView.image = UIImage(named: "btnFilter")
+        filterImageView.image = Const.Image.imgFilter
         
         floatingTopButton.contentEdgeInsets = UIEdgeInsets(top: 0.01, left: 0, bottom: 0.01, right: 0)
         floatingTopButton.layer.shadowOffset = CGSize(width: 2, height: 3)

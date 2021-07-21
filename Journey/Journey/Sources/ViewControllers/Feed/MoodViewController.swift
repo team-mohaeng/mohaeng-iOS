@@ -67,9 +67,9 @@ class MoodViewController: UIViewController {
         nextButton.isEnabled = true
         nextButton.alpha = 1.0
         
-        sosoDayButton.setImage(UIImage(named: "imgFaceGraphic1circle"), for: .normal)
-        fineDayButton.setImage(UIImage(named: "imgFaceGraphicIn1"), for: .normal)
-        goodDayButton.setImage(UIImage(named: "imgFaceGraphicIn3"), for: .normal)
+        sosoDayButton.setImage(Const.Image.imgFaceGraphic1circle, for: .normal)
+        fineDayButton.setImage(Const.Image.imgFaceGraphicIn1, for: .normal)
+        goodDayButton.setImage(Const.Image.imgFaceGraphicIn3, for: .normal)
         
         setOpacityHigh(button: sosoDayButton, label: sosoDayLabel)
         setOpacityLow(button: fineDayButton, label: findDayLabel)
@@ -82,9 +82,9 @@ class MoodViewController: UIViewController {
         nextButton.isEnabled = true
         nextButton.alpha = 1.0
         
-        sosoDayButton.setImage(UIImage(named: "imgFaceGraphicIn2"), for: .normal)
-        fineDayButton.setImage(UIImage(named: "imgFaceGraphic2circle"), for: .normal)
-        goodDayButton.setImage(UIImage(named: "imgFaceGraphicIn3"), for: .normal)
+        sosoDayButton.setImage(Const.Image.imgFaceGraphicIn2, for: .normal)
+        fineDayButton.setImage(Const.Image.imgFaceGraphic2circle, for: .normal)
+        goodDayButton.setImage(Const.Image.imgFaceGraphicIn3, for: .normal)
         
         setOpacityHigh(button: fineDayButton, label: findDayLabel)
         setOpacityLow(button: sosoDayButton, label: sosoDayLabel)
@@ -97,9 +97,9 @@ class MoodViewController: UIViewController {
         nextButton.isEnabled = true
         nextButton.alpha = 1.0
         
-        sosoDayButton.setImage(UIImage(named: "imgFaceGraphicIn2"), for: .normal)
-        fineDayButton.setImage(UIImage(named: "imgFaceGraphicIn1"), for: .normal)
-        goodDayButton.setImage(UIImage(named: "imgFaceGraphic3circle"), for: .normal)
+        sosoDayButton.setImage(Const.Image.imgFaceGraphicIn2, for: .normal)
+        fineDayButton.setImage(Const.Image.imgFaceGraphicIn1, for: .normal)
+        goodDayButton.setImage(Const.Image.imgFaceGraphic3circle, for: .normal)
         
         setOpacityHigh(button: goodDayButton, label: goodDayLabel)
         setOpacityLow(button: fineDayButton, label: findDayLabel)
