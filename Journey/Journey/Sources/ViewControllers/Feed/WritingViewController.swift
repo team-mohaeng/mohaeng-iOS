@@ -131,7 +131,7 @@ class WritingViewController: UIViewController {
     // MARK: - @IBAction
     
     @IBAction func touchPhotoRemoveButton(_ sender: Any) {
-        photoUploadImageView.image = UIImage(named: "btnPhotoUp")
+        photoUploadImageView.image = Const.Image.imgPhotoUpload
         hasImage = false
         photoRemoveButton.isHidden = true
     }

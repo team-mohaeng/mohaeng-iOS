@@ -87,5 +87,16 @@ extension Const {
         static let bgPopOk = UIImage(named: "bgpopok")
         static let bgPopGiveUp = UIImage(named: "bgpopgiveup")
         static let bgStartCourse = UIImage(named: "bgStartCourse")
+        
+        // feed write button image
+        static let imgUnlock = UIImage(named: "imgUnlock")
+        static let imgCongratulations = UIImage(named: "iconCongratulations")
+        static let imgLock = UIImage(named: "imgLock")
+        
+        // feed filter image
+        static let imgFilter = UIImage(named: "btnFilter")
+        
+        // photo upload image
+        static let imgPhotoUpload = UIImage(named: "btnPhotoUp")
     }
 }

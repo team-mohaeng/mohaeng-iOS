@@ -49,19 +49,19 @@ class FeedHeaderView: UIView {
         case 0:
             writeButtonLabel.text = "소확행 작성하기"
             writeButtonLabel.textColor = .Black1Text
-            writeButtonImageView.image = UIImage(named: "imgUnlock")
+            writeButtonImageView.image = Const.Image.imgUnlock
         case 1:
             writeButtonLabel.text = "소확행 작성완료"
             writeButtonLabel.textColor = .Black1Text
-            writeButtonImageView.image = UIImage(named: "iconCongratulations")
+            writeButtonImageView.image = Const.Image.imgCongratulations
         case 2:
             writeButtonLabel.text = "소확행 작성하기"
             writeButtonLabel.textColor = .Black3Text
-            writeButtonImageView.image = UIImage(named: "imgLock")
+            writeButtonImageView.image = Const.Image.imgLock
         case 3:
             writeButtonLabel.text = "소확행 작성하기"
             writeButtonLabel.textColor = .Black3Text
-            writeButtonImageView.image = UIImage(named: "imgLock")
+            writeButtonImageView.image = Const.Image.imgLock
         default:
             break
         }
