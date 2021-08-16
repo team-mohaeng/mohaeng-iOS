@@ -11,7 +11,7 @@ extension Const {
     struct URL {
         
         // base url
-        static let baseURL = "http://3.36.55.247:5000/api"
+        static let baseURL = "http://3.35.25.237:5000/api"
         
         // MARK: - Auth -  Auth Service
         
