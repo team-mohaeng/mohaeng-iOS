@@ -13,11 +13,6 @@ public class ChallengeAPI {
     static let shared = ChallengeAPI()
     var challengeProvider = MoyaProvider<ChallengeService>()
     
-    enum ResponseData {
-        case courses
-        case course
-    }
-    
     public init() { }
     
     func getAllChallenges(completion: @escaping (NetworkResult<Any>) -> Void) {
@@ -75,6 +70,8 @@ public class ChallengeAPI {
         
     }
     
+    // MARK: - judging status function
+    
     private func judgeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
         
@@ -84,7 +81,7 @@ public class ChallengeAPI {
         
         switch statusCode {
         case 200:
-            return isValidData(data: data)
+            return .success(decodedData.data)
         case 400..<500:
             return .requestErr(decodedData.message)
         case 500:
@@ -92,16 +89,5 @@ public class ChallengeAPI {
         default:
             return .networkFail
         }
-    }
-    
-    private func isValidData(data: Data) -> NetworkResult<Any> {
-        let decoder = JSONDecoder()
-        
-        guard let decodedData = try? decoder.decode(GenericResponse<CourseData>.self, from: data) else {
-            print("아니드라..")
-            return .pathErr
-        }
-        
-        return .success(decodedData.data)
     }
 }

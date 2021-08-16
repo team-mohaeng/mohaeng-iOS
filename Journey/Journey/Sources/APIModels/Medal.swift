@@ -7,12 +7,6 @@
 
 import Foundation
 
-// MARK: - MedalResponseData
-struct MedalResponseData: Codable {
-    let status: Int
-    let data: MedalData
-}
-
 // MARK: - MedalData
 struct MedalData: Codable {
     let totalIncreasedAffinity, maxSuccessCount: Int

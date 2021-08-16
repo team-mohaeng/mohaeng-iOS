@@ -7,24 +7,12 @@
 
 import Foundation
 
-// MARK: - CourseResponseData
-struct CourseResponseData: Codable {
-    let status: Int
-    let data: CourseData
-}
-
 // MARK: - CourseData
 struct CourseData: Codable {
     let course: Course
 }
 
-// MARK: - CoursesResponseData
-struct CoursesResponseData: Codable {
-    let status: Int
-    let data: CoursesData
-}
-
-// MARK: - DataClass
+// MARK: - CoursesData
 struct CoursesData: Codable {
     let courses: [Course]
 }
