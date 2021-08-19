@@ -54,13 +54,8 @@ class WritingViewController: UIViewController {
     }
     
     private func initCurruentDay() {
-        var currentDay = AppDate()
-        
-        var formatter = DateFormatter()
-        formatter.dateFormat = "dd"
-        var day = formatter.string(from: Date())
-        
-        dateLabel.text = "\(currentDay.getYear()).\(currentDay.getMonth()).\(day) (\(currentDay.getWeekday().toSimpleKorean()))"
+        let currentDay = AppDate()
+        dateLabel.text = "\(currentDay.getFormattedDate(with: ".")) (\(currentDay.getWeekday()))"
     }
     
     private func registerXib() {

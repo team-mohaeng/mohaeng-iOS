@@ -7,8 +7,8 @@
 
 import UIKit
 
-protocol DatePickerViewDelegate: class {
-    func passData(_ date: String)
+protocol DatePickerViewDelegate: AnyObject {
+    func passData(_ year: String, _ month: String)
 }
 
 class DatePickerViewController: UIViewController {
@@ -17,23 +17,14 @@ class DatePickerViewController: UIViewController {
     
     var year: Int? = 0
     var month: Int? = 0
-    var day: Int? = 0
     
     var yearList: [String] = []
     var monthList: [String] = []
-    var dayList: [[String]] = [
-        (1...31).map {String($0)},
-        (1...30).map {String($0)},
-        (1...29).map {String($0)},
-        (1...28).map {String($0)}
-    ]
     
     var currentMonthList: [String] = []
     var currentDayList: [String] = []
-    
-    weak var datePickerDataDelegate: DatePickerViewDelegate?
-    
     let currentDate = AppDate()
+    weak var datePickerDataDelegate: DatePickerViewDelegate?
     
     // MARK: - IBOutlets
     
@@ -68,7 +59,6 @@ class DatePickerViewController: UIViewController {
               let unwrappedMonth = self.month else {
             return
         }
-        
         self.yearPickerView.selectRow(unwrappedYear - 2000, inComponent: 0, animated: true)
         self.monthPickerView.selectRow(unwrappedMonth - 1, inComponent: 0, animated: true)
     }
@@ -85,7 +75,6 @@ class DatePickerViewController: UIViewController {
         yearList = (2000...currentDate.getYear()).map({String($0)})
         monthList = (1...12).map({String($0)})
         currentMonthList = (1...currentDate.getMonth()).map({String($0)})
-        currentDayList = (1...currentDate.getDay()).map({String($0)})
     }
     
     private func initAttribute() {
@@ -120,15 +109,11 @@ class DatePickerViewController: UIViewController {
     
     @IBAction func touchApplyButton(_ sender: Any) {
         guard let unwrappedYear = self.year,
-              let unwrappedMonth = self.month,
-              let upwrappedDay = self.day else {
+              let unwrappedMonth = self.month else {
             return
         }
-        let selectedDate = AppDate(year: unwrappedYear,
-                                   month: unwrappedMonth)
-//                                   day: upwrappedDay)
-        let stringMonth = String(format: "%02d", selectedDate.getMonth())
-        self.datePickerDataDelegate?.passData("\(selectedDate.getYear()). \(stringMonth)")
+        
+        self.datePickerDataDelegate?.passData("\(unwrappedYear)", "\(unwrappedMonth)")
         dismissDatePicker()
     }
 }
@@ -166,7 +151,6 @@ extension DatePickerViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == self.yearPickerView {

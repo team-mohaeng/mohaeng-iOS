@@ -10,10 +10,12 @@ import UIKit
 class MyDrawerCollectionReusableView: UICollectionReusableView {
 
     // MARK: - @IBOutlet Properties
+    
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var calendarButton: UIButton!
     
     // MARK: - Properties
+    
     var currentDate: AppDate?
     
     override func awakeFromNib() {
@@ -25,6 +27,7 @@ class MyDrawerCollectionReusableView: UICollectionReusableView {
     }
     
     // MARK: - function
+    
     private func addObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(setData), name: NSNotification.Name("datePickerSelected"), object: nil)
     }
@@ -35,19 +38,23 @@ class MyDrawerCollectionReusableView: UICollectionReusableView {
         guard let year = currentDate?.getYearToString() else { return }
         guard let currentMonth = currentDate?.getMonthToString() else { return }
         
-        let startIndex: String.Index = year.index(year.startIndex, offsetBy: 2)
-        let currentYear = year[startIndex...]
-        
-        dateLabel.text = "\(currentYear)년 \(currentMonth)월 소확행"
+        dateLabel.text = "\(make2DigitYear(year: year))년 \(currentMonth)월 소확행"
     }
     
     @objc private func setData(notification: NSNotification) {
-        if let date = notification.object as? AppDate {
-            guard let year = currentDate?.getYearToString() else { return }
-            let startIndex: String.Index = year.index(year.startIndex, offsetBy: 2)
-            let currentYear = year[startIndex...]
-            dateLabel.text = "\(currentYear)년 \(date.getMonth())월 소확행"
+        if let date = notification.object as? Array<String> {
+            let year = make2DigitYear(year: date[0])
+            let month = date[1]
+            
+            dateLabel.text = "\(year)년 \(month)월 소확행"
         }
+    }
+    
+    private func make2DigitYear(year: String) -> Substring {
+        let startIndex: String.Index = year.index(year.startIndex, offsetBy: 2)
+        let doubleDigitYear = year[startIndex...]
+        
+        return doubleDigitYear
     }
     
     // MARK: - IBAction

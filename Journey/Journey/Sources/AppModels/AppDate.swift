@@ -11,30 +11,22 @@ class AppDate {
     
     // MARK: - Properties
     
-    private var _date: Date?
-    public private(set) var date: Date? {
-        get {
-            return _date
-        }
-        set(newDate) {
-            _date = newDate
-            self.setWeekday()
-        }
-    }
-    private var weekday: AppWeekday?
+    private var date: Date?
+    private var weekday: String?
     private let dateFormatter: DateFormatter?
     
     init() {
         self.dateFormatter = DateFormatter()
-        self.dateFormatter?.locale = Locale.current
+        self.dateFormatter?.locale = Locale(identifier: "ko-KR")
         self.date = Date()
+        self.setWeekday()
     }
     
-    convenience init(year: Int, month: Int) {
+    convenience init(year: Int, month: Int, day: Int) {
         self.init()
         
         let dateComponents = NSDateComponents()
-//        dateComponents.day = day
+        dateComponents.day = day
         dateComponents.month = month
         dateComponents.year = year
         
@@ -48,36 +40,20 @@ class AppDate {
         
         guard let year = Int(dateArray[0]),
               let month = Int(dateArray[1]),
-//              let day = Int(dateArray[2]),
+              let day = Int(dateArray[2]),
               year >= 0 && year <= 9999,
-              month >= 1 && month <= 12 else {
-//              day >= 1 && day <= 31 else {
+              month >= 1 && month <= 12,
+              day >= 1 && day <= 31 else {
             return
         }
         
-        self.init(year: year, month: month)
-    }
-    
-    convenience init(serverDate: String) {
-        self.init()
-        
-        guard let formattedDate = serverDate.split(separator: "T").first else {
-            return
-        }
-        
-        self.init(formattedDate: String(formattedDate), with: "-")
+        self.init(year: year, month: month, day: day)
     }
     
     // MARK: - Functions
     
     func getFormattedDate(with separator: String) -> String {
-        return self.getDateComponent(with: "yyyy\(separator)MM\(separator)")
-    }
-    
-    func getFormattedDateAndWeekday(with separator: String) -> String {
-        let formattedDate = self.getDateComponent(with: "yyyy\(separator)MM\(separator)dd")
-        guard let weekday = self.weekday?.toKorean() else { return "000" }
-        return "\(formattedDate)\(separator)\(weekday)"
+        return self.getDateComponent(with: "yyyy\(separator) MM\(separator) dd")
     }
     
     func getDay() -> Int {
@@ -95,8 +71,13 @@ class AppDate {
         return year
     }
     
-    func getWeekday() -> AppWeekday {
-        guard let weekday = self.weekday else { return AppWeekday.monday }
+    func getYearWithYY() -> Int {
+        guard let year = Int(self.getDateComponent(with: "yy")) else { return 0 }
+        return year
+    }
+    
+    func getWeekday() -> String {
+        guard let weekday = self.weekday else { return "" }
         return weekday
     }
 
@@ -119,55 +100,7 @@ class AppDate {
     }
     
     private func setWeekday() {
-        guard let weekday = AppWeekday.init(rawValue: self.getDateComponent(with: "EEEE")) else { return }
+        let weekday = self.getDateComponent(with: "EE")
         self.weekday = weekday
-    }
-}
-
-extension AppDate: Equatable {
-    static func == (lhs: AppDate, rhs: AppDate) -> Bool {
-        return lhs.getFormattedDate(with: ". ") == rhs.getFormattedDate(with: ". ")
-    }
-}
-
-enum AppWeekday: String {
-    case monday = "Monday", tuesday = "Tuesday", wednesday = "Wednesday", thursday = "Thursday", friday = "Friday", saturday = "Saturday", sunday = "Sunday"
-    
-    func toKorean() -> String {
-        switch self {
-        case .monday:
-            return "월요일"
-        case .tuesday:
-            return "화요일"
-        case .wednesday:
-            return "수요일"
-        case .thursday:
-            return "목요일"
-        case .friday:
-            return "금요일"
-        case .saturday:
-            return "토요일"
-        case .sunday:
-            return "일요일"
-        }
-    }
-    
-    func toSimpleKorean() -> String {
-        switch self {
-        case .monday:
-            return "월"
-        case .tuesday:
-            return "화"
-        case .wednesday:
-            return "수"
-        case .thursday:
-            return "목"
-        case .friday:
-            return "금"
-        case .saturday:
-            return "토"
-        case .sunday:
-            return "일"
-        }
     }
 }

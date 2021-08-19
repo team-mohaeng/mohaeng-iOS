@@ -10,6 +10,7 @@ import UIKit
 class MyDrawerViewController: UIViewController {
     
     // MARK: - @IBOutlet Properties
+    
     @IBOutlet weak var myHappinessCollectionView: UICollectionView!
     @IBOutlet weak var emptyView: UIView!
     private lazy var activityIndicator: UIActivityIndicatorView = {
@@ -25,13 +26,16 @@ class MyDrawerViewController: UIViewController {
     var backgroundView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
     
     // MARK: - Properties
+    
     private var myDrawer = [Community(postID: 0, nickname: "", mood: 0, mainImage: "", likeCount: 0, content: "", hasLike: false, hashtags: [""], year: "", month: "", day: "", week: "")]
     private var modalDateView: DatePickerViewController?
     private var currentDate: AppDate?
-    private var selectedDate: AppDate?
     private var feedCount = 0
+    private var selectedYear: Int?
+    private var selectedMonth: Int?
     
     // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,6 +48,7 @@ class MyDrawerViewController: UIViewController {
     }
     
     // MARK: - function
+    
     private func registerXib() {
         myHappinessCollectionView.register(ContentsCollectionViewCell.self, forCellWithReuseIdentifier: Const.Xib.Identifier.contentsCollectionViewCell)
         
@@ -58,14 +63,12 @@ class MyDrawerViewController: UIViewController {
     
     private func initCurrentDate() {
         self.currentDate = AppDate()
-        self.selectedDate = AppDate()
-        self.modalDateView = DatePickerViewController()
-        self.modalDateView?.datePickerDataDelegate = self
+        self.selectedYear = currentDate?.getYear()
+        self.selectedMonth = currentDate?.getMonth()
         
-        guard let year = currentDate?.getYearToString() else { return }
-        guard let month = currentDate?.getMonth() else { return }
-        
-        getMyDrawer(year: year, month: convertMonthFormat(month: month))
+        guard let year = selectedYear else { return }
+        guard let month = selectedMonth else { return }
+        getMyDrawer(year: "\(year)", month: convertMonthFormat(month: "\(month)"))
     }
     
     private func setDelegation() {
@@ -73,17 +76,8 @@ class MyDrawerViewController: UIViewController {
         myHappinessCollectionView.dataSource = self
     }
     
-    private func presentDatePickerView(year: Int, month: Int) {
-        guard let modalDateView = self.modalDateView else { return }
-        modalDateView.year = year
-        modalDateView.month = month
-        modalDateView.modalPresentationStyle = .custom
-        modalDateView.transitioningDelegate = self
-        self.present(modalDateView, animated: true, completion: nil)
-    }
-    
     private func addObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(dataReceived), name: NSNotification.Name("calendarButtonClicked"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(presentPickerView), name: NSNotification.Name("calendarButtonClicked"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(putLikeCount), name: NSNotification.Name("myDrawerLikeClicked"), object: nil)
     }
     
@@ -102,11 +96,11 @@ class MyDrawerViewController: UIViewController {
         self.detachActivityIndicator()
     }
     
-    private func convertMonthFormat(month: Int) -> String {
-        if String(month).count < 2 {
+    private func convertMonthFormat(month: String) -> String {
+        if month.count < 2 {
             return "0\(month)"
         } else {
-            return String(month)
+            return month
         }
     }
     
@@ -124,9 +118,18 @@ class MyDrawerViewController: UIViewController {
         self.activityIndicator.removeFromSuperview()
     }
     
-    @objc func dataReceived(notification: NSNotification) {
-        guard let selectedDate = self.selectedDate else { return }
-        self.presentDatePickerView(year: selectedDate.getYear(), month: selectedDate.getMonth())
+    @objc func presentPickerView(notification: NSNotification) {
+        guard let year = selectedYear, let month = selectedMonth else { return }
+        
+        self.modalDateView = DatePickerViewController()
+        self.modalDateView?.datePickerDataDelegate = self
+        guard let modalDateView = self.modalDateView else { return }
+        modalDateView.year = year
+        modalDateView.month = month
+        modalDateView.modalPresentationStyle = .custom
+        modalDateView.transitioningDelegate = self
+        
+        self.present(modalDateView, animated: true, completion: nil)
     }
     
     @objc func putLikeCount(notification: Notification) {
@@ -147,12 +150,12 @@ extension MyDrawerViewController: UIViewControllerTransitioningDelegate {
 }
 
 extension MyDrawerViewController: DatePickerViewDelegate {
-    func passData(_ date: String) {
-        self.selectedDate = AppDate(formattedDate: date, with: ". ")
-        NotificationCenter.default.post(name: NSNotification.Name("datePickerSelected"), object: selectedDate)
+    func passData(_ year: String, _ month: String) {
+        self.selectedYear = Int(year)
+        self.selectedMonth = Int(month)
         
-        guard let year = selectedDate?.getYearToString() else { return }
-        guard let month = selectedDate?.getMonth() else { return }
+        let yearMonthDate = [year, month]
+        NotificationCenter.default.post(name: NSNotification.Name("datePickerSelected"), object: yearMonthDate)
         
         getMyDrawer(year: year, month: convertMonthFormat(month: month))
         myHappinessCollectionView.reloadData()
