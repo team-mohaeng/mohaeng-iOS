@@ -13,10 +13,6 @@ public class SignUpAPI {
     static let shared = SignUpAPI()
     var signupProvider = MoyaProvider<SignUpService>()
     
-    enum  ResponseData {
-        case jwt
-    }
-    
     public init() { }
     
     func postSignUp(completion: @escaping (NetworkResult<Any>) -> Void, email: String, password: String, nickname: String, gender: Int, birthyear: Int) {
@@ -26,7 +22,7 @@ public class SignUpAPI {
                 let statusCode = response.statusCode
                 let data = response.data
                 
-                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .jwt)
+                let networkResult = self.judgeStatus(by: statusCode, data)
                 completion(networkResult)
                 
             case .failure(let err):
@@ -35,28 +31,22 @@ public class SignUpAPI {
         }
     }
 
-    private func judgeStatus(by statusCode: Int, _ data: Data, responseData: ResponseData) -> NetworkResult<Any> {
+    private func judgeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
+        let decoder = JSONDecoder()
+        guard let decodedData = try? decoder.decode(GenericResponse<JwtData>.self, from: data)
+        else {
+            return .pathErr
+        }
+        
         switch statusCode {
         case 200:
-            return isValidData(data: data, responseData: responseData)
+            return .success(decodedData.data)
         case 400..<500:
-            return .requestErr(data)
+            return .requestErr(decodedData.message)
         case 500:
             return .serverErr
         default:
             return .networkFail
-        }
-    }
-    
-    private func isValidData(data: Data, responseData: ResponseData) -> NetworkResult<Any> {
-        let decoder = JSONDecoder()
-        
-        switch responseData {
-        case .jwt:
-            guard let decodedData = try? decoder.decode(JwtResponseData.self, from: data) else {
-                return .pathErr
-            }
-            return .success(decodedData.data)
         }
     }
 }

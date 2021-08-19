@@ -13,12 +13,6 @@ public class CourseAPI {
     static let shared = CourseAPI()
     var courseProvider = MoyaProvider<CourseService>()
     
-    enum ResponseData {
-        case course
-        case courses
-        case medal
-    }
-    
     public init() { }
     
     func getCourseLibrary(completion: @escaping (NetworkResult<Any>) -> Void) {
@@ -30,7 +24,7 @@ public class CourseAPI {
                 let statusCode = response.statusCode
                 let data = response.data
                 
-                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .courses)
+                let networkResult = self.judgeGetCourseLibraryStatus(by: statusCode, data)
                 completion(networkResult)
                 
             case .failure(let err):
@@ -48,7 +42,7 @@ public class CourseAPI {
                 let statusCode = response.statusCode
                 let data = response.data
                 
-                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .course)
+                let networkResult = self.judgePutCourseProgressStatus(by: statusCode, data)
                 completion(networkResult)
                 
             case .failure(let err):
@@ -66,7 +60,7 @@ public class CourseAPI {
                 let statusCode = response.statusCode
                 let data = response.data
                 
-                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .medal)
+                let networkResult = self.judgeGetMedalStatus(by: statusCode, data)
                 completion(networkResult)
                 
             case .failure(let err):
@@ -75,12 +69,20 @@ public class CourseAPI {
         }
     }
     
-    private func judgeStatus(by statusCode: Int, _ data: Data, responseData: ResponseData) -> NetworkResult<Any> {
+    // MARK: - judging status functions
+    
+    private func judgeGetCourseLibraryStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
+        
+        let decoder = JSONDecoder()
+        guard let decodedData = try? decoder.decode(GenericResponse<CourseData>.self, from: data) else {
+            return .pathErr
+        }
+        
         switch statusCode {
         case 200:
-            return isValidData(data: data, responseData: responseData)
+            return .success(decodedData.data)
         case 400..<500:
-            return .requestErr(data)
+            return .requestErr(decodedData.message)
         case 500:
             return .serverErr
         default:
@@ -88,31 +90,41 @@ public class CourseAPI {
         }
     }
     
-    private func isValidData(data: Data, responseData: ResponseData) -> NetworkResult<Any> {
-        let decoder = JSONDecoder()
+    private func judgePutCourseProgressStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
         
-        switch responseData {
-        case .course:
-            
-            guard let decodedData = try? decoder.decode(CourseResponseData.self, from: data) else {
-                return .pathErr
-            }
+        let decoder = JSONDecoder()
+        guard let decodedData = try? decoder.decode(GenericResponse<CoursesData>.self, from: data) else {
+            return .pathErr
+        }
+        
+        switch statusCode {
+        case 200:
             return .success(decodedData.data)
-            
-        case .courses:
-            
-            guard let decodedData = try? decoder.decode(CoursesResponseData.self, from: data) else {
-                return .pathErr
-            }
+        case 400..<500:
+            return .requestErr(decodedData.message)
+        case 500:
+            return .serverErr
+        default:
+            return .networkFail
+        }
+    }
+    
+    private func judgeGetMedalStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
+        
+        let decoder = JSONDecoder()
+        guard let decodedData = try? decoder.decode(GenericResponse<MedalData>.self, from: data) else {
+            return .pathErr
+        }
+        
+        switch statusCode {
+        case 200:
             return .success(decodedData.data)
-            
-        case .medal:
-            
-            guard let decodedData = try? decoder.decode(MedalResponseData.self, from: data) else {
-                return .pathErr
-            }
-            return .success(decodedData.data)
-            
+        case 400..<500:
+            return .requestErr(decodedData.message)
+        case 500:
+            return .serverErr
+        default:
+            return .networkFail
         }
     }
 }
