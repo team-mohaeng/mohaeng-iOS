@@ -30,6 +30,8 @@ class CourseViewController: UIViewController {
 
     var backgroundView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
     
+    var headerView: ChallengeStampView?
+    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var courseImageVIew: UIImageView!
@@ -50,16 +52,22 @@ class CourseViewController: UIViewController {
         getCourse()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        self.initHeaderView()
+    }
+    
     // MARK: - Functions
     
     private func initNavigationBar() {
         self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
-        
-        navigationItem.title = "현재 진행중인 코스"
-        
+        // TODO: - right button 추가
     }
     
     private func registerXib() {
+        self.headerView = Bundle.main.loadNibNamed(Const.Xib.Name.challengeStampView, owner: self, options: nil)?.last as? ChallengeStampView
+        
         courseTableView.register(UINib(nibName: Const.Xib.Name.firstDayTableViewCell, bundle: nil), forCellReuseIdentifier: Const.Xib.Identifier.firstDayTableViewCell)
         courseTableView.register(UINib(nibName: Const.Xib.Name.evenDayTableViewCell, bundle: nil), forCellReuseIdentifier: Const.Xib.Identifier.evenDayTableViewCell)
         courseTableView.register(UINib(nibName: Const.Xib.Name.oddDayTableViewCell, bundle: nil), forCellReuseIdentifier: Const.Xib.Identifier.oddDayTableViewCell)
@@ -71,15 +79,21 @@ class CourseViewController: UIViewController {
     }
     
     private func initViewRounding() {
-        dayCountLabelBgView.makeRounded(radius: dayCountLabelBgView.frame.height / 2)
+    }
+    
+    private func initHeaderView() {
+        let tabBarHeight = tabBarController?.tabBar.bounds.size.height ?? 0
+        
+        self.courseTableView.tableHeaderView = self.headerView
+        self.courseTableView.tableHeaderView?.frame.size.height = UIScreen.main.bounds.height - topbarHeight - tabBarHeight
     }
     
     func updateData(data: CourseData) {
         self.course = data.course
         
         // view
-        courseTitleLabel.text = course.title
-        dayCountLabel.text = "\(findCourseProgressDay(challenges: data.course.challenges))일차"
+//        courseTitleLabel.text = course.title
+//        dayCountLabel.text = "\(findCourseProgressDay(challenges: data.course.challenges))일차"
         
         // table view
         self.courseTableView.reloadData()

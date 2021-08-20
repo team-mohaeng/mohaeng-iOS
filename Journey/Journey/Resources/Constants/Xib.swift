@@ -19,7 +19,8 @@ extension Const {
             static let medalCollectionViewCell = "MedalCollectionViewCell"
             
             // 챌린지 탭
-            // 코스 뷰
+            // 챌린지 뷰
+            static let challengeStampView = "ChallengeStampView"
             static let firstDayTableViewCell = "FirstDayTableViewCell"
             static let evenDayTableViewCell = "EvenDayTableViewCell"
             static let oddDayTableViewCell = "OddDayTableViewCell"
@@ -47,7 +48,8 @@ extension Const {
             static let medalCollectionViewCell = "MedalCollectionViewCell"
             
             // 챌린지 탭
-            // 코스 뷰
+            // 챌린지 뷰
+            static let challengeStampView = "ChallengeStampView"
             static let firstDayTableViewCell = "FirstDayTableViewCell"
             static let evenDayTableViewCell = "EvenDayTableViewCell"
             static let oddDayTableViewCell = "OddDayTableViewCell"
