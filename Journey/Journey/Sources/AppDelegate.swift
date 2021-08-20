@@ -10,6 +10,7 @@ import Firebase
 import FirebaseMessaging
 import UserNotifications
 import IQKeyboardManagerSwift
+import FontBlaster
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -36,6 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        
+        // custom font load
+        FontBlaster.blast()
         
         return true
     }
