@@ -37,6 +37,8 @@
 		568F64C22692F9E20066B9D1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */; };
 		56AADEF42694AE2300131D2C /* MedalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */; };
 		56AADEF52694AE2300131D2C /* MedalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AADEF32694AE2300131D2C /* MedalCollectionViewCell.xib */; };
+		56B9725E26CF7B2E00F872FA /* ChallengeStampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B9725D26CF7B2E00F872FA /* ChallengeStampView.swift */; };
+		56B9726326CF82F000F872FA /* ChallengeStampView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56B9726226CF82F000F872FA /* ChallengeStampView.xib */; };
 		56B9726A26CF868D00F872FA /* GmarketSansTTFBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56B9726726CF868C00F872FA /* GmarketSansTTFBold.ttf */; };
 		56B9726B26CF868D00F872FA /* GmarketSansTTFLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56B9726826CF868C00F872FA /* GmarketSansTTFLight.ttf */; };
 		56B9726C26CF868D00F872FA /* GmarketSansTTFMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56B9726926CF868C00F872FA /* GmarketSansTTFMedium.ttf */; };
@@ -181,6 +183,8 @@
 		568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalCollectionViewCell.swift; sourceTree = "<group>"; };
 		56AADEF32694AE2300131D2C /* MedalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedalCollectionViewCell.xib; sourceTree = "<group>"; };
+		56B9725D26CF7B2E00F872FA /* ChallengeStampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeStampView.swift; sourceTree = "<group>"; };
+		56B9726226CF82F000F872FA /* ChallengeStampView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeStampView.xib; sourceTree = "<group>"; };
 		56B9726726CF868C00F872FA /* GmarketSansTTFBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFBold.ttf; sourceTree = "<group>"; };
 		56B9726826CF868C00F872FA /* GmarketSansTTFLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFLight.ttf; sourceTree = "<group>"; };
 		56B9726926CF868C00F872FA /* GmarketSansTTFMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFMedium.ttf; sourceTree = "<group>"; };
@@ -468,6 +472,8 @@
 				EC0DB03A269A0FBD00DB7980 /* YearPickerViewController.swift */,
 				EC0DB03B269A0FBD00DB7980 /* YearPickerViewController.xib */,
 				AAD77083269B710E00EC3598 /* CustomIntensityVisualEffectView.swift */,
+				56B9726226CF82F000F872FA /* ChallengeStampView.xib */,
+				56B9725D26CF7B2E00F872FA /* ChallengeStampView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -833,6 +839,7 @@
 				56DCAAB9268CA02A0056155A /* Login.storyboard in Resources */,
 				56B9726B26CF868D00F872FA /* GmarketSansTTFLight.ttf in Resources */,
 				56BF36A1269ED2AD009D8CCC /* HappyPopUpViewController.xib in Resources */,
+				56B9726326CF82F000F872FA /* ChallengeStampView.xib in Resources */,
 				5667D4CD269AD1370071D7AD /* Code.storyboard in Resources */,
 				5667D4C9269ACB910071D7AD /* NewPassword.storyboard in Resources */,
 				56DCAA9B268AFF5B0056155A /* OddDayTableViewCell.xib in Resources */,
@@ -1040,6 +1047,7 @@
 				AA1F34E32695D2BD0011B3FA /* WritingViewController.swift in Sources */,
 				568F64C02692DF2C0066B9D1 /* CourseListViewModel.swift in Sources */,
 				AAFD90C7269052E100CF4707 /* FeedHeaderView.swift in Sources */,
+				56B9725E26CF7B2E00F872FA /* ChallengeStampView.swift in Sources */,
 				564D5D8C26942F260056E468 /* URL.swift in Sources */,
 				5667D4D8269B0EB30071D7AD /* ViewModelState.swift in Sources */,
 				56DCAA9A268AFF5B0056155A /* OddDayTableViewCell.swift in Sources */,
