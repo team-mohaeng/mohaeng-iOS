@@ -559,6 +559,9 @@
 		56DCAA462689BC850056155A /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				56B9726726CF868C00F872FA /* GmarketSansTTFBold.ttf */,
+				56B9726826CF868C00F872FA /* GmarketSansTTFLight.ttf */,
+				56B9726926CF868C00F872FA /* GmarketSansTTFMedium.ttf */,
 				56F13A55269C74680006F9A0 /* SpoqaHanSansNeo-Bold.otf */,
 				56F13A51269C74660006F9A0 /* SpoqaHanSansNeo-Light.otf */,
 				56F13A54269C74680006F9A0 /* SpoqaHanSansNeo-Medium.otf */,
@@ -834,6 +837,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56DCAAB9268CA02A0056155A /* Login.storyboard in Resources */,
+				56B9726B26CF868D00F872FA /* GmarketSansTTFLight.ttf in Resources */,
 				56BF36A1269ED2AD009D8CCC /* HappyPopUpViewController.xib in Resources */,
 				56B9726326CF82F000F872FA /* ChallengeStampView.xib in Resources */,
 				5667D4CD269AD1370071D7AD /* Code.storyboard in Resources */,
@@ -877,12 +881,14 @@
 				56DCAA93268AFF3A0056155A /* FirstDayTableViewCell.xib in Resources */,
 				564D5D8E2694454A0056E468 /* Medal.storyboard in Resources */,
 				56DCAA342689BB9E0056155A /* LaunchScreen.storyboard in Resources */,
+				56B9726C26CF868D00F872FA /* GmarketSansTTFMedium.ttf in Resources */,
 				56DCAA312689BB9E0056155A /* Assets.xcassets in Resources */,
 				ECB617F926949256005E62B0 /* SignUpFirst.storyboard in Resources */,
 				56F13A57269C74680006F9A0 /* SpoqaHanSansNeo-Thin.otf in Resources */,
 				56DCAA7C268AE1310056155A /* Challenge.storyboard in Resources */,
 				56DCAA8C268AF6E20056155A /* Course.storyboard in Resources */,
 				AAFD90CA269052EE00CF4707 /* FeedHeaderView.xib in Resources */,
+				56B9726A26CF868D00F872FA /* GmarketSansTTFBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

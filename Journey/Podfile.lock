@@ -58,6 +58,7 @@ PODS:
     - GoogleUtilities/Environment (~> 7.4)
     - GoogleUtilities/Reachability (~> 7.4)
     - GoogleUtilities/UserDefaults (~> 7.4)
+  - FontBlaster (5.1.3)
   - GoogleAppMeasurement (8.0.0):
     - GoogleAppMeasurement/AdIdSupport (= 8.0.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
@@ -112,9 +113,9 @@ PODS:
   - Then (2.7.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.4)
   - Firebase/Analytics
   - Firebase/Messaging
+  - FontBlaster
   - IQKeyboardManagerSwift
   - Kingfisher
   - lottie-ios
@@ -132,6 +133,7 @@ SPEC REPOS:
     - FirebaseCoreDiagnostics
     - FirebaseInstallations
     - FirebaseMessaging
+    - FontBlaster
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
@@ -153,6 +155,7 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnostics: a31d987ba0fe16d59886a5dbadc2f1de871f88c8
   FirebaseInstallations: c4aab1005d6547b00a7529777fe52f5d4d45165b
   FirebaseMessaging: 1a33b4af3c8042ed6ddacb6c031894af2064bfab
+  FontBlaster: 5bbc2d94d5731e9bad4f46172e58b1106af99516
   GoogleAppMeasurement: c6bbc9753d046b5456dd4f940057fbad2c28419e
   GoogleDataTransport: 11e3a5f2c190327df1a4a5d7e7ae3d4d5b9c9e4c
   GoogleUtilities: f8a43108b38a68eebe8b3540e1f4f2d28843ce20
@@ -166,6 +169,6 @@ SPEC CHECKSUMS:
   SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: 388a23f9484dc2ffc83bfe2966add2c3c90b1dbd
+PODFILE CHECKSUM: fdf9096e245f259785e754811f8e4d4ff9c9f52d
 
 COCOAPODS: 1.10.1

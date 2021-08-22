@@ -6,7 +6,6 @@ target 'Journey' do
   use_frameworks!
 
   # Pods for Journey
-	pod 'Alamofire', '~> 5.4'
 	pod 'Moya', '~> 14.0'
 	pod 'SwiftLint'
 	pod 'lottie-ios'
@@ -16,4 +15,5 @@ target 'Journey' do
 	pod 'SnapKit'
 	pod 'Then'
 	pod 'Kingfisher'
+	pod 'FontBlaster'
 end
