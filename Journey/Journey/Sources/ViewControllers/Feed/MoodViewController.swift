@@ -40,8 +40,8 @@ class MoodViewController: UIViewController {
     }
     
     private func initCurruentDay() {
-        var currentDay = AppDate()
-        dateLabel.text = "\(currentDay.getYear()).\(currentDay.getMonth()).\(currentDay.getDay()) (\(currentDay.getWeekday().toSimpleKorean()))"
+        let currentDay = AppDate()
+        dateLabel.text = "\(currentDay.getFormattedDate(with: ".")) (\(currentDay.getWeekday()))"
     }
     
     private func makeNextButtonDisable() {
