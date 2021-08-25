@@ -59,6 +59,10 @@ extension Const {
         static let typeMforLibraryGrey = UIImage(named: "typeMforLibraryGrey")!
         static let typeSforLibraryGrey = UIImage(named: "typeSforLibraryGrey")!
         
+        // course footer view island image
+        static let doneIsland = UIImage(named: "doneIsland")!
+        static let undoneIsland = UIImage(named: "undoneIsland")!
+        
         // challenge journey image
         static let talkjiOS = UIImage(named: "talkjiOS")
         static let talkjhappyiOS = UIImage(named: "talkjhappyiOS")

@@ -21,6 +21,8 @@ extension Const {
             // 챌린지 탭
             // 챌린지 뷰
             static let challengeStampView = "ChallengeStampView"
+            static let courseHeaderView = "CourseHeaderView"
+            static let courseFooterView = "CourseFooterView"
             static let firstDayTableViewCell = "FirstDayTableViewCell"
             static let evenDayTableViewCell = "EvenDayTableViewCell"
             static let oddDayTableViewCell = "OddDayTableViewCell"
@@ -50,6 +52,8 @@ extension Const {
             // 챌린지 탭
             // 챌린지 뷰
             static let challengeStampView = "ChallengeStampView"
+            static let courseHeaderView = "CourseHeaderView"
+            static let courseFooterView = "CourseFooterView"
             static let firstDayTableViewCell = "FirstDayTableViewCell"
             static let evenDayTableViewCell = "EvenDayTableViewCell"
             static let oddDayTableViewCell = "OddDayTableViewCell"

@@ -15,18 +15,8 @@ class CourseViewController: UIViewController {
     // default data
     var course: Course = Course(id: 0, title: "", courseDescription: "", totalDays: 0, situation: 0, property: 0, challenges: [
         Challenge(id: 0, situation: 0, title: "", challengeDescription: "", successDescription: "", year: "", month: "", day: "", currentStamp: 0, totalStamp: 0, userMents: []),
-        Challenge(id: 0, situation: 0, title: "", challengeDescription: "", successDescription: "", year: "", month: "", day: "", currentStamp: 0, totalStamp: 0, userMents: []),
+        Challenge(id: 0, situation: 0, title: "", challengeDescription: "", successDescription: "", year: "", month: "", day: "", currentStamp: 0, totalStamp: 0, userMents: [])
     ])
-    
-    private lazy var activityIndicator: UIActivityIndicatorView = {
-            let activityIndicator = UIActivityIndicatorView()
-            activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-            activityIndicator.center = CGPoint(x: self.view.center.x, y: self.view.center.y - self.topbarHeight)
-            activityIndicator.hidesWhenStopped = false
-            activityIndicator.style = UIActivityIndicatorView.Style.medium
-            activityIndicator.startAnimating()
-            return activityIndicator
-        }()
 
     var backgroundView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
     
@@ -34,10 +24,6 @@ class CourseViewController: UIViewController {
     
     // MARK: - @IBOutlet Properties
     
-    @IBOutlet weak var courseImageVIew: UIImageView!
-    @IBOutlet weak var courseTitleLabel: UILabel!
-    @IBOutlet weak var dayCountLabelBgView: UIView!
-    @IBOutlet weak var dayCountLabel: UILabel!
     @IBOutlet weak var courseTableView: UITableView!
     
     // MARK: - View Life Cycle
@@ -71,6 +57,9 @@ class CourseViewController: UIViewController {
         courseTableView.register(UINib(nibName: Const.Xib.Name.firstDayTableViewCell, bundle: nil), forCellReuseIdentifier: Const.Xib.Identifier.firstDayTableViewCell)
         courseTableView.register(UINib(nibName: Const.Xib.Name.evenDayTableViewCell, bundle: nil), forCellReuseIdentifier: Const.Xib.Identifier.evenDayTableViewCell)
         courseTableView.register(UINib(nibName: Const.Xib.Name.oddDayTableViewCell, bundle: nil), forCellReuseIdentifier: Const.Xib.Identifier.oddDayTableViewCell)
+        
+        courseTableView.register(UINib(nibName: Const.Xib.Name.courseHeaderView, bundle: nil), forHeaderFooterViewReuseIdentifier: Const.Xib.Identifier.courseHeaderView)
+        courseTableView.register(UINib(nibName: Const.Xib.Name.courseFooterView, bundle: nil), forHeaderFooterViewReuseIdentifier: Const.Xib.Identifier.courseFooterView)
     }
     
     private func assignDelegation() {
@@ -91,14 +80,9 @@ class CourseViewController: UIViewController {
     func updateData(data: CourseData) {
         self.course = data.course
         
-        // view
-//        courseTitleLabel.text = course.title
-//        dayCountLabel.text = "\(findCourseProgressDay(challenges: data.course.challenges))일차"
-        
         // table view
         self.courseTableView.reloadData()
         
-        self.detachActivityIndicator()
     }
     
     func findCourseProgressDay(challenges: [Challenge]) -> Int {
@@ -112,20 +96,6 @@ class CourseViewController: UIViewController {
         return day
     }
     
-    private func attachActivityIndicator() {
-        backgroundView.backgroundColor = UIColor.white
-        self.view.addSubview(backgroundView)
-        self.view.addSubview(self.activityIndicator)
-    }
-    
-    private func detachActivityIndicator() {
-        if self.activityIndicator.isAnimating {
-            self.activityIndicator.stopAnimating()
-        }
-        self.backgroundView.removeFromSuperview()
-        self.activityIndicator.removeFromSuperview()
-    }
-    
 }
 
 // MARK: - UITableViewDelegate
@@ -134,17 +104,47 @@ extension CourseViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if indexPath.row == 0 {
-            return 123
+            return 250
         }
         
         return 160
     }
     
+    // section header
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 132
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: Const.Xib.Identifier.courseHeaderView) as? CourseHeaderView {
+            
+            headerView.headerBgView.makeRoundedSpecificCorner(corners: [.bottomLeft, .bottomRight], cornerRadius: 10)
+            headerView.layer.shadowOpacity = 0.12
+            headerView.layer.shadowRadius = 0
+            headerView.layer.shadowOffset = CGSize(width: 0, height: 2)
+            headerView.layer.shadowColor = UIColor.black.cgColor
+            
+            return headerView
+        }
+        
+        return UIView()
+    }
+    
+    // section footer
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 50
+        return 95
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: Const.Xib.Identifier.courseFooterView) as? CourseFooterView {
+            if course.challenges[course.challenges.count - 1].situation == 2 {
+                footerView.isDone = .done
+            } else {
+                footerView.isDone = .undone
+            }
+            footerView.initLastPath()
+            return footerView
+        }
         return UIView()
     }
 }
@@ -192,6 +192,9 @@ extension CourseViewController: UITableViewDataSource {
                 
                 if indexPath.row < course.challenges.count-1 {
                     cell.setNextSituation(next: course.challenges[indexPath.row + 1].situation)
+                } else {
+                    // 맨 마지막 cell일 때
+                    cell.setNextSituation(next: 9)
                 }
                 cell.property = course.property
                 
@@ -200,7 +203,6 @@ extension CourseViewController: UITableViewDataSource {
             return UITableViewCell()
         }
     }
-    
 }
 
 // MARK: - 서버 통신
@@ -208,8 +210,6 @@ extension CourseViewController: UITableViewDataSource {
 extension CourseViewController {
 
     func getCourse() {
-        
-        self.attachActivityIndicator()
         
         ChallengeAPI.shared.getAllChallenges { (response) in
             

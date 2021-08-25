@@ -77,6 +77,7 @@
                             <color key="backgroundColor" red="0.10588235294117647" green="0.75686274509803919" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="TRQ-Vn-owg" firstAttribute="leading" secondItem="Sw0-eU-8jJ" secondAttribute="leading" constant="16" id="Kqd-pE-Vxn"/>
+                                <constraint firstAttribute="height" constant="24" id="UsF-rd-9Ss"/>
                                 <constraint firstAttribute="trailing" secondItem="TRQ-Vn-owg" secondAttribute="trailing" constant="16" id="VXh-Mh-38o"/>
                                 <constraint firstAttribute="bottom" secondItem="TRQ-Vn-owg" secondAttribute="bottom" constant="6" id="ffv-oo-FPD"/>
                                 <constraint firstItem="TRQ-Vn-owg" firstAttribute="top" secondItem="Sw0-eU-8jJ" secondAttribute="top" constant="6" id="ppT-yb-s2h"/>
@@ -84,18 +85,27 @@
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어제 외운 단어로 문장 만들기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCh-eY-nvn">
                             <rect key="frame" x="0.0" y="72" width="342" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="atj-Ek-i48"/>
+                            </constraints>
                             <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="25"/>
                             <color key="textColor" red="0.10588235294117647" green="0.75686274509803919" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 챌린지를 성공하면 해피지수가 2% 올라가!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UqL-NJ-4Mx">
                             <rect key="frame" x="48.666666666666686" y="447" width="245" height="15.666666666666686"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15.666666666666686" id="ygw-nq-HNk"/>
+                            </constraints>
                             <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="획득 가능한 뱃지는 없지롱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSo-3o-n7F">
                             <rect key="frame" x="106" y="470.66666666666663" width="130" height="15.333333333333314"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15.333333333333314" id="iI7-kW-uNU"/>
+                            </constraints>
                             <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>

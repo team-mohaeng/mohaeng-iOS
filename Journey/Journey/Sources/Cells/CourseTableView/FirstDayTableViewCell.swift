@@ -11,27 +11,42 @@ class FirstDayTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     
-    private let line = CAShapeLayer()
+    private let currentLine = CAShapeLayer()
+    private let nextLine = CAShapeLayer()
     
     enum Size {
+        // all
+        static let smallRadius: CGFloat = 60
         static let radius: CGFloat = 80
-        static let horizontalSpacing: CGFloat = 57
+        static let horizontalSpacing: CGFloat = 29
         static let screenWidth: CGFloat = UIScreen.main.bounds.width
-        static let cellHeight: CGFloat = 120
-        static let verticalSpacingWithBottomCell: CGFloat = 33
-    }
+        static let cellHeight: CGFloat = 302
+        static let verticalSpacingWithBottomCell: CGFloat = 52
+        static let strokeSize: CGFloat = 10 // 선 굵기
     
-    private let centerPoint: CGPoint = CGPoint(x: Size.screenWidth - Size.horizontalSpacing - Size.radius, y: Size.cellHeight - Size.verticalSpacingWithBottomCell)
-    private let startPoint: CGPoint = CGPoint(x: Size.screenWidth - Size.horizontalSpacing, y: Size.cellHeight - Size.verticalSpacingWithBottomCell)
+        // 30px 직선
+        static let lineLength: CGFloat = 30
+        static let startOffset: CGFloat = 5
+    }
+      
+    // MARK: points
+    // 1. 30px 직선
+    private let pathEndPoint = CGPoint(x: Size.screenWidth / 2, y: -Size.startOffset)
+    // 2. 60px 원
+    private let centerOf60Circle = CGPoint(x: Size.screenWidth / 2 - Size.smallRadius, y: Size.lineLength)
+    
+    // 3. 80px 원 호
+    private let centerOf80Circle = CGPoint(x: Size.horizontalSpacing + Size.radius, y: Size.lineLength + Size.smallRadius + Size.radius)
+    private let startOfLower80Circle = CGPoint(x: Size.horizontalSpacing, y: Size.lineLength + Size.smallRadius + Size.radius - Size.startOffset)
+    
+    // 방향 바꾸기 테스트용 CGPoints
+    private let pathStartPoint = CGPoint(x: Size.horizontalSpacing, y: Size.lineLength + Size.smallRadius + Size.radius + Size.startOffset)
     
     var property: Int = 0
     
     // MARK: - @IBOutlet Properties
-    
-    @IBOutlet weak var roadView: UIView!
-    @IBOutlet weak var circleView: UIView!
+
     @IBOutlet weak var propertyImageView: UIImageView!
-    @IBOutlet weak var propertyBgView: UIView!
     @IBOutlet weak var dayCountLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
@@ -44,27 +59,48 @@ class FirstDayTableViewCell: UITableViewCell {
         
         initViewRounding()
         initFirstPath()
+        initNextPath()
         setProperty(by: property)
     }
     
     // MARK: - Functions
     
     private func initViewRounding() {
-        propertyBgView.makeRounded(radius: propertyBgView.frame.height / 2)
         dayLabelBgView.makeRounded(radius: dayLabelBgView.frame.height / 2)
     }
     
     private func initFirstPath() {
+        // path 생성하기
         let path = UIBezierPath()
-        path.move(to: startPoint)
-        path.addArc(withCenter: centerPoint, radius: Size.radius, startAngle: 0, endAngle: CGFloat.pi / 2, clockwise: true)
+        path.move(to: pathStartPoint)
         
-        line.fillMode = .forwards
-        line.fillColor = UIColor.clear.cgColor
-        line.lineWidth = 20.0
-        line.path = path.cgPath
+        // 3. 80px 원 호 - 위쪽 반
+        path.addArc(withCenter: centerOf80Circle, radius: 80, startAngle: CGFloat.pi, endAngle: 3 * CGFloat.pi / 2, clockwise: true)
+        // 2. 60px 원 호
+        path.addArc(withCenter: centerOf60Circle, radius: 60, startAngle: CGFloat.pi / 2, endAngle: 0, clockwise: false)
         
-        self.contentView.layer.insertSublayer(line, at: 0)
+        // 1. 30px 세로 직선
+        path.addLine(to: pathEndPoint)
+        
+        currentLine.fillMode = .forwards
+        currentLine.fillColor = UIColor.clear.cgColor
+        currentLine.lineWidth = Size.strokeSize
+        currentLine.path = path.cgPath
+        
+        currentLine.lineCap = .round
+        
+    }
+    
+    private func initNextPath() {
+        // path 생성하기
+        let leftPath = RoadMapPath(centerY: 250).getDownwardPath()
+        
+        nextLine.fillMode = .forwards
+        nextLine.fillColor = UIColor.clear.cgColor
+        nextLine.lineWidth = Size.strokeSize
+        nextLine.path = leftPath.cgPath
+        
+        nextLine.lineCap = .round
         
     }
     
@@ -91,27 +127,51 @@ class FirstDayTableViewCell: UITableViewCell {
     }
     
     func setNextSituation(next: Int) {
-        if next == 0 {
-            line.strokeColor = UIColor.white.cgColor
-        } else {
-            line.strokeColor = UIColor.Pink2.cgColor
+        switch next {
+        case 0:
+            nextLine.strokeColor = UIColor.roadUndoneGrey.cgColor
+            setDashedLine(line: nextLine)
+        case 1:
+            nextLine.strokeColor = UIColor.sampleGreen.cgColor
+            setDashedLine(line: nextLine)
+        case 2:
+            nextLine.strokeColor = UIColor.sampleGreen.cgColor
+            setPlainLine(line: nextLine)
+            
+        default:
+            break
         }
+        self.contentView.layer.insertSublayer(nextLine, at: 0)
     }
     
     private func setColorBySituation(situation: Int) {
         switch situation {
         case 0: // 진행 전 챌린지
-            // 진입 X
-            roadView.backgroundColor = UIColor.white
+            currentLine.strokeColor = UIColor.roadUndoneGrey.cgColor
+            setDashedLine(line: currentLine)
+        
         case 1: // 진행 중인 챌린지
-            roadView.backgroundColor = UIColor.Pink2
-            propertyBgView.backgroundColor = UIColor.Pink2
+            currentLine.strokeColor = UIColor.sampleGreen.cgColor
+            setDashedLine(line: currentLine)
+            
         case 2: // 완료 된 챌린지
-            roadView.backgroundColor = UIColor.Pink2
-            propertyBgView.backgroundColor = UIColor.Pink2
+            currentLine.strokeColor = UIColor.sampleGreen.cgColor
+            setPlainLine(line: currentLine)
+            
         default:
             break
         }
+        self.contentView.layer.insertSublayer(currentLine, at: 1)
+    }
+    
+    // 점선, 실선 처리
+    func setDashedLine(line: CAShapeLayer) {
+        line.lineDashPattern = [RoadMapPath(centerY: 0).getDashPattern(), RoadMapPath(centerY: 0).getBlankPattern()]
+        line.lineDashPhase = 5
+    }
+    
+    func setPlainLine(line: CAShapeLayer) {
+        line.lineDashPattern = [1]
     }
     
     // set property functions
@@ -133,19 +193,19 @@ class FirstDayTableViewCell: UITableViewCell {
     
     // 0: 건강 1: 기억 2: 관찰 3: 도전
     func setProperty0() {
-        propertyImageView.image = Const.Image.typeHwithColor
+        propertyImageView.image = Const.Image.typeHchallengeC
     }
     
     func setProperty1() {
-        propertyImageView.image = Const.Image.typeMwithColor
+        propertyImageView.image = Const.Image.typeMchallengeC
     }
     
     func setProperty2() {
-        propertyImageView.image = Const.Image.typeSwithColor
+        propertyImageView.image = Const.Image.typeSchallengeC
     }
     
     func setProperty3() {
-        propertyImageView.image = Const.Image.typeCwithColor
+        propertyImageView.image = Const.Image.typeCchallengeC
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
