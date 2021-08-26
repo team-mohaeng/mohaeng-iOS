@@ -48,4 +48,9 @@ extension UIColor {
     static let typeHD: UIColor = UIColor(named: "typeHD")!
     static let typeMD: UIColor = UIColor(named: "typeMD")!
     static let typeSD: UIColor = UIColor(named: "typeSD")!
+    
+    // MARK: - Journey
+    
+    static let sampleGreen: UIColor = UIColor(named: "SampleGreen")!
+    static let roadUndoneGrey: UIColor = UIColor(named: "RoadUndoneGrey")!
 }

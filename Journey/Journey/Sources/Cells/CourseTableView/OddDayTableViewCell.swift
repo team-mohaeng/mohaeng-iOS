@@ -11,34 +11,12 @@ class OddDayTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     
-    let beforeLine = CAShapeLayer()
-    let afterLine = CAShapeLayer()
-    
-    enum Size {
-        static let radius: CGFloat = 80
-        static let horizontalSpacing: CGFloat = 57
-        static let screenWidth: CGFloat = UIScreen.main.bounds.width
-        static let cellHeight: CGFloat = 160
-        static let circleSize: CGFloat = 66
-        static let strokeSize: CGFloat = 10
-        // 위 셀과 공유하는 radius 크기
-        static let verticalSpacingWithTopCell: CGFloat = 36
-        static let verticalSpacingWithBottomCell: CGFloat = 36
-    }
-    
-    private let circle1CenterPoint: CGPoint = CGPoint(x: Size.horizontalSpacing + Size.radius, y: -Size.verticalSpacingWithTopCell)
-    private let circle1StartPoint: CGPoint = CGPoint(x: Size.horizontalSpacing, y: -Size.verticalSpacingWithTopCell)
-    
-    private let circle2StartPoint: CGPoint = CGPoint(x: Size.screenWidth - Size.radius - Size.horizontalSpacing, y: Size.cellHeight - Size.verticalSpacingWithTopCell - Size.radius)
-    private let circle2CenterPoint: CGPoint = CGPoint(x: Size.screenWidth - Size.radius - Size.horizontalSpacing, y: Size.cellHeight - Size.verticalSpacingWithBottomCell)
-
-    private let circle3CenterPoint: CGPoint = CGPoint(x: Size.screenWidth - Size.horizontalSpacing - Size.radius, y: Size.cellHeight - Size.verticalSpacingWithBottomCell)
-    private let circle3StartPoint: CGPoint = CGPoint(x: Size.screenWidth - Size.horizontalSpacing, y: Size.cellHeight - Size.verticalSpacingWithBottomCell)
+    let currentLine = CAShapeLayer()
+    let nextLine = CAShapeLayer()
     
     var property: Int = 0
     
     // MARK: - @IBOutlet Properties
-    @IBOutlet weak var propertyBgView: UIView!
     @IBOutlet weak var propertyImageView: UIImageView!
     @IBOutlet weak var dayCountLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -59,38 +37,39 @@ class OddDayTableViewCell: UITableViewCell {
     // MARK: - Functions
     
     private func initViewRounding() {
-        propertyBgView.makeRounded(radius: propertyBgView.frame.height / 2)
         dayLabelBgView.makeRounded(radius: dayLabelBgView.frame.height / 2)
     }
     
     private func initOddPath() {
-        let path = UIBezierPath()
-        path.move(to: circle1StartPoint)
         
-        path.addArc(withCenter: circle1CenterPoint, radius: Size.radius, startAngle: -CGFloat.pi, endAngle: CGFloat.pi / 2, clockwise: false)
-
-        path.addLine(to: circle2StartPoint)
-
-        path.addArc(withCenter: circle2CenterPoint, radius: Size.radius, startAngle: -CGFloat.pi / 2, endAngle: 0, clockwise: true)
+        let leftPath = RoadMapPath(centerY: 0).getUpwardPath()
         
-        beforeLine.fillMode = .forwards
-        beforeLine.fillColor = UIColor.clear.cgColor
-        beforeLine.lineWidth = 20.0
-        beforeLine.path = path.cgPath
+        currentLine.fillMode = .forwards
+        currentLine.fillColor = UIColor.clear.cgColor
+        currentLine.lineWidth = 10.0
+        currentLine.path = leftPath.cgPath
+        currentLine.lineCap = .round
+        currentLine.lineDashPhase = 5
+        currentLine.lineDashPattern = [RoadMapPath(centerY: 0).getDashPattern(), RoadMapPath(centerY: 0).getBlankPattern()]
+        currentLine.strokeColor = UIColor.Pink2.cgColor
         
-        self.contentView.layer.insertSublayer(beforeLine, at: 0)
+        self.contentView.layer.insertSublayer(currentLine, at: 0)
     }
     
     private func initNextPath() {
-        let path = UIBezierPath()
-        path.move(to: circle3StartPoint)
-        path.addArc(withCenter: circle3CenterPoint, radius: Size.radius, startAngle: 0, endAngle: CGFloat.pi / 2, clockwise: true)
         
-        afterLine.fillMode = .forwards
-        afterLine.fillColor = UIColor.clear.cgColor
-        afterLine.lineWidth = 20.0
-        afterLine.path = path.cgPath
-        afterLine.strokeColor = UIColor.Pink2.cgColor
+        let leftPath = RoadMapPath(centerY: 160).getDownwardPath()
+        
+        nextLine.fillMode = .forwards
+        nextLine.fillColor = UIColor.clear.cgColor
+        nextLine.lineWidth = 10.0
+        nextLine.path = leftPath.cgPath
+        nextLine.lineCap = .round
+        nextLine.lineDashPhase = 5
+        nextLine.lineDashPattern = [RoadMapPath(centerY: 0).getDashPattern(), RoadMapPath(centerY: 0).getBlankPattern()]
+        nextLine.strokeColor = UIColor.roadUndoneGrey.cgColor
+        
+        self.contentView.layer.insertSublayer(nextLine, at: 2)
     }
     
     func setCell(challenge: Challenge) {
@@ -118,29 +97,57 @@ class OddDayTableViewCell: UITableViewCell {
     }
     
     func setNextSituation(next: Int) {
-        if next == 0 {
-            afterLine.strokeColor = UIColor.white.cgColor
-            self.contentView.layer.insertSublayer(afterLine, at: 0)
-        } else {
-            afterLine.strokeColor = UIColor.Pink2.cgColor
-            self.contentView.layer.insertSublayer(afterLine, at: 0)
+        switch next {
+        case 0:
+            nextLine.strokeColor = UIColor.roadUndoneGrey.cgColor
+            setDashedLine(line: nextLine)
+        case 1:
+            nextLine.strokeColor = UIColor.sampleGreen.cgColor
+            setDashedLine(line: nextLine)
+        case 2:
+            nextLine.strokeColor = UIColor.sampleGreen.cgColor
+            setPlainLine(line: nextLine)
+            
+        // 맨 마지막 챌린지일 경우
+        case 9:
+            let lastPath = RoadMapPath(centerY: 160).getVeryLastPath()
+            nextLine.path = lastPath.cgPath
+            setDashedLine(line: nextLine)
+            
+        default:
+            break
         }
+        self.contentView.layer.insertSublayer(nextLine, at: 1)
     }
     
     private func setColorBySituation(situation: Int) {
         switch situation {
         case 0: // 진행 전 챌린지
-            beforeLine.strokeColor = UIColor.white.cgColor
-            propertyBgView.backgroundColor = UIColor.Grey1Bg
+            currentLine.strokeColor = UIColor.roadUndoneGrey.cgColor
+            setDashedLine(line: currentLine)
+        
         case 1: // 진행 중인 챌린지
-            beforeLine.strokeColor = UIColor.Pink2.cgColor
-            propertyBgView.backgroundColor = UIColor.Pink2
+            currentLine.strokeColor = UIColor.sampleGreen.cgColor
+            setDashedLine(line: currentLine)
+            
         case 2: // 완료 된 챌린지
-            beforeLine.strokeColor = UIColor.Pink2.cgColor
-            propertyBgView.backgroundColor = UIColor.Pink2
+            currentLine.strokeColor = UIColor.sampleGreen.cgColor
+            setPlainLine(line: currentLine)
+            
         default:
             break
         }
+        self.contentView.layer.insertSublayer(currentLine, at: 0)
+    }
+    
+    // 점선, 실선 처리
+    func setDashedLine(line: CAShapeLayer) {
+        line.lineDashPattern = [RoadMapPath(centerY: 0).getDashPattern(), RoadMapPath(centerY: 0).getBlankPattern()]
+        line.lineDashPhase = 5
+    }
+    
+    func setPlainLine(line: CAShapeLayer) {
+        line.lineDashPattern = [1]
     }
 
     // set property functions
@@ -162,22 +169,21 @@ class OddDayTableViewCell: UITableViewCell {
     
     // 0: 건강 1: 기억 2: 관찰 3: 도전
     func setProperty0() {
-        propertyImageView.image = Const.Image.typeHwithColor
+        propertyImageView.image = Const.Image.typeHchallengeC
     }
     
     func setProperty1() {
-        propertyImageView.image = Const.Image.typeMwithColor
+        propertyImageView.image = Const.Image.typeMchallengeC
     }
     
     func setProperty2() {
-        propertyImageView.image = Const.Image.typeSwithColor
+        propertyImageView.image = Const.Image.typeSchallengeC
     }
     
     func setProperty3() {
-        propertyImageView.image = Const.Image.typeCwithColor
+        propertyImageView.image = Const.Image.typeCchallengeC
     }
 
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
