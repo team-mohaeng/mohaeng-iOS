@@ -50,4 +50,14 @@ extension UINavigationController {
         // back button 숨기기
         navigationItem?.hidesBackButton = true
     }
+    
+    func initTransparentNavigationBarWithoutBackButton(navigationItem: UINavigationItem?) {
+        isNavigationBarHidden = false
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationBar.shadowImage = UIImage()
+        navigationBar.isTranslucent = true
+        
+        // back button 숨기기
+        navigationItem?.hidesBackButton = true
+    }
 }
