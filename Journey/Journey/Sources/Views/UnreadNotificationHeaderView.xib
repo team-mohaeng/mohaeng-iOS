@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="UnreadNotificationHeaderView" customModule="Journey" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="322" height="56"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wrl-BM-ZJJ">
+                    <rect key="frame" x="0.0" y="0.0" width="322" height="56"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ctz-Rw-uoA">
+                    <rect key="frame" x="102" y="30" width="118.5" height="26"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새로운 알림이 있습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7L-6x-Xyl">
+                            <rect key="frame" x="13" y="7" width="92.5" height="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" name="YellowIcon"/>
+                    <constraints>
+                        <constraint firstItem="j7L-6x-Xyl" firstAttribute="centerY" secondItem="Ctz-Rw-uoA" secondAttribute="centerY" id="HfT-bh-OAf"/>
+                        <constraint firstItem="j7L-6x-Xyl" firstAttribute="centerX" secondItem="Ctz-Rw-uoA" secondAttribute="centerX" id="NRE-1O-uPb"/>
+                        <constraint firstAttribute="bottom" secondItem="j7L-6x-Xyl" secondAttribute="bottom" constant="7" id="XXR-tg-YBE"/>
+                        <constraint firstItem="j7L-6x-Xyl" firstAttribute="leading" secondItem="Ctz-Rw-uoA" secondAttribute="leading" constant="13" id="Yz2-Zx-JAJ"/>
+                        <constraint firstAttribute="trailing" secondItem="j7L-6x-Xyl" secondAttribute="trailing" constant="13" id="eV1-Eu-fge"/>
+                        <constraint firstItem="j7L-6x-Xyl" firstAttribute="top" secondItem="Ctz-Rw-uoA" secondAttribute="top" constant="7" id="rZq-9o-Zso"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <constraints>
+                <constraint firstItem="Ctz-Rw-uoA" firstAttribute="centerX" secondItem="wrl-BM-ZJJ" secondAttribute="centerX" id="0dk-0E-G76"/>
+                <constraint firstItem="wrl-BM-ZJJ" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="1CD-zG-zbB"/>
+                <constraint firstItem="wrl-BM-ZJJ" firstAttribute="trailing" secondItem="VXr-Tz-HHm" secondAttribute="trailing" id="1Fl-nU-xnw"/>
+                <constraint firstAttribute="bottom" secondItem="wrl-BM-ZJJ" secondAttribute="bottom" id="hXE-AJ-RoH"/>
+                <constraint firstItem="wrl-BM-ZJJ" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="rSc-rf-cH7"/>
+                <constraint firstItem="Ctz-Rw-uoA" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="30" id="vE9-Bh-qQc"/>
+            </constraints>
+            <connections>
+                <outlet property="yellowBgView" destination="Ctz-Rw-uoA" id="q82-4e-r4P"/>
+            </connections>
+            <point key="canvasLocation" x="133.33333333333334" y="92.410714285714278"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <namedColor name="YellowIcon">
+            <color red="1" green="0.7803921568627451" blue="0.3529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -49,8 +49,13 @@ extension UIColor {
     static let typeMD: UIColor = UIColor(named: "typeMD")!
     static let typeSD: UIColor = UIColor(named: "typeSD")!
     
-    // MARK: - Journey
+    // MARK: - Mohaeng
     
     static let sampleGreen: UIColor = UIColor(named: "SampleGreen")!
     static let roadUndoneGrey: UIColor = UIColor(named: "RoadUndoneGrey")!
+    
+    // 모행 정리된 컬러시스템
+    static let YellowBg1: UIColor = UIColor(named: "YellowBg1")!
+    static let GreyTextPush2: UIColor = UIColor(named: "GreyTextPush2")!
+    static let BlackText: UIColor = UIColor(named: "BlackText")!
 }
