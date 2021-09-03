@@ -39,7 +39,7 @@
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0VN-3I-WEj">
                                 <rect key="frame" x="0.0" y="-6" width="414" height="50"/>
-                                <color key="backgroundColor" red="1" green="0.85490196078431369" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.94901960780000005" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="B4g-TN-APh"/>
                                 </constraints>
@@ -73,7 +73,7 @@
                     <navigationItem key="navigationItem" id="Dfe-iY-ofB"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="feedCollectionView" destination="wtu-1M-Hvm" id="ike-H7-BjW"/>
+                        <outlet property="feedCollectionView" destination="wtu-1M-Hvm" id="650-hb-HAv"/>
                         <outlet property="floatingTopButton" destination="zJm-TA-3Ki" id="b1Y-lZ-YvD"/>
                         <outlet property="statusBarView" destination="0VN-3I-WEj" id="kRU-Cn-K1y"/>
                     </connections>

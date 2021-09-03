@@ -103,5 +103,8 @@ extension Const {
         
         // photo upload image
         static let imgPhotoUpload = UIImage(named: "btnPhotoUp")
+        
+        // mohaeng feed image
+        static let imgHand = UIImage(named: "feedHandGrpX")
     }
 }

@@ -32,7 +32,7 @@ extension Const {
             static let undoneCourseCollectionViewCell = "UndoneCourseCollectionViewCell"
             
             // 피드 뷰
-            static let contentsCollectionViewCell = "ContentsCollectionViewCell"
+            static let feedCollectionViewCell = "FeedCollectionViewCell"
             static let myDrawerCollectionReusableView = "MyDrawerCollectionReusableView"
             static let hashTagCollectionViewCell = "HashTagCollectionViewCell"
             
@@ -63,7 +63,7 @@ extension Const {
             static let undoneCourseCollectionViewCell = "UndoneCourseCollectionViewCell"
             
             // 피드뷰
-            static let contentsCollectionViewCell = "ContentsCollectionViewCell"
+            static let feedCollectionViewCell = "FeedCollectionViewCell"
             static let myDrawerCollectionReusableView = "MyDrawerCollectionReusableView"
             static let hashTagCollectionViewCell = "HashTagCollectionViewCell"
             

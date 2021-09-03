@@ -36,7 +36,7 @@
 		5678E727269F305A0049FF0C /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5678E726269F305A0049FF0C /* Setting.storyboard */; };
 		5678E729269F306D0049FF0C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5678E728269F306D0049FF0C /* SettingViewController.swift */; };
 		5678E72B269F33580049FF0C /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5678E72A269F33580049FF0C /* SettingTableViewCell.swift */; };
-		5678E72D269F77A60049FF0C /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5678E72C269F77A60049FF0C /* Community.swift */; };
+		5678E72D269F77A60049FF0C /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5678E72C269F77A60049FF0C /* Feed.swift */; };
 		568F64C02692DF2C0066B9D1 /* CourseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568F64BF2692DF2C0066B9D1 /* CourseListViewModel.swift */; };
 		568F64C22692F9E20066B9D1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */; };
 		56AADEF42694AE2300131D2C /* MedalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */; };
@@ -128,17 +128,16 @@
 		AA1F34E32695D2BD0011B3FA /* WritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F34E22695D2BD0011B3FA /* WritingViewController.swift */; };
 		AA1F352526976E670011B3FA /* HashTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F352326976E670011B3FA /* HashTagCollectionViewCell.swift */; };
 		AA1F352626976E670011B3FA /* HashTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1F352426976E670011B3FA /* HashTagCollectionViewCell.xib */; };
+		AA4512AB26E127F4000F1B77 /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4512A926E127F4000F1B77 /* FeedCollectionViewCell.swift */; };
+		AA4512AC26E127F4000F1B77 /* FeedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA4512AA26E127F4000F1B77 /* FeedCollectionViewCell.xib */; };
 		AA45C83026A0B78200C572B6 /* Writing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA45C82F26A0B78200C572B6 /* Writing.swift */; };
 		AA4B7942269F8ACF00B447A1 /* MyDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4B7941269F8ACF00B447A1 /* MyDrawer.swift */; };
-		AA4B794626A046C100B447A1 /* FeedDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4B794526A046C100B447A1 /* FeedDetail.swift */; };
 		AA58F81026D61F76000D4CAA /* UINavigationItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA58F80F26D61F76000D4CAA /* UINavigationItem+Extensions.swift */; };
 		AAD77084269B710E00EC3598 /* CustomIntensityVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD77083269B710E00EC3598 /* CustomIntensityVisualEffectView.swift */; };
-		AAD7709A269B8B3F00EC3598 /* ContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD77099269B8B3F00EC3598 /* ContentsCollectionViewCell.swift */; };
 		AAD770D1269C6F4B00EC3598 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD770D0269C6F4B00EC3598 /* HomeService.swift */; };
 		AAD770D5269C706B00EC3598 /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD770D4269C706B00EC3598 /* HomeAPI.swift */; };
 		AAD770F5269CA8A100EC3598 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD770F4269CA8A100EC3598 /* FeedService.swift */; };
 		AAD770F9269CB45000EC3598 /* FeedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD770F8269CB45000EC3598 /* FeedAPI.swift */; };
-		AAD770FC269CB6EF00EC3598 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD770FB269CB6EF00EC3598 /* Feed.swift */; };
 		AAD77114269E84D800EC3598 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD77113269E84D800EC3598 /* UIFont+Extension.swift */; };
 		AAFD90C7269052E100CF4707 /* FeedHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFD90C6269052E100CF4707 /* FeedHeaderView.swift */; };
 		AAFD90CA269052EE00CF4707 /* FeedHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAFD90C9269052EE00CF4707 /* FeedHeaderView.xib */; };
@@ -188,7 +187,7 @@
 		5678E726269F305A0049FF0C /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		5678E728269F306D0049FF0C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		5678E72A269F33580049FF0C /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
-		5678E72C269F77A60049FF0C /* Community.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Community.swift; sourceTree = "<group>"; };
+		5678E72C269F77A60049FF0C /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		568F64BF2692DF2C0066B9D1 /* CourseListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListViewModel.swift; sourceTree = "<group>"; };
 		568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -285,17 +284,16 @@
 		AA1F34E22695D2BD0011B3FA /* WritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingViewController.swift; sourceTree = "<group>"; };
 		AA1F352326976E670011B3FA /* HashTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA1F352426976E670011B3FA /* HashTagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HashTagCollectionViewCell.xib; sourceTree = "<group>"; };
+		AA4512A926E127F4000F1B77 /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
+		AA4512AA26E127F4000F1B77 /* FeedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCollectionViewCell.xib; sourceTree = "<group>"; };
 		AA45C82F26A0B78200C572B6 /* Writing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Writing.swift; sourceTree = "<group>"; };
 		AA4B7941269F8ACF00B447A1 /* MyDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDrawer.swift; sourceTree = "<group>"; };
-		AA4B794526A046C100B447A1 /* FeedDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetail.swift; sourceTree = "<group>"; };
 		AA58F80F26D61F76000D4CAA /* UINavigationItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+Extensions.swift"; sourceTree = "<group>"; };
 		AAD77083269B710E00EC3598 /* CustomIntensityVisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIntensityVisualEffectView.swift; sourceTree = "<group>"; };
-		AAD77099269B8B3F00EC3598 /* ContentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		AAD770D0269C6F4B00EC3598 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		AAD770D4269C706B00EC3598 /* HomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
 		AAD770F4269CA8A100EC3598 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
 		AAD770F8269CB45000EC3598 /* FeedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAPI.swift; sourceTree = "<group>"; };
-		AAD770FB269CB6EF00EC3598 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		AAD77113269E84D800EC3598 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		AAFD90C6269052E100CF4707 /* FeedHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedHeaderView.swift; sourceTree = "<group>"; };
 		AAFD90C9269052EE00CF4707 /* FeedHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedHeaderView.xib; sourceTree = "<group>"; };
@@ -602,14 +600,12 @@
 			isa = PBXGroup;
 			children = (
 				56EAF75E26955B5300D36105 /* Auth.swift */,
-				AAD770FB269CB6EF00EC3598 /* Feed.swift */,
 				56EAF76026955C0300D36105 /* Home.swift */,
 				56DCAA9E268C51E50056155A /* Challenge.swift */,
 				56DCAAB5268C6F5D0056155A /* Course.swift */,
 				5667D4DD269B624C0071D7AD /* Medal.swift */,
-				5678E72C269F77A60049FF0C /* Community.swift */,
+				5678E72C269F77A60049FF0C /* Feed.swift */,
 				AA4B7941269F8ACF00B447A1 /* MyDrawer.swift */,
-				AA4B794526A046C100B447A1 /* FeedDetail.swift */,
 				AA45C82F26A0B78200C572B6 /* Writing.swift */,
 			);
 			path = APIModels;
@@ -789,7 +785,8 @@
 		AAFD90BF269047A000CF4707 /* FeedCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				AAD77099269B8B3F00EC3598 /* ContentsCollectionViewCell.swift */,
+				AA4512A926E127F4000F1B77 /* FeedCollectionViewCell.swift */,
+				AA4512AA26E127F4000F1B77 /* FeedCollectionViewCell.xib */,
 			);
 			path = FeedCollectionView;
 			sourceTree = "<group>";
@@ -900,6 +897,7 @@
 				56DCAAB4268C6D760056155A /* DoneCourseCollectionViewCell.xib in Resources */,
 				56DCAA93268AFF3A0056155A /* FirstDayTableViewCell.xib in Resources */,
 				564D5D8E2694454A0056E468 /* Medal.storyboard in Resources */,
+				AA4512AC26E127F4000F1B77 /* FeedCollectionViewCell.xib in Resources */,
 				56DCAA342689BB9E0056155A /* LaunchScreen.storyboard in Resources */,
 				56B9726C26CF868D00F872FA /* GmarketSansTTFMedium.ttf in Resources */,
 				56DCAA312689BB9E0056155A /* Assets.xcassets in Resources */,
@@ -980,7 +978,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				56DCAABC268CA0FA0056155A /* LoginViewController.swift in Sources */,
-				AAD770FC269CB6EF00EC3598 /* Feed.swift in Sources */,
 				AA1F34B02694B2F20011B3FA /* ModalPresentationController.swift in Sources */,
 				56EAF7592694BDD300D36105 /* PopUpViewController.swift in Sources */,
 				56BF36A0269ED2AD009D8CCC /* HappyPopUpViewController.swift in Sources */,
@@ -1018,7 +1015,7 @@
 				56DCAA4D2689BCFA0056155A /* Storyboard.swift in Sources */,
 				56F13A47269C243D0006F9A0 /* PasswordAPI.swift in Sources */,
 				5668F7C1269F8F3F00C0BA1F /* GenericResponse.swift in Sources */,
-				5678E72D269F77A60049FF0C /* Community.swift in Sources */,
+				5678E72D269F77A60049FF0C /* Feed.swift in Sources */,
 				5667D4DE269B624C0071D7AD /* Medal.swift in Sources */,
 				56D6EF45269981720011F3FE /* NetworkResult.swift in Sources */,
 				56DCAAAF268C6D690056155A /* UndoneCourseCollectionViewCell.swift in Sources */,
@@ -1032,11 +1029,11 @@
 				AA1F34912692FB9E0011B3FA /* FeedDetailViewController.swift in Sources */,
 				5668F7C5269FFC7900C0BA1F /* AnimationPopUpDelegate.swift in Sources */,
 				56DCAA9D268B00910056155A /* UIView+Extension.swift in Sources */,
-				AAD7709A269B8B3F00EC3598 /* ContentsCollectionViewCell.swift in Sources */,
 				AA1F34A9269377F30011B3FA /* DatePickerViewController.swift in Sources */,
 				5667D4D4269AF7310071D7AD /* CourseAPI.swift in Sources */,
 				56DCAA92268AFF3A0056155A /* FirstDayTableViewCell.swift in Sources */,
 				56DCAA512689BD1E0056155A /* Xib.swift in Sources */,
+				AA4512AB26E127F4000F1B77 /* FeedCollectionViewCell.swift in Sources */,
 				56F13A45269C15300006F9A0 /* PasswordService.swift in Sources */,
 				AA45C83026A0B78200C572B6 /* Writing.swift in Sources */,
 				56DCAA552689BD3B0056155A /* Font.swift in Sources */,
@@ -1062,7 +1059,6 @@
 				56DCAA282689BB9B0056155A /* AppDelegate.swift in Sources */,
 				56DCAA2A2689BB9B0056155A /* SceneDelegate.swift in Sources */,
 				EC628958269DF0990041F43A /* SignUpService.swift in Sources */,
-				AA4B794626A046C100B447A1 /* FeedDetail.swift in Sources */,
 				AA1F34BD26956C400011B3FA /* MyDrawerCollectionReusableView.swift in Sources */,
 				5667D4CF269AD1620071D7AD /* NewPasswordViewController.swift in Sources */,
 				56BF369B269EBECB009D8CCC /* EmptyChallengeViewController.swift in Sources */,

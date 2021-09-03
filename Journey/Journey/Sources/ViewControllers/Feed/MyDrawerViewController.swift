@@ -27,7 +27,7 @@ class MyDrawerViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var myDrawer = [Community(postID: 0, nickname: "", mood: 0, mainImage: "", likeCount: 0, content: "", hasLike: false, hashtags: [""], year: "", month: "", day: "", week: "")]
+    private var myDrawer: [Feed] = []
     private var modalDateView: DatePickerViewController?
     private var currentDate: AppDate?
     private var feedCount = 0
@@ -50,8 +50,6 @@ class MyDrawerViewController: UIViewController {
     // MARK: - function
     
     private func registerXib() {
-        myHappinessCollectionView.register(ContentsCollectionViewCell.self, forCellWithReuseIdentifier: Const.Xib.Identifier.contentsCollectionViewCell)
-        
         myHappinessCollectionView.register(UINib(nibName: Const.Xib.Name.myDrawerCollectionReusableView, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Const.Xib.Identifier.myDrawerCollectionReusableView)
     }
     
@@ -78,7 +76,6 @@ class MyDrawerViewController: UIViewController {
     
     private func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(presentPickerView), name: NSNotification.Name("calendarButtonClicked"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(putLikeCount), name: NSNotification.Name("myDrawerLikeClicked"), object: nil)
     }
     
     private func checkEmptyView() {
@@ -132,15 +129,7 @@ class MyDrawerViewController: UIViewController {
         self.present(modalDateView, animated: true, completion: nil)
     }
     
-    @objc func putLikeCount(notification: Notification) {
-        if let likeInfo = notification.object as? LikeButtonInfo {
-            if likeInfo.isButtonClicked {
-                putFeedLike(postId: myDrawer[likeInfo.cellIndex].postID)
-            } else {
-                putFeedUnlike(postId: myDrawer[likeInfo.cellIndex].postID)
-            }
-        }
-    }
+
 }
 
 extension MyDrawerViewController: UIViewControllerTransitioningDelegate {
@@ -164,16 +153,12 @@ extension MyDrawerViewController: DatePickerViewDelegate {
 
 extension MyDrawerViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return myDrawer.count
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = myHappinessCollectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.contentsCollectionViewCell, for: indexPath) as? ContentsCollectionViewCell else { return UICollectionViewCell() }
-        
-        cell.makeRounded(radius: 14)
-        cell.setData(data: myDrawer[indexPath.row], viewController: .myDrawer)
-        
-        return cell
+       
+        return UICollectionViewCell()
     }
 }
 
