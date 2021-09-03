@@ -76,6 +76,11 @@ class AppDate {
         return year
     }
     
+    func getHour() -> Int {
+        guard let hour = Int(self.getDateComponent(with: "H")) else { return 0 }
+        return hour
+    }
+    
     func getWeekday() -> String {
         guard let weekday = self.weekday else { return "" }
         return weekday

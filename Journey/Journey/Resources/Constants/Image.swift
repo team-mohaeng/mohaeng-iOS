@@ -27,8 +27,9 @@ extension Const {
         static let level4Journey = UIImage(named: "lv4")
      
         // main home icon
-        static let medalIcon = UIImage(named: "icnMedal")!
-        static let settingIcon = UIImage(named: "icnSetting")!
+        static let medalIcon = UIImage(named: "medal")!
+        static let settingIcon = UIImage(named: "Chat")!
+        static let chatIcon = UIImage(named: "User")!
         
         // challenge nav icon
         static let mapIcon = UIImage(named: "icnMap")!

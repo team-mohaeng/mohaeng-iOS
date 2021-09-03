@@ -131,6 +131,7 @@
 		AA45C83026A0B78200C572B6 /* Writing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA45C82F26A0B78200C572B6 /* Writing.swift */; };
 		AA4B7942269F8ACF00B447A1 /* MyDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4B7941269F8ACF00B447A1 /* MyDrawer.swift */; };
 		AA4B794626A046C100B447A1 /* FeedDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4B794526A046C100B447A1 /* FeedDetail.swift */; };
+		AA58F81026D61F76000D4CAA /* UINavigationItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA58F80F26D61F76000D4CAA /* UINavigationItem+Extensions.swift */; };
 		AAD77084269B710E00EC3598 /* CustomIntensityVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD77083269B710E00EC3598 /* CustomIntensityVisualEffectView.swift */; };
 		AAD7709A269B8B3F00EC3598 /* ContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD77099269B8B3F00EC3598 /* ContentsCollectionViewCell.swift */; };
 		AAD770D1269C6F4B00EC3598 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD770D0269C6F4B00EC3598 /* HomeService.swift */; };
@@ -287,6 +288,7 @@
 		AA45C82F26A0B78200C572B6 /* Writing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Writing.swift; sourceTree = "<group>"; };
 		AA4B7941269F8ACF00B447A1 /* MyDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDrawer.swift; sourceTree = "<group>"; };
 		AA4B794526A046C100B447A1 /* FeedDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetail.swift; sourceTree = "<group>"; };
+		AA58F80F26D61F76000D4CAA /* UINavigationItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+Extensions.swift"; sourceTree = "<group>"; };
 		AAD77083269B710E00EC3598 /* CustomIntensityVisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIntensityVisualEffectView.swift; sourceTree = "<group>"; };
 		AAD77099269B8B3F00EC3598 /* ContentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		AAD770D0269C6F4B00EC3598 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
@@ -539,6 +541,7 @@
 				AAD77113269E84D800EC3598 /* UIFont+Extension.swift */,
 				EC0DB041269C331700DB7980 /* UIDevice+Extension.swift */,
 				56BF369C269EC947009D8CCC /* UIViewController+Extension.swift */,
+				AA58F80F26D61F76000D4CAA /* UINavigationItem+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1037,6 +1040,7 @@
 				56F13A45269C15300006F9A0 /* PasswordService.swift in Sources */,
 				AA45C83026A0B78200C572B6 /* Writing.swift in Sources */,
 				56DCAA552689BD3B0056155A /* Font.swift in Sources */,
+				AA58F81026D61F76000D4CAA /* UINavigationItem+Extensions.swift in Sources */,
 				EC62895C269DFA380041F43A /* SignUpUser.swift in Sources */,
 				56DCAA80268AE1A50056155A /* HomeViewController.swift in Sources */,
 				56DCAA4A2689BCD80056155A /* Const.swift in Sources */,
