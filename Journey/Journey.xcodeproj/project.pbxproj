@@ -148,6 +148,8 @@
 		EC0DB042269C331700DB7980 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB041269C331700DB7980 /* UIDevice+Extension.swift */; };
 		EC0DB044269D8FB700DB7980 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB043269D8FB700DB7980 /* LoginService.swift */; };
 		EC0DB046269D9A5100DB7980 /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB045269D9A5100DB7980 /* LoginAPI.swift */; };
+		EC3FD2CD26E296D2007E6366 /* EmailLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC3FD2CC26E296D2007E6366 /* EmailLogin.storyboard */; };
+		EC3FD2CF26E296F5007E6366 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3FD2CE26E296F5007E6366 /* EmailLoginViewController.swift */; };
 		EC628958269DF0990041F43A /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC628957269DF0990041F43A /* SignUpService.swift */; };
 		EC62895A269DF5CF0041F43A /* SignUpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC628959269DF5CF0041F43A /* SignUpAPI.swift */; };
 		EC62895C269DFA380041F43A /* SignUpUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC62895B269DFA380041F43A /* SignUpUser.swift */; };
@@ -306,6 +308,8 @@
 		EC0DB041269C331700DB7980 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		EC0DB043269D8FB700DB7980 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		EC0DB045269D9A5100DB7980 /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
+		EC3FD2CC26E296D2007E6366 /* EmailLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailLogin.storyboard; sourceTree = "<group>"; };
+		EC3FD2CE26E296F5007E6366 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		EC628957269DF0990041F43A /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		EC628959269DF5CF0041F43A /* SignUpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAPI.swift; sourceTree = "<group>"; };
 		EC62895B269DFA380041F43A /* SignUpUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUser.swift; sourceTree = "<group>"; };
@@ -709,6 +713,7 @@
 			isa = PBXGroup;
 			children = (
 				56DCAAB8268CA02A0056155A /* Login.storyboard */,
+				EC3FD2CC26E296D2007E6366 /* EmailLogin.storyboard */,
 				ECB617F826949256005E62B0 /* SignUpFirst.storyboard */,
 				ECB617FA2694926E005E62B0 /* SignUpSecond.storyboard */,
 				ECB617FC2694927A005E62B0 /* SignUpThird.storyboard */,
@@ -723,6 +728,7 @@
 			isa = PBXGroup;
 			children = (
 				56DCAABB268CA0FA0056155A /* LoginViewController.swift */,
+				EC3FD2CE26E296F5007E6366 /* EmailLoginViewController.swift */,
 				ECB617FE269492A8005E62B0 /* SignUpFirstViewController.swift */,
 				ECB61801269492BC005E62B0 /* SignUpSecondViewController.swift */,
 				ECB61803269492CD005E62B0 /* SignUpThirdViewController.swift */,
@@ -891,6 +897,7 @@
 				56BF3699269EBEB3009D8CCC /* EmptyChallenge.storyboard in Resources */,
 				568F64C22692F9E20066B9D1 /* GoogleService-Info.plist in Resources */,
 				56DCAAB4268C6D760056155A /* DoneCourseCollectionViewCell.xib in Resources */,
+				EC3FD2CD26E296D2007E6366 /* EmailLogin.storyboard in Resources */,
 				56DCAA93268AFF3A0056155A /* FirstDayTableViewCell.xib in Resources */,
 				563A276626D6756A0058B8F1 /* CourseHeaderView.xib in Resources */,
 				AA1F34BE26956C400011B3FA /* MyDrawerCollectionReusableView.xib in Resources */,
@@ -995,6 +1002,7 @@
 				ECB61802269492BC005E62B0 /* SignUpSecondViewController.swift in Sources */,
 				AAD770F5269CA8A100EC3598 /* FeedService.swift in Sources */,
 				56DCAA71268A26F80056155A /* UINavigationController+Extension.swift in Sources */,
+				EC3FD2CF26E296F5007E6366 /* EmailLoginViewController.swift in Sources */,
 				EC0DB03F269A3CC200DB7980 /* AppYear.swift in Sources */,
 				5668F7C3269FFBFB00C0BA1F /* PopUpActionDelegate.swift in Sources */,
 				AAD770D5269C706B00EC3598 /* HomeAPI.swift in Sources */,
