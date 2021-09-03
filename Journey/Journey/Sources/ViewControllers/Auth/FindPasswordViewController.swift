@@ -23,7 +23,7 @@ class FindPasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         initNavigationBar()
         initViewRounding()
         setDelegation()
@@ -47,10 +47,15 @@ class FindPasswordViewController: UIViewController {
     private func checkEmailFormat(email: String) {
         if validateEmail(email: email) {
             nextButton.isEnabled = true
-            nextButton.backgroundColor = UIColor.Pink2
+            nextButton.alpha = 1.0
+            
+            errorLabel.isHidden = true
         } else {
             nextButton.isEnabled = false
-            nextButton.backgroundColor = UIColor.Grey1Bg
+            nextButton.alpha = 0.3
+            
+            errorLabel.isHidden = false
+            // TODO: - 이메일 형식에 맞지 않음 오류 메세지 fix되면 띄우기
         }
     }
     
@@ -115,6 +120,7 @@ extension FindPasswordViewController {
                     }
                 case .requestErr(let message):
                     self.errorLabel.isHidden = false
+                    self.errorLabel.text = "\(message)"
                     print("requestErr", message)
                 case .pathErr:
                     print(".pathErr")
