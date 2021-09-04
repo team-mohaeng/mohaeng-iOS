@@ -9,10 +9,6 @@ import UIKit
 import SnapKit
 import Then
 
-enum FeedSize {
-    
-}
-
 class FeedViewController: UIViewController {
     
     // MARK: - Properties
@@ -25,7 +21,6 @@ class FeedViewController: UIViewController {
                                                                                     Feed(postID: 0, course: "거침없이 하이킥", challenge: 2, image: "imageUrl", mood: 2, content: "초이초이 ㅋㅋ", nickname: "김승찬", year: "2021", month: "8", day: "19", weekday: "일", emoji: [Emoji(emojiID: 1, emojiCount: 5)], myEmoji: 0, isReport: true, isDelete: false),
                                                                                     Feed(postID: 0, course: "초급 사진가", challenge: 2, image: "imageUrl", mood: 2, content: "맛있는 피자에 시원한 맥주 먹고 선선한 날씨에 산책했어요. 윤예지 정초이 어쩌구 저쩌구 메롱 야호", nickname: "윤예지", year: "2021", month: "8", day: "20", weekday: "일", emoji: [Emoji(emojiID: 1, emojiCount: 5)], myEmoji: 0, isReport: true, isDelete: false)])
                                                                                     
-    
     enum Size {
         static let FeedCollectionViewTopConstraint: CGFloat = 167
         static let FeedRoundingTopViewHeightConstraint: CGFloat = 20
@@ -41,7 +36,7 @@ class FeedViewController: UIViewController {
     var feedBackgroundFrame: UIView = UIView(frame: CGRect(x: 0, y: Size.FeedCollectionViewTopConstraint, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 100))
     var handImageView = UIImageView()
     var headerView: FeedHeaderView = {
-        guard let nib = UINib(nibName: "FeedHeaderView", bundle: nil).instantiate(withOwner: self, options: nil).first as? FeedHeaderView else { return FeedHeaderView() }
+        guard let nib = UINib(nibName: Const.Xib.Name.feedHeaderView, bundle: nil).instantiate(withOwner: self, options: nil).first as? FeedHeaderView else { return FeedHeaderView() }
         return nib
     }()
     
@@ -69,7 +64,7 @@ class FeedViewController: UIViewController {
         self.feedCollectionView.insertSubview(self.feedBackgroundFrame, at: 0)
     }
     
-    // MARK: - function
+    // MARK: - Functions
     
     private func initNavigationBar() {
         self.navigationController?.hideNavigationBar()
@@ -127,6 +122,8 @@ class FeedViewController: UIViewController {
     }
 }
 
+// MARK: - UICollectionViewDataSource
+
 extension FeedViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -142,6 +139,8 @@ extension FeedViewController: UICollectionViewDataSource {
     }
     
 }
+
+// MARK: - UICollectionViewDelegate
 
 extension FeedViewController: UICollectionViewDelegate {
     
@@ -176,6 +175,8 @@ extension FeedViewController: UICollectionViewDelegate {
     }
     
 }
+
+// MARK: - UICollectionViewDelegateFlowLayour
 
 extension FeedViewController: UICollectionViewDelegateFlowLayout {
     

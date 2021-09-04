@@ -115,7 +115,6 @@ class FeedDetailViewController: UIViewController {
     
     // MARK: - @IBAction Properties
 
-    
     @objc func touchRemoveButton() {
         var removePopUp = PopUpViewController(nibName: Const.Xib.Name.popUp, bundle: nil)
         removePopUp.modalPresentationStyle = .overCurrentContext
@@ -145,10 +144,4 @@ extension FeedDetailViewController: PopUpActionDelegate {
         
         self.navigationController?.pushViewController(feedViewController, animated: true)
     }
-}
-
-extension FeedDetailViewController {
-
-    
-
 }
