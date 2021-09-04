@@ -28,24 +28,6 @@ class NotificationViewController: UIViewController {
     var oldNoti: [Message] = []
     var newNoti: [Message] = []
     
-    func makeNewNotiArray(noti: PushNoti) {
-        for msg in noti.messages {
-            
-            for idx in 0..<msg.message.count {
-                let newMsg = Message(date: idx == msg.message.count - 1 ? msg.date : "", message: [msg.message[idx]], isNew: msg.isNew)
-                
-                if msg.isNew {
-                    newNoti.append(newMsg)
-                } else {
-                    oldNoti.append(newMsg)
-                }
-            }
-            
-        }
-        
-        notificationCollectionView.reloadData()
-    }
-    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var notificationCollectionView: UICollectionView!
@@ -71,6 +53,24 @@ class NotificationViewController: UIViewController {
         notificationCollectionView.register(UINib(nibName: Const.Xib.Name.profileBubbleCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.profileBubbleCollectionViewCell)
         notificationCollectionView.register(UINib(nibName: Const.Xib.Name.bubbleCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.bubbleCollectionViewCell)
         notificationCollectionView.register(UINib(nibName: Const.Xib.Name.unreadNotificationHeaderView, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Const.Xib.Identifier.unreadNotificationHeaderView)
+    }
+    
+    func makeNewNotiArray(noti: PushNoti) {
+        for msg in noti.messages {
+            
+            for idx in 0..<msg.message.count {
+                let newMsg = Message(date: idx == msg.message.count - 1 ? msg.date : "", message: [msg.message[idx]], isNew: msg.isNew)
+                
+                if msg.isNew {
+                    newNoti.append(newMsg)
+                } else {
+                    oldNoti.append(newMsg)
+                }
+            }
+            
+        }
+        
+        notificationCollectionView.reloadData()
     }
 
 }
