@@ -39,6 +39,17 @@
 		5678E72D269F77A60049FF0C /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5678E72C269F77A60049FF0C /* Community.swift */; };
 		568F64C02692DF2C0066B9D1 /* CourseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568F64BF2692DF2C0066B9D1 /* CourseListViewModel.swift */; };
 		568F64C22692F9E20066B9D1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */; };
+		569CD67626DCB2F90028E5CC /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569CD67526DCB2F90028E5CC /* Notification.storyboard */; };
+		569CD67826DCB3240028E5CC /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569CD67726DCB3240028E5CC /* NotificationViewController.swift */; };
+		569CD67C26DCB69A0028E5CC /* ProfileBubbleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569CD67A26DCB69A0028E5CC /* ProfileBubbleCollectionViewCell.swift */; };
+		569CD67D26DCB69A0028E5CC /* ProfileBubbleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569CD67B26DCB69A0028E5CC /* ProfileBubbleCollectionViewCell.xib */; };
+		569CD68026DCB6A50028E5CC /* BubbleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569CD67E26DCB6A50028E5CC /* BubbleCollectionViewCell.swift */; };
+		569CD68126DCB6A50028E5CC /* BubbleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569CD67F26DCB6A50028E5CC /* BubbleCollectionViewCell.xib */; };
+		569CD68426DCB6FD0028E5CC /* NewNotificationCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569CD68226DCB6FD0028E5CC /* NewNotificationCollectionReusableView.swift */; };
+		569CD68526DCB6FD0028E5CC /* NewNotificationCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569CD68326DCB6FD0028E5CC /* NewNotificationCollectionReusableView.xib */; };
+		569CD68726DCBFBB0028E5CC /* PushNoti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569CD68626DCBFBB0028E5CC /* PushNoti.swift */; };
+		56A9211126E0B60700C154B5 /* UnreadNotificationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A9210F26E0B60700C154B5 /* UnreadNotificationHeaderView.swift */; };
+		56A9211226E0B60700C154B5 /* UnreadNotificationHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56A9211026E0B60700C154B5 /* UnreadNotificationHeaderView.xib */; };
 		56AADEF42694AE2300131D2C /* MedalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */; };
 		56AADEF52694AE2300131D2C /* MedalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AADEF32694AE2300131D2C /* MedalCollectionViewCell.xib */; };
 		56B9725E26CF7B2E00F872FA /* ChallengeStampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B9725D26CF7B2E00F872FA /* ChallengeStampView.swift */; };
@@ -191,6 +202,17 @@
 		5678E72C269F77A60049FF0C /* Community.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Community.swift; sourceTree = "<group>"; };
 		568F64BF2692DF2C0066B9D1 /* CourseListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListViewModel.swift; sourceTree = "<group>"; };
 		568F64C12692F9E20066B9D1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		569CD67526DCB2F90028E5CC /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
+		569CD67726DCB3240028E5CC /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		569CD67A26DCB69A0028E5CC /* ProfileBubbleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBubbleCollectionViewCell.swift; sourceTree = "<group>"; };
+		569CD67B26DCB69A0028E5CC /* ProfileBubbleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileBubbleCollectionViewCell.xib; sourceTree = "<group>"; };
+		569CD67E26DCB6A50028E5CC /* BubbleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleCollectionViewCell.swift; sourceTree = "<group>"; };
+		569CD67F26DCB6A50028E5CC /* BubbleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BubbleCollectionViewCell.xib; sourceTree = "<group>"; };
+		569CD68226DCB6FD0028E5CC /* NewNotificationCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNotificationCollectionReusableView.swift; sourceTree = "<group>"; };
+		569CD68326DCB6FD0028E5CC /* NewNotificationCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewNotificationCollectionReusableView.xib; sourceTree = "<group>"; };
+		569CD68626DCBFBB0028E5CC /* PushNoti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNoti.swift; sourceTree = "<group>"; };
+		56A9210F26E0B60700C154B5 /* UnreadNotificationHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnreadNotificationHeaderView.swift; sourceTree = "<group>"; };
+		56A9211026E0B60700C154B5 /* UnreadNotificationHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnreadNotificationHeaderView.xib; sourceTree = "<group>"; };
 		56AADEF22694AE2300131D2C /* MedalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalCollectionViewCell.swift; sourceTree = "<group>"; };
 		56AADEF32694AE2300131D2C /* MedalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedalCollectionViewCell.xib; sourceTree = "<group>"; };
 		56B9725D26CF7B2E00F872FA /* ChallengeStampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeStampView.swift; sourceTree = "<group>"; };
@@ -364,6 +386,19 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		569CD67926DCB6650028E5CC /* NotificationCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				569CD67A26DCB69A0028E5CC /* ProfileBubbleCollectionViewCell.swift */,
+				569CD67B26DCB69A0028E5CC /* ProfileBubbleCollectionViewCell.xib */,
+				569CD67E26DCB6A50028E5CC /* BubbleCollectionViewCell.swift */,
+				569CD67F26DCB6A50028E5CC /* BubbleCollectionViewCell.xib */,
+				569CD68226DCB6FD0028E5CC /* NewNotificationCollectionReusableView.swift */,
+				569CD68326DCB6FD0028E5CC /* NewNotificationCollectionReusableView.xib */,
+			);
+			path = NotificationCollectionView;
+			sourceTree = "<group>";
+		};
 		56AADEE5269494D200131D2C /* MedalCollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,6 +525,8 @@
 				563A276126D542FD0058B8F1 /* CourseFooterView.swift */,
 				563A276526D6756A0058B8F1 /* CourseHeaderView.xib */,
 				563A276326D6755F0058B8F1 /* CourseHeaderView.swift */,
+				56A9211026E0B60700C154B5 /* UnreadNotificationHeaderView.xib */,
+				56A9210F26E0B60700C154B5 /* UnreadNotificationHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -499,6 +536,7 @@
 			children = (
 				AA1F352126976E390011B3FA /* FeedView */,
 				56AADEE5269494D200131D2C /* MedalCollectionView */,
+				569CD67926DCB6650028E5CC /* NotificationCollectionView */,
 				AAFD90BF269047A000CF4707 /* FeedCollectionView */,
 				56DCAA8F268AFF100056155A /* CourseTableView */,
 				56DCAAA4268C6BC80056155A /* CourseLibraryCollectionVIew */,
@@ -611,6 +649,7 @@
 				AA4B7941269F8ACF00B447A1 /* MyDrawer.swift */,
 				AA4B794526A046C100B447A1 /* FeedDetail.swift */,
 				AA45C82F26A0B78200C572B6 /* Writing.swift */,
+				569CD68626DCBFBB0028E5CC /* PushNoti.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -621,6 +660,7 @@
 				56DCAA7F268AE1A50056155A /* HomeViewController.swift */,
 				564D5D8F269446760056E468 /* MedalViewController.swift */,
 				5678E728269F306D0049FF0C /* SettingViewController.swift */,
+				569CD67726DCB3240028E5CC /* NotificationViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -654,6 +694,7 @@
 				56DCAA79268AE1280056155A /* Home.storyboard */,
 				564D5D8D2694454A0056E468 /* Medal.storyboard */,
 				5678E726269F305A0049FF0C /* Setting.storyboard */,
+				569CD67526DCB2F90028E5CC /* Notification.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -866,7 +907,10 @@
 				56AADEF52694AE2300131D2C /* MedalCollectionViewCell.xib in Resources */,
 				56DCAA7A268AE1280056155A /* Home.storyboard in Resources */,
 				56F13A59269C74680006F9A0 /* SpoqaHanSansNeo-Medium.otf in Resources */,
+				569CD68526DCB6FD0028E5CC /* NewNotificationCollectionReusableView.xib in Resources */,
 				AA1F348E2692FB920011B3FA /* FeedDetail.storyboard in Resources */,
+				569CD67626DCB2F90028E5CC /* Notification.storyboard in Resources */,
+				569CD68126DCB6A50028E5CC /* BubbleCollectionViewCell.xib in Resources */,
 				56DCAA74268ADE040056155A /* Tabbar.storyboard in Resources */,
 				ECB617FB2694926E005E62B0 /* SignUpSecond.storyboard in Resources */,
 				56F13A58269C74680006F9A0 /* SpoqaHanSansNeo-Regular.otf in Resources */,
@@ -888,6 +932,7 @@
 				56DCAAB0268C6D690056155A /* UndoneCourseCollectionViewCell.xib in Resources */,
 				AA1F34AA269377F30011B3FA /* DatePickerViewController.xib in Resources */,
 				5678E727269F305A0049FF0C /* Setting.storyboard in Resources */,
+				569CD67D26DCB69A0028E5CC /* ProfileBubbleCollectionViewCell.xib in Resources */,
 				56BF3699269EBEB3009D8CCC /* EmptyChallenge.storyboard in Resources */,
 				568F64C22692F9E20066B9D1 /* GoogleService-Info.plist in Resources */,
 				56DCAAB4268C6D760056155A /* DoneCourseCollectionViewCell.xib in Resources */,
@@ -908,6 +953,7 @@
 				56DCAA7C268AE1310056155A /* Challenge.storyboard in Resources */,
 				56DCAA8C268AF6E20056155A /* Course.storyboard in Resources */,
 				AAFD90CA269052EE00CF4707 /* FeedHeaderView.xib in Resources */,
+				56A9211226E0B60700C154B5 /* UnreadNotificationHeaderView.xib in Resources */,
 				56B9726A26CF868D00F872FA /* GmarketSansTTFBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1001,8 +1047,10 @@
 				56DCAA642689BE110056155A /* ProtocolsExmaple.swift in Sources */,
 				ECB617FF269492A8005E62B0 /* SignUpFirstViewController.swift in Sources */,
 				56DCAA82268AE1B10056155A /* ChallengeViewController.swift in Sources */,
+				569CD67C26DCB69A0028E5CC /* ProfileBubbleCollectionViewCell.swift in Sources */,
 				5667D4D2269AE3650071D7AD /* CourseService.swift in Sources */,
 				AA1F34AD26939E260011B3FA /* AppDate.swift in Sources */,
+				569CD67826DCB3240028E5CC /* NotificationViewController.swift in Sources */,
 				ECB61804269492CD005E62B0 /* SignUpThirdViewController.swift in Sources */,
 				56DCAA592689BD9F0056155A /* LottieExmaple.swift in Sources */,
 				56DCAAB3268C6D760056155A /* DoneCourseCollectionViewCell.swift in Sources */,
@@ -1015,6 +1063,7 @@
 				564D5D90269446760056E468 /* MedalViewController.swift in Sources */,
 				EC62895A269DF5CF0041F43A /* SignUpAPI.swift in Sources */,
 				56DCAAB6268C6F5D0056155A /* Course.swift in Sources */,
+				56A9211126E0B60700C154B5 /* UnreadNotificationHeaderView.swift in Sources */,
 				56DCAA4D2689BCFA0056155A /* Storyboard.swift in Sources */,
 				56F13A47269C243D0006F9A0 /* PasswordAPI.swift in Sources */,
 				5668F7C1269F8F3F00C0BA1F /* GenericResponse.swift in Sources */,
@@ -1027,6 +1076,7 @@
 				56CADE7F26D3882A0000D534 /* RoadMapPath.swift in Sources */,
 				562A9965269D987A006F2DA3 /* AnimationPopUpViewController.swift in Sources */,
 				AA1F34C726959BFC0011B3FA /* MoodViewController.swift in Sources */,
+				569CD68726DCBFBB0028E5CC /* PushNoti.swift in Sources */,
 				56DCAA8E268AF75E0056155A /* CourseViewController.swift in Sources */,
 				56F13A4E269C6D840006F9A0 /* User.swift in Sources */,
 				AA1F34912692FB9E0011B3FA /* FeedDetailViewController.swift in Sources */,
@@ -1046,6 +1096,7 @@
 				56DCAA4A2689BCD80056155A /* Const.swift in Sources */,
 				5667D4CB269ACBA70071D7AD /* CodeViewController.swift in Sources */,
 				56EAF75F26955B5300D36105 /* Auth.swift in Sources */,
+				569CD68026DCB6A50028E5CC /* BubbleCollectionViewCell.swift in Sources */,
 				563A276426D6755F0058B8F1 /* CourseHeaderView.swift in Sources */,
 				AAD77084269B710E00EC3598 /* CustomIntensityVisualEffectView.swift in Sources */,
 				AAD770F9269CB45000EC3598 /* FeedAPI.swift in Sources */,
@@ -1055,6 +1106,7 @@
 				AA1F352526976E670011B3FA /* HashTagCollectionViewCell.swift in Sources */,
 				AA1F349A2693688F0011B3FA /* MyDrawerViewController.swift in Sources */,
 				56DCAA96268AFF510056155A /* EvenDayTableViewCell.swift in Sources */,
+				569CD68426DCB6FD0028E5CC /* NewNotificationCollectionReusableView.swift in Sources */,
 				5667D4DC269B41520071D7AD /* ChallengeService.swift in Sources */,
 				AAD77114269E84D800EC3598 /* UIFont+Extension.swift in Sources */,
 				5667D4DB269B41520071D7AD /* ChallengeAPI.swift in Sources */,

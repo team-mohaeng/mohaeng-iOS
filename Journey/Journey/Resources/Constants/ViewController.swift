@@ -27,6 +27,7 @@ extension Const {
             static let home = "HomeViewController"
             static let medal = "MedalViewController"
             static let setting = "SettingViewController"
+            static let notification = "NotificationViewController"
             
             // 챌린지 탭
             static let emptyChallenge = "EmptyChallengeViewController"
