@@ -18,30 +18,35 @@ class SignUpFirstViewController: UIViewController {
     
     // MARK: - @IBOutlet Properties
     
+    @IBOutlet weak var checkPasswordBottomView: UIView!
+    @IBOutlet weak var passwordBottomView: UIView!
+    @IBOutlet weak var emailBottomView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var checkingpasswordTextField: UITextField!
-    @IBOutlet weak var emailCheckErrorLabel: UILabel!
-    @IBOutlet weak var passwordCheckErrorLabel: UILabel!
-    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var checkpasswordLabel: UILabel!
+    @IBOutlet weak var emailErrorLabel: UILabel!
+    @IBOutlet weak var passwordErrorLabel: UILabel!
+    @IBOutlet weak var checkingpasswordErrorLabel: UILabel!
+    @IBOutlet weak var checkpasswordCheckImage: UIImageView!
+    @IBOutlet weak var emailCheckImage: UIImageView!
+    @IBOutlet weak var passwordCheckImage: UIImageView!
     
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initHiddenAttribute()
         assignDelegate()
         initNavigationBar()
-        initErrorLabel()
         makeButtonRound()
-        hideTextField()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        makeUnderLineEmailTextField()
-        makeUnderLinePasswordTextField()
-        makeUnderLineCheckPasswordTextField()
+        
+        // Strong Password 해결하려고 썼습니당.
+        passwordTextField.isSecureTextEntry = false
+        checkingpasswordTextField.isSecureTextEntry = false
     }
     
     // MARK: - @IBAction Function
@@ -54,11 +59,21 @@ class SignUpFirstViewController: UIViewController {
     
     // MARK: - Functions
     
+    // 처음 화면에서 체크 이미지와 확인 버튼 숨김
+    private func initHiddenAttribute() {
+        confirmButton.isHidden = true
+        emailCheckImage.isHidden = true
+        passwordCheckImage.isHidden = true
+        checkpasswordCheckImage.isHidden = true
+        emailErrorLabel.isHidden = true
+        passwordErrorLabel.isHidden = true
+        checkingpasswordErrorLabel.isHidden = true
+    }
+    
     private func assignDelegate() {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         checkingpasswordTextField.delegate = self
-        
     }
     
     private func initNavigationBar() {
@@ -66,46 +81,8 @@ class SignUpFirstViewController: UIViewController {
         navigationItem.title = "회원가입"
     }
     
-    private func initErrorLabel() {
-        
-        // 처음 뷰 로드 시 error laber hidden 처리
-        emailCheckErrorLabel.isHidden = true
-        passwordCheckErrorLabel.isHidden = true
-    }
-    
-    private func makeUnderLineEmailTextField() {
-        // 텍스트필드 밑줄 남기기
-        emailTextField.borderStyle = .none
-        let border = CALayer()
-        border.frame = CGRect(x: 0, y: emailTextField.frame.size.height-1, width: emailTextField.frame.width, height: 1)
-        border.backgroundColor = UIColor.Grey1Line.cgColor
-        emailTextField.layer.addSublayer((border))
-        emailTextField.textColor = UIColor.Black1Text
-        
-    }
-    
-    private func makeUnderLinePasswordTextField() {
-        // 텍스트필드 밑줄 남기기
-        passwordTextField.borderStyle = .none
-        let border = CALayer()
-        border.frame = CGRect(x: 0, y: passwordTextField.frame.size.height-1, width: passwordTextField.frame.width, height: 1)
-        border.backgroundColor = UIColor.Grey1Line.cgColor
-        passwordTextField.layer.addSublayer((border))
-        passwordTextField.textColor = UIColor.Black1Text
-    }
-    
-    private func makeUnderLineCheckPasswordTextField() {
-        // 텍스트필드 밑줄 남기기
-        checkingpasswordTextField.borderStyle = .none
-        let border = CALayer()
-        border.frame = CGRect(x: 0, y: checkingpasswordTextField.frame.size.height-1, width: checkingpasswordTextField.frame.width, height: 1)
-        border.backgroundColor = UIColor.Grey1Line.cgColor
-        checkingpasswordTextField.layer.addSublayer((border))
-        checkingpasswordTextField.textColor = UIColor.Black1Text
-    }
-    
     private func makeButtonRound() {
-        nextButton.makeRounded(radius: 24)
+        confirmButton.makeRounded(radius: 20)
     }
     
     func validateEmail(email: String) -> Bool {
@@ -124,69 +101,115 @@ class SignUpFirstViewController: UIViewController {
     
     // Email Errors
     func showEmailBlankError() {
-        emailCheckErrorLabel.isHidden = false
-        emailCheckErrorLabel.text = "사용 가능하지 않은 이메일입니다"
-        emailCheckErrorLabel.textColor = UIColor.Red
-        isEmailError = true
+        emailCheckImage.isHidden = true
+        emailErrorLabel.isHidden = true
+        
+        emailLabel.textColor = .Grey2Tab
+        emailBottomView.backgroundColor = .Grey2Tab
     }
     
     func hideEmailError() {
-        emailCheckErrorLabel.isHidden = false
-        emailCheckErrorLabel.text = "사용가능한 이메일입니다"
-        emailCheckErrorLabel.textColor = UIColor.Green
-        isEmailError = false
+        emailErrorLabel.isHidden = true
+        
+        emailLabel.textColor = .Grey2Tab
+        emailBottomView.backgroundColor = .Grey2Tab
     }
     
+    // 이메일 정규식에 맞지 않을 때
     func showEmailFormatError() {
-        emailCheckErrorLabel.isHidden = false
-        emailCheckErrorLabel.text = "사용 가능하지 않은 이메일입니다"
-        emailCheckErrorLabel.textColor = UIColor.Red
+        emailCheckImage.isHidden = true
+        
+        emailLabel.textColor = .red
+        emailBottomView.backgroundColor = .Red
+        emailErrorLabel.isHidden = false
+        emailErrorLabel.text = "이메일 형식이 올바르지 않습니다"
+        emailErrorLabel.textColor = UIColor.Red
+        
     }
     
     // Password Errors
     func hidePasswordError() {
-        passwordCheckErrorLabel.isHidden = false
-        passwordCheckErrorLabel.text = "사용 가능한 비밀번호입니다"
-        passwordCheckErrorLabel.textColor = UIColor.Green
-        isPasswordError = false
+        passwordCheckImage.isHidden = false
+        passwordErrorLabel.isHidden = true
+        
+        passwordLabel.textColor = .Grey2Tab
+        passwordBottomView.backgroundColor = .Grey2Tab
+        
+    }
+    
+    func showPasswordCheckError() {
+        checkingpasswordErrorLabel.isHidden = false
+        
+        checkingpasswordErrorLabel.textColor = .Red
+        checkpasswordLabel.textColor = .Red
+        
     }
     
     func showPasswordCheckFormatError() {
-        passwordCheckErrorLabel.isHidden = false
-        passwordCheckErrorLabel.text = "비밀번호가 일치하지 않습니다"
-        passwordCheckErrorLabel.textColor = UIColor.Red
+        passwordCheckImage.isHidden = true
+        passwordErrorLabel.isHidden = false
         
-        isPasswordCheckError = true
-        
+        passwordLabel.textColor = UIColor.Red
+        passwordBottomView.backgroundColor = .Red
+        passwordErrorLabel.text = "영문, 숫자를 모두 포함하여 입력해주세요"
+        passwordErrorLabel.textColor = UIColor.Red
     }
     
     func showPasswordCheckBlankError() {
-        passwordCheckErrorLabel.isHidden = false
-        passwordCheckErrorLabel.text = "사용 가능한 비밀번호입니다."
-        passwordCheckErrorLabel.textColor = UIColor.Green
+        passwordCheckImage.isHidden = true
+        passwordErrorLabel.isHidden = true
+        checkingpasswordErrorLabel.isHidden = false
         isPasswordCheckError = true
+        
+        passwordLabel.textColor = .Grey2Tab
+        passwordBottomView.backgroundColor = .Grey2Tab
+        checkingpasswordErrorLabel.textColor = .Red
+        checkpasswordLabel.textColor = .Red
+    }
+    
+    func showNotCoincideError() {
+        checkpasswordCheckImage.isHidden = true
+        checkingpasswordErrorLabel.isHidden = false
+        passwordErrorLabel.isHidden = true
+        
+        passwordBottomView.backgroundColor = .Grey2Tab
+        passwordLabel.textColor = .Grey2Tab
+        checkpasswordLabel.textColor = .Red
+        checkPasswordBottomView.backgroundColor = .Red
+        checkingpasswordErrorLabel.text = "비밀번호가 일치하지 않습니다"
+        checkingpasswordErrorLabel.textColor = .Red
+    }
+    
+    func showCheckingPasswordCheckBlankError() {
+        checkpasswordCheckImage.isHidden = true
+        checkingpasswordErrorLabel.isHidden = true
+        
+        checkPasswordBottomView.backgroundColor = .Grey2Tab
+        checkpasswordLabel.textColor = .Grey2Tab
     }
     
     func hidePasswordCheckError() {
-        passwordCheckErrorLabel.isHidden = false
-        passwordCheckErrorLabel.text = "비밀번호가 일치합니다"
-        passwordCheckErrorLabel.textColor = UIColor.Green
-        isPasswordCheckError = false
+        checkpasswordCheckImage.isHidden = false
+        checkingpasswordErrorLabel.isHidden = true
+        
+        checkpasswordLabel.textColor = .Grey2Tab
+        checkPasswordBottomView.backgroundColor = .Grey2Tab
     }
     
-    func hideTextField() {
-        passwordCheckErrorLabel.isHidden = true
-        passwordTextField.isHidden = true
-        checkingpasswordTextField.isHidden = true
+    func checkingPasswordTextCount() {
+        passwordCheckImage.isHidden = true
+        passwordErrorLabel.isHidden = false
+        
+        passwordLabel.textColor = .Red
+        passwordBottomView.backgroundColor = .Red
+        passwordErrorLabel.textColor = .red
+        passwordErrorLabel.text = "8~16자의 비밀번호를 입력해주세요"
     }
     
     func presentIsHidden() {
-        passwordCheckErrorLabel.isHidden = false
-        passwordTextField.isHidden = false
-        checkingpasswordTextField.isHidden = false
-        passwordLabel.isHidden = false
-        
+        emailCheckImage.isHidden = false
     }
+    
     private func pushSignUpSecondViewController() {
         
         let signupSecondStoryboard = UIStoryboard(name: Const.Storyboard.Name.signUpSecond, bundle: nil)
@@ -229,7 +252,11 @@ class SignUpFirstViewController: UIViewController {
         if password != "" {
             // Password가 정규식에 맞지 않을 때
             if !validatePassword(password: password) {
-                self.showPasswordCheckFormatError()
+                if passwordTextField.text!.count > 8 {
+                    self.showPasswordCheckFormatError()
+                } else {
+                    checkingPasswordTextCount()
+                }
                 return false
             } else {
                 // Password가 정규식에 맞을 때
@@ -255,7 +282,7 @@ class SignUpFirstViewController: UIViewController {
                 return false
             }
             if passwordCheck != password {
-                self.showPasswordCheckFormatError()
+                self.showNotCoincideError()
                 return false
             } else {
                 // 비밀번호와 일치할 때
@@ -264,7 +291,7 @@ class SignUpFirstViewController: UIViewController {
             }
         } else {
             // 비밀번호 확인란이 공백일 때
-            self.showPasswordCheckBlankError()
+            self.showCheckingPasswordCheckBlankError()
             return false
         }
     }
@@ -278,23 +305,27 @@ extension SignUpFirstViewController: UITextFieldDelegate {
     // DidEndEditing -> 손을 떼고 나서 호출
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         
+        passwordTextField.isSecureTextEntry = true
+        checkingpasswordTextField.isSecureTextEntry = true
+      
         // 이메일
         if textField == emailTextField {
             self.isEmailError = checkEmail()
             
-        // 비밀번호
+            // 비밀번호
         } else if textField == passwordTextField || textField == checkingpasswordTextField {
             self.isPasswordError = checkPassword()
             self.isPasswordCheckError = checkPasswordCheck()
         }
         // 모두 true -> 시작하기 버튼색 바꾸기
         if isEmailError && isPasswordError && isPasswordCheckError {
-            self.nextButton.backgroundColor = UIColor.Pink2
-            nextButton.isEnabled = true
+            self.confirmButton.backgroundColor = UIColor.DeepYellow
+            confirmButton.isEnabled = true
+            confirmButton.isHidden = false
+            
         } else {
-            self.nextButton.backgroundColor = UIColor.Grey1Bg
-            nextButton.isEnabled = false
+            confirmButton.isHidden = true
+            confirmButton.isEnabled = false
         }
     }
-    
 }
