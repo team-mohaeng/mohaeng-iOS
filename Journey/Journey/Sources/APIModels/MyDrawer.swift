@@ -15,5 +15,5 @@ struct MyDrawerResponseData: Codable {
 
 // MARK: - DataClass
 struct MyDrawerData: Codable {
-    let myDrawerSmallSatisfactions: [Community]
+    let myDrawerSmallSatisfactions: [Feed]
 }

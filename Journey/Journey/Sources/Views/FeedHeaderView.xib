@@ -8,11 +8,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SpoqaHanSansNeo-Bold.otf">
-            <string>SpoqaHanSansNeo-Bold</string>
-        </array>
-        <array key="SpoqaHanSansNeo-Regular.otf">
-            <string>SpoqaHanSansNeo-Regular</string>
+        <array key="GmarketSansTTFMedium.ttf">
+            <string>GmarketSansTTFMedium</string>
         </array>
     </customFonts>
     <objects>
@@ -25,76 +22,58 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4pP-9i-50W">
                     <rect key="frame" x="0.0" y="44" width="405" height="612"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 챌린지를 성공하고 당신의 소확행을 공유해줘" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTQ-OH-Q9G">
-                            <rect key="frame" x="24" y="127" width="121" height="28"/>
-                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘은 64개의 안부가 남겨졌어요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTQ-OH-Q9G">
+                            <rect key="frame" x="24" y="107" width="144" height="36"/>
+                            <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="18"/>
                             <color key="textColor" name="Black1Text"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R95-9z-LU9">
-                            <rect key="frame" x="329" y="7" width="60" height="14"/>
-                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
-                            <inset key="contentEdgeInsets" minX="7" minY="0.0" maxX="8" maxY="0.0"/>
-                            <state key="normal" title="내 서랍장">
-                                <color key="titleColor" name="Black1Text"/>
-                            </state>
-                            <connections>
-                                <action selector="touchMyDrawerButton:" destination="-1" eventType="touchUpInside" id="EpX-Xm-VdI"/>
-                            </connections>
-                        </button>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KmY-jr-Igp">
-                            <rect key="frame" x="24" y="167" width="130" height="34"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="feedGrpX" translatesAutoresizingMaskIntoConstraints="NO" id="BrZ-YM-lqU">
+                            <rect key="frame" x="217.5" y="49" width="161.5" height="142.5"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SFj-OY-uxp">
+                            <rect key="frame" x="278" y="0.0" width="70" height="44"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njn-dt-tJi">
-                                    <rect key="frame" x="117" y="17" width="0.0" height="0.0"/>
-                                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 서랍장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ku-q9-tnV">
+                                    <rect key="frame" x="9" y="13.5" width="52.5" height="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconCongratulations" translatesAutoresizingMaskIntoConstraints="NO" id="7jH-xF-TuL">
-                                    <rect key="frame" x="13" y="7" width="20" height="20"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qVo-zb-C2Q">
+                                    <rect key="frame" x="64" y="9" width="6" height="6"/>
+                                    <color key="backgroundColor" red="1" green="0.58431372549019611" blue="0.3529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="20" id="eZm-N7-1dm"/>
-                                        <constraint firstAttribute="width" constant="20" id="iHZ-2y-JNE"/>
+                                        <constraint firstAttribute="height" constant="6" id="O6P-ji-GFJ"/>
+                                        <constraint firstAttribute="width" constant="6" id="fwb-dP-SHW"/>
                                     </constraints>
-                                </imageView>
+                                </view>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="njn-dt-tJi" firstAttribute="centerY" secondItem="KmY-jr-Igp" secondAttribute="centerY" id="3al-Ir-yQJ"/>
-                                <constraint firstAttribute="height" constant="34" id="Hc2-s1-cys"/>
-                                <constraint firstAttribute="trailing" secondItem="njn-dt-tJi" secondAttribute="trailing" constant="13" id="ZRA-Xf-eHZ"/>
-                                <constraint firstItem="7jH-xF-TuL" firstAttribute="leading" secondItem="KmY-jr-Igp" secondAttribute="leading" constant="13" id="bcM-xy-jpb"/>
-                                <constraint firstAttribute="width" constant="130" id="kZt-lJ-bRL"/>
-                                <constraint firstItem="7jH-xF-TuL" firstAttribute="centerY" secondItem="KmY-jr-Igp" secondAttribute="centerY" id="laV-wo-IsA"/>
+                                <constraint firstAttribute="height" constant="44" id="F4s-gK-szE"/>
+                                <constraint firstItem="qVo-zb-C2Q" firstAttribute="top" secondItem="SFj-OY-uxp" secondAttribute="top" constant="9" id="W8d-TI-Axx"/>
+                                <constraint firstItem="7Ku-q9-tnV" firstAttribute="centerX" secondItem="SFj-OY-uxp" secondAttribute="centerX" id="Yv2-OS-gA4"/>
+                                <constraint firstItem="7Ku-q9-tnV" firstAttribute="centerY" secondItem="SFj-OY-uxp" secondAttribute="centerY" id="hbI-Ed-q7r"/>
+                                <constraint firstAttribute="width" constant="70" id="jol-Dh-AtC"/>
+                                <constraint firstAttribute="trailing" secondItem="qVo-zb-C2Q" secondAttribute="trailing" id="q0v-La-1Yn"/>
                             </constraints>
                         </view>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgGraphicHappy" translatesAutoresizingMaskIntoConstraints="NO" id="BrZ-YM-lqU">
-                            <rect key="frame" x="214" y="76" width="167" height="168"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="168" id="EHQ-WI-Ei2"/>
-                                <constraint firstAttribute="width" constant="167" id="aBb-YS-gfm"/>
-                            </constraints>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소확행 구경하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Km0-OS-LrM">
-                            <rect key="frame" x="24" y="49" width="152" height="28"/>
-                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="24"/>
-                            <color key="textColor" name="Black1Text"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fp-5t-jUi">
+                            <rect key="frame" x="348" y="0.0" width="44" height="44"/>
+                            <state key="normal" image="gnbIcnWrite"/>
+                        </button>
                     </subviews>
-                    <color key="backgroundColor" red="1" green="0.85490196078431369" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="1" green="0.94901960784313721" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="KmY-jr-Igp" firstAttribute="top" secondItem="DTQ-OH-Q9G" secondAttribute="bottom" constant="12" id="0CD-r1-1Qo"/>
-                        <constraint firstItem="Km0-OS-LrM" firstAttribute="leading" secondItem="4pP-9i-50W" secondAttribute="leading" constant="24" id="1uc-ga-tQu"/>
-                        <constraint firstItem="Km0-OS-LrM" firstAttribute="top" secondItem="4pP-9i-50W" secondAttribute="top" constant="49" id="J0o-Q0-77W"/>
-                        <constraint firstAttribute="trailing" secondItem="BrZ-YM-lqU" secondAttribute="trailing" constant="24" id="Oy7-K7-FUC"/>
-                        <constraint firstAttribute="trailing" secondItem="R95-9z-LU9" secondAttribute="trailing" constant="16" id="Uor-hh-Pj3"/>
-                        <constraint firstItem="BrZ-YM-lqU" firstAttribute="top" secondItem="4pP-9i-50W" secondAttribute="top" constant="76" id="Wgd-bZ-zHo"/>
-                        <constraint firstItem="DTQ-OH-Q9G" firstAttribute="top" secondItem="Km0-OS-LrM" secondAttribute="bottom" constant="50" id="auY-SN-lvx"/>
-                        <constraint firstItem="R95-9z-LU9" firstAttribute="top" secondItem="4pP-9i-50W" secondAttribute="top" constant="7" id="lNf-gF-hzj"/>
-                        <constraint firstItem="KmY-jr-Igp" firstAttribute="leading" secondItem="4pP-9i-50W" secondAttribute="leading" constant="24" id="lhN-yC-FgC"/>
-                        <constraint firstItem="DTQ-OH-Q9G" firstAttribute="leading" secondItem="Km0-OS-LrM" secondAttribute="leading" id="zuf-qW-dIp"/>
+                        <constraint firstItem="5fp-5t-jUi" firstAttribute="top" secondItem="4pP-9i-50W" secondAttribute="top" id="0gE-sw-12p"/>
+                        <constraint firstItem="5fp-5t-jUi" firstAttribute="leading" secondItem="SFj-OY-uxp" secondAttribute="trailing" id="6sU-rr-yaa"/>
+                        <constraint firstAttribute="trailing" secondItem="BrZ-YM-lqU" secondAttribute="trailing" constant="26" id="Oy7-K7-FUC"/>
+                        <constraint firstItem="BrZ-YM-lqU" firstAttribute="top" secondItem="4pP-9i-50W" secondAttribute="top" constant="49" id="Wgd-bZ-zHo"/>
+                        <constraint firstAttribute="trailing" secondItem="5fp-5t-jUi" secondAttribute="trailing" constant="13" id="bBX-6x-EIj"/>
+                        <constraint firstItem="DTQ-OH-Q9G" firstAttribute="top" secondItem="4pP-9i-50W" secondAttribute="top" constant="107" id="pSb-oQ-H7R"/>
+                        <constraint firstItem="DTQ-OH-Q9G" firstAttribute="leading" secondItem="4pP-9i-50W" secondAttribute="leading" constant="24" id="uNG-4V-sZh"/>
+                        <constraint firstItem="SFj-OY-uxp" firstAttribute="top" secondItem="4pP-9i-50W" secondAttribute="top" id="uwT-u7-OHf"/>
                     </constraints>
                 </view>
             </subviews>
@@ -107,17 +86,15 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="myDrawerButton" destination="R95-9z-LU9" id="cdk-HZ-wMi"/>
-                <outlet property="writeButtonImageView" destination="7jH-xF-TuL" id="ayU-bv-civ"/>
-                <outlet property="writeButtonLabel" destination="njn-dt-tJi" id="3JM-BV-4au"/>
-                <outlet property="writeButtonView" destination="KmY-jr-Igp" id="OLm-ew-uUY"/>
+                <outlet property="newIndicatorView" destination="qVo-zb-C2Q" id="YHi-ae-OZq"/>
+                <outlet property="writingCountLabel" destination="DTQ-OH-Q9G" id="Jeq-qG-EUh"/>
             </connections>
             <point key="canvasLocation" x="-84.782608695652186" y="58.258928571428569"/>
         </view>
     </objects>
     <resources>
-        <image name="IconCongratulations" width="20" height="20"/>
-        <image name="bgGraphicHappy" width="167" height="168"/>
+        <image name="feedGrpX" width="161.5" height="142.5"/>
+        <image name="gnbIcnWrite" width="44" height="44"/>
         <namedColor name="Black1Text">
             <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
