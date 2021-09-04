@@ -33,26 +33,22 @@ public class HomeAPI {
     }
     
     private func judgeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
+        
+        let decoder = JSONDecoder()
+            guard let decodedData = try? decoder.decode(GenericResponse<HomeData>.self, from: data)
+            else {
+                    return .pathErr
+            }
+        
         switch statusCode {
         case 200:
-            return isValidData(data: data)
+            return .success(decodedData.data)
         case 400..<500:
-            return .pathErr
+            return .requestErr(decodedData.message)
         case 500:
             return .serverErr
         default:
             return .networkFail
         }
-    }
-    
-    private func isValidData(data: Data) -> NetworkResult<Any> {
-        let decoder = JSONDecoder()
-        
-        guard let decodedData = try? decoder.decode(HomeResponseData.self, from: data) else {
-            return .pathErr
-        }
-        
-        return .success(decodedData.data)
-    }
-    
+    }    
 }
