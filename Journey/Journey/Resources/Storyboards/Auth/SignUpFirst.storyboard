@@ -64,7 +64,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPP-yG-0ej">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPP-yG-0ej">
                                 <rect key="frame" x="24" y="440.66666666666669" width="327" height="40"/>
                                 <color key="backgroundColor" name="DeepYellow"/>
                                 <constraints>
@@ -78,40 +78,40 @@
                                     <action selector="touchNextFirstButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mRa-dU-m9R"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowCheck" translatesAutoresizingMaskIntoConstraints="NO" id="oes-7O-zp4">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowCheck" translatesAutoresizingMaskIntoConstraints="NO" id="oes-7O-zp4">
                                 <rect key="frame" x="325" y="198.66666666666666" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="ENg-GL-ENK"/>
                                     <constraint firstAttribute="height" constant="24" id="WWG-vd-7qw"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowCheck" translatesAutoresizingMaskIntoConstraints="NO" id="RIZ-UM-hBk">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowCheck" translatesAutoresizingMaskIntoConstraints="NO" id="RIZ-UM-hBk">
                                 <rect key="frame" x="325" y="294" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="9Zb-fB-le9"/>
                                     <constraint firstAttribute="width" constant="24" id="gYo-KZ-2nr"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowCheck" translatesAutoresizingMaskIntoConstraints="NO" id="0NX-oo-xQs">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowCheck" translatesAutoresizingMaskIntoConstraints="NO" id="0NX-oo-xQs">
                                 <rect key="frame" x="325" y="369.33333333333331" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="AHH-6d-FNw"/>
                                     <constraint firstAttribute="width" constant="24" id="HvC-Hv-rR6"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oF-52-gUj">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oF-52-gUj">
                                 <rect key="frame" x="324.66666666666669" y="239" width="26.333333333333314" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pok-54-RsC">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pok-54-RsC">
                                 <rect key="frame" x="324.66666666666669" y="332.33333333333331" width="26.333333333333314" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMq-Ck-7Rl">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMq-Ck-7Rl">
                                 <rect key="frame" x="327.66666666666669" y="407.66666666666669" width="23.333333333333314" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="textColor"/>
@@ -187,10 +187,10 @@
                     </view>
                     <connections>
                         <outlet property="checkPasswordBottomView" destination="EFz-b7-TeV" id="WtN-2z-XCo"/>
-                        <outlet property="checkingpasswordErrorLabel" destination="aMq-Ck-7Rl" id="XaP-2I-4Qd"/>
+                        <outlet property="checkPasswordCheckImage" destination="0NX-oo-xQs" id="4Y9-t1-t7z"/>
+                        <outlet property="checkPasswordLabel" destination="phV-WH-t9u" id="v7F-xn-TVZ"/>
+                        <outlet property="checkingPasswordErrorLabel" destination="aMq-Ck-7Rl" id="2mg-Fc-pzK"/>
                         <outlet property="checkingpasswordTextField" destination="UhB-gj-UlV" id="NiH-LK-kus"/>
-                        <outlet property="checkpasswordCheckImage" destination="0NX-oo-xQs" id="6OK-KI-hv8"/>
-                        <outlet property="checkpasswordLabel" destination="phV-WH-t9u" id="OfF-ZE-ni2"/>
                         <outlet property="confirmButton" destination="GPP-yG-0ej" id="YcQ-lz-IdO"/>
                         <outlet property="emailBottomView" destination="5E2-IL-MYC" id="05k-0C-SNf"/>
                         <outlet property="emailCheckImage" destination="oes-7O-zp4" id="0Ga-WZ-7II"/>
