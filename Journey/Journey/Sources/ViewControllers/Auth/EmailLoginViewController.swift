@@ -11,7 +11,7 @@ class EmailLoginViewController: UIViewController {
     
     // MARK: - Properties
     
-    var signupuser = SignUpUser.shared
+    var signUpUser = SignUpUser.shared
     
     // MARK: - @IBOutlet Properties
     
@@ -22,19 +22,14 @@ class EmailLoginViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var doLoginButton: UIButton!
     @IBOutlet weak var findPasswordButton: UIButton!
-    
+    @IBOutlet weak var emailBottomView: UIView!
+    @IBOutlet weak var passwordBottonView: UIView!
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         assignDelegate()
         makeButtonRound()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        makeUnderLineEmailTextField()
-        makeUnderLinePasswordTextField()
     }
     
     // MARK: - @IBAction Function
@@ -52,24 +47,6 @@ class EmailLoginViewController: UIViewController {
         passwordTextField.delegate = self
     }
     
-    private func makeUnderLineEmailTextField() {
-        emailTextField.borderStyle = .none
-        let border = CALayer()
-        border.frame = CGRect(x: 0, y: emailTextField.frame.size.height-1, width: emailTextField.frame.width, height: 1)
-        border.backgroundColor = UIColor.Grey1Line.cgColor
-        emailTextField.layer.addSublayer((border))
-        emailTextField.textColor = UIColor.Black1Text
-    }
-    
-    private func makeUnderLinePasswordTextField() {
-        passwordTextField.borderStyle = .none
-        let border = CALayer()
-        border.frame = CGRect(x: 0, y: passwordTextField.frame.size.height-1, width: passwordTextField.frame.width, height: 1)
-        border.backgroundColor = UIColor.Grey1Line.cgColor
-        passwordTextField.layer.addSublayer((border))
-        passwordTextField.textColor = UIColor.Black1Text
-    }
-    
     private func makeButtonRound() {
         doLoginButton.makeRounded(radius: 20)
     }
@@ -78,14 +55,24 @@ class EmailLoginViewController: UIViewController {
         errorLabel.isHidden = false
     }
     
+    func finishEditingTextField() {
+        emailLabel.textColor = .Grey2Text
+        emailBottomView.backgroundColor = .Grey5
+        passwordLabel.textColor = .Grey2Text
+        passwordBottonView.backgroundColor = .Grey5
+    }
+    
     func pushHomeViewController() {
-        doLoginButton.isEnabled = true
-        
         let homeStoryboard = UIStoryboard(name: Const.Storyboard.Name.home, bundle: nil)
         guard let homeViewController = homeStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.home) as? HomeViewController else {
             return
         }
         self.navigationController?.pushViewController(homeViewController, animated: true)
+    }
+    
+    func enableDoLoginButton() {
+        doLoginButton.backgroundColor = .DeepYellow
+        doLoginButton.isEnabled = true
     }
     
     private func pushSignUpSecondViewController() {
@@ -97,39 +84,36 @@ class EmailLoginViewController: UIViewController {
 // MARK: - Extensions
 
 extension EmailLoginViewController: UITextFieldDelegate {
-    
+
+    // Editing 하면서 호출
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        if emailTextField.text == "" {
-            emailLabel.textColor = .Grey2Text
-            errorLabel.isHidden = true
-            doLoginButton.backgroundColor = .LoginYellow
-            
-        } else {
+        if emailTextField.isEditing {
             emailLabel.textColor = .Black1Text
+            emailBottomView.backgroundColor = .black
             doLoginButton.backgroundColor = .DeepYellow
         }
         
-        if passwordTextField.text == "" {
-            passwordLabel.textColor = .Grey2Text
-            errorLabel.isHidden = true
-            doLoginButton.backgroundColor = .LoginYellow
-            
-        } else {
+        if passwordTextField.isEditing {
             passwordLabel.textColor = .Black1Text
+            passwordBottonView.backgroundColor = .black
             doLoginButton.backgroundColor = .DeepYellow
         }
     }
     
+    // Editing 끝나고 호출
     func textFieldDidEndEditing(_ textField: UITextField) {
-        emailLabel.textColor = .Grey2Text
-        passwordLabel.textColor = .Grey2Text
+        
+        finishEditingTextField()
+        
+        // emailTextField, passwordTextField 둘 중 하나라도 없으면 버튼 색 바꾸기
+        if emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
+            doLoginButton.backgroundColor = .LoginYellow
+            doLoginButton.isEnabled = false
+        }
     }
-    
 }
 
 extension EmailLoginViewController {
-    
     func postLogin() {
         guard let password = passwordTextField.text else {
             return
@@ -143,7 +127,7 @@ extension EmailLoginViewController {
             case .success(let jwt):
                 if let data = jwt as? JwtData {
                     UserDefaults.standard.setValue(data.jwt, forKey: "jwtToken")
-                    print(data.jwt)
+                    self.enableDoLoginButton()
                     self.pushHomeViewController()
                 }
             case .requestErr(let message):
