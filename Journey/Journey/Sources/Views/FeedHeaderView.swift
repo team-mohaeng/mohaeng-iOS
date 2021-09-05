@@ -7,21 +7,30 @@
 
 import UIKit
 
-class FeedHeaderView: UIView {
+protocol HeaderViewDelegate: AnyObject {
+    func myDrawerButtonClicked()
+    func writeButtonClicked()
+}
 
+class FeedHeaderView: UIView {
+    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var newIndicatorView: UIView!
     @IBOutlet weak var writingCountLabel: UILabel!
+    @IBOutlet weak var myDrawerButtonView: UIView!
     
     // MARK: - Properties
+    
+    weak var delegate: HeaderViewDelegate?
     
     // MARK: - Life Cycle
     
     override func awakeFromNib() {
-       super.awakeFromNib()
+        super.awakeFromNib()
         
         initAttributes()
+        addTouchEventToMyDrawerView()
     }
     
     // MARK: - function
@@ -47,6 +56,21 @@ class FeedHeaderView: UIView {
         setCountOfFeed(feedCount: contents)
     }
     
-    // MARK: - @IBAction
+    private func addTouchEventToMyDrawerView() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(touchMyDrawerButton(_:)))
+        myDrawerButtonView.addGestureRecognizer(tapGesture)
+    }
     
+    // MARK: - @IBAction functions
+    
+    @IBAction func touchWriteButton(_ sender: Any) {
+        delegate?.writeButtonClicked()
+    }
+    
+    // MARK: - @objc functions
+    
+    @objc
+    private func touchMyDrawerButton(_ sender: UITapGestureRecognizer) {
+        delegate?.myDrawerButtonClicked()
+    }
 }

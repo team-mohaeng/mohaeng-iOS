@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -65,8 +64,24 @@
                                     <constraint firstAttribute="height" constant="0.5" id="1Wu-xw-AzW"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ktq-jN-qGu">
+                                <rect key="frame" x="24" y="98" width="100" height="26"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 안부" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPY-37-YFG">
+                                        <rect key="frame" x="24.5" y="8" width="51" height="10"/>
+                                        <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="gPY-37-YFG" firstAttribute="centerY" secondItem="ktq-jN-qGu" secondAttribute="centerY" id="NUa-9q-aqd"/>
+                                    <constraint firstItem="gPY-37-YFG" firstAttribute="centerX" secondItem="ktq-jN-qGu" secondAttribute="centerX" id="rWb-uG-GAS"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lQD-Rx-7FC" firstAttribute="leading" secondItem="KdJ-PM-4J3" secondAttribute="leading" id="6K5-sG-duc"/>
                             <constraint firstAttribute="trailing" secondItem="DT7-SO-eCq" secondAttribute="trailing" constant="24" id="BJU-M8-rp4"/>
@@ -74,13 +89,17 @@
                             <constraint firstItem="DT7-SO-eCq" firstAttribute="leading" secondItem="RPy-0o-AGU" secondAttribute="leading" id="FBA-21-Zb5"/>
                             <constraint firstAttribute="trailing" secondItem="lQD-Rx-7FC" secondAttribute="trailing" id="Fg0-n6-xbm"/>
                             <constraint firstAttribute="bottom" secondItem="KPg-rh-7jI" secondAttribute="bottom" constant="22" id="G5J-e3-Id6"/>
+                            <constraint firstItem="ktq-jN-qGu" firstAttribute="trailing" secondItem="KPg-rh-7jI" secondAttribute="trailing" id="MWr-oP-CvP"/>
                             <constraint firstItem="RPy-0o-AGU" firstAttribute="top" secondItem="KPg-rh-7jI" secondAttribute="top" constant="5" id="Ol1-TU-bnA"/>
                             <constraint firstItem="Iqo-tK-3Ms" firstAttribute="trailing" secondItem="DT7-SO-eCq" secondAttribute="trailing" id="Qdc-RQ-JFI"/>
                             <constraint firstItem="Iqo-tK-3Ms" firstAttribute="bottom" secondItem="1XS-DP-pSN" secondAttribute="bottom" id="Vqg-cD-p6d"/>
+                            <constraint firstItem="ktq-jN-qGu" firstAttribute="bottom" secondItem="KPg-rh-7jI" secondAttribute="bottom" id="ciq-bX-Acw"/>
+                            <constraint firstItem="ktq-jN-qGu" firstAttribute="leading" secondItem="KPg-rh-7jI" secondAttribute="leading" id="dau-69-dNV"/>
                             <constraint firstItem="RPy-0o-AGU" firstAttribute="leading" secondItem="KPg-rh-7jI" secondAttribute="trailing" constant="16" id="i4S-an-sSQ"/>
                             <constraint firstAttribute="bottom" secondItem="lQD-Rx-7FC" secondAttribute="bottom" id="lUf-Nd-aVk"/>
                             <constraint firstItem="1XS-DP-pSN" firstAttribute="bottom" secondItem="KPg-rh-7jI" secondAttribute="bottom" id="pFm-nL-qZe"/>
                             <constraint firstItem="1XS-DP-pSN" firstAttribute="leading" secondItem="DT7-SO-eCq" secondAttribute="leading" id="pHZ-C0-NPU"/>
+                            <constraint firstItem="ktq-jN-qGu" firstAttribute="top" secondItem="KPg-rh-7jI" secondAttribute="top" constant="76" id="q8t-dF-waY"/>
                             <constraint firstItem="DT7-SO-eCq" firstAttribute="top" secondItem="RPy-0o-AGU" secondAttribute="bottom" constant="13" id="wXL-4k-frE"/>
                             <constraint firstItem="KPg-rh-7jI" firstAttribute="leading" secondItem="KdJ-PM-4J3" secondAttribute="leading" constant="24" id="xBJ-lm-Io2"/>
                         </constraints>
@@ -101,14 +120,12 @@
                 <outlet property="dateLabel" destination="Iqo-tK-3Ms" id="mpy-aA-DJs"/>
                 <outlet property="nicknameLabel" destination="1XS-DP-pSN" id="vP5-on-nNa"/>
                 <outlet property="previewImageView" destination="KPg-rh-7jI" id="nl0-Ed-7SX"/>
+                <outlet property="todayFeedView" destination="ktq-jN-qGu" id="BHA-Nh-Jma"/>
             </connections>
             <point key="canvasLocation" x="352.17391304347831" y="113.83928571428571"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="feednoneGrp" width="100" height="100"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

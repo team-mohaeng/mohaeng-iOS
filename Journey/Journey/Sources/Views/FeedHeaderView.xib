@@ -62,6 +62,9 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fp-5t-jUi">
                             <rect key="frame" x="348" y="0.0" width="44" height="44"/>
                             <state key="normal" image="gnbIcnWrite"/>
+                            <connections>
+                                <action selector="touchWriteButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="H27-Ml-ktY"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.94901960784313721" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -86,6 +89,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="myDrawerButtonView" destination="SFj-OY-uxp" id="sV3-fH-80u"/>
                 <outlet property="newIndicatorView" destination="qVo-zb-C2Q" id="YHi-ae-OZq"/>
                 <outlet property="writingCountLabel" destination="DTQ-OH-Q9G" id="Jeq-qG-EUh"/>
             </connections>

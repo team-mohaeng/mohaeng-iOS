@@ -49,7 +49,6 @@ class FeedViewController: UIViewController {
         setDelegation()
         registerXib()
         initAtrributes()
-        addObserver()
         initHandLayout()
     }
     
@@ -60,6 +59,7 @@ class FeedViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         headerView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         headerView.setHeaderData(hasNewContents: feedDummy.isNew, contents: feedDummy.feed.count)
+        setHeaderViewDelegate()
         
         self.feedCollectionView.insertSubview(self.feedBackgroundFrame, at: 0)
     }
@@ -94,6 +94,10 @@ class FeedViewController: UIViewController {
         handImageView.image = Const.Image.imgHand
     }
     
+    private func setHeaderViewDelegate() {
+        headerView.delegate = self
+    }
+    
     private func initHandLayout() {
         view.addSubviews(handImageView, feedBackgroundFrame)
         
@@ -103,18 +107,7 @@ class FeedViewController: UIViewController {
         }
     }
     
-    private func addObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(pushToMyDrawerViewController), name: NSNotification.Name("myDrawerCilcked"), object: nil)
-    }
-    
     // MARK: - @IBAction Properties
-    
-    @objc func pushToMyDrawerViewController(notification: NSNotification) {
-        let myDrawerStoryboard = UIStoryboard(name: Const.Storyboard.Name.myDrawer, bundle: nil)
-        guard let nextVC = myDrawerStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.myDrawer) as? MyDrawerViewController else { return }
-        
-        self.navigationController?.pushViewController(nextVC, animated: true)
-    }
     
     @IBAction func touchFloatingTopButton(_ sender: Any) {
         let topOffset: CGPoint = .zero
@@ -176,7 +169,7 @@ extension FeedViewController: UICollectionViewDelegate {
     
 }
 
-// MARK: - UICollectionViewDelegateFlowLayour
+// MARK: - UICollectionViewDelegateFlowLayout
 
 extension FeedViewController: UICollectionViewDelegateFlowLayout {
     
@@ -198,6 +191,26 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return .zero
+    }
+    
+}
+
+// MARK: - HeaderViewDelegate
+
+extension FeedViewController: HeaderViewDelegate {
+   
+    func myDrawerButtonClicked() {
+        let myDrawerStoryboard = UIStoryboard(name: Const.Storyboard.Name.myDrawer, bundle: nil)
+        guard let myDrawerViewController = myDrawerStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.myDrawer) as? MyDrawerViewController else { return }
+        
+        self.navigationController?.pushViewController(myDrawerViewController, animated: true)
+    }
+    
+    func writeButtonClicked() {
+        let writingStoryboard = UIStoryboard(name: Const.Storyboard.Name.writing, bundle: nil)
+        guard let writingViewController = writingStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.writing) as? WritingViewController else { return }
+        
+        self.navigationController?.pushViewController(writingViewController, animated: true)
     }
     
 }
