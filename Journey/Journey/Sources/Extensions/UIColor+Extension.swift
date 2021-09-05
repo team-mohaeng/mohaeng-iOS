@@ -58,4 +58,18 @@ extension UIColor {
     static let YellowBg1: UIColor = UIColor(named: "YellowBg1")!
     static let GreyTextPush2: UIColor = UIColor(named: "GreyTextPush2")!
     static let BlackText: UIColor = UIColor(named: "BlackText")!
+    
+    // 모행 FIX !!!
+    static let Black: UIColor = UIColor(named: "Black")!
+    static let White: UIColor = UIColor(named: "White")!
+    static let Grey1: UIColor = UIColor(named: "Grey1")!
+    static let Grey2: UIColor = UIColor(named: "Grey2")!
+    static let Grey3: UIColor = UIColor(named: "Grey3")!
+    static let Grey4: UIColor = UIColor(named: "Grey4")!
+    static let Grey5: UIColor = UIColor(named: "Grey5")!
+    static let GreyTextNavi: UIColor = UIColor(named: "GreyTextNavi")!
+    static let GreyIconNavi: UIColor = UIColor(named: "GreyIconNavi")!
+    static let GreyIconGnb: UIColor = UIColor(named: "GreyIconGnb")!
+    static let GreyButton1: UIColor = UIColor(named: "GreyButton1")!
+    static let GreyButton2: UIColor = UIColor(named: "GreyButton2")!
 }
