@@ -226,7 +226,8 @@ class SignUpFirstViewController: UIViewController {
     // MARK: @objc Function
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        if passwordTextField.text!.count < 8 {
+        guard let password = passwordTextField.text else { return }
+        if password.count < 8 {
             passwordErrorLabel.textColor = .Red
         }
         if textField == emailTextField {
@@ -281,7 +282,7 @@ class SignUpFirstViewController: UIViewController {
         if password != "" {
             // Password가 정규식에 맞지 않을 때
             if !validatePassword(password: password) {
-                if passwordTextField.text!.count > 8 {
+                if password.count > 8 {
                     self.showPasswordCheckFormatError()
                 } else {
                     checkingPasswordTextCount()
