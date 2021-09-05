@@ -30,6 +30,7 @@ class EmailLoginViewController: UIViewController {
         super.viewDidLoad()
         assignDelegate()
         makeButtonRound()
+        initNavigationBar()
     }
     
     // MARK: - @IBAction Function
@@ -41,6 +42,10 @@ class EmailLoginViewController: UIViewController {
         
     }
     // MARK: - Functions
+    
+    private func initNavigationBar() {
+        self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
+    }
     
     private func assignDelegate() {
         emailTextField.delegate = self
