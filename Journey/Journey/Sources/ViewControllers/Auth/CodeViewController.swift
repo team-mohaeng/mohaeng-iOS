@@ -18,6 +18,7 @@ class CodeViewController: UIViewController {
     @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var codeTextField: UITextField!
+    @IBOutlet weak var underlineView: UIView!
     
     // MARK: - View Life Cycle
 
@@ -33,7 +34,6 @@ class CodeViewController: UIViewController {
     
     private func initNavigationBar() {
         self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
-        navigationItem.title = "비밀번호 찾기"
     }
     
     private func initViewRounding() {
@@ -55,19 +55,19 @@ class CodeViewController: UIViewController {
     
     private func makeCompleteButtonEnable() {
         completeButton.isEnabled = true
-        completeButton.backgroundColor = UIColor.Pink2
+        completeButton.alpha = 1.0
     }
     
     private func makeCompleteButtonDisable() {
         completeButton.isEnabled = false
-        completeButton.backgroundColor = UIColor.Grey1Bg
+        completeButton.alpha = 0.3
     }
     
     func validateCode(code: String) -> Bool {
         // Email 정규식
-        let emailRegEx = "^[0-9]{4}$"
-        let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluate(with: code)
+        let codeRegEx = "^[0-9]{4}$"
+        let codeTest = NSPredicate(format: "SELF MATCHES %@", codeRegEx)
+        return codeTest.evaluate(with: code)
     }
     
     private func checkCodeFormat(userInput: String) {
@@ -82,6 +82,7 @@ class CodeViewController: UIViewController {
         if Int(userInput) == self.rightCode {
             pushToNewPasswordViewController()
         } else {
+            underlineView.backgroundColor = UIColor.red
             errorLabel.isHidden = false
         }
     }
@@ -103,9 +104,11 @@ extension CodeViewController: UITextFieldDelegate {
             return
         }
         checkCodeFormat(userInput: text)
+        underlineView.backgroundColor = UIColor.Grey1Line
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         errorLabel.isHidden = true
+        underlineView.backgroundColor = UIColor.Black1
     }
 }
