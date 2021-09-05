@@ -75,7 +75,7 @@ class EmailLoginViewController: UIViewController {
         self.navigationController?.pushViewController(homeViewController, animated: true)
     }
     
-    func enableDoLoginButton() {
+    func enableLoginButton() {
         doLoginButton.backgroundColor = .DeepYellow
         doLoginButton.isEnabled = true
     }
@@ -132,7 +132,7 @@ extension EmailLoginViewController {
             case .success(let jwt):
                 if let data = jwt as? JwtData {
                     UserDefaults.standard.setValue(data.jwt, forKey: "jwtToken")
-                    self.enableDoLoginButton()
+                    self.enableLoginButton()
                     self.pushHomeViewController()
                 }
             case .requestErr(let message):
