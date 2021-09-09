@@ -17,22 +17,12 @@ class CourseLibraryViewController: UIViewController {
     var courseListViewModel = CourseListViewModel()
     var askPopUp: PopUpViewController = PopUpViewController()
     var selectedCourseId = 0
-    
-    private lazy var activityIndicator: UIActivityIndicatorView = {
-            let activityIndicator = UIActivityIndicatorView()
-            activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-            activityIndicator.center = CGPoint(x: self.view.center.x, y: self.view.center.y - self.topbarHeight)
-            activityIndicator.hidesWhenStopped = false
-            activityIndicator.style = UIActivityIndicatorView.Style.medium
-            activityIndicator.startAnimating()
-            return activityIndicator
-        }()
-
     var backgroundView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
     
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var courseLibraryCollectionView: UICollectionView!
+    @IBOutlet weak var categoryCollectionView: UICollectionView!
     
     // MARK: - View Life Cycle
 
@@ -64,6 +54,9 @@ class CourseLibraryViewController: UIViewController {
     private func assignDelegation() {
         courseLibraryCollectionView.delegate = self
         courseLibraryCollectionView.dataSource = self
+        
+        categoryCollectionView.delegate = self
+        categoryCollectionView.dataSource = self
     }
     
     private func fetchCourses() {
@@ -79,7 +72,6 @@ class CourseLibraryViewController: UIViewController {
     
     private func updateUI() {
         self.courseLibraryCollectionView.reloadData()
-        self.detachActivityIndicator()
     }
     
     private func presentAskPopUp(doingCourse: Bool) {
@@ -108,20 +100,6 @@ class CourseLibraryViewController: UIViewController {
             askPopUp.pinkButton.setTitle("좋아!", for: .normal)
             askPopUp.whiteButton.setTitle("다시 생각해볼게", for: .normal)
         }
-    }
-    
-    private func attachActivityIndicator() {
-        backgroundView.backgroundColor = UIColor.white
-        self.view.addSubview(backgroundView)
-        self.view.addSubview(self.activityIndicator)
-    }
-    
-    private func detachActivityIndicator() {
-        if self.activityIndicator.isAnimating {
-            self.activityIndicator.stopAnimating()
-        }
-        self.backgroundView.removeFromSuperview()
-        self.activityIndicator.removeFromSuperview()
     }
 }
 
@@ -154,24 +132,39 @@ extension CourseLibraryViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return courseListViewModel.numberOfRowsInSection(0)
+        
+        switch collectionView {
+        case categoryCollectionView:
+            return AppCourse.count
+            
+        case courseLibraryCollectionView:
+            return courseListViewModel.numberOfRowsInSection(0)
+        default:
+            return 0
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        switch courseListViewModel.courseAtIndex(indexPath.row).course.situation {
-        case 0:
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.undoneCourseCollectionViewCell, for: indexPath) as? UndoneCourseCollectionViewCell {
+        switch collectionView {
+        case categoryCollectionView:
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.courseCategoryCollectionViewCell, for: indexPath) as? CourseCategoryCollectionViewCell {
                 
-                let viewModel = courseListViewModel.courseAtIndex(indexPath.row)
-                cell.courseViewModel = viewModel
-                cell.setButtonTitle(doingCourse: doingCourse)
+                if indexPath.row == 0 {
+                    cell.setLabel(title: "전체")
+                } else {
+                    if let title = AppCourse(rawValue: indexPath.row-1)?.getKorean() {
+                        cell.setLabel(title: title)
+                    }
+                }
                 
                 return cell
+                
             }
             
-        case 2:
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.doneCourseCollectionViewCell, for: indexPath) as? DoneCourseCollectionViewCell {
+        case courseLibraryCollectionView:
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.courseLibraryCollectionViewCell, for: indexPath) as? CourseLibraryCollectionViewCell {
                 
                 let viewModel = courseListViewModel.courseAtIndex(indexPath.row)
                 cell.courseViewModel = viewModel
@@ -182,12 +175,21 @@ extension CourseLibraryViewController: UICollectionViewDataSource {
         default:
             return UICollectionViewCell()
         }
-    
+        
         return UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 22, left: 24, bottom: 0, right: 24)
+        
+        switch collectionView {
+        case categoryCollectionView:
+            return UIEdgeInsets(top: 19, left: 18, bottom: 10, right: 18)
+        case courseLibraryCollectionView:
+            return UIEdgeInsets(top: 22, left: 24, bottom: 0, right: 24)
+        default:
+            return UIEdgeInsets.zero
+        }
+        
     }
 }
 
@@ -197,16 +199,15 @@ extension CourseLibraryViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        //return CGSize(width: collectionView.frame.width - 48, height: 310)
-        
-        switch courseListViewModel.courseAtIndex(indexPath.row).course.situation {
-        case 0:
+        switch collectionView {
+        case categoryCollectionView:
+            return CGSize(width: 59, height: 14)
+        case courseLibraryCollectionView:
             return unDoneCellSize(for: indexPath)
-        case 1:
-            return doneCellSize(for: indexPath)
         default:
-            return CGSize(width: collectionView.frame.width - 48, height: 310)
+            return CGSize.zero
         }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -249,7 +250,6 @@ extension CourseLibraryViewController: UICollectionViewDelegateFlowLayout {
 
 extension CourseLibraryViewController {
     func startCourse(courseId: Int) {
-        self.attachActivityIndicator()
         CourseAPI.shared.putCourseProgress(completion: { (response) in
             switch response {
             case .success(let course):

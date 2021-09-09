@@ -32,8 +32,8 @@ extension Const {
             static let oddDayTableViewCell = "OddDayTableViewCell"
             
             // 코스 둘러보기 뷰
-            static let doneCourseCollectionViewCell = "DoneCourseCollectionViewCell"
-            static let undoneCourseCollectionViewCell = "UndoneCourseCollectionViewCell"
+            static let courseLibraryCollectionViewCell = "CourseLibraryCollectionViewCell"
+            static let courseCategoryCollectionViewCell = "CourseCategoryCollectionViewCell"
             
             // 피드 뷰
             static let feedCollectionViewCell = "FeedCollectionViewCell"
@@ -68,8 +68,8 @@ extension Const {
             static let oddDayTableViewCell = "OddDayTableViewCell"
             
             // 코스 둘러보기 뷰
-            static let doneCourseCollectionViewCell = "DoneCourseCollectionViewCell"
-            static let undoneCourseCollectionViewCell = "UndoneCourseCollectionViewCell"
+            static let courseLibraryCollectionViewCell = "CourseLibraryCollectionViewCell"
+            static let courseCategoryCollectionViewCell = "CourseCategoryCollectionViewCell"
             
             // 피드뷰
             static let feedCollectionViewCell = "FeedCollectionViewCell"

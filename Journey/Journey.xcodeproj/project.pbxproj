@@ -20,6 +20,9 @@
 		564D5D8C26942F260056E468 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564D5D8B26942F260056E468 /* URL.swift */; };
 		564D5D8E2694454A0056E468 /* Medal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564D5D8D2694454A0056E468 /* Medal.storyboard */; };
 		564D5D90269446760056E468 /* MedalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564D5D8F269446760056E468 /* MedalViewController.swift */; };
+		564F0FC526EA5F0B0015709D /* CourseCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564F0FC426EA5F0B0015709D /* CourseCategoryCollectionViewCell.swift */; };
+		5666B5D126E8D50B005D5A6E /* CourseLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5666B5D026E8D50B005D5A6E /* CourseLibrary.swift */; };
+		5666B5D326E8F195005D5A6E /* AppCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5666B5D226E8F195005D5A6E /* AppCourse.swift */; };
 		5667D4C9269ACB910071D7AD /* NewPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5667D4C8269ACB910071D7AD /* NewPassword.storyboard */; };
 		5667D4CB269ACBA70071D7AD /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667D4CA269ACBA70071D7AD /* CodeViewController.swift */; };
 		5667D4CD269AD1370071D7AD /* Code.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5667D4CC269AD1370071D7AD /* Code.storyboard */; };
@@ -180,6 +183,9 @@
 		564D5D8B26942F260056E468 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		564D5D8D2694454A0056E468 /* Medal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Medal.storyboard; sourceTree = "<group>"; };
 		564D5D8F269446760056E468 /* MedalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalViewController.swift; sourceTree = "<group>"; };
+		564F0FC426EA5F0B0015709D /* CourseCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		5666B5D026E8D50B005D5A6E /* CourseLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseLibrary.swift; sourceTree = "<group>"; };
+		5666B5D226E8F195005D5A6E /* AppCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCourse.swift; sourceTree = "<group>"; };
 		5667D4C8269ACB910071D7AD /* NewPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewPassword.storyboard; sourceTree = "<group>"; };
 		5667D4CA269ACBA70071D7AD /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		5667D4CC269AD1370071D7AD /* Code.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Code.storyboard; sourceTree = "<group>"; };
@@ -559,6 +565,7 @@
 				EC62895B269DFA380041F43A /* SignUpUser.swift */,
 				562A9967269DF2E5006F2DA3 /* Property.swift */,
 				56CADE7E26D3882A0000D534 /* RoadMapPath.swift */,
+				5666B5D226E8F195005D5A6E /* AppCourse.swift */,
 			);
 			path = AppModels;
 			sourceTree = "<group>";
@@ -642,6 +649,7 @@
 				AA4B7941269F8ACF00B447A1 /* MyDrawer.swift */,
 				AA45C82F26A0B78200C572B6 /* Writing.swift */,
 				569CD68626DCBFBB0028E5CC /* PushNoti.swift */,
+				5666B5D026E8D50B005D5A6E /* CourseLibrary.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -1036,10 +1044,12 @@
 				AAD770D5269C706B00EC3598 /* HomeAPI.swift in Sources */,
 				56DCAA642689BE110056155A /* ProtocolsExmaple.swift in Sources */,
 				ECB617FF269492A8005E62B0 /* SignUpFirstViewController.swift in Sources */,
+				5666B5D326E8F195005D5A6E /* AppCourse.swift in Sources */,
 				56DCAA82268AE1B10056155A /* ChallengeViewController.swift in Sources */,
 				569CD67C26DCB69A0028E5CC /* ProfileBubbleCollectionViewCell.swift in Sources */,
 				5667D4D2269AE3650071D7AD /* CourseService.swift in Sources */,
 				AA1F34AD26939E260011B3FA /* AppDate.swift in Sources */,
+				5666B5D126E8D50B005D5A6E /* CourseLibrary.swift in Sources */,
 				569CD67826DCB3240028E5CC /* NotificationViewController.swift in Sources */,
 				ECB61804269492CD005E62B0 /* SignUpThirdViewController.swift in Sources */,
 				56DCAA592689BD9F0056155A /* LottieExmaple.swift in Sources */,
@@ -1054,6 +1064,7 @@
 				56DCAAB6268C6F5D0056155A /* Course.swift in Sources */,
 				56A9211126E0B60700C154B5 /* UnreadNotificationHeaderView.swift in Sources */,
 				56DCAA4D2689BCFA0056155A /* Storyboard.swift in Sources */,
+				564F0FC526EA5F0B0015709D /* CourseCategoryCollectionViewCell.swift in Sources */,
 				56F13A47269C243D0006F9A0 /* PasswordAPI.swift in Sources */,
 				5668F7C1269F8F3F00C0BA1F /* GenericResponse.swift in Sources */,
 				5678E72D269F77A60049FF0C /* Feed.swift in Sources */,
