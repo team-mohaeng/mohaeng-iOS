@@ -44,7 +44,7 @@ class CourseLibraryViewController: UIViewController {
     private func initNavigationBar() {
         self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
         
-        self.navigationItem.title = "코스 둘러보기"
+        self.navigationItem.title = "코스 목록"
     }
     
     private func registerXib() {
