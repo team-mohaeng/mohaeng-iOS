@@ -58,8 +58,7 @@ class CourseLibraryViewController: UIViewController {
     }
     
     private func registerXib() {
-        courseLibraryCollectionView.register(UINib(nibName: Const.Xib.Name.doneCourseCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Name.doneCourseCollectionViewCell)
-        courseLibraryCollectionView.register(UINib(nibName: Const.Xib.Name.undoneCourseCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Name.undoneCourseCollectionViewCell)
+        courseLibraryCollectionView.register(UINib(nibName: Const.Xib.Name.courseLibraryCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Name.courseLibraryCollectionViewCell)
     }
     
     private func assignDelegation() {
@@ -222,33 +221,7 @@ extension CourseLibraryViewController: UICollectionViewDelegateFlowLayout {
     
     private func unDoneCellSize(for indexPath: IndexPath) -> CGSize {
         // load cell from Xib
-        guard let cell = Bundle.main.loadNibNamed(Const.Xib.Name.undoneCourseCollectionViewCell, owner: self, options: nil)?.first as? UndoneCourseCollectionViewCell else {return CGSize(width: 0, height: 0)}
-        
-        // configure cell with data in it
-        let viewModel = courseListViewModel.courseAtIndex(indexPath.row)
-        cell.courseViewModel = viewModel
-        cell.setButtonTitle(doingCourse: doingCourse)
-        
-        cell.setNeedsLayout()
-        cell.layoutIfNeeded()
-        
-        // width that you want
-        let width = courseLibraryCollectionView.frame.width - 48
-        let height: CGFloat = 0
-        
-        let targetSize = CGSize(width: width, height: height)
-        
-        // get size with width that you want and automatic height
-        let size = cell.contentView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .defaultHigh, verticalFittingPriority: .fittingSizeLevel)
-        // if you want height and width both to be dynamic use below
-        // let size = cell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
-        
-        return size
-    }
-    
-    private func doneCellSize(for indexPath: IndexPath) -> CGSize {
-        // load cell from Xib
-        guard let cell = Bundle.main.loadNibNamed(Const.Xib.Name.doneCourseCollectionViewCell, owner: self, options: nil)?.first as? DoneCourseCollectionViewCell else {return CGSize(width: 0, height: 0)}
+        guard let cell = Bundle.main.loadNibNamed(Const.Xib.Name.courseLibraryCollectionViewCell, owner: self, options: nil)?.first as? CourseLibraryCollectionViewCell else {return CGSize(width: 0, height: 0)}
         
         // configure cell with data in it
         let viewModel = courseListViewModel.courseAtIndex(indexPath.row)
