@@ -72,4 +72,33 @@ extension UIColor {
     static let GreyIconGnb: UIColor = UIColor(named: "GreyIconGnb")!
     static let GreyButton1: UIColor = UIColor(named: "GreyButton1")!
     static let GreyButton2: UIColor = UIColor(named: "GreyButton2")!
+    
+    // Theme Colors
+    static let RedThemeBubble: UIColor = UIColor(named: "RedThemeBubble")!
+    static let RedThemeDark: UIColor = UIColor(named: "RedThemeDark")!
+    static let RedThemeLight: UIColor = UIColor(named: "RedThemeLight")!
+    
+    static let OrangeThemeBubble: UIColor = UIColor(named: "OrangeThemeBubble")!
+    static let OrangeThemeDark: UIColor = UIColor(named: "OrangeThemeDark")!
+    static let OrangeThemeLight: UIColor = UIColor(named: "OrangeThemeLight")!
+    
+    static let YellowThemeBubble: UIColor = UIColor(named: "YellowThemeBubble")!
+    static let YellowThemeDark: UIColor = UIColor(named: "YellowThemeDark")!
+    static let YellowThemeLight: UIColor = UIColor(named: "YellowThemeLight")!
+    
+    static let GreenThemeBubble: UIColor = UIColor(named: "GreenThemeBubble")!
+    static let GreenThemeDark: UIColor = UIColor(named: "GreenThemeDark")!
+    static let GreenThemeLight: UIColor = UIColor(named: "GreenThemeLight")!
+    
+    static let BlueThemeBubble: UIColor = UIColor(named: "BlueThemeBubble")!
+    static let BlueThemeDark: UIColor = UIColor(named: "BlueThemeDark")!
+    static let BlueThemeLight: UIColor = UIColor(named: "BlueThemeLight")!
+    
+    static let IndigoThemeBubble: UIColor = UIColor(named: "IndigoThemeBubble")!
+    static let IndigoThemeDark: UIColor = UIColor(named: "IndigoThemeDark")!
+    static let IndigoThemeLight: UIColor = UIColor(named: "IndigoThemeLight")!
+    
+    static let PurpleThemeBubble: UIColor = UIColor(named: "PurpleThemeBubble")!
+    static let PurpleThemeDark: UIColor = UIColor(named: "PurpleThemeDark")!
+    static let PurpleThemeLight: UIColor = UIColor(named: "PurpleThemeLight")!
 }
