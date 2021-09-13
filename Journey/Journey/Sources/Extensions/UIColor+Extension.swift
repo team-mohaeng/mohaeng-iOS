@@ -34,12 +34,15 @@ extension UIColor {
     static let Grey2Line: UIColor = UIColor(named: "Grey2Line")!
     static let Grey1Tab: UIColor = UIColor(named: "Grey1Tab")!
     static let Grey2Tab: UIColor = UIColor(named: "Grey2Tab")!
+    static let Grey2Text: UIColor = UIColor(named: "Grey2Text")!
     static let GreyBtnInactive: UIColor = UIColor(named: "GreyBtnInactive")!
+    static let Grey5: UIColor = UIColor(named: "Grey5")!
     static let Green: UIColor = UIColor(named: "Green")!
     static let Red: UIColor = UIColor(named: "Red")!
     static let Icon: UIColor = UIColor(named: "Icon")!
     static let DeepYellow: UIColor = UIColor(named: "DeepYellow")!
-    
+    static let LoginYellow: UIColor = UIColor(named: "LoginYellow")!
+
     // property
     static let typeC: UIColor = UIColor(named: "typeC")!
     static let typeH: UIColor = UIColor(named: "typeH")!
@@ -50,8 +53,27 @@ extension UIColor {
     static let typeMD: UIColor = UIColor(named: "typeMD")!
     static let typeSD: UIColor = UIColor(named: "typeSD")!
     
-    // MARK: - Journey
+    // MARK: - Mohaeng
     
     static let sampleGreen: UIColor = UIColor(named: "SampleGreen")!
     static let roadUndoneGrey: UIColor = UIColor(named: "RoadUndoneGrey")!
+    
+    // 모행 정리된 컬러시스템
+    static let YellowBg1: UIColor = UIColor(named: "YellowBg1")!
+    static let GreyTextPush2: UIColor = UIColor(named: "GreyTextPush2")!
+    static let BlackText: UIColor = UIColor(named: "BlackText")!
+    
+    // 모행 FIX !!!
+    static let Black: UIColor = UIColor(named: "Black")!
+    static let White: UIColor = UIColor(named: "White")!
+    static let Grey1: UIColor = UIColor(named: "Grey1")!
+    static let Grey2: UIColor = UIColor(named: "Grey2")!
+    static let Grey3: UIColor = UIColor(named: "Grey3")!
+    static let Grey4: UIColor = UIColor(named: "Grey4")!
+    static let Grey5: UIColor = UIColor(named: "Grey5")!
+    static let GreyTextNavi: UIColor = UIColor(named: "GreyTextNavi")!
+    static let GreyIconNavi: UIColor = UIColor(named: "GreyIconNavi")!
+    static let GreyIconGnb: UIColor = UIColor(named: "GreyIconGnb")!
+    static let GreyButton1: UIColor = UIColor(named: "GreyButton1")!
+    static let GreyButton2: UIColor = UIColor(named: "GreyButton2")!
 }

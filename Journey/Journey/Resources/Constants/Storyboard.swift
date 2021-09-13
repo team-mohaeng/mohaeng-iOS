@@ -16,6 +16,7 @@ extension Const {
             
             // Auth 관련
             static let login = "Login"
+            static let emailLogin = "EmailLogin"
             static let signUpFirst = "SignUpFirst"
             static let signUpSecond = "SignUpSecond"
             static let signUpThird = "SignUpThird"
@@ -27,6 +28,7 @@ extension Const {
             static let home = "Home"
             static let medal = "Medal"
             static let setting = "Setting"
+            static let notification = "Notification"
             
             // 챌린지 탭
             static let emptyChallenge = "EmptyChallenge"

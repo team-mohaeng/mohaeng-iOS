@@ -16,6 +16,7 @@ extension Const {
             
             // Auth
             static let login = "LoginViewController"
+            static let emailLogin = "EmailLoginViewController"
             static let signUpFirst = "SignUpFirstViewController"
             static let signUpSecond = "SignUpSecondViewController"
             static let signUpThird = "SignUpThirdViewController"
@@ -27,6 +28,7 @@ extension Const {
             static let home = "HomeViewController"
             static let medal = "MedalViewController"
             static let setting = "SettingViewController"
+            static let notification = "NotificationViewController"
             
             // 챌린지 탭
             static let emptyChallenge = "EmptyChallengeViewController"

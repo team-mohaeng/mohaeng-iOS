@@ -7,12 +7,6 @@
 
 import Foundation
 
-// MARK: - HomeResponseData
-struct HomeResponseData: Codable {
-    let status: Int
-    let data: HomeData
-}
-
 // MARK: - HomeData
 struct HomeData: Codable {
     let situation, affinity: Int

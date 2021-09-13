@@ -170,21 +170,21 @@ public class FeedAPI {
         let decoder = JSONDecoder()
         
         switch responseData {
-        case .community:
-            guard let decodedData = try? decoder.decode(FeedResponseData.self, from: data) else {
-                return .pathErr
-            }
-            return .success(decodedData.data)
+//        case .community:
+//            guard let decodedData = try? decoder.decode(FeedResponseData.self, from: data) else {
+//                return .pathErr
+//            }
+//            return .success(decodedData.data)
         case .myDrawer:
             guard let decodedData = try? decoder.decode(MyDrawerResponseData.self, from: data) else {
                 return .pathErr
             }
             return .success(decodedData.data)
-        case .feedDetail:
-            guard let decodedData = try? decoder.decode(FeedDetailResonpseData.self, from: data) else {
-                return .pathErr
-            }
-            return .success(decodedData.data)
+//        case .feedDetail:
+//            guard let decodedData = try? decoder.decode(FeedDetailResonpseData.self, from: data) else {
+//                return .pathErr
+//            }
+//            return .success(decodedData.data)
         case .writing:
             guard let decodedData = try? decoder.decode(WritingResponseData.self, from: data) else {
                 return .pathErr

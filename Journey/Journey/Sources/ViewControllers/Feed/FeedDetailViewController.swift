@@ -23,7 +23,6 @@ class FeedDetailViewController: UIViewController {
     @IBOutlet weak var dayLabel: UILabel!
     
     // MARK: - Properties
-    var feedInfo: Community = Community(postID: 0, nickname: "", mood: 0, mainImage: "", likeCount: 0, content: "", hasLike: false, hashtags: [""], year: "", month: "", day: "", week: "")
     var likeCount: Int = 0
     
     // MARK: - Life Cycle
@@ -33,7 +32,6 @@ class FeedDetailViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         setData()
-        getFeedDetail(postId: feedInfo.postID)
         initNavigationBar()
         initAttribute()
     }
@@ -52,17 +50,6 @@ class FeedDetailViewController: UIViewController {
     }
     
     private func setData() {
-        if feedInfo.mainImage != "" {
-            mainImageView.kf.setImage(with: URL(string: feedInfo.mainImage))
-        } else { 
-            mainImageView.image = Const.Image.happyfeedX
-        }
-        feedContentsLabel.text = feedInfo.content
-        feedNicknameLabel.text = feedInfo.nickname
-        likeCountLabel.text = String(feedInfo.likeCount)
-        setMoodImage(status: feedInfo.mood)
-        setHashTagList(hashTagList: feedInfo.hashtags)
-        dayLabel.text = "\(feedInfo.year).\(feedInfo.month).\(feedInfo.day) (\(feedInfo.week))"
     }
     
     private func setMoodImage(status: Int) {
@@ -118,29 +105,16 @@ class FeedDetailViewController: UIViewController {
         }
     }
     
-    private func updateData(data: Community) {
-        likeCountLabel.text = String(data.likeCount)
-        if data.hasLike {
-            likeButton.isSelected = true
-        }
-        setLikeButtonBackgroundImage(buttonStatus: likeButton.isSelected)
-    }
+//    private func updateData(data: Community) {
+//        likeCountLabel.text = String(data.likeCount)
+//        if data.hasLike {
+//            likeButton.isSelected = true
+//        }
+//        setLikeButtonBackgroundImage(buttonStatus: likeButton.isSelected)
+//    }
     
     // MARK: - @IBAction Properties
-    
-    @IBAction func touchLikeButton(_ sender: Any) {
-        likeButton.isSelected = !likeButton.isSelected
-        if likeButton.isSelected {
-            putFeedLike(postId: feedInfo.postID)
-            setLikeButtonBackgroundImage(buttonStatus: likeButton.isSelected)
-            plusLikeCount()
-        } else {
-            putFeedUnlike(postId: feedInfo.postID)
-            setLikeButtonBackgroundImage(buttonStatus: likeButton.isSelected)
-            minusLikeCount()
-        }
-    }
-    
+
     @objc func touchRemoveButton() {
         var removePopUp = PopUpViewController(nibName: Const.Xib.Name.popUp, bundle: nil)
         removePopUp.modalPresentationStyle = .overCurrentContext
@@ -170,78 +144,4 @@ extension FeedDetailViewController: PopUpActionDelegate {
         
         self.navigationController?.pushViewController(feedViewController, animated: true)
     }
-}
-
-extension FeedDetailViewController {
-    
-    func getFeedDetail(postId: Int) {
-        FeedAPI.shared.getFeedDetail(postId: postId) { (response) in
-            switch response {
-            case .success(let feeds):
-                if let data = feeds as? Community {
-                    self.updateData(data: data)
-                }
-            case .requestErr(let message):
-                print("requestErr", message)
-            case .pathErr:
-                print(".pathErr")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
-            }
-        }
-    }
-    
-    func putFeedLike(postId: Int) {
-        FeedAPI.shared.putFeedLike(postId: postId) { (response) in
-            switch response {
-            case .success(_):
-                break
-            case .requestErr(let message):
-                print("requestErr", message)
-            case .pathErr:
-                print(".pathErr")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
-            }
-        }
-        
-    }
-    
-    func putFeedUnlike(postId: Int) {
-        FeedAPI.shared.putFeedUnlike(postId: postId) { (response) in
-            switch response {
-            case .success(_):
-                break
-            case .requestErr(let message):
-                print("requestErr", message)
-            case .pathErr:
-                print(".pathErr")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
-            }
-        }
-    }
-    
-//    func deleteFeed(postId: Int) {
-//        FeedAPI.shared.deleteFeed(postId: postId) { (response) in
-//            switch response {
-//            case  .success(_):
-//                break
-//            case .requestErr(let message):
-//                print("requestErr", message)
-//            case .pathErr:
-//                print(".pathErr")
-//            case .serverErr:
-//                print("serverErr")
-//            case .networkFail:
-//                print("networkFail")
-//            }
-//        }
-//    }
 }
