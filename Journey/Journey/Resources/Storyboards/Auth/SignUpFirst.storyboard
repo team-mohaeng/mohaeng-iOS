@@ -28,7 +28,7 @@
                                 <color key="textColor" name="Grey2Tab"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="예) mohaeng@gmail.com" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="oAt-CR-b8Z">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="예) mohaeng@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oAt-CR-b8Z">
                                 <rect key="frame" x="24" y="194" width="327" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="s2c-oy-Ddw"/>
@@ -42,7 +42,7 @@
                                 <color key="textColor" name="Grey2Tab"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 입력" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tvZ-5h-gln">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tvZ-5h-gln">
                                 <rect key="frame" x="24" y="289.33333333333331" width="327" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="eCg-Xf-Dnl"/>
@@ -56,7 +56,7 @@
                                 <color key="textColor" name="Grey2Tab"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 입력" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UhB-gj-UlV">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UhB-gj-UlV">
                                 <rect key="frame" x="24" y="364.66666666666669" width="327" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="rN1-67-1Na"/>
