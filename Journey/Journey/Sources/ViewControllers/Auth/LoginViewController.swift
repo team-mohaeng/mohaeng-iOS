@@ -58,6 +58,15 @@ class LoginViewController: UIViewController {
         }
         self.navigationController?.pushViewController(signUpFirstViewController, animated: true)
     }
+    @IBAction func touchEmailLoginButton(_ sender: Any) {
+        let emailLoginStoryboard = UIStoryboard(name: Const.Storyboard.Name.emailLogin, bundle: nil)
+        
+        guard let emailLoginViewController = emailLoginStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.emailLogin) as?
+            EmailLoginViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(emailLoginViewController, animated: true)
+    }
     
     // MARK: - Functions
     

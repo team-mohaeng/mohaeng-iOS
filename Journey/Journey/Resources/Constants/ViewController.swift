@@ -16,6 +16,7 @@ extension Const {
             
             // Auth
             static let login = "LoginViewController"
+            static let emailLogin = "EmailLoginViewController"
             static let signUpFirst = "SignUpFirstViewController"
             static let signUpSecond = "SignUpSecondViewController"
             static let signUpThird = "SignUpThirdViewController"

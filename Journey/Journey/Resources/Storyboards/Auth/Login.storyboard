@@ -171,6 +171,17 @@
                                     <constraint firstAttribute="height" constant="31" id="aKO-Zp-SGQ"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lw-aU-RLf">
+                                <rect key="frame" x="120" y="563" width="135" height="30"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="모행 가보자고 ㅋㅋ">
+                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchEmailLoginButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="kpk-ki-5qu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -179,15 +190,18 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Go9-gf-e6q" secondAttribute="trailing" constant="24" id="8tu-x5-Bcp"/>
                             <constraint firstItem="K6r-Lj-O8f" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="9Go-eh-V2f"/>
                             <constraint firstItem="K6r-Lj-O8f" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="BjB-jw-NS9"/>
+                            <constraint firstItem="2lw-aU-RLf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="120" id="DWf-jF-7xu"/>
                             <constraint firstItem="Go9-gf-e6q" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="JAl-yh-2h9"/>
                             <constraint firstItem="Uul-bf-V7d" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="O03-mo-nZ8"/>
                             <constraint firstItem="Uul-bf-V7d" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="Shn-gW-CoN"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Uul-bf-V7d" secondAttribute="trailing" constant="24" id="Uuy-HD-Jo1"/>
                             <constraint firstItem="d5c-Yn-xGk" firstAttribute="top" secondItem="K6r-Lj-O8f" secondAttribute="bottom" constant="10" id="V1h-tG-hHW"/>
                             <constraint firstItem="lvQ-qD-3Mp" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="WqF-Iq-B1v"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2lw-aU-RLf" secondAttribute="trailing" constant="120" id="Zye-2h-WBS"/>
                             <constraint firstItem="d5c-Yn-xGk" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="bJW-hO-oQP"/>
                             <constraint firstItem="Go9-gf-e6q" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="hwB-PQ-fdD"/>
                             <constraint firstItem="lvQ-qD-3Mp" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="78" id="iaC-bv-c7t"/>
+                            <constraint firstItem="2lw-aU-RLf" firstAttribute="top" secondItem="d5c-Yn-xGk" secondAttribute="bottom" constant="20" id="s13-th-gfM"/>
                             <constraint firstItem="Go9-gf-e6q" firstAttribute="top" secondItem="Uul-bf-V7d" secondAttribute="bottom" constant="9" id="trd-x1-XgJ"/>
                             <constraint firstItem="Uul-bf-V7d" firstAttribute="top" secondItem="lvQ-qD-3Mp" secondAttribute="bottom" constant="24" id="uhw-1a-kEU"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="K6r-Lj-O8f" secondAttribute="trailing" constant="24" id="yXu-WV-9p4"/>
@@ -226,6 +240,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
