@@ -20,7 +20,7 @@ class EmailLoginViewController: UIViewController {
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
-    @IBOutlet weak var doLoginButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var findPasswordButton: UIButton!
     @IBOutlet weak var emailBottomView: UIView!
     @IBOutlet weak var passwordBottonView: UIView!
@@ -53,7 +53,7 @@ class EmailLoginViewController: UIViewController {
     }
     
     private func makeButtonRound() {
-        doLoginButton.makeRounded(radius: 20)
+        loginButton.makeRounded(radius: 20)
     }
     
     private func errorMessage() {
@@ -76,8 +76,8 @@ class EmailLoginViewController: UIViewController {
     }
     
     func enableLoginButton() {
-        doLoginButton.backgroundColor = .DeepYellow
-        doLoginButton.isEnabled = true
+        loginButton.backgroundColor = .DeepYellow
+        loginButton.isEnabled = true
     }
     
     private func pushSignUpSecondViewController() {
@@ -95,13 +95,13 @@ extension EmailLoginViewController: UITextFieldDelegate {
         if emailTextField.isEditing {
             emailLabel.textColor = .Black1Text
             emailBottomView.backgroundColor = .black
-            doLoginButton.backgroundColor = .DeepYellow
+            loginButton.backgroundColor = .DeepYellow
         }
         
         if passwordTextField.isEditing {
             passwordLabel.textColor = .Black1Text
             passwordBottonView.backgroundColor = .black
-            doLoginButton.backgroundColor = .DeepYellow
+            loginButton.backgroundColor = .DeepYellow
         }
     }
     
@@ -112,8 +112,8 @@ extension EmailLoginViewController: UITextFieldDelegate {
         
         // emailTextField, passwordTextField 둘 중 하나라도 없으면 버튼 색 바꾸기
         if emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
-            doLoginButton.backgroundColor = .LoginYellow
-            doLoginButton.isEnabled = false
+            loginButton.backgroundColor = .LoginYellow
+            loginButton.isEnabled = false
         }
     }
 }
