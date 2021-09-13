@@ -16,7 +16,9 @@ class FindPasswordViewController: UIViewController {
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var underlineView: UIView!
     @IBOutlet weak var errorLabel: UILabel!
     
     // MARK: - View Life Cycle
@@ -33,7 +35,7 @@ class FindPasswordViewController: UIViewController {
     
     private func initNavigationBar() {
         self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
-        navigationItem.title = "비밀번호 찾기"
+        // navigationItem.title = "비밀번호 찾기"
     }
     
     private func initViewRounding() {
@@ -85,6 +87,11 @@ class FindPasswordViewController: UIViewController {
 
 extension FindPasswordViewController: UITextFieldDelegate {
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        emailLabel.textColor = UIColor.black
+        underlineView.backgroundColor = UIColor.black
+    }
+    
     // 실시간
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else {
@@ -100,6 +107,8 @@ extension FindPasswordViewController: UITextFieldDelegate {
             return
         }
         checkEmailFormat(email: text)
+        emailLabel.textColor = UIColor.Black3Text
+        underlineView.backgroundColor = UIColor.Grey1Line
     }
 }
 
