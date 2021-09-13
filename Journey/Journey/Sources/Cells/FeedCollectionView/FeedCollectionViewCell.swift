@@ -14,6 +14,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var contentsLabel: UILabel!
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var todayFeedView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,17 @@ class FeedCollectionViewCell: UICollectionViewCell {
     
     private func initViewRounding() {
         previewImageView.makeRounded(radius: 4)
+        todayFeedView.makeRounded(radius: 4)
+    }
+    
+    func configureTodayCellUI() {
+        backgroundColor = .todayYellow
+        todayFeedView.isHidden = false
+    }
+    
+    func configureDefaultUI() {
+        backgroundColor = .white
+        todayFeedView.isHidden = true
     }
     
     func setData(data: Feed) {
@@ -32,5 +44,5 @@ class FeedCollectionViewCell: UICollectionViewCell {
         nicknameLabel.text = data.nickname
         dateLabel.text = data.month + "월 " + data.day + "일"
     }
-
+    
 }
