@@ -1,5 +1,5 @@
 //
-//  DoneCourseCollectionViewCell.swift
+//  UndoneCourseCollectionViewCell.swift
 //  Journey
 //
 //  Created by 초이 on 2021/06/30.
@@ -7,15 +7,14 @@
 
 import UIKit
 
-class DoneCourseCollectionViewCell: UICollectionViewCell {
+class CourseLibraryCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properties
     
     var courseViewModel: CourseViewModel! {
         didSet {
             titleLabel.text = courseViewModel.course.title
-            coursePropertyLabel.text = "\(courseViewModel.course.property)"
-            courseDaysLabel.text = "\(courseViewModel.course.totalDays)일"
+            coursePropertyLabel.text = " \(courseViewModel.course.totalDays)일 코스"
             descriptionTextView.text = courseViewModel.course.courseDescription
             setProperty(by: courseViewModel.course.property)
         }
@@ -31,7 +30,6 @@ class DoneCourseCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var startLabel: UILabel!
     @IBOutlet weak var courseDescriptionView: UIView!
     @IBOutlet weak var coursePropertyLabel: UILabel!
-    @IBOutlet weak var courseDaysLabel: UILabel!
     
     // MARK: - View Life Cycle
 
@@ -45,7 +43,7 @@ class DoneCourseCollectionViewCell: UICollectionViewCell {
     // MARK: - Functions
     
     private func initViewRounding() {
-        cellBgView.makeRounded(radius: 14)
+        cellBgView.makeRounded(radius: 10)
         courseDescriptionView.makeRounded(radius: courseDescriptionView.frame.height / 2)
     }
     
@@ -65,38 +63,13 @@ class DoneCourseCollectionViewCell: UICollectionViewCell {
     // set property functions
     
     func setProperty(by property: Int) {
-        switch property {
-        case Property.health.rawValue:
-            setProperty0()
-        case Property.memory.rawValue:
-            setProperty1()
-        case Property.observation.rawValue:
-            setProperty2()
-        case Property.challenge.rawValue:
-            setProperty3()
-        default:
-            return
-        }
+        guard let course = AppCourse(rawValue: property) else { return }
+        
+        coursePropertyLabel.text = course.getKorean() + coursePropertyLabel.text!
+        cellBgView.backgroundColor = course.getLightColor()
+        courseDescriptionView.backgroundColor = course.getBubbleColor()
+        startCourseView.backgroundColor = course.getDarkColor()
+        propertyImageView.image = course.getLibraryImage()
     }
-    
-    // 0: 건강 1: 기억 2: 관찰 3: 도전
-    func setProperty0() {
-        coursePropertyLabel.text = "건강"
-        propertyImageView.image = Const.Image.typeHforLibraryGrey
-    }
-    
-    func setProperty1() {
-        coursePropertyLabel.text = "기억"
-        propertyImageView.image = Const.Image.typeMforLibraryGrey
-    }
-    
-    func setProperty2() {
-        coursePropertyLabel.text = "관찰"
-        propertyImageView.image = Const.Image.typeSforLibraryGrey
-    }
-    
-    func setProperty3() {
-        coursePropertyLabel.text = "도전"
-        propertyImageView.image = Const.Image.typeCforLibraryGrey
-    }
+
 }
