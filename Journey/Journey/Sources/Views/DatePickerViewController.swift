@@ -28,10 +28,12 @@ class DatePickerViewController: UIViewController {
     
     // MARK: - IBOutlets
     
-    @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var yearPickerView: UIPickerView!
     @IBOutlet weak var monthPickerView: UIPickerView!
     @IBOutlet weak var applyButton: UIButton!
+    @IBOutlet weak var pickerContainerView: UIView!
+    @IBOutlet weak var cancelContainerView: UIView!
+    @IBOutlet weak var cancelButton: UIButton!
     
     // MARK: - Life Cycle
     
@@ -40,7 +42,7 @@ class DatePickerViewController: UIViewController {
 
         setDelegation()
         initDateData()
-        initAttribute()
+        initViewRounding()
         setPickerViewInitialDate()
     }
     
@@ -52,7 +54,12 @@ class DatePickerViewController: UIViewController {
         }
     }
     
-    // MARK: - function
+    // MARK: - Functions
+    
+    private func initViewRounding() {
+        pickerContainerView.makeRounded(radius: 14)
+        cancelContainerView.makeRounded(radius: 14)
+    }
     
     private func setPickerViewInitialDate() {
         guard let unwrappedYear = self.year,
@@ -77,10 +84,6 @@ class DatePickerViewController: UIViewController {
         currentMonthList = (1...currentDate.getMonth()).map({String($0)})
     }
     
-    private func initAttribute() {
-        applyButton.makeRounded(radius: applyButton.frame.height / 2)
-    }
-    
     private func updateMonthData(_ selectedYear: Int) {
         if self.year != currentDate.getYear() && selectedYear == currentDate.getYear() {
             self.year = selectedYear
@@ -103,10 +106,6 @@ class DatePickerViewController: UIViewController {
     
     // MARK: - IBActions
     
-    @IBAction func touchCloseButton(_ sender: Any) {
-        dismissDatePicker()
-    }
-    
     @IBAction func touchApplyButton(_ sender: Any) {
         guard let unwrappedYear = self.year,
               let unwrappedMonth = self.month else {
@@ -114,6 +113,11 @@ class DatePickerViewController: UIViewController {
         }
         
         self.datePickerDataDelegate?.passData("\(unwrappedYear)", "\(unwrappedMonth)")
+        
+        dismissDatePicker()
+    }
+    
+    @IBAction func touchCancelButton(_ sender: Any) {
         dismissDatePicker()
     }
 }

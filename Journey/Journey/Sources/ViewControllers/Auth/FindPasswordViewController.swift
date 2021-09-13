@@ -16,14 +16,16 @@ class FindPasswordViewController: UIViewController {
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var underlineView: UIView!
     @IBOutlet weak var errorLabel: UILabel!
     
     // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         initNavigationBar()
         initViewRounding()
         setDelegation()
@@ -33,7 +35,7 @@ class FindPasswordViewController: UIViewController {
     
     private func initNavigationBar() {
         self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
-        navigationItem.title = "비밀번호 찾기"
+        // navigationItem.title = "비밀번호 찾기"
     }
     
     private func initViewRounding() {
@@ -47,10 +49,15 @@ class FindPasswordViewController: UIViewController {
     private func checkEmailFormat(email: String) {
         if validateEmail(email: email) {
             nextButton.isEnabled = true
-            nextButton.backgroundColor = UIColor.Pink2
+            nextButton.alpha = 1.0
+            
+            errorLabel.isHidden = true
         } else {
             nextButton.isEnabled = false
-            nextButton.backgroundColor = UIColor.Grey1Bg
+            nextButton.alpha = 0.3
+            
+            errorLabel.isHidden = false
+            // TODO: - 이메일 형식에 맞지 않음 오류 메세지 fix되면 띄우기
         }
     }
     
@@ -80,6 +87,11 @@ class FindPasswordViewController: UIViewController {
 
 extension FindPasswordViewController: UITextFieldDelegate {
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        emailLabel.textColor = UIColor.black
+        underlineView.backgroundColor = UIColor.black
+    }
+    
     // 실시간
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else {
@@ -95,6 +107,8 @@ extension FindPasswordViewController: UITextFieldDelegate {
             return
         }
         checkEmailFormat(email: text)
+        emailLabel.textColor = UIColor.Black3Text
+        underlineView.backgroundColor = UIColor.Grey1Line
     }
 }
 
@@ -115,6 +129,7 @@ extension FindPasswordViewController {
                     }
                 case .requestErr(let message):
                     self.errorLabel.isHidden = false
+                    self.errorLabel.text = "\(message)"
                     print("requestErr", message)
                 case .pathErr:
                     print(".pathErr")

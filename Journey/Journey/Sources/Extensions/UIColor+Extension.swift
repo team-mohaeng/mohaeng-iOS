@@ -34,11 +34,15 @@ extension UIColor {
     static let Grey2Line: UIColor = UIColor(named: "Grey2Line")!
     static let Grey1Tab: UIColor = UIColor(named: "Grey1Tab")!
     static let Grey2Tab: UIColor = UIColor(named: "Grey2Tab")!
+    static let Grey2Text: UIColor = UIColor(named: "Grey2Text")!
     static let GreyBtnInactive: UIColor = UIColor(named: "GreyBtnInactive")!
+    static let Grey5: UIColor = UIColor(named: "Grey5")!
     static let Green: UIColor = UIColor(named: "Green")!
     static let Red: UIColor = UIColor(named: "Red")!
     static let Icon: UIColor = UIColor(named: "Icon")!
-    
+    static let DeepYellow: UIColor = UIColor(named: "DeepYellow")!
+    static let LoginYellow: UIColor = UIColor(named: "LoginYellow")!
+
     // property
     static let typeC: UIColor = UIColor(named: "typeC")!
     static let typeH: UIColor = UIColor(named: "typeH")!
@@ -53,6 +57,8 @@ extension UIColor {
     
     static let sampleGreen: UIColor = UIColor(named: "SampleGreen")!
     static let roadUndoneGrey: UIColor = UIColor(named: "RoadUndoneGrey")!
+    static let todayYellow: UIColor = UIColor(named: "todayYellow")!
+    static let YellowText1: UIColor = UIColor(named: "YellowText1")!
     
     // 모행 정리된 컬러시스템
     static let YellowBg1: UIColor = UIColor(named: "YellowBg1")!
