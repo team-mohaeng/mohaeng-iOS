@@ -8,8 +8,8 @@
 import UIKit
 
 protocol HeaderViewDelegate: AnyObject {
-    func myDrawerButtonClicked()
-    func writeButtonClicked()
+    func touchMyDrawerButton()
+    func touchWritingButton()
 }
 
 class FeedHeaderView: UIView {
@@ -64,13 +64,13 @@ class FeedHeaderView: UIView {
     // MARK: - @IBAction functions
     
     @IBAction func touchWriteButton(_ sender: Any) {
-        delegate?.writeButtonClicked()
+        delegate?.touchWritingButton()
     }
     
     // MARK: - @objc functions
     
     @objc
     private func touchMyDrawerButton(_ sender: UITapGestureRecognizer) {
-        delegate?.myDrawerButtonClicked()
+        delegate?.touchMyDrawerButton()
     }
 }

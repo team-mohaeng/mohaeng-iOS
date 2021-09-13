@@ -199,14 +199,14 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
 
 extension FeedViewController: HeaderViewDelegate {
    
-    func myDrawerButtonClicked() {
+    func touchMyDrawerButton() {
         let myDrawerStoryboard = UIStoryboard(name: Const.Storyboard.Name.myDrawer, bundle: nil)
         guard let myDrawerViewController = myDrawerStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.myDrawer) as? MyDrawerViewController else { return }
         
         self.navigationController?.pushViewController(myDrawerViewController, animated: true)
     }
     
-    func writeButtonClicked() {
+    func touchWritingButton() {
         let writingStoryboard = UIStoryboard(name: Const.Storyboard.Name.writing, bundle: nil)
         guard let writingViewController = writingStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.writing) as? WritingViewController else { return }
         
