@@ -6,6 +6,6 @@ disabled_rules:
 included:
 excluded:
 - Pods
-- Journey/Sources/AppDelegate.swift
-- Journey/Sources/SceneDelegate.swift
+- Mohaeng/Sources/AppDelegate.swift
+- Mohaeng/Sources/SceneDelegate.swift
 

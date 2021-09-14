@@ -36,7 +36,6 @@ extension UIColor {
     static let Grey2Tab: UIColor = UIColor(named: "Grey2Tab")!
     static let Grey2Text: UIColor = UIColor(named: "Grey2Text")!
     static let GreyBtnInactive: UIColor = UIColor(named: "GreyBtnInactive")!
-    static let Grey5: UIColor = UIColor(named: "Grey5")!
     static let Green: UIColor = UIColor(named: "Green")!
     static let Red: UIColor = UIColor(named: "Red")!
     static let Icon: UIColor = UIColor(named: "Icon")!
