@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "56DCAA232689BB9B0056155A"
-               BuildableName = "Journey.app"
-               BlueprintName = "Journey"
-               ReferencedContainer = "container:Journey.xcodeproj">
+               BuildableName = "Mohaeng.app"
+               BlueprintName = "Mohaeng"
+               ReferencedContainer = "container:Mohaeng.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "56DCAA232689BB9B0056155A"
-            BuildableName = "Journey.app"
-            BlueprintName = "Journey"
-            ReferencedContainer = "container:Journey.xcodeproj">
+            BuildableName = "Mohaeng.app"
+            BlueprintName = "Mohaeng"
+            ReferencedContainer = "container:Mohaeng.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "56DCAA232689BB9B0056155A"
-            BuildableName = "Journey.app"
-            BlueprintName = "Journey"
-            ReferencedContainer = "container:Journey.xcodeproj">
+            BuildableName = "Mohaeng.app"
+            BlueprintName = "Mohaeng"
+            ReferencedContainer = "container:Mohaeng.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
