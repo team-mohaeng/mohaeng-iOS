@@ -172,6 +172,9 @@
 		561D773E26F0BFA50028DBCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D769926F0BFA40028DBCA /* SceneDelegate.swift */; };
 		56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA6C2689C0D10056155A /* .swiftlint.yml */; };
 		8AA5A3F96013676CABD1E7EC /* Pods_Mohaeng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A97E4F8107F8EB85B4E4A69 /* Pods_Mohaeng.framework */; };
+		EC2FF5C626F343C000411F31 /* MoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */; };
+		EC2FF5C726F343C000411F31 /* MoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */; };
+		EC2FF5C926F35DFA00411F31 /* MoodViewController+Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF5C826F35DFA00411F31 /* MoodViewController+Carousel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -345,6 +348,9 @@
 		561D769926F0BFA40028DBCA /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		56DCAA242689BB9B0056155A /* Mohaeng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mohaeng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCAA6C2689C0D10056155A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoodCollectionViewCell.swift; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MoodCollectionViewCell.xib; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		EC2FF5C826F35DFA00411F31 /* MoodViewController+Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoodViewController+Carousel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -595,6 +601,8 @@
 			children = (
 				561D762826F0BFA40028DBCA /* HashTagCollectionViewCell.swift */,
 				561D762926F0BFA40028DBCA /* HashTagCollectionViewCell.xib */,
+				EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */,
+				EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */,
 			);
 			path = FeedView;
 			sourceTree = "<group>";
@@ -610,6 +618,7 @@
 				561D763026F0BFA40028DBCA /* UINavigationController+Extension.swift */,
 				561D763126F0BFA40028DBCA /* ModalPresentationController.swift */,
 				561D763226F0BFA40028DBCA /* UIViewController+Extension.swift */,
+				EC2FF5C826F35DFA00411F31 /* MoodViewController+Carousel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -920,6 +929,7 @@
 				561D76C026F0BFA40028DBCA /* GmarketSansTTFMedium.ttf in Resources */,
 				561D76A726F0BFA40028DBCA /* Writing.storyboard in Resources */,
 				561D76AA26F0BFA40028DBCA /* Feed.storyboard in Resources */,
+				EC2FF5C726F343C000411F31 /* MoodCollectionViewCell.xib in Resources */,
 				561D769F26F0BFA40028DBCA /* SignUpThird.storyboard in Resources */,
 				561D773326F0BFA40028DBCA /* ChallengeStampView.xib in Resources */,
 				561D76CC26F0BFA40028DBCA /* BubbleCollectionViewCell.xib in Resources */,
@@ -1047,6 +1057,7 @@
 				561D772226F0BFA40028DBCA /* Medal.swift in Sources */,
 				561D76E026F0BFA40028DBCA /* UIDevice+Extension.swift in Sources */,
 				561D76EA26F0BFA40028DBCA /* HomeViewController.swift in Sources */,
+				EC2FF5C626F343C000411F31 /* MoodCollectionViewCell.swift in Sources */,
 				561D771726F0BFA40028DBCA /* AppCourse.swift in Sources */,
 				561D76B626F0BFA40028DBCA /* URL.swift in Sources */,
 				561D76D026F0BFA40028DBCA /* FeedCollectionViewCell.swift in Sources */,
@@ -1115,6 +1126,7 @@
 				561D76E326F0BFA40028DBCA /* UINavigationItem+Extensions.swift in Sources */,
 				561D770726F0BFA40028DBCA /* FeedService.swift in Sources */,
 				561D76E126F0BFA40028DBCA /* UIFont+Extension.swift in Sources */,
+				EC2FF5C926F35DFA00411F31 /* MoodViewController+Carousel.swift in Sources */,
 				561D76F826F0BFA40028DBCA /* LoginViewController.swift in Sources */,
 				561D76F926F0BFA40028DBCA /* CodeViewController.swift in Sources */,
 				561D76EF26F0BFA40028DBCA /* HappyPopUpViewController.swift in Sources */,

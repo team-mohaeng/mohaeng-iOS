@@ -40,6 +40,7 @@ extension Const {
             static let myDrawerCollectionReusableView = "MyDrawerCollectionReusableView"
             static let hashTagCollectionViewCell = "HashTagCollectionViewCell"
             static let feedHeaderView = "FeedHeaderView"
+            static let moodCollectionViewCell = "MoodCollectionViewCell"
             
             // 팝업
             static let popUp = "PopUpViewController"
@@ -75,6 +76,7 @@ extension Const {
             static let feedCollectionViewCell = "FeedCollectionViewCell"
             static let myDrawerCollectionReusableView = "MyDrawerCollectionReusableView"
             static let hashTagCollectionViewCell = "HashTagCollectionViewCell"
+            static let moodCollectionViewCell = "MoodCollectionViewCell"
             
             // 팝업
             static let animationPopUp = "AnimationPopUpViewController"
