@@ -11,7 +11,7 @@ extension UINavigationItem {
     func makeCustomBarItem(_ target: Any?, action: Selector, image: UIImage) -> UIBarButtonItem {
         let button = UIButton(type: .system)
         button.setImage(image, for: .normal)
-        button.addTarget(self, action: action, for: .touchUpInside)
+        button.addTarget(target, action: action, for: .touchUpInside)
         
         let barButtonItem = UIBarButtonItem(customView: button)
         barButtonItem.customView?.translatesAutoresizingMaskIntoConstraints = false
