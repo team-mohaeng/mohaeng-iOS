@@ -10,7 +10,6 @@
 		561D769A26F0BFA40028DBCA /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D75D426F0BFA30028DBCA /* Setting.storyboard */; };
 		561D769B26F0BFA40028DBCA /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D75D526F0BFA30028DBCA /* Home.storyboard */; };
 		561D769C26F0BFA40028DBCA /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D75D626F0BFA30028DBCA /* Notification.storyboard */; };
-		561D769D26F0BFA40028DBCA /* Medal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D75D726F0BFA30028DBCA /* Medal.storyboard */; };
 		561D769E26F0BFA40028DBCA /* SignUpSecond.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D75D926F0BFA30028DBCA /* SignUpSecond.storyboard */; };
 		561D769F26F0BFA40028DBCA /* SignUpThird.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D75DA26F0BFA30028DBCA /* SignUpThird.storyboard */; };
 		561D76A026F0BFA40028DBCA /* EmailLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D75DB26F0BFA30028DBCA /* EmailLogin.storyboard */; };
@@ -52,8 +51,6 @@
 		561D76C426F0BFA40028DBCA /* SpoqaHanSansNeo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 561D760526F0BFA40028DBCA /* SpoqaHanSansNeo-Regular.otf */; };
 		561D76C626F0BFA40028DBCA /* CourseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D760926F0BFA40028DBCA /* CourseListViewModel.swift */; };
 		561D76C726F0BFA40028DBCA /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D760A26F0BFA40028DBCA /* ViewModelState.swift */; };
-		561D76C826F0BFA40028DBCA /* MedalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D760D26F0BFA40028DBCA /* MedalCollectionViewCell.swift */; };
-		561D76C926F0BFA40028DBCA /* MedalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 561D760E26F0BFA40028DBCA /* MedalCollectionViewCell.xib */; };
 		561D76CA26F0BFA40028DBCA /* BubbleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D761026F0BFA40028DBCA /* BubbleCollectionViewCell.swift */; };
 		561D76CB26F0BFA40028DBCA /* NewNotificationCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 561D761126F0BFA40028DBCA /* NewNotificationCollectionReusableView.xib */; };
 		561D76CC26F0BFA40028DBCA /* BubbleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 561D761226F0BFA40028DBCA /* BubbleCollectionViewCell.xib */; };
@@ -85,7 +82,6 @@
 		561D76E626F0BFA40028DBCA /* ModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D763126F0BFA40028DBCA /* ModalPresentationController.swift */; };
 		561D76E726F0BFA40028DBCA /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D763226F0BFA40028DBCA /* UIViewController+Extension.swift */; };
 		561D76E826F0BFA40028DBCA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D763526F0BFA40028DBCA /* SettingViewController.swift */; };
-		561D76E926F0BFA40028DBCA /* MedalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D763626F0BFA40028DBCA /* MedalViewController.swift */; };
 		561D76EA26F0BFA40028DBCA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D763726F0BFA40028DBCA /* HomeViewController.swift */; };
 		561D76EB26F0BFA40028DBCA /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D763826F0BFA40028DBCA /* NotificationViewController.swift */; };
 		561D76EC26F0BFA40028DBCA /* AnimationPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D763A26F0BFA40028DBCA /* AnimationPopUpViewController.swift */; };
@@ -151,13 +147,11 @@
 		561D772926F0BFA40028DBCA /* ChallengeStampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D768326F0BFA40028DBCA /* ChallengeStampView.swift */; };
 		561D772A26F0BFA40028DBCA /* UnreadNotificationHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 561D768426F0BFA40028DBCA /* UnreadNotificationHeaderView.xib */; };
 		561D772B26F0BFA40028DBCA /* CourseFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 561D768526F0BFA40028DBCA /* CourseFooterView.xib */; };
-		561D772C26F0BFA40028DBCA /* MedalCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 561D768626F0BFA40028DBCA /* MedalCollectionReusableView.xib */; };
 		561D772D26F0BFA40028DBCA /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D768726F0BFA40028DBCA /* DatePickerViewController.swift */; };
 		561D772E26F0BFA40028DBCA /* UnreadNotificationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D768826F0BFA40028DBCA /* UnreadNotificationHeaderView.swift */; };
 		561D772F26F0BFA40028DBCA /* FeedHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 561D768926F0BFA40028DBCA /* FeedHeaderView.xib */; };
 		561D773026F0BFA40028DBCA /* CustomIntensityVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D768A26F0BFA40028DBCA /* CustomIntensityVisualEffectView.swift */; };
 		561D773126F0BFA40028DBCA /* CourseHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D768B26F0BFA40028DBCA /* CourseHeaderView.swift */; };
-		561D773226F0BFA40028DBCA /* MedalCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D768C26F0BFA40028DBCA /* MedalCollectionReusableView.swift */; };
 		561D773326F0BFA40028DBCA /* ChallengeStampView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 561D768D26F0BFA40028DBCA /* ChallengeStampView.xib */; };
 		561D773426F0BFA40028DBCA /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 561D768E26F0BFA40028DBCA /* DatePickerViewController.xib */; };
 		561D773526F0BFA40028DBCA /* YearPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D768F26F0BFA40028DBCA /* YearPickerViewController.swift */; };
@@ -171,18 +165,17 @@
 		561D773D26F0BFA50028DBCA /* ProtocolsExmaple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D769826F0BFA40028DBCA /* ProtocolsExmaple.swift */; };
 		561D773E26F0BFA50028DBCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D769926F0BFA40028DBCA /* SceneDelegate.swift */; };
 		56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA6C2689C0D10056155A /* .swiftlint.yml */; };
-		8AA5A3F96013676CABD1E7EC /* Pods_Mohaeng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A97E4F8107F8EB85B4E4A69 /* Pods_Mohaeng.framework */; };
+		C1EDD0E94B8D58D3BFC6E617 /* Pods_Mohaeng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F52BC2A5F946917BC16C32C6 /* Pods_Mohaeng.framework */; };
+		DD64327626F5CCC100D71787 /* BadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327526F5CCC100D71787 /* BadgeViewController.swift */; };
+		DD64327926F5DC3400D71787 /* BadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */; };
+		DD64327B26F601E400D71787 /* BottomModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327A26F601E400D71787 /* BottomModalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		088986B89BE497F452D6BAA8 /* Pods-Mohaeng.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mohaeng.debug.xcconfig"; path = "Target Support Files/Pods-Mohaeng/Pods-Mohaeng.debug.xcconfig"; sourceTree = "<group>"; };
-		0DC2B95C977CD1999C1F49DD /* Pods-Mohaeng.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mohaeng.release.xcconfig"; path = "Target Support Files/Pods-Mohaeng/Pods-Mohaeng.release.xcconfig"; sourceTree = "<group>"; };
-		1A97E4F8107F8EB85B4E4A69 /* Pods_Mohaeng.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mohaeng.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		561D75D026F0BFA30028DBCA /* Journey.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Journey.entitlements; sourceTree = "<group>"; };
 		561D75D426F0BFA30028DBCA /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		561D75D526F0BFA30028DBCA /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		561D75D626F0BFA30028DBCA /* Notification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
-		561D75D726F0BFA30028DBCA /* Medal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Medal.storyboard; sourceTree = "<group>"; };
 		561D75D926F0BFA30028DBCA /* SignUpSecond.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUpSecond.storyboard; sourceTree = "<group>"; };
 		561D75DA26F0BFA30028DBCA /* SignUpThird.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUpThird.storyboard; sourceTree = "<group>"; };
 		561D75DB26F0BFA30028DBCA /* EmailLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EmailLogin.storyboard; sourceTree = "<group>"; };
@@ -225,8 +218,6 @@
 		561D760626F0BFA40028DBCA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		561D760926F0BFA40028DBCA /* CourseListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListViewModel.swift; sourceTree = "<group>"; };
 		561D760A26F0BFA40028DBCA /* ViewModelState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelState.swift; sourceTree = "<group>"; };
-		561D760D26F0BFA40028DBCA /* MedalCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedalCollectionViewCell.swift; sourceTree = "<group>"; };
-		561D760E26F0BFA40028DBCA /* MedalCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MedalCollectionViewCell.xib; sourceTree = "<group>"; };
 		561D761026F0BFA40028DBCA /* BubbleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleCollectionViewCell.swift; sourceTree = "<group>"; };
 		561D761126F0BFA40028DBCA /* NewNotificationCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewNotificationCollectionReusableView.xib; sourceTree = "<group>"; };
 		561D761226F0BFA40028DBCA /* BubbleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BubbleCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -258,7 +249,6 @@
 		561D763126F0BFA40028DBCA /* ModalPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalPresentationController.swift; sourceTree = "<group>"; };
 		561D763226F0BFA40028DBCA /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		561D763526F0BFA40028DBCA /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		561D763626F0BFA40028DBCA /* MedalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedalViewController.swift; sourceTree = "<group>"; };
 		561D763726F0BFA40028DBCA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		561D763826F0BFA40028DBCA /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		561D763A26F0BFA40028DBCA /* AnimationPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationPopUpViewController.swift; sourceTree = "<group>"; };
@@ -324,13 +314,11 @@
 		561D768326F0BFA40028DBCA /* ChallengeStampView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeStampView.swift; sourceTree = "<group>"; };
 		561D768426F0BFA40028DBCA /* UnreadNotificationHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnreadNotificationHeaderView.xib; sourceTree = "<group>"; };
 		561D768526F0BFA40028DBCA /* CourseFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseFooterView.xib; sourceTree = "<group>"; };
-		561D768626F0BFA40028DBCA /* MedalCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MedalCollectionReusableView.xib; sourceTree = "<group>"; };
 		561D768726F0BFA40028DBCA /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		561D768826F0BFA40028DBCA /* UnreadNotificationHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnreadNotificationHeaderView.swift; sourceTree = "<group>"; };
 		561D768926F0BFA40028DBCA /* FeedHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedHeaderView.xib; sourceTree = "<group>"; };
 		561D768A26F0BFA40028DBCA /* CustomIntensityVisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomIntensityVisualEffectView.swift; sourceTree = "<group>"; };
 		561D768B26F0BFA40028DBCA /* CourseHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseHeaderView.swift; sourceTree = "<group>"; };
-		561D768C26F0BFA40028DBCA /* MedalCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedalCollectionReusableView.swift; sourceTree = "<group>"; };
 		561D768D26F0BFA40028DBCA /* ChallengeStampView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChallengeStampView.xib; sourceTree = "<group>"; };
 		561D768E26F0BFA40028DBCA /* DatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerViewController.xib; sourceTree = "<group>"; };
 		561D768F26F0BFA40028DBCA /* YearPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearPickerViewController.swift; sourceTree = "<group>"; };
@@ -345,6 +333,12 @@
 		561D769926F0BFA40028DBCA /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		56DCAA242689BB9B0056155A /* Mohaeng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mohaeng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCAA6C2689C0D10056155A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		71DB99B4195B96CC68C03030 /* Pods-Mohaeng.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mohaeng.debug.xcconfig"; path = "Target Support Files/Pods-Mohaeng/Pods-Mohaeng.debug.xcconfig"; sourceTree = "<group>"; };
+		76CE300FF8AD8FB4433A374A /* Pods-Mohaeng.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mohaeng.release.xcconfig"; path = "Target Support Files/Pods-Mohaeng/Pods-Mohaeng.release.xcconfig"; sourceTree = "<group>"; };
+		DD64327526F5CCC100D71787 /* BadgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewController.swift; sourceTree = "<group>"; };
+		DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCollectionViewCell.swift; sourceTree = "<group>"; };
+		DD64327A26F601E400D71787 /* BottomModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomModalViewController.swift; sourceTree = "<group>"; };
+		F52BC2A5F946917BC16C32C6 /* Pods_Mohaeng.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mohaeng.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -352,7 +346,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AA5A3F96013676CABD1E7EC /* Pods_Mohaeng.framework in Frameworks */,
+				C1EDD0E94B8D58D3BFC6E617 /* Pods_Mohaeng.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,8 +356,8 @@
 		21B51734A549B667ECC2DAAA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				088986B89BE497F452D6BAA8 /* Pods-Mohaeng.debug.xcconfig */,
-				0DC2B95C977CD1999C1F49DD /* Pods-Mohaeng.release.xcconfig */,
+				71DB99B4195B96CC68C03030 /* Pods-Mohaeng.debug.xcconfig */,
+				76CE300FF8AD8FB4433A374A /* Pods-Mohaeng.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -412,7 +406,6 @@
 				561D75D426F0BFA30028DBCA /* Setting.storyboard */,
 				561D75D526F0BFA30028DBCA /* Home.storyboard */,
 				561D75D626F0BFA30028DBCA /* Notification.storyboard */,
-				561D75D726F0BFA30028DBCA /* Medal.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -523,7 +516,7 @@
 		561D760B26F0BFA40028DBCA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				561D760C26F0BFA40028DBCA /* MedalCollectionView */,
+				DD64327726F5DC0A00D71787 /* BadgeCollectionView */,
 				561D760F26F0BFA40028DBCA /* NotificationCollectionView */,
 				561D761626F0BFA40028DBCA /* FeedCollectionView */,
 				561D761B26F0BFA40028DBCA /* CourseLibraryCollectionVIew */,
@@ -532,15 +525,6 @@
 				561D762726F0BFA40028DBCA /* FeedView */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		561D760C26F0BFA40028DBCA /* MedalCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				561D760D26F0BFA40028DBCA /* MedalCollectionViewCell.swift */,
-				561D760E26F0BFA40028DBCA /* MedalCollectionViewCell.xib */,
-			);
-			path = MedalCollectionView;
 			sourceTree = "<group>";
 		};
 		561D760F26F0BFA40028DBCA /* NotificationCollectionView */ = {
@@ -623,6 +607,7 @@
 				561D764A26F0BFA40028DBCA /* Feed */,
 				561D765026F0BFA40028DBCA /* TabbarViewController.swift */,
 				561D765126F0BFA40028DBCA /* Challenge */,
+				DD64327A26F601E400D71787 /* BottomModalViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -631,9 +616,9 @@
 			isa = PBXGroup;
 			children = (
 				561D763526F0BFA40028DBCA /* SettingViewController.swift */,
-				561D763626F0BFA40028DBCA /* MedalViewController.swift */,
 				561D763726F0BFA40028DBCA /* HomeViewController.swift */,
 				561D763826F0BFA40028DBCA /* NotificationViewController.swift */,
+				DD64327526F5CCC100D71787 /* BadgeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -791,13 +776,11 @@
 				561D768326F0BFA40028DBCA /* ChallengeStampView.swift */,
 				561D768426F0BFA40028DBCA /* UnreadNotificationHeaderView.xib */,
 				561D768526F0BFA40028DBCA /* CourseFooterView.xib */,
-				561D768626F0BFA40028DBCA /* MedalCollectionReusableView.xib */,
 				561D768726F0BFA40028DBCA /* DatePickerViewController.swift */,
 				561D768826F0BFA40028DBCA /* UnreadNotificationHeaderView.swift */,
 				561D768926F0BFA40028DBCA /* FeedHeaderView.xib */,
 				561D768A26F0BFA40028DBCA /* CustomIntensityVisualEffectView.swift */,
 				561D768B26F0BFA40028DBCA /* CourseHeaderView.swift */,
-				561D768C26F0BFA40028DBCA /* MedalCollectionReusableView.swift */,
 				561D768D26F0BFA40028DBCA /* ChallengeStampView.xib */,
 				561D768E26F0BFA40028DBCA /* DatePickerViewController.xib */,
 				561D768F26F0BFA40028DBCA /* YearPickerViewController.swift */,
@@ -827,7 +810,7 @@
 				561D75CF26F0BFA30028DBCA /* Mohaeng */,
 				56DCAA252689BB9B0056155A /* Products */,
 				21B51734A549B667ECC2DAAA /* Pods */,
-				D0287158D44B2BB35A2072A9 /* Frameworks */,
+				F41BC72D77D84DA6059BD373 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -839,10 +822,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D0287158D44B2BB35A2072A9 /* Frameworks */ = {
+		DD64327726F5DC0A00D71787 /* BadgeCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				1A97E4F8107F8EB85B4E4A69 /* Pods_Mohaeng.framework */,
+				DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */,
+			);
+			path = BadgeCollectionView;
+			sourceTree = "<group>";
+		};
+		F41BC72D77D84DA6059BD373 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F52BC2A5F946917BC16C32C6 /* Pods_Mohaeng.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -854,12 +845,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56DCAA382689BB9E0056155A /* Build configuration list for PBXNativeTarget "Mohaeng" */;
 			buildPhases = (
-				D3D53071136F541655274943 /* [CP] Check Pods Manifest.lock */,
+				B40BC2849998ACFEBDA81925 /* [CP] Check Pods Manifest.lock */,
 				56DCAA202689BB9B0056155A /* Sources */,
 				56DCAA212689BB9B0056155A /* Frameworks */,
 				56DCAA222689BB9B0056155A /* Resources */,
 				56DCAA692689BF1F0056155A /* ShellScript */,
-				47B6A4455A10CF7715FD453E /* [CP] Embed Pods Frameworks */,
+				A6D08E17E1BC7C8C4127AD4E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -928,7 +919,6 @@
 				561D773926F0BFA40028DBCA /* CourseHeaderView.xib in Resources */,
 				561D76AF26F0BFA40028DBCA /* EmptyChallenge.storyboard in Resources */,
 				561D76B926F0BFA40028DBCA /* Assets.xcassets in Resources */,
-				561D772C26F0BFA40028DBCA /* MedalCollectionReusableView.xib in Resources */,
 				561D76DB26F0BFA40028DBCA /* EvenDayTableViewCell.xib in Resources */,
 				561D76B026F0BFA40028DBCA /* Challenge.storyboard in Resources */,
 				561D773426F0BFA40028DBCA /* DatePickerViewController.xib in Resources */,
@@ -957,9 +947,7 @@
 				561D769E26F0BFA40028DBCA /* SignUpSecond.storyboard in Resources */,
 				561D773A26F0BFA40028DBCA /* YearPickerViewController.xib in Resources */,
 				561D76A926F0BFA40028DBCA /* FeedDetail.storyboard in Resources */,
-				561D76C926F0BFA40028DBCA /* MedalCollectionViewCell.xib in Resources */,
 				561D76AE26F0BFA40028DBCA /* Course.storyboard in Resources */,
-				561D769D26F0BFA40028DBCA /* Medal.storyboard in Resources */,
 				561D76D926F0BFA40028DBCA /* OddDayTableViewCell.xib in Resources */,
 				561D76C426F0BFA40028DBCA /* SpoqaHanSansNeo-Regular.otf in Resources */,
 				561D76A626F0BFA40028DBCA /* LaunchScreen.storyboard in Resources */,
@@ -972,23 +960,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		47B6A4455A10CF7715FD453E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mohaeng/Pods-Mohaeng-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mohaeng/Pods-Mohaeng-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mohaeng/Pods-Mohaeng-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		56DCAA692689BF1F0056155A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -1007,7 +978,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
-		D3D53071136F541655274943 /* [CP] Check Pods Manifest.lock */ = {
+		A6D08E17E1BC7C8C4127AD4E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mohaeng/Pods-Mohaeng-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mohaeng/Pods-Mohaeng-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mohaeng/Pods-Mohaeng-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B40BC2849998ACFEBDA81925 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1081,10 +1069,11 @@
 				561D76D426F0BFA40028DBCA /* CourseLibraryCollectionViewCell.swift in Sources */,
 				561D770D26F0BFA40028DBCA /* LoginService.swift in Sources */,
 				561D772D26F0BFA40028DBCA /* DatePickerViewController.swift in Sources */,
-				561D76E926F0BFA40028DBCA /* MedalViewController.swift in Sources */,
 				561D76E726F0BFA40028DBCA /* UIViewController+Extension.swift in Sources */,
+				DD64327626F5CCC100D71787 /* BadgeViewController.swift in Sources */,
 				561D770926F0BFA40028DBCA /* NetworkResult.swift in Sources */,
 				561D771926F0BFA40028DBCA /* Property.swift in Sources */,
+				DD64327B26F601E400D71787 /* BottomModalViewController.swift in Sources */,
 				561D76B526F0BFA40028DBCA /* Storyboard.swift in Sources */,
 				561D773E26F0BFA50028DBCA /* SceneDelegate.swift in Sources */,
 				561D76D826F0BFA40028DBCA /* OddDayTableViewCell.swift in Sources */,
@@ -1102,6 +1091,7 @@
 				561D773B26F0BFA50028DBCA /* AnimationPopUpDelegate.swift in Sources */,
 				561D76D726F0BFA40028DBCA /* SettingTableViewCell.swift in Sources */,
 				561D76E826F0BFA40028DBCA /* SettingViewController.swift in Sources */,
+				DD64327926F5DC3400D71787 /* BadgeCollectionViewCell.swift in Sources */,
 				561D76F426F0BFA40028DBCA /* EmailLoginViewController.swift in Sources */,
 				561D772426F0BFA40028DBCA /* Course.swift in Sources */,
 				561D770526F0BFA40028DBCA /* ChallengeAPI.swift in Sources */,
@@ -1119,7 +1109,6 @@
 				561D76F926F0BFA40028DBCA /* CodeViewController.swift in Sources */,
 				561D76EF26F0BFA40028DBCA /* HappyPopUpViewController.swift in Sources */,
 				561D76B426F0BFA40028DBCA /* Image.swift in Sources */,
-				561D76C826F0BFA40028DBCA /* MedalCollectionViewCell.swift in Sources */,
 				561D772E26F0BFA40028DBCA /* UnreadNotificationHeaderView.swift in Sources */,
 				561D76E426F0BFA40028DBCA /* UIView+Extension.swift in Sources */,
 				561D76DC26F0BFA40028DBCA /* FirstDayTableViewCell.swift in Sources */,
@@ -1136,7 +1125,6 @@
 				561D772726F0BFA40028DBCA /* CourseLibrary.swift in Sources */,
 				561D771426F0BFA40028DBCA /* HomeAPI.swift in Sources */,
 				561D771026F0BFA40028DBCA /* GenericResponse.swift in Sources */,
-				561D773226F0BFA40028DBCA /* MedalCollectionReusableView.swift in Sources */,
 				561D76E226F0BFA40028DBCA /* UIColor+Extension.swift in Sources */,
 				561D771C26F0BFA40028DBCA /* RoadMapPath.swift in Sources */,
 				561D76CE26F0BFA40028DBCA /* ProfileBubbleCollectionViewCell.swift in Sources */,
@@ -1276,7 +1264,7 @@
 		};
 		56DCAA392689BB9E0056155A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 088986B89BE497F452D6BAA8 /* Pods-Mohaeng.debug.xcconfig */;
+			baseConfigurationReference = 71DB99B4195B96CC68C03030 /* Pods-Mohaeng.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1300,7 +1288,7 @@
 		};
 		56DCAA3A2689BB9E0056155A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0DC2B95C977CD1999C1F49DD /* Pods-Mohaeng.release.xcconfig */;
+			baseConfigurationReference = 76CE300FF8AD8FB4433A374A /* Pods-Mohaeng.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
