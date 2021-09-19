@@ -165,13 +165,14 @@
 		561D773D26F0BFA50028DBCA /* ProtocolsExmaple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D769826F0BFA40028DBCA /* ProtocolsExmaple.swift */; };
 		561D773E26F0BFA50028DBCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D769926F0BFA40028DBCA /* SceneDelegate.swift */; };
 		56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA6C2689C0D10056155A /* .swiftlint.yml */; };
-		C1EDD0E94B8D58D3BFC6E617 /* Pods_Mohaeng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F52BC2A5F946917BC16C32C6 /* Pods_Mohaeng.framework */; };
+		C96CDD968727E45C25BA11DB /* Pods_Mohaeng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF85070BA1F5A448133681A6 /* Pods_Mohaeng.framework */; };
 		DD64327626F5CCC100D71787 /* BadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327526F5CCC100D71787 /* BadgeViewController.swift */; };
 		DD64327926F5DC3400D71787 /* BadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */; };
 		DD64327B26F601E400D71787 /* BadgeModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327A26F601E400D71787 /* BadgeModalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D3A0EFC394B83A03D61EDF1 /* Pods-Mohaeng.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mohaeng.release.xcconfig"; path = "Target Support Files/Pods-Mohaeng/Pods-Mohaeng.release.xcconfig"; sourceTree = "<group>"; };
 		561D75D026F0BFA30028DBCA /* Journey.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Journey.entitlements; sourceTree = "<group>"; };
 		561D75D426F0BFA30028DBCA /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		561D75D526F0BFA30028DBCA /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -333,12 +334,11 @@
 		561D769926F0BFA40028DBCA /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		56DCAA242689BB9B0056155A /* Mohaeng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mohaeng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCAA6C2689C0D10056155A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		71DB99B4195B96CC68C03030 /* Pods-Mohaeng.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mohaeng.debug.xcconfig"; path = "Target Support Files/Pods-Mohaeng/Pods-Mohaeng.debug.xcconfig"; sourceTree = "<group>"; };
-		76CE300FF8AD8FB4433A374A /* Pods-Mohaeng.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mohaeng.release.xcconfig"; path = "Target Support Files/Pods-Mohaeng/Pods-Mohaeng.release.xcconfig"; sourceTree = "<group>"; };
+		CE6F11BC23DA1F9010B4D5A7 /* Pods-Mohaeng.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mohaeng.debug.xcconfig"; path = "Target Support Files/Pods-Mohaeng/Pods-Mohaeng.debug.xcconfig"; sourceTree = "<group>"; };
 		DD64327526F5CCC100D71787 /* BadgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewController.swift; sourceTree = "<group>"; };
 		DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCollectionViewCell.swift; sourceTree = "<group>"; };
 		DD64327A26F601E400D71787 /* BadgeModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModalViewController.swift; sourceTree = "<group>"; };
-		F52BC2A5F946917BC16C32C6 /* Pods_Mohaeng.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mohaeng.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF85070BA1F5A448133681A6 /* Pods_Mohaeng.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mohaeng.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -346,7 +346,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1EDD0E94B8D58D3BFC6E617 /* Pods_Mohaeng.framework in Frameworks */,
+				C96CDD968727E45C25BA11DB /* Pods_Mohaeng.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,10 +356,18 @@
 		21B51734A549B667ECC2DAAA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				71DB99B4195B96CC68C03030 /* Pods-Mohaeng.debug.xcconfig */,
-				76CE300FF8AD8FB4433A374A /* Pods-Mohaeng.release.xcconfig */,
+				CE6F11BC23DA1F9010B4D5A7 /* Pods-Mohaeng.debug.xcconfig */,
+				0D3A0EFC394B83A03D61EDF1 /* Pods-Mohaeng.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		3AF6439E828EDB602EE701F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF85070BA1F5A448133681A6 /* Pods_Mohaeng.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		561D75CF26F0BFA30028DBCA /* Mohaeng */ = {
@@ -809,7 +817,7 @@
 				561D75CF26F0BFA30028DBCA /* Mohaeng */,
 				56DCAA252689BB9B0056155A /* Products */,
 				21B51734A549B667ECC2DAAA /* Pods */,
-				F41BC72D77D84DA6059BD373 /* Frameworks */,
+				3AF6439E828EDB602EE701F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -838,14 +846,6 @@
 			path = Badge;
 			sourceTree = "<group>";
 		};
-		F41BC72D77D84DA6059BD373 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F52BC2A5F946917BC16C32C6 /* Pods_Mohaeng.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -853,12 +853,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56DCAA382689BB9E0056155A /* Build configuration list for PBXNativeTarget "Mohaeng" */;
 			buildPhases = (
-				B40BC2849998ACFEBDA81925 /* [CP] Check Pods Manifest.lock */,
+				48479FAD68B68532A11FF9E8 /* [CP] Check Pods Manifest.lock */,
 				56DCAA202689BB9B0056155A /* Sources */,
 				56DCAA212689BB9B0056155A /* Frameworks */,
 				56DCAA222689BB9B0056155A /* Resources */,
 				56DCAA692689BF1F0056155A /* ShellScript */,
-				A6D08E17E1BC7C8C4127AD4E /* [CP] Embed Pods Frameworks */,
+				CD10AF9BF7F6D48558CA6DF1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -968,42 +968,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		56DCAA692689BF1F0056155A /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
-		};
-		A6D08E17E1BC7C8C4127AD4E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mohaeng/Pods-Mohaeng-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mohaeng/Pods-Mohaeng-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mohaeng/Pods-Mohaeng-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B40BC2849998ACFEBDA81925 /* [CP] Check Pods Manifest.lock */ = {
+		48479FAD68B68532A11FF9E8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1023,6 +988,41 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56DCAA692689BF1F0056155A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		CD10AF9BF7F6D48558CA6DF1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mohaeng/Pods-Mohaeng-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mohaeng/Pods-Mohaeng-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mohaeng/Pods-Mohaeng-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1272,7 +1272,7 @@
 		};
 		56DCAA392689BB9E0056155A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71DB99B4195B96CC68C03030 /* Pods-Mohaeng.debug.xcconfig */;
+			baseConfigurationReference = CE6F11BC23DA1F9010B4D5A7 /* Pods-Mohaeng.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1296,7 +1296,7 @@
 		};
 		56DCAA3A2689BB9E0056155A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76CE300FF8AD8FB4433A374A /* Pods-Mohaeng.release.xcconfig */;
+			baseConfigurationReference = 0D3A0EFC394B83A03D61EDF1 /* Pods-Mohaeng.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
