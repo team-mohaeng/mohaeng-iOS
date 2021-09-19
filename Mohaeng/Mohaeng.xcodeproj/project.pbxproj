@@ -168,7 +168,7 @@
 		C1EDD0E94B8D58D3BFC6E617 /* Pods_Mohaeng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F52BC2A5F946917BC16C32C6 /* Pods_Mohaeng.framework */; };
 		DD64327626F5CCC100D71787 /* BadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327526F5CCC100D71787 /* BadgeViewController.swift */; };
 		DD64327926F5DC3400D71787 /* BadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */; };
-		DD64327B26F601E400D71787 /* BottomModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327A26F601E400D71787 /* BottomModalViewController.swift */; };
+		DD64327B26F601E400D71787 /* BadgeModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327A26F601E400D71787 /* BadgeModalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -337,7 +337,7 @@
 		76CE300FF8AD8FB4433A374A /* Pods-Mohaeng.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mohaeng.release.xcconfig"; path = "Target Support Files/Pods-Mohaeng/Pods-Mohaeng.release.xcconfig"; sourceTree = "<group>"; };
 		DD64327526F5CCC100D71787 /* BadgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewController.swift; sourceTree = "<group>"; };
 		DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCollectionViewCell.swift; sourceTree = "<group>"; };
-		DD64327A26F601E400D71787 /* BottomModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomModalViewController.swift; sourceTree = "<group>"; };
+		DD64327A26F601E400D71787 /* BadgeModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModalViewController.swift; sourceTree = "<group>"; };
 		F52BC2A5F946917BC16C32C6 /* Pods_Mohaeng.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mohaeng.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -607,7 +607,6 @@
 				561D764A26F0BFA40028DBCA /* Feed */,
 				561D765026F0BFA40028DBCA /* TabbarViewController.swift */,
 				561D765126F0BFA40028DBCA /* Challenge */,
-				DD64327A26F601E400D71787 /* BottomModalViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -615,10 +614,10 @@
 		561D763426F0BFA40028DBCA /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				DDF595FD26F72852004C5D74 /* Badge */,
 				561D763526F0BFA40028DBCA /* SettingViewController.swift */,
 				561D763726F0BFA40028DBCA /* HomeViewController.swift */,
 				561D763826F0BFA40028DBCA /* NotificationViewController.swift */,
-				DD64327526F5CCC100D71787 /* BadgeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -828,6 +827,15 @@
 				DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */,
 			);
 			path = BadgeCollectionView;
+			sourceTree = "<group>";
+		};
+		DDF595FD26F72852004C5D74 /* Badge */ = {
+			isa = PBXGroup;
+			children = (
+				DD64327A26F601E400D71787 /* BadgeModalViewController.swift */,
+				DD64327526F5CCC100D71787 /* BadgeViewController.swift */,
+			);
+			path = Badge;
 			sourceTree = "<group>";
 		};
 		F41BC72D77D84DA6059BD373 /* Frameworks */ = {
@@ -1073,7 +1081,7 @@
 				DD64327626F5CCC100D71787 /* BadgeViewController.swift in Sources */,
 				561D770926F0BFA40028DBCA /* NetworkResult.swift in Sources */,
 				561D771926F0BFA40028DBCA /* Property.swift in Sources */,
-				DD64327B26F601E400D71787 /* BottomModalViewController.swift in Sources */,
+				DD64327B26F601E400D71787 /* BadgeModalViewController.swift in Sources */,
 				561D76B526F0BFA40028DBCA /* Storyboard.swift in Sources */,
 				561D773E26F0BFA50028DBCA /* SceneDelegate.swift in Sources */,
 				561D76D826F0BFA40028DBCA /* OddDayTableViewCell.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class BottomModalViewController: UIViewController {
+class BadgeModalViewController: UIViewController {
     
     // MARK: - Properties
     private var badge: Badge?

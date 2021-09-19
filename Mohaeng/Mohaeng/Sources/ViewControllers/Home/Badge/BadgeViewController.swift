@@ -34,7 +34,7 @@ class BadgeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initViewContrller()
+        initViewController()
         initNavigationBar()
         initCollectionView()
         
@@ -50,7 +50,7 @@ class BadgeViewController: UIViewController {
     
 // MARK: - Functions
     
-    private func initViewContrller() {
+    private func initViewController() {
         view.backgroundColor = .White
         tabBarController?.tabBar.isHidden = true
     }
@@ -64,6 +64,7 @@ class BadgeViewController: UIViewController {
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.backgroundColor = .White
         collectionView.register(BadgeCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: BadgeCollectionViewCell.self))
+        collectionView.showsVerticalScrollIndicator = false
     }
     
     private func setDelegation() {
@@ -98,12 +99,12 @@ extension BadgeViewController: UIViewControllerTransitioningDelegate {
 extension BadgeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let modalDateView = BottomModalViewController(badge: badges[indexPath.item])
+        let badgeModalViewController = BadgeModalViewController(badge: badges[indexPath.item])
         
-        modalDateView.modalPresentationStyle = .custom
-        modalDateView.transitioningDelegate = self
+        badgeModalViewController.modalPresentationStyle = .custom
+        badgeModalViewController.transitioningDelegate = self
         
-        self.present(modalDateView, animated: true, completion: nil)
+        self.present(badgeModalViewController, animated: true, completion: nil)
     }
 }
 
