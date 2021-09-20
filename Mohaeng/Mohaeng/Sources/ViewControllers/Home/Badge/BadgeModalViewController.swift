@@ -40,7 +40,7 @@ class BadgeModalViewController: UIViewController {
         init(hasBadge: Bool) {
             if hasBadge {
                 viewHeight = 279
-                imageViewTop =  60
+                imageViewTop = 60
                 nameLabelTop = 26
             } else {
                 viewHeight = 303
@@ -94,7 +94,7 @@ class BadgeModalViewController: UIViewController {
         
         backgroundView.snp.makeConstraints {
             $0.bottom.leading.trailing.equalToSuperview()
-            $0.height.equalTo(constraint.viewHeight + view.safeAreaInsets.bottom)
+            $0.height.equalTo(constraint.viewHeight)
         }
         
         badgeImageView.snp.makeConstraints {
