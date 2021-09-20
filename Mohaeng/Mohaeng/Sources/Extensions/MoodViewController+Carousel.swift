@@ -15,13 +15,13 @@ class CarouselLayout: UICollectionViewFlowLayout {
     public var spacing: CGFloat = 10
     
     public var isPagingEnabled: Bool = false
-    private var isSetup: Bool = false
+    private var isSetUp: Bool = false
     
     override public func prepare() {
         super.prepare()
-        if isSetup == false {
+        if isSetUp == false {
             setupLayout()
-            isSetup = true
+            isSetUp = true
         }
     }
     
@@ -41,7 +41,7 @@ class CarouselLayout: UICollectionViewFlowLayout {
         
         let itemWidth = self.itemSize.width
         
-        let scaledItemOffset =  (itemWidth - itemWidth*self.sideItemScale) / 2
+        let scaledItemOffset =  (itemWidth - itemWidth * self.sideItemScale) / 2
         self.minimumLineSpacing = spacing - scaledItemOffset
         
         self.scrollDirection = .horizontal
@@ -57,8 +57,6 @@ class CarouselLayout: UICollectionViewFlowLayout {
     //  속성을 변환해서 반환할 거기 때문에 고차 함수 map을 사용.
     //  map에서 전달 인자로 받는 함수에 우리가 각 아이템들을 어떻게 변환시킬 것인지에 대한 내용
     
-    
-    
     public override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         guard let superAttributes = super.layoutAttributesForElements(in: rect),
               let attributes = NSArray(array: superAttributes, copyItems: true) as? [UICollectionViewLayoutAttributes]
@@ -71,7 +69,7 @@ class CarouselLayout: UICollectionViewFlowLayout {
     
     private func transformLayoutAttributes(attributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         
-        guard let collectionView = self.collectionView else {return attributes}
+        guard let collectionView = self.collectionView else { return attributes }
         
         let collectionCenter = collectionView.frame.size.width / 2
         let contentOffset = collectionView.contentOffset.x

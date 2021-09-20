@@ -9,9 +9,8 @@ import UIKit
 
 class MoodViewController: UIViewController {
     
-    //MARK: - Properties
+    // MARK: - Properties
     
-    let layout = CarouselLayout()
     let cellSize = CGSize(width: 160, height: 160)
     var minItemSpacing: CGFloat = 10
     var moodImageArray: [String] = ["happyImage", "sosoImage", "badImage"]
@@ -23,7 +22,7 @@ class MoodViewController: UIViewController {
     private var signUpUser: SignUpUser?
     private var userName: String?
     
-    //MARK: @IBOutlet Properties
+    // MARK: @IBOutlet Properties
     
     @IBOutlet weak var firstDotWidth: NSLayoutConstraint!
     @IBOutlet weak var secondDotWidth: NSLayoutConstraint!
@@ -45,13 +44,11 @@ class MoodViewController: UIViewController {
         super.viewDidLoad()
         makeRoundDot()
         makeSpecificRoundButton()
-        initCurrentDate()
-        initUserName()
         initTodayMood()
         initNavigationBar()
         assignDelegate()
         registerXib()
-        addCarouselView()
+        initCarouselAttribute()
        
     }
     
@@ -67,29 +64,18 @@ class MoodViewController: UIViewController {
         nextButton.layer.cornerRadius = 29
         nextButton.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
-    
-    private func initCurrentDate() {
-        self.currentDate = AppDate()
-        self.navigationMonth = currentDate?.getMonth()
-        self.navigationDate = currentDate?.getDay()
-        
-        guard let month = navigationMonth else { return }
-        guard let date = navigationDate else { return }
-        
-    }
-    
-    private func initUserName() {
+
+    private func initTodayMood() {
         self.signUpUser = SignUpUser()
         self.userName = signUpUser?.nickname
-        
-        guard let name = userName else { return }
-    }
-    
-    private func initTodayMood() {
-        moodTodayLabel.text = "\(userName)의 오늘은 어땠어?"
+        moodTodayLabel.text = "\(String(describing: userName))의 오늘은 어땠어?"
     }
     
     private func initNavigationBar() {
+        
+        self.currentDate = AppDate()
+        self.navigationMonth = currentDate?.getMonth()
+        self.navigationDate = currentDate?.getDay()
         
         self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
         navigationItem.title = "\(navigationMonth!)월 \(navigationDate!)일"
@@ -106,7 +92,15 @@ class MoodViewController: UIViewController {
         moodCollectionView.register(nibName, forCellWithReuseIdentifier: Const.Xib.Name.moodCollectionViewCell)
     }
     
-    func addCarouselView() {
+    private func dotAnimation(first: CGFloat, second: CGFloat, third: CGFloat) {
+        firstDotWidth.constant = first
+        secondDotWidth.constant = second
+        thirdDotWidth.constant = third
+    }
+    
+    func initCarouselAttribute() {
+        
+        let layout = CarouselLayout()
         
         layout.itemSize = CGSize(width: moodCollectionView.frame.size.width * 0.35, height: moodCollectionView.frame.size.height * 0.35)
         
@@ -121,9 +115,7 @@ class MoodViewController: UIViewController {
     func firstDotAnimation() {
         self.pageStackView.setNeedsLayout()
         UIView.animate(withDuration: 0.3) {
-            self.firstDotWidth.constant = 61
-            self.secondDotWidth.constant = 10
-            self.thirdDotWidth.constant = 10
+            self.dotAnimation(first: 61, second: 10, third: 10)
             self.pageStackView.layoutIfNeeded()
         }
     }
@@ -131,9 +123,7 @@ class MoodViewController: UIViewController {
     func secondDotAnimation() {
         self.pageStackView.setNeedsLayout()
         UIView.animate(withDuration: 0.3) {
-            self.secondDotWidth.constant = 61
-            self.firstDotWidth.constant = 10
-            self.thirdDotWidth.constant = 10
+            self.dotAnimation(first: 10, second: 61, third: 10)
             self.pageStackView.layoutIfNeeded()
         }
     }
@@ -141,9 +131,7 @@ class MoodViewController: UIViewController {
     func thirdDotAnimation() {
         self.pageStackView.setNeedsLayout()
         UIView.animate(withDuration: 0.3) {
-            self.thirdDotWidth.constant = 61
-            self.firstDotWidth.constant = 10
-            self.secondDotWidth.constant = 10
+            self.dotAnimation(first: 10, second: 10, third: 61)
             self.pageStackView.layoutIfNeeded()
         }
     }
@@ -172,8 +160,6 @@ extension MoodViewController: UICollectionViewDelegate {
         
         let index = (offsetX + moodCollectionView.contentInset.left) / cellWidthIncludeSpacing
         let roundedIndex = round(index)
-        
-        let indexPath = IndexPath(item: Int(roundedIndex), section: 0)
         
         switch Int(roundedIndex) {
         case 0:
@@ -206,7 +192,7 @@ extension MoodViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = moodCollectionView.dequeueReusableCell(withReuseIdentifier: "MoodCollectionViewCell", for: indexPath) as? MoodCollectionViewCell else {return UICollectionViewCell()}
+        guard let cell = moodCollectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.moodCollectionViewCell, for: indexPath) as? MoodCollectionViewCell else {return UICollectionViewCell()}
         cell.setData(moodImageName: moodImageArray[indexPath.row])
         
         return cell
