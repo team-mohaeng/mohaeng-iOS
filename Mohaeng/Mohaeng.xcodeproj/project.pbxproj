@@ -62,8 +62,6 @@
 		561D76CF26F0BFA40028DBCA /* NewNotificationCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D761526F0BFA40028DBCA /* NewNotificationCollectionReusableView.swift */; };
 		561D76D026F0BFA40028DBCA /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D761726F0BFA40028DBCA /* FeedCollectionViewCell.swift */; };
 		561D76D126F0BFA40028DBCA /* FeedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 561D761826F0BFA40028DBCA /* FeedCollectionViewCell.xib */; };
-		561D76D226F0BFA40028DBCA /* FeedContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D761926F0BFA40028DBCA /* FeedContentsCollectionViewCell.swift */; };
-		561D76D326F0BFA40028DBCA /* FeedContentsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 561D761A26F0BFA40028DBCA /* FeedContentsCollectionViewCell.xib */; };
 		561D76D426F0BFA40028DBCA /* CourseLibraryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D761C26F0BFA40028DBCA /* CourseLibraryCollectionViewCell.swift */; };
 		561D76D526F0BFA40028DBCA /* CourseCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D761D26F0BFA40028DBCA /* CourseCategoryCollectionViewCell.swift */; };
 		561D76D626F0BFA40028DBCA /* CourseLibraryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 561D761E26F0BFA40028DBCA /* CourseLibraryCollectionViewCell.xib */; };
@@ -172,6 +170,11 @@
 		561D773E26F0BFA50028DBCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D769926F0BFA40028DBCA /* SceneDelegate.swift */; };
 		56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA6C2689C0D10056155A /* .swiftlint.yml */; };
 		8AA5A3F96013676CABD1E7EC /* Pods_Mohaeng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A97E4F8107F8EB85B4E4A69 /* Pods_Mohaeng.framework */; };
+		AAED18D826F11DF0009FE781 /* PlusButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAED18D226F11DEF009FE781 /* PlusButtonCollectionViewCell.swift */; };
+		AAED18D926F11DF0009FE781 /* StickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAED18D326F11DEF009FE781 /* StickerCollectionViewCell.swift */; };
+		AAED18DA26F11DF0009FE781 /* StickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAED18D426F11DEF009FE781 /* StickerCollectionViewCell.xib */; };
+		AAED18DD26F11DF0009FE781 /* PlusButtonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAED18D726F11DEF009FE781 /* PlusButtonCollectionViewCell.xib */; };
+		AAED18E026F313E3009FE781 /* FeedDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAED18DF26F313E3009FE781 /* FeedDetailCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -235,8 +238,6 @@
 		561D761526F0BFA40028DBCA /* NewNotificationCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewNotificationCollectionReusableView.swift; sourceTree = "<group>"; };
 		561D761726F0BFA40028DBCA /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		561D761826F0BFA40028DBCA /* FeedCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedCollectionViewCell.xib; sourceTree = "<group>"; };
-		561D761926F0BFA40028DBCA /* FeedContentsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedContentsCollectionViewCell.swift; sourceTree = "<group>"; };
-		561D761A26F0BFA40028DBCA /* FeedContentsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedContentsCollectionViewCell.xib; sourceTree = "<group>"; };
 		561D761C26F0BFA40028DBCA /* CourseLibraryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseLibraryCollectionViewCell.swift; sourceTree = "<group>"; };
 		561D761D26F0BFA40028DBCA /* CourseCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		561D761E26F0BFA40028DBCA /* CourseLibraryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseLibraryCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -345,6 +346,11 @@
 		561D769926F0BFA40028DBCA /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		56DCAA242689BB9B0056155A /* Mohaeng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mohaeng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCAA6C2689C0D10056155A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		AAED18D226F11DEF009FE781 /* PlusButtonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlusButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		AAED18D326F11DEF009FE781 /* StickerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerCollectionViewCell.swift; sourceTree = "<group>"; };
+		AAED18D426F11DEF009FE781 /* StickerCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StickerCollectionViewCell.xib; sourceTree = "<group>"; };
+		AAED18D726F11DEF009FE781 /* PlusButtonCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlusButtonCollectionViewCell.xib; sourceTree = "<group>"; };
+		AAED18DF26F313E3009FE781 /* FeedDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -559,10 +565,13 @@
 		561D761626F0BFA40028DBCA /* FeedCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				AAED18D226F11DEF009FE781 /* PlusButtonCollectionViewCell.swift */,
+				AAED18D726F11DEF009FE781 /* PlusButtonCollectionViewCell.xib */,
+				AAED18D326F11DEF009FE781 /* StickerCollectionViewCell.swift */,
+				AAED18D426F11DEF009FE781 /* StickerCollectionViewCell.xib */,
 				561D761726F0BFA40028DBCA /* FeedCollectionViewCell.swift */,
 				561D761826F0BFA40028DBCA /* FeedCollectionViewCell.xib */,
-				561D761926F0BFA40028DBCA /* FeedContentsCollectionViewCell.swift */,
-				561D761A26F0BFA40028DBCA /* FeedContentsCollectionViewCell.xib */,
+				AAED18DF26F313E3009FE781 /* FeedDetailCollectionViewCell.swift */,
 			);
 			path = FeedCollectionView;
 			sourceTree = "<group>";
@@ -935,11 +944,11 @@
 				561D76A526F0BFA40028DBCA /* FindPassword.storyboard in Resources */,
 				561D769C26F0BFA40028DBCA /* Notification.storyboard in Resources */,
 				561D76BE26F0BFA40028DBCA /* SpoqaHanSansNeo-Thin.otf in Resources */,
+				AAED18DD26F11DF0009FE781 /* PlusButtonCollectionViewCell.xib in Resources */,
 				561D76A826F0BFA40028DBCA /* MyDrawer.storyboard in Resources */,
 				561D772B26F0BFA40028DBCA /* CourseFooterView.xib in Resources */,
 				561D76BA26F0BFA40028DBCA /* GoogleService-Info.plist in Resources */,
 				561D772F26F0BFA40028DBCA /* FeedHeaderView.xib in Resources */,
-				561D76D326F0BFA40028DBCA /* FeedContentsCollectionViewCell.xib in Resources */,
 				56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */,
 				561D76A226F0BFA40028DBCA /* NewPassword.storyboard in Resources */,
 				561D76AB26F0BFA40028DBCA /* Mood.storyboard in Resources */,
@@ -953,6 +962,7 @@
 				561D76CD26F0BFA40028DBCA /* ProfileBubbleCollectionViewCell.xib in Resources */,
 				561D76BF26F0BFA40028DBCA /* BMHANNA_11yrs_otf.otf in Resources */,
 				561D76AD26F0BFA40028DBCA /* CourseLibrary.storyboard in Resources */,
+				AAED18DA26F11DF0009FE781 /* StickerCollectionViewCell.xib in Resources */,
 				561D76A326F0BFA40028DBCA /* Code.storyboard in Resources */,
 				561D769E26F0BFA40028DBCA /* SignUpSecond.storyboard in Resources */,
 				561D773A26F0BFA40028DBCA /* YearPickerViewController.xib in Resources */,
@@ -1052,7 +1062,9 @@
 				561D76D026F0BFA40028DBCA /* FeedCollectionViewCell.swift in Sources */,
 				561D772026F0BFA40028DBCA /* Auth.swift in Sources */,
 				561D76F326F0BFA40028DBCA /* FindPasswordViewController.swift in Sources */,
+				AAED18D826F11DF0009FE781 /* PlusButtonCollectionViewCell.swift in Sources */,
 				561D76C626F0BFA40028DBCA /* CourseListViewModel.swift in Sources */,
+				AAED18E026F313E3009FE781 /* FeedDetailCollectionViewCell.swift in Sources */,
 				561D76CF26F0BFA40028DBCA /* NewNotificationCollectionReusableView.swift in Sources */,
 				561D773D26F0BFA50028DBCA /* ProtocolsExmaple.swift in Sources */,
 				561D76DE26F0BFA40028DBCA /* HashTagCollectionViewCell.swift in Sources */,
@@ -1095,7 +1107,6 @@
 				561D771526F0BFA40028DBCA /* AppModelsExmaple.swift in Sources */,
 				561D773826F0BFA40028DBCA /* FeedHeaderView.swift in Sources */,
 				561D76B826F0BFA40028DBCA /* Font.swift in Sources */,
-				561D76D226F0BFA40028DBCA /* FeedContentsCollectionViewCell.swift in Sources */,
 				561D76BB26F0BFA40028DBCA /* LottieExmaple.swift in Sources */,
 				561D771826F0BFA40028DBCA /* AppDate.swift in Sources */,
 				561D771F26F0BFA40028DBCA /* PushNoti.swift in Sources */,
@@ -1115,6 +1126,7 @@
 				561D76E326F0BFA40028DBCA /* UINavigationItem+Extensions.swift in Sources */,
 				561D770726F0BFA40028DBCA /* FeedService.swift in Sources */,
 				561D76E126F0BFA40028DBCA /* UIFont+Extension.swift in Sources */,
+				AAED18D926F11DF0009FE781 /* StickerCollectionViewCell.swift in Sources */,
 				561D76F826F0BFA40028DBCA /* LoginViewController.swift in Sources */,
 				561D76F926F0BFA40028DBCA /* CodeViewController.swift in Sources */,
 				561D76EF26F0BFA40028DBCA /* HappyPopUpViewController.swift in Sources */,
