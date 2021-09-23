@@ -89,13 +89,14 @@ class BadgeViewController: UIViewController {
 
 }
 
-// MARK: - Extensions
+// MARK: - UIViewControllerTransitioningDelegate
 extension BadgeViewController: UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         ModalPresentationController(presentedViewController: presented, presenting: presenting)
     }
 }
 
+// MARK: - UICollectionViewDelegate
 extension BadgeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -108,6 +109,7 @@ extension BadgeViewController: UICollectionViewDelegate {
     }
 }
 
+// MARK: - UICollectionViewDataSource
 extension BadgeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return badges.count
@@ -122,6 +124,7 @@ extension BadgeViewController: UICollectionViewDataSource {
     
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension BadgeViewController: UICollectionViewDelegateFlowLayout {
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
             

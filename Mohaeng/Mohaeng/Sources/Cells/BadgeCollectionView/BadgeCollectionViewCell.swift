@@ -24,7 +24,6 @@ class BadgeCollectionViewCell: UICollectionViewCell {
     // MARK: - View Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        initCollectionViewCell()
         setLayout()
     }
     
@@ -35,12 +34,10 @@ class BadgeCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         imageView.image = nil
+        nameLabel.text = nil
     }
     
     // MARK: - Functions
-    private func initCollectionViewCell() {
-        contentView.backgroundColor = .white
-    }
     
     private func setLayout() {
         setViewHierachy()
