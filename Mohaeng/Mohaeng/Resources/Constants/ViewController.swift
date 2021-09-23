@@ -26,7 +26,7 @@ extension Const {
 
             // 홈 탭
             static let home = "HomeViewController"
-            static let medal = "MedalViewController"
+            static let badge = "BadgeViewController"
             static let setting = "SettingViewController"
             static let notification = "NotificationViewController"
             
