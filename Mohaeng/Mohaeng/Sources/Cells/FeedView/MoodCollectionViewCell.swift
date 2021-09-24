@@ -14,11 +14,4 @@ class MoodCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    
-    func setData(moodImageName: String) {
-        if let image = UIImage(named: moodImageName)
-        {
-            moodImageView.image = image
-        }        
-    }
 }

@@ -13,14 +13,10 @@ class MoodViewController: UIViewController {
     
     let cellSize = CGSize(width: 160, height: 160)
     var minItemSpacing: CGFloat = 10
-    var moodImageArray: [String] = ["happyImage", "sosoImage", "badImage"]
+    let moodImageArray = [Const.Image.badImage, Const.Image.sosoImage, Const.Image.happyImage]
     
     private var currentDate: AppDate?
-    private var navigationMonth: Int?
-    private var navigationDate: Int?
-    
     private var signUpUser: SignUpUser?
-    private var userName: String?
     
     // MARK: @IBOutlet Properties
     
@@ -29,6 +25,7 @@ class MoodViewController: UIViewController {
     @IBOutlet weak var thirdDotWidth: NSLayoutConstraint!
     @IBOutlet weak var pageStackView: UIStackView!
     
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var firstDot: UIView!
     @IBOutlet weak var secondDot: UIView!
     @IBOutlet weak var thirdDot: UIView!
@@ -44,12 +41,11 @@ class MoodViewController: UIViewController {
         super.viewDidLoad()
         makeRoundDot()
         makeSpecificRoundButton()
-        initTodayMood()
-        initNavigationBar()
         assignDelegate()
         registerXib()
         initCarouselAttribute()
-       
+        hideNavigationBar()
+        initDateLabel()
     }
     
     // MARK: - Functions
@@ -64,22 +60,17 @@ class MoodViewController: UIViewController {
         nextButton.layer.cornerRadius = 29
         nextButton.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
-
-    private func initTodayMood() {
-        self.signUpUser = SignUpUser()
-        self.userName = signUpUser?.nickname
-        moodTodayLabel.text = "\(String(describing: userName))의 오늘은 어땠어?"
-    }
     
-    private func initNavigationBar() {
-        
+    private func hideNavigationBar() {
+        navigationController?.navigationBar.isHidden = true
+    }
+
+    private func initDateLabel() {
         self.currentDate = AppDate()
-        self.navigationMonth = currentDate?.getMonth()
-        self.navigationDate = currentDate?.getDay()
-        
-        self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
-        navigationItem.title = "\(navigationMonth!)월 \(navigationDate!)일"
-        
+        guard let month = currentDate?.getMonth() else { return }
+        guard let date = currentDate?.getDay() else { return }
+     
+        dateLabel.text = "\(month)월 \(date)일"
     }
     
     private func assignDelegate() {
@@ -96,19 +87,17 @@ class MoodViewController: UIViewController {
         firstDotWidth.constant = first
         secondDotWidth.constant = second
         thirdDotWidth.constant = third
+        self.pageStackView.layoutIfNeeded()
     }
     
     func initCarouselAttribute() {
-        
         let layout = CarouselLayout()
         
         layout.itemSize = CGSize(width: moodCollectionView.frame.size.width * 0.35, height: moodCollectionView.frame.size.height * 0.35)
-        
         layout.sideItemScale = 0.6
         layout.spacing = 40
         layout.isPagingEnabled = true
         layout.sideItemAlpha = 0.5
-        
         moodCollectionView.collectionViewLayout = layout
     }
     
@@ -116,7 +105,6 @@ class MoodViewController: UIViewController {
         self.pageStackView.setNeedsLayout()
         UIView.animate(withDuration: 0.3) {
             self.dotAnimation(first: 61, second: 10, third: 10)
-            self.pageStackView.layoutIfNeeded()
         }
     }
     
@@ -124,7 +112,6 @@ class MoodViewController: UIViewController {
         self.pageStackView.setNeedsLayout()
         UIView.animate(withDuration: 0.3) {
             self.dotAnimation(first: 10, second: 61, third: 10)
-            self.pageStackView.layoutIfNeeded()
         }
     }
     
@@ -132,7 +119,6 @@ class MoodViewController: UIViewController {
         self.pageStackView.setNeedsLayout()
         UIView.animate(withDuration: 0.3) {
             self.dotAnimation(first: 10, second: 10, third: 61)
-            self.pageStackView.layoutIfNeeded()
         }
     }
     
@@ -142,8 +128,15 @@ class MoodViewController: UIViewController {
         
         let writingStoryboard = UIStoryboard(name: Const.Storyboard.Name.writing, bundle: nil)
         guard let writingViewController = writingStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.writing) as? WritingViewController else { return }
+        
+        self.present(writingViewController, animated: true, completion: nil)
+        writingViewController.modalPresentationStyle = .fullScreen
+        
+    }
     
-        self.navigationController?.pushViewController(writingViewController, animated: true)
+    @IBAction func tapDissmissButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        print("1")
     }
 }
 
@@ -193,8 +186,7 @@ extension MoodViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = moodCollectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.moodCollectionViewCell, for: indexPath) as? MoodCollectionViewCell else {return UICollectionViewCell()}
-        cell.setData(moodImageName: moodImageArray[indexPath.row])
-        
+        cell.moodImageView.image = moodImageArray[indexPath.row]
         return cell
     }
 }

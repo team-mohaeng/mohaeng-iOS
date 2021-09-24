@@ -174,7 +174,7 @@
 		8AA5A3F96013676CABD1E7EC /* Pods_Mohaeng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A97E4F8107F8EB85B4E4A69 /* Pods_Mohaeng.framework */; };
 		EC2FF5C626F343C000411F31 /* MoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */; };
 		EC2FF5C726F343C000411F31 /* MoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */; };
-		EC2FF5C926F35DFA00411F31 /* MoodViewController+Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF5C826F35DFA00411F31 /* MoodViewController+Carousel.swift */; };
+		EC31776326FDB50E0076BCEC /* CarouselLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -350,7 +350,7 @@
 		56DCAA6C2689C0D10056155A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoodCollectionViewCell.swift; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MoodCollectionViewCell.xib; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
-		EC2FF5C826F35DFA00411F31 /* MoodViewController+Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoodViewController+Carousel.swift"; sourceTree = "<group>"; };
+		EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselLayoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -618,7 +618,6 @@
 				561D763026F0BFA40028DBCA /* UINavigationController+Extension.swift */,
 				561D763126F0BFA40028DBCA /* ModalPresentationController.swift */,
 				561D763226F0BFA40028DBCA /* UIViewController+Extension.swift */,
-				EC2FF5C826F35DFA00411F31 /* MoodViewController+Carousel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -815,6 +814,7 @@
 				561D769226F0BFA40028DBCA /* FeedHeaderView.swift */,
 				561D769326F0BFA40028DBCA /* CourseHeaderView.xib */,
 				561D769426F0BFA40028DBCA /* YearPickerViewController.xib */,
+				EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1087,6 +1087,7 @@
 				561D76FC26F0BFA40028DBCA /* MyDrawerViewController.swift in Sources */,
 				561D76FA26F0BFA40028DBCA /* SignUpThirdViewController.swift in Sources */,
 				561D772526F0BFA40028DBCA /* Writing.swift in Sources */,
+				EC31776326FDB50E0076BCEC /* CarouselLayoutView.swift in Sources */,
 				561D770C26F0BFA40028DBCA /* PasswordAPI.swift in Sources */,
 				561D771126F0BFA40028DBCA /* CourseAPI.swift in Sources */,
 				561D76D426F0BFA40028DBCA /* CourseLibraryCollectionViewCell.swift in Sources */,
@@ -1126,7 +1127,6 @@
 				561D76E326F0BFA40028DBCA /* UINavigationItem+Extensions.swift in Sources */,
 				561D770726F0BFA40028DBCA /* FeedService.swift in Sources */,
 				561D76E126F0BFA40028DBCA /* UIFont+Extension.swift in Sources */,
-				EC2FF5C926F35DFA00411F31 /* MoodViewController+Carousel.swift in Sources */,
 				561D76F826F0BFA40028DBCA /* LoginViewController.swift in Sources */,
 				561D76F926F0BFA40028DBCA /* CodeViewController.swift in Sources */,
 				561D76EF26F0BFA40028DBCA /* HappyPopUpViewController.swift in Sources */,
