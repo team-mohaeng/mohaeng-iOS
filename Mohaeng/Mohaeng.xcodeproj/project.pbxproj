@@ -170,6 +170,8 @@
 		561D773C26F0BFA50028DBCA /* PopUpActionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D769726F0BFA40028DBCA /* PopUpActionDelegate.swift */; };
 		561D773D26F0BFA50028DBCA /* ProtocolsExmaple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D769826F0BFA40028DBCA /* ProtocolsExmaple.swift */; };
 		561D773E26F0BFA50028DBCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D769926F0BFA40028DBCA /* SceneDelegate.swift */; };
+		561D777D26F36C520028DBCA /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D777C26F36C520028DBCA /* MyPage.storyboard */; };
+		561D777F26F36C970028DBCA /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D777E26F36C970028DBCA /* MyPageViewController.swift */; };
 		56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA6C2689C0D10056155A /* .swiftlint.yml */; };
 		8AA5A3F96013676CABD1E7EC /* Pods_Mohaeng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A97E4F8107F8EB85B4E4A69 /* Pods_Mohaeng.framework */; };
 /* End PBXBuildFile section */
@@ -343,6 +345,8 @@
 		561D769726F0BFA40028DBCA /* PopUpActionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpActionDelegate.swift; sourceTree = "<group>"; };
 		561D769826F0BFA40028DBCA /* ProtocolsExmaple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolsExmaple.swift; sourceTree = "<group>"; };
 		561D769926F0BFA40028DBCA /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		561D777C26F36C520028DBCA /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
+		561D777E26F36C970028DBCA /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		56DCAA242689BB9B0056155A /* Mohaeng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mohaeng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCAA6C2689C0D10056155A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -413,6 +417,7 @@
 				561D75D526F0BFA30028DBCA /* Home.storyboard */,
 				561D75D626F0BFA30028DBCA /* Notification.storyboard */,
 				561D75D726F0BFA30028DBCA /* Medal.storyboard */,
+				561D777C26F36C520028DBCA /* MyPage.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -634,6 +639,7 @@
 				561D763626F0BFA40028DBCA /* MedalViewController.swift */,
 				561D763726F0BFA40028DBCA /* HomeViewController.swift */,
 				561D763826F0BFA40028DBCA /* NotificationViewController.swift */,
+				561D777E26F36C970028DBCA /* MyPageViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -938,6 +944,7 @@
 				561D76A826F0BFA40028DBCA /* MyDrawer.storyboard in Resources */,
 				561D772B26F0BFA40028DBCA /* CourseFooterView.xib in Resources */,
 				561D76BA26F0BFA40028DBCA /* GoogleService-Info.plist in Resources */,
+				561D777D26F36C520028DBCA /* MyPage.storyboard in Resources */,
 				561D772F26F0BFA40028DBCA /* FeedHeaderView.xib in Resources */,
 				561D76D326F0BFA40028DBCA /* FeedContentsCollectionViewCell.xib in Resources */,
 				56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */,
@@ -1101,6 +1108,7 @@
 				561D771F26F0BFA40028DBCA /* PushNoti.swift in Sources */,
 				561D773B26F0BFA50028DBCA /* AnimationPopUpDelegate.swift in Sources */,
 				561D76D726F0BFA40028DBCA /* SettingTableViewCell.swift in Sources */,
+				561D777F26F36C970028DBCA /* MyPageViewController.swift in Sources */,
 				561D76E826F0BFA40028DBCA /* SettingViewController.swift in Sources */,
 				561D76F426F0BFA40028DBCA /* EmailLoginViewController.swift in Sources */,
 				561D772426F0BFA40028DBCA /* Course.swift in Sources */,
