@@ -89,6 +89,7 @@ PODS:
   - GoogleUtilities/UserDefaults (7.5.2):
     - GoogleUtilities/Logger
   - IQKeyboardManagerSwift (6.5.6)
+  - JTAppleCalendar (8.0.3)
   - Kingfisher (6.3.1)
   - lottie-ios (3.2.3)
   - Moya (14.0.0):
@@ -110,6 +111,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - FontBlaster
   - IQKeyboardManagerSwift
+  - JTAppleCalendar
   - Kingfisher
   - lottie-ios
   - Moya (~> 14.0)
@@ -131,6 +133,7 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleUtilities
     - IQKeyboardManagerSwift
+    - JTAppleCalendar
     - Kingfisher
     - lottie-ios
     - Moya
@@ -153,6 +156,7 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 85fd18ff3019bb85d3f2c551d04c481dedf71fc9
   GoogleUtilities: 8de2a97a17e15b6b98e38e8770e2d129a57c0040
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  JTAppleCalendar: 932cadea40b1051beab10f67843451d48ba16c99
   Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
   lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
@@ -162,6 +166,6 @@ SPEC CHECKSUMS:
   SwiftLint: e96c0a8c770c7ebbc4d36c55baf9096bb65c4584
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: 6e4ee07b6c473ee13bad6fe590168daa8f07a4d0
+PODFILE CHECKSUM: 3d30f82b1b90d5ac327c081ccbd40cfc3d4541b7
 
 COCOAPODS: 1.10.1

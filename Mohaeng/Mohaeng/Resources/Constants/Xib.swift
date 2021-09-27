@@ -45,6 +45,9 @@ extension Const {
             static let popUp = "PopUpViewController"
             static let animationPopUp = "AnimationPopUpViewController"
             static let happyPopUp = "HappyPopUpViewController"
+            
+            // 마이페이지 뷰
+            static let dateCell = "dateCell"
         }
         
         struct Identifier {
@@ -79,6 +82,9 @@ extension Const {
             // 팝업
             static let animationPopUp = "AnimationPopUpViewController"
             static let happyPopUp = "HappyPopUpViewController"
+            
+            // 마이페이지 뷰
+            static let dateCell = "dateCell"
         }
         
     }
