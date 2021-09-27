@@ -106,5 +106,34 @@ extension Const {
         
         // mohaeng feed image
         static let imgHand = UIImage(named: "feedHandGrpX")
+        
+        // mohaeng character style image
+        static let lockDuck = UIImage(named: "default")
+        static let unlockDuck = UIImage(named: "1Grp")
+    
+        // mohaeng character background image
+        static let cloudBg = UIImage(named: "cloudBg")!
+        static let cloudSelected = UIImage(named: "cloudCheck")!
+        static let cloudLock = UIImage(named: "cloudLock")!
+        
+        static let spreadBg = UIImage(named: "spreadEffectBg")!
+        static let spreadSelected = UIImage(named: "spreadCheck")!
+        static let spreadLock = UIImage(named: "spreadLock")!
+        
+        static let yellowBg = UIImage(named: "yellowbg")!
+        static let yellowSelected = UIImage(named: "yellowCheck-1")!
+        static let yellowLock = UIImage(named: "yellowLock")!
+        
+        static let fieldBg = UIImage(named: "fieldBg")!
+        static let fieldSelected = UIImage(named: "fieldCheck")!
+        static let fieldLock = UIImage(named: "fieldLock")!
+        
+        static let nightBg = UIImage(named: "nightBg")!
+        static let nightSelected = UIImage(named: "nightCheck")!
+        static let nightLock = UIImage(named: "nightLock")!
+        
+        static let figureBg = UIImage(named: "figureBg")!
+        static let figureSelected = UIImage(named: "figureCheck")!
+        static let figureLock = UIImage(named: "figureLock")!
     }
 }

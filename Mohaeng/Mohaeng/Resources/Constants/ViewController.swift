@@ -29,6 +29,7 @@ extension Const {
             static let medal = "MedalViewController"
             static let setting = "SettingViewController"
             static let notification = "NotificationViewController"
+            static let characterStyle = "CharacterStyleViewController"
             
             // 챌린지 탭
             static let emptyChallenge = "EmptyChallengeViewController"
