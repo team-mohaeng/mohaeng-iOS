@@ -163,6 +163,9 @@
 		561D773D26F0BFA50028DBCA /* ProtocolsExmaple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D769826F0BFA40028DBCA /* ProtocolsExmaple.swift */; };
 		561D773E26F0BFA50028DBCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D769926F0BFA40028DBCA /* SceneDelegate.swift */; };
 		56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA6C2689C0D10056155A /* .swiftlint.yml */; };
+		EC2FF5C626F343C000411F31 /* MoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */; };
+		EC2FF5C726F343C000411F31 /* MoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */; };
+		EC31776326FDB50E0076BCEC /* CarouselLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */; };
 		AAED18D826F11DF0009FE781 /* PlusButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAED18D226F11DEF009FE781 /* PlusButtonCollectionViewCell.swift */; };
 		AAED18D926F11DF0009FE781 /* StickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAED18D326F11DEF009FE781 /* StickerCollectionViewCell.swift */; };
 		AAED18DA26F11DF0009FE781 /* StickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAED18D426F11DEF009FE781 /* StickerCollectionViewCell.xib */; };
@@ -335,6 +338,9 @@
 		561D769926F0BFA40028DBCA /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		56DCAA242689BB9B0056155A /* Mohaeng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mohaeng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCAA6C2689C0D10056155A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoodCollectionViewCell.swift; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MoodCollectionViewCell.xib; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselLayoutView.swift; sourceTree = "<group>"; };
 		AAED18D226F11DEF009FE781 /* PlusButtonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlusButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		AAED18D326F11DEF009FE781 /* StickerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		AAED18D426F11DEF009FE781 /* StickerCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StickerCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -596,6 +602,8 @@
 			children = (
 				561D762826F0BFA40028DBCA /* HashTagCollectionViewCell.swift */,
 				561D762926F0BFA40028DBCA /* HashTagCollectionViewCell.xib */,
+				EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */,
+				EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */,
 			);
 			path = FeedView;
 			sourceTree = "<group>";
@@ -805,6 +813,7 @@
 				561D769226F0BFA40028DBCA /* FeedHeaderView.swift */,
 				561D769326F0BFA40028DBCA /* CourseHeaderView.xib */,
 				561D769426F0BFA40028DBCA /* YearPickerViewController.xib */,
+				EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -928,6 +937,7 @@
 				561D76C026F0BFA40028DBCA /* GmarketSansTTFMedium.ttf in Resources */,
 				561D76A726F0BFA40028DBCA /* Writing.storyboard in Resources */,
 				561D76AA26F0BFA40028DBCA /* Feed.storyboard in Resources */,
+				EC2FF5C726F343C000411F31 /* MoodCollectionViewCell.xib in Resources */,
 				561D769F26F0BFA40028DBCA /* SignUpThird.storyboard in Resources */,
 				561D773326F0BFA40028DBCA /* ChallengeStampView.xib in Resources */,
 				561D76CC26F0BFA40028DBCA /* BubbleCollectionViewCell.xib in Resources */,
@@ -1053,6 +1063,7 @@
 				561D772226F0BFA40028DBCA /* Medal.swift in Sources */,
 				561D76E026F0BFA40028DBCA /* UIDevice+Extension.swift in Sources */,
 				561D76EA26F0BFA40028DBCA /* HomeViewController.swift in Sources */,
+				EC2FF5C626F343C000411F31 /* MoodCollectionViewCell.swift in Sources */,
 				561D771726F0BFA40028DBCA /* AppCourse.swift in Sources */,
 				561D76B626F0BFA40028DBCA /* URL.swift in Sources */,
 				561D76D026F0BFA40028DBCA /* FeedCollectionViewCell.swift in Sources */,
@@ -1084,6 +1095,7 @@
 				561D76FC26F0BFA40028DBCA /* MyDrawerViewController.swift in Sources */,
 				561D76FA26F0BFA40028DBCA /* SignUpThirdViewController.swift in Sources */,
 				561D772526F0BFA40028DBCA /* Writing.swift in Sources */,
+				EC31776326FDB50E0076BCEC /* CarouselLayoutView.swift in Sources */,
 				561D770C26F0BFA40028DBCA /* PasswordAPI.swift in Sources */,
 				561D771126F0BFA40028DBCA /* CourseAPI.swift in Sources */,
 				561D76D426F0BFA40028DBCA /* CourseLibraryCollectionViewCell.swift in Sources */,
