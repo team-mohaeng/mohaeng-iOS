@@ -84,10 +84,13 @@ class MoodViewController: UIViewController {
     }
     
     private func dotAnimation(first: CGFloat, second: CGFloat, third: CGFloat) {
-        firstDotWidth.constant = first
-        secondDotWidth.constant = second
-        thirdDotWidth.constant = third
-        self.pageStackView.layoutIfNeeded()
+        self.pageStackView.setNeedsLayout()
+        UIView.animate(withDuration: 0.3) {
+            self.firstDotWidth.constant = first
+            self.secondDotWidth.constant = second
+            self.thirdDotWidth.constant = third
+            self.pageStackView.layoutIfNeeded()
+        }
     }
     
     func initCarouselAttribute() {
@@ -102,24 +105,15 @@ class MoodViewController: UIViewController {
     }
     
     func firstDotAnimation() {
-        self.pageStackView.setNeedsLayout()
-        UIView.animate(withDuration: 0.3) {
-            self.dotAnimation(first: 61, second: 10, third: 10)
-        }
+        self.dotAnimation(first: 61, second: 10, third: 10)
     }
     
     func secondDotAnimation() {
-        self.pageStackView.setNeedsLayout()
-        UIView.animate(withDuration: 0.3) {
-            self.dotAnimation(first: 10, second: 61, third: 10)
-        }
+        self.dotAnimation(first: 10, second: 61, third: 10)
     }
     
     func thirdDotAnimation() {
-        self.pageStackView.setNeedsLayout()
-        UIView.animate(withDuration: 0.3) {
-            self.dotAnimation(first: 10, second: 10, third: 61)
-        }
+        self.dotAnimation(first: 10, second: 10, third: 61)
     }
     
     // MARK: - @IBAction Properties
