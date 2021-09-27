@@ -16,9 +16,20 @@ enum SpoqaHanSansNeoSize {
     case thin
 }
 
+enum GmarketFontSize {
+    case light
+    case bold
+    case medium
+}
+
 extension UIFont {
     static func spoqaHanSansNeo(weight: SpoqaHanSansNeoSize = .regular, size: CGFloat = 12) -> UIFont {
         let upperCaseFontSize = "\(weight)".capitalized
         return UIFont(name: "SpoqaHanSansNeo-\(upperCaseFontSize)", size: size)!
+    }
+    
+    static func gmarketFont(weight: GmarketFontSize = .medium, size: CGFloat = 12) -> UIFont {
+        let upperCaseFontSize = "\(weight)".capitalized
+        return UIFont(name: "GmarketSansTTF\(upperCaseFontSize)", size: size)!
     }
 }

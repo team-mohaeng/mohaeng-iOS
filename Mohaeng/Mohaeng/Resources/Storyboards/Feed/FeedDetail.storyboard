@@ -1,140 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iFT-cS-LYx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iFT-cS-LYx">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="SpoqaHanSansNeo-Bold.otf">
-            <string>SpoqaHanSansNeo-Bold</string>
-        </array>
-        <array key="SpoqaHanSansNeo-Regular.otf">
-            <string>SpoqaHanSansNeo-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Feed Detail View Controller-->
         <scene sceneID="h8x-Zb-4ao">
             <objects>
-                <viewController storyboardIdentifier="FeedDetailViewController" id="iFT-cS-LYx" customClass="FeedDetailViewController" customModule="Journey" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedDetailViewController" id="iFT-cS-LYx" customClass="FeedDetailViewController" customModule="Mohaeng" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YVV-Uv-i6o">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOB-Xg-u2l">
-                                <rect key="frame" x="24" y="61" width="366" height="780"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleHappinessImg" translatesAutoresizingMaskIntoConstraints="NO" id="SR4-wW-o85">
-                                        <rect key="frame" x="0.0" y="0.0" width="366" height="505"/>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dcL-tH-a0E">
-                                        <rect key="frame" x="0.0" y="571.5" width="366" height="123"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="journeySmileSampleImg" translatesAutoresizingMaskIntoConstraints="NO" id="jNH-U8-g6Q">
-                                        <rect key="frame" x="141.5" y="464" width="83" height="83"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="83" id="1WL-fF-XW5"/>
-                                            <constraint firstAttribute="width" constant="83" id="9fF-ov-sFE"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021.06.28 (월)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONW-5R-Ge8">
-                                        <rect key="frame" x="140.5" y="556" width="85" height="15.5"/>
-                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
-                                        <color key="textColor" name="White"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XiP-Ee-iqh">
-                                        <rect key="frame" x="36" y="596.5" width="294" height="73.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시원 스쿨" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkK-Rh-DUC">
-                                                <rect key="frame" x="0.0" y="0.0" width="294" height="23"/>
-                                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="18"/>
-                                                <color key="textColor" name="White"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="맛있는 피자에 시원한 맥주 마시고 맛있는 피자에 시원한 맥주 마시고" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEV-gq-tN2">
-                                                <rect key="frame" x="0.0" y="33" width="294" height="40.5"/>
-                                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="16"/>
-                                                <color key="textColor" name="White"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#여름좋아요 #산책갑시다요 #안녕하세요안 #ㅋㅋㅋㅋㅋㅋ #ㅉㅉㅋㅋㅋㅋ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NO4-28-RnW">
-                                        <rect key="frame" x="36" y="694.5" width="294" height="30.5"/>
-                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="12"/>
-                                        <color key="textColor" name="Pink2"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ci1-gR-hHB">
-                                        <rect key="frame" x="167" y="738" width="32" height="22"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2F0-sU-1IS">
-                                                <rect key="frame" x="0.0" y="0.0" width="14" height="22"/>
-                                                <state key="normal" image="icnHeart"/>
-                                                <connections>
-                                                    <action selector="touchLikeButton:" destination="iFT-cS-LYx" eventType="touchUpInside" id="dXZ-xA-Syu"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="76" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIc-eg-Bsn">
-                                                <rect key="frame" x="18" y="0.0" width="14" height="22"/>
-                                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="10"/>
-                                                <color key="textColor" name="White"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" name="darkGray"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="NO4-28-RnW" secondAttribute="trailing" constant="36" id="15j-3b-xVX"/>
-                                    <constraint firstItem="NO4-28-RnW" firstAttribute="top" secondItem="dcL-tH-a0E" secondAttribute="bottom" id="7PP-ke-POW"/>
-                                    <constraint firstItem="dcL-tH-a0E" firstAttribute="leading" secondItem="QOB-Xg-u2l" secondAttribute="leading" id="ApF-iZ-w0E"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ci1-gR-hHB" secondAttribute="bottom" constant="20" id="Jn6-2S-fj8"/>
-                                    <constraint firstAttribute="bottom" secondItem="NO4-28-RnW" secondAttribute="bottom" constant="55" id="Kwm-xc-ltD"/>
-                                    <constraint firstItem="XiP-Ee-iqh" firstAttribute="leading" secondItem="QOB-Xg-u2l" secondAttribute="leading" constant="36" id="ObE-e0-vQ3"/>
-                                    <constraint firstItem="SR4-wW-o85" firstAttribute="top" secondItem="QOB-Xg-u2l" secondAttribute="top" id="Qaq-qF-KHJ"/>
-                                    <constraint firstItem="Ci1-gR-hHB" firstAttribute="centerX" secondItem="QOB-Xg-u2l" secondAttribute="centerX" id="Qs3-XU-8Pq"/>
-                                    <constraint firstItem="ONW-5R-Ge8" firstAttribute="centerX" secondItem="QOB-Xg-u2l" secondAttribute="centerX" id="RVp-ZY-X28"/>
-                                    <constraint firstItem="dcL-tH-a0E" firstAttribute="top" secondItem="ONW-5R-Ge8" secondAttribute="bottom" id="RcS-C6-23z"/>
-                                    <constraint firstItem="ONW-5R-Ge8" firstAttribute="top" secondItem="jNH-U8-g6Q" secondAttribute="bottom" constant="9" id="WcX-QR-nnJ"/>
-                                    <constraint firstItem="SR4-wW-o85" firstAttribute="leading" secondItem="QOB-Xg-u2l" secondAttribute="leading" id="czz-lQ-XXS"/>
-                                    <constraint firstItem="jNH-U8-g6Q" firstAttribute="bottom" secondItem="SR4-wW-o85" secondAttribute="bottom" constant="42" id="ezm-6c-1Yi"/>
-                                    <constraint firstItem="NO4-28-RnW" firstAttribute="centerX" secondItem="QOB-Xg-u2l" secondAttribute="centerX" id="ita-Hs-vik"/>
-                                    <constraint firstAttribute="trailing" secondItem="XiP-Ee-iqh" secondAttribute="trailing" constant="36" id="jdl-fV-jhT"/>
-                                    <constraint firstItem="jNH-U8-g6Q" firstAttribute="centerX" secondItem="QOB-Xg-u2l" secondAttribute="centerX" id="kLG-Rk-VLm"/>
-                                    <constraint firstItem="NO4-28-RnW" firstAttribute="leading" secondItem="QOB-Xg-u2l" secondAttribute="leading" constant="36" id="kfP-em-WzS"/>
-                                    <constraint firstItem="XiP-Ee-iqh" firstAttribute="centerY" secondItem="dcL-tH-a0E" secondAttribute="centerY" id="l5R-Dq-CAc"/>
-                                    <constraint firstAttribute="trailing" secondItem="SR4-wW-o85" secondAttribute="trailing" id="nON-zh-3Tg"/>
-                                    <constraint firstAttribute="trailing" secondItem="dcL-tH-a0E" secondAttribute="trailing" id="tiM-eL-kgb"/>
-                                    <constraint firstAttribute="bottom" secondItem="SR4-wW-o85" secondAttribute="bottom" constant="275" id="vlV-cK-wwo"/>
-                                </constraints>
-                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="y9G-Nl-Qb1">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uS1-6j-GjF">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="c2U-co-N6J">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AD2-Cz-Lql">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="acs-m2-3qM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="QOB-Xg-u2l" firstAttribute="top" secondItem="acs-m2-3qM" secondAttribute="top" constant="17" id="4dY-el-jXv"/>
-                            <constraint firstItem="acs-m2-3qM" firstAttribute="trailing" secondItem="QOB-Xg-u2l" secondAttribute="trailing" constant="24" id="Jqs-aP-HMr"/>
-                            <constraint firstItem="acs-m2-3qM" firstAttribute="bottom" secondItem="QOB-Xg-u2l" secondAttribute="bottom" constant="21" id="caT-bC-fR1"/>
-                            <constraint firstItem="QOB-Xg-u2l" firstAttribute="leading" secondItem="acs-m2-3qM" secondAttribute="leading" constant="24" id="kYB-Gh-ffW"/>
+                            <constraint firstItem="y9G-Nl-Qb1" firstAttribute="leading" secondItem="acs-m2-3qM" secondAttribute="leading" id="JdA-je-stl"/>
+                            <constraint firstItem="acs-m2-3qM" firstAttribute="trailing" secondItem="y9G-Nl-Qb1" secondAttribute="trailing" id="Qp5-jb-hC7"/>
+                            <constraint firstItem="acs-m2-3qM" firstAttribute="bottom" secondItem="y9G-Nl-Qb1" secondAttribute="bottom" id="YO0-ak-GFX"/>
+                            <constraint firstItem="y9G-Nl-Qb1" firstAttribute="top" secondItem="acs-m2-3qM" secondAttribute="top" id="aFH-10-rFj"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="dayLabel" destination="ONW-5R-Ge8" id="TDN-pX-z35"/>
-                        <outlet property="feedContentsLabel" destination="MEV-gq-tN2" id="Ey8-NG-8ie"/>
-                        <outlet property="feedDetailView" destination="QOB-Xg-u2l" id="hJH-2a-YDb"/>
-                        <outlet property="feedNicknameLabel" destination="kkK-Rh-DUC" id="P1S-m0-et3"/>
-                        <outlet property="hashTagLabel" destination="NO4-28-RnW" id="FVJ-1Q-IYl"/>
-                        <outlet property="likeButton" destination="2F0-sU-1IS" id="fcJ-Ru-hQ9"/>
-                        <outlet property="likeCountLabel" destination="mIc-eg-Bsn" id="faw-Gc-MLF"/>
-                        <outlet property="mainImageView" destination="SR4-wW-o85" id="Rbf-6j-aQL"/>
-                        <outlet property="moodImageView" destination="jNH-U8-g6Q" id="nwP-q7-gAe"/>
+                        <outlet property="feedCollectionView" destination="y9G-Nl-Qb1" id="nHo-qC-S2C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="57B-CC-MBL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -143,18 +57,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icnHeart" width="14" height="14"/>
-        <image name="journeySmileSampleImg" width="59.5" height="64"/>
-        <image name="sampleHappinessImg" width="192" height="291"/>
-        <namedColor name="Pink2">
-            <color red="1" green="0.52899998426437378" blue="0.6470000147819519" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="White">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="darkGray">
-            <color red="0.16500000655651093" green="0.16500000655651093" blue="0.16500000655651093" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
