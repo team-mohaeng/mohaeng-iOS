@@ -42,7 +42,7 @@ class MyPageViewController: UIViewController {
         super.viewDidLoad()
         
         initNavigationBar()
-        initViewRounding()
+        initViewRoundingAndShadow()
         initCalendar()
         assignDelegate()
         setRangeDates()
@@ -55,27 +55,26 @@ class MyPageViewController: UIViewController {
         self.navigationController?.initTransparentNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
     }
     
-    private func initViewRounding() {
+    private func initViewRoundingAndShadow() {
+        // 배경 노란색 원
         bgCircleView.makeRounded(radius: self.bgCircleView.frame.height / 2)
         
+        // 요약 뷰 rounding
         for summaryView in summaryStackView.subviews {
             summaryView.makeRounded(radius: 14)
         }
         
+        // 요약 뷰 뒤 그림자 뷰 rounding, shadow init
         for shadowView in shadowStackView.subviews {
             shadowView.makeRounded(radius: 14)
-            shadowView.layer.shadowOpacity = 0.05
-            shadowView.layer.shadowOffset = CGSize(width: 0, height: 0)
-            shadowView.layer.shadowRadius = 20
-            shadowView.layer.masksToBounds = false
+            shadowView.addShadowWithOpaqueBackground(opacity: 0.05, radius: 20)
         }
         
-//        calendarShadowView.makeRounded(radius: 14)
-        calendarShadowView.layer.shadowOpacity = 0.05
-        calendarShadowView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        calendarShadowView.layer.shadowRadius = 20
-        calendarShadowView.layer.masksToBounds = false
+        // calendar 뒤 그림자 뷰 rounding, shadow init
+        calendarShadowView.makeRounded(radius: 14)
+        calendarShadowView.addShadowWithOpaqueBackground(opacity: 0.05, radius: 20)
         
+        // calendar bg view rounding
         calendarBgView.makeRounded(radius: 14)
     }
     
