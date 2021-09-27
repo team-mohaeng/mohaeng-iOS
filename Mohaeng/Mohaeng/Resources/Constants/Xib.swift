@@ -14,9 +14,6 @@ extension Const {
         struct Name {
             
             // 홈 탭
-            // 메달 뷰
-            static let medalCollectionReusableView = "MedalCollectionReusableView"
-            static let medalCollectionViewCell = "MedalCollectionViewCell"
             // 채팅 뷰
             static let profileBubbleCollectionViewCell = "ProfileBubbleCollectionViewCell"
             static let bubbleCollectionViewCell = "BubbleCollectionViewCell"
@@ -53,9 +50,6 @@ extension Const {
         struct Identifier {
             
             // 홈 탭
-            // 메달 뷰
-            static let medalCollectionReusableView = "MedalCollectionReusableView"
-            static let medalCollectionViewCell = "MedalCollectionViewCell"
             // 채팅 뷰
             static let profileBubbleCollectionViewCell = "ProfileBubbleCollectionViewCell"
             static let bubbleCollectionViewCell = "BubbleCollectionViewCell"
