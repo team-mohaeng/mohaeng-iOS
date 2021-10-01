@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" name="Pink2"/>
-                        <color key="selectedImageTintColor" name="Pink2"/>
+                        <color key="tintColor" name="YellowIconNavi"/>
+                        <color key="selectedImageTintColor" name="YellowIconNavi"/>
                     </tabBar>
                     <connections>
                         <segue destination="gfI-Hd-mIH" kind="relationship" relationship="viewControllers" id="dSz-nP-RyZ"/>
@@ -61,8 +61,8 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="Pink2">
-            <color red="1" green="0.52899998426437378" blue="0.6470000147819519" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="YellowIconNavi">
+            <color red="1" green="0.76862745098039209" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
