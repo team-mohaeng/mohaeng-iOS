@@ -55,7 +55,6 @@ extension UIColor {
     // MARK: - Mohaeng
     
     static let sampleGreen: UIColor = UIColor(named: "SampleGreen")!
-    static let roadUndoneGrey: UIColor = UIColor(named: "RoadUndoneGrey")!
     static let todayYellow: UIColor = UIColor(named: "todayYellow")!
     static let YellowText1: UIColor = UIColor(named: "YellowText1")!
     
