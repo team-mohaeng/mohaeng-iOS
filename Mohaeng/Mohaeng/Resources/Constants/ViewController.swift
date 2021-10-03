@@ -29,6 +29,7 @@ extension Const {
             static let badge = "BadgeViewController"
             static let setting = "SettingViewController"
             static let notification = "NotificationViewController"
+            static let myPage = "MyPageViewController"
             
             // 챌린지 탭
             static let emptyChallenge = "EmptyChallengeViewController"

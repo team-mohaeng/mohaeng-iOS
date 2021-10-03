@@ -162,6 +162,10 @@
 		561D773C26F0BFA50028DBCA /* PopUpActionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D769726F0BFA40028DBCA /* PopUpActionDelegate.swift */; };
 		561D773D26F0BFA50028DBCA /* ProtocolsExmaple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D769826F0BFA40028DBCA /* ProtocolsExmaple.swift */; };
 		561D773E26F0BFA50028DBCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D769926F0BFA40028DBCA /* SceneDelegate.swift */; };
+		561D777D26F36C520028DBCA /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D777C26F36C520028DBCA /* MyPage.storyboard */; };
+		561D777F26F36C970028DBCA /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D777E26F36C970028DBCA /* MyPageViewController.swift */; };
+		565A1EF82700CF81000CAB1B /* MyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565A1EF72700CF81000CAB1B /* MyPage.swift */; };
+		56A05EB22700699D006D6ECE /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A05EB12700699D006D6ECE /* DateCollectionViewCell.swift */; };
 		56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA6C2689C0D10056155A /* .swiftlint.yml */; };
 		EC2FF5C626F343C000411F31 /* MoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */; };
 		EC2FF5C726F343C000411F31 /* MoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */; };
@@ -336,6 +340,10 @@
 		561D769726F0BFA40028DBCA /* PopUpActionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpActionDelegate.swift; sourceTree = "<group>"; };
 		561D769826F0BFA40028DBCA /* ProtocolsExmaple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolsExmaple.swift; sourceTree = "<group>"; };
 		561D769926F0BFA40028DBCA /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		561D777C26F36C520028DBCA /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
+		561D777E26F36C970028DBCA /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		565A1EF72700CF81000CAB1B /* MyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPage.swift; sourceTree = "<group>"; };
+		56A05EB12700699D006D6ECE /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		56DCAA242689BB9B0056155A /* Mohaeng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mohaeng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCAA6C2689C0D10056155A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoodCollectionViewCell.swift; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -426,6 +434,8 @@
 				561D75D426F0BFA30028DBCA /* Setting.storyboard */,
 				561D75D526F0BFA30028DBCA /* Home.storyboard */,
 				561D75D626F0BFA30028DBCA /* Notification.storyboard */,
+				561D75D726F0BFA30028DBCA /* Medal.storyboard */,
+				561D777C26F36C520028DBCA /* MyPage.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -543,6 +553,7 @@
 				561D761F26F0BFA40028DBCA /* SettingTableViewCell.swift */,
 				561D762026F0BFA40028DBCA /* CourseTableView */,
 				561D762726F0BFA40028DBCA /* FeedView */,
+				56A05EB027006963006D6ECE /* MyPageCalendar */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -643,6 +654,7 @@
 				561D763526F0BFA40028DBCA /* SettingViewController.swift */,
 				561D763726F0BFA40028DBCA /* HomeViewController.swift */,
 				561D763826F0BFA40028DBCA /* NotificationViewController.swift */,
+				561D777E26F36C970028DBCA /* MyPageViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -789,6 +801,7 @@
 				561D767E26F0BFA40028DBCA /* Writing.swift */,
 				561D767F26F0BFA40028DBCA /* Feed.swift */,
 				561D768026F0BFA40028DBCA /* CourseLibrary.swift */,
+				565A1EF72700CF81000CAB1B /* MyPage.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -826,6 +839,14 @@
 				561D769826F0BFA40028DBCA /* ProtocolsExmaple.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		56A05EB027006963006D6ECE /* MyPageCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				56A05EB12700699D006D6ECE /* DateCollectionViewCell.swift */,
+			);
+			path = MyPageCalendar;
 			sourceTree = "<group>";
 		};
 		56DCAA1B2689BB9B0056155A = {
@@ -956,6 +977,7 @@
 				561D76A826F0BFA40028DBCA /* MyDrawer.storyboard in Resources */,
 				561D772B26F0BFA40028DBCA /* CourseFooterView.xib in Resources */,
 				561D76BA26F0BFA40028DBCA /* GoogleService-Info.plist in Resources */,
+				561D777D26F36C520028DBCA /* MyPage.storyboard in Resources */,
 				561D772F26F0BFA40028DBCA /* FeedHeaderView.xib in Resources */,
 				56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */,
 				561D76A226F0BFA40028DBCA /* NewPassword.storyboard in Resources */,
@@ -1081,6 +1103,7 @@
 				561D76D526F0BFA40028DBCA /* CourseCategoryCollectionViewCell.swift in Sources */,
 				561D76F626F0BFA40028DBCA /* SignUpFirstViewController.swift in Sources */,
 				561D770B26F0BFA40028DBCA /* SignUpAPI.swift in Sources */,
+				565A1EF82700CF81000CAB1B /* MyPage.swift in Sources */,
 				561D771D26F0BFA40028DBCA /* AppDelegate.swift in Sources */,
 				561D76EB26F0BFA40028DBCA /* NotificationViewController.swift in Sources */,
 				561D773C26F0BFA50028DBCA /* PopUpActionDelegate.swift in Sources */,
@@ -1121,6 +1144,7 @@
 				561D771F26F0BFA40028DBCA /* PushNoti.swift in Sources */,
 				561D773B26F0BFA50028DBCA /* AnimationPopUpDelegate.swift in Sources */,
 				561D76D726F0BFA40028DBCA /* SettingTableViewCell.swift in Sources */,
+				561D777F26F36C970028DBCA /* MyPageViewController.swift in Sources */,
 				561D76E826F0BFA40028DBCA /* SettingViewController.swift in Sources */,
 				DD64327926F5DC3400D71787 /* BadgeCollectionViewCell.swift in Sources */,
 				561D76F426F0BFA40028DBCA /* EmailLoginViewController.swift in Sources */,
@@ -1153,6 +1177,7 @@
 				561D770826F0BFA40028DBCA /* FeedAPI.swift in Sources */,
 				561D76EC26F0BFA40028DBCA /* AnimationPopUpViewController.swift in Sources */,
 				561D772926F0BFA40028DBCA /* ChallengeStampView.swift in Sources */,
+				56A05EB22700699D006D6ECE /* DateCollectionViewCell.swift in Sources */,
 				561D76F726F0BFA40028DBCA /* SignUpSecondViewController.swift in Sources */,
 				561D772726F0BFA40028DBCA /* CourseLibrary.swift in Sources */,
 				561D771426F0BFA40028DBCA /* HomeAPI.swift in Sources */,
