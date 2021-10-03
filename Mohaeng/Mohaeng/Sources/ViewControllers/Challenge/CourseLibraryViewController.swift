@@ -18,11 +18,12 @@ class CourseLibraryViewController: UIViewController {
     var askPopUp: PopUpViewController = PopUpViewController()
     var selectedCourseId = 0
     var backgroundView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+    var selectedProperty = 0
     
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var courseLibraryCollectionView: UICollectionView!
-    @IBOutlet weak var categoryCollectionView: UICollectionView!
+    @IBOutlet weak var propertyCollectionView: UICollectionView!
     
     // MARK: - View Life Cycle
 
@@ -55,8 +56,8 @@ class CourseLibraryViewController: UIViewController {
         courseLibraryCollectionView.delegate = self
         courseLibraryCollectionView.dataSource = self
         
-        categoryCollectionView.delegate = self
-        categoryCollectionView.dataSource = self
+        propertyCollectionView.delegate = self
+        propertyCollectionView.dataSource = self
     }
     
     private func fetchCourses() {
@@ -134,11 +135,11 @@ extension CourseLibraryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         switch collectionView {
-        case categoryCollectionView:
+        case propertyCollectionView:
             return AppCourse.count
             
         case courseLibraryCollectionView:
-            return courseListViewModel.numberOfRowsInSection(0)
+            return courseListViewModel.numberOfRowsInSection(property: selectedProperty, section: 0)
         default:
             return 0
         }
@@ -148,7 +149,7 @@ extension CourseLibraryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         switch collectionView {
-        case categoryCollectionView:
+        case propertyCollectionView:
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.courseCategoryCollectionViewCell, for: indexPath) as? CourseCategoryCollectionViewCell {
                 
                 if indexPath.row == 0 {
@@ -166,7 +167,7 @@ extension CourseLibraryViewController: UICollectionViewDataSource {
         case courseLibraryCollectionView:
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.courseLibraryCollectionViewCell, for: indexPath) as? CourseLibraryCollectionViewCell {
                 
-                let viewModel = courseListViewModel.courseAtIndex(indexPath.row)
+                let viewModel = courseListViewModel.courseAtIndex(property: selectedProperty, index: indexPath.row)
                 cell.courseViewModel = viewModel
                 cell.setButtonTitle(doingCourse: doingCourse)
                 
@@ -182,7 +183,7 @@ extension CourseLibraryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
         switch collectionView {
-        case categoryCollectionView:
+        case propertyCollectionView:
             return UIEdgeInsets(top: 19, left: 18, bottom: 10, right: 18)
         case courseLibraryCollectionView:
             return UIEdgeInsets(top: 22, left: 24, bottom: 0, right: 24)
@@ -200,7 +201,7 @@ extension CourseLibraryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         switch collectionView {
-        case categoryCollectionView:
+        case propertyCollectionView:
             return CGSize(width: 59, height: 14)
         case courseLibraryCollectionView:
             return unDoneCellSize(for: indexPath)
@@ -215,9 +216,21 @@ extension CourseLibraryViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presentAskPopUp(doingCourse: doingCourse)
-        selectedCourseId = courseListViewModel.courseAtIndex(indexPath.row).course.id
-        UserDefaults.standard.setValue(selectedCourseId, forKey: "courseId")
+        
+        switch collectionView {
+        case propertyCollectionView:
+            selectedProperty = indexPath.row
+            courseLibraryCollectionView.reloadData()
+            
+        case courseLibraryCollectionView:
+            // TODO: - popUp 변경 시 바꿔야 함 현재 터지는 상태
+            presentAskPopUp(doingCourse: doingCourse)
+            selectedCourseId = courseListViewModel.courseAtIndex(property: selectedProperty, index: indexPath.row).course.id
+            UserDefaults.standard.setValue(selectedCourseId, forKey: "courseId")
+        default:
+            return
+        }
+        
     }
     
     private func unDoneCellSize(for indexPath: IndexPath) -> CGSize {
@@ -225,7 +238,7 @@ extension CourseLibraryViewController: UICollectionViewDelegateFlowLayout {
         guard let cell = Bundle.main.loadNibNamed(Const.Xib.Name.courseLibraryCollectionViewCell, owner: self, options: nil)?.first as? CourseLibraryCollectionViewCell else {return CGSize(width: 0, height: 0)}
         
         // configure cell with data in it
-        let viewModel = courseListViewModel.courseAtIndex(indexPath.row)
+        let viewModel = courseListViewModel.courseAtIndex(property: selectedProperty, index: indexPath.row)
         cell.courseViewModel = viewModel
         cell.setButtonTitle(doingCourse: doingCourse)
         

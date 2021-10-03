@@ -14,9 +14,6 @@ extension Const {
         struct Name {
             
             // 홈 탭
-            // 메달 뷰
-            static let medalCollectionReusableView = "MedalCollectionReusableView"
-            static let medalCollectionViewCell = "MedalCollectionViewCell"
             // 채팅 뷰
             static let profileBubbleCollectionViewCell = "ProfileBubbleCollectionViewCell"
             static let bubbleCollectionViewCell = "BubbleCollectionViewCell"
@@ -40,6 +37,10 @@ extension Const {
             static let myDrawerCollectionReusableView = "MyDrawerCollectionReusableView"
             static let hashTagCollectionViewCell = "HashTagCollectionViewCell"
             static let feedHeaderView = "FeedHeaderView"
+            static let moodCollectionViewCell = "MoodCollectionViewCell"
+            static let feedDetailCollectionViewCell = "FeedDetailCollectionViewCell"
+            static let plusButtonCollectionViewCell = "PlusButtonCollectionViewCell"
+            static let stickerCollectionViewCell = "StickerCollectionViewCell"
             
             // 팝업
             static let popUp = "PopUpViewController"
@@ -53,9 +54,6 @@ extension Const {
         struct Identifier {
             
             // 홈 탭
-            // 메달 뷰
-            static let medalCollectionReusableView = "MedalCollectionReusableView"
-            static let medalCollectionViewCell = "MedalCollectionViewCell"
             // 채팅 뷰
             static let profileBubbleCollectionViewCell = "ProfileBubbleCollectionViewCell"
             static let bubbleCollectionViewCell = "BubbleCollectionViewCell"
@@ -78,6 +76,10 @@ extension Const {
             static let feedCollectionViewCell = "FeedCollectionViewCell"
             static let myDrawerCollectionReusableView = "MyDrawerCollectionReusableView"
             static let hashTagCollectionViewCell = "HashTagCollectionViewCell"
+            static let moodCollectionViewCell = "MoodCollectionViewCell"
+            static let feedDetailCollectionViewCell = "FeedDetailCollectionViewCell"
+            static let plusButtonCollectionViewCell = "PlusButtonCollectionViewCell"
+            static let stickerCollectionViewCell = "StickerCollectionViewCell"
             
             // 팝업
             static let animationPopUp = "AnimationPopUpViewController"

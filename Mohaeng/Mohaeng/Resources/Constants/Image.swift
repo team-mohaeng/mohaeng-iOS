@@ -106,5 +106,11 @@ extension Const {
         
         // mohaeng feed image
         static let imgHand = UIImage(named: "feedHandGrpX")
+        
+        // mood feed image
+        static let badImage = UIImage(named: "badImage")
+        static let sosoImage = UIImage(named: "sosoImage")
+        static let happyImage = UIImage(named: "happyImage")
+        static let rightBackButton = UIImage(named: "rightBackButton")
     }
 }
