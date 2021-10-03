@@ -43,6 +43,7 @@ extension Const {
             static let feedDetail = "FeedDetail"
             static let writing = "Writing"
             static let mood = "Mood"
+            static let sticker = "Sticker"
         }
     }
 }
