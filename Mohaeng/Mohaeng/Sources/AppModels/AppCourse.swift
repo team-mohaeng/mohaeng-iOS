@@ -94,15 +94,60 @@ enum AppCourse: Int {
     }
     
     func getBigImage() -> UIImage {
-        return UIImage()
+        switch self {
+        case .health:
+            return Const.Image.redBigImage
+        case .selfCare:
+            return Const.Image.orangeBigImage
+        case .habit:
+            return Const.Image.yellowBigImage
+        case .challenge:
+            return Const.Image.greenBigImage
+        case .memory:
+            return Const.Image.blueBigImage
+        case .love:
+            return Const.Image.indigoBigImage
+        case .culture:
+            return Const.Image.purpleBigImage
+        }
     }
     
     func getLibraryImage() -> UIImage {
-        return UIImage()
+        switch self {
+        case .health:
+            return Const.Image.redLibraryImage
+        case .selfCare:
+            return Const.Image.orangeLibraryImage
+        case .habit:
+            return Const.Image.yellowLibraryImage
+        case .challenge:
+            return Const.Image.greenLibraryImage
+        case .memory:
+            return Const.Image.blueLibraryImage
+        case .love:
+            return Const.Image.indigoLibraryImage
+        case .culture:
+            return Const.Image.purpleLibraryImage
+        }
     }
     
     func getSmallImage() -> UIImage {
-        return UIImage()
+        switch self {
+        case .health:
+            return Const.Image.redSmallImage
+        case .selfCare:
+            return Const.Image.orangeSmallImage
+        case .habit:
+            return Const.Image.yellowSmallImage
+        case .challenge:
+            return Const.Image.greenSmallImage
+        case .memory:
+            return Const.Image.blueSmallImage
+        case .love:
+            return Const.Image.indigoSmallImage
+        case .culture:
+            return Const.Image.purpleSmallImage
+        }
     }
     
     func getUndoneStampImage() -> UIImage {
