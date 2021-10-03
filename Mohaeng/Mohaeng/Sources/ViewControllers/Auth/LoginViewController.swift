@@ -9,17 +9,18 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    //MARK: - @IBOutlets
     @IBOutlet var kakaoLoginButton: UIButton!
     @IBOutlet var appleLoginButton: UIButton!
     @IBOutlet var emailLoginButton: UIButton!
     
     // MARK: - View Life Cycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
+        setButtonUI()
     }
     
+    // MARK: - Functions
     private func setButtonUI() {
         [kakaoLoginButton, appleLoginButton, emailLoginButton].forEach {
             $0?.makeRounded(radius: 6)
@@ -28,6 +29,7 @@ class LoginViewController: UIViewController {
         emailLoginButton.layer.borderWidth = 1
     }
     
+    //MARK: - @IBAction
     @IBAction func touchSignEmailButton(_ sender: UIButton) {
         let signupFirstStoryboard = UIStoryboard(name: Const.Storyboard.Name.signUpFirst, bundle: nil)
         guard let signUpFirstViewController  = signupFirstStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.signUpFirst) as? SignUpFirstViewController else {
