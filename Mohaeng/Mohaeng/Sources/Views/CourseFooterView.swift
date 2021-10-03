@@ -42,7 +42,7 @@ class CourseFooterView: UITableViewHeaderFooterView {
         case .undone:
             line.lineDashPhase = 5
             line.lineDashPattern = [RoadMapPath(centerY: 0).getDashPattern(), RoadMapPath(centerY: 0).getBlankPattern()]
-            line.strokeColor = UIColor.roadUndoneGrey.cgColor
+            line.strokeColor = UIColor.Grey4.cgColor
         case .none:
             return
         }
