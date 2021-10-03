@@ -35,6 +35,8 @@ class MoodViewController: UIViewController {
     @IBOutlet weak var moodCollectionView: UICollectionView!
     @IBOutlet weak var nextButton: UIButton!
     
+    @IBOutlet weak var nextButtonHeightConstraint: NSLayoutConstraint!
+    
     private let closeButton = UIButton().then {
         $0.setImage(UIImage(named: "btnWritingX")?.resized(to: CGSize(width: 20, height: 20)), for: .normal )
         $0.snp.makeConstraints {
@@ -54,9 +56,14 @@ class MoodViewController: UIViewController {
         registerXib()
         initCarouselAttribute()
         initNavigationBar()
+        setConstraintWitouthNotch()
     }
     
     // MARK: - Functions
+    
+    private func setConstraintWitouthNotch() {
+        nextButtonHeightConstraint.constant = UIDevice.current.hasNotch ? 76 : 56
+    }
     
     private func makeRoundDot() {
         firstDot.makeRounded(radius: 5)
