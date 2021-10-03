@@ -35,6 +35,7 @@ class HomeViewController: UIViewController {
         initAttributes()
         makeShadow()
         setHourlyMent()
+        addCharaterStyleTapGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,6 +66,14 @@ class HomeViewController: UIViewController {
         self.navigationController?.pushViewController(settingViewController, animated: true)
     }
     
+    @objc func pushToStyleController() {
+        let charaterStoryboard = UIStoryboard(name: Const.Storyboard.Name.characterStyle, bundle: nil)
+        guard let charaterStyleViewController = charaterStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.characterStyle) as? CharacterStyleViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(charaterStyleViewController, animated: true)
+    }
+    
     // MARK: - Functions
     
     private func initNavigationBar() {
@@ -92,11 +101,16 @@ class HomeViewController: UIViewController {
     
     private func makeShadow() {
         challengeInfoShadowView.makeRounded(radius: 10)
-        challengeInfoShadowView.dropShadow(rounded: 10)
+        challengeInfoShadowView.dropShadowWithMaskLayer(rounded: 10)
         progressShadowView.makeRounded(radius: 22)
-        progressShadowView.dropShadow(rounded: 10)
+        progressShadowView.dropShadowWithMaskLayer(rounded: 10)
         customCharaterShadowView.makeRounded(radius: 22)
-        customCharaterShadowView.dropShadow(rounded: 10)
+        customCharaterShadowView.dropShadowWithMaskLayer(rounded: 10)
+    }
+    
+    private func addCharaterStyleTapGesture() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(pushToStyleController))
+        customCharaterButtonView.addGestureRecognizer(gesture)
     }
     
     private func rotateProgressView() {

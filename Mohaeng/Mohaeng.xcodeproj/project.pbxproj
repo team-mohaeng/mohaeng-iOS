@@ -167,6 +167,14 @@
 		565A1EF82700CF81000CAB1B /* MyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565A1EF72700CF81000CAB1B /* MyPage.swift */; };
 		56A05EB22700699D006D6ECE /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A05EB12700699D006D6ECE /* DateCollectionViewCell.swift */; };
 		56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA6C2689C0D10056155A /* .swiftlint.yml */; };
+		AA190EBF26FE62E30059E100 /* BackgroundCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA190EBD26FE62E30059E100 /* BackgroundCollectionViewCell.swift */; };
+		AA190EC026FE62E30059E100 /* BackgroundCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA190EBE26FE62E30059E100 /* BackgroundCollectionViewCell.xib */; };
+		AA7E0AAB26FC615C00106DC2 /* CharacterStyle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7E0AAA26FC615C00106DC2 /* CharacterStyle.storyboard */; };
+		AA7E0AAD26FC64D500106DC2 /* CharacterStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7E0AAC26FC64D500106DC2 /* CharacterStyleViewController.swift */; };
+		AA7E0AB326FC6C1900106DC2 /* CharacterTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7E0AB126FC6C1900106DC2 /* CharacterTypeCollectionViewCell.swift */; };
+		AA7E0AB426FC6C1900106DC2 /* CharacterTypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA7E0AB226FC6C1900106DC2 /* CharacterTypeCollectionViewCell.xib */; };
+		AA7E0AB726FC998000106DC2 /* CharacterColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7E0AB526FC998000106DC2 /* CharacterColorCollectionViewCell.swift */; };
+		AA7E0AB826FC998000106DC2 /* CharacterColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA7E0AB626FC998000106DC2 /* CharacterColorCollectionViewCell.xib */; };
 		EC2FF5C626F343C000411F31 /* MoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */; };
 		EC2FF5C726F343C000411F31 /* MoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */; };
 		EC31776326FDB50E0076BCEC /* CarouselLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */; };
@@ -346,6 +354,14 @@
 		56A05EB12700699D006D6ECE /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		56DCAA242689BB9B0056155A /* Mohaeng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mohaeng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCAA6C2689C0D10056155A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		AA190EBD26FE62E30059E100 /* BackgroundCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCollectionViewCell.swift; sourceTree = "<group>"; };
+		AA190EBE26FE62E30059E100 /* BackgroundCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BackgroundCollectionViewCell.xib; sourceTree = "<group>"; };
+		AA7E0AAA26FC615C00106DC2 /* CharacterStyle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CharacterStyle.storyboard; sourceTree = "<group>"; };
+		AA7E0AAC26FC64D500106DC2 /* CharacterStyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStyleViewController.swift; sourceTree = "<group>"; };
+		AA7E0AB126FC6C1900106DC2 /* CharacterTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTypeCollectionViewCell.swift; sourceTree = "<group>"; };
+		AA7E0AB226FC6C1900106DC2 /* CharacterTypeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterTypeCollectionViewCell.xib; sourceTree = "<group>"; };
+		AA7E0AB526FC998000106DC2 /* CharacterColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterColorCollectionViewCell.swift; sourceTree = "<group>"; };
+		AA7E0AB626FC998000106DC2 /* CharacterColorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterColorCollectionViewCell.xib; sourceTree = "<group>"; };
 		EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoodCollectionViewCell.swift; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MoodCollectionViewCell.xib; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselLayoutView.swift; sourceTree = "<group>"; };
@@ -435,6 +451,7 @@
 				561D75D526F0BFA30028DBCA /* Home.storyboard */,
 				561D75D626F0BFA30028DBCA /* Notification.storyboard */,
 				561D75D726F0BFA30028DBCA /* Medal.storyboard */,
+				AA7E0AAA26FC615C00106DC2 /* CharacterStyle.storyboard */,
 				561D777C26F36C520028DBCA /* MyPage.storyboard */,
 			);
 			path = Home;
@@ -546,6 +563,7 @@
 		561D760B26F0BFA40028DBCA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				AA7E0AAE26FC6BD900106DC2 /* CharaterCollectionView */,
 				DD64327726F5DC0A00D71787 /* BadgeCollectionView */,
 				561D760F26F0BFA40028DBCA /* NotificationCollectionView */,
 				561D761626F0BFA40028DBCA /* FeedCollectionView */,
@@ -553,6 +571,8 @@
 				561D761F26F0BFA40028DBCA /* SettingTableViewCell.swift */,
 				561D762026F0BFA40028DBCA /* CourseTableView */,
 				561D762726F0BFA40028DBCA /* FeedView */,
+				AA190EBD26FE62E30059E100 /* BackgroundCollectionViewCell.swift */,
+				AA190EBE26FE62E30059E100 /* BackgroundCollectionViewCell.xib */,
 				56A05EB027006963006D6ECE /* MyPageCalendar */,
 			);
 			path = Cells;
@@ -654,6 +674,7 @@
 				561D763526F0BFA40028DBCA /* SettingViewController.swift */,
 				561D763726F0BFA40028DBCA /* HomeViewController.swift */,
 				561D763826F0BFA40028DBCA /* NotificationViewController.swift */,
+				AA7E0AAC26FC64D500106DC2 /* CharacterStyleViewController.swift */,
 				561D777E26F36C970028DBCA /* MyPageViewController.swift */,
 			);
 			path = Home;
@@ -868,6 +889,25 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		AA7E0AAE26FC6BD900106DC2 /* CharaterCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				AA7E0AB126FC6C1900106DC2 /* CharacterTypeCollectionViewCell.swift */,
+				AA7E0AB226FC6C1900106DC2 /* CharacterTypeCollectionViewCell.xib */,
+				AA7E0AB526FC998000106DC2 /* CharacterColorCollectionViewCell.swift */,
+				AA7E0AB626FC998000106DC2 /* CharacterColorCollectionViewCell.xib */,
+			);
+			path = CharaterCollectionView;
+			sourceTree = "<group>";
+		};
+		D0287158D44B2BB35A2072A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A97E4F8107F8EB85B4E4A69 /* Pods_Mohaeng.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DD64327726F5DC0A00D71787 /* BadgeCollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -955,14 +995,17 @@
 				561D76DA26F0BFA40028DBCA /* FirstDayTableViewCell.xib in Resources */,
 				561D76F126F0BFA40028DBCA /* HappyPopUpViewController.xib in Resources */,
 				561D76D626F0BFA40028DBCA /* CourseLibraryCollectionViewCell.xib in Resources */,
+				AA7E0AAB26FC615C00106DC2 /* CharacterStyle.storyboard in Resources */,
 				561D76C026F0BFA40028DBCA /* GmarketSansTTFMedium.ttf in Resources */,
 				561D76A726F0BFA40028DBCA /* Writing.storyboard in Resources */,
 				561D76AA26F0BFA40028DBCA /* Feed.storyboard in Resources */,
 				EC2FF5C726F343C000411F31 /* MoodCollectionViewCell.xib in Resources */,
 				561D769F26F0BFA40028DBCA /* SignUpThird.storyboard in Resources */,
+				AA7E0AB426FC6C1900106DC2 /* CharacterTypeCollectionViewCell.xib in Resources */,
 				561D773326F0BFA40028DBCA /* ChallengeStampView.xib in Resources */,
 				561D76CC26F0BFA40028DBCA /* BubbleCollectionViewCell.xib in Resources */,
 				561D773626F0BFA40028DBCA /* MyDrawerCollectionReusableView.xib in Resources */,
+				AA190EC026FE62E30059E100 /* BackgroundCollectionViewCell.xib in Resources */,
 				561D76C126F0BFA40028DBCA /* SpoqaHanSansNeo-Light.otf in Resources */,
 				561D773926F0BFA40028DBCA /* CourseHeaderView.xib in Resources */,
 				561D76AF26F0BFA40028DBCA /* EmptyChallenge.storyboard in Resources */,
@@ -992,6 +1035,7 @@
 				561D76CD26F0BFA40028DBCA /* ProfileBubbleCollectionViewCell.xib in Resources */,
 				561D76BF26F0BFA40028DBCA /* BMHANNA_11yrs_otf.otf in Resources */,
 				561D76AD26F0BFA40028DBCA /* CourseLibrary.storyboard in Resources */,
+				AA7E0AB826FC998000106DC2 /* CharacterColorCollectionViewCell.xib in Resources */,
 				AAED18DA26F11DF0009FE781 /* StickerCollectionViewCell.xib in Resources */,
 				561D76A326F0BFA40028DBCA /* Code.storyboard in Resources */,
 				561D769E26F0BFA40028DBCA /* SignUpSecond.storyboard in Resources */,
@@ -1108,6 +1152,7 @@
 				561D76EB26F0BFA40028DBCA /* NotificationViewController.swift in Sources */,
 				561D773C26F0BFA50028DBCA /* PopUpActionDelegate.swift in Sources */,
 				561D770426F0BFA40028DBCA /* ChallengeViewController.swift in Sources */,
+				AA7E0AB326FC6C1900106DC2 /* CharacterTypeCollectionViewCell.swift in Sources */,
 				561D772826F0BFA40028DBCA /* MyDrawerCollectionReusableView.swift in Sources */,
 				561D76DD26F0BFA40028DBCA /* EvenDayTableViewCell.swift in Sources */,
 				561D770026F0BFA40028DBCA /* TabbarViewController.swift in Sources */,
@@ -1132,6 +1177,7 @@
 				561D76B526F0BFA40028DBCA /* Storyboard.swift in Sources */,
 				561D773E26F0BFA50028DBCA /* SceneDelegate.swift in Sources */,
 				561D76D826F0BFA40028DBCA /* OddDayTableViewCell.swift in Sources */,
+				AA190EBF26FE62E30059E100 /* BackgroundCollectionViewCell.swift in Sources */,
 				561D771E26F0BFA40028DBCA /* MyDrawer.swift in Sources */,
 				561D771B26F0BFA40028DBCA /* SignUpUser.swift in Sources */,
 				561D76CA26F0BFA40028DBCA /* BubbleCollectionViewCell.swift in Sources */,
@@ -1139,6 +1185,7 @@
 				561D771526F0BFA40028DBCA /* AppModelsExmaple.swift in Sources */,
 				561D773826F0BFA40028DBCA /* FeedHeaderView.swift in Sources */,
 				561D76B826F0BFA40028DBCA /* Font.swift in Sources */,
+				AA7E0AB726FC998000106DC2 /* CharacterColorCollectionViewCell.swift in Sources */,
 				561D76BB26F0BFA40028DBCA /* LottieExmaple.swift in Sources */,
 				561D771826F0BFA40028DBCA /* AppDate.swift in Sources */,
 				561D771F26F0BFA40028DBCA /* PushNoti.swift in Sources */,
@@ -1177,6 +1224,7 @@
 				561D770826F0BFA40028DBCA /* FeedAPI.swift in Sources */,
 				561D76EC26F0BFA40028DBCA /* AnimationPopUpViewController.swift in Sources */,
 				561D772926F0BFA40028DBCA /* ChallengeStampView.swift in Sources */,
+				AA7E0AAD26FC64D500106DC2 /* CharacterStyleViewController.swift in Sources */,
 				56A05EB22700699D006D6ECE /* DateCollectionViewCell.swift in Sources */,
 				561D76F726F0BFA40028DBCA /* SignUpSecondViewController.swift in Sources */,
 				561D772726F0BFA40028DBCA /* CourseLibrary.swift in Sources */,
