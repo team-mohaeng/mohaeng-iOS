@@ -136,5 +136,12 @@ extension Const {
         static let purpleBigImage = UIImage(named: "purpleBigImage")!
         static let purpleLibraryImage = UIImage(named: "purpleLibraryImage")!
         static let purpleSmallImage = UIImage(named: "purpleSmallImage")!
+
+        // mood feed image
+        static let badImage = UIImage(named: "badImage")
+        static let sosoImage = UIImage(named: "sosoImage")
+        static let happyImage = UIImage(named: "happyImage")
+        static let rightBackButton = UIImage(named: "rightBackButton")
+
     }
 }
