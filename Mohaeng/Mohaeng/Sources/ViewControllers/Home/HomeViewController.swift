@@ -44,20 +44,9 @@ class HomeViewController: UIViewController {
     
     // MARK: - @IBAction Functions
     
-    @objc func touchAwardButton(sender: UIButton) {
-        
-        let moodStoryboard = UIStoryboard(name: Const.Storyboard.Name.mood, bundle: nil)
-        guard let moodViewController = moodStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.mood) as? MoodViewController else {
-            return
-        }
-//
-//        moodViewController.modalPresentationStyle = .fullScreen
-        
-        let navigationController = UINavigationController(rootViewController: moodViewController)
-        navigationController.modalPresentationStyle = .fullScreen
-        self.present(navigationController, animated: true, completion: nil)
-        
-//        self.navigationController?.pushViewController(settingViewController, animated: true)
+    @objc func touchAwardButton(sender: UIButton) {        
+        let badgeViewController = BadgeViewController()
+        self.navigationController?.pushViewController(badgeViewController, animated: true)
     }
     
     @objc func touchSettingButton(sender: UIButton) {
