@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,135 +12,249 @@
         <!--Sign Up Second View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="SignUpSecondViewController" id="Y6W-OH-hqX" customClass="SignUpSecondViewController" customModule="Journey" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpSecondViewController" id="Y6W-OH-hqX" customClass="SignUpSecondViewController" customModule="Mohaeng" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별을 선택해주겠어?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FF-uY-WfC">
-                                <rect key="frame" x="24" y="97" width="154" height="22"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <color key="textColor" name="Black1Text"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="약관동의" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpb-Sm-v4s">
+                                <rect key="frame" x="24" y="76" width="76.333333333333329" height="26.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0XP-e7-Ip8">
-                                <rect key="frame" x="24" y="151" width="158" height="47"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="eJf-TE-okF">
+                                <rect key="frame" x="24" y="155.33333333333334" width="327" height="126.00000000000003"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kR-Ru-owS">
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="24"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체 동의합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tap-IG-HAy">
+                                                <rect key="frame" x="0.0" y="0.0" width="303" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TP-mj-ugW">
+                                                <rect key="frame" x="303" y="0.0" width="24" height="24"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="24" id="RQp-AL-cj8"/>
+                                                    <constraint firstAttribute="height" constant="24" id="pfO-Tx-IRM"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="uncheckButton"/>
+                                                <state key="selected" image="checkButton"/>
+                                                <connections>
+                                                    <action selector="touchCheckButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uWj-dR-Xob"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s4W-Md-FYH">
+                                        <rect key="frame" x="0.0" y="51" width="327" height="24"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgV-qN-8gk">
+                                                <rect key="frame" x="0.0" y="0.0" width="303" height="24"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="서비스">
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
+                                                            <integer key="NSUnderline" value="1"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content=" ">
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                                            <integer key="NSUnderline" value="1"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="이용약관">
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
+                                                            <integer key="NSUnderline" value="1"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="(">
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="필수">
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
+                                                            <integer key="NSUnderline" value="1"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content=")">
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Lj-Gk-QiP">
+                                                <rect key="frame" x="303" y="0.0" width="24" height="24"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="N52-3x-TRJ"/>
+                                                    <constraint firstAttribute="width" constant="24" id="iiq-Ne-dht"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="uncheckButton"/>
+                                                <state key="selected" image="checkButton"/>
+                                                <connections>
+                                                    <action selector="touchCheckButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="RW5-5x-OP6"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i7r-jG-lVQ">
+                                        <rect key="frame" x="0.0" y="101.99999999999997" width="327" height="24"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gA8-Zg-JpY">
+                                                <rect key="frame" x="0.0" y="0.0" width="303" height="24"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="개인정보">
+                                                        <attributes>
+                                                            <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
+                                                            <integer key="NSUnderline" value="1"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content=" ">
+                                                        <attributes>
+                                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                                            <integer key="NSUnderline" value="1"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="수집">
+                                                        <attributes>
+                                                            <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
+                                                            <integer key="NSUnderline" value="1"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content=" ">
+                                                        <attributes>
+                                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                                            <integer key="NSUnderline" value="1"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="및">
+                                                        <attributes>
+                                                            <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
+                                                            <integer key="NSUnderline" value="1"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content=" ">
+                                                        <attributes>
+                                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                                            <integer key="NSUnderline" value="1"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="이용">
+                                                        <attributes>
+                                                            <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
+                                                            <integer key="NSUnderline" value="1"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content=" ">
+                                                        <attributes>
+                                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                                            <integer key="NSUnderline" value="1"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="동의">
+                                                        <attributes>
+                                                            <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
+                                                            <integer key="NSUnderline" value="1"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="(">
+                                                        <attributes>
+                                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="필수">
+                                                        <attributes>
+                                                            <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
+                                                            <integer key="NSUnderline" value="1"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content=")">
+                                                        <attributes>
+                                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdh-je-rUA">
+                                                <rect key="frame" x="303" y="0.0" width="24" height="24"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="24" id="THX-yd-d3G"/>
+                                                    <constraint firstAttribute="height" constant="24" id="gmS-xl-16p"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="uncheckButton"/>
+                                                <state key="selected" image="checkButton"/>
+                                                <connections>
+                                                    <action selector="touchCheckButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="GFO-Hq-gcf"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLl-sL-jW8">
+                                <rect key="frame" x="24" y="456.33333333333331" width="327" height="40"/>
+                                <color key="backgroundColor" name="LoginYellow"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="0XP-e7-Ip8" secondAttribute="height" multiplier="158:47" id="ztN-c4-1AM"/>
+                                    <constraint firstAttribute="height" constant="40" id="frc-RV-bE2"/>
+                                    <constraint firstAttribute="width" constant="327" id="o4A-Tq-gmV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="여자">
-                                    <color key="titleColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="0.8980392157" colorSpace="calibratedRGB"/>
-                                </state>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="동의하기">
+                                            <attributes>
+                                                <color key="NSColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="16" name="AppleSDGothicNeo-SemiBold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
                                 <connections>
-                                    <action selector="touchWomanButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="k72-Yp-lKH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbb-n0-WeW">
-                                <rect key="frame" x="193" y="151" width="158" height="47"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="vbb-n0-WeW" secondAttribute="height" multiplier="158:47" id="IMh-uH-ywY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="남자">
-                                    <color key="titleColor" red="0.85882352941176465" green="0.85882352941176465" blue="0.85882352941176465" alpha="0.89803921568627454" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="touchManButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="W5H-wh-3Yq"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당신이 태어난 해가 궁금하군" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEB-Xh-hYy">
-                                <rect key="frame" x="24" y="293" width="199.33333333333334" height="21.666666666666686"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <color key="textColor" name="Black1Text"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="indicator2" translatesAutoresizingMaskIntoConstraints="NO" id="ntf-KW-2qA">
-                                <rect key="frame" x="165.66666666666666" y="685" width="44" height="8"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="GwA-Q1-nae"/>
-                                    <constraint firstAttribute="height" constant="8" id="iT1-kU-JQG"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysf-Md-YMZ">
-                                <rect key="frame" x="24" y="346.66666666666669" width="327" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="f59-fO-fnb"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="touchModalButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1HX-81-2tE"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ujk-Ko-azY">
-                                <rect key="frame" x="24" y="370.66666666666669" width="327" height="1"/>
-                                <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="327" id="8Bl-xv-L4Z"/>
-                                    <constraint firstAttribute="height" constant="1" id="VbG-U6-Dbp"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="출생연도 선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jh-QJ-7WL">
-                                <rect key="frame" x="30" y="348.66666666666669" width="129" height="16"/>
-                                <color key="tintColor" name="Black1Text"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="129" id="JDs-Wd-BD8"/>
-                                    <constraint firstAttribute="height" constant="16" id="hrG-1B-f3e"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOd-Q3-Ahn">
-                                <rect key="frame" x="24" y="704" width="327" height="48"/>
-                                <color key="backgroundColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="9JG-nj-vKg"/>
-                                    <constraint firstAttribute="width" constant="327" id="K6B-wl-0q1"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                <state key="normal" title="계속하기">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="touchNextSecondButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="sAu-8S-vMU"/>
+                                    <action selector="touchAgreeButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="G65-fr-Psd"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vbb-n0-WeW" secondAttribute="trailing" constant="24" id="0MN-Vp-Xhn"/>
-                            <constraint firstItem="fOd-Q3-Ahn" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="2EU-hG-3eo"/>
-                            <constraint firstItem="Ysf-Md-YMZ" firstAttribute="top" secondItem="LEB-Xh-hYy" secondAttribute="bottom" constant="32" id="3TA-er-W3z"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="fOd-Q3-Ahn" secondAttribute="bottom" constant="26" id="3oH-4X-ekX"/>
-                            <constraint firstItem="6FF-uY-WfC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="53" id="7Za-ww-PH2"/>
-                            <constraint firstItem="ntf-KW-2qA" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="HGj-3f-fVJ"/>
-                            <constraint firstItem="ujk-Ko-azY" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="24" id="HpG-2S-bQn"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ysf-Md-YMZ" secondAttribute="trailing" constant="24" id="IXc-cQ-jVZ"/>
-                            <constraint firstItem="ujk-Ko-azY" firstAttribute="top" secondItem="Ysf-Md-YMZ" secondAttribute="bottom" id="JWP-Rd-R4X"/>
-                            <constraint firstItem="6FF-uY-WfC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="MAL-VW-wF1"/>
-                            <constraint firstItem="0XP-e7-Ip8" firstAttribute="height" secondItem="vbb-n0-WeW" secondAttribute="height" id="NJo-SQ-tMV"/>
-                            <constraint firstItem="0XP-e7-Ip8" firstAttribute="width" secondItem="vbb-n0-WeW" secondAttribute="width" id="WYw-T1-eCK"/>
-                            <constraint firstItem="vbb-n0-WeW" firstAttribute="top" secondItem="6FF-uY-WfC" secondAttribute="bottom" constant="32" id="XpW-UB-34F"/>
-                            <constraint firstAttribute="trailing" secondItem="ujk-Ko-azY" secondAttribute="trailing" constant="24" id="Yrr-C5-1xg"/>
-                            <constraint firstItem="6jh-QJ-7WL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="eQx-Bm-1wh"/>
-                            <constraint firstItem="LEB-Xh-hYy" firstAttribute="top" secondItem="0XP-e7-Ip8" secondAttribute="bottom" constant="95" id="fN5-Zz-emk"/>
-                            <constraint firstItem="vbb-n0-WeW" firstAttribute="leading" secondItem="0XP-e7-Ip8" secondAttribute="trailing" constant="11" id="gUV-wG-dZB"/>
-                            <constraint firstItem="6jh-QJ-7WL" firstAttribute="top" secondItem="LEB-Xh-hYy" secondAttribute="bottom" constant="34" id="gun-Cl-3MZ"/>
-                            <constraint firstItem="0XP-e7-Ip8" firstAttribute="top" secondItem="6FF-uY-WfC" secondAttribute="bottom" constant="32" id="qIL-Co-zlV"/>
-                            <constraint firstItem="fOd-Q3-Ahn" firstAttribute="top" secondItem="ntf-KW-2qA" secondAttribute="bottom" constant="11" id="qbC-ug-YdC"/>
-                            <constraint firstItem="0XP-e7-Ip8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="tdK-c1-Qvo"/>
-                            <constraint firstItem="Ysf-Md-YMZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="vuD-Fp-Ahu"/>
-                            <constraint firstItem="LEB-Xh-hYy" firstAttribute="leading" secondItem="Ysf-Md-YMZ" secondAttribute="leading" id="znS-FT-Ffe"/>
+                            <constraint firstItem="dLl-sL-jW8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="0Gf-Rp-nKl"/>
+                            <constraint firstItem="eJf-TE-okF" firstAttribute="top" secondItem="lpb-Sm-v4s" secondAttribute="bottom" constant="53" id="3Di-Il-bgo"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eJf-TE-okF" secondAttribute="trailing" constant="24" id="4fB-wa-CA4"/>
+                            <constraint firstItem="lpb-Sm-v4s" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="32" id="5cW-T3-BWB"/>
+                            <constraint firstItem="lpb-Sm-v4s" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="7Bt-HT-q9H"/>
+                            <constraint firstItem="eJf-TE-okF" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="7u2-Qk-YR2"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dLl-sL-jW8" secondAttribute="trailing" constant="24" id="A4p-Yd-ZPJ"/>
+                            <constraint firstItem="dLl-sL-jW8" firstAttribute="top" secondItem="eJf-TE-okF" secondAttribute="bottom" constant="175" id="QIF-XV-iDY"/>
+                            <constraint firstItem="eJf-TE-okF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="Wae-AD-CMR"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="manButton" destination="vbb-n0-WeW" id="1KH-rV-3S5"/>
-                        <outlet property="touchNextPage2Button" destination="fOd-Q3-Ahn" id="cNE-Ka-iug"/>
-                        <outlet property="womanButton" destination="0XP-e7-Ip8" id="sP3-GC-IiW"/>
-                        <outlet property="yearLabel" destination="6jh-QJ-7WL" id="gir-u2-GTY"/>
+                        <outlet property="agreeButton" destination="dLl-sL-jW8" id="vbp-Gd-AhV"/>
+                        <outlet property="firstCheckButton" destination="4TP-mj-ugW" id="LiZ-DQ-sRE"/>
+                        <outlet property="secondCheckButton" destination="3Lj-Gk-QiP" id="jCL-U4-5g8"/>
+                        <outlet property="thirdCheckButton" destination="jdh-je-rUA" id="H8p-aU-ALF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -148,9 +263,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="indicator2" width="44" height="8"/>
-        <namedColor name="Black1Text">
-            <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="checkButton" width="24" height="24"/>
+        <image name="uncheckButton" width="24" height="24"/>
+        <namedColor name="LoginYellow">
+            <color red="1" green="0.94900000095367432" blue="0.81599998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
