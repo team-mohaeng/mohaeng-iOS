@@ -31,25 +31,12 @@ class StickerViewController: UIViewController {
     // MARK: - Functions
     
     func initStickerAnimation() {
+        let stickerButtons: [UIButton] = [sticker1Button, sticker2Button, sticker3Button, sticker4Button, sticker5Button, sticker6Button]
         UIView.animateKeyframes(withDuration: 1, delay: 0) {
-            [self] in
-            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5) {
-                sticker1Button.alpha = 1
-            }
-            UIView.addKeyframe(withRelativeStartTime: 1 / 6, relativeDuration: 0.5) {
-                sticker2Button.alpha = 1
-            }
-            UIView.addKeyframe(withRelativeStartTime: 2 / 6, relativeDuration: 0.5) {
-                sticker3Button.alpha = 1
-            }
-            UIView.addKeyframe(withRelativeStartTime: 3 / 6, relativeDuration: 0.5) {
-                sticker4Button.alpha = 1
-            }
-            UIView.addKeyframe(withRelativeStartTime: 4 / 6, relativeDuration: 0.5) {
-                sticker5Button.alpha = 1
-            }
-            UIView.addKeyframe(withRelativeStartTime: 5 / 6, relativeDuration: 0.5) {
-                sticker6Button.alpha = 1
+            for index in 0..<stickerButtons.count {
+                UIView.addKeyframe(withRelativeStartTime: Double(index) / 6, relativeDuration: 1 / 3) {
+                    stickerButtons[index].alpha = 1
+                }
             }
         }
     }
