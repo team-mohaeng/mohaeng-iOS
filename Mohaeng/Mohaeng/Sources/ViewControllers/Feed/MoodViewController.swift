@@ -14,6 +14,7 @@ class MoodViewController: UIViewController {
     let cellSize = CGSize(width: 160, height: 160)
     var minItemSpacing: CGFloat = 10
     let moodImageArray = [Const.Image.badImage, Const.Image.sosoImage, Const.Image.happyImage]
+    var moodImage = Const.Image.badImage
     
     private var currentDate: AppDate?
     private var signUpUser: SignUpUser?
@@ -25,7 +26,6 @@ class MoodViewController: UIViewController {
     @IBOutlet weak var thirdDotWidth: NSLayoutConstraint!
     @IBOutlet weak var pageStackView: UIStackView!
     
-    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var firstDot: UIView!
     @IBOutlet weak var secondDot: UIView!
     @IBOutlet weak var thirdDot: UIView!
@@ -34,6 +34,15 @@ class MoodViewController: UIViewController {
     @IBOutlet weak var moodTodayLabel: UILabel!
     @IBOutlet weak var moodCollectionView: UICollectionView!
     @IBOutlet weak var nextButton: UIButton!
+    
+    private let closeButton = UIButton().then {
+        $0.setImage(UIImage(named: "btnWritingX")?.resized(to: CGSize(width: 20, height: 20)), for: .normal )
+        $0.snp.makeConstraints {
+            $0.width.equalTo(63)
+            $0.height.equalTo(44)
+        }
+        $0.tintColor = .Black
+    }
     
     // MARK: - View Life Cycle
     
@@ -44,8 +53,7 @@ class MoodViewController: UIViewController {
         assignDelegate()
         registerXib()
         initCarouselAttribute()
-        hideNavigationBar()
-        initDateLabel()
+        initNavigationBar()
     }
     
     // MARK: - Functions
@@ -61,16 +69,17 @@ class MoodViewController: UIViewController {
         nextButton.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     
-    private func hideNavigationBar() {
-        navigationController?.navigationBar.isHidden = true
-    }
+    private func initNavigationBar() {
+        navigationController?.initTransparentNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
+        closeButton.addTarget(self, action: #selector(buttonDidTapped(_:)), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: closeButton)
 
-    private func initDateLabel() {
-        self.currentDate = AppDate()
-        guard let month = currentDate?.getMonth() else { return }
-        guard let date = currentDate?.getDay() else { return }
-     
-        dateLabel.text = "\(month)월 \(date)일"
+        let currentDate = AppDate()
+        let currentMonth = currentDate.getMonth()
+        let currentDay = currentDate.getDay()
+        navigationItem.title = "\(currentMonth)월 \(currentDay)일"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.spoqaHanSansNeo(weight: .regular, size: 14), NSAttributedString.Key.foregroundColor: UIColor.Black]
+
     }
     
     private func assignDelegate() {
@@ -119,21 +128,24 @@ class MoodViewController: UIViewController {
     // MARK: - @IBAction Properties
     
     @IBAction func touchNextButton(_ sender: Any) {
-        
-        let writingStoryboard = UIStoryboard(name: Const.Storyboard.Name.writing, bundle: nil)
-        guard let writingViewController = writingStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.writing) as? WritingViewController else { return }
-        
-        self.present(writingViewController, animated: true, completion: nil)
-        writingViewController.modalPresentationStyle = .fullScreen
+        if let moodImage = moodImage {
+            let writingViewController = WritingViewController(with: moodImage)
+            
+            self.navigationController?.pushViewController(writingViewController, animated: true)
+        }
         
     }
     
-    @IBAction func tapDissmissButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-        print("1")
+    @objc
+    private func buttonDidTapped(_ sender: UIButton) {
+        switch sender {
+        case closeButton:
+            self.dismiss(animated: true, completion: nil)
+        default:
+            break
+        }
     }
 }
-
     // MARK: - Extension
 
 extension MoodViewController: UICollectionViewDelegate {
@@ -161,6 +173,8 @@ extension MoodViewController: UICollectionViewDelegate {
         default:
             break
         }
+        
+        moodImage = moodImageArray[Int(roundedIndex)]
     }
 }
 

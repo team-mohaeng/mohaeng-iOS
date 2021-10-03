@@ -19,7 +19,6 @@
 		561D76A426F0BFA40028DBCA /* SignUpFirst.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D75DF26F0BFA30028DBCA /* SignUpFirst.storyboard */; };
 		561D76A526F0BFA40028DBCA /* FindPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D75E026F0BFA30028DBCA /* FindPassword.storyboard */; };
 		561D76A626F0BFA40028DBCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D75E126F0BFA30028DBCA /* LaunchScreen.storyboard */; };
-		561D76A726F0BFA40028DBCA /* Writing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D75E426F0BFA30028DBCA /* Writing.storyboard */; };
 		561D76A826F0BFA40028DBCA /* MyDrawer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D75E526F0BFA30028DBCA /* MyDrawer.storyboard */; };
 		561D76A926F0BFA40028DBCA /* FeedDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D75E626F0BFA30028DBCA /* FeedDetail.storyboard */; };
 		561D76AA26F0BFA40028DBCA /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D75E726F0BFA30028DBCA /* Feed.storyboard */; };
@@ -98,7 +97,6 @@
 		561D76FA26F0BFA40028DBCA /* SignUpThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D764926F0BFA40028DBCA /* SignUpThirdViewController.swift */; };
 		561D76FB26F0BFA40028DBCA /* FeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D764B26F0BFA40028DBCA /* FeedDetailViewController.swift */; };
 		561D76FC26F0BFA40028DBCA /* MyDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D764C26F0BFA40028DBCA /* MyDrawerViewController.swift */; };
-		561D76FD26F0BFA40028DBCA /* WritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D764D26F0BFA40028DBCA /* WritingViewController.swift */; };
 		561D76FE26F0BFA40028DBCA /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D764E26F0BFA40028DBCA /* MoodViewController.swift */; };
 		561D76FF26F0BFA40028DBCA /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D764F26F0BFA40028DBCA /* FeedViewController.swift */; };
 		561D770026F0BFA40028DBCA /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D765026F0BFA40028DBCA /* TabbarViewController.swift */; };
@@ -163,9 +161,6 @@
 		561D773D26F0BFA50028DBCA /* ProtocolsExmaple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D769826F0BFA40028DBCA /* ProtocolsExmaple.swift */; };
 		561D773E26F0BFA50028DBCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D769926F0BFA40028DBCA /* SceneDelegate.swift */; };
 		56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA6C2689C0D10056155A /* .swiftlint.yml */; };
-		EC2FF5C626F343C000411F31 /* MoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */; };
-		EC2FF5C726F343C000411F31 /* MoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */; };
-		EC31776326FDB50E0076BCEC /* CarouselLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */; };
 		AAED18D826F11DF0009FE781 /* PlusButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAED18D226F11DEF009FE781 /* PlusButtonCollectionViewCell.swift */; };
 		AAED18D926F11DF0009FE781 /* StickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAED18D326F11DEF009FE781 /* StickerCollectionViewCell.swift */; };
 		AAED18DA26F11DF0009FE781 /* StickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAED18D426F11DEF009FE781 /* StickerCollectionViewCell.xib */; };
@@ -175,6 +170,10 @@
 		DD64327626F5CCC100D71787 /* BadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327526F5CCC100D71787 /* BadgeViewController.swift */; };
 		DD64327926F5DC3400D71787 /* BadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */; };
 		DD64327B26F601E400D71787 /* BadgeModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327A26F601E400D71787 /* BadgeModalViewController.swift */; };
+		DD860D322700BACD00835AC0 /* WritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD860D312700BACD00835AC0 /* WritingViewController.swift */; };
+		EC2FF5C626F343C000411F31 /* MoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */; };
+		EC2FF5C726F343C000411F31 /* MoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */; };
+		EC31776326FDB50E0076BCEC /* CarouselLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -192,7 +191,6 @@
 		561D75DF26F0BFA30028DBCA /* SignUpFirst.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUpFirst.storyboard; sourceTree = "<group>"; };
 		561D75E026F0BFA30028DBCA /* FindPassword.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FindPassword.storyboard; sourceTree = "<group>"; };
 		561D75E226F0BFA30028DBCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		561D75E426F0BFA30028DBCA /* Writing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Writing.storyboard; sourceTree = "<group>"; };
 		561D75E526F0BFA30028DBCA /* MyDrawer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyDrawer.storyboard; sourceTree = "<group>"; };
 		561D75E626F0BFA30028DBCA /* FeedDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FeedDetail.storyboard; sourceTree = "<group>"; };
 		561D75E726F0BFA30028DBCA /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
@@ -272,7 +270,6 @@
 		561D764926F0BFA40028DBCA /* SignUpThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpThirdViewController.swift; sourceTree = "<group>"; };
 		561D764B26F0BFA40028DBCA /* FeedDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedDetailViewController.swift; sourceTree = "<group>"; };
 		561D764C26F0BFA40028DBCA /* MyDrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDrawerViewController.swift; sourceTree = "<group>"; };
-		561D764D26F0BFA40028DBCA /* WritingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WritingViewController.swift; sourceTree = "<group>"; };
 		561D764E26F0BFA40028DBCA /* MoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
 		561D764F26F0BFA40028DBCA /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		561D765026F0BFA40028DBCA /* TabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
@@ -338,9 +335,6 @@
 		561D769926F0BFA40028DBCA /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		56DCAA242689BB9B0056155A /* Mohaeng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mohaeng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCAA6C2689C0D10056155A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoodCollectionViewCell.swift; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
-		EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MoodCollectionViewCell.xib; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
-		EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselLayoutView.swift; sourceTree = "<group>"; };
 		AAED18D226F11DEF009FE781 /* PlusButtonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlusButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		AAED18D326F11DEF009FE781 /* StickerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		AAED18D426F11DEF009FE781 /* StickerCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StickerCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -350,6 +344,10 @@
 		DD64327526F5CCC100D71787 /* BadgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewController.swift; sourceTree = "<group>"; };
 		DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCollectionViewCell.swift; sourceTree = "<group>"; };
 		DD64327A26F601E400D71787 /* BadgeModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModalViewController.swift; sourceTree = "<group>"; };
+		DD860D312700BACD00835AC0 /* WritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingViewController.swift; sourceTree = "<group>"; };
+		EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoodCollectionViewCell.swift; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MoodCollectionViewCell.xib; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselLayoutView.swift; sourceTree = "<group>"; };
 		FF85070BA1F5A448133681A6 /* Pods_Mohaeng.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mohaeng.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -448,7 +446,6 @@
 		561D75E326F0BFA30028DBCA /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				561D75E426F0BFA30028DBCA /* Writing.storyboard */,
 				561D75E526F0BFA30028DBCA /* MyDrawer.storyboard */,
 				561D75E626F0BFA30028DBCA /* FeedDetail.storyboard */,
 				561D75E726F0BFA30028DBCA /* Feed.storyboard */,
@@ -680,9 +677,9 @@
 			children = (
 				561D764B26F0BFA40028DBCA /* FeedDetailViewController.swift */,
 				561D764C26F0BFA40028DBCA /* MyDrawerViewController.swift */,
-				561D764D26F0BFA40028DBCA /* WritingViewController.swift */,
 				561D764E26F0BFA40028DBCA /* MoodViewController.swift */,
 				561D764F26F0BFA40028DBCA /* FeedViewController.swift */,
+				DD860D312700BACD00835AC0 /* WritingViewController.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -935,7 +932,6 @@
 				561D76F126F0BFA40028DBCA /* HappyPopUpViewController.xib in Resources */,
 				561D76D626F0BFA40028DBCA /* CourseLibraryCollectionViewCell.xib in Resources */,
 				561D76C026F0BFA40028DBCA /* GmarketSansTTFMedium.ttf in Resources */,
-				561D76A726F0BFA40028DBCA /* Writing.storyboard in Resources */,
 				561D76AA26F0BFA40028DBCA /* Feed.storyboard in Resources */,
 				EC2FF5C726F343C000411F31 /* MoodCollectionViewCell.xib in Resources */,
 				561D769F26F0BFA40028DBCA /* SignUpThird.storyboard in Resources */,
@@ -1141,6 +1137,7 @@
 				561D76F926F0BFA40028DBCA /* CodeViewController.swift in Sources */,
 				561D76EF26F0BFA40028DBCA /* HappyPopUpViewController.swift in Sources */,
 				561D76B426F0BFA40028DBCA /* Image.swift in Sources */,
+				DD860D322700BACD00835AC0 /* WritingViewController.swift in Sources */,
 				561D772E26F0BFA40028DBCA /* UnreadNotificationHeaderView.swift in Sources */,
 				561D76E426F0BFA40028DBCA /* UIView+Extension.swift in Sources */,
 				561D76DC26F0BFA40028DBCA /* FirstDayTableViewCell.swift in Sources */,
@@ -1149,7 +1146,6 @@
 				561D76B326F0BFA40028DBCA /* Xib.swift in Sources */,
 				561D770F26F0BFA40028DBCA /* PasswordService.swift in Sources */,
 				561D770A26F0BFA40028DBCA /* LoginAPI.swift in Sources */,
-				561D76FD26F0BFA40028DBCA /* WritingViewController.swift in Sources */,
 				561D770826F0BFA40028DBCA /* FeedAPI.swift in Sources */,
 				561D76EC26F0BFA40028DBCA /* AnimationPopUpViewController.swift in Sources */,
 				561D772926F0BFA40028DBCA /* ChallengeStampView.swift in Sources */,

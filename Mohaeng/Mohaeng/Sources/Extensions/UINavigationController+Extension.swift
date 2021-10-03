@@ -31,7 +31,7 @@ extension UINavigationController {
         
         // back button 설정
         let backButton = UIBarButtonItem(image: Const.Image.gnbIcnBack, style: .plain, target: self, action: #selector(touchBackButton))
-        backButton.tintColor = UIColor.black
+        backButton.tintColor = .GreyIconGnb
 
         navigationItem?.leftBarButtonItem = backButton
     }
