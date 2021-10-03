@@ -12,6 +12,8 @@ import Then
 
 class WritingViewController: UIViewController {
     
+    private let hasNotch = UIDevice.current.hasNotch
+    
     private let imagePicker = UIImagePickerController()
     
     private let closeButton = UIButton().then {
@@ -24,13 +26,13 @@ class WritingViewController: UIViewController {
     }
     
     private let titleLabel = UILabel().then {
-        $0.font = .gmarketFont(weight: .medium, size: 22)
+        $0.font = .gmarketFont(weight: .medium, size: UIDevice.current.hasNotch ? 22 : 17)
         $0.textColor = .Black
         $0.text = "아라아랑의 오늘을 남겨줘"
     }
     
     private let subTitleLabel = UILabel().then {
-        $0.font = .gmarketFont(weight: .medium, size: 13)
+        $0.font = .spoqaHanSansNeo(weight: .regular, size: UIDevice.current.hasNotch ? 13 : 12)
         $0.textColor = .Grey3
         $0.text = "챌린지와 함께한 하루 이야기를 기록으로 남겨봐"
     }
@@ -53,7 +55,7 @@ class WritingViewController: UIViewController {
     
     private let textView = UITextView().then {
         $0.backgroundColor = .clear
-        $0.font = .spoqaHanSansNeo()
+        $0.font = .spoqaHanSansNeo(weight: .regular, size: UIDevice.current.hasNotch ? 14 : 12)
         $0.textColor = .Black
         $0.tintColor = .orange
         $0.textContainer.maximumNumberOfLines = 5
@@ -230,13 +232,11 @@ class WritingViewController: UIViewController {
         addPhotoView.isHidden = false
         photoImageView.isHidden = true
         yellowBackgroundView.snp.updateConstraints {
-                $0.height.equalTo(356)
+            $0.height.equalTo(hasNotch ? 356 : 322)
         }
     }
     
 }
-
-
 
 extension WritingViewController {
     @objc
@@ -269,8 +269,8 @@ extension WritingViewController: UIImagePickerControllerDelegate {
             guard let self = self else {return}
             self.addPhotoView.isHidden = true
             self.yellowBackgroundView.snp.updateConstraints {
-                    $0.height.equalTo(424)
-                }
+                $0.height.equalTo(self.hasNotch ? 424 : 366)
+            }
             self.photoImageView.isHidden = false
         }
     }
@@ -314,8 +314,8 @@ extension WritingViewController: UITextViewDelegate {
 
         let attributeString = NSMutableAttributedString(string: text)
 
-        let font: UIFont = .spoqaHanSansNeo(weight: .regular, size: 14)
-        let lineSpacing: CGFloat = 10
+        let font: UIFont = .spoqaHanSansNeo(weight: .regular, size: hasNotch ? 14 : 12)
+        let lineSpacing: CGFloat = hasNotch ? 10 : 8
         
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = lineSpacing
@@ -342,30 +342,31 @@ extension WritingViewController {
     }
     
     private func setConstraints() {
+        
         titleLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(38)
+            $0.top.equalToSuperview().offset(hasNotch ? 38 : 28)
             $0.leading.trailing.equalToSuperview().inset(24)
         }
         
         subTitleLabel.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(20)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(hasNotch ? 20 : 12)
             $0.leading.trailing.equalToSuperview().inset(24)
         }
         
         yellowBackgroundView.snp.makeConstraints {
-            $0.top.equalTo(subTitleLabel.snp.bottom).offset(40)
+            $0.top.equalTo(subTitleLabel.snp.bottom).offset(hasNotch ? 40 : 22)
             $0.leading.trailing.equalToSuperview().inset(24)
-            $0.height.equalTo(356)
+            $0.height.equalTo(hasNotch ? 356 : 322)
         }
         
         moodImageView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(28)
+            $0.top.equalToSuperview().offset(hasNotch ? 28 : 16)
             $0.centerX.equalToSuperview()
-            $0.width.height.equalTo(110)
+            $0.width.height.equalTo(hasNotch ? 110 : 88)
         }
         
         seperatorView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(166)
+            $0.top.equalToSuperview().offset(hasNotch ? 166 : 123)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(1)
         }
@@ -373,7 +374,7 @@ extension WritingViewController {
         textView.snp.makeConstraints {
             $0.top.equalTo(seperatorView.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(18)
-            $0.height.equalTo(70)
+            $0.height.equalTo(80)
         }
         
         writingCountLabel.snp.makeConstraints {
@@ -382,7 +383,7 @@ extension WritingViewController {
         }
         
         addPhotoView.snp.makeConstraints {
-            $0.height.equalTo(72)
+            $0.height.equalTo(hasNotch ? 72 : 61)
             $0.leading.trailing.bottom.equalToSuperview()
         }
         
@@ -391,13 +392,13 @@ extension WritingViewController {
         }
         
         checkBoxButton.snp.makeConstraints {
-            $0.top.equalTo(yellowBackgroundView.snp.bottom).offset(20)
+            $0.top.equalTo(yellowBackgroundView.snp.bottom).offset(hasNotch ? 20 : 13)
             $0.leading.equalToSuperview().inset(24)
             $0.height.equalTo(24)
         }
         
         photoImageView.snp.makeConstraints {
-            $0.width.height.equalTo(120)
+            $0.width.height.equalTo(hasNotch ? 120 : 100)
             $0.centerX.equalToSuperview()
             $0.bottom.equalToSuperview().offset(-20)
         }
@@ -409,9 +410,7 @@ extension WritingViewController {
         
         doneButton.snp.makeConstraints {
             $0.leading.trailing.bottom.equalToSuperview()
-            $0.height.equalTo(76)
+            $0.height.equalTo(hasNotch ? 76 : 56)
         }
-        
     }
 }
-
