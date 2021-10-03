@@ -21,7 +21,7 @@ class SignUpThirdViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         makeButtonRound()
-        actionCheckingNickNameTextField()
+        checkNickNameTextField()
     }
     
     // MARK: - Functions
@@ -36,8 +36,7 @@ class SignUpThirdViewController: UIViewController {
         return nicknameTest.evaluate(with: nickname)
     }
     
-    private func pushSignUpThirdViewController() {
-        
+    private func pushHomeViewController() {
         let homeStoryboard = UIStoryboard(name: Const.Storyboard.Name.home, bundle: nil)
         guard let homeViewController  = homeStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.home) as? HomeViewController else {
             return
@@ -57,13 +56,13 @@ class SignUpThirdViewController: UIViewController {
         nickNameBottomView.backgroundColor = .Red
     }
     
-    private func emptyNickNameTextField() {
+    private func setEmptyNickNameTextField() {
         nickNameErrorLabel.isHidden = true
         nickNameBottomView.backgroundColor = .Grey3
         checkButton.isHidden = true
     }
     
-    private func actionCheckingNickNameTextField() {
+    private func checkNickNameTextField() {
         nickNameTextField.addTarget(self, action: #selector(SignUpThirdViewController.textFieldDidChange(_:)), for: UIControl.Event.allEditingEvents)
     }
     
@@ -81,7 +80,7 @@ class SignUpThirdViewController: UIViewController {
             invalidateNickNameTextField()
         }
         if nickname.isEmpty {
-            emptyNickNameTextField()
+            setEmptyNickNameTextField()
         }
     }
 }
