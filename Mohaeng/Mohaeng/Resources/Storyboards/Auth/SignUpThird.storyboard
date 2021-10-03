@@ -55,7 +55,7 @@
                                     <constraint firstAttribute="height" constant="40" id="wcF-gd-1y5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <state key="normal" title="인증번호 확인">
+                                <state key="normal" title="닉네임 설정하기">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
