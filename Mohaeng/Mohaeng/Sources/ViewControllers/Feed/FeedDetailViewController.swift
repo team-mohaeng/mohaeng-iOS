@@ -12,136 +12,85 @@ class FeedDetailViewController: UIViewController {
     
     // MARK: - @IBOutlet Properties
     
-    @IBOutlet weak var feedDetailView: UIView!
-    @IBOutlet weak var moodImageView: UIImageView!
-    @IBOutlet weak var mainImageView: UIImageView!
-    @IBOutlet weak var feedContentsLabel: UILabel!
-    @IBOutlet weak var feedNicknameLabel: UILabel!
-    @IBOutlet weak var hashTagLabel: UILabel!
-    @IBOutlet weak var likeCountLabel: UILabel!
-    @IBOutlet weak var likeButton: UIButton!
-    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var feedCollectionView: UICollectionView!
     
     // MARK: - Properties
-    var likeCount: Int = 0
     
-    // MARK: - Life Cycle
+    var feedDummy: FeedInfo = FeedInfo(isNew: true, hasFeed: 0, userCount: 50, feed: [
+                                        Feed(postID: 0, course: "뽀득뽀득 세균 퇴치", challenge: 3, image: "img", mood: 2, content: "맛있는 피자에 시원한 맥주 먹고 승찬이 개때리러간다 ㅋㅋ ", nickname: "초야초야", year: "2021", month: "8", day: "22", weekday: "일", emoji: [Emoji(emojiID: 1, emojiCount: 5)], myEmoji: 0, isReport: true, isDelete: false),
+                                        Feed(postID: 0, course: "나는야 지구촌 촌장", challenge: 1, image: "", mood: 2, content: "맛있는 피자에 시원한 맥주 먹고 덤덤댄스 릴스 췄당 ㅋㅋ", nickname: "정초이", year: "2021", month: "8", day: "21", weekday: "일", emoji: [Emoji(emojiID: 1, emojiCount: 5), Emoji(emojiID: 2, emojiCount: 5), Emoji(emojiID: 3, emojiCount: 5), Emoji(emojiID: 4, emojiCount: 99), Emoji(emojiID: 5, emojiCount: 99), Emoji(emojiID: 6, emojiCount: 99)], myEmoji: 0, isReport: true, isDelete: false),
+                                        Feed(postID: 0, course: "초급 사진가", challenge: 2, image: "bgGraphicHappy", mood: 2, content: "맛있는 피자에 시원한 맥주 먹고 선선한 날씨에 산책했어요.", nickname: "뽈씨", year: "2021", month: "8", day: "20", weekday: "일", emoji: [Emoji(emojiID: 1, emojiCount: 5), Emoji(emojiID: 1, emojiCount: 5), Emoji(emojiID: 2, emojiCount: 5), Emoji(emojiID: 3, emojiCount: 5), Emoji(emojiID: 4, emojiCount: 99), Emoji(emojiID: 4, emojiCount: 99) ], myEmoji: 0, isReport: true, isDelete: false),
+                                        Feed(postID: 0, course: "거침없이 하이킥", challenge: 2, image: "", mood: 2, content: "초이초이 ㅋㅋ", nickname: "김승찬", year: "2021", month: "8", day: "19", weekday: "일", emoji: [], myEmoji: 0, isReport: true, isDelete: false)])
+    
+    // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        setData()
         initNavigationBar()
-        initAttribute()
+        registerXib()
+        setDelegation()
     }
     
-    // MARK: - function
-    
-    private func initAttribute() {
-        feedDetailView.makeRounded(radius: 20)
-    }
+    // MARK: - Functions
     
     private func initNavigationBar() {
-        self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
-        let item = UIBarButtonItem(image: Const.Image.gnbIcnBack, style: .plain, target: self, action: #selector(touchRemoveButton))
-        item.tintColor = .black
-//        self.navigationItem.rightBarButtonItem = item
+        navigationItem.title = "피드 둘러보기"
+        navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
     }
     
-    private func setData() {
+    private func registerXib() {
+        feedCollectionView.register(UINib(nibName: Const.Xib.Name.feedDetailCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.feedDetailCollectionViewCell)
+        feedCollectionView.register(FeedDetailCollectionViewCell.self, forCellWithReuseIdentifier: "FDCollectionViewCell")
     }
     
-    private func setMoodImage(status: Int) {
-        // 0: 그저 그런 하루, 1: 나름 괜찮은 하루, 2: 인류애 넘치는 하루
-        switch status {
-        case 0:
-            moodImageView.image = Const.Image.imgFaceGraphic1
-        case 1:
-            moodImageView.image = Const.Image.imgFaceGraphic2
-        case 2:
-            moodImageView.image = Const.Image.imgFaceGraphic3
-        default:
-            break
-        }
+    private func setDelegation() {
+        feedCollectionView.delegate = self
+        feedCollectionView.dataSource = self
     }
     
-    // 해시태그 배열 합치고 3개 이상일 때 줄바꿈
-    private func setHashTagList(hashTagList: [String]) {
-        var joinedHashTag: String = ""
-        if hashTagList.count > 3 {
-            joinedHashTag = hashTagList[0..<3].joined(separator: " ")
-            joinedHashTag.append("\n")
-            joinedHashTag.append(hashTagList[3..<hashTagList.count].joined(separator: " "))
-            hashTagLabel.text = joinedHashTag
-        } else {
-            hashTagLabel.text = hashTagList.joined(separator: " ")
-        }
-    }
-    
-    private func plusLikeCount() {
-        guard let like = likeCountLabel.text else { return }
-        guard let likeCount = Int(like) else { return }
-        likeCountLabel.text = "\(likeCount + 1)"
-    }
-    
-    private func minusLikeCount() {
-        guard let like = likeCountLabel.text else { return }
-        guard let likeCount = Int(like) else { return }
-        likeCountLabel.text = "\(likeCount - 1)"
-    }
-    
-    private func setLikeButtonBackgroundImage(buttonStatus: Bool) {
-        switch buttonStatus {
-        case true:
-            likeButton.isSelected = true
-            likeButton.setImage(Const.Image.heartFullImg, for: .normal)
-            likeCountLabel.textColor = .Pink2
-            likeCountLabel.font = UIFont.spoqaHanSansNeo(weight: .bold, size: 10)
-        case false:
-            likeButton.isSelected = false
-            likeButton.setImage(Const.Image.heartImg, for: .normal)
-            likeCountLabel.textColor = .white
-        }
-    }
-    
-//    private func updateData(data: Community) {
-//        likeCountLabel.text = String(data.likeCount)
-//        if data.hasLike {
-//            likeButton.isSelected = true
-//        }
-//        setLikeButtonBackgroundImage(buttonStatus: likeButton.isSelected)
-//    }
-    
-    // MARK: - @IBAction Properties
-
-    @objc func touchRemoveButton() {
-        var removePopUp = PopUpViewController(nibName: Const.Xib.Name.popUp, bundle: nil)
-        removePopUp.modalPresentationStyle = .overCurrentContext
-        removePopUp.modalTransitionStyle = .crossDissolve
-        removePopUp.popUpUsage = .noImage
-        removePopUp.popUpActionDelegate = self
-        tabBarController?.present(removePopUp, animated: true, completion: nil)
-        
-        removePopUp.titleLabel.text = "당신, 정말 삭제할거야?"
-        removePopUp.descriptionLabel.text = "지금 삭제하면 다시 볼 수 없어. \n그래도 소확행을 삭제하겠어?"
-        removePopUp.pinkButton?.setTitle("아니!", for: .normal)
-        removePopUp.whiteButton?.setTitle("삭제할래", for: .normal)
-        removePopUp.popUpImageView.isHidden = true
-    }
 }
 
-extension FeedDetailViewController: PopUpActionDelegate {
-    func touchPinkButton(button: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+// MARK: - UICollectionViewDataSource
+
+extension FeedDetailViewController: UICollectionViewDataSource {
+   
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return feedDummy.feed.count
     }
     
-    func touchWhiteButton(button: UIButton) {
-        // deleteFeed(postId: feedInfo.postID)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = feedCollectionView.dequeueReusableCell(withReuseIdentifier: "FDCollectionViewCell", for: indexPath) as? FeedDetailCollectionViewCell else { return UICollectionViewCell() }
         
-        let feedStoryboard = UIStoryboard(name: Const.Storyboard.Name.feed, bundle: nil)
-        guard let feedViewController = feedStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.feed) as? FeedViewController else { return }
+        cell.setData(feed: feedDummy.feed[indexPath.row])
         
-        self.navigationController?.pushViewController(feedViewController, animated: true)
+        return cell
     }
+    
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension FeedDetailViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width: CGFloat = UIScreen.main.bounds.width
+        let imageHeight: CGFloat = width
+        
+        let baseHeight: CGFloat = feedDummy.feed[indexPath.row].image.isEmpty ? 588 - imageHeight : 588
+        let maximumHeight: CGFloat = (674 / 812) * UIScreen.main.bounds.height
+        
+        let dummyCell = FeedDetailCollectionViewCell(frame: CGRect(x: 0, y: 0, width: width, height: maximumHeight))
+        dummyCell.setData(feed: feedDummy.feed[indexPath.row])
+        dummyCell.layoutIfNeeded()
+        
+        let contentsHeight = dummyCell.getDynamicContentsHeight()
+        let collectionViewHeight = dummyCell.getDynamicCollectionViewHeight()
+        
+        return CGSize(width: width, height: baseHeight + contentsHeight + collectionViewHeight)
+    }
+    
 }

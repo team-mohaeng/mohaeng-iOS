@@ -31,22 +31,23 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        initNavigationBar()
+
         initAttributes()
         makeShadow()
         setHourlyMent()
         addCharaterStyleTapGesture()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        initNavigationBar()
+    }
+    
     // MARK: - @IBAction Functions
     
     @objc func touchAwardButton(sender: UIButton) {
-        let medalStoryboard = UIStoryboard(name: Const.Storyboard.Name.medal, bundle: nil)
-        guard let medalViewController = medalStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.medal) as? MedalViewController else {
-            return
-        }
-        self.navigationController?.pushViewController(medalViewController, animated: true)
+        let badgeViewController = BadgeViewController()
+        self.navigationController?.pushViewController(badgeViewController, animated: true)
     }
     
     @objc func touchSettingButton(sender: UIButton) {

@@ -16,4 +16,5 @@ target 'Mohaeng' do
 	pod 'Then'
 	pod 'Kingfisher'
 	pod 'FontBlaster'
+	pod 'JTAppleCalendar'
 end
