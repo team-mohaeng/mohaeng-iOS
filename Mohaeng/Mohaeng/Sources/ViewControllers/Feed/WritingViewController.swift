@@ -26,13 +26,13 @@ class WritingViewController: UIViewController {
     }
     
     private let titleLabel = UILabel().then {
-        $0.font = .gmarketFont(weight: .medium, size: UIDevice.current.hasNotch ? 22 : 17)
+        $0.font = .gmarketFont(weight: .medium, size: 22)
         $0.textColor = .Black
         $0.text = "아라아랑의 오늘을 남겨줘"
     }
     
     private let subTitleLabel = UILabel().then {
-        $0.font = .spoqaHanSansNeo(weight: .regular, size: UIDevice.current.hasNotch ? 13 : 12)
+        $0.font = .spoqaHanSansNeo(weight: .regular, size: 13)
         $0.textColor = .Grey3
         $0.text = "챌린지와 함께한 하루 이야기를 기록으로 남겨봐"
     }
@@ -45,9 +45,7 @@ class WritingViewController: UIViewController {
         $0.backgroundColor = .YellowThemeLight
     }
     
-    private let moodImageView = UIImageView().then {
-        $0.image = Const.Image.happyCFaceGraphic2
-    }
+    private let moodImageView = UIImageView()
     
     private let seperatorView = UIView().then {
         $0.backgroundColor = .YellowBg1
@@ -147,6 +145,7 @@ class WritingViewController: UIViewController {
     
     private func initViewContoller() {
         view.backgroundColor = .White
+        writingCountLabel.attributedText = setAttributedCustomText(text: "\(String(textView.text?.count ?? 0)) / 40자")
     }
     
     private func initNavigationBar() {
@@ -175,7 +174,7 @@ class WritingViewController: UIViewController {
     }
     
     private func setTarget() {
-        [closeButton, checkBoxButton, removePhotoButton].forEach {
+        [closeButton, checkBoxButton, removePhotoButton, doneButton].forEach {
             $0.addTarget(self, action: #selector(buttonDidTapped(_:)), for: .touchUpInside)
         }
     }
@@ -232,7 +231,7 @@ class WritingViewController: UIViewController {
         addPhotoView.isHidden = false
         photoImageView.isHidden = true
         yellowBackgroundView.snp.updateConstraints {
-            $0.height.equalTo(hasNotch ? 356 : 322)
+            $0.height.equalTo(hasNotch ? 356 : 314)
         }
     }
     
@@ -248,6 +247,8 @@ extension WritingViewController {
             checkBoxButton.isSelected.toggle()
         case removePhotoButton:
             removePhoto()
+        case doneButton:
+            dismiss(animated: true, completion: nil)
         default:
             break
         }
@@ -269,7 +270,7 @@ extension WritingViewController: UIImagePickerControllerDelegate {
             guard let self = self else {return}
             self.addPhotoView.isHidden = true
             self.yellowBackgroundView.snp.updateConstraints {
-                $0.height.equalTo(self.hasNotch ? 424 : 366)
+                $0.height.equalTo(self.hasNotch ? 424 : 360)
             }
             self.photoImageView.isHidden = false
         }
@@ -344,29 +345,29 @@ extension WritingViewController {
     private func setConstraints() {
         
         titleLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(hasNotch ? 38 : 28)
-            $0.leading.trailing.equalToSuperview().inset(24)
+            $0.top.equalToSuperview().offset(hasNotch ? 38 : 32)
+            $0.leading.trailing.equalToSuperview().inset(hasNotch ? 24 : 16)
         }
         
         subTitleLabel.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(hasNotch ? 20 : 12)
-            $0.leading.trailing.equalToSuperview().inset(24)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(hasNotch ? 20 : 16)
+            $0.leading.trailing.equalTo(titleLabel)
         }
         
         yellowBackgroundView.snp.makeConstraints {
-            $0.top.equalTo(subTitleLabel.snp.bottom).offset(hasNotch ? 40 : 22)
-            $0.leading.trailing.equalToSuperview().inset(24)
-            $0.height.equalTo(hasNotch ? 356 : 322)
+            $0.top.equalTo(subTitleLabel.snp.bottom).offset(hasNotch ? 40 : 32)
+            $0.leading.trailing.equalTo(titleLabel)
+            $0.height.equalTo(hasNotch ? 356 : 314)
         }
         
         moodImageView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(hasNotch ? 28 : 16)
+            $0.top.equalToSuperview().offset(hasNotch ? 28 : 20)
             $0.centerX.equalToSuperview()
-            $0.width.height.equalTo(hasNotch ? 110 : 88)
+            $0.width.height.equalTo(hasNotch ? 110 : 100)
         }
         
         seperatorView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(hasNotch ? 166 : 123)
+            $0.top.equalToSuperview().offset(hasNotch ? 166 : 140)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(1)
         }
@@ -374,7 +375,7 @@ extension WritingViewController {
         textView.snp.makeConstraints {
             $0.top.equalTo(seperatorView.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(18)
-            $0.height.equalTo(80)
+            $0.height.equalTo(70)
         }
         
         writingCountLabel.snp.makeConstraints {
@@ -383,7 +384,7 @@ extension WritingViewController {
         }
         
         addPhotoView.snp.makeConstraints {
-            $0.height.equalTo(hasNotch ? 72 : 61)
+            $0.height.equalTo(hasNotch ? 72 : 64)
             $0.leading.trailing.bottom.equalToSuperview()
         }
         
@@ -392,19 +393,19 @@ extension WritingViewController {
         }
         
         checkBoxButton.snp.makeConstraints {
-            $0.top.equalTo(yellowBackgroundView.snp.bottom).offset(hasNotch ? 20 : 13)
-            $0.leading.equalToSuperview().inset(24)
+            $0.top.equalTo(yellowBackgroundView.snp.bottom).offset(hasNotch ? 20 : 16)
+            $0.leading.trailing.equalTo(titleLabel)
             $0.height.equalTo(24)
         }
         
         photoImageView.snp.makeConstraints {
-            $0.width.height.equalTo(hasNotch ? 120 : 100)
+            $0.width.height.equalTo(hasNotch ? 120 : 90)
             $0.centerX.equalToSuperview()
             $0.bottom.equalToSuperview().offset(-20)
         }
         
         removePhotoButton.snp.makeConstraints {
-            $0.width.height.equalTo(32)
+            $0.width.height.equalTo(hasNotch ? 32 : 24)
             $0.trailing.top.equalToSuperview()
         }
         
