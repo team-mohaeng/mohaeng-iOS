@@ -30,6 +30,7 @@ class CourseLibraryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var startLabel: UILabel!
     @IBOutlet weak var courseDescriptionView: UIView!
     @IBOutlet weak var coursePropertyLabel: UILabel!
+    @IBOutlet weak var bubbleImageView: UIImageView!
     
     // MARK: - View Life Cycle
 
@@ -70,6 +71,7 @@ class CourseLibraryCollectionViewCell: UICollectionViewCell {
         courseDescriptionView.backgroundColor = course.getBubbleColor()
         startCourseView.backgroundColor = course.getDarkColor()
         propertyImageView.image = course.getLibraryImage()
+        bubbleImageView.tintColor = course.getBubbleColor()
     }
 
 }

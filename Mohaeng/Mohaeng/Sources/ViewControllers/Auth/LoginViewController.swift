@@ -18,16 +18,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailStackView: UIStackView!
     @IBOutlet weak var passwordStackView: UIStackView!
     
-    private lazy var activityIndicator: UIActivityIndicatorView = {
-        let activityIndicator = UIActivityIndicatorView()
-        activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        activityIndicator.center = CGPoint(x: self.view.center.x, y: self.view.center.y - self.topbarHeight)
-        activityIndicator.hidesWhenStopped = false
-        activityIndicator.style = UIActivityIndicatorView.Style.medium
-        activityIndicator.startAnimating()
-        return activityIndicator
-    }()
-    
     var backgroundView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
     
     // MARK: - View Life Cycle
@@ -43,7 +33,8 @@ class LoginViewController: UIViewController {
     // MARK: - @IBAction Functions
     
     @IBAction func touchLoginButton(_ sender: Any) {
-        postLogin()
+        self.presentHomeViewController()
+        // postLogin()
     }
     
     @IBAction func findPasswordButton(_ sender: Any) {
@@ -73,15 +64,6 @@ class LoginViewController: UIViewController {
     private func attachActivityIndicator() {
         backgroundView.backgroundColor = UIColor.white
         self.view.addSubview(backgroundView)
-        self.view.addSubview(self.activityIndicator)
-    }
-    
-    private func detachActivityIndicator() {
-        if self.activityIndicator.isAnimating {
-            self.activityIndicator.stopAnimating()
-        }
-        self.backgroundView.removeFromSuperview()
-        self.activityIndicator.removeFromSuperview()
     }
     
     private func makeButtonRound() {
@@ -140,7 +122,6 @@ extension LoginViewController {
                 if let data = jwt as? JwtData {
                     UserDefaults.standard.setValue(data.jwt, forKey: "jwtToken")
                     print(data.jwt)
-                    self.detachActivityIndicator()
                     self.presentHomeViewController()
                 }
             case .requestErr(let message):

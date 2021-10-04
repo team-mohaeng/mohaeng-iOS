@@ -14,6 +14,14 @@ extension Const {
         struct Name {
             
             // 홈 탭
+            static let characterTypeCollectionViewCell = "CharacterTypeCollectionViewCell"
+            static let characterColorCollectionViewCell = "CharacterColorCollectionViewCell"
+            static let backgroundCollectionViewCell = "BackgroundCollectionViewCell"
+            
+            // 메달 뷰
+            static let medalCollectionReusableView = "MedalCollectionReusableView"
+            static let medalCollectionViewCell = "MedalCollectionViewCell"
+
             // 채팅 뷰
             static let profileBubbleCollectionViewCell = "ProfileBubbleCollectionViewCell"
             static let bubbleCollectionViewCell = "BubbleCollectionViewCell"
@@ -46,11 +54,22 @@ extension Const {
             static let popUp = "PopUpViewController"
             static let animationPopUp = "AnimationPopUpViewController"
             static let happyPopUp = "HappyPopUpViewController"
+            
+            // 마이페이지 뷰
+            static let dateCell = "dateCell"
         }
         
         struct Identifier {
             
             // 홈 탭
+            static let characterTypeCollectionViewCell = "CharacterTypeCollectionViewCell"
+            static let characterColorCollectionViewCell = "CharacterColorCollectionViewCell"
+            static let backgroundCollectionViewCell = "BackgroundCollectionViewCell"
+            
+            // 메달 뷰
+            static let medalCollectionReusableView = "MedalCollectionReusableView"
+            static let medalCollectionViewCell = "MedalCollectionViewCell"
+
             // 채팅 뷰
             static let profileBubbleCollectionViewCell = "ProfileBubbleCollectionViewCell"
             static let bubbleCollectionViewCell = "BubbleCollectionViewCell"
@@ -81,6 +100,9 @@ extension Const {
             // 팝업
             static let animationPopUp = "AnimationPopUpViewController"
             static let happyPopUp = "HappyPopUpViewController"
+            
+            // 마이페이지 뷰
+            static let dateCell = "dateCell"
         }
         
     }
