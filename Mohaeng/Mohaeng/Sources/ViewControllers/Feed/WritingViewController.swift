@@ -42,25 +42,25 @@ class WritingViewController: UIViewController {
     }
     
     private let yellowBackgroundView = UIView().then {
-        $0.backgroundColor = .YellowThemeLight
+        $0.backgroundColor = .todayYellow
     }
     
     private let moodImageView = UIImageView()
     
     private let seperatorView = UIView().then {
-        $0.backgroundColor = .YellowBg1
+        $0.backgroundColor = .Yellow4
     }
     
     private let textView = UITextView().then {
         $0.backgroundColor = .clear
         $0.font = .spoqaHanSansNeo(weight: .regular, size: UIDevice.current.hasNotch ? 14 : 12)
         $0.textColor = .Black
-        $0.tintColor = .orange
+        $0.tintColor = .Yellow3
         $0.textContainer.maximumNumberOfLines = 5
     }
     
     private let addPhotoView = UIView().then {
-        $0.backgroundColor = .YellowBg1
+        $0.backgroundColor = .YellowButton2
     }
     
     private let plusImageView = UIImageView().then {
@@ -103,8 +103,8 @@ class WritingViewController: UIViewController {
         $0.setTitle("작성완료", for: .normal)
         $0.titleLabel?.font = .spoqaHanSansNeo(weight: .bold, size: 16)
         $0.setTitleColor(.White, for: .normal)
-        $0.setBackgroundColor(.YellowText1, for: .normal)
-        $0.setBackgroundColor(.Grey5, for: .disabled)
+        $0.setBackgroundColor(.YellowButton1, for: .normal)
+        $0.setBackgroundColor(.GreyButton1, for: .disabled)
         $0.isEnabled = false
     }
     
@@ -307,7 +307,7 @@ extension WritingViewController: UITextViewDelegate {
     
     func setAttributedCustomText(text: String) -> NSAttributedString {
         let attributeString = NSMutableAttributedString(string: text)
-        attributeString.addAttribute(.foregroundColor, value: UIColor.orange, range: (text as NSString).range(of: "/ 40자"))
+        attributeString.addAttribute(.foregroundColor, value: UIColor.Yellow3, range: (text as NSString).range(of: "/ 40자"))
         return attributeString
     }
     
