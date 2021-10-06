@@ -37,7 +37,6 @@ extension UIColor {
     static let Grey2Text: UIColor = UIColor(named: "Grey2Text")!
     static let GreyBtnInactive: UIColor = UIColor(named: "GreyBtnInactive")!
     static let Green: UIColor = UIColor(named: "Green")!
-    static let Red: UIColor = UIColor(named: "Red")!
     static let Icon: UIColor = UIColor(named: "Icon")!
     static let DeepYellow: UIColor = UIColor(named: "DeepYellow")!
     static let LoginYellow: UIColor = UIColor(named: "LoginYellow")!
@@ -76,6 +75,23 @@ extension UIColor {
     static let GreyIconGnb: UIColor = UIColor(named: "GreyIconGnb")!
     static let GreyButton1: UIColor = UIColor(named: "GreyButton1")!
     static let GreyButton2: UIColor = UIColor(named: "GreyButton2")!
+    static let OrangeIcon: UIColor = UIColor(named: "OrangeIcon")!
+    
+    static let Yellow1: UIColor = UIColor(named: "Yellow1")!
+    static let Yellow2: UIColor = UIColor(named: "Yellow2")!
+    static let Yellow3: UIColor = UIColor(named: "Yellow3")!
+    static let Yellow4: UIColor = UIColor(named: "Yellow4")!
+    static let Yellow5: UIColor = UIColor(named: "Yellow5")!
+    static let Yellow6: UIColor = UIColor(named: "Yellow6")!
+    static let Yellow7: UIColor = UIColor(named: "Yellow7")!
+    static let YellowButton1: UIColor = UIColor(named: "YellowButton1")!
+    static let YellowButton2: UIColor = UIColor(named: "YellowButton2")!
+    static let YellowButton3: UIColor = UIColor(named: "YellowButton3")!
+    static let YellowIconNavi: UIColor = UIColor(named: "YellowIconNavi")!
+    static let YellowTextNavi: UIColor = UIColor(named: "YellowTextNavi")!
+    
+    static let Red: UIColor = UIColor(named: "Red")!
+    
     
     // Theme Colors
     static let RedThemeBubble: UIColor = UIColor(named: "RedThemeBubble")!
