@@ -171,5 +171,11 @@ extension Const {
         static let sosoImage = UIImage(named: "sosoImage")
         static let happyImage = UIImage(named: "happyImage")
         static let rightBackButton = UIImage(named: "rightBackButton")
+        
+        // writing
+        static let plusPhotoImage = UIImage(named: "iconPlusPhoto")
+        static let checkBoxImage = UIImage(named: "btnCheck")
+        static let checkBoxLineImage = UIImage(named: "btnCheck_line")
+        static let photoXbtnImage = UIImage(named: "photoXbtn")
     }
 }

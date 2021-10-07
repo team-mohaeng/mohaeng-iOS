@@ -1,358 +1,417 @@
 //
 //  WritingViewController.swift
-//  Journey
+//  Mohaeng
 //
-//  Created by 윤예지 on 2021/07/07.
+//  Created by 김윤서 on 2021/09/26.
 //
 
 import UIKit
 
+import SnapKit
+import Then
+
 class WritingViewController: UIViewController {
     
-    // MARK: - @IBOutlet Properties
+    private let hasNotch = UIDevice.current.hasNotch
     
-    @IBOutlet weak var writingTextView: UITextView!
-    @IBOutlet weak var hashTagTextField: UITextField!
-    @IBOutlet weak var doneButton: UIButton!
-    @IBOutlet weak var photoUploadImageView: UIImageView!
-    @IBOutlet weak var photoRemoveButton: UIButton!
-    @IBOutlet weak var hashTagCollectionView: UICollectionView!
-    @IBOutlet weak var writingCountLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    private let imagePicker = UIImagePickerController()
     
-    // MARK: - Properties
+    private let closeButton = UIButton().then {
+        $0.setImage(UIImage(named: "btnWritingX")?.resized(to: CGSize(width: 20, height: 20)), for: .normal )
+        $0.snp.makeConstraints {
+            $0.width.equalTo(63)
+            $0.height.equalTo(44)
+        }
+        $0.tintColor = .Black
+    }
     
-    var hashTagList: [String] = []
-    var sendHashTagList: [String] = [] // 서버 전송용
-    var hashTagPopUp: PopUpViewController = PopUpViewController()
-    var donePopUp: HappyPopUpViewController = HappyPopUpViewController()
-    var moodStatus: Int = 0
-    var doneStatus: Bool = false
-    var hasImage: Bool = false
+    private let titleLabel = UILabel().then {
+        $0.font = .gmarketFont(weight: .medium, size: 22)
+        $0.textColor = .Black
+        $0.text = "아라아랑의 오늘을 남겨줘"
+    }
     
-    // MARK: - Life Cycle
+    private let subTitleLabel = UILabel().then {
+        $0.font = .spoqaHanSansNeo(weight: .regular, size: 13)
+        $0.textColor = .Grey3
+        $0.text = "챌린지와 함께한 하루 이야기를 기록으로 남겨봐"
+    }
+    
+    private let writingCountLabel = UILabel().then {
+        $0.font = .spoqaHanSansNeo(weight: .regular, size: 10)
+    }
+    
+    private let yellowBackgroundView = UIView().then {
+        $0.backgroundColor = .todayYellow
+    }
+    
+    private let moodImageView = UIImageView()
+    
+    private let seperatorView = UIView().then {
+        $0.backgroundColor = .Yellow4
+    }
+    
+    private let textView = UITextView().then {
+        $0.backgroundColor = .clear
+        $0.font = .spoqaHanSansNeo(weight: .regular, size: UIDevice.current.hasNotch ? 14 : 12)
+        $0.textColor = .Black
+        $0.tintColor = .Yellow3
+        $0.textContainer.maximumNumberOfLines = 5
+    }
+    
+    private let addPhotoView = UIView().then {
+        $0.backgroundColor = .YellowButton2
+    }
+    
+    private let plusImageView = UIImageView().then {
+        $0.image = Const.Image.plusPhotoImage
+    }
+    
+    private let hStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.spacing = 10
+        $0.distribution = .fill
+    }
+    
+    private let addPhotoLabel = UILabel().then {
+        $0.text = "하루를 사진으로 남겨봐!"
+        $0.textColor = .Grey1
+        $0.font = .spoqaHanSansNeo()
+    }
+    
+    private let checkBoxButton = UIButton().then {
+        $0.setImage(Const.Image.checkBoxLineImage, for: .normal)
+        $0.setImage(Const.Image.checkBoxImage, for: .selected)
+        $0.setTitle("피드에 오늘의 안부를 공유할게!", for: .normal)
+        $0.setTitleColor(.Black, for: .normal)
+        $0.titleLabel?.font = .spoqaHanSansNeo()
+        $0.isSelected = true
+        $0.alignTextLeft()
+    }
+    
+    private let photoImageView = UIImageView().then {
+        $0.isHidden = true
+        $0.makeRounded(radius: 4.0)
+        $0.isUserInteractionEnabled = true
+    }
+    
+    private let removePhotoButton = UIButton().then {
+        $0.setImage(Const.Image.photoXbtnImage, for: .normal)
+    }
+    
+    private let doneButton = UIButton().then {
+        $0.setTitle("작성완료", for: .normal)
+        $0.titleLabel?.font = .spoqaHanSansNeo(weight: .bold, size: 16)
+        $0.setTitleColor(.White, for: .normal)
+        $0.setBackgroundColor(.YellowButton1, for: .normal)
+        $0.setBackgroundColor(.GreyButton1, for: .disabled)
+        $0.isEnabled = false
+    }
+    
+    // MARK: - View Life Cycle
+    
+    init(with moodImage: UIImage) {
+        super.init(nibName: nil, bundle: nil)
+        moodImageView.image = moodImage
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
         initNavigationBar()
-        initCurruentDay()
-        registerXib()
-        setDelegation()
-        setTextViewDelegation()
-        setTextFieldDelegation()
-        initAttriutes()
-        addGestureRecognizer()
-        addObserver()
+        initViewContoller()
+        
+        setLayout()
+        setTarget()
+        setGesture()
+        setTextView()
+        setImagePicker()
     }
     
-    // MARK: - function
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        makeRoundedViews()
+    }
+    
+    // MARK: - Functions
+    private func makeRoundedViews() {
+        yellowBackgroundView.makeRounded(radius: 20)
+        doneButton.makeRoundedSpecificCorner(corners: [.topLeft, .topRight], cornerRadius: 30.0)
+    }
+    
+    private func initViewContoller() {
+        view.backgroundColor = .White
+        writingCountLabel.attributedText = setAttributedCustomText(text: "\(String(textView.text?.count ?? 0)) / 40자")
+    }
     
     private func initNavigationBar() {
-        self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
+        navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: closeButton)
+        let currentDate = AppDate()
+        let currentMonth = currentDate.getMonth()
+        let currentDay = currentDate.getDay()
+        navigationItem.title = "\(currentMonth)월 \(currentDay)일"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.spoqaHanSansNeo(weight: .regular, size: 14), NSAttributedString.Key.foregroundColor: UIColor.Black]
     }
     
-    private func initCurruentDay() {
-        let currentDay = AppDate()
-        dateLabel.text = "\(currentDay.getFormattedDate(with: ".")) (\(currentDay.getWeekday()))"
+    private func setLayout() {
+        setViewHierachy()
+        setConstraints()
     }
     
-    private func registerXib() {
-        let hashTagCollectionViewCell = UINib(nibName: "HashTagCollectionViewCell", bundle: nil)
-        hashTagCollectionView.register(hashTagCollectionViewCell, forCellWithReuseIdentifier: "HashTagCollectionViewCell")
+    private func setTextView() {
+        setPlaceholder()
+        textView.delegate = self
     }
     
-    private func setDelegation() {
-        hashTagCollectionView.dataSource = self
-        hashTagCollectionView.delegate = self
+    private func setPlaceholder() {
+        textView.text = "챌린지와 함께한 하루 이야기를 기록으로 남겨봐"
+        textView.textColor = .Grey4
     }
     
-    private func setTextViewDelegation() {
-        writingTextView.delegate = self
+    private func setTarget() {
+        [closeButton, checkBoxButton, removePhotoButton, doneButton].forEach {
+            $0.addTarget(self, action: #selector(buttonDidTapped(_:)), for: .touchUpInside)
+        }
     }
     
-    private func setTextFieldDelegation() {
-        hashTagTextField.delegate = self
-    }
-    
-    private func initAttriutes() {
-        writingTextView.layer.borderWidth = 0.5
-        writingTextView.layer.borderColor = UIColor.textViewBorderColor.cgColor
-        writingTextView.makeRounded(radius: 10)
+    private func setGesture() {
+        let addPhotoTapGesture = UITapGestureRecognizer(target: self, action: #selector(addPhoto(sender:)))
+        addPhotoView.addGestureRecognizer(addPhotoTapGesture)
         
-        doneButton.makeRounded(radius: doneButton.frame.height / 2)
-        
-        photoUploadImageView.makeRounded(radius: 4)
-        
-        writingTextView.textContainerInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
-        hashTagTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: hashTagTextField.frame.height))
-        hashTagTextField.leftViewMode = .always
+        let addPhotoTapGesture2 = UITapGestureRecognizer(target: self, action: #selector(addPhoto(sender:)))
+        photoImageView.addGestureRecognizer(addPhotoTapGesture2)
     }
     
-    private func addGestureRecognizer() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(touchPhotoUploadView(_:)))
-        photoUploadImageView.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc func touchPhotoUploadView(_ gesture: UITapGestureRecognizer) {
-        let imagePicker = UIImagePickerController()
+    private func setImagePicker() {
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
+    }
+    
+    private func showActionSheet() -> UIAlertController {
+        let alert = UIAlertController(title: "사진 업로드", message: nil, preferredStyle: .actionSheet)
+
+        let library = UIAlertAction(title: "앨범에서 사진 선택", style: .default) { [weak self] _ in
+            self?.openLibrary()
+        }
+
+        let camera = UIAlertAction(title: "사진 찍기", style: .default) { [weak self] _ in
+            self?.openCamera()
+        }
+
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+
+        alert.addAction(library)
+        alert.addAction(camera)
+        alert.addAction(cancel)
+
+        return alert
+    }
+
+    private func openLibrary() {
+        imagePicker.modalPresentationStyle = .fullScreen
         present(imagePicker, animated: true)
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
-    func estimatedFrame(text: String, font: UIFont) -> CGRect {
-        let size = CGSize(width: 0, height: 0)
-        let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
-        return NSString(string: text).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font: font], context: nil)
-    }
-    
-    func addObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(touchHashTagRemoveButton), name: NSNotification.Name("hashTagRemoveButtonClicked"), object: nil)
-    }
-    
-    @objc func touchHashTagRemoveButton(notification: NSNotification) {
-        if let index = notification.object as? Int {
-            hashTagList.remove(at: index)
-            hashTagCollectionView.reloadData()
-        }
-    }
-    // MARK: - @IBAction
-    
-    @IBAction func touchPhotoRemoveButton(_ sender: Any) {
-        photoUploadImageView.image = Const.Image.imgPhotoUpload
-        hasImage = false
-        photoRemoveButton.isHidden = true
-    }
-    
-    @IBAction func touchDoneButton(_ sender: Any) {
-        doneStatus = true
-        
-        donePopUp = HappyPopUpViewController(nibName: Const.Xib.Name.happyPopUp, bundle: nil)
-        donePopUp.modalPresentationStyle = .overCurrentContext
-        donePopUp.modalTransitionStyle = .crossDissolve
-        donePopUp.delegate = self
-        tabBarController?.present(donePopUp, animated: true, completion: nil)
-        
-        if hasImage {
-            donePopUp.hasImage = true
-            donePopUp.image = photoUploadImageView.image
+
+    private func openCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            imagePicker.sourceType = .camera
+            present(imagePicker, animated: true)
         } else {
-            donePopUp.hasImage = false
-        }
-        
-        donePopUp.titleLabel.text = "소확행 작성 완료!"
-        donePopUp.descriptionLabel.text = "당신의 행복이 하나 더 늘었군.\n다른 쟈기들과 함께하면 기쁨이 배가 될거야.\n함께 행복을 공유해보겠어?"
-        donePopUp.shareButton?.setTitle("피드에 공유하기", for: .normal)
-        donePopUp.saveButton?.setTitle("내 서랍장에만 저장하기", for: .normal)
-    }
-    
-}
-
-// 갤러리에서 이미지 가져오기
-extension WritingViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
-            photoUploadImageView.image = image
-        }
-        
-        photoRemoveButton.isHidden = false
-        hasImage = true
-        
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-}
-
-extension WritingViewController: UITextViewDelegate {
-    
-    // 텍스트뷰 PlaceHolder 생성
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        
-        if let text = writingTextView.text {
-            if text == "오늘의 소확행을 작성해 주세요." {
-                writingTextView.text = ""
-            }
-        }
-        writingTextView.textColor = .black
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if writingTextView.text.count == 0 {
-            writingTextView.textColor = .placeHolderColor
-            writingTextView.text = "오늘의 소확행을 작성해 주세요."
+            print("Camera not available")
         }
     }
     
-    func textViewDidChange(_ textView: UITextView) {
-        // 텍스트뷰 글자수 0개 일 때 버튼 비활성화
-        if writingTextView.text.count > 0 {
-            doneButton.isEnabled = true
-            doneButton.alpha = 1.0
-        } else {
-            doneButton.isEnabled = false
-            doneButton.alpha = 0.4
+    private func removePhoto() {
+        addPhotoView.isHidden = false
+        photoImageView.isHidden = true
+        yellowBackgroundView.snp.updateConstraints {
+            $0.height.equalTo(hasNotch ? 356 : 314)
         }
-        
-        // 텍스트뷰 글자수 카운트
-        writingCountLabel.text = String(writingTextView.text?.count ?? 0)
-    }
-    
-    // 텍스트뷰 글자수 제한
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        let newLenth = textView.text.count + text.count - range.length
-        return newLenth <= 40
-    }
-    
-}
-
-extension WritingViewController: UITextFieldDelegate {
-    
-    // 텍스트필드 글자수 제한
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if let text = textField.text {
-            let newLength = text.count + string.count - range.length
-            return newLength <= 6
-        }
-        return false
-    }
-    
-    // 키보드에서 return 선택 시 해시태그 추가, 5개 초과 시 팝업
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == hashTagTextField {
-            if hashTagList.count < 5 {
-                hashTagList.append("\(textField.text!)")
-                sendHashTagList.append("#\(textField.text!)")
-                textField.text = ""
-                hashTagCollectionView.reloadData()
-            } else {
-                hashTagPopUp = PopUpViewController(nibName: "PopUpViewController", bundle: nil)
-                hashTagPopUp.modalPresentationStyle = .overCurrentContext
-                hashTagPopUp.modalTransitionStyle = .crossDissolve
-                hashTagPopUp.popUpUsage = .noTitle
-                hashTagPopUp.popUpActionDelegate = self
-                tabBarController?.present(hashTagPopUp, animated: true, completion: nil)
-                
-                hashTagPopUp.pinkButton?.setTitle("확인", for: .normal)
-                hashTagPopUp.descriptionLabel?.text = "태그는 최대 5개까지\n 입력할 수 있어요!"
-            }
-        }
-        return true
-    }
-    
-    // 띄어쓰기 입력 들어올 때 띄어쓰기 삭제
-    func textFieldDidChangeSelection(_ textField: UITextField) {
-        if textField.text?.count ?? 0 > 0 && textField.text?.last == " " {
-            textField.text?.removeLast()
-        }
-    }
-}
-
-// 해시태그 컬렉션뷰
-extension WritingViewController: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = self.estimatedFrame(text: hashTagList[indexPath.row], font: UIFont.systemFont(ofSize: 12)).width
-        
-        return CGSize(width: width, height: 27)
-    }
-    
-}
-
-extension WritingViewController: UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return hashTagList.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = hashTagCollectionView.dequeueReusableCell(withReuseIdentifier: "HashTagCollectionViewCell", for: indexPath) as? HashTagCollectionViewCell else {
-            return UICollectionViewCell()
-        }
-        
-        cell.setData(keyword: hashTagList[indexPath.row])
-        cell.makeRounded(radius: cell.frame.height / 2)
-        
-        return cell
-    }
-    
-}
-
-extension WritingViewController: PopUpActionDelegate {
-    
-    func touchPinkButton(button: UIButton) {
-        if !doneStatus {
-            self.hashTagPopUp.dismiss(animated: true, completion: nil)
-        } else {
-            if hasImage {
-                postFeed(mood: moodStatus, content: writingTextView.text, hashtags: sendHashTagList, mainImage: photoUploadImageView!.image!, isPrivate: false)
-            } else {
-                postFeedWithoutImage(mood: moodStatus, content: writingTextView.text, hashtags: sendHashTagList, isPrivate: false)
-            }
-            self.donePopUp.dismiss(animated: true, completion: nil)
-            let feedStoryboard = UIStoryboard(name: Const.Storyboard.Name.feed, bundle: nil)
-            guard let feedViewController = feedStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.feed) as? FeedViewController else { return }
-            self.navigationController?.pushViewController(feedViewController, animated: true)
-        }
-    }
-    
-    func touchWhiteButton(button: UIButton) {
-        if hasImage {
-            postFeed(mood: moodStatus, content: writingTextView.text, hashtags: sendHashTagList, mainImage: photoUploadImageView!.image!, isPrivate: true)
-        } else {
-            postFeedWithoutImage(mood: moodStatus, content: writingTextView.text, hashtags: sendHashTagList, isPrivate: true)
-        }
-        let myDrawerStoryboard = UIStoryboard(name: Const.Storyboard.Name.myDrawer, bundle: nil)
-        guard let myDrawerViewController = myDrawerStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.myDrawer) as? MyDrawerViewController else { return }
-        self.navigationController?.pushViewController(myDrawerViewController, animated: true)
     }
     
 }
 
 extension WritingViewController {
-    
-    func postFeed(mood: Int, content: String, hashtags: [String], mainImage: UIImage, isPrivate: Bool) {
-        FeedAPI.shared.postFeed(mood: mood, content: content, hashtags: hashtags, mainImage: mainImage, isPrivate: isPrivate) { (response) in
-            switch response {
-            case .success(_):
-                break
-            case .requestErr(let message):
-                print("requestErr", message)
-            case .pathErr:
-                print(".pathErr")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
-            }
+    @objc
+    private func buttonDidTapped(_ sender: UIButton) {
+        switch sender {
+        case closeButton:
+            dismiss(animated: true, completion: nil)
+        case checkBoxButton:
+            checkBoxButton.isSelected.toggle()
+        case removePhotoButton:
+            removePhoto()
+        case doneButton:
+            dismiss(animated: true, completion: nil)
+        default:
+            break
         }
     }
     
-    func postFeedWithoutImage(mood: Int, content: String, hashtags: [String], isPrivate: Bool) {
-        FeedAPI.shared.postFeedWithoutImage(mood: mood, content: content, hashtags: hashtags, isPrivate: isPrivate) { (response) in
-            switch response {
-            case .success(_):
-                break
-            case .requestErr(let message):
-                print("requestErr", message)
-            case .pathErr:
-                print(".pathErr")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
+    @objc func addPhoto(sender: UITapGestureRecognizer) {
+        present(showActionSheet(), animated: true)
+    }
+}
+
+extension WritingViewController: UIImagePickerControllerDelegate {
+    func imagePickerController(_: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        let originalImage = info[UIImagePickerController.InfoKey(rawValue: UIImagePickerController.InfoKey.originalImage.rawValue)] as? UIImage
+        let editedImage = info[UIImagePickerController.InfoKey(rawValue: UIImagePickerController.InfoKey.editedImage.rawValue)] as? UIImage
+        let selectedImage = editedImage ?? originalImage
+        
+        photoImageView.image = selectedImage
+        imagePicker.dismiss(animated: true) {[weak self] in
+            guard let self = self else {return}
+            self.addPhotoView.isHidden = true
+            self.yellowBackgroundView.snp.updateConstraints {
+                $0.height.equalTo(self.hasNotch ? 424 : 360)
             }
+            self.photoImageView.isHidden = false
+        }
+    }
+}
+
+extension WritingViewController: UINavigationControllerDelegate {}
+
+extension WritingViewController: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == .Grey4 {
+            textView.text = nil
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            setPlaceholder()
+        }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        doneButton.isEnabled = textView.text.count > 0
+        
+        textView.attributedText = setAttributedText(text: textView.text)
+        writingCountLabel.attributedText = setAttributedCustomText(text: "\(String(textView.text?.count ?? 0)) / 40자")
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let newLength = textView.text.count + text.count - range.length
+        return newLength <= 40
+    }
+    
+    func setAttributedCustomText(text: String) -> NSAttributedString {
+        let attributeString = NSMutableAttributedString(string: text)
+        attributeString.addAttribute(.foregroundColor, value: UIColor.Yellow3, range: (text as NSString).range(of: "/ 40자"))
+        return attributeString
+    }
+    
+    func setAttributedText(text: String) -> NSAttributedString {
+
+        let attributeString = NSMutableAttributedString(string: text)
+
+        let font: UIFont = .spoqaHanSansNeo(weight: .regular, size: hasNotch ? 14 : 12)
+        let lineSpacing: CGFloat = hasNotch ? 10 : 8
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = lineSpacing
+        
+        attributeString.addAttribute(.font, value: font, range: (text as NSString).range(of: text))
+        attributeString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: (text as NSString).range(of: text))
+        
+        return attributeString
+    }
+    
+}
+
+extension WritingViewController {
+    private func setViewHierachy() {
+        view.addSubviews(titleLabel, subTitleLabel, yellowBackgroundView, checkBoxButton, doneButton)
+        
+        yellowBackgroundView.addSubviews(writingCountLabel, moodImageView, seperatorView, textView, addPhotoView, photoImageView)
+        
+        addPhotoView.addSubviews(hStackView)
+        hStackView.addArrangedSubview(plusImageView)
+        hStackView.addArrangedSubview(addPhotoLabel)
+        
+        photoImageView.addSubview(removePhotoButton)
+    }
+    
+    private func setConstraints() {
+        
+        titleLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(hasNotch ? 38 : 32)
+            $0.leading.trailing.equalToSuperview().inset(hasNotch ? 24 : 16)
+        }
+        
+        subTitleLabel.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(hasNotch ? 20 : 16)
+            $0.leading.trailing.equalTo(titleLabel)
+        }
+        
+        yellowBackgroundView.snp.makeConstraints {
+            $0.top.equalTo(subTitleLabel.snp.bottom).offset(hasNotch ? 40 : 32)
+            $0.leading.trailing.equalTo(titleLabel)
+            $0.height.equalTo(hasNotch ? 356 : 314)
+        }
+        
+        moodImageView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(hasNotch ? 28 : 20)
+            $0.centerX.equalToSuperview()
+            $0.width.height.equalTo(hasNotch ? 110 : 100)
+        }
+        
+        seperatorView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(hasNotch ? 166 : 140)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(1)
+        }
+        
+        textView.snp.makeConstraints {
+            $0.top.equalTo(seperatorView.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(18)
+            $0.height.equalTo(70)
+        }
+        
+        writingCountLabel.snp.makeConstraints {
+            $0.trailing.equalTo(textView.snp.trailing)
+            $0.bottom.equalTo(textView.snp.bottom)
+        }
+        
+        addPhotoView.snp.makeConstraints {
+            $0.height.equalTo(hasNotch ? 72 : 64)
+            $0.leading.trailing.bottom.equalToSuperview()
+        }
+        
+        hStackView.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
+        
+        checkBoxButton.snp.makeConstraints {
+            $0.top.equalTo(yellowBackgroundView.snp.bottom).offset(hasNotch ? 20 : 16)
+            $0.leading.trailing.equalTo(titleLabel)
+            $0.height.equalTo(24)
+        }
+        
+        photoImageView.snp.makeConstraints {
+            $0.width.height.equalTo(hasNotch ? 120 : 90)
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalToSuperview().offset(-20)
+        }
+        
+        removePhotoButton.snp.makeConstraints {
+            $0.width.height.equalTo(hasNotch ? 32 : 24)
+            $0.trailing.top.equalToSuperview()
+        }
+        
+        doneButton.snp.makeConstraints {
+            $0.leading.trailing.bottom.equalToSuperview()
+            $0.height.equalTo(hasNotch ? 76 : 56)
         }
     }
 }

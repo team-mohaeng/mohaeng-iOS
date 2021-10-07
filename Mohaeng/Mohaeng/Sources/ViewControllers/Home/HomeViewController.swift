@@ -45,7 +45,7 @@ class HomeViewController: UIViewController {
     
     // MARK: - @IBAction Functions
     
-    @objc func touchAwardButton(sender: UIButton) {
+    @objc func touchAwardButton(sender: UIButton) {        
         let badgeViewController = BadgeViewController()
         self.navigationController?.pushViewController(badgeViewController, animated: true)
     }
