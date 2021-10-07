@@ -86,7 +86,6 @@ class HomeViewController: UIViewController {
             firstButton: medalItem,
             secondButton: chatItem,
             thirdButton: userItem)
-        print(self.navigationController)
     }
     
     private func initAttributes() {
