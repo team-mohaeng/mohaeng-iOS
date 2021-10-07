@@ -198,7 +198,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m8j-Aj-SRl">
                                                         <rect key="frame" x="0.0" y="0.0" width="366" height="314.66666666666669"/>
                                                         <subviews>
-                                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="P0G-AX-9Lu" customClass="JTACMonthView" customModule="JTAppleCalendar">
+                                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="P0G-AX-9Lu" customClass="JTACMonthView" customModule="JTAppleCalendar">
                                                                 <rect key="frame" x="0.0" y="114.66666666666666" width="366" height="199.99999999999997"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
@@ -241,7 +241,7 @@
                                                                     </collectionViewCell>
                                                                 </cells>
                                                             </collectionView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021년 8월" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8m-dE-Jrh">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021년 1월" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8m-dE-Jrh">
                                                                 <rect key="frame" x="147.66666666666666" y="26" width="70.666666666666657" height="17.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
                                                                 <nil key="textColor"/>
@@ -256,6 +256,9 @@
                                                                 <color key="tintColor" name="Black"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="chevron_left" title=" "/>
+                                                                <connections>
+                                                                    <action selector="touchLeftArrowButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="e7f-HM-pXM"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ix-AC-xOm">
                                                                 <rect key="frame" x="324" y="23" width="24" height="24"/>
@@ -266,6 +269,9 @@
                                                                 <color key="tintColor" name="Black"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="chevron_right" title=" "/>
+                                                                <connections>
+                                                                    <action selector="touchRightArrowButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="eTF-zr-xda"/>
+                                                                </connections>
                                                             </button>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="6ad-8k-g4t">
                                                                 <rect key="frame" x="24" y="85.000000000000028" width="318" height="12.666666666666671"/>
@@ -341,6 +347,10 @@
                                                     <constraint firstItem="m8j-Aj-SRl" firstAttribute="top" secondItem="zNV-Cq-MZs" secondAttribute="top" id="zNm-aj-Ofr"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jE6-xA-0aA">
+                                                <rect key="frame" x="24" y="562.33333333333337" width="366" height="71.666666666666629"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p6w-Fr-UTf">
                                                 <rect key="frame" x="24" y="562.33333333333337" width="366" height="71.666666666666629"/>
                                                 <subviews>
@@ -361,6 +371,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="jE6-xA-0aA" firstAttribute="bottom" secondItem="p6w-Fr-UTf" secondAttribute="bottom" id="0E9-cR-btj"/>
                                             <constraint firstAttribute="trailing" secondItem="zNV-Cq-MZs" secondAttribute="trailing" constant="24" id="0gm-v5-Xx6"/>
                                             <constraint firstAttribute="trailing" secondItem="p6w-Fr-UTf" secondAttribute="trailing" constant="24" id="1Df-LW-WHH"/>
                                             <constraint firstItem="WIJ-GA-thH" firstAttribute="centerX" secondItem="1wx-o1-JGL" secondAttribute="centerX" id="1dq-qn-r00"/>
@@ -368,11 +379,14 @@
                                             <constraint firstItem="WIJ-GA-thH" firstAttribute="leading" secondItem="1wx-o1-JGL" secondAttribute="leading" constant="-95" id="7so-bX-yAQ"/>
                                             <constraint firstItem="91S-vx-e62" firstAttribute="centerY" secondItem="P2s-Uq-6Ej" secondAttribute="centerY" id="8bu-54-uWf"/>
                                             <constraint firstItem="P2s-Uq-6Ej" firstAttribute="centerX" secondItem="1wx-o1-JGL" secondAttribute="centerX" id="Ayq-Gq-mpF"/>
+                                            <constraint firstItem="jE6-xA-0aA" firstAttribute="trailing" secondItem="p6w-Fr-UTf" secondAttribute="trailing" id="DY2-c0-XXF"/>
                                             <constraint firstItem="eIB-D7-Uhn" firstAttribute="leading" secondItem="1wx-o1-JGL" secondAttribute="leading" constant="23" id="GrR-3Q-IWf"/>
                                             <constraint firstItem="91S-vx-e62" firstAttribute="leading" secondItem="P2s-Uq-6Ej" secondAttribute="trailing" constant="8" id="IOR-Xi-HIh"/>
                                             <constraint firstItem="P2s-Uq-6Ej" firstAttribute="top" secondItem="1wx-o1-JGL" secondAttribute="top" constant="30" id="N7I-i4-MaF"/>
                                             <constraint firstAttribute="trailing" secondItem="WIJ-GA-thH" secondAttribute="trailing" constant="-95" id="Pv4-AH-PDj"/>
                                             <constraint firstItem="p6w-Fr-UTf" firstAttribute="leading" secondItem="1wx-o1-JGL" secondAttribute="leading" constant="24" id="Qfg-Bn-U3w"/>
+                                            <constraint firstItem="jE6-xA-0aA" firstAttribute="leading" secondItem="p6w-Fr-UTf" secondAttribute="leading" id="Sqi-em-cvA"/>
+                                            <constraint firstItem="jE6-xA-0aA" firstAttribute="top" secondItem="p6w-Fr-UTf" secondAttribute="top" id="VlV-TE-NuM"/>
                                             <constraint firstItem="ln8-N4-EKx" firstAttribute="top" secondItem="P2s-Uq-6Ej" secondAttribute="bottom" constant="12" id="X1J-nV-x3a"/>
                                             <constraint firstItem="qwM-Ta-IOs" firstAttribute="top" secondItem="ln8-N4-EKx" secondAttribute="bottom" constant="36" id="aQS-UU-3sQ"/>
                                             <constraint firstAttribute="trailing" secondItem="eIB-D7-Uhn" secondAttribute="trailing" constant="23" id="dgl-BX-xAx"/>
@@ -411,8 +425,11 @@
                         <outlet property="calendarBgView" destination="m8j-Aj-SRl" id="3iQ-dK-JmP"/>
                         <outlet property="calendarCollectionView" destination="P0G-AX-9Lu" id="CpC-ZZ-xIK"/>
                         <outlet property="calendarShadowView" destination="zNV-Cq-MZs" id="Oq6-8s-3RP"/>
+                        <outlet property="challengeRecordButtonView" destination="p6w-Fr-UTf" id="zIw-Rr-3Za"/>
+                        <outlet property="challengeRecordShadowView" destination="jE6-xA-0aA" id="UFu-hJ-an0"/>
                         <outlet property="shadowStackView" destination="eIB-D7-Uhn" id="FRA-Z6-4ZU"/>
                         <outlet property="summaryStackView" destination="qwM-Ta-IOs" id="5Tx-Jp-5J3"/>
+                        <outlet property="yearMonthLabel" destination="Y8m-dE-Jrh" id="0aX-F7-9vg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

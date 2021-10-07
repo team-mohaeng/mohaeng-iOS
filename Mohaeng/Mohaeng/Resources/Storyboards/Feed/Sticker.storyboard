@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--StickerViewController-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="StickerViewController" title="StickerViewController" id="Y6W-OH-hqX" customClass="StickerViewController" customModule="Mohaeng" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PwM-xZ-Pxa">
+                                <rect key="frame" x="51.5" y="293.5" width="311" height="319"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpp-9Q-S3g" userLabel="closeButton">
+                                        <rect key="frame" x="136" y="140" width="39" height="39"/>
+                                        <state key="normal" image="closeBtn"/>
+                                        <connections>
+                                            <action selector="touchCloseButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hgc-Xd-WGf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6J-I9-CE0" userLabel="sticker1">
+                                        <rect key="frame" x="0.0" y="69" width="84" height="84"/>
+                                        <state key="normal" image="sticker1"/>
+                                    </button>
+                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7G-qp-tnq" userLabel="sticker3">
+                                        <rect key="frame" x="227" y="69" width="84" height="84"/>
+                                        <state key="normal" image="sticker3"/>
+                                    </button>
+                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KiB-dE-HqP" userLabel="sticker5">
+                                        <rect key="frame" x="113.5" y="235" width="84" height="84"/>
+                                        <state key="normal" image="sticker5"/>
+                                    </button>
+                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCf-SN-g6z" userLabel="sticker6">
+                                        <rect key="frame" x="0.0" y="185" width="84" height="84"/>
+                                        <state key="normal" image="sticker6"/>
+                                    </button>
+                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhx-uw-a3d" userLabel="sticker2">
+                                        <rect key="frame" x="113.5" y="0.0" width="84" height="84"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="84" id="jYl-UP-coR"/>
+                                        </constraints>
+                                        <state key="normal" image="sticker2"/>
+                                    </button>
+                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ht3-Hg-Vx6" userLabel="sticker4">
+                                        <rect key="frame" x="227" y="185" width="84" height="84"/>
+                                        <state key="normal" image="sticker4"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PwM-xZ-Pxa" secondAttribute="height" multiplier="311:319" id="0YP-1M-bmp"/>
+                                    <constraint firstItem="yhx-uw-a3d" firstAttribute="centerX" secondItem="PwM-xZ-Pxa" secondAttribute="centerX" id="2CZ-DP-aqQ"/>
+                                    <constraint firstItem="Zpp-9Q-S3g" firstAttribute="centerX" secondItem="PwM-xZ-Pxa" secondAttribute="centerX" id="4nd-jK-Nea"/>
+                                    <constraint firstItem="ht3-Hg-Vx6" firstAttribute="top" secondItem="n7G-qp-tnq" secondAttribute="bottom" constant="32" id="Bce-8d-Aym"/>
+                                    <constraint firstItem="Zpp-9Q-S3g" firstAttribute="centerY" secondItem="PwM-xZ-Pxa" secondAttribute="centerY" id="DDM-n6-GYC"/>
+                                    <constraint firstAttribute="bottom" secondItem="KiB-dE-HqP" secondAttribute="bottom" id="Umm-K2-PKp"/>
+                                    <constraint firstItem="n7G-qp-tnq" firstAttribute="top" secondItem="yhx-uw-a3d" secondAttribute="bottom" constant="-15" id="YCd-Xf-8IW"/>
+                                    <constraint firstItem="fCf-SN-g6z" firstAttribute="leading" secondItem="PwM-xZ-Pxa" secondAttribute="leading" id="aWI-j3-4Ac"/>
+                                    <constraint firstItem="fCf-SN-g6z" firstAttribute="top" secondItem="e6J-I9-CE0" secondAttribute="bottom" constant="32" id="efc-Kn-R3U"/>
+                                    <constraint firstItem="e6J-I9-CE0" firstAttribute="top" secondItem="yhx-uw-a3d" secondAttribute="bottom" constant="-15" id="hzb-OS-X82"/>
+                                    <constraint firstAttribute="width" constant="311" id="lcQ-1N-ljb"/>
+                                    <constraint firstAttribute="trailing" secondItem="n7G-qp-tnq" secondAttribute="trailing" id="mCF-k8-mlR"/>
+                                    <constraint firstItem="yhx-uw-a3d" firstAttribute="top" secondItem="PwM-xZ-Pxa" secondAttribute="top" id="o5B-yJ-pT4"/>
+                                    <constraint firstItem="e6J-I9-CE0" firstAttribute="leading" secondItem="PwM-xZ-Pxa" secondAttribute="leading" id="seL-jJ-Go5"/>
+                                    <constraint firstItem="KiB-dE-HqP" firstAttribute="centerX" secondItem="yhx-uw-a3d" secondAttribute="centerX" id="unH-AP-Zgt"/>
+                                    <constraint firstAttribute="trailing" secondItem="ht3-Hg-Vx6" secondAttribute="trailing" id="x32-Zv-ebG"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PwM-xZ-Pxa" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="6BG-g2-RrG"/>
+                            <constraint firstItem="PwM-xZ-Pxa" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="GyR-XY-ez5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sticker1Button" destination="e6J-I9-CE0" id="Ge0-hr-ch2"/>
+                        <outlet property="sticker2Button" destination="yhx-uw-a3d" id="mK8-6O-dSV"/>
+                        <outlet property="sticker3Button" destination="n7G-qp-tnq" id="aKi-fb-0NY"/>
+                        <outlet property="sticker4Button" destination="ht3-Hg-Vx6" id="YFb-SR-E3b"/>
+                        <outlet property="sticker5Button" destination="KiB-dE-HqP" id="7TO-UC-N5M"/>
+                        <outlet property="sticker6Button" destination="fCf-SN-g6z" id="rXE-wS-B8Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="73.913043478260875" y="43.526785714285715"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="closeBtn" width="39" height="39"/>
+        <image name="sticker1" width="84" height="84"/>
+        <image name="sticker2" width="84" height="84"/>
+        <image name="sticker3" width="84" height="84"/>
+        <image name="sticker4" width="84" height="84"/>
+        <image name="sticker5" width="84" height="84"/>
+        <image name="sticker6" width="84" height="84"/>
+    </resources>
+</document>

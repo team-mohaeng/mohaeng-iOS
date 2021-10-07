@@ -7,7 +7,6 @@
 
 import UIKit
 import JTAppleCalendar
-import SwiftUI
 
 class MyPageViewController: UIViewController {
     
@@ -28,6 +27,9 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var summaryStackView: UIStackView!
     @IBOutlet weak var calendarShadowView: UIView!
     @IBOutlet weak var calendarBgView: UIView!
+    @IBOutlet weak var yearMonthLabel: UILabel!
+    @IBOutlet weak var challengeRecordButtonView: UIView!
+    @IBOutlet weak var challengeRecordShadowView: UIView!
     
     // MARK: - Properties
     
@@ -35,6 +37,8 @@ class MyPageViewController: UIViewController {
     var frameDimensions: CGFloat = 0.00
     var selected = Date()
     var rangeDates: [[Date]] = []
+    var currentSection: Int = 0
+    var totalSectionCount: Int = 0
     
     // MARK: - View Life Cycle
 
@@ -47,6 +51,18 @@ class MyPageViewController: UIViewController {
         assignDelegate()
         setRangeDates()
         selectRangeDate()
+        setTotalSectionCount()
+        
+    }
+    
+    // MARK: - @IBAction Functions
+    
+    @IBAction func touchLeftArrowButton(_ sender: Any) {
+        touchArrowButton(isLeft: true)
+    }
+    
+    @IBAction func touchRightArrowButton(_ sender: Any) {
+        touchArrowButton(isLeft: false)
     }
     
     // MARK: - Functions
@@ -76,6 +92,11 @@ class MyPageViewController: UIViewController {
         
         // calendar bg view rounding
         calendarBgView.makeRounded(radius: 14)
+        
+        // 챌린지 기록 보기 버튼 뷰
+        challengeRecordButtonView.makeRounded(radius: 14)
+        challengeRecordShadowView.addShadowWithOpaqueBackground(opacity: 0.05, radius: 20)
+        
     }
     
     private func assignDelegate() {
@@ -119,44 +140,84 @@ class MyPageViewController: UIViewController {
     }
     
     // selectedPosition에 따라 range selection 표시
-    func handleCellSelection(view: JTACDayCell?, cellState: CellState) {
-        guard let myCustomCell = view as? DateCollectionViewCell else { return }
+    func handleCellSelection(cell: JTACDayCell?, cellState: CellState) {
+        guard let cell = cell as? DateCollectionViewCell else { return }
         
         // dateView background color 찾기
         for (idx, rangeDate) in rangeDates.enumerated() {
             if rangeDate.contains(cellState.date) {
                 guard let propertyColor = AppCourse(rawValue: myPageData.calendar[idx].property)?.getBubbleColor() else { return }
-                myCustomCell.dateView.backgroundColor = propertyColor
+                cell.dateView.backgroundColor = propertyColor
             }
         }
         
         // selectedPosition에 따라 dateView layer rounding
         switch cellState.selectedPosition() {
         case .left:
-            myCustomCell.dateView.layer.cornerRadius = myCustomCell.frame.height / 2
-            myCustomCell.dateView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
+            cell.dateView.layer.cornerRadius = cell.frame.height / 2
+            cell.dateView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
         case .middle:
-            myCustomCell.dateView.layer.cornerRadius = 0
-            myCustomCell.dateView.layer.maskedCorners = []
+            cell.dateView.layer.cornerRadius = 0
+            cell.dateView.layer.maskedCorners = []
         case .right:
-            myCustomCell.dateView.layer.cornerRadius = myCustomCell.frame.height / 2
-            myCustomCell.dateView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner]
+            cell.dateView.layer.cornerRadius = cell.frame.height / 2
+            cell.dateView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner]
         // full : 한 cell이 left, right, middle 다 차지 할 때 (1cell = 1range)
         case .full:
-            myCustomCell.dateView.layer.cornerRadius = myCustomCell.frame.height / 2
-            myCustomCell.dateView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner]
+            cell.dateView.layer.cornerRadius = cell.frame.height / 2
+            cell.dateView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner]
         default: break
         }
         
-        if !cellState.isSelected { myCustomCell.dateView.backgroundColor = .white }
+        if !cellState.isSelected { cell.dateView.backgroundColor = .white }
+    }
+    
+    func handleCellText(cell: JTACDayCell?, cellState: CellState) {
+        
+        guard let cell = cell as? DateCollectionViewCell else { return }
+        
+        cell.dateLabel.text = cellState.text
+        
+        if cellState.dateBelongsTo == .thisMonth {
+            cell.isHidden = false
+            cell.dateLabel.textColor = .black
+        } else {
+            // TODO: - 디팟한테 textColor 물어보기
+            // myCustomCell.dateLabel.textColor = .lightGray
+            
+            cell.isHidden = true
+        }
+        
     }
     
     func configureCell(view: JTACDayCell?, cellState: CellState) {
         guard let cell = view as? DateCollectionViewCell  else { return }
-        cell.dateLabel.text = cellState.text
-        handleCellSelection(view: cell, cellState: cellState)
+        handleCellSelection(cell: cell, cellState: cellState)
+        handleCellText(cell: cell, cellState: cellState)
     }
   
+    func touchArrowButton(isLeft: Bool) {
+        if isLeft {
+            let section = currentSection - 1 < 0 ? 0 : currentSection - 1
+            currentSection = section
+            
+            calendarCollectionView.scrollToItem(at: IndexPath.init(row: 0, section: currentSection), at: .left, animated: true)
+        } else {
+            let section = currentSection + 1 > totalSectionCount ? currentSection : currentSection + 1
+            currentSection = section
+                
+            calendarCollectionView.scrollToItem(at: IndexPath.init(row: 0, section: currentSection), at: .left, animated: true)
+        }
+        
+        // TODO: - 날짜 response보고 리팩토링 필요
+        let month = 1 + currentSection
+        yearMonthLabel.text = "2021년 \(month)월"
+    }
+    
+    func setTotalSectionCount() {
+        // TODO: - 날짜 response보고 리팩토링 필요
+        totalSectionCount = 9
+    }
 }
 
 // MARK: - JTACMonthViewDelegate
@@ -193,7 +254,7 @@ extension MyPageViewController: JTACMonthViewDataSource {
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
         
-        let startDate = formatter.date(from: "2021 08 01")!
+        let startDate = formatter.date(from: "2021 01 01")!
         let endDate = Date()
         return ConfigurationParameters(startDate: startDate, endDate: endDate)
     }

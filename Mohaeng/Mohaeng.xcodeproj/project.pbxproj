@@ -165,6 +165,8 @@
 		565A1EF82700CF81000CAB1B /* MyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565A1EF72700CF81000CAB1B /* MyPage.swift */; };
 		56A05EB22700699D006D6ECE /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A05EB12700699D006D6ECE /* DateCollectionViewCell.swift */; };
 		56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA6C2689C0D10056155A /* .swiftlint.yml */; };
+		AA190EFA2709AB310059E100 /* Sticker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA190EF92709AB310059E100 /* Sticker.storyboard */; };
+		AA190EFC2709D29D0059E100 /* StickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA190EFB2709D29D0059E100 /* StickerViewController.swift */; };
 		AA190EBF26FE62E30059E100 /* BackgroundCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA190EBD26FE62E30059E100 /* BackgroundCollectionViewCell.swift */; };
 		AA190EC026FE62E30059E100 /* BackgroundCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA190EBE26FE62E30059E100 /* BackgroundCollectionViewCell.xib */; };
 		AA7E0AAB26FC615C00106DC2 /* CharacterStyle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7E0AAA26FC615C00106DC2 /* CharacterStyle.storyboard */; };
@@ -353,6 +355,8 @@
 		56A05EB12700699D006D6ECE /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		56DCAA242689BB9B0056155A /* Mohaeng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mohaeng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCAA6C2689C0D10056155A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		AA190EF92709AB310059E100 /* Sticker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sticker.storyboard; sourceTree = "<group>"; };
+		AA190EFB2709D29D0059E100 /* StickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerViewController.swift; sourceTree = "<group>"; };
 		AA190EBD26FE62E30059E100 /* BackgroundCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA190EBE26FE62E30059E100 /* BackgroundCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BackgroundCollectionViewCell.xib; sourceTree = "<group>"; };
 		AA7E0AAA26FC615C00106DC2 /* CharacterStyle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CharacterStyle.storyboard; sourceTree = "<group>"; };
@@ -436,11 +440,11 @@
 		561D75D226F0BFA30028DBCA /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				561D75E926F0BFA30028DBCA /* Tabbar.storyboard */,
 				561D75D326F0BFA30028DBCA /* Home */,
 				561D75D826F0BFA30028DBCA /* Auth */,
 				561D75E126F0BFA30028DBCA /* LaunchScreen.storyboard */,
 				561D75E326F0BFA30028DBCA /* Feed */,
-				561D75E926F0BFA30028DBCA /* Tabbar.storyboard */,
 				561D75EA26F0BFA30028DBCA /* Challenge */,
 			);
 			path = Storyboards;
@@ -481,6 +485,7 @@
 				561D75E626F0BFA30028DBCA /* FeedDetail.storyboard */,
 				561D75E726F0BFA30028DBCA /* Feed.storyboard */,
 				561D75E826F0BFA30028DBCA /* Mood.storyboard */,
+				AA190EF92709AB310059E100 /* Sticker.storyboard */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -718,6 +723,7 @@
 				561D764C26F0BFA40028DBCA /* MyDrawerViewController.swift */,
 				561D764E26F0BFA40028DBCA /* MoodViewController.swift */,
 				561D764F26F0BFA40028DBCA /* FeedViewController.swift */,
+				AA190EFB2709D29D0059E100 /* StickerViewController.swift */,
 				DD860D312700BACD00835AC0 /* WritingViewController.swift */,
 			);
 			path = Feed;
@@ -1028,6 +1034,7 @@
 				561D76A226F0BFA40028DBCA /* NewPassword.storyboard in Resources */,
 				561D76AB26F0BFA40028DBCA /* Mood.storyboard in Resources */,
 				561D76BD26F0BFA40028DBCA /* GmarketSansTTFBold.ttf in Resources */,
+				AA190EFA2709AB310059E100 /* Sticker.storyboard in Resources */,
 				561D76F026F0BFA40028DBCA /* AnimationPopUpViewController.xib in Resources */,
 				561D769A26F0BFA40028DBCA /* Setting.storyboard in Resources */,
 				561D76A026F0BFA40028DBCA /* EmailLogin.storyboard in Resources */,
@@ -1190,6 +1197,7 @@
 				561D76B826F0BFA40028DBCA /* Font.swift in Sources */,
 				AA7E0AB726FC998000106DC2 /* CharacterColorCollectionViewCell.swift in Sources */,
 				561D76BB26F0BFA40028DBCA /* LottieExmaple.swift in Sources */,
+				AA190EFC2709D29D0059E100 /* StickerViewController.swift in Sources */,
 				561D771826F0BFA40028DBCA /* AppDate.swift in Sources */,
 				561D771F26F0BFA40028DBCA /* PushNoti.swift in Sources */,
 				561D773B26F0BFA50028DBCA /* AnimationPopUpDelegate.swift in Sources */,
