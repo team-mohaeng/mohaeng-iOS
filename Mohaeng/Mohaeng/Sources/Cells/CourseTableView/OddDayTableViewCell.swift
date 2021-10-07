@@ -67,7 +67,7 @@ class OddDayTableViewCell: UITableViewCell {
         nextLine.lineCap = .round
         nextLine.lineDashPhase = 5
         nextLine.lineDashPattern = [RoadMapPath(centerY: 0).getDashPattern(), RoadMapPath(centerY: 0).getBlankPattern()]
-        nextLine.strokeColor = UIColor.roadUndoneGrey.cgColor
+        nextLine.strokeColor = UIColor.Grey4.cgColor
         
         self.contentView.layer.insertSublayer(nextLine, at: 2)
     }
@@ -99,7 +99,7 @@ class OddDayTableViewCell: UITableViewCell {
     func setNextSituation(next: Int) {
         switch next {
         case 0:
-            nextLine.strokeColor = UIColor.roadUndoneGrey.cgColor
+            nextLine.strokeColor = UIColor.Grey4.cgColor
             setDashedLine(line: nextLine)
         case 1:
             nextLine.strokeColor = UIColor.sampleGreen.cgColor
@@ -123,7 +123,7 @@ class OddDayTableViewCell: UITableViewCell {
     private func setColorBySituation(situation: Int) {
         switch situation {
         case 0: // 진행 전 챌린지
-            currentLine.strokeColor = UIColor.roadUndoneGrey.cgColor
+            currentLine.strokeColor = UIColor.Grey4.cgColor
             setDashedLine(line: currentLine)
         
         case 1: // 진행 중인 챌린지
