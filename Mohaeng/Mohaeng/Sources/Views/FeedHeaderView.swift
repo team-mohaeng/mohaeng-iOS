@@ -17,7 +17,6 @@ class FeedHeaderView: UIView {
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var newIndicatorView: UIView!
-    @IBOutlet weak var writingCountLabel: UILabel!
     @IBOutlet weak var myDrawerButtonView: UIView!
     
     // MARK: - Properties
@@ -47,13 +46,8 @@ class FeedHeaderView: UIView {
         }
     }
     
-    private func setCountOfFeed(feedCount: Int) {
-        writingCountLabel.text = "오늘은 \(feedCount)개의 \n안부가 남겨졌어요"
-    }
-    
     func setHeaderData(hasNewContents: Bool, contents: Int) {
         setNewIndicator(isNew: hasNewContents)
-        setCountOfFeed(feedCount: contents)
     }
     
     private func addTouchEventToMyDrawerView() {
