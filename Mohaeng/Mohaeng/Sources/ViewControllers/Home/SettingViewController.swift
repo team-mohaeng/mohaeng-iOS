@@ -34,7 +34,7 @@ class SettingViewController: UIViewController {
     }
     
     private func initNavigationBar() {
-        self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
+        self.navigationController?.initWithBackButton()
         navigationItem.title = "환경설정"
     }
 }

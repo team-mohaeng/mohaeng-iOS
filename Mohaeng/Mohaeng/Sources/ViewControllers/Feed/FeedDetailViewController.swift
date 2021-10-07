@@ -37,7 +37,7 @@ class FeedDetailViewController: UIViewController {
     
     private func initNavigationBar() {
         navigationItem.title = "피드 둘러보기"
-        navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
+        navigationController?.initWithBackButton()
     }
     
     private func registerXib() {

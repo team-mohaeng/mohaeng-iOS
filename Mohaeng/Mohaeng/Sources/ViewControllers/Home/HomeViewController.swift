@@ -50,20 +50,20 @@ class HomeViewController: UIViewController {
         self.navigationController?.pushViewController(badgeViewController, animated: true)
     }
     
-    @objc func touchSettingButton(sender: UIButton) {
-        let settingStoryboard = UIStoryboard(name: Const.Storyboard.Name.setting, bundle: nil)
-        guard let settingViewController = settingStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.setting) as? SettingViewController else {
+    @objc func touchUserButton(sender: UIButton) {
+        let myPageStoryboard = UIStoryboard(name: Const.Storyboard.Name.myPage, bundle: nil)
+        guard let myPageViewController = myPageStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.myPage) as? MyPageViewController else {
             return
         }
-        self.navigationController?.pushViewController(settingViewController, animated: true)
+        self.navigationController?.pushViewController(myPageViewController, animated: true)
     }
     
     @objc func touchChattingButton(sender: UIButton) {
-        let settingStoryboard = UIStoryboard(name: Const.Storyboard.Name.setting, bundle: nil)
-        guard let settingViewController = settingStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.setting) as? SettingViewController else {
+        let notificationStoryboard = UIStoryboard(name: Const.Storyboard.Name.notification, bundle: nil)
+        guard let notificationViewController = notificationStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.notification) as? NotificationViewController else {
             return
         }
-        self.navigationController?.pushViewController(settingViewController, animated: true)
+        self.navigationController?.pushViewController(notificationViewController, animated: true)
     }
     
     @objc func pushToStyleController() {
@@ -77,15 +77,16 @@ class HomeViewController: UIViewController {
     // MARK: - Functions
     
     private func initNavigationBar() {
-        let awardItem = self.navigationItem.makeCustomBarItem(self, action: #selector(touchAwardButton(sender:)), image: Const.Image.medalIcon)
-        let chatItem = self.navigationItem.makeCustomBarItem(self, action: #selector(touchSettingButton(sender:)), image: Const.Image.chatIcon)
-        let settingItem = self.navigationItem.makeCustomBarItem(self, action: #selector(touchSettingButton(sender:)), image: Const.Image.settingIcon)
-        let spacing = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        spacing.width = 16
+        let medalItem = self.navigationItem.makeCustomBarItem(self, action: #selector(touchAwardButton(sender:)), image: Const.Image.medalIcon)
+        let chatItem = self.navigationItem.makeCustomBarItem(self, action: #selector(touchChattingButton(sender:)), image: Const.Image.chatIcon)
+        let userItem = self.navigationItem.makeCustomBarItem(self, action: #selector(touchUserButton(sender:)), image: Const.Image.userIcon)
         
-        self.navigationItem.rightBarButtonItems = [settingItem, spacing, chatItem, spacing, awardItem]
-        self.navigationController?.navigationBar.tintColor = UIColor.black
-        self.navigationController?.initTransparentNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
+        self.navigationController?.initWithThreeCustomButtons(
+            navigationItem: self.navigationItem,
+            firstButton: medalItem,
+            secondButton: chatItem,
+            thirdButton: userItem)
+        print(self.navigationController)
     }
     
     private func initAttributes() {

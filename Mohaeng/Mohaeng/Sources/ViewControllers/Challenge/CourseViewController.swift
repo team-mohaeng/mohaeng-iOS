@@ -48,8 +48,19 @@ class CourseViewController: UIViewController {
     // MARK: - Functions
     
     private func initNavigationBar() {
-        self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
-        // TODO: - right button 추가
+        self.navigationController?.initWithOneCustomButton(
+            navigationItem: self.navigationItem,
+            firstButtonImage: Const.Image.gnbIcnList,
+            firstButtonClosure: #selector(touchLibraryButton(_:)))
+        self.navigationItem.setHidesBackButton(true, animated: true)
+    }
+    
+    @objc func touchLibraryButton(_ sender: UIBarButtonItem) {
+        let courseLibraryStoryboard = UIStoryboard(name: Const.Storyboard.Name.courseLibrary, bundle: nil)
+        guard let courseLibraryViewController = courseLibraryStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.courseLibrary) as? CourseLibraryViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(courseLibraryViewController, animated: true)
     }
     
     private func registerXib() {

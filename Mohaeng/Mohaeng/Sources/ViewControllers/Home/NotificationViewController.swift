@@ -37,12 +37,18 @@ class NotificationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        initNavigationBar()
         assignDelegate()
         registerXib()
         makeNewNotiArray(noti: noti)
     }
     
     // MARK: - Functions
+    
+    private func initNavigationBar() {
+        self.navigationController?.initWithBackButton()
+        self.navigationItem.title = "알림"
+    }
     
     private func assignDelegate() {
         notificationCollectionView.delegate = self

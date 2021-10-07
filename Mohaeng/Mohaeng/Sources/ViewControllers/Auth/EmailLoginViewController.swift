@@ -44,7 +44,7 @@ class EmailLoginViewController: UIViewController {
     // MARK: - Functions
     
     private func initNavigationBar() {
-        self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
+        self.navigationController?.initWithBackButton()
     }
     
     private func assignDelegate() {

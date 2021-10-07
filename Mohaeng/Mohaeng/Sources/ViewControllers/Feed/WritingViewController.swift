@@ -50,7 +50,7 @@ class WritingViewController: UIViewController {
     // MARK: - function
     
     private func initNavigationBar() {
-        self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
+        self.navigationController?.initWithBackButton()
     }
     
     private func initCurruentDay() {

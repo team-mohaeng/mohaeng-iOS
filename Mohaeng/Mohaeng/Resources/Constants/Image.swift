@@ -12,7 +12,9 @@ extension Const {
     struct Image {
         
         // navigation bar
-        static let gnbIcnBack = UIImage(named: "gnbIcnBack")
+        static let gnbIcnBack = UIImage(named: "gnbIcnBack")!
+        static let settingIcn = UIImage(named: "settingIcn")!
+        static let gnbIcnList = UIImage(named: "gnbIcnList")!
         
         // medal, course property image
         static let typeCwithColor = UIImage(named: "typeCwithColor")
@@ -28,8 +30,8 @@ extension Const {
      
         // main home icon
         static let medalIcon = UIImage(named: "medal")!
-        static let settingIcon = UIImage(named: "Chat")!
-        static let chatIcon = UIImage(named: "User")!
+        static let chatIcon = UIImage(named: "Chat")!
+        static let userIcon = UIImage(named: "User")!
         
         // challenge nav icon
         static let mapIcon = UIImage(named: "icnMap")!

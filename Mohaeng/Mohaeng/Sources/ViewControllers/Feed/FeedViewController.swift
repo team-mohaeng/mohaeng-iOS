@@ -53,7 +53,7 @@ class FeedViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.hideNavigationBar()
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     override func viewWillLayoutSubviews() {
@@ -67,7 +67,7 @@ class FeedViewController: UIViewController {
     // MARK: - Functions
     
     private func initNavigationBar() {
-        self.navigationController?.hideNavigationBar()
+        self.navigationController?.initTransparentNavBar()
     }
     
     private func registerXib() {
@@ -141,6 +141,7 @@ extension FeedViewController: UICollectionViewDelegate {
         let feedDetailStoryboard = UIStoryboard.init(name: Const.Storyboard.Name.feedDetail, bundle: nil)
         guard let feedDetailViewController = feedDetailStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.feedDetail) as? FeedDetailViewController else { return }
         
+        self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(feedDetailViewController, animated: true)
     }
     
@@ -203,6 +204,7 @@ extension FeedViewController: HeaderViewDelegate {
         let myDrawerStoryboard = UIStoryboard(name: Const.Storyboard.Name.myDrawer, bundle: nil)
         guard let myDrawerViewController = myDrawerStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.myDrawer) as? MyDrawerViewController else { return }
         
+        self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(myDrawerViewController, animated: true)
     }
     
@@ -210,6 +212,7 @@ extension FeedViewController: HeaderViewDelegate {
         let writingStoryboard = UIStoryboard(name: Const.Storyboard.Name.writing, bundle: nil)
         guard let writingViewController = writingStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.writing) as? WritingViewController else { return }
         
+        self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(writingViewController, animated: true)
     }
     

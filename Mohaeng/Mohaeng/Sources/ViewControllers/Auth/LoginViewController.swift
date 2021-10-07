@@ -17,10 +17,16 @@ class LoginViewController: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        initNavigationBar()
         setButtonUI()
     }
     
     // MARK: - Functions
+    
+    private func initNavigationBar() {
+        self.navigationController?.initTransparentNavBar()
+    }
+    
     private func setButtonUI() {
         [kakaoLoginButton, appleLoginButton, emailLoginButton].forEach {
             $0?.makeRounded(radius: 6)
@@ -50,5 +56,20 @@ class LoginViewController: UIViewController {
     
     @IBAction func touchEmailLoginButton(_ sender: UIButton) {
         pushEmailLoginViewController()
+    }
+    
+    @IBAction func touchAppleLoginButton(_ sender: Any) {
+        presentHomeViewController()
+    }
+    
+    // 편의용 (나중에 지워야 함)
+    func presentHomeViewController() {
+        let tabbarStoryboard = UIStoryboard(name: Const.Storyboard.Name.tabbar, bundle: nil)
+        guard let tabbarViewController = tabbarStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.tabbar) as? TabbarViewController else {
+            return
+        }
+        tabbarViewController.modalPresentationStyle = .fullScreen
+        tabbarViewController.modalTransitionStyle = .crossDissolve
+        self.present(tabbarViewController, animated: true, completion: nil)
     }
 }

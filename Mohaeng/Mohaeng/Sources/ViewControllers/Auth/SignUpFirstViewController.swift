@@ -65,8 +65,7 @@ class SignUpFirstViewController: UIViewController {
     }
     
     private func initNavigationBar() {
-        self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
-        navigationItem.title = "회원가입"
+        self.navigationController?.initWithBackButton()
     }
     private func makeButtonRound() {
         confirmButton.makeRounded(radius: 20)
