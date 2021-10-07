@@ -31,6 +31,7 @@ class FeedDetailViewController: UIViewController {
         initNavigationBar()
         registerXib()
         setDelegation()
+        addObserver()
     }
     
     // MARK: - Functions
@@ -48,6 +49,22 @@ class FeedDetailViewController: UIViewController {
     private func setDelegation() {
         feedCollectionView.delegate = self
         feedCollectionView.dataSource = self
+    }
+    
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self,
+                                            selector: #selector(presentStickerViewController),
+                                            name: Notification.Name("PlusButtonDidTap"),
+                                            object: nil)
+    }
+    
+    @objc func presentStickerViewController() {
+        let storyboard = UIStoryboard(name: Const.Storyboard.Name.sticker, bundle: nil)
+        let stickerViewController = storyboard.instantiateViewController(identifier: Const.ViewController.Identifier.sticker)
+        stickerViewController.modalPresentationStyle = .overCurrentContext
+        stickerViewController.modalTransitionStyle = .crossDissolve
+        
+        tabBarController?.present(stickerViewController, animated: false, completion: nil)
     }
     
 }

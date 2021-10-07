@@ -23,6 +23,9 @@ class PlusButtonCollectionViewCell: UICollectionViewCell {
     // MARK: - Functions
     
     @IBAction func touchEmojiButton(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name("PlusButtonDidTap"),
+                                        object: nil,
+                                        userInfo: nil)
     }
 
 }

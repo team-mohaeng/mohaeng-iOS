@@ -44,6 +44,7 @@ extension Const {
             static let feedDetail = "FeedDetailViewController"
             static let writing = "WritingViewController"
             static let mood = "MoodViewController"
+            static let sticker = "StickerViewController"
         }
     }
 }

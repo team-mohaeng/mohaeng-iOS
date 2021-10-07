@@ -167,6 +167,8 @@
 		565A1EF82700CF81000CAB1B /* MyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565A1EF72700CF81000CAB1B /* MyPage.swift */; };
 		56A05EB22700699D006D6ECE /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A05EB12700699D006D6ECE /* DateCollectionViewCell.swift */; };
 		56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA6C2689C0D10056155A /* .swiftlint.yml */; };
+		AA190EFA2709AB310059E100 /* Sticker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA190EF92709AB310059E100 /* Sticker.storyboard */; };
+		AA190EFC2709D29D0059E100 /* StickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA190EFB2709D29D0059E100 /* StickerViewController.swift */; };
 		AA190EBF26FE62E30059E100 /* BackgroundCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA190EBD26FE62E30059E100 /* BackgroundCollectionViewCell.swift */; };
 		AA190EC026FE62E30059E100 /* BackgroundCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA190EBE26FE62E30059E100 /* BackgroundCollectionViewCell.xib */; };
 		AA7E0AAB26FC615C00106DC2 /* CharacterStyle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7E0AAA26FC615C00106DC2 /* CharacterStyle.storyboard */; };
@@ -187,6 +189,9 @@
 		DD64327626F5CCC100D71787 /* BadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327526F5CCC100D71787 /* BadgeViewController.swift */; };
 		DD64327926F5DC3400D71787 /* BadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */; };
 		DD64327B26F601E400D71787 /* BadgeModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327A26F601E400D71787 /* BadgeModalViewController.swift */; };
+		EC2FF5C626F343C000411F31 /* MoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */; };
+		EC2FF5C726F343C000411F31 /* MoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */; };
+		EC31776326FDB50E0076BCEC /* CarouselLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -354,6 +359,8 @@
 		56A05EB12700699D006D6ECE /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		56DCAA242689BB9B0056155A /* Mohaeng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mohaeng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCAA6C2689C0D10056155A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		AA190EF92709AB310059E100 /* Sticker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sticker.storyboard; sourceTree = "<group>"; };
+		AA190EFB2709D29D0059E100 /* StickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerViewController.swift; sourceTree = "<group>"; };
 		AA190EBD26FE62E30059E100 /* BackgroundCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA190EBE26FE62E30059E100 /* BackgroundCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BackgroundCollectionViewCell.xib; sourceTree = "<group>"; };
 		AA7E0AAA26FC615C00106DC2 /* CharacterStyle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CharacterStyle.storyboard; sourceTree = "<group>"; };
@@ -374,6 +381,9 @@
 		DD64327526F5CCC100D71787 /* BadgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewController.swift; sourceTree = "<group>"; };
 		DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCollectionViewCell.swift; sourceTree = "<group>"; };
 		DD64327A26F601E400D71787 /* BadgeModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModalViewController.swift; sourceTree = "<group>"; };
+		EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoodCollectionViewCell.swift; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MoodCollectionViewCell.xib; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselLayoutView.swift; sourceTree = "<group>"; };
 		FF85070BA1F5A448133681A6 /* Pods_Mohaeng.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mohaeng.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -434,11 +444,11 @@
 		561D75D226F0BFA30028DBCA /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				561D75E926F0BFA30028DBCA /* Tabbar.storyboard */,
 				561D75D326F0BFA30028DBCA /* Home */,
 				561D75D826F0BFA30028DBCA /* Auth */,
 				561D75E126F0BFA30028DBCA /* LaunchScreen.storyboard */,
 				561D75E326F0BFA30028DBCA /* Feed */,
-				561D75E926F0BFA30028DBCA /* Tabbar.storyboard */,
 				561D75EA26F0BFA30028DBCA /* Challenge */,
 			);
 			path = Storyboards;
@@ -480,6 +490,7 @@
 				561D75E626F0BFA30028DBCA /* FeedDetail.storyboard */,
 				561D75E726F0BFA30028DBCA /* Feed.storyboard */,
 				561D75E826F0BFA30028DBCA /* Mood.storyboard */,
+				AA190EF92709AB310059E100 /* Sticker.storyboard */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -716,6 +727,7 @@
 				561D764D26F0BFA40028DBCA /* WritingViewController.swift */,
 				561D764E26F0BFA40028DBCA /* MoodViewController.swift */,
 				561D764F26F0BFA40028DBCA /* FeedViewController.swift */,
+				AA190EFB2709D29D0059E100 /* StickerViewController.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -1026,6 +1038,7 @@
 				561D76A226F0BFA40028DBCA /* NewPassword.storyboard in Resources */,
 				561D76AB26F0BFA40028DBCA /* Mood.storyboard in Resources */,
 				561D76BD26F0BFA40028DBCA /* GmarketSansTTFBold.ttf in Resources */,
+				AA190EFA2709AB310059E100 /* Sticker.storyboard in Resources */,
 				561D76F026F0BFA40028DBCA /* AnimationPopUpViewController.xib in Resources */,
 				561D769A26F0BFA40028DBCA /* Setting.storyboard in Resources */,
 				561D76A026F0BFA40028DBCA /* EmailLogin.storyboard in Resources */,
@@ -1187,6 +1200,7 @@
 				561D76B826F0BFA40028DBCA /* Font.swift in Sources */,
 				AA7E0AB726FC998000106DC2 /* CharacterColorCollectionViewCell.swift in Sources */,
 				561D76BB26F0BFA40028DBCA /* LottieExmaple.swift in Sources */,
+				AA190EFC2709D29D0059E100 /* StickerViewController.swift in Sources */,
 				561D771826F0BFA40028DBCA /* AppDate.swift in Sources */,
 				561D771F26F0BFA40028DBCA /* PushNoti.swift in Sources */,
 				561D773B26F0BFA50028DBCA /* AnimationPopUpDelegate.swift in Sources */,
