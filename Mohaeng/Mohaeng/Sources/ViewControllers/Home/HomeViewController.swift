@@ -31,21 +31,23 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        initNavigationBar()
+
         initAttributes()
         makeShadow()
         setHourlyMent()
+        addCharaterStyleTapGesture()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        initNavigationBar()
     }
     
     // MARK: - @IBAction Functions
     
     @objc func touchAwardButton(sender: UIButton) {
-        let medalStoryboard = UIStoryboard(name: Const.Storyboard.Name.medal, bundle: nil)
-        guard let medalViewController = medalStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.medal) as? MedalViewController else {
-            return
-        }
-        self.navigationController?.pushViewController(medalViewController, animated: true)
+        let badgeViewController = BadgeViewController()
+        self.navigationController?.pushViewController(badgeViewController, animated: true)
     }
     
     @objc func touchSettingButton(sender: UIButton) {
@@ -62,6 +64,14 @@ class HomeViewController: UIViewController {
             return
         }
         self.navigationController?.pushViewController(settingViewController, animated: true)
+    }
+    
+    @objc func pushToStyleController() {
+        let charaterStoryboard = UIStoryboard(name: Const.Storyboard.Name.characterStyle, bundle: nil)
+        guard let charaterStyleViewController = charaterStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.characterStyle) as? CharacterStyleViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(charaterStyleViewController, animated: true)
     }
     
     // MARK: - Functions
@@ -91,11 +101,16 @@ class HomeViewController: UIViewController {
     
     private func makeShadow() {
         challengeInfoShadowView.makeRounded(radius: 10)
-        challengeInfoShadowView.dropShadow(rounded: 10)
+        challengeInfoShadowView.dropShadowWithMaskLayer(rounded: 10)
         progressShadowView.makeRounded(radius: 22)
-        progressShadowView.dropShadow(rounded: 10)
+        progressShadowView.dropShadowWithMaskLayer(rounded: 10)
         customCharaterShadowView.makeRounded(radius: 22)
-        customCharaterShadowView.dropShadow(rounded: 10)
+        customCharaterShadowView.dropShadowWithMaskLayer(rounded: 10)
+    }
+    
+    private func addCharaterStyleTapGesture() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(pushToStyleController))
+        customCharaterButtonView.addGestureRecognizer(gesture)
     }
     
     private func rotateProgressView() {

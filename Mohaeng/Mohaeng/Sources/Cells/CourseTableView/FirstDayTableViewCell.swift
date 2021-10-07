@@ -129,7 +129,7 @@ class FirstDayTableViewCell: UITableViewCell {
     func setNextSituation(next: Int) {
         switch next {
         case 0:
-            nextLine.strokeColor = UIColor.roadUndoneGrey.cgColor
+            nextLine.strokeColor = UIColor.Grey4.cgColor
             setDashedLine(line: nextLine)
         case 1:
             nextLine.strokeColor = UIColor.sampleGreen.cgColor
@@ -147,7 +147,7 @@ class FirstDayTableViewCell: UITableViewCell {
     private func setColorBySituation(situation: Int) {
         switch situation {
         case 0: // 진행 전 챌린지
-            currentLine.strokeColor = UIColor.roadUndoneGrey.cgColor
+            currentLine.strokeColor = UIColor.Grey4.cgColor
             setDashedLine(line: currentLine)
         
         case 1: // 진행 중인 챌린지

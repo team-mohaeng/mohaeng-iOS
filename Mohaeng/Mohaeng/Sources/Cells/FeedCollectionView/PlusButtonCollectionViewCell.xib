@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PlusButtonCollectionViewCell" customModule="Journey" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="36" height="34"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="36" height="34"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwm-0L-svb">
+                        <rect key="frame" x="0.0" y="0.0" width="36" height="34"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTw-JQ-Ch1">
+                                <rect key="frame" x="0.0" y="0.0" width="36" height="34"/>
+                                <state key="normal" image="plusTch"/>
+                                <connections>
+                                    <action selector="touchEmojiButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="zjX-gW-prV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="nTw-JQ-Ch1" secondAttribute="bottom" id="FlZ-co-39e"/>
+                            <constraint firstAttribute="trailing" secondItem="nTw-JQ-Ch1" secondAttribute="trailing" id="dlQ-qr-D3t"/>
+                            <constraint firstItem="nTw-JQ-Ch1" firstAttribute="top" secondItem="rwm-0L-svb" secondAttribute="top" id="lFS-oc-ELl"/>
+                            <constraint firstItem="nTw-JQ-Ch1" firstAttribute="leading" secondItem="rwm-0L-svb" secondAttribute="leading" id="lK3-0L-ZC1"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="rwm-0L-svb" secondAttribute="trailing" id="0Ga-t2-3xJ"/>
+                <constraint firstItem="rwm-0L-svb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="BKm-rQ-t7j"/>
+                <constraint firstAttribute="bottom" secondItem="rwm-0L-svb" secondAttribute="bottom" id="kVO-2x-9aI"/>
+                <constraint firstItem="rwm-0L-svb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="lCV-Re-8qH"/>
+            </constraints>
+            <size key="customSize" width="36" height="34"/>
+            <connections>
+                <outlet property="plusButton" destination="nTw-JQ-Ch1" id="DJg-hs-Lv5"/>
+            </connections>
+            <point key="canvasLocation" x="18.840579710144929" y="90.401785714285708"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="plusTch" width="30" height="30"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

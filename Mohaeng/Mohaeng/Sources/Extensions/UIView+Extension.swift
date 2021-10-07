@@ -45,7 +45,7 @@ extension UIView {
         }
     }
     
-    func dropShadow(rounded: CGFloat) {
+    func dropShadowWithMaskLayer(rounded: CGFloat) {
         let margin = 24
         let maximumRadiusValue: CGFloat = 50
         
@@ -71,12 +71,23 @@ extension UIView {
         var catShiftBorder = CGAffineTransform(translationX: shadowBorder / 2, y: shadowBorder / 2)
         pathMasking.addPath(maskLayer.path!.copy(using: &catShiftBorder)!)
         maskLayer.path = pathMasking
-
+        
         self.layer.mask = maskLayer
+        dropShadow(rounded: rounded)
+    }
+    
+    func dropShadow(rounded: CGFloat) {
         self.layer.shadowColor = UIColor.darkGray.cgColor
         self.layer.shadowOffset = .zero
         self.layer.shadowRadius = rounded
         self.layer.shadowOpacity = 0.1
+        self.layer.masksToBounds = false
+    }
+    
+    func addShadowWithOpaqueBackground(opacity: Float, radius: CGFloat) {
+        self.layer.shadowOpacity = opacity
+        self.layer.shadowOffset = CGSize(width: 0, height: 0)
+        self.layer.shadowRadius = radius
         self.layer.masksToBounds = false
     }
 }

@@ -29,6 +29,8 @@ extension Const {
             static let medal = "Medal"
             static let setting = "Setting"
             static let notification = "Notification"
+            static let characterStyle = "CharacterStyle"
+            static let myPage = "MyPage"
             
             // 챌린지 탭
             static let emptyChallenge = "EmptyChallenge"

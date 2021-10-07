@@ -106,5 +106,70 @@ extension Const {
         
         // mohaeng feed image
         static let imgHand = UIImage(named: "feedHandGrpX")
+        
+        // mohaeng character style image
+        static let lockDuck = UIImage(named: "default")
+        static let unlockDuck = UIImage(named: "1Grp")
+    
+        // mohaeng character background image
+        static let cloudBg = UIImage(named: "cloudBg")!
+        static let cloudSelected = UIImage(named: "cloudCheck")!
+        static let cloudLock = UIImage(named: "cloudLock")!
+        
+        static let spreadBg = UIImage(named: "spreadEffectBg")!
+        static let spreadSelected = UIImage(named: "spreadCheck")!
+        static let spreadLock = UIImage(named: "spreadLock")!
+        
+        static let yellowBg = UIImage(named: "yellowbg")!
+        static let yellowSelected = UIImage(named: "yellowCheck-1")!
+        static let yellowLock = UIImage(named: "yellowLock")!
+        
+        static let fieldBg = UIImage(named: "fieldBg")!
+        static let fieldSelected = UIImage(named: "fieldCheck")!
+        static let fieldLock = UIImage(named: "fieldLock")!
+        
+        static let nightBg = UIImage(named: "nightBg")!
+        static let nightSelected = UIImage(named: "nightCheck")!
+        static let nightLock = UIImage(named: "nightLock")!
+        
+        static let figureBg = UIImage(named: "figureBg")!
+        static let figureSelected = UIImage(named: "figureCheck")!
+        static let figureLock = UIImage(named: "figureLock")!
+
+        // app course theme image
+        /// red
+        static let redBigImage = UIImage(named: "redBigImage")!
+        static let redLibraryImage = UIImage(named: "redLibraryImage")!
+        static let redSmallImage = UIImage(named: "redSmallImage")!
+        /// orange
+        static let orangeBigImage = UIImage(named: "orangeBigImage")!
+        static let orangeLibraryImage = UIImage(named: "orangeLibraryImage")!
+        static let orangeSmallImage = UIImage(named: "orangeSmallImage")!
+        /// yellow
+        static let yellowBigImage = UIImage(named: "yellowBigImage")!
+        static let yellowLibraryImage = UIImage(named: "yellowLibraryImage")!
+        static let yellowSmallImage = UIImage(named: "yellowSmallImage")!
+        /// green
+        static let greenBigImage = UIImage(named: "greenBigImage")!
+        static let greenLibraryImage = UIImage(named: "greenLibraryImage")!
+        static let greenSmallImage = UIImage(named: "greenSmallImage")!
+        /// blue
+        static let blueBigImage = UIImage(named: "blueBigImage")!
+        static let blueLibraryImage = UIImage(named: "blueLibraryImage")!
+        static let blueSmallImage = UIImage(named: "blueSmallImage")!
+        /// indigo
+        static let indigoBigImage = UIImage(named: "indigoBigImage")!
+        static let indigoLibraryImage = UIImage(named: "indigoLibraryImage")!
+        static let indigoSmallImage = UIImage(named: "indigoSmallImage")!
+        /// purple
+        static let purpleBigImage = UIImage(named: "purpleBigImage")!
+        static let purpleLibraryImage = UIImage(named: "purpleLibraryImage")!
+        static let purpleSmallImage = UIImage(named: "purpleSmallImage")!
+
+        // mood feed image
+        static let badImage = UIImage(named: "badImage")
+        static let sosoImage = UIImage(named: "sosoImage")
+        static let happyImage = UIImage(named: "happyImage")
+        static let rightBackButton = UIImage(named: "rightBackButton")
     }
 }
