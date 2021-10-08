@@ -68,7 +68,18 @@ class MyPageViewController: UIViewController {
     // MARK: - Functions
     
     private func initNavigationBar() {
-        self.navigationController?.initTransparentNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
+        self.navigationController?.initWithOneCustomButton(
+            navigationItem: self.navigationItem,
+            firstButtonImage: Const.Image.settingIcn,
+            firstButtonClosure: #selector(touchSettingButton(_:)))
+    }
+    
+    @objc func touchSettingButton(_ sender: UIBarButtonItem) {
+        let settingStoryboard = UIStoryboard(name: Const.Storyboard.Name.setting, bundle: nil)
+        guard let settingViewController = settingStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.setting) as? SettingViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(settingViewController, animated: true)
     }
     
     private func initViewRoundingAndShadow() {

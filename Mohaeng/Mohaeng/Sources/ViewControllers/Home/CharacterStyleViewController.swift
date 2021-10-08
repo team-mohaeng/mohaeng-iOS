@@ -122,7 +122,8 @@ class CharacterStyleViewController: UIViewController {
     // MARK: - Functions
     
     private func initNavigationBar() {
-        navigationController?.initTransparentNavigationBarWithBackButton(navigationItem: self.navigationItem)
+        navigationController?.initWithBackButton()
+        self.navigationItem.title = "캐릭터 스타일"
     }
     
     private func initConstraint() {
