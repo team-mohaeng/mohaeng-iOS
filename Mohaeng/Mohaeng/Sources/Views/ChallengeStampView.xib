@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +19,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" restorationIdentifier="ChallengeStampView" id="iN0-l3-epB" customClass="ChallengeStampView" customModule="Journey" customModuleProvider="target">
+        <view contentMode="scaleToFill" restorationIdentifier="ChallengeStampView" id="iN0-l3-epB" customClass="ChallengeStampView" customModule="Mohaeng" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -170,6 +171,7 @@
                 <outlet property="characterLineView" destination="1Of-o4-vt6" id="V6R-eg-QbR"/>
                 <outlet property="dayLabelView" destination="Sw0-eU-8jJ" id="u12-Vk-BR4"/>
                 <outlet property="stampBgView" destination="Tk3-Ar-b0Y" id="7jj-AU-UCH"/>
+                <outlet property="stampImageView" destination="ZCr-7b-eZA" id="8JW-le-mBr"/>
             </connections>
             <point key="canvasLocation" x="73.913043478260875" y="43.526785714285715"/>
         </view>
