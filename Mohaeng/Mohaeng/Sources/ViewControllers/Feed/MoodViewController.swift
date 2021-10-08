@@ -77,7 +77,7 @@ class MoodViewController: UIViewController {
     }
     
     private func initNavigationBar() {
-        navigationController?.initTransparentNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
+        navigationController?.initWithBackButton()
         closeButton.addTarget(self, action: #selector(buttonDidTapped(_:)), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: closeButton)
 
