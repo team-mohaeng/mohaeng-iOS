@@ -212,8 +212,9 @@ extension FeedViewController: HeaderViewDelegate {
         let moodStoryboard = UIStoryboard(name: Const.Storyboard.Name.mood, bundle: nil)
         guard let moodViewController = moodStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.mood) as? MoodViewController else { return }
         
-        self.navigationController?.isNavigationBarHidden = false
-        self.navigationController?.pushViewController(writingViewController, animated: true)
+        let navigationController = UINavigationController(rootViewController: moodViewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        self.present(navigationController, animated: true, completion: nil)
     }
     
 }
