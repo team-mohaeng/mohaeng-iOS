@@ -39,7 +39,7 @@ class EmailLoginViewController: UIViewController {
         
     }
     @IBAction func touchFindPasswordButton(_ sender: Any) {
-        
+        pushFindPasswordViewController()
     }
     // MARK: - Functions
     
@@ -80,8 +80,12 @@ class EmailLoginViewController: UIViewController {
         loginButton.isEnabled = true
     }
     
-    private func pushSignUpSecondViewController() {
-        // 비밀번호 찾기 뷰 나오면 넣어 놓을게용
+    private func pushFindPasswordViewController() {
+        let findPasswordStoryboard = UIStoryboard(name: Const.Storyboard.Name.findPassword, bundle: nil)
+        guard let findPasswordViewController = findPasswordStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.findPassword) as? FindPasswordViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(findPasswordViewController, animated: true)
     }
     
 }
