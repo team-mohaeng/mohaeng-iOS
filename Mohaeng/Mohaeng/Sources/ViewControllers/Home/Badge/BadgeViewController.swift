@@ -45,7 +45,7 @@ class BadgeViewController: UIViewController {
     }
     
     private func initNavigationBar() {
-        navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
+        navigationController?.initWithBackButton()
         navigationItem.title = "배지"
     }
     

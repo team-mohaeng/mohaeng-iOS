@@ -36,7 +36,7 @@ class WritingViewController: UIViewController {
         $0.textColor = .Grey3
         $0.text = "챌린지와 함께한 하루 이야기를 기록으로 남겨봐"
     }
-    
+  
     private let writingCountLabel = UILabel().then {
         $0.font = .spoqaHanSansNeo(weight: .regular, size: 10)
     }
@@ -149,7 +149,7 @@ class WritingViewController: UIViewController {
     }
     
     private func initNavigationBar() {
-        navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
+        navigationController?.initWithBackButton()
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: closeButton)
         let currentDate = AppDate()
         let currentMonth = currentDate.getMonth()

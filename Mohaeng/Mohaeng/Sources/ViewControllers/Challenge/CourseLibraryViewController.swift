@@ -43,7 +43,7 @@ class CourseLibraryViewController: UIViewController {
     // MARK: - Functions
     
     private func initNavigationBar() {
-        self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
+        self.navigationController?.initWithBackButton()
         
         self.navigationItem.title = "코스 목록"
     }
