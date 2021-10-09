@@ -3,34 +3,19 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="GmarketSansTTFMedium.ttf">
-            <string>GmarketSansTTFMedium</string>
-        </array>
-    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedHeaderView" customModule="Journey" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedHeaderView" customModule="Mohaeng" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FeedHeaderView" customModule="Journey" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FeedHeaderView" customModule="Mohaeng" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="405" height="656"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4pP-9i-50W">
                     <rect key="frame" x="0.0" y="44" width="405" height="612"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘은 64개의 안부가 남겨졌어요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTQ-OH-Q9G">
-                            <rect key="frame" x="24" y="107" width="144" height="36"/>
-                            <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="18"/>
-                            <color key="textColor" name="Black1Text"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="feedGrpX" translatesAutoresizingMaskIntoConstraints="NO" id="BrZ-YM-lqU">
-                            <rect key="frame" x="217.5" y="49" width="161.5" height="142.5"/>
-                        </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SFj-OY-uxp">
                             <rect key="frame" x="278" y="0.0" width="70" height="44"/>
                             <subviews>
@@ -71,11 +56,7 @@
                     <constraints>
                         <constraint firstItem="5fp-5t-jUi" firstAttribute="top" secondItem="4pP-9i-50W" secondAttribute="top" id="0gE-sw-12p"/>
                         <constraint firstItem="5fp-5t-jUi" firstAttribute="leading" secondItem="SFj-OY-uxp" secondAttribute="trailing" id="6sU-rr-yaa"/>
-                        <constraint firstAttribute="trailing" secondItem="BrZ-YM-lqU" secondAttribute="trailing" constant="26" id="Oy7-K7-FUC"/>
-                        <constraint firstItem="BrZ-YM-lqU" firstAttribute="top" secondItem="4pP-9i-50W" secondAttribute="top" constant="49" id="Wgd-bZ-zHo"/>
                         <constraint firstAttribute="trailing" secondItem="5fp-5t-jUi" secondAttribute="trailing" constant="13" id="bBX-6x-EIj"/>
-                        <constraint firstItem="DTQ-OH-Q9G" firstAttribute="top" secondItem="4pP-9i-50W" secondAttribute="top" constant="107" id="pSb-oQ-H7R"/>
-                        <constraint firstItem="DTQ-OH-Q9G" firstAttribute="leading" secondItem="4pP-9i-50W" secondAttribute="leading" constant="24" id="uNG-4V-sZh"/>
                         <constraint firstItem="SFj-OY-uxp" firstAttribute="top" secondItem="4pP-9i-50W" secondAttribute="top" id="uwT-u7-OHf"/>
                     </constraints>
                 </view>
@@ -91,16 +72,11 @@
             <connections>
                 <outlet property="myDrawerButtonView" destination="SFj-OY-uxp" id="sV3-fH-80u"/>
                 <outlet property="newIndicatorView" destination="qVo-zb-C2Q" id="YHi-ae-OZq"/>
-                <outlet property="writingCountLabel" destination="DTQ-OH-Q9G" id="Jeq-qG-EUh"/>
             </connections>
             <point key="canvasLocation" x="-84.782608695652186" y="58.258928571428569"/>
         </view>
     </objects>
     <resources>
-        <image name="feedGrpX" width="161.5" height="142.5"/>
         <image name="gnbIcnWrite" width="44" height="44"/>
-        <namedColor name="Black1Text">
-            <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

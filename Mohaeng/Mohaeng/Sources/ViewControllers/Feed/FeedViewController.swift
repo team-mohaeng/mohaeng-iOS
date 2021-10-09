@@ -33,13 +33,26 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var feedCollectionView: UICollectionView!
     @IBOutlet weak var statusBarView: UIView!
     @IBOutlet weak var floatingTopButton: UIButton!
-    var feedBackgroundFrame: UIView = UIView(frame: CGRect(x: 0, y: Size.FeedCollectionViewTopConstraint, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 100))
-    var handImageView = UIImageView()
-    var headerView: FeedHeaderView = {
+    
+    private var feedUserCountLabel = UILabel().then {
+        $0.font = UIFont.gmarketFont(weight: .medium, size: 18)
+        $0.numberOfLines = 2
+        $0.text = "오늘은 64개의\n안부가 남겨졌어요"
+    }
+    
+    private var feedBackgroundFrame = UIView().then {
+        $0.frame = CGRect(x: 0, y: Size.FeedCollectionViewTopConstraint, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 100)
+    }
+    
+    private var headerGraphicImageView = UIImageView().then {
+        $0.image = Const.Image.feedGraphic
+    }
+    
+    private var headerView: FeedHeaderView = {
         guard let nib = UINib(nibName: Const.Xib.Name.feedHeaderView, bundle: nil).instantiate(withOwner: self, options: nil).first as? FeedHeaderView else { return FeedHeaderView() }
         return nib
     }()
-    
+
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -49,7 +62,7 @@ class FeedViewController: UIViewController {
         setDelegation()
         registerXib()
         initAtrributes()
-        initHandLayout()
+        setupAutoLayout()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,7 +74,7 @@ class FeedViewController: UIViewController {
         headerView.setHeaderData(hasNewContents: feedDummy.isNew, contents: feedDummy.feed.count)
         setHeaderViewDelegate()
         
-        self.feedCollectionView.insertSubview(self.feedBackgroundFrame, at: 0)
+        feedCollectionView.insertSubview(feedBackgroundFrame, at: 0)
     }
     
     // MARK: - Functions
@@ -79,6 +92,10 @@ class FeedViewController: UIViewController {
         feedCollectionView.dataSource = self
     }
     
+    private func setHeaderViewDelegate() {
+        headerView.delegate = self
+    }
+    
     private func initAtrributes() {
         feedCollectionView.backgroundView = UIView()
         feedCollectionView.backgroundView?.addSubview(headerView)
@@ -87,23 +104,20 @@ class FeedViewController: UIViewController {
         feedBackgroundFrame.makeRounded(radius: 24)
     
         floatingTopButton.contentEdgeInsets = UIEdgeInsets(top: 0.01, left: 0, bottom: 0.01, right: 0)
-        floatingTopButton.layer.shadowOffset = CGSize(width: 2, height: 3)
-        floatingTopButton.layer.shadowColor = UIColor.black.cgColor
-        floatingTopButton.layer.shadowOpacity = 0.1
-        
-        handImageView.image = Const.Image.imgHand
+        floatingTopButton.addShadowWithOpaqueBackground(opacity: 0.1, radius: 1)
     }
     
-    private func setHeaderViewDelegate() {
-        headerView.delegate = self
-    }
-    
-    private func initHandLayout() {
-        view.addSubviews(handImageView, feedBackgroundFrame)
+    private func setupAutoLayout() {
+        view.addSubviews(feedBackgroundFrame, headerGraphicImageView, feedUserCountLabel)
         
-        handImageView.snp.makeConstraints {
+        feedUserCountLabel.snp.makeConstraints {
+            $0.bottom.equalTo(feedBackgroundFrame.snp.top).offset(-18)
+            $0.leading.equalToSuperview().offset(24)
+        }
+        
+        headerGraphicImageView.snp.makeConstraints {
             $0.bottom.equalTo(feedBackgroundFrame.snp.top).offset(10)
-            $0.trailing.equalToSuperview().offset(-32)
+            $0.trailing.equalToSuperview().inset(32)
         }
     }
     
@@ -146,28 +160,33 @@ extension FeedViewController: UICollectionViewDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offset = scrollView.contentOffset.y
+        changeHeaderViewOpacity()
+        changeFloatingButtonOpacity()
+    }
+    
+    func changeHeaderViewOpacity() {
+        let offset = feedCollectionView.contentOffset.y
         let headViewAlphaPercent = (Size.HeadViewHeightConstraint - offset) / Size.HeadViewHeightConstraint
-        let handAlphaPercent = (10 - offset) / 10
+        let headerResourceAlphaPercent = (50 - offset) / 50
         
-        if offset < Size.HeadViewHeightConstraint {
-            headerView.alpha = max(headViewAlphaPercent, 0.3)
-            statusBarView.alpha = headViewAlphaPercent
-            handImageView.alpha = handAlphaPercent
-        }
-        
+        headerView.alpha = headViewAlphaPercent
+        statusBarView.alpha = headViewAlphaPercent
+        headerGraphicImageView.alpha = headerResourceAlphaPercent
+        feedUserCountLabel.alpha = headerResourceAlphaPercent
+    }
+    
+    func changeFloatingButtonOpacity() {
         if feedCollectionView.contentOffset.y > Size.minimumHeightWithButtonVisible {
-            UIView.animate(withDuration: 1.0) {
-                self.floatingTopButton.alpha = 1.0
-                self.floatingTopButton.isHidden = false
+            UIView.animate(withDuration: 1.0) { [self] in
+                floatingTopButton.alpha = 1.0
+                floatingTopButton.isHidden = false
             }
         } else {
-            UIView.animate(withDuration: 1.0) {
-                self.floatingTopButton.alpha = 0.0
+            UIView.animate(withDuration: 1.0) { [self] in
+                floatingTopButton.alpha = 0.0
             }
         }
     }
-    
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
