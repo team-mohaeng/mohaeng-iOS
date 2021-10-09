@@ -36,15 +36,15 @@ public class BadgeAPI {
     private func judgeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
         
-        guard let decodedData = try? decoder.decode(BadgesData.self, from: data) else {
+        guard let decodedData = try? decoder.decode(GenericResponse<BadgesData>.self, from: data) else {
             return .pathErr
         }
         
         switch statusCode {
         case 200:
-            return .success(decodedData.badges)
+            return .success(decodedData.data)
         case 400..<500:
-            return .requestErr(decodedData)
+            return .requestErr(decodedData.message)
         case 500:
             return .serverErr
         default:

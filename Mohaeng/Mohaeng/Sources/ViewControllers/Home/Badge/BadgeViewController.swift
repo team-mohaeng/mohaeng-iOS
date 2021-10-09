@@ -144,8 +144,8 @@ extension BadgeViewController {
         BadgeAPI.shared.getBadges {[weak self] (response) in
             switch response {
             case .success(let data):
-                if let data = data as? [Badge] {
-                    self?.badges = data
+                if let data = data as? BadgesData {
+                    self?.badges = data.badges
                     self?.collectionView.reloadData()
                 }
             case .requestErr(let message):

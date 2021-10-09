@@ -9,7 +9,6 @@ import Foundation
 
 // MARK: - BadgesData
 struct BadgesData: Codable {
-    let status: Int
     let badges: [Badge]
 
 }
