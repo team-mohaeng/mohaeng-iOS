@@ -72,7 +72,8 @@ class BadgeViewController: UIViewController {
     
     private func setConstraints() {
         collectionView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.bottom.leading.trailing.equalToSuperview()
         }
     }
 

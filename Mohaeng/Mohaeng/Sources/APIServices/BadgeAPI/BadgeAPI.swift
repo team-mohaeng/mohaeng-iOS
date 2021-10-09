@@ -11,7 +11,7 @@ import Moya
 public class BadgeAPI {
     
     static let shared = BadgeAPI()
-    var badgeProvider = MoyaProvider<BadgeService>()
+    var badgeProvider = MoyaProvider<BadgeService>(plugins: [MoyaLoggingPlugin()])
     
     private init() {}
     
