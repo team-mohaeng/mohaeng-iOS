@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GmarketSansTTFMedium.ttf">
+            <string>GmarketSansTTFMedium</string>
+        </array>
+        <array key="SpoqaHanSansNeo-Medium.otf">
+            <string>SpoqaHanSansNeo-Medium</string>
+        </array>
+        <array key="SpoqaHanSansNeo-Regular.otf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChallengeCompletePopUpViewController" customModule="Mohaeng" customModuleProvider="target">
+            <connections>
+                <outlet property="barelyButton" destination="StD-9v-JJs" id="x4p-fh-r31"/>
+                <outlet property="perfectButton" destination="4zl-fA-IpR" id="vs3-gj-d2h"/>
+                <outlet property="popUpBgView" destination="9m3-G3-Ww2" id="cSj-iV-Hfv"/>
+                <outlet property="shameButton" destination="MJx-es-XsC" id="VfR-Nr-p5w"/>
+                <outlet property="titleLabel" destination="6Jr-cb-ffz" id="koJ-DJ-1H0"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9m3-G3-Ww2">
+                    <rect key="frame" x="78.5" y="238.5" width="257" height="429"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인증하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSc-xI-pZF">
+                            <rect key="frame" x="102.5" y="22" width="52" height="18"/>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODf-3D-Kkl">
+                            <rect key="frame" x="212" y="10" width="37" height="26.5"/>
+                            <color key="tintColor" name="Black"/>
+                            <buttonConfiguration key="configuration" style="plain" image="yearPickerX" title=""/>
+                            <connections>
+                                <action selector="touchCloseButton:" destination="-1" eventType="touchUpInside" id="VhL-T2-36d"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인증하러 왔구나? 오늘의 챌린지 다했어?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Jr-cb-ffz">
+                            <rect key="frame" x="30" y="60" width="197" height="40"/>
+                            <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="okImg" translatesAutoresizingMaskIntoConstraints="NO" id="j5X-zI-gLq">
+                            <rect key="frame" x="68" y="116" width="125" height="88"/>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="FEp-4w-KQx">
+                            <rect key="frame" x="28" y="228" width="201" height="172"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zl-fA-IpR">
+                                    <rect key="frame" x="0.0" y="0.0" width="201" height="48"/>
+                                    <color key="backgroundColor" red="0.33333333333333331" green="0.25882352941176467" blue="0.22745098039215686" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="tqW-3o-mrW"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="완벽하게 성공 🤗"/>
+                                    <connections>
+                                        <action selector="touchPerfectButton:" destination="-1" eventType="touchUpInside" id="CDO-AX-QHp"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJx-es-XsC">
+                                    <rect key="frame" x="0.0" y="62" width="201" height="48"/>
+                                    <color key="backgroundColor" red="0.51372549019607838" green="0.47058823529411764" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="HbJ-GZ-Ztz"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="14"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="살짝 아쉬워 😅"/>
+                                    <connections>
+                                        <action selector="touchShameButton:" destination="-1" eventType="touchUpInside" id="eBZ-pi-a8G"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="StD-9v-JJs">
+                                    <rect key="frame" x="0.0" y="124" width="201" height="48"/>
+                                    <color key="backgroundColor" red="0.72156862745098038" green="0.67450980392156867" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="RXq-38-3s0"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="14"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="겨우 해냈다..! 😌"/>
+                                    <connections>
+                                        <action selector="touchBarelyButton:" destination="-1" eventType="touchUpInside" id="Ess-nc-pU9"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" name="Yellow5"/>
+                    <constraints>
+                        <constraint firstItem="FEp-4w-KQx" firstAttribute="leading" secondItem="9m3-G3-Ww2" secondAttribute="leading" constant="28" id="0lp-lY-oDO"/>
+                        <constraint firstAttribute="trailing" secondItem="6Jr-cb-ffz" secondAttribute="trailing" constant="30" id="1Nq-nb-gcI"/>
+                        <constraint firstAttribute="trailing" secondItem="FEp-4w-KQx" secondAttribute="trailing" constant="28" id="2UM-j8-Vqg"/>
+                        <constraint firstAttribute="trailing" secondItem="ODf-3D-Kkl" secondAttribute="trailing" constant="8" id="3pr-aZ-wx9"/>
+                        <constraint firstItem="FEp-4w-KQx" firstAttribute="top" secondItem="j5X-zI-gLq" secondAttribute="bottom" constant="24" id="6iO-Az-7s8"/>
+                        <constraint firstItem="ODf-3D-Kkl" firstAttribute="top" secondItem="9m3-G3-Ww2" secondAttribute="top" constant="10" id="AlH-7a-UHE"/>
+                        <constraint firstAttribute="bottom" secondItem="FEp-4w-KQx" secondAttribute="bottom" constant="29" id="Dhm-V6-RAa"/>
+                        <constraint firstItem="HSc-xI-pZF" firstAttribute="top" secondItem="9m3-G3-Ww2" secondAttribute="top" constant="22" id="DuM-6j-6bb"/>
+                        <constraint firstItem="6Jr-cb-ffz" firstAttribute="leading" secondItem="9m3-G3-Ww2" secondAttribute="leading" constant="30" id="EnL-Ux-UJO"/>
+                        <constraint firstItem="j5X-zI-gLq" firstAttribute="top" secondItem="6Jr-cb-ffz" secondAttribute="bottom" constant="16" id="SSg-FO-Pm0"/>
+                        <constraint firstItem="HSc-xI-pZF" firstAttribute="centerX" secondItem="9m3-G3-Ww2" secondAttribute="centerX" id="auS-nY-1qD"/>
+                        <constraint firstItem="6Jr-cb-ffz" firstAttribute="top" secondItem="HSc-xI-pZF" secondAttribute="bottom" constant="20" id="cYy-gL-euJ"/>
+                        <constraint firstItem="j5X-zI-gLq" firstAttribute="centerX" secondItem="9m3-G3-Ww2" secondAttribute="centerX" constant="2" id="eqi-id-lJu"/>
+                        <constraint firstItem="6Jr-cb-ffz" firstAttribute="centerX" secondItem="9m3-G3-Ww2" secondAttribute="centerX" id="tsN-Ye-AJB"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.21176470588235294" green="0.21176470588235294" blue="0.21176470588235294" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="9m3-G3-Ww2" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="FXd-9Q-Ggl"/>
+                <constraint firstItem="9m3-G3-Ww2" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="btK-Wj-u1J"/>
+            </constraints>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="131.8840579710145" y="57.589285714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="okImg" width="125" height="88"/>
+        <image name="yearPickerX" width="13" height="12.5"/>
+        <namedColor name="Black">
+            <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Yellow5">
+            <color red="1" green="0.92900002002716064" blue="0.74900001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
