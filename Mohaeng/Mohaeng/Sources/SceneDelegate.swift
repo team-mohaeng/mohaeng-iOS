@@ -17,12 +17,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
                 
-        if !hasJwtToken() {
-            setRootViewControllerToLogin()
-        } else {
-            print(UserDefaults.standard.string(forKey: "jwtToken"))
-            setRootViewControllerToTabbar()
-        }
+//        if !hasJwtToken() {
+//            setRootViewControllerToLogin()
+//        } else {
+//            print(UserDefaults.standard.string(forKey: "jwtToken"))
+//            setRootViewControllerToTabbar()
+//        }
+        self.navigationController = UINavigationController(rootViewController: OnBoarding1ViewController())
+        self.window?.rootViewController = self.navigationController
         self.window?.backgroundColor = .white
         
         

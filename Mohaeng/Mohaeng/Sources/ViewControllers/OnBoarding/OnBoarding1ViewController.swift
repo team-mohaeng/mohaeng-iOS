@@ -12,8 +12,6 @@ import Then
 
 class OnBoarding1ViewController: UIViewController {
     
-    let animationHeight: CGFloat = 60
-    
     var smallMessageBoxImageView = UIImageView().then {
         $0.image = Const.Image.messageBoxSmall
         
@@ -77,17 +75,24 @@ class OnBoarding1ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setNavigationBar()
         setLayout()
-        
-        [self.smallMessageBoxImageView, self.largeMessageBoxImageView, self.loginButton, self.startButton].forEach {
-            $0.animateAlpha()
-        }
-        
-        [self.smallMessageBoxImageView, self.largeMessageBoxImageView].forEach {
-            $0.animateBottomToTop()
-        }
-        
+        addAnimation()
+        setTargets()
+    }
+    
+    private func setNavigationBar() {
+        self.navigationController?.hideNavigationBar()
+    }
+    
+    private func setTargets() {
+        [startButton, loginButton].forEach { $0.addTarget(self, action: #selector(touchButton(_:)), for: .touchUpInside) }
+    }
+    
+    
+    private func addAnimation() {
+        [loginButton, startButton].forEach { $0.animateWithOpacity()}
+        [smallMessageBoxImageView, largeMessageBoxImageView].forEach { $0.animateBottomToTopWithOpacity()}
     }
     
     private func setLayout() {
@@ -140,4 +145,32 @@ class OnBoarding1ViewController: UIViewController {
         }
     }
 
+}
+
+extension OnBoarding1ViewController {
+    @objc
+    private func touchButton(_ sender: UIButton) {
+        switch sender {
+        case startButton:
+            self.navigationController?.pushViewController(OnBoarding3ViewController(), animated: true)
+        case loginButton:
+            guard let window = self.view.window else {return}
+            UIView.transition(with: window,
+                              duration: 0.3,
+                              options: [.showHideTransitionViews],
+                              animations: {[weak self] in
+                                self?.setRootViewControllerToLogin()
+                              },
+                              completion: nil)
+        default:
+            break
+        }
+        
+    }
+    private func setRootViewControllerToLogin() {
+        let loginStoryboard = UIStoryboard(name: Const.Storyboard.Name.login, bundle: nil)
+        let loginViewController = loginStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.login)
+        self.view.window?.rootViewController = UINavigationController(rootViewController: loginViewController)
+        self.view.window?.makeKeyAndVisible()
+    }
 }

@@ -91,7 +91,7 @@ extension UIView {
         self.layer.masksToBounds = false
     }
     
-    func animateBottomToTop() {
+    func animateBottomToTopWithOpacity() {
         self.alpha = 0.5
         UIView.animate(withDuration: 1.5) {
             self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y-40, width: self.frame.width, height: self.frame.height)
@@ -99,7 +99,7 @@ extension UIView {
         }
     }
     
-    func animateAlpha() {
+    func animateWithOpacity() {
         self.alpha = 0.5
         UIView.animate(withDuration: 2) {
             self.alpha = 1
