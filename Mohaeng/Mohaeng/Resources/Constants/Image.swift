@@ -179,5 +179,13 @@ extension Const {
         static let checkBoxImage = UIImage(named: "btnCheck")
         static let checkBoxLineImage = UIImage(named: "btnCheck_line")
         static let photoXbtnImage = UIImage(named: "photoXbtn")
+        
+        //on boarding 1
+        static let messageBoxSmall = UIImage(named: "messageBoxSmall")
+        static let messageBoxLarge = UIImage(named: "messageBoxLarge")
+        static let grpXonboarding1 = UIImage(named: "grpXonboarding1")
+        static let grpXonboarding2 = UIImage(named: "grpXonboarding2")
+        static let grpXonboarding3 = UIImage(named: "grpXonboarding3")
+
     }
 }

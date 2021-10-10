@@ -165,10 +165,10 @@
 		565A1EF82700CF81000CAB1B /* MyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565A1EF72700CF81000CAB1B /* MyPage.swift */; };
 		56A05EB22700699D006D6ECE /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A05EB12700699D006D6ECE /* DateCollectionViewCell.swift */; };
 		56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA6C2689C0D10056155A /* .swiftlint.yml */; };
-		AA190EFA2709AB310059E100 /* Sticker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA190EF92709AB310059E100 /* Sticker.storyboard */; };
-		AA190EFC2709D29D0059E100 /* StickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA190EFB2709D29D0059E100 /* StickerViewController.swift */; };
 		AA190EBF26FE62E30059E100 /* BackgroundCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA190EBD26FE62E30059E100 /* BackgroundCollectionViewCell.swift */; };
 		AA190EC026FE62E30059E100 /* BackgroundCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA190EBE26FE62E30059E100 /* BackgroundCollectionViewCell.xib */; };
+		AA190EFA2709AB310059E100 /* Sticker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA190EF92709AB310059E100 /* Sticker.storyboard */; };
+		AA190EFC2709D29D0059E100 /* StickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA190EFB2709D29D0059E100 /* StickerViewController.swift */; };
 		AA7E0AAB26FC615C00106DC2 /* CharacterStyle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7E0AAA26FC615C00106DC2 /* CharacterStyle.storyboard */; };
 		AA7E0AAD26FC64D500106DC2 /* CharacterStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7E0AAC26FC64D500106DC2 /* CharacterStyleViewController.swift */; };
 		AA7E0AB326FC6C1900106DC2 /* CharacterTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7E0AB126FC6C1900106DC2 /* CharacterTypeCollectionViewCell.swift */; };
@@ -181,6 +181,8 @@
 		AAED18DD26F11DF0009FE781 /* PlusButtonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAED18D726F11DEF009FE781 /* PlusButtonCollectionViewCell.xib */; };
 		AAED18E026F313E3009FE781 /* FeedDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAED18DF26F313E3009FE781 /* FeedDetailCollectionViewCell.swift */; };
 		C96CDD968727E45C25BA11DB /* Pods_Mohaeng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF85070BA1F5A448133681A6 /* Pods_Mohaeng.framework */; };
+		DD515C6A2711F39100E76D4B /* OnBoarding1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD515C692711F39100E76D4B /* OnBoarding1ViewController.swift */; };
+		DD515C6C2712042D00E76D4B /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD515C6B2712042D00E76D4B /* UILabel+Extension.swift */; };
 		DD64327626F5CCC100D71787 /* BadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327526F5CCC100D71787 /* BadgeViewController.swift */; };
 		DD64327926F5DC3400D71787 /* BadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */; };
 		DD64327B26F601E400D71787 /* BadgeModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327A26F601E400D71787 /* BadgeModalViewController.swift */; };
@@ -355,10 +357,10 @@
 		56A05EB12700699D006D6ECE /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		56DCAA242689BB9B0056155A /* Mohaeng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mohaeng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCAA6C2689C0D10056155A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		AA190EF92709AB310059E100 /* Sticker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sticker.storyboard; sourceTree = "<group>"; };
-		AA190EFB2709D29D0059E100 /* StickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerViewController.swift; sourceTree = "<group>"; };
 		AA190EBD26FE62E30059E100 /* BackgroundCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA190EBE26FE62E30059E100 /* BackgroundCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BackgroundCollectionViewCell.xib; sourceTree = "<group>"; };
+		AA190EF92709AB310059E100 /* Sticker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sticker.storyboard; sourceTree = "<group>"; };
+		AA190EFB2709D29D0059E100 /* StickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerViewController.swift; sourceTree = "<group>"; };
 		AA7E0AAA26FC615C00106DC2 /* CharacterStyle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CharacterStyle.storyboard; sourceTree = "<group>"; };
 		AA7E0AAC26FC64D500106DC2 /* CharacterStyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStyleViewController.swift; sourceTree = "<group>"; };
 		AA7E0AB126FC6C1900106DC2 /* CharacterTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTypeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -371,6 +373,8 @@
 		AAED18D726F11DEF009FE781 /* PlusButtonCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlusButtonCollectionViewCell.xib; sourceTree = "<group>"; };
 		AAED18DF26F313E3009FE781 /* FeedDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE6F11BC23DA1F9010B4D5A7 /* Pods-Mohaeng.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mohaeng.debug.xcconfig"; path = "Target Support Files/Pods-Mohaeng/Pods-Mohaeng.debug.xcconfig"; sourceTree = "<group>"; };
+		DD515C692711F39100E76D4B /* OnBoarding1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding1ViewController.swift; sourceTree = "<group>"; };
+		DD515C6B2712042D00E76D4B /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		DD64327526F5CCC100D71787 /* BadgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewController.swift; sourceTree = "<group>"; };
 		DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCollectionViewCell.swift; sourceTree = "<group>"; };
 		DD64327A26F601E400D71787 /* BadgeModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModalViewController.swift; sourceTree = "<group>"; };
@@ -456,7 +460,6 @@
 				561D75D426F0BFA30028DBCA /* Setting.storyboard */,
 				561D75D526F0BFA30028DBCA /* Home.storyboard */,
 				561D75D626F0BFA30028DBCA /* Notification.storyboard */,
-				561D75D726F0BFA30028DBCA /* Medal.storyboard */,
 				AA7E0AAA26FC615C00106DC2 /* CharacterStyle.storyboard */,
 				561D777C26F36C520028DBCA /* MyPage.storyboard */,
 			);
@@ -658,6 +661,7 @@
 				561D763226F0BFA40028DBCA /* UIViewController+Extension.swift */,
 				DDF110442709DFB1004FD5FB /* UIButton+Extension.swift */,
 				DDF110462709DFEA004FD5FB /* UIImage+Extension.swift */,
+				DD515C6B2712042D00E76D4B /* UILabel+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -665,6 +669,7 @@
 		561D763326F0BFA40028DBCA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				DD515C682711F1C000E76D4B /* OnBoarding */,
 				561D763426F0BFA40028DBCA /* Home */,
 				561D763926F0BFA40028DBCA /* PopUp */,
 				561D764126F0BFA40028DBCA /* Auth */,
@@ -909,12 +914,12 @@
 			path = CharaterCollectionView;
 			sourceTree = "<group>";
 		};
-		D0287158D44B2BB35A2072A9 /* Frameworks */ = {
+		DD515C682711F1C000E76D4B /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
-				1A97E4F8107F8EB85B4E4A69 /* Pods_Mohaeng.framework */,
+				DD515C692711F39100E76D4B /* OnBoarding1ViewController.swift */,
 			);
-			name = Frameworks;
+			path = OnBoarding;
 			sourceTree = "<group>";
 		};
 		DD64327726F5DC0A00D71787 /* BadgeCollectionView */ = {
@@ -1127,6 +1132,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD515C6C2712042D00E76D4B /* UILabel+Extension.swift in Sources */,
 				561D76C726F0BFA40028DBCA /* ViewModelState.swift in Sources */,
 				561D772626F0BFA40028DBCA /* Feed.swift in Sources */,
 				561D770326F0BFA40028DBCA /* CourseLibraryViewController.swift in Sources */,
@@ -1236,6 +1242,7 @@
 				561D76EC26F0BFA40028DBCA /* AnimationPopUpViewController.swift in Sources */,
 				561D772926F0BFA40028DBCA /* ChallengeStampView.swift in Sources */,
 				AA7E0AAD26FC64D500106DC2 /* CharacterStyleViewController.swift in Sources */,
+				DD515C6A2711F39100E76D4B /* OnBoarding1ViewController.swift in Sources */,
 				56A05EB22700699D006D6ECE /* DateCollectionViewCell.swift in Sources */,
 				561D76F726F0BFA40028DBCA /* SignUpSecondViewController.swift in Sources */,
 				561D772726F0BFA40028DBCA /* CourseLibrary.swift in Sources */,

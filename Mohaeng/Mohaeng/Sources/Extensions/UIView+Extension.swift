@@ -90,4 +90,19 @@ extension UIView {
         self.layer.shadowRadius = radius
         self.layer.masksToBounds = false
     }
+    
+    func animateBottomToTop() {
+        self.alpha = 0.5
+        UIView.animate(withDuration: 1.5) {
+            self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y-40, width: self.frame.width, height: self.frame.height)
+            self.alpha = 1
+        }
+    }
+    
+    func animateAlpha() {
+        self.alpha = 0.5
+        UIView.animate(withDuration: 2) {
+            self.alpha = 1
+        }
+    }
 }
