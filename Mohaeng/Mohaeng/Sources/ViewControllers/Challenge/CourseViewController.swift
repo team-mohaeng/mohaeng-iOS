@@ -36,7 +36,7 @@ class CourseViewController: UIViewController {
         registerXib()
         assignDelegation()
         initViewRounding()
-        getCourse()
+        // getCourse()
     }
     
     override func viewDidLayoutSubviews() {
@@ -77,6 +77,7 @@ class CourseViewController: UIViewController {
     private func assignDelegation() {
         courseTableView.delegate = self
         courseTableView.dataSource = self
+        self.headerView?.challengePopUpProtocol = self
     }
     
     private func initViewRounding() {
@@ -214,6 +215,48 @@ extension CourseViewController: UITableViewDataSource {
             }
             return UITableViewCell()
         }
+    }
+}
+
+// MARK: - ChallengePopUpProtocol
+
+extension CourseViewController: ChallengePopUpProtocol {
+    
+    func touchHelpButton(_ sender: UIButton) {
+        let helpPopUp = ChallengeHelpPopUpViewController()
+        helpPopUp.modalTransitionStyle = .crossDissolve
+        helpPopUp.modalPresentationStyle = .overCurrentContext
+        helpPopUp.challengePopUpProtocol = self
+        
+        tabBarController?.present(helpPopUp, animated: true, completion: nil)
+    }
+    
+    func touchStampButton(_ sender: UITapGestureRecognizer) {
+        let completePopUp = ChallengeCompletePopUpViewController()
+        completePopUp.modalTransitionStyle = .crossDissolve
+        completePopUp.modalPresentationStyle = .overCurrentContext
+        completePopUp.popUpUsage = .challenge
+        completePopUp.challengePopUpProtocol = self
+        
+        tabBarController?.present(completePopUp, animated: true, completion: nil)
+    }
+    
+    func pushToFinishViewController() {
+        // TODO: - 다음 뷰 나오면 storyboard, vc 수정 필요
+        let courseLibraryStoryboard = UIStoryboard(name: Const.Storyboard.Name.courseLibrary, bundle: nil)
+        guard let courseLibraryViewController = courseLibraryStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.courseLibrary) as? CourseLibraryViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(courseLibraryViewController, animated: true)
+    }
+    
+    func pushToNextOnboardingViewController() {
+        // TODO: - 다음 뷰 나오면 storyboard, vc 수정 필요
+        let courseLibraryStoryboard = UIStoryboard(name: Const.Storyboard.Name.courseLibrary, bundle: nil)
+        guard let courseLibraryViewController = courseLibraryStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.courseLibrary) as? CourseLibraryViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(courseLibraryViewController, animated: true)
     }
 }
 

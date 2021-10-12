@@ -107,7 +107,7 @@ extension Const {
         static let imgPhotoUpload = UIImage(named: "btnPhotoUp")
         
         // mohaeng feed image
-        static let imgHand = UIImage(named: "feedHandGrpX")
+        static let feedGraphic = UIImage(named: "feedCha")
         
         // mohaeng character style image
         static let lockDuck = UIImage(named: "default")

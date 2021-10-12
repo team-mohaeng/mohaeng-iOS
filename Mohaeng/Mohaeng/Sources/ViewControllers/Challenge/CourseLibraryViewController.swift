@@ -80,32 +80,15 @@ class CourseLibraryViewController: UIViewController {
         askPopUp = PopUpViewController(nibName: Const.Xib.Name.popUp, bundle: nil)
         askPopUp.modalPresentationStyle = .overCurrentContext
         askPopUp.modalTransitionStyle = .crossDissolve
-        askPopUp.popUpUsage = .twoButton
+        askPopUp.popUpUsage = .twoButtonWithImage
+        askPopUp.setText(title: "안녕하세요타이틀", description: "이런부분은나중에strings파일만들어서관리하려고합니다어떤가용?")
         askPopUp.popUpActionDelegate = self
         tabBarController?.present(askPopUp, animated: true, completion: nil)
-        
-        if doingCourse {
-            // 코스 진행중일 때 (변경)
-            askPopUp.titleLabel.text = "쟈기, 지금 포기하는거야?"
-            // 쟈니 이미지
-            askPopUp.image = Const.Image.bgPopGiveUp
-            askPopUp.descriptionLabel.text = "코스를 변경하면 나와의 관계는\n묽어질거야. 감당할 수 있겠어?"
-            askPopUp.pinkButton.setTitle("포기 안 해!", for: .normal)
-            askPopUp.whiteButton.setTitle("변경할래", for: .normal)
-        } else {
-            // 진행중인 코스가 없을 때 (시작)
-            askPopUp.titleLabel.text = "나와 여정을 떠나보겠어?"
-            // 쟈니 이미지
-            askPopUp.image = Const.Image.bgStartCourse
-            askPopUp.descriptionLabel.text = "당신을 알아갈 수 있는 새롭고\n신나는 일들이 기다리고 있을거야"
-            askPopUp.pinkButton.setTitle("좋아!", for: .normal)
-            askPopUp.whiteButton.setTitle("다시 생각해볼게", for: .normal)
-        }
     }
 }
 
 extension CourseLibraryViewController: PopUpActionDelegate {
-    func touchPinkButton(button: UIButton) {
+    func touchGreyButton(button: UIButton) {
         if doingCourse {
             self.dismiss(animated: true, completion: nil)
         } else {
@@ -114,7 +97,7 @@ extension CourseLibraryViewController: PopUpActionDelegate {
         }
     }
     
-    func touchWhiteButton(button: UIButton) {
+    func touchYellowButton(button: UIButton) {
         if doingCourse {
             startCourse(courseId: selectedCourseId)
             self.dismiss(animated: true, completion: nil)
