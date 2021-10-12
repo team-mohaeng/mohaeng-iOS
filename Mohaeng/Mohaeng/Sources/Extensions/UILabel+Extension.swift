@@ -25,7 +25,7 @@ extension UILabel {
         }
     }
     
-    func setTyping(text: String, lineHeight: CGFloat = 24, highlightedText: String = "") {
+    func makeTyping(text: String, lineHeight: CGFloat = 24, highlightedText: String = "") {
         // label height와 highlightedText color 설정
         self.attributedText = NSMutableAttributedString(string: "")
         let combination = NSMutableAttributedString()

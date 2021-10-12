@@ -15,7 +15,7 @@ class OnBoarding2HeaderView: UIView {
 // MARK: - Properties
     
     public let label = UILabel().then {
-        $0.setTyping(text: """
+        $0.makeTyping(text: """
                     모행에서는 다양한 종류의
                     챌린지를 진행할 수 있어.
                     

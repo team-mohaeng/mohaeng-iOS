@@ -19,14 +19,14 @@ class OnBoarding3HeaderView: UIView {
             scrollIconImageView.isHidden = !isDone
             if isDone {
                 if UIDevice.current.hasNotch {
-                    label.setTyping(text: """
+                    label.makeTyping(text: """
                         오늘 챌린지 완료 축하해~
                         
                         화면을 위로 당기면
                         지금 하고있는 코스의 진행상황도 파악할 수 있어
                         """, highlightedText: "코스의 진행상황")
                 } else {
-                    label.setTyping(text: """
+                    label.makeTyping(text: """
                         오늘 챌린지 완료 축하해~
 
                         화면을 위로 당기면 지금 하고있는
@@ -37,7 +37,7 @@ class OnBoarding3HeaderView: UIView {
                 scrollIconImageView.makeSpring()
                 challengeCardView.isUserInteractionEnabled = false
             } else {
-                label.setTyping(text: """
+                label.makeTyping(text: """
                     재밌는 챌린지를 골랐네~
 
                     간단하게 수행한 다음,동그란 버튼을 눌러

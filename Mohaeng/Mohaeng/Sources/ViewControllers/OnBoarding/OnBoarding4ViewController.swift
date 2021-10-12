@@ -17,7 +17,7 @@ class OnBoarding4ViewController: UIViewController {
     private let label = UILabel().then {
         $0.font = .gmarketFont(weight: .medium, size: 16)
         $0.numberOfLines = 0
-        $0.setTyping(text: """
+        $0.makeTyping(text: """
                 오늘의 챌린지를 인증하고 나서
                 하루에 한 번씩 안부를 작성할 수 있어.
                 
