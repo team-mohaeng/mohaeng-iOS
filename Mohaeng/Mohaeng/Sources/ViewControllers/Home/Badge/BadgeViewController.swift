@@ -15,24 +15,14 @@ class BadgeViewController: UIViewController {
 // MARK: - Properties
     private var collectionView: UICollectionView!
     
-    private let badges: [Badge] = [Badge(id: 0, name: "초급사진가", info: "왈랄ㄹ라왈랄왈랄ㄹ라왈랄ㄹ라왈랄ㄹ라왈랄ㄹ라왈랄ㄹ라왈랄왈랄ㄹ라왈랄ㄹ라왈랄ㄹ라왈랄ㄹ라", image: "typeCforMapGrey", hasBadge: false),
-                                  Badge(id: 0, name: "초급사진가", info: "왈랄ㄹ라", image: "typeCforMapGrey", hasBadge: true),
-                                  Badge(id: 0, name: "초급사진가", info: "왈랄ㄹ라", image: "typeCforMapGrey", hasBadge: true),
-                                  Badge(id: 0, name: "초급사진가", info: "왈랄ㄹ라", image: "typeCforMapGrey", hasBadge: true),
-                                  Badge(id: 0, name: "초급사진가", info: "왈랄ㄹ라", image: "typeCforMapGrey", hasBadge: true),
-                                  Badge(id: 0, name: "초급사진가", info: "왈랄ㄹ라", image: "typeCforMapGrey", hasBadge: true),
-                                  Badge(id: 0, name: "초급사진가", info: "왈랄ㄹ라", image: "typeCforMapGrey", hasBadge: true),
-                                  Badge(id: 0, name: "초급사진가", info: "왈랄ㄹ라", image: "typeCforMapGrey", hasBadge: true),
-                                  Badge(id: 0, name: "초급사진가", info: "왈랄ㄹ라", image: "typeCforMapGrey", hasBadge: true),
-                                  Badge(id: 0, name: "초급사진가", info: "왈랄ㄹ라", image: "typeCforMapGrey", hasBadge: true),
-                                  Badge(id: 0, name: "초급사진가", info: "왈랄ㄹ라", image: "typeCforMapGrey", hasBadge: true),
-                                  Badge(id: 0, name: "초급사진가", info: "왈랄ㄹ라", image: "typeCforMapGrey", hasBadge: true)
-    ]
+    private var badges: [Badge] = []
     
 // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getBadges()
         
         initViewController()
         initNavigationBar()
@@ -40,7 +30,6 @@ class BadgeViewController: UIViewController {
         
         setDelegation()
         setLayout()
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -83,7 +72,8 @@ class BadgeViewController: UIViewController {
     
     private func setConstraints() {
         collectionView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.bottom.leading.trailing.equalToSuperview()
         }
     }
 
@@ -147,4 +137,26 @@ extension BadgeViewController: UICollectionViewDelegateFlowLayout {
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
             return 17
         }
+}
+
+extension BadgeViewController {
+    func getBadges() {
+        BadgeAPI.shared.getBadges {[weak self] (response) in
+            switch response {
+            case .success(let data):
+                if let data = data as? BadgesData {
+                    self?.badges = data.badges
+                    self?.collectionView.reloadData()
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
 }

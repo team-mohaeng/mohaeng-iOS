@@ -34,8 +34,7 @@ class FindPasswordViewController: UIViewController {
     // MARK: - Functions
     
     private func initNavigationBar() {
-        self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
-        // navigationItem.title = "비밀번호 찾기"
+        self.navigationController?.initWithBackButton()
     }
     
     private func initViewRounding() {

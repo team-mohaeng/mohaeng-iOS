@@ -12,12 +12,16 @@ class PopUpViewController: UIViewController {
     // MARK: - Properties
     
     enum PopUpUsage: Int {
-        case oneButton = 0, twoButton, oneButtonWithClose, noImage, noTitle
+        case noButton = 0, twoButtonNoImage, twoButtonWithImage
     }
     
     var popUpUsage: PopUpUsage?
     var popUpActionDelegate: PopUpActionDelegate?
     var image: UIImage?
+    
+    // text
+    var titleString: String?
+    var descriptionString: String?
     
     // MARK: - @IBOutlet Properties
     
@@ -25,16 +29,15 @@ class PopUpViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var popUpImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var pinkButton: UIButton!
-    @IBOutlet weak var whiteButton: UIButton!
+    @IBOutlet weak var greyButton: UIButton!
+    @IBOutlet weak var yellowButton: UIButton!
     @IBOutlet weak var closeButton: UIButton!
-    @IBOutlet weak var stampCloseButton: UIButton!
+    @IBOutlet weak var buttonStackView: UIStackView!
     
     // constraints
-    
-    @IBOutlet weak var pinkButtonBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var descriptionTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var whiteButtonHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var descriptionToBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var descriptionToStackViewConstraint: NSLayoutConstraint!
+    @IBOutlet weak var titleToDescriptionConstraint: NSLayoutConstraint!
     
     // MARK: - View Life Cycle
 
@@ -42,101 +45,90 @@ class PopUpViewController: UIViewController {
         super.viewDidLoad()
 
         initViewRounding()
+        setText()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        initCase(usage: self.popUpUsage ?? .oneButton)
+        initCase(usage: self.popUpUsage ?? .noButton)
     }
     
     // MARK: - Functions
     
     private func initViewRounding() {
-        popUpBgView.makeRounded(radius: 10)
-        pinkButton.makeRounded(radius: pinkButton.frame.height / 2)
-        whiteButton.makeRounded(radius: whiteButton.frame.height / 2)
-    }
-
-    @IBAction func touchPinkButton(_ sender: UIButton) {
-        self.popUpActionDelegate?.touchPinkButton(button: sender)
+        popUpBgView.makeRounded(radius: 30)
+        greyButton.makeRounded(radius: 6)
+        yellowButton.makeRounded(radius: 6)
     }
     
-    @IBAction func touchWhiteButton(_ sender: UIButton) {
-        self.popUpActionDelegate?.touchWhiteButton(button: sender)
+    private func setText() {
+        if let titleString = self.titleString {
+            titleLabel.text = titleString
+        }
+        if let descriptionString = self.descriptionString {
+            descriptionLabel.text = descriptionString
+        }
+    }
+
+    @IBAction func touchGreyButton(_ sender: UIButton) {
+        self.popUpActionDelegate?.touchGreyButton(button: sender)
+    }
+    
+    @IBAction func touchYellowButton(_ sender: UIButton) {
+        self.popUpActionDelegate?.touchYellowButton(button: sender)
     }
     
     @IBAction func touchCloseButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func touchStampCloseButton(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
     // case functions
-    
     private func initCase(usage: PopUpUsage) {
         switch usage {
-        case .oneButton:
-            self.initCaseOneButton()
-        case .twoButton:
-            self.initCaseTwoButton()
-        case .oneButtonWithClose:
-            self.initCaseOneButtonWithClose()
-        case .noImage:
-            self.initCaseNoImage()
-        case .noTitle:
-            self.initCaseNoTitle()
+        case .noButton:
+            self.initNoButton()
+        case .twoButtonNoImage:
+            self.initTwoButtonNoImage()
+        case .twoButtonWithImage:
+            self.initTwoButtonWithImage()
         }
     }
     
-    private func initCaseOneButton() {
-        whiteButton.isHidden = true
-        closeButton.isHidden = true
-        whiteButtonHeightConstraint.isActive = false
-        pinkButtonBottomConstraint.constant = 24
-        stampCloseButton.isHidden = false
-        setImage(image: image)
-    }
-    
-    private func initCaseTwoButton() {
-        closeButton.isHidden = true
-        pinkButtonBottomConstraint.isActive = false
-        setImage(image: image)
-    }
-    
-    private func initCaseOneButtonWithClose() {
-        whiteButton.isHidden = true
-        whiteButtonHeightConstraint.isActive = false
-        pinkButtonBottomConstraint.constant = 24
-        setImage(image: image)
-    }
-    
-    private func initCaseNoImage() {
-        closeButton.isHidden = true
-        descriptionTopConstraint.constant = 93
+    private func initNoButton() {
+        // UI
         popUpImageView.removeFromSuperview()
-    }
-    
-    private func initCaseNoTitle() {
-        whiteButton.isHidden = true
-        closeButton.isHidden = true
-        pinkButtonBottomConstraint.constant = 24
-        descriptionTopConstraint.constant = 48
+        buttonStackView.removeFromSuperview()
         
-        titleLabel.removeFromSuperview()
+        // constraint
+        descriptionToBottomConstraint.isActive = true
+        descriptionToBottomConstraint.constant = 48
+        titleToDescriptionConstraint.constant = 28
+   }
+    
+    private func initTwoButtonNoImage() {
+        // UI
         popUpImageView.removeFromSuperview()
-        whiteButton.removeFromSuperview()
+        closeButton.removeFromSuperview()
+        
+        // constraint
+        descriptionToBottomConstraint.isActive = false
+        descriptionToStackViewConstraint.isActive = true
+        descriptionToStackViewConstraint.constant = 27
+        titleToDescriptionConstraint.constant = 14
+    }
+    
+    private func initTwoButtonWithImage() {
+        // UI
+        closeButton.removeFromSuperview()
+        
+        // constraint
+        descriptionToBottomConstraint.isActive = false
+        descriptionToStackViewConstraint.isActive = false
+        titleToDescriptionConstraint.constant = 32
     }
     
     // set functions
-    
-    func setTitle(text: String) {
-        titleLabel.text = text
-    }
-    
-    func setImage(image: UIImage?) {
-        if let image = image {
-            popUpImageView.image = image
-        }
+    func setText(title: String, description: String) {
+        titleString = title
+        descriptionString = description
     }
 }
