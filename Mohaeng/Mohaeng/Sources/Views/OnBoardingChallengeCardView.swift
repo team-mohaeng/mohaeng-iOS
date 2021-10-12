@@ -18,9 +18,16 @@ class OnBoardingChallengeCardView: UIView {
     
     weak var delegate: OnBoardingChallengeCardViewDelegate?
     
+    public var course: AppCourse? {
+        didSet {
+            guard let course = course else {return}
+            cardTitleLabel.textColor = course.getDarkColor()
+            dailyLabelView.backgroundColor = course.getDarkColor()
+        }
+    }
+    
     private let cardTitleLabel = UILabel().then {
         $0.text = "어제 외운 단어로 문장 만들기"
-        $0.textColor = .sampleGreen
         $0.font = .gmarketFont(weight: .medium, size: 25)
         $0.textAlignment = .center
     }
@@ -37,7 +44,6 @@ class OnBoardingChallengeCardView: UIView {
         label.snp.makeConstraints {
             $0.center.equalToSuperview()
         }
-        $0.backgroundColor = .sampleGreen
         $0.makeRounded(radius: 12)
     }
     

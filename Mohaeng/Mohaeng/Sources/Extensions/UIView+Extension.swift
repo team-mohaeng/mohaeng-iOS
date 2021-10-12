@@ -92,17 +92,18 @@ extension UIView {
     }
     
     func animateBottomToTopWithOpacity() {
-        self.alpha = 0.5
-        UIView.animate(withDuration: 1.5) {
+        self.alpha = 0.2
+        UIView.animate(withDuration: 1) {[weak self] in
+            guard let self = self else {return}
             self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y-40, width: self.frame.width, height: self.frame.height)
             self.alpha = 1
         }
     }
     
     func animateWithOpacity() {
-        self.alpha = 0.5
-        UIView.animate(withDuration: 2) {
-            self.alpha = 1
+        self.alpha = 0.2
+        UIView.animate(withDuration: 1) {[weak self] in
+            self?.alpha = 1
         }
     }
 }

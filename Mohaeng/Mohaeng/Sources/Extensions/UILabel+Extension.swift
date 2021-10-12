@@ -26,6 +26,7 @@ extension UILabel {
     }
     
     func setTyping(text: String, lineHeight: CGFloat = 24, highlightedText: String = "") {
+        // label height와 highlightedText color 설정
         self.attributedText = NSMutableAttributedString(string: "")
         let combination = NSMutableAttributedString()
         let style = NSMutableParagraphStyle()
@@ -37,6 +38,7 @@ extension UILabel {
         ]
         let highlightedAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: UIColor.Yellow3]
         
+        // typing animation
         var textString = ""
         let characterDelay: TimeInterval = 5.0
         let writingTask = DispatchWorkItem { [weak self] in
@@ -44,9 +46,12 @@ extension UILabel {
                 DispatchQueue.main.async {
                     textString.append(char)
                     combination.append(NSAttributedString(string: "\(char)", attributes: attributes))
+                    highlightedText.forEach { highlightedChar  in
+                        let range = NSString(string: textString).range(of: "\(highlightedChar)", options: .caseInsensitive)
+                        combination.addAttributes(highlightedAttributes, range: range)
+                    }
                     self?.attributedText = combination
-                    let range = NSString(string: textString).range(of: highlightedText, options: .caseInsensitive)
-                    combination.addAttributes(highlightedAttributes, range: range)
+                    
               }
               Thread.sleep(forTimeInterval: characterDelay/100)
             }

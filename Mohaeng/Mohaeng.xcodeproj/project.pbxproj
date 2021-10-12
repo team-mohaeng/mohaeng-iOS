@@ -190,6 +190,9 @@
 		DD68AC302712AA5F0081B905 /* OnBoarding3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD68AC2F2712AA5F0081B905 /* OnBoarding3ViewController.swift */; };
 		DD68AC322712AB9E0081B905 /* OnBoardingChallengeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD68AC312712AB9E0081B905 /* OnBoardingChallengeCardView.swift */; };
 		DD860D322700BACD00835AC0 /* WritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD860D312700BACD00835AC0 /* WritingViewController.swift */; };
+		DD9EFFC727154D7800B3F871 /* AnimationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFC627154D7800B3F871 /* AnimationFactory.swift */; };
+		DD9EFFC927154F5C00B3F871 /* OnBoarding2HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFC827154F5C00B3F871 /* OnBoarding2HeaderView.swift */; };
+		DD9EFFCC2715568700B3F871 /* OnBoarding2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFCB2715568700B3F871 /* OnBoarding2TableViewCell.swift */; };
 		DDF110452709DFB1004FD5FB /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF110442709DFB1004FD5FB /* UIButton+Extension.swift */; };
 		DDF110472709DFEA004FD5FB /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF110462709DFEA004FD5FB /* UIImage+Extension.swift */; };
 		EC2FF5C626F343C000411F31 /* MoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */; };
@@ -385,6 +388,9 @@
 		DD68AC2F2712AA5F0081B905 /* OnBoarding3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding3ViewController.swift; sourceTree = "<group>"; };
 		DD68AC312712AB9E0081B905 /* OnBoardingChallengeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingChallengeCardView.swift; sourceTree = "<group>"; };
 		DD860D312700BACD00835AC0 /* WritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingViewController.swift; sourceTree = "<group>"; };
+		DD9EFFC627154D7800B3F871 /* AnimationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationFactory.swift; sourceTree = "<group>"; };
+		DD9EFFC827154F5C00B3F871 /* OnBoarding2HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding2HeaderView.swift; sourceTree = "<group>"; };
+		DD9EFFCB2715568700B3F871 /* OnBoarding2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding2TableViewCell.swift; sourceTree = "<group>"; };
 		DDF110442709DFB1004FD5FB /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		DDF110462709DFEA004FD5FB /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoodCollectionViewCell.swift; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -578,6 +584,7 @@
 		561D760B26F0BFA40028DBCA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				DD9EFFCA2715564400B3F871 /* OnBoarding2TableView */,
 				AA7E0AAE26FC6BD900106DC2 /* CharaterCollectionView */,
 				DD64327726F5DC0A00D71787 /* BadgeCollectionView */,
 				561D760F26F0BFA40028DBCA /* NotificationCollectionView */,
@@ -825,6 +832,7 @@
 				561D767226F0BFA40028DBCA /* User.swift */,
 				561D767326F0BFA40028DBCA /* SignUpUser.swift */,
 				561D767426F0BFA40028DBCA /* RoadMapPath.swift */,
+				DD9EFFC627154D7800B3F871 /* AnimationFactory.swift */,
 			);
 			path = AppModels;
 			sourceTree = "<group>";
@@ -869,6 +877,7 @@
 				561D769426F0BFA40028DBCA /* YearPickerViewController.xib */,
 				EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */,
 				DD68AC312712AB9E0081B905 /* OnBoardingChallengeCardView.swift */,
+				DD9EFFC827154F5C00B3F871 /* OnBoarding2HeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -937,6 +946,14 @@
 				DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */,
 			);
 			path = BadgeCollectionView;
+			sourceTree = "<group>";
+		};
+		DD9EFFCA2715564400B3F871 /* OnBoarding2TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DD9EFFCB2715568700B3F871 /* OnBoarding2TableViewCell.swift */,
+			);
+			path = OnBoarding2TableView;
 			sourceTree = "<group>";
 		};
 		DDF595FD26F72852004C5D74 /* Badge */ = {
@@ -1160,6 +1177,7 @@
 				561D76D026F0BFA40028DBCA /* FeedCollectionViewCell.swift in Sources */,
 				561D772026F0BFA40028DBCA /* Auth.swift in Sources */,
 				561D76F326F0BFA40028DBCA /* FindPasswordViewController.swift in Sources */,
+				DD9EFFC727154D7800B3F871 /* AnimationFactory.swift in Sources */,
 				AAED18D826F11DF0009FE781 /* PlusButtonCollectionViewCell.swift in Sources */,
 				561D76C626F0BFA40028DBCA /* CourseListViewModel.swift in Sources */,
 				AAED18E026F313E3009FE781 /* FeedDetailCollectionViewCell.swift in Sources */,
@@ -1195,6 +1213,7 @@
 				561D76D426F0BFA40028DBCA /* CourseLibraryCollectionViewCell.swift in Sources */,
 				561D770D26F0BFA40028DBCA /* LoginService.swift in Sources */,
 				561D772D26F0BFA40028DBCA /* DatePickerViewController.swift in Sources */,
+				DD9EFFC927154F5C00B3F871 /* OnBoarding2HeaderView.swift in Sources */,
 				561D76E726F0BFA40028DBCA /* UIViewController+Extension.swift in Sources */,
 				DD64327626F5CCC100D71787 /* BadgeViewController.swift in Sources */,
 				561D770926F0BFA40028DBCA /* NetworkResult.swift in Sources */,
@@ -1221,6 +1240,7 @@
 				561D76D726F0BFA40028DBCA /* SettingTableViewCell.swift in Sources */,
 				561D777F26F36C970028DBCA /* MyPageViewController.swift in Sources */,
 				561D76E826F0BFA40028DBCA /* SettingViewController.swift in Sources */,
+				DD9EFFCC2715568700B3F871 /* OnBoarding2TableViewCell.swift in Sources */,
 				DD64327926F5DC3400D71787 /* BadgeCollectionViewCell.swift in Sources */,
 				561D76F426F0BFA40028DBCA /* EmailLoginViewController.swift in Sources */,
 				561D772426F0BFA40028DBCA /* Course.swift in Sources */,

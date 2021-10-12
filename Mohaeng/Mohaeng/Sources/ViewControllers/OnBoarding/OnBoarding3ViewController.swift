@@ -12,17 +12,23 @@ import Then
 
 class OnBoarding3ViewController: UIViewController {
     
-    let label = UILabel().then {
+    public var course: AppCourse? {
+        didSet {
+            challengeCardView.course = course
+        }
+    }
+    
+    private let label = UILabel().then {
         $0.setTyping(text: "재밌는 챌린지를 골랐네~\n\n간단하게 수행한 다음,동그란 버튼을 눌러\n오늘의 챌린지를 인증해봐!", highlightedText: "인증")
         $0.font = .gmarketFont(weight: .medium, size: 16)
         $0.numberOfLines = 0
     }
     
-    let rightCharacterImageView = UIImageView().then {
+    private let rightCharacterImageView = UIImageView().then {
         $0.image = Const.Image.grpXonboarding4
     }
     
-    let challengeCardView = OnBoardingChallengeCardView().then {
+    private let challengeCardView = OnBoardingChallengeCardView().then {
         $0.dropShadow(rounded: 20)
     }
 
