@@ -34,7 +34,6 @@ extension UILabel {
         style.minimumLineHeight = lineHeight
         let attributes: [NSAttributedString.Key: Any] = [
             .paragraphStyle: style,
-            .baselineOffset: (lineHeight - font.lineHeight) / 4,
             .foregroundColor: UIColor.Black
         ]
         let highlightedAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: UIColor.Yellow3]
