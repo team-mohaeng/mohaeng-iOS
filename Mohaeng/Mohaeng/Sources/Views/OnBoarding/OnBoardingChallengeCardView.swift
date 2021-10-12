@@ -50,6 +50,7 @@ class OnBoardingChallengeCardView: UIView {
     private let challengeImageView = UIImageView().then {
         $0.image = Const.Image.typeCchallenge
         $0.isUserInteractionEnabled = true
+        $0.animateSpringWithDamping()
     }
     
     private var subtitleLabel = UILabel().then {

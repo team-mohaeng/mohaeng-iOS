@@ -19,6 +19,8 @@ class OnBoarding3HeaderView: UIView {
                     label.setTyping(text: "오늘 챌린지 완료 축하해~\n\n화면을 위로 당기면 지금 하고있는 \n코스의 진행상황도 파악할 수 있어", highlightedText: "코스의 진행상황")
                 }
                 scrollIconImageView.animateWithOpacity()
+                scrollIconImageView.animateSpringWithDamping()
+                challengeCardView.isUserInteractionEnabled = false
             } else {
                 label.setTyping(text: "재밌는 챌린지를 골랐네~\n\n간단하게 수행한 다음,동그란 버튼을 눌러\n오늘의 챌린지를 인증해봐!", highlightedText: "인증")
             }
@@ -81,7 +83,7 @@ class OnBoarding3HeaderView: UIView {
     
     private func setConstraints() {
         label.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(44)
+            $0.top.equalToSuperview().inset(UIDevice.current.hasNotch ? 44 : 32)
             $0.leading.trailing.equalToSuperview().inset(24)
         }
         

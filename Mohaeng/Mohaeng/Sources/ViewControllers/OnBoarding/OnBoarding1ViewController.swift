@@ -77,8 +77,8 @@ class OnBoarding1ViewController: UIViewController {
         super.viewDidLoad()
         setNavigationBar()
         setLayout()
-        addAnimation()
         setTargets()
+        addAnimation()
     }
     
     private func setNavigationBar() {
@@ -88,7 +88,6 @@ class OnBoarding1ViewController: UIViewController {
     private func setTargets() {
         [startButton, loginButton].forEach { $0.addTarget(self, action: #selector(touchButton(_:)), for: .touchUpInside) }
     }
-    
     
     private func addAnimation() {
         [loginButton, startButton].forEach { $0.animateWithOpacity()}
@@ -106,7 +105,7 @@ class OnBoarding1ViewController: UIViewController {
     
     private func setConstraints() {
         smallMessageBoxImageView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(44)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(UIDevice.current.hasNotch ? 44 : 32)
             $0.leading.equalToSuperview().inset(32)
             $0.width.equalTo(170)
             $0.height.equalTo(73.5)

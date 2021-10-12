@@ -43,7 +43,7 @@ class OnBoarding2HeaderView: UIView {
     
     private func setConstraints() {
         label.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(44)
+            $0.top.equalToSuperview().offset(UIDevice.current.hasNotch ? 44 : 32)
             $0.leading.trailing.equalToSuperview().inset(24)
         }
         

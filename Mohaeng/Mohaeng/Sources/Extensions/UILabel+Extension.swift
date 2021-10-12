@@ -34,7 +34,8 @@ extension UILabel {
         style.minimumLineHeight = lineHeight
         let attributes: [NSAttributedString.Key: Any] = [
             .paragraphStyle: style,
-            .baselineOffset: (lineHeight - font.lineHeight) / 4
+            .baselineOffset: (lineHeight - font.lineHeight) / 4,
+            .foregroundColor: UIColor.Black
         ]
         let highlightedAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: UIColor.Yellow3]
         
@@ -43,7 +44,7 @@ extension UILabel {
         let characterDelay: TimeInterval = 5.0
         let writingTask = DispatchWorkItem { [weak self] in
             text.forEach { char in
-                DispatchQueue.main.async {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     textString.append(char)
                     combination.append(NSAttributedString(string: "\(char)", attributes: attributes))
                     highlightedText.forEach { highlightedChar  in

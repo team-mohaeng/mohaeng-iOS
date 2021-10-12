@@ -35,6 +35,11 @@ class OnBoarding2TableViewCell: UITableViewCell {
         $0.textColor = .Black
     }
     
+    private let vStackView = UIStackView().then {
+        $0.axis = .vertical
+        $0.distribution = .equalSpacing
+    }
+    
     private let courseImageView = UIImageView().then {
         $0.alpha = 0.5
     }
@@ -69,24 +74,20 @@ class OnBoarding2TableViewCell: UITableViewCell {
     
     private func setViewHierachy() {
         contentView.addSubviews(cardView)
-        cardView.addSubviews(courseTitleLabel, courseDescriptionLabel, courseImageView)
+        cardView.addSubviews(vStackView, courseImageView)
+        vStackView.addArrangedSubview(courseTitleLabel)
+        vStackView.addArrangedSubview(courseDescriptionLabel)
     }
     
     private func setConstraints() {
         cardView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(24)
-            $0.bottom.equalToSuperview().inset(20)
+            $0.height.equalTo(104)
             $0.top.equalToSuperview()
         }
         
-        courseTitleLabel.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(25)
-            $0.top.equalToSuperview().inset(28)
-        }
-        
-        courseDescriptionLabel.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(25)
-            $0.top.equalToSuperview().inset(67)
+        vStackView.snp.makeConstraints {
+            $0.top.bottom.trailing.leading.equalToSuperview().inset(25)
         }
         
         courseImageView.snp.makeConstraints {

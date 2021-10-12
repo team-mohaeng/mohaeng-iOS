@@ -187,6 +187,7 @@
 		DD68AC302712AA5F0081B905 /* OnBoarding3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD68AC2F2712AA5F0081B905 /* OnBoarding3ViewController.swift */; };
 		DD68AC322712AB9E0081B905 /* OnBoardingChallengeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD68AC312712AB9E0081B905 /* OnBoardingChallengeCardView.swift */; };
 		DD79BB16271166E9001F342C /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD79BB15271166E9001F342C /* UIImageView+Extension.swift */; };
+		DD8452662715C11E007B4C2B /* OnBoarding5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8452652715C11E007B4C2B /* OnBoarding5ViewController.swift */; };
 		DD860D322700BACD00835AC0 /* WritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD860D312700BACD00835AC0 /* WritingViewController.swift */; };
 		DD9EFFC727154D7800B3F871 /* AnimationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFC627154D7800B3F871 /* AnimationFactory.swift */; };
 		DD9EFFC927154F5C00B3F871 /* OnBoarding2HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFC827154F5C00B3F871 /* OnBoarding2HeaderView.swift */; };
@@ -388,6 +389,7 @@
 		DD68AC2F2712AA5F0081B905 /* OnBoarding3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding3ViewController.swift; sourceTree = "<group>"; };
 		DD68AC312712AB9E0081B905 /* OnBoardingChallengeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingChallengeCardView.swift; sourceTree = "<group>"; };
 		DD79BB15271166E9001F342C /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		DD8452652715C11E007B4C2B /* OnBoarding5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding5ViewController.swift; sourceTree = "<group>"; };
 		DD860D312700BACD00835AC0 /* WritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingViewController.swift; sourceTree = "<group>"; };
 		DD9EFFC627154D7800B3F871 /* AnimationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationFactory.swift; sourceTree = "<group>"; };
 		DD9EFFC827154F5C00B3F871 /* OnBoarding2HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding2HeaderView.swift; sourceTree = "<group>"; };
@@ -880,7 +882,6 @@
 				561D768F26F0BFA40028DBCA /* YearPickerViewController.swift */,
 				561D769426F0BFA40028DBCA /* YearPickerViewController.xib */,
 				EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */,
-				DD68AC312712AB9E0081B905 /* OnBoardingChallengeCardView.swift */,
 				561D768A26F0BFA40028DBCA /* CustomIntensityVisualEffectView.swift */,
 			);
 			path = Views;
@@ -959,6 +960,7 @@
 				DD68AC2D271297D20081B905 /* OnBoarding2ViewController.swift */,
 				DD68AC2F2712AA5F0081B905 /* OnBoarding3ViewController.swift */,
 				DD9EFFCE2715798100B3F871 /* OnBoarding4ViewController.swift */,
+				DD8452652715C11E007B4C2B /* OnBoarding5ViewController.swift */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -982,6 +984,7 @@
 		DD9EFFD027157B6800B3F871 /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
+				DD68AC312712AB9E0081B905 /* OnBoardingChallengeCardView.swift */,
 				DD9EFFC827154F5C00B3F871 /* OnBoarding2HeaderView.swift */,
 				DD9EFFD127157B8800B3F871 /* OnBoarding3HeaderView.swift */,
 			);
@@ -1240,6 +1243,7 @@
 				AA7E0AB326FC6C1900106DC2 /* CharacterTypeCollectionViewCell.swift in Sources */,
 				561D772826F0BFA40028DBCA /* MyDrawerCollectionReusableView.swift in Sources */,
 				561D76DD26F0BFA40028DBCA /* EvenDayTableViewCell.swift in Sources */,
+				DD8452662715C11E007B4C2B /* OnBoarding5ViewController.swift in Sources */,
 				561D770026F0BFA40028DBCA /* TabbarViewController.swift in Sources */,
 				561D773526F0BFA40028DBCA /* YearPickerViewController.swift in Sources */,
 				DD68AC302712AA5F0081B905 /* OnBoarding3ViewController.swift in Sources */,
