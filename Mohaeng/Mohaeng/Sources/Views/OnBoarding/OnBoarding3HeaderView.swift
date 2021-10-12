@@ -43,6 +43,7 @@ class OnBoarding3HeaderView: UIView {
                     간단하게 수행한 다음,동그란 버튼을 눌러
                     오늘의 챌린지를 인증해봐!
                     """, highlightedText: "인증")
+                challengeCardView.isUserInteractionEnabled = true
             }
         }
     }

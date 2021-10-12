@@ -156,7 +156,7 @@ extension OnBoarding1ViewController {
     private func touchButton(_ sender: UIButton) {
         switch sender {
         case startButton:
-            self.navigationController?.pushViewController(OnBoarding4ViewController(), animated: true)
+            self.navigationController?.pushViewController(OnBoarding2ViewController(), animated: true)
         case loginButton:
             presentLoginViewController()
         default:
