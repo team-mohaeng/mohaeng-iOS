@@ -120,6 +120,7 @@ class FeedViewController: UIViewController {
     private func updateData(feed: FeedResponse) {
         allFeeds = feed
         feedCollectionView.reloadData()
+        feedUserCountLabel.text = "오늘은 \(feed.feeds.count)개의\n안부가 남겨졌어요"
     }
     
     // MARK: - @IBAction Properties
