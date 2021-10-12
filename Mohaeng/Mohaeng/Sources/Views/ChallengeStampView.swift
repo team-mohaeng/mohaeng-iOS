@@ -46,4 +46,8 @@ class ChallengeStampView: UIView {
     @objc func touchStamp(_ gesture: UITapGestureRecognizer) {
         self.challengePopUpProtocol?.touchStampButton(gesture)
     }
+    
+    @IBAction func touchHelp(_ sender: UIButton) {
+        self.challengePopUpProtocol?.touchHelpButton(sender)
+    }
 }

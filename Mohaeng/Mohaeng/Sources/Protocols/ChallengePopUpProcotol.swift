@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 protocol ChallengePopUpProtocol: AnyObject {
+    func touchHelpButton(_ sender: UIButton)
     func touchStampButton(_ sender: UITapGestureRecognizer)
     func pushToFinishViewController()
     func pushToNextOnboardingViewController()
