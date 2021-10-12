@@ -156,25 +156,20 @@ extension OnBoarding1ViewController {
     private func touchButton(_ sender: UIButton) {
         switch sender {
         case startButton:
-            self.navigationController?.pushViewController(OnBoarding2ViewController(), animated: true)
+            self.navigationController?.pushViewController(OnBoarding4ViewController(), animated: true)
         case loginButton:
-            guard let window = self.view.window else {return}
-            UIView.transition(with: window,
-                              duration: 0.3,
-                              options: [.showHideTransitionViews],
-                              animations: {[weak self] in
-                                self?.setRootViewControllerToLogin()
-                              },
-                              completion: nil)
+            presentLoginViewController()
         default:
             break
         }
         
     }
-    private func setRootViewControllerToLogin() {
+    
+    private func presentLoginViewController() {
         let loginStoryboard = UIStoryboard(name: Const.Storyboard.Name.login, bundle: nil)
         let loginViewController = loginStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.login)
-        self.view.window?.rootViewController = UINavigationController(rootViewController: loginViewController)
-        self.view.window?.makeKeyAndVisible()
+        let navigationController = UINavigationController(rootViewController: loginViewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        self.present(navigationController, animated: true, completion: nil)
     }
 }
