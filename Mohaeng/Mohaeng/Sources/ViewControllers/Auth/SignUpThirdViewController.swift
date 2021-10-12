@@ -44,22 +44,22 @@ class SignUpThirdViewController: UIViewController {
         self.navigationController?.pushViewController(homeViewController, animated: true)
     }
     
+    private func changeNickNameTextFieldAttribute(labelBool: Bool, buttonBool: Bool, color: UIColor) {
+        nickNameErrorLabel.isHidden = labelBool
+        checkButton.isHidden = buttonBool
+        nickNameBottomView.backgroundColor = color
+    }
+    
     private func validateNickNameTextField() {
-        nickNameErrorLabel.isHidden = true
-        checkButton.isHidden = false
-        nickNameBottomView.backgroundColor = .Black
+        changeNickNameTextFieldAttribute(labelBool: true, buttonBool: false, color: .Black)
     }
     
     private func invalidateNickNameTextField() {
-        nickNameErrorLabel.isHidden = false
-        checkButton.isHidden = true
-        nickNameBottomView.backgroundColor = .Red
+        changeNickNameTextFieldAttribute(labelBool: false, buttonBool: true, color: .Red)
     }
     
     private func setEmptyNickNameTextField() {
-        nickNameErrorLabel.isHidden = true
-        nickNameBottomView.backgroundColor = .Grey3
-        checkButton.isHidden = true
+        changeNickNameTextFieldAttribute(labelBool: true, buttonBool: true, color: .Grey3)
     }
     
     private func checkNickNameTextField() {
