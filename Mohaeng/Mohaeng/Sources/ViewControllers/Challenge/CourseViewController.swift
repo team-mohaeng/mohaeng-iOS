@@ -221,6 +221,16 @@ extension CourseViewController: UITableViewDataSource {
 // MARK: - ChallengePopUpProtocol
 
 extension CourseViewController: ChallengePopUpProtocol {
+    
+    func touchHelpButton(_ sender: UIButton) {
+        let helpPopUp = ChallengeHelpPopUpViewController()
+        helpPopUp.modalTransitionStyle = .crossDissolve
+        helpPopUp.modalPresentationStyle = .overCurrentContext
+        helpPopUp.challengePopUpProtocol = self
+        
+        tabBarController?.present(helpPopUp, animated: true, completion: nil)
+    }
+    
     func touchStampButton(_ sender: UITapGestureRecognizer) {
         let completePopUp = ChallengeCompletePopUpViewController()
         completePopUp.modalTransitionStyle = .crossDissolve
