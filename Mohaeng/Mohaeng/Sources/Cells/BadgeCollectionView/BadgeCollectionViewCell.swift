@@ -62,7 +62,7 @@ class BadgeCollectionViewCell: UICollectionViewCell {
     }
     
     public func setData(badge: Badge) {
-        imageView.image = UIImage(named: badge.image)
+        imageView.updateServerImage(badge.image)
         nameLabel.text = badge.name
     }
     

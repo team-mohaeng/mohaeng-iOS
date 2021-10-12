@@ -8,6 +8,6 @@
 import UIKit
 
 protocol PopUpActionDelegate {
-    func touchPinkButton(button: UIButton)
-    func touchWhiteButton(button: UIButton)
+    func touchGreyButton(button: UIButton)
+    func touchYellowButton(button: UIButton)
 }

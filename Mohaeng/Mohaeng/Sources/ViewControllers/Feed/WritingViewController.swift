@@ -343,9 +343,8 @@ extension WritingViewController {
     }
     
     private func setConstraints() {
-        
         titleLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(hasNotch ? 38 : 32)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(hasNotch ? 38 : 32)
             $0.leading.trailing.equalToSuperview().inset(hasNotch ? 24 : 16)
         }
         
