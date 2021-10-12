@@ -10,7 +10,7 @@ import UIKit
 class ChallengeStampView: UIView {
 
     // MARK: - Properties
-    var askPopUp: PopUpViewController = PopUpViewController()
+    weak var challengePopUpProtocol: ChallengePopUpProtocol?
     
     // MARK: - @IBOutlet Properties
     
@@ -23,6 +23,7 @@ class ChallengeStampView: UIView {
     
     override func awakeFromNib() {
         initViewRounding()
+        addTapGesture()
     }
     
     // MARK: - Functions
@@ -35,6 +36,7 @@ class ChallengeStampView: UIView {
     }
     
     private func addTapGesture() {
+        stampImageView.isUserInteractionEnabled = true
         let stampGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(touchStamp(_:)))
         stampImageView.addGestureRecognizer(stampGesture)
     }
@@ -42,11 +44,6 @@ class ChallengeStampView: UIView {
     // MARK: - @IBAction Functions
 
     @objc func touchStamp(_ gesture: UITapGestureRecognizer) {
-//        askPopUp = PopUpViewController(nibName: Const.Xib.Name.popUp, bundle: nil)
-//        askPopUp.modalPresentationStyle = .overCurrentContext
-//        askPopUp.modalTransitionStyle = .crossDissolve
-//        askPopUp.popUpUsage = .noButton
-//        askPopUp.popUpActionDelegate = self
-//        tabBarController?.present(askPopUp, animated: true, completion: nil)
+        self.challengePopUpProtocol?.touchStampButton(gesture)
     }
 }
