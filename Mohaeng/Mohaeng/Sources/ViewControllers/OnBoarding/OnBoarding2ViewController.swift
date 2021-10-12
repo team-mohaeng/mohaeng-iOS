@@ -93,6 +93,7 @@ extension OnBoarding2ViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let viewController = OnBoarding3ViewController()
         viewController.course = AppCourse(rawValue: indexPath.row)
+        viewController.isDone = false
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

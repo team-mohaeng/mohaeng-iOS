@@ -92,7 +92,7 @@ class OnBoardingChallengeCardView: UIView {
     
     private func setConstraints() {
         dailyLabelView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(48)
+            $0.top.equalToSuperview().offset(UIDevice.current.hasNotch ? 48 : 36)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(61)
             $0.height.equalTo(24)
@@ -105,13 +105,13 @@ class OnBoardingChallengeCardView: UIView {
         
         challengeImageView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.bottom.equalToSuperview().inset(92)
+            $0.bottom.equalToSuperview().inset(UIDevice.current.hasNotch ? 92 : 68)
             $0.width.height.equalTo(160)
         }
         
         subtitleLabel.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview()
-            $0.top.equalTo(challengeImageView.snp.bottom).offset(40)
+            $0.top.equalTo(challengeImageView.snp.bottom).offset(UIDevice.current.hasNotch ? 40 : 28)
         }
     }
 

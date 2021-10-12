@@ -14,34 +14,47 @@ class OnBoarding3ViewController: UIViewController {
     
     public var course: AppCourse? {
         didSet {
-            challengeCardView.course = course
+            headerView.course = course
         }
     }
     
-    private let label = UILabel().then {
-        $0.setTyping(text: "재밌는 챌린지를 골랐네~\n\n간단하게 수행한 다음,동그란 버튼을 눌러\n오늘의 챌린지를 인증해봐!", highlightedText: "인증")
-        $0.font = .gmarketFont(weight: .medium, size: 16)
-        $0.numberOfLines = 0
+    public var isDone: Bool = false {
+        didSet {
+            headerView.isDone = isDone
+            tableView.isScrollEnabled = isDone
+            tableView.reloadData()
+        }
     }
     
-    private let rightCharacterImageView = UIImageView().then {
-        $0.image = Const.Image.grpXonboarding4
+    private let tableView = UITableView(frame: CGRect.zero, style: .grouped).then {
+        $0.showsVerticalScrollIndicator = false
+        $0.separatorStyle = .none
+        $0.backgroundColor = .White
+        var frame = CGRect.zero
+        frame.size.height = .leastNormalMagnitude
+        $0.tableHeaderView = UIView(frame: frame)
+       
     }
     
-    private let challengeCardView = OnBoardingChallengeCardView().then {
-        $0.dropShadow(rounded: 20)
-    }
+    private let headerView = OnBoarding3HeaderView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         iniViewController()
+        
+        setDelegation()
         setLayout()
-        addAnimation()
     }
     
     private func iniViewController() {
         view.backgroundColor = .White
-        challengeCardView.delegate = self
+    }
+    
+    private func setDelegation() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        headerView.delegate = self
     }
     
     private func setLayout() {
@@ -50,37 +63,66 @@ class OnBoarding3ViewController: UIViewController {
     }
     
     private func setViewHierachy() {
-        view.addSubviews(label, rightCharacterImageView, challengeCardView)
+        view.addSubviews(tableView)
     }
     
     private func setConstraints() {
-        label.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(44)
-            $0.leading.trailing.equalToSuperview().inset(24)
+        tableView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
-        
-        rightCharacterImageView.snp.makeConstraints {
-            $0.trailing.equalToSuperview()
-            $0.bottom.equalTo(challengeCardView.snp.top)
-            $0.width.equalTo(160)
-            $0.height.equalTo(120)
-        }
-        
-        challengeCardView.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(24)
-            $0.height.equalTo(426)
-            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-50)
-        }
-    }
-    
-    private func addAnimation() {
-        [rightCharacterImageView, challengeCardView].forEach { $0.animateBottomToTopWithOpacity()}
     }
 
 }
 
+extension OnBoarding3ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return headerView
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return view.safeAreaLayoutGuide.layoutFrame.height
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        // 코스 진행 셀
+        return 600
+    }
+
+}
+
+extension OnBoarding3ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return isDone ? 1 : 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // 코스 진행 셀
+        return UITableViewCell()
+    }
+}
+
 extension OnBoarding3ViewController: OnBoardingChallengeCardViewDelegate {
     func touchChallengeImageView() {
-        // 팝업
+        let completePopUp = ChallengeCompletePopUpViewController()
+        completePopUp.modalTransitionStyle = .crossDissolve
+        completePopUp.modalPresentationStyle = .overCurrentContext
+        completePopUp.popUpUsage = .onboarding
+        completePopUp.challengePopUpProtocol = self
+                
+        self.present(completePopUp, animated: true, completion: nil)
     }
+}
+
+extension OnBoarding3ViewController: ChallengePopUpProtocol {
+    func touchHelpButton(_ sender: UIButton) {}
+    
+    func touchStampButton(_ sender: UITapGestureRecognizer) {}
+    
+    func pushToFinishViewController() {}
+    
+    func pushToNextOnboardingViewController() {
+        isDone = true
+    }
+    
 }

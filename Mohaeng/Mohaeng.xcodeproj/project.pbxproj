@@ -177,9 +177,9 @@
 		AAED18DD26F11DF0009FE781 /* PlusButtonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAED18D726F11DEF009FE781 /* PlusButtonCollectionViewCell.xib */; };
 		AAED18E026F313E3009FE781 /* FeedDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAED18DF26F313E3009FE781 /* FeedDetailCollectionViewCell.swift */; };
 		C96CDD968727E45C25BA11DB /* Pods_Mohaeng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF85070BA1F5A448133681A6 /* Pods_Mohaeng.framework */; };
+		DD515C672711D77700E76D4B /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD515C662711D77700E76D4B /* MoyaLoggingPlugin.swift */; };
 		DD515C6A2711F39100E76D4B /* OnBoarding1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD515C692711F39100E76D4B /* OnBoarding1ViewController.swift */; };
 		DD515C6C2712042D00E76D4B /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD515C6B2712042D00E76D4B /* UILabel+Extension.swift */; };
-		DD515C672711D77700E76D4B /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD515C662711D77700E76D4B /* MoyaLoggingPlugin.swift */; };
 		DD64327626F5CCC100D71787 /* BadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327526F5CCC100D71787 /* BadgeViewController.swift */; };
 		DD64327926F5DC3400D71787 /* BadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */; };
 		DD64327B26F601E400D71787 /* BadgeModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327A26F601E400D71787 /* BadgeModalViewController.swift */; };
@@ -191,6 +191,8 @@
 		DD9EFFC727154D7800B3F871 /* AnimationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFC627154D7800B3F871 /* AnimationFactory.swift */; };
 		DD9EFFC927154F5C00B3F871 /* OnBoarding2HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFC827154F5C00B3F871 /* OnBoarding2HeaderView.swift */; };
 		DD9EFFCC2715568700B3F871 /* OnBoarding2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFCB2715568700B3F871 /* OnBoarding2TableViewCell.swift */; };
+		DD9EFFCF2715798100B3F871 /* OnBoarding4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFCE2715798100B3F871 /* OnBoarding4ViewController.swift */; };
+		DD9EFFD227157B8800B3F871 /* OnBoarding3HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFD127157B8800B3F871 /* OnBoarding3HeaderView.swift */; };
 		DDEBD21C270F5FDC0011EDC6 /* BadgeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBD21B270F5FDC0011EDC6 /* BadgeService.swift */; };
 		DDEBD21E270F5FE90011EDC6 /* BadgeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBD21D270F5FE90011EDC6 /* BadgeAPI.swift */; };
 		DDEBD220270F6CFA0011EDC6 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBD21F270F6CFA0011EDC6 /* Badge.swift */; };
@@ -376,9 +378,9 @@
 		AAED18D726F11DEF009FE781 /* PlusButtonCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlusButtonCollectionViewCell.xib; sourceTree = "<group>"; };
 		AAED18DF26F313E3009FE781 /* FeedDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE6F11BC23DA1F9010B4D5A7 /* Pods-Mohaeng.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mohaeng.debug.xcconfig"; path = "Target Support Files/Pods-Mohaeng/Pods-Mohaeng.debug.xcconfig"; sourceTree = "<group>"; };
+		DD515C662711D77700E76D4B /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
 		DD515C692711F39100E76D4B /* OnBoarding1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding1ViewController.swift; sourceTree = "<group>"; };
 		DD515C6B2712042D00E76D4B /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
-		DD515C662711D77700E76D4B /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
 		DD64327526F5CCC100D71787 /* BadgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewController.swift; sourceTree = "<group>"; };
 		DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCollectionViewCell.swift; sourceTree = "<group>"; };
 		DD64327A26F601E400D71787 /* BadgeModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModalViewController.swift; sourceTree = "<group>"; };
@@ -390,6 +392,8 @@
 		DD9EFFC627154D7800B3F871 /* AnimationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationFactory.swift; sourceTree = "<group>"; };
 		DD9EFFC827154F5C00B3F871 /* OnBoarding2HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding2HeaderView.swift; sourceTree = "<group>"; };
 		DD9EFFCB2715568700B3F871 /* OnBoarding2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding2TableViewCell.swift; sourceTree = "<group>"; };
+		DD9EFFCE2715798100B3F871 /* OnBoarding4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding4ViewController.swift; sourceTree = "<group>"; };
+		DD9EFFD127157B8800B3F871 /* OnBoarding3HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding3HeaderView.swift; sourceTree = "<group>"; };
 		DDEBD21B270F5FDC0011EDC6 /* BadgeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeService.swift; sourceTree = "<group>"; };
 		DDEBD21D270F5FE90011EDC6 /* BadgeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAPI.swift; sourceTree = "<group>"; };
 		DDEBD21F270F6CFA0011EDC6 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
@@ -858,6 +862,7 @@
 		561D768126F0BFA40028DBCA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DD9EFFD027157B6800B3F871 /* OnBoarding */,
 				561D768226F0BFA40028DBCA /* MyDrawerCollectionReusableView.swift */,
 				561D769026F0BFA40028DBCA /* MyDrawerCollectionReusableView.xib */,
 				561D768326F0BFA40028DBCA /* ChallengeStampView.swift */,
@@ -876,7 +881,6 @@
 				561D769426F0BFA40028DBCA /* YearPickerViewController.xib */,
 				EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */,
 				DD68AC312712AB9E0081B905 /* OnBoardingChallengeCardView.swift */,
-				DD9EFFC827154F5C00B3F871 /* OnBoarding2HeaderView.swift */,
 				561D768A26F0BFA40028DBCA /* CustomIntensityVisualEffectView.swift */,
 			);
 			path = Views;
@@ -954,16 +958,34 @@
 				DD515C692711F39100E76D4B /* OnBoarding1ViewController.swift */,
 				DD68AC2D271297D20081B905 /* OnBoarding2ViewController.swift */,
 				DD68AC2F2712AA5F0081B905 /* OnBoarding3ViewController.swift */,
+				DD9EFFCE2715798100B3F871 /* OnBoarding4ViewController.swift */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
 		};
-        DD64327726F5DC0A00D71787 /* BadgeCollectionView */ = {
+		DD64327726F5DC0A00D71787 /* BadgeCollectionView */ = {
 			isa = PBXGroup;
 			children = (
 				DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */,
 			);
 			path = BadgeCollectionView;
+			sourceTree = "<group>";
+		};
+		DD9EFFCA2715564400B3F871 /* OnBoarding2TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DD9EFFCB2715568700B3F871 /* OnBoarding2TableViewCell.swift */,
+			);
+			path = OnBoarding2TableView;
+			sourceTree = "<group>";
+		};
+		DD9EFFD027157B6800B3F871 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				DD9EFFC827154F5C00B3F871 /* OnBoarding2HeaderView.swift */,
+				DD9EFFD127157B8800B3F871 /* OnBoarding3HeaderView.swift */,
+			);
+			path = OnBoarding;
 			sourceTree = "<group>";
 		};
 		DDEBD21A270F5FCA0011EDC6 /* BadgeAPI */ = {
@@ -973,14 +995,6 @@
 				DDEBD21B270F5FDC0011EDC6 /* BadgeService.swift */,
 			);
 			path = BadgeAPI;
-			sourceTree = "<group>";
-		};
-		DD9EFFCA2715564400B3F871 /* OnBoarding2TableView */ = {
-			isa = PBXGroup;
-			children = (
-				DD9EFFCB2715568700B3F871 /* OnBoarding2TableViewCell.swift */,
-			);
-			path = OnBoarding2TableView;
 			sourceTree = "<group>";
 		};
 		DDF595FD26F72852004C5D74 /* Badge */ = {
@@ -1183,6 +1197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD9EFFD227157B8800B3F871 /* OnBoarding3HeaderView.swift in Sources */,
 				DD515C6C2712042D00E76D4B /* UILabel+Extension.swift in Sources */,
 				DD79BB16271166E9001F342C /* UIImageView+Extension.swift in Sources */,
 				569C39652712B28800DED361 /* ChallengeCompletePopUpViewController.swift in Sources */,
@@ -1194,6 +1209,7 @@
 				561D771326F0BFA40028DBCA /* HomeService.swift in Sources */,
 				561D76EE26F0BFA40028DBCA /* PopUpViewController.swift in Sources */,
 				561D772126F0BFA40028DBCA /* Challenge.swift in Sources */,
+				DD9EFFCF2715798100B3F871 /* OnBoarding4ViewController.swift in Sources */,
 				561D771626F0BFA40028DBCA /* AppYear.swift in Sources */,
 				561D76E626F0BFA40028DBCA /* ModalPresentationController.swift in Sources */,
 				561D772226F0BFA40028DBCA /* Medal.swift in Sources */,

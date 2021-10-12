@@ -187,6 +187,7 @@ extension Const {
         static let grpXonboarding2 = UIImage(named: "grpXonboarding2")
         static let grpXonboarding3 = UIImage(named: "grpXonboarding3")
         static let grpXonboarding4 = UIImage(named: "grpXonboarding4")
+        static let iconScroll = UIImage(named: "iconScroll")
 
     }
 }
