@@ -142,7 +142,7 @@ extension FeedDetailCollectionViewCell: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             
-            cell.setData(text: "\(stickerDummy[indexPath.row - 1].emojiCount)")
+            cell.setData(text: "\(stickerDummy[indexPath.row - 1].count)")
             
             return cell
         }

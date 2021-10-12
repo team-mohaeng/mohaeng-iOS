@@ -7,10 +7,12 @@
 
 import Foundation
 
-struct FeedInfo: Codable {
+// MARK: - FeedResponse
+
+struct FeedResponse: Codable {
     let isNew: Bool
     let hasFeed, userCount: Int
-    let feed: [Feed]
+    let feeds: [Feed]
 }
 
 // MARK: - Feed
@@ -28,16 +30,13 @@ struct Feed: Codable {
 
     enum CodingKeys: String, CodingKey {
         case postID = "postId"
-        case course, challenge, image, mood, content, nickname, year, month, day, weekday, emoji, myEmoji, isReport, isDelete
+        case course, challenge, image, mood, content, nickname, year, month, emoji, myEmoji, isReport, isDelete
+        case day = "date"
+        case weekday = "day"
     }
 }
 
 // MARK: - Emoji
 struct Emoji: Codable {
-    let emojiID, emojiCount: Int
-
-    enum CodingKeys: String, CodingKey {
-        case emojiID = "emojiId"
-        case emojiCount
-    }
+    let id, count: Int
 }

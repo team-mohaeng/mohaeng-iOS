@@ -108,6 +108,7 @@ extension Const {
         
         // mohaeng feed image
         static let feedGraphic = UIImage(named: "feedCha")
+        static let imageNoneGrp = UIImage(named: "feednoneGrp")
         
         // mohaeng character style image
         static let lockDuck = UIImage(named: "default")

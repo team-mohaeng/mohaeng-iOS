@@ -55,15 +55,11 @@ extension Const {
         // 챌린지 인증 (PUT)
         // "/challenges/:courseId/:challengeId"
         
-        // MARK: - 소확행 - Happy Service
-        
-        static let happyURL = "/smallSatisfaction"
-        
         // 소확행 입력(POST)
         static let writeURL = "/write"
         
         // 소확행 커뮤니티(GET)
-        static let feedURL = "/community"
+        static let feedURL = "/feed"
         
         // 소확행 커뮤니티 정렬(좋아요, 최신순) (GET)
         // "/smallStatisfaction/community/:sort"
