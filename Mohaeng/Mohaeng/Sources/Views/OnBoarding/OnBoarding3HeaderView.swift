@@ -33,8 +33,8 @@ class OnBoarding3HeaderView: UIView {
                         코스의 진행상황도 파악할 수 있어
                         """, highlightedText: "코스의 진행상황")
                 }
-                scrollIconImageView.animateWithOpacity()
-                scrollIconImageView.animateSpringWithDamping()
+                scrollIconImageView.makeFade()
+                scrollIconImageView.makeSpring()
                 challengeCardView.isUserInteractionEnabled = false
             } else {
                 label.setTyping(text: """
@@ -133,6 +133,6 @@ class OnBoarding3HeaderView: UIView {
     }
     
     private func addAnimation() {
-        [rightCharacterImageView, challengeCardView].forEach { $0.animateBottomToTopWithOpacity()}
+        [rightCharacterImageView, challengeCardView].forEach { $0.makeMoveUpWithFade()}
     }
 }

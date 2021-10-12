@@ -95,8 +95,8 @@ class OnBoarding1ViewController: UIViewController {
     }
     
     private func addAnimation() {
-        [loginButton, startButton].forEach { $0.animateWithOpacity()}
-        [smallMessageBoxImageView, largeMessageBoxImageView].forEach { $0.animateBottomToTopWithOpacity()}
+        [loginButton, startButton].forEach { $0.makeFade()}
+        [smallMessageBoxImageView, largeMessageBoxImageView].forEach { $0.makeMoveUpWithFade()}
     }
     
     private func setLayout() {

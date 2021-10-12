@@ -91,42 +91,39 @@ extension UIView {
         self.layer.masksToBounds = false
     }
     
-    func animateBottomToTopWithOpacity() {
+    func makeMoveUpWithFade() {
         self.alpha = 0
         self.transform = CGAffineTransform(translationX: 0, y: 40)
-        UIView.animate(
-            withDuration: 2,
-            delay: 0.5,
-            usingSpringWithDamping: 0.3,
-            initialSpringVelocity: 0.1,
-            options: [.curveEaseInOut],
-            animations: {[weak self] in
-                self?.transform = CGAffineTransform(translationX: 0, y: 0)
-                self?.alpha = 1
+        UIView.animate( withDuration: 2,
+                        delay: 0.5,
+                        usingSpringWithDamping: 0.3,
+                        initialSpringVelocity: 0.1,
+                        options: [.curveEaseInOut],
+                        animations: {[weak self] in
+                            self?.transform = CGAffineTransform(translationX: 0, y: 0)
+                            self?.alpha = 1
         })
     }
     
-    func animateWithOpacity() {
+    func makeFade() {
         self.alpha = 0
-        UIView.animate(withDuration: 1,
-                       delay: 0.5
-                       
-        ) {[weak self] in
-            self?.alpha = 1
-        }
+        UIView.animate( withDuration: 1,
+                        delay: 0.5,
+                        animations: {[weak self] in
+                            self?.alpha = 1
+        })
         
     }
     
-    func animateSpringWithDamping() {
+    func makeSpring() {
         self.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
-        UIView.animate(
-            withDuration: 2,
-            delay: 2.5,
-            usingSpringWithDamping: 0.3,
-            initialSpringVelocity: 0.1,
-            options: [.curveEaseInOut],
-            animations: {[weak self] in
-                self?.transform = CGAffineTransform(scaleX: 1, y: 1)
+        UIView.animate( withDuration: 2,
+                        delay: 2.5,
+                        usingSpringWithDamping: 0.3,
+                        initialSpringVelocity: 0.1,
+                        options: [.curveEaseInOut],
+                        animations: {[weak self] in
+                            self?.transform = CGAffineTransform(scaleX: 1, y: 1)
         })
     }
 }

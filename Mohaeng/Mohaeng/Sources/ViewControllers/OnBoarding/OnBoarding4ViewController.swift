@@ -30,13 +30,13 @@ class OnBoarding4ViewController: UIViewController {
         $0.image = Const.Image.feedEx
         $0.dropShadow(rounded: 20)
         $0.alpha = 0
-        $0.animateBottomToTopWithOpacity()
+        $0.makeMoveUpWithFade()
     }
     
     let characterImageView = UIImageView().then {
         $0.image = Const.Image.grpXonboarding5
         $0.alpha = 0
-        $0.animateBottomToTopWithOpacity()
+        $0.makeMoveUpWithFade()
     }
 
     override func viewDidLoad() {
