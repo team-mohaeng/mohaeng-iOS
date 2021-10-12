@@ -19,12 +19,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         UserDefaults.standard.setValue("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozMX0sImlhdCI6MTYzMzc4MTQ5N30.5Ocd1asw3QRqpiWnI5tkskH-8kRpdxtIlzYEH4soNkM", forKey: "jwtToken")
                 
-        if !hasJwtToken() {
+//        if !hasJwtToken() {
             setRootViewControllerToOnBoarding()
-        } else {
-            print(UserDefaults.standard.string(forKey: "jwtToken"))
-            setRootViewControllerToTabbar()
-        }
+//        } else {
+//            print(UserDefaults.standard.string(forKey: "jwtToken"))
+//            setRootViewControllerToTabbar()
+//        }
         self.window?.backgroundColor = .white
         
         

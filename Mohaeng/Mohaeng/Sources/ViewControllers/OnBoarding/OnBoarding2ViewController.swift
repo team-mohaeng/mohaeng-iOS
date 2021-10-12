@@ -14,6 +14,8 @@ class OnBoarding2ViewController: UIViewController {
     
 // MARK: - Properties
     
+    let header = OnBoarding2HeaderView()
+    
     private let tableView = UITableView(frame: CGRect.zero, style: .grouped).then {
         $0.showsVerticalScrollIndicator = false
         $0.separatorStyle = .none
@@ -60,7 +62,6 @@ class OnBoarding2ViewController: UIViewController {
     private func registerTableViewCell() {
         tableView.register(OnBoarding2TableViewCell.self, forCellReuseIdentifier: OnBoarding2TableViewCell.identifier)
     }
-
 }
 
 // MARK: - UITableViewDataSource
@@ -88,7 +89,7 @@ extension OnBoarding2ViewController: UITableViewDataSource {
 
 extension OnBoarding2ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return OnBoarding2HeaderView()
+        return header
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
