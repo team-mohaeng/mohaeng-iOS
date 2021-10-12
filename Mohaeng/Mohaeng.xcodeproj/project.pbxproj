@@ -181,7 +181,11 @@
 		DD64327626F5CCC100D71787 /* BadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327526F5CCC100D71787 /* BadgeViewController.swift */; };
 		DD64327926F5DC3400D71787 /* BadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */; };
 		DD64327B26F601E400D71787 /* BadgeModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327A26F601E400D71787 /* BadgeModalViewController.swift */; };
+		DD79BB16271166E9001F342C /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD79BB15271166E9001F342C /* UIImageView+Extension.swift */; };
 		DD860D322700BACD00835AC0 /* WritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD860D312700BACD00835AC0 /* WritingViewController.swift */; };
+		DDEBD21C270F5FDC0011EDC6 /* BadgeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBD21B270F5FDC0011EDC6 /* BadgeService.swift */; };
+		DDEBD21E270F5FE90011EDC6 /* BadgeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBD21D270F5FE90011EDC6 /* BadgeAPI.swift */; };
+		DDEBD220270F6CFA0011EDC6 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBD21F270F6CFA0011EDC6 /* Badge.swift */; };
 		DDF110452709DFB1004FD5FB /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF110442709DFB1004FD5FB /* UIButton+Extension.swift */; };
 		DDF110472709DFEA004FD5FB /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF110462709DFEA004FD5FB /* UIImage+Extension.swift */; };
 		EC2FF5C626F343C000411F31 /* MoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */; };
@@ -368,7 +372,11 @@
 		DD64327526F5CCC100D71787 /* BadgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewController.swift; sourceTree = "<group>"; };
 		DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCollectionViewCell.swift; sourceTree = "<group>"; };
 		DD64327A26F601E400D71787 /* BadgeModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModalViewController.swift; sourceTree = "<group>"; };
+		DD79BB15271166E9001F342C /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		DD860D312700BACD00835AC0 /* WritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingViewController.swift; sourceTree = "<group>"; };
+		DDEBD21B270F5FDC0011EDC6 /* BadgeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeService.swift; sourceTree = "<group>"; };
+		DDEBD21D270F5FE90011EDC6 /* BadgeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAPI.swift; sourceTree = "<group>"; };
+		DDEBD21F270F6CFA0011EDC6 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		DDF110442709DFB1004FD5FB /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		DDF110462709DFEA004FD5FB /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoodCollectionViewCell.swift; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -649,6 +657,7 @@
 				561D763226F0BFA40028DBCA /* UIViewController+Extension.swift */,
 				DDF110442709DFB1004FD5FB /* UIButton+Extension.swift */,
 				DDF110462709DFEA004FD5FB /* UIImage+Extension.swift */,
+				DD79BB15271166E9001F342C /* UIImageView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -730,6 +739,7 @@
 		561D765626F0BFA40028DBCA /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				DDEBD21A270F5FCA0011EDC6 /* BadgeAPI */,
 				561D765726F0BFA40028DBCA /* ChallengeAPI */,
 				561D765A26F0BFA40028DBCA /* FeedAPI */,
 				561D765D26F0BFA40028DBCA /* NetworkResult.swift */,
@@ -820,6 +830,7 @@
 				561D767F26F0BFA40028DBCA /* Feed.swift */,
 				561D768026F0BFA40028DBCA /* CourseLibrary.swift */,
 				565A1EF72700CF81000CAB1B /* MyPage.swift */,
+				DDEBD21F270F6CFA0011EDC6 /* Badge.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -921,6 +932,15 @@
 				DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */,
 			);
 			path = BadgeCollectionView;
+			sourceTree = "<group>";
+		};
+		DDEBD21A270F5FCA0011EDC6 /* BadgeAPI */ = {
+			isa = PBXGroup;
+			children = (
+				DDEBD21D270F5FE90011EDC6 /* BadgeAPI.swift */,
+				DDEBD21B270F5FDC0011EDC6 /* BadgeService.swift */,
+			);
+			path = BadgeAPI;
 			sourceTree = "<group>";
 		};
 		DDF595FD26F72852004C5D74 /* Badge */ = {
@@ -1123,6 +1143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD79BB16271166E9001F342C /* UIImageView+Extension.swift in Sources */,
 				569C39652712B28800DED361 /* ChallengeCompletePopUpViewController.swift in Sources */,
 				561D76C726F0BFA40028DBCA /* ViewModelState.swift in Sources */,
 				561D772626F0BFA40028DBCA /* Feed.swift in Sources */,
@@ -1198,6 +1219,7 @@
 				561D771F26F0BFA40028DBCA /* PushNoti.swift in Sources */,
 				561D773B26F0BFA50028DBCA /* AnimationPopUpDelegate.swift in Sources */,
 				561D76D726F0BFA40028DBCA /* SettingTableViewCell.swift in Sources */,
+				DDEBD220270F6CFA0011EDC6 /* Badge.swift in Sources */,
 				561D777F26F36C970028DBCA /* MyPageViewController.swift in Sources */,
 				561D76E826F0BFA40028DBCA /* SettingViewController.swift in Sources */,
 				DD64327926F5DC3400D71787 /* BadgeCollectionViewCell.swift in Sources */,
@@ -1212,7 +1234,9 @@
 				561D76E526F0BFA40028DBCA /* UINavigationController+Extension.swift in Sources */,
 				561D772326F0BFA40028DBCA /* Home.swift in Sources */,
 				561D76E326F0BFA40028DBCA /* UINavigationItem+Extensions.swift in Sources */,
+				DDEBD21C270F5FDC0011EDC6 /* BadgeService.swift in Sources */,
 				561D770726F0BFA40028DBCA /* FeedService.swift in Sources */,
+				DDEBD21E270F5FE90011EDC6 /* BadgeAPI.swift in Sources */,
 				561D76E126F0BFA40028DBCA /* UIFont+Extension.swift in Sources */,
 				AAED18D926F11DF0009FE781 /* StickerCollectionViewCell.swift in Sources */,
 				561D76F826F0BFA40028DBCA /* LoginViewController.swift in Sources */,
