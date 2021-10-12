@@ -7,8 +7,12 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 class OnBoarding2TableViewCell: UITableViewCell {
     
+// MARK: - Properties
     static let identifier = "OnBoarding2TableViewCell"
     
     var course: AppCourse? {
@@ -43,7 +47,8 @@ class OnBoarding2TableViewCell: UITableViewCell {
     private let courseImageView = UIImageView().then {
         $0.alpha = 0.5
     }
-
+    
+// MARK: - View Life Cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         initTableViewCell()
@@ -62,6 +67,7 @@ class OnBoarding2TableViewCell: UITableViewCell {
         }
     }
     
+// MARK: - Functions
     private func initTableViewCell() {
         backgroundColor = .White
         contentView.backgroundColor = .White

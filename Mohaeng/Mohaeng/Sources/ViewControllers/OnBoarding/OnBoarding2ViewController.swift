@@ -12,11 +12,15 @@ import Then
 
 class OnBoarding2ViewController: UIViewController {
     
+// MARK: - Properties
+    
     private let tableView = UITableView(frame: CGRect.zero, style: .grouped).then {
         $0.showsVerticalScrollIndicator = false
         $0.separatorStyle = .none
         $0.backgroundColor = .White
     }
+    
+// MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +29,8 @@ class OnBoarding2ViewController: UIViewController {
         registerTableViewCell()
         setLayout()
     }
+    
+// MARK: - Functions
     
     private func iniViewController() {
         view.backgroundColor = .White
@@ -57,6 +63,8 @@ class OnBoarding2ViewController: UIViewController {
 
 }
 
+// MARK: - UITableViewDataSource
+
 extension OnBoarding2ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 7
@@ -75,6 +83,8 @@ extension OnBoarding2ViewController: UITableViewDataSource {
         animator.animate(cell: cell, at: indexPath, in: tableView)
     }
 }
+
+// MARK: - UITableViewDelegate
 
 extension OnBoarding2ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

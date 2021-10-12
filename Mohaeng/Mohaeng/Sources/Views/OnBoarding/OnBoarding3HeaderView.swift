@@ -7,22 +7,42 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 class OnBoarding3HeaderView: UIView {
+    
+// MARK: - Properties
     
     public var isDone: Bool = false {
         didSet {
             scrollIconImageView.isHidden = !isDone
             if isDone {
                 if UIDevice.current.hasNotch {
-                    label.setTyping(text: "오늘 챌린지 완료 축하해~\n\n화면을 위로 당기면\n지금 하고있는 코스의 진행상황도 파악할 수 있어", highlightedText: "코스의 진행상황")
+                    label.setTyping(text: """
+                        오늘 챌린지 완료 축하해~
+                        
+                        화면을 위로 당기면
+                        지금 하고있는 코스의 진행상황도 파악할 수 있어
+                        """, highlightedText: "코스의 진행상황")
                 } else {
-                    label.setTyping(text: "오늘 챌린지 완료 축하해~\n\n화면을 위로 당기면 지금 하고있는 \n코스의 진행상황도 파악할 수 있어", highlightedText: "코스의 진행상황")
+                    label.setTyping(text: """
+                        오늘 챌린지 완료 축하해~
+
+                        화면을 위로 당기면 지금 하고있는
+                        코스의 진행상황도 파악할 수 있어
+                        """, highlightedText: "코스의 진행상황")
                 }
                 scrollIconImageView.animateWithOpacity()
                 scrollIconImageView.animateSpringWithDamping()
                 challengeCardView.isUserInteractionEnabled = false
             } else {
-                label.setTyping(text: "재밌는 챌린지를 골랐네~\n\n간단하게 수행한 다음,동그란 버튼을 눌러\n오늘의 챌린지를 인증해봐!", highlightedText: "인증")
+                label.setTyping(text: """
+                    재밌는 챌린지를 골랐네~
+
+                    간단하게 수행한 다음,동그란 버튼을 눌러
+                    오늘의 챌린지를 인증해봐!
+                    """, highlightedText: "인증")
             }
         }
     }
@@ -57,6 +77,8 @@ class OnBoarding3HeaderView: UIView {
         $0.contentMode = .scaleAspectFit
     }
     
+// MARK: - View Life Cycle
+
     public init() {
         super.init(frame: CGRect.zero)
         initView()
@@ -67,7 +89,9 @@ class OnBoarding3HeaderView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
+// MARK: - Functions
+        
     private func initView() {
         backgroundColor = .White
     }

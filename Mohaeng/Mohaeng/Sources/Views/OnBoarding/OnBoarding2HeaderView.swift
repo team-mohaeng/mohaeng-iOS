@@ -7,9 +7,20 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 class OnBoarding2HeaderView: UIView {
+    
+// MARK: - Properties
+    
     public let label = UILabel().then {
-        $0.setTyping(text: "모행에서는 다양한 종류의\n챌린지를 진행할 수 있어.\n\n꽂히는 코스를 하나 선택해봐~!", highlightedText: "코스")
+        $0.setTyping(text: """
+                    모행에서는 다양한 종류의
+                    챌린지를 진행할 수 있어.
+                    
+                    꽂히는 코스를 하나 선택해봐~!
+                    """, highlightedText: "코스")
         $0.font = .gmarketFont(weight: .medium, size: 16)
         $0.numberOfLines = 0
     }
@@ -17,6 +28,8 @@ class OnBoarding2HeaderView: UIView {
     private let rightCharacterImageView = UIImageView().then {
         $0.image = Const.Image.grpXonboarding3
     }
+    
+// MARK: - View Life Cycle
     
     public init() {
         super.init(frame: CGRect.zero)
@@ -32,6 +45,7 @@ class OnBoarding2HeaderView: UIView {
         backgroundColor = .White
     }
     
+// MARK: - Functions
     private func setLayout() {
         setViewHierachy()
         setConstraints()

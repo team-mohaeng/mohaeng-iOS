@@ -7,12 +7,23 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 class OnBoarding4ViewController: UIViewController {
     
+// MARK: - Properties
+  
     private let label = UILabel().then {
         $0.font = .gmarketFont(weight: .medium, size: 16)
         $0.numberOfLines = 0
-        $0.setTyping(text: "오늘의 챌린지를 인증하고 나서\n하루에 한 번씩 안부를 작성할 수 있어.\n\n챌린지를 하면서 느꼈던 사소한 것도 괜찮아.\n자유롭게 안부를 남겨봐~", highlightedText: "안부")
+        $0.setTyping(text: """
+                오늘의 챌린지를 인증하고 나서
+                하루에 한 번씩 안부를 작성할 수 있어.
+                
+                챌린지를 하면서 느꼈던 사소한 것도 괜찮아.
+                자유롭게 안부를 남겨봐~
+                """, highlightedText: "안부")
     }
     
     private let feedImageView = UIImageView().then {
@@ -32,15 +43,17 @@ class OnBoarding4ViewController: UIViewController {
         super.viewDidLoad()
         initViewController()
         setLayout()
-        setAnimation()
+        addAnimation()
         
     }
     
+ // MARK: - View Life Cycle
+
     private func initViewController() {
         view.backgroundColor = .White
     }
     
-    private func setAnimation() {
+    private func addAnimation() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 6) { [weak self] in
             self?.navigationController?.pushViewController(OnBoarding5ViewController(), animated: true)
         }

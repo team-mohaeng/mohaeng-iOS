@@ -8,6 +8,8 @@
 import UIKit
 
 class OnBoarding5ViewController: UIViewController {
+    
+// MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()

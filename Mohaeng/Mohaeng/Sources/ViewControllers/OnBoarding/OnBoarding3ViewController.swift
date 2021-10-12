@@ -12,6 +12,8 @@ import Then
 
 class OnBoarding3ViewController: UIViewController {
     
+// MARK: - Properties
+    
     public var course: AppCourse? {
         didSet {
             headerView.course = course
@@ -38,6 +40,8 @@ class OnBoarding3ViewController: UIViewController {
     
     private let headerView = OnBoarding3HeaderView()
 
+// MARK: - View Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,6 +51,8 @@ class OnBoarding3ViewController: UIViewController {
         setLayout()
     }
     
+// MARK: - Functions
+
     private func iniViewController() {
         view.backgroundColor = .White
     }
@@ -75,6 +81,8 @@ class OnBoarding3ViewController: UIViewController {
 
 }
 
+// MARK: - UITableViewDelegate
+
 extension OnBoarding3ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return headerView
@@ -91,6 +99,8 @@ extension OnBoarding3ViewController: UITableViewDelegate {
 
 }
 
+// MARK: - UITableViewDataSource
+
 extension OnBoarding3ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return isDone ? 1 : 0
@@ -101,6 +111,8 @@ extension OnBoarding3ViewController: UITableViewDataSource {
         return UITableViewCell()
     }
 }
+
+// MARK: - OnBoardingChallengeCardViewDelegate
 
 extension OnBoarding3ViewController: OnBoardingChallengeCardViewDelegate {
     func touchChallengeImageView() {
@@ -113,6 +125,8 @@ extension OnBoarding3ViewController: OnBoardingChallengeCardViewDelegate {
         self.present(completePopUp, animated: true, completion: nil)
     }
 }
+
+// MARK: - ChallengePopUpProtocol
 
 extension OnBoarding3ViewController: ChallengePopUpProtocol {
     func touchHelpButton(_ sender: UIButton) {}

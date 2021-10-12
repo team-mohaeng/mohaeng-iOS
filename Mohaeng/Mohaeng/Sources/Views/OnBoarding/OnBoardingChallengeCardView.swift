@@ -10,12 +10,15 @@ import UIKit
 import SnapKit
 import Then
 
+// MARK: - OnBoardingChallengeCardViewDelegate
+
 protocol OnBoardingChallengeCardViewDelegate: AnyObject {
     func touchChallengeImageView()
 }
 
 class OnBoardingChallengeCardView: UIView {
-    
+
+// MARK: - Properties
     weak var delegate: OnBoardingChallengeCardViewDelegate?
     
     public var course: AppCourse? {
@@ -59,7 +62,8 @@ class OnBoardingChallengeCardView: UIView {
         $0.textColor = .Grey2
         $0.textAlignment = .center
     }
-
+    
+// MARK: - View Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         initView()
@@ -71,6 +75,7 @@ class OnBoardingChallengeCardView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+// MARK: - Functions
     private func initView() {
         self.makeRounded(radius: 20)
         self.backgroundColor = .todayYellow
@@ -117,6 +122,8 @@ class OnBoardingChallengeCardView: UIView {
     }
 
 }
+
+// MARK: - @objc Function
 
 extension OnBoardingChallengeCardView {
     @objc

@@ -31,7 +31,12 @@ class OnBoarding1ViewController: UIViewController {
         $0.image = Const.Image.messageBoxLarge
         
         let label = UILabel().then {
-            $0.text = "안녕! 만나서 방가워.\n내 집착을 견딜 준비가 되어있어?\n\n나와 함께 재미있는 챌린지를 수행하며 하루 행복에 더 가까워지길 바라!"
+            $0.text = """
+                안녕! 만나서 방가워.
+                내 집착을 견딜 준비가 되어있어?
+                
+                나와 함께 재미있는 챌린지를 수행하며 하루 행복에 더 가까워지길 바라!
+                """
             $0.font = .gmarketFont(weight: .medium, size: 16)
             $0.numberOfLines = 0
             $0.setLineHeight(lineHeight: 22)
