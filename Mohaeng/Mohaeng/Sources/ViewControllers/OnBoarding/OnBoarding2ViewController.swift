@@ -22,6 +22,8 @@ class OnBoarding2ViewController: UIViewController {
         $0.backgroundColor = .White
     }
     
+    var cellAnimationsFlags = Array(repeatElement(false, count: 7))
+    
 // MARK: - View Life Cycle
 
     override func viewDidLoad() {
@@ -79,9 +81,11 @@ extension OnBoarding2ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard !cellAnimationsFlags[indexPath.row] else { return }
         let animation = AnimationFactory.makeMoveUpWithFade(rowHeight: 200, duration: 2, delayFactor: 0)
         let animator = Animator(animation: animation)
         animator.animate(cell: cell, at: indexPath, in: tableView)
+        cellAnimationsFlags[indexPath.row] = true
     }
 }
 
