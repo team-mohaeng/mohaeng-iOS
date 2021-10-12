@@ -11,6 +11,7 @@ class SignUpSecondViewController: UIViewController {
     
     // MARK: - @IBOutlets
     
+    @IBOutlet var buttons: [UIButton]!
     @IBOutlet var firstCheckButton: UIButton!
     @IBOutlet var secondCheckButton: UIButton!
     @IBOutlet var thirdCheckButton: UIButton!
@@ -46,10 +47,26 @@ class SignUpSecondViewController: UIViewController {
     // MARK: - @IBAction Properties
     
     @IBAction func touchCheckButton(_ sender: UIButton) {
-        if sender.isSelected {
-            sender.isSelected = false
-        } else {
-            sender.isSelected = true
+        
+        switch sender.tag {
+        case 0:
+            sender.isSelected = !sender.isSelected
+            buttons[1].isSelected = sender.isSelected
+            buttons[2].isSelected = sender.isSelected
+        case 1:
+            sender.isSelected = !sender.isSelected
+            if buttons[1].isSelected && buttons[2].isSelected {
+                buttons[0].isSelected = true
+            } else {
+                buttons[0].isSelected = false
+            }
+        default:
+            sender.isSelected = !sender.isSelected
+            if buttons[1].isSelected && buttons[2].isSelected {
+                buttons[0].isSelected = true
+            } else {
+                buttons[0].isSelected = false
+            }
         }
         
         let first = firstCheckButton.isSelected
@@ -62,6 +79,7 @@ class SignUpSecondViewController: UIViewController {
             setAgreeButton(color: .LoginYellow, bool: false)
         }
     }
+    
     @IBAction func touchAgreeButton(_ sender: UIButton) {
         pushSignUpThirdViewController()
     }

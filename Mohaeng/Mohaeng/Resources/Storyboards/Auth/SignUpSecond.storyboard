@@ -57,24 +57,10 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgV-qN-8gk">
                                                 <rect key="frame" x="0.0" y="0.0" width="303" height="24"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="서비스">
+                                                    <fragment content="서비스 이용약관">
                                                         <attributes>
                                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
-                                                            <integer key="NSUnderline" value="1"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content=" ">
-                                                        <attributes>
-                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <font key="NSFont" metaFont="menu" size="14"/>
-                                                            <integer key="NSUnderline" value="1"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content="이용약관">
-                                                        <attributes>
-                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
+                                                            <font key="NSFont" metaFont="system" size="14"/>
                                                             <integer key="NSUnderline" value="1"/>
                                                         </attributes>
                                                     </fragment>
@@ -87,7 +73,7 @@
                                                     <fragment content="필수">
                                                         <attributes>
                                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
+                                                            <font key="NSFont" metaFont="system" size="14"/>
                                                             <integer key="NSUnderline" value="1"/>
                                                         </attributes>
                                                     </fragment>
@@ -100,7 +86,7 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Lj-Gk-QiP">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Lj-Gk-QiP">
                                                 <rect key="frame" x="303" y="0.0" width="24" height="24"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -111,7 +97,7 @@
                                                 <state key="normal" image="uncheckButton"/>
                                                 <state key="selected" image="checkButton"/>
                                                 <connections>
-                                                    <action selector="touchCheckButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="RW5-5x-OP6"/>
+                                                    <action selector="touchCheckButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="eQg-un-ME8"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -122,57 +108,9 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gA8-Zg-JpY">
                                                 <rect key="frame" x="0.0" y="0.0" width="303" height="24"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="개인정보">
+                                                    <fragment content="개인정보 수집 및 이용 동의">
                                                         <attributes>
-                                                            <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
-                                                            <integer key="NSUnderline" value="1"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content=" ">
-                                                        <attributes>
-                                                            <font key="NSFont" metaFont="menu" size="14"/>
-                                                            <integer key="NSUnderline" value="1"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content="수집">
-                                                        <attributes>
-                                                            <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
-                                                            <integer key="NSUnderline" value="1"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content=" ">
-                                                        <attributes>
-                                                            <font key="NSFont" metaFont="menu" size="14"/>
-                                                            <integer key="NSUnderline" value="1"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content="및">
-                                                        <attributes>
-                                                            <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
-                                                            <integer key="NSUnderline" value="1"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content=" ">
-                                                        <attributes>
-                                                            <font key="NSFont" metaFont="menu" size="14"/>
-                                                            <integer key="NSUnderline" value="1"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content="이용">
-                                                        <attributes>
-                                                            <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
-                                                            <integer key="NSUnderline" value="1"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content=" ">
-                                                        <attributes>
-                                                            <font key="NSFont" metaFont="menu" size="14"/>
-                                                            <integer key="NSUnderline" value="1"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content="동의">
-                                                        <attributes>
-                                                            <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
+                                                            <font key="NSFont" metaFont="system" size="14"/>
                                                             <integer key="NSUnderline" value="1"/>
                                                         </attributes>
                                                     </fragment>
@@ -183,7 +121,7 @@
                                                     </fragment>
                                                     <fragment content="필수">
                                                         <attributes>
-                                                            <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
+                                                            <font key="NSFont" metaFont="system" size="14"/>
                                                             <integer key="NSUnderline" value="1"/>
                                                         </attributes>
                                                     </fragment>
@@ -195,7 +133,7 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdh-je-rUA">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdh-je-rUA">
                                                 <rect key="frame" x="303" y="0.0" width="24" height="24"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -206,7 +144,7 @@
                                                 <state key="normal" image="uncheckButton"/>
                                                 <state key="selected" image="checkButton"/>
                                                 <connections>
-                                                    <action selector="touchCheckButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="GFO-Hq-gcf"/>
+                                                    <action selector="touchCheckButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1vH-kU-52c"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -252,14 +190,17 @@
                     </view>
                     <connections>
                         <outlet property="agreeButton" destination="dLl-sL-jW8" id="vbp-Gd-AhV"/>
-                        <outlet property="firstCheckButton" destination="4TP-mj-ugW" id="LiZ-DQ-sRE"/>
-                        <outlet property="secondCheckButton" destination="3Lj-Gk-QiP" id="jCL-U4-5g8"/>
-                        <outlet property="thirdCheckButton" destination="jdh-je-rUA" id="H8p-aU-ALF"/>
+                        <outlet property="firstCheckButton" destination="4TP-mj-ugW" id="em0-kn-txP"/>
+                        <outlet property="secondCheckButton" destination="3Lj-Gk-QiP" id="kQy-UK-rua"/>
+                        <outlet property="thirdCheckButton" destination="jdh-je-rUA" id="LgU-1O-wMg"/>
+                        <outletCollection property="buttons" destination="4TP-mj-ugW" collectionClass="NSMutableArray" id="kby-Ad-OWr"/>
+                        <outletCollection property="buttons" destination="3Lj-Gk-QiP" collectionClass="NSMutableArray" id="qFw-MJ-kMb"/>
+                        <outletCollection property="buttons" destination="jdh-je-rUA" collectionClass="NSMutableArray" id="aBa-qM-iRo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="53.940886699507388"/>
+            <point key="canvasLocation" x="-233" y="35"/>
         </scene>
     </scenes>
     <resources>
