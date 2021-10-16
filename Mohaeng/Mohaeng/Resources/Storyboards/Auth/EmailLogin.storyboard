@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -141,7 +141,7 @@
                         <outlet property="errorLabel" destination="0e6-Gl-TIl" id="eQj-TK-rId"/>
                         <outlet property="findPasswordButton" destination="rYV-FS-ex0" id="oiY-5p-WXf"/>
                         <outlet property="loginButton" destination="2fQ-wx-2n9" id="wIP-2h-h1Q"/>
-                        <outlet property="passwordBottonView" destination="0MS-Id-6ar" id="Cd3-w8-RYK"/>
+                        <outlet property="passwordBottomView" destination="0MS-Id-6ar" id="wdM-Xc-BNS"/>
                         <outlet property="passwordLabel" destination="c8f-hY-e8b" id="Pdg-PF-Atx"/>
                         <outlet property="passwordTextField" destination="aQ1-BW-exP" id="fth-Uh-eLU"/>
                     </connections>
