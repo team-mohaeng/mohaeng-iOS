@@ -50,18 +50,18 @@ class SignUpSecondViewController: UIViewController {
         
         switch sender.tag {
         case 0:
-            sender.isSelected = !sender.isSelected
+            sender.isSelected.toggle()
             buttons[1].isSelected = sender.isSelected
             buttons[2].isSelected = sender.isSelected
         case 1:
-            sender.isSelected = !sender.isSelected
+            sender.isSelected.toggle()
             if buttons[1].isSelected && buttons[2].isSelected {
                 buttons[0].isSelected = true
             } else {
                 buttons[0].isSelected = false
             }
         default:
-            sender.isSelected = !sender.isSelected
+            sender.isSelected.toggle()
             if buttons[1].isSelected && buttons[2].isSelected {
                 buttons[0].isSelected = true
             } else {
