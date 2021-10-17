@@ -178,11 +178,22 @@
 		AAED18E026F313E3009FE781 /* FeedDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAED18DF26F313E3009FE781 /* FeedDetailCollectionViewCell.swift */; };
 		C96CDD968727E45C25BA11DB /* Pods_Mohaeng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF85070BA1F5A448133681A6 /* Pods_Mohaeng.framework */; };
 		DD515C672711D77700E76D4B /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD515C662711D77700E76D4B /* MoyaLoggingPlugin.swift */; };
+		DD515C6A2711F39100E76D4B /* OnBoarding1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD515C692711F39100E76D4B /* OnBoarding1ViewController.swift */; };
+		DD515C6C2712042D00E76D4B /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD515C6B2712042D00E76D4B /* UILabel+Extension.swift */; };
 		DD64327626F5CCC100D71787 /* BadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327526F5CCC100D71787 /* BadgeViewController.swift */; };
 		DD64327926F5DC3400D71787 /* BadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */; };
 		DD64327B26F601E400D71787 /* BadgeModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327A26F601E400D71787 /* BadgeModalViewController.swift */; };
+		DD68AC2E271297D20081B905 /* OnBoarding2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD68AC2D271297D20081B905 /* OnBoarding2ViewController.swift */; };
+		DD68AC302712AA5F0081B905 /* OnBoarding3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD68AC2F2712AA5F0081B905 /* OnBoarding3ViewController.swift */; };
+		DD68AC322712AB9E0081B905 /* OnBoardingChallengeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD68AC312712AB9E0081B905 /* OnBoardingChallengeCardView.swift */; };
 		DD79BB16271166E9001F342C /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD79BB15271166E9001F342C /* UIImageView+Extension.swift */; };
+		DD8452662715C11E007B4C2B /* OnBoarding5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8452652715C11E007B4C2B /* OnBoarding5ViewController.swift */; };
 		DD860D322700BACD00835AC0 /* WritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD860D312700BACD00835AC0 /* WritingViewController.swift */; };
+		DD9EFFC727154D7800B3F871 /* AnimationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFC627154D7800B3F871 /* AnimationFactory.swift */; };
+		DD9EFFC927154F5C00B3F871 /* OnBoarding2HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFC827154F5C00B3F871 /* OnBoarding2HeaderView.swift */; };
+		DD9EFFCC2715568700B3F871 /* OnBoarding2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFCB2715568700B3F871 /* OnBoarding2TableViewCell.swift */; };
+		DD9EFFCF2715798100B3F871 /* OnBoarding4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFCE2715798100B3F871 /* OnBoarding4ViewController.swift */; };
+		DD9EFFD227157B8800B3F871 /* OnBoarding3HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFD127157B8800B3F871 /* OnBoarding3HeaderView.swift */; };
 		DDEBD21C270F5FDC0011EDC6 /* BadgeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBD21B270F5FDC0011EDC6 /* BadgeService.swift */; };
 		DDEBD21E270F5FE90011EDC6 /* BadgeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBD21D270F5FE90011EDC6 /* BadgeAPI.swift */; };
 		DDEBD220270F6CFA0011EDC6 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBD21F270F6CFA0011EDC6 /* Badge.swift */; };
@@ -369,11 +380,22 @@
 		AAED18DF26F313E3009FE781 /* FeedDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE6F11BC23DA1F9010B4D5A7 /* Pods-Mohaeng.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mohaeng.debug.xcconfig"; path = "Target Support Files/Pods-Mohaeng/Pods-Mohaeng.debug.xcconfig"; sourceTree = "<group>"; };
 		DD515C662711D77700E76D4B /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
+		DD515C692711F39100E76D4B /* OnBoarding1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding1ViewController.swift; sourceTree = "<group>"; };
+		DD515C6B2712042D00E76D4B /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		DD64327526F5CCC100D71787 /* BadgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewController.swift; sourceTree = "<group>"; };
 		DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCollectionViewCell.swift; sourceTree = "<group>"; };
 		DD64327A26F601E400D71787 /* BadgeModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModalViewController.swift; sourceTree = "<group>"; };
+		DD68AC2D271297D20081B905 /* OnBoarding2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding2ViewController.swift; sourceTree = "<group>"; };
+		DD68AC2F2712AA5F0081B905 /* OnBoarding3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding3ViewController.swift; sourceTree = "<group>"; };
+		DD68AC312712AB9E0081B905 /* OnBoardingChallengeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingChallengeCardView.swift; sourceTree = "<group>"; };
 		DD79BB15271166E9001F342C /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		DD8452652715C11E007B4C2B /* OnBoarding5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding5ViewController.swift; sourceTree = "<group>"; };
 		DD860D312700BACD00835AC0 /* WritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingViewController.swift; sourceTree = "<group>"; };
+		DD9EFFC627154D7800B3F871 /* AnimationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationFactory.swift; sourceTree = "<group>"; };
+		DD9EFFC827154F5C00B3F871 /* OnBoarding2HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding2HeaderView.swift; sourceTree = "<group>"; };
+		DD9EFFCB2715568700B3F871 /* OnBoarding2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding2TableViewCell.swift; sourceTree = "<group>"; };
+		DD9EFFCE2715798100B3F871 /* OnBoarding4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding4ViewController.swift; sourceTree = "<group>"; };
+		DD9EFFD127157B8800B3F871 /* OnBoarding3HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding3HeaderView.swift; sourceTree = "<group>"; };
 		DDEBD21B270F5FDC0011EDC6 /* BadgeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeService.swift; sourceTree = "<group>"; };
 		DDEBD21D270F5FE90011EDC6 /* BadgeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAPI.swift; sourceTree = "<group>"; };
 		DDEBD21F270F6CFA0011EDC6 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
@@ -568,6 +590,7 @@
 		561D760B26F0BFA40028DBCA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				DD9EFFCA2715564400B3F871 /* OnBoarding2TableView */,
 				AA7E0AAE26FC6BD900106DC2 /* CharaterCollectionView */,
 				DD64327726F5DC0A00D71787 /* BadgeCollectionView */,
 				561D760F26F0BFA40028DBCA /* NotificationCollectionView */,
@@ -657,6 +680,7 @@
 				561D763226F0BFA40028DBCA /* UIViewController+Extension.swift */,
 				DDF110442709DFB1004FD5FB /* UIButton+Extension.swift */,
 				DDF110462709DFEA004FD5FB /* UIImage+Extension.swift */,
+				DD515C6B2712042D00E76D4B /* UILabel+Extension.swift */,
 				DD79BB15271166E9001F342C /* UIImageView+Extension.swift */,
 			);
 			path = Extensions;
@@ -665,6 +689,7 @@
 		561D763326F0BFA40028DBCA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				DD515C682711F1C000E76D4B /* OnBoarding */,
 				561D763426F0BFA40028DBCA /* Home */,
 				561D763926F0BFA40028DBCA /* PopUp */,
 				561D764126F0BFA40028DBCA /* Auth */,
@@ -812,6 +837,7 @@
 				561D767226F0BFA40028DBCA /* User.swift */,
 				561D767326F0BFA40028DBCA /* SignUpUser.swift */,
 				561D767426F0BFA40028DBCA /* RoadMapPath.swift */,
+				DD9EFFC627154D7800B3F871 /* AnimationFactory.swift */,
 			);
 			path = AppModels;
 			sourceTree = "<group>";
@@ -838,6 +864,7 @@
 		561D768126F0BFA40028DBCA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DD9EFFD027157B6800B3F871 /* OnBoarding */,
 				561D768226F0BFA40028DBCA /* MyDrawerCollectionReusableView.swift */,
 				561D769026F0BFA40028DBCA /* MyDrawerCollectionReusableView.xib */,
 				561D768326F0BFA40028DBCA /* ChallengeStampView.swift */,
@@ -926,12 +953,42 @@
 			path = CharaterCollectionView;
 			sourceTree = "<group>";
 		};
+		DD515C682711F1C000E76D4B /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				DD515C692711F39100E76D4B /* OnBoarding1ViewController.swift */,
+				DD68AC2D271297D20081B905 /* OnBoarding2ViewController.swift */,
+				DD68AC2F2712AA5F0081B905 /* OnBoarding3ViewController.swift */,
+				DD9EFFCE2715798100B3F871 /* OnBoarding4ViewController.swift */,
+				DD8452652715C11E007B4C2B /* OnBoarding5ViewController.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
 		DD64327726F5DC0A00D71787 /* BadgeCollectionView */ = {
 			isa = PBXGroup;
 			children = (
 				DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */,
 			);
 			path = BadgeCollectionView;
+			sourceTree = "<group>";
+		};
+		DD9EFFCA2715564400B3F871 /* OnBoarding2TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DD9EFFCB2715568700B3F871 /* OnBoarding2TableViewCell.swift */,
+			);
+			path = OnBoarding2TableView;
+			sourceTree = "<group>";
+		};
+		DD9EFFD027157B6800B3F871 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				DD68AC312712AB9E0081B905 /* OnBoardingChallengeCardView.swift */,
+				DD9EFFC827154F5C00B3F871 /* OnBoarding2HeaderView.swift */,
+				DD9EFFD127157B8800B3F871 /* OnBoarding3HeaderView.swift */,
+			);
+			path = OnBoarding;
 			sourceTree = "<group>";
 		};
 		DDEBD21A270F5FCA0011EDC6 /* BadgeAPI */ = {
@@ -1143,6 +1200,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD9EFFD227157B8800B3F871 /* OnBoarding3HeaderView.swift in Sources */,
+				DD515C6C2712042D00E76D4B /* UILabel+Extension.swift in Sources */,
 				DD79BB16271166E9001F342C /* UIImageView+Extension.swift in Sources */,
 				569C39652712B28800DED361 /* ChallengeCompletePopUpViewController.swift in Sources */,
 				561D76C726F0BFA40028DBCA /* ViewModelState.swift in Sources */,
@@ -1153,6 +1212,7 @@
 				561D771326F0BFA40028DBCA /* HomeService.swift in Sources */,
 				561D76EE26F0BFA40028DBCA /* PopUpViewController.swift in Sources */,
 				561D772126F0BFA40028DBCA /* Challenge.swift in Sources */,
+				DD9EFFCF2715798100B3F871 /* OnBoarding4ViewController.swift in Sources */,
 				561D771626F0BFA40028DBCA /* AppYear.swift in Sources */,
 				561D76E626F0BFA40028DBCA /* ModalPresentationController.swift in Sources */,
 				561D772226F0BFA40028DBCA /* Medal.swift in Sources */,
@@ -1164,6 +1224,7 @@
 				561D76D026F0BFA40028DBCA /* FeedCollectionViewCell.swift in Sources */,
 				561D772026F0BFA40028DBCA /* Auth.swift in Sources */,
 				561D76F326F0BFA40028DBCA /* FindPasswordViewController.swift in Sources */,
+				DD9EFFC727154D7800B3F871 /* AnimationFactory.swift in Sources */,
 				AAED18D826F11DF0009FE781 /* PlusButtonCollectionViewCell.swift in Sources */,
 				561D76C626F0BFA40028DBCA /* CourseListViewModel.swift in Sources */,
 				AAED18E026F313E3009FE781 /* FeedDetailCollectionViewCell.swift in Sources */,
@@ -1182,8 +1243,10 @@
 				AA7E0AB326FC6C1900106DC2 /* CharacterTypeCollectionViewCell.swift in Sources */,
 				561D772826F0BFA40028DBCA /* MyDrawerCollectionReusableView.swift in Sources */,
 				561D76DD26F0BFA40028DBCA /* EvenDayTableViewCell.swift in Sources */,
+				DD8452662715C11E007B4C2B /* OnBoarding5ViewController.swift in Sources */,
 				561D770026F0BFA40028DBCA /* TabbarViewController.swift in Sources */,
 				561D773526F0BFA40028DBCA /* YearPickerViewController.swift in Sources */,
+				DD68AC302712AA5F0081B905 /* OnBoarding3ViewController.swift in Sources */,
 				561D773726F0BFA40028DBCA /* CourseFooterView.swift in Sources */,
 				561D76FB26F0BFA40028DBCA /* FeedDetailViewController.swift in Sources */,
 				561D771A26F0BFA40028DBCA /* User.swift in Sources */,
@@ -1196,6 +1259,7 @@
 				561D76D426F0BFA40028DBCA /* CourseLibraryCollectionViewCell.swift in Sources */,
 				561D770D26F0BFA40028DBCA /* LoginService.swift in Sources */,
 				561D772D26F0BFA40028DBCA /* DatePickerViewController.swift in Sources */,
+				DD9EFFC927154F5C00B3F871 /* OnBoarding2HeaderView.swift in Sources */,
 				561D76E726F0BFA40028DBCA /* UIViewController+Extension.swift in Sources */,
 				DD64327626F5CCC100D71787 /* BadgeViewController.swift in Sources */,
 				561D770926F0BFA40028DBCA /* NetworkResult.swift in Sources */,
@@ -1207,6 +1271,7 @@
 				AA190EBF26FE62E30059E100 /* BackgroundCollectionViewCell.swift in Sources */,
 				561D771E26F0BFA40028DBCA /* MyDrawer.swift in Sources */,
 				561D771B26F0BFA40028DBCA /* SignUpUser.swift in Sources */,
+				DD68AC322712AB9E0081B905 /* OnBoardingChallengeCardView.swift in Sources */,
 				561D76CA26F0BFA40028DBCA /* BubbleCollectionViewCell.swift in Sources */,
 				561D76FE26F0BFA40028DBCA /* MoodViewController.swift in Sources */,
 				561D771526F0BFA40028DBCA /* AppModelsExmaple.swift in Sources */,
@@ -1222,6 +1287,7 @@
 				DDEBD220270F6CFA0011EDC6 /* Badge.swift in Sources */,
 				561D777F26F36C970028DBCA /* MyPageViewController.swift in Sources */,
 				561D76E826F0BFA40028DBCA /* SettingViewController.swift in Sources */,
+				DD9EFFCC2715568700B3F871 /* OnBoarding2TableViewCell.swift in Sources */,
 				DD64327926F5DC3400D71787 /* BadgeCollectionViewCell.swift in Sources */,
 				561D76F426F0BFA40028DBCA /* EmailLoginViewController.swift in Sources */,
 				561D772426F0BFA40028DBCA /* Course.swift in Sources */,
@@ -1241,6 +1307,7 @@
 				AAED18D926F11DF0009FE781 /* StickerCollectionViewCell.swift in Sources */,
 				561D76F826F0BFA40028DBCA /* LoginViewController.swift in Sources */,
 				561D76F926F0BFA40028DBCA /* CodeViewController.swift in Sources */,
+				DD68AC2E271297D20081B905 /* OnBoarding2ViewController.swift in Sources */,
 				561D76B426F0BFA40028DBCA /* Image.swift in Sources */,
 				DD860D322700BACD00835AC0 /* WritingViewController.swift in Sources */,
 				561D772E26F0BFA40028DBCA /* UnreadNotificationHeaderView.swift in Sources */,
@@ -1255,6 +1322,7 @@
 				561D770826F0BFA40028DBCA /* FeedAPI.swift in Sources */,
 				561D772926F0BFA40028DBCA /* ChallengeStampView.swift in Sources */,
 				AA7E0AAD26FC64D500106DC2 /* CharacterStyleViewController.swift in Sources */,
+				DD515C6A2711F39100E76D4B /* OnBoarding1ViewController.swift in Sources */,
 				56A05EB22700699D006D6ECE /* DateCollectionViewCell.swift in Sources */,
 				561D76F726F0BFA40028DBCA /* SignUpSecondViewController.swift in Sources */,
 				561D772726F0BFA40028DBCA /* CourseLibrary.swift in Sources */,

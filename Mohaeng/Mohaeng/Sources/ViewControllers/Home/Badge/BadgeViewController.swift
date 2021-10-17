@@ -13,6 +13,7 @@ import Then
 class BadgeViewController: UIViewController {
     
 // MARK: - Properties
+    
     private var collectionView: UICollectionView!
     
     private var badges: [Badge] = []
