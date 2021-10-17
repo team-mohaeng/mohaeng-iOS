@@ -40,6 +40,7 @@ class HappyPopUpViewController: UIViewController {
     func initData() {
         levelLabel.text = "Lv.\(data.level)"
         happyPercentLabel.text = "해피지수 \(data.happy)/\(data.fullHappy) (\(getHappyPercent())%)"
+        progressView.setProgress(Float(data.happy / data.fullHappy), animated: false)
     }
     
     func getHappyPercent() -> Int {
