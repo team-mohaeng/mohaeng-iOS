@@ -160,6 +160,8 @@
 		569E8B1D271547AD00D67712 /* ChallengeHelpPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569E8B1B271547AD00D67712 /* ChallengeHelpPopUpViewController.swift */; };
 		569E8B1E271547AD00D67712 /* ChallengeHelpPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569E8B1C271547AD00D67712 /* ChallengeHelpPopUpViewController.xib */; };
 		56A05EB22700699D006D6ECE /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A05EB12700699D006D6ECE /* DateCollectionViewCell.swift */; };
+		56A30E02271C62FA0097FD75 /* PushNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A30E01271C62FA0097FD75 /* PushNotiService.swift */; };
+		56A30E04271C63040097FD75 /* PushNotiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A30E03271C63040097FD75 /* PushNotiAPI.swift */; };
 		56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA6C2689C0D10056155A /* .swiftlint.yml */; };
 		AA190EBF26FE62E30059E100 /* BackgroundCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA190EBD26FE62E30059E100 /* BackgroundCollectionViewCell.swift */; };
 		AA190EC026FE62E30059E100 /* BackgroundCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA190EBE26FE62E30059E100 /* BackgroundCollectionViewCell.xib */; };
@@ -361,6 +363,8 @@
 		569E8B1B271547AD00D67712 /* ChallengeHelpPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeHelpPopUpViewController.swift; sourceTree = "<group>"; };
 		569E8B1C271547AD00D67712 /* ChallengeHelpPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeHelpPopUpViewController.xib; sourceTree = "<group>"; };
 		56A05EB12700699D006D6ECE /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
+		56A30E01271C62FA0097FD75 /* PushNotiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotiService.swift; sourceTree = "<group>"; };
+		56A30E03271C63040097FD75 /* PushNotiAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotiAPI.swift; sourceTree = "<group>"; };
 		56DCAA242689BB9B0056155A /* Mohaeng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mohaeng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCAA6C2689C0D10056155A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		AA190EBD26FE62E30059E100 /* BackgroundCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -764,15 +768,16 @@
 		561D765626F0BFA40028DBCA /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				561D766526F0BFA40028DBCA /* GenericResponse.swift */,
+				561D765D26F0BFA40028DBCA /* NetworkResult.swift */,
+				DD515C662711D77700E76D4B /* MoyaLoggingPlugin.swift */,
 				DDEBD21A270F5FCA0011EDC6 /* BadgeAPI */,
 				561D765726F0BFA40028DBCA /* ChallengeAPI */,
 				561D765A26F0BFA40028DBCA /* FeedAPI */,
-				561D765D26F0BFA40028DBCA /* NetworkResult.swift */,
 				561D765E26F0BFA40028DBCA /* AuthAPI */,
-				561D766526F0BFA40028DBCA /* GenericResponse.swift */,
 				561D766626F0BFA40028DBCA /* CourseAPI */,
 				561D766926F0BFA40028DBCA /* HomeAPI */,
-				DD515C662711D77700E76D4B /* MoyaLoggingPlugin.swift */,
+				56A30E00271C62DE0097FD75 /* PushNotiAPI */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -921,6 +926,15 @@
 				56A05EB12700699D006D6ECE /* DateCollectionViewCell.swift */,
 			);
 			path = MyPageCalendar;
+			sourceTree = "<group>";
+		};
+		56A30E00271C62DE0097FD75 /* PushNotiAPI */ = {
+			isa = PBXGroup;
+			children = (
+				56A30E01271C62FA0097FD75 /* PushNotiService.swift */,
+				56A30E03271C63040097FD75 /* PushNotiAPI.swift */,
+			);
+			path = PushNotiAPI;
 			sourceTree = "<group>";
 		};
 		56DCAA1B2689BB9B0056155A = {
@@ -1221,6 +1235,7 @@
 				EC2FF5C626F343C000411F31 /* MoodCollectionViewCell.swift in Sources */,
 				561D771726F0BFA40028DBCA /* AppCourse.swift in Sources */,
 				561D76B626F0BFA40028DBCA /* URL.swift in Sources */,
+				56A30E04271C63040097FD75 /* PushNotiAPI.swift in Sources */,
 				561D76D026F0BFA40028DBCA /* FeedCollectionViewCell.swift in Sources */,
 				561D772026F0BFA40028DBCA /* Auth.swift in Sources */,
 				561D76F326F0BFA40028DBCA /* FindPasswordViewController.swift in Sources */,
@@ -1243,6 +1258,7 @@
 				AA7E0AB326FC6C1900106DC2 /* CharacterTypeCollectionViewCell.swift in Sources */,
 				561D772826F0BFA40028DBCA /* MyDrawerCollectionReusableView.swift in Sources */,
 				561D76DD26F0BFA40028DBCA /* EvenDayTableViewCell.swift in Sources */,
+				56A30E02271C62FA0097FD75 /* PushNotiService.swift in Sources */,
 				DD8452662715C11E007B4C2B /* OnBoarding5ViewController.swift in Sources */,
 				561D770026F0BFA40028DBCA /* TabbarViewController.swift in Sources */,
 				561D773526F0BFA40028DBCA /* YearPickerViewController.swift in Sources */,
