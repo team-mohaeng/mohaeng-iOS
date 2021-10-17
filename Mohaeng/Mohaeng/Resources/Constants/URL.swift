@@ -80,5 +80,9 @@ extension Const {
         
         // 배지 조회 (GET)
         static let badge = "/badge"
+        
+        // MARK: - 마이페이지
+        
+        static let myPage = "/profile"
     }
 }

@@ -150,12 +150,12 @@ extension CourseViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: Const.Xib.Identifier.courseFooterView) as? CourseFooterView {
-            if course.challenges[course.challenges.count - 1].situation == 2 {
-                footerView.isDone = .done
-            } else {
-                footerView.isDone = .undone
-            }
-            footerView.initLastPath()
+//            if course.challenges[course.challenges.count - 1].situation == 2 {
+//                footerView.isDone = .done
+//            } else {
+//                footerView.isDone = .undone
+//            }
+//            footerView.initLastPath()
             return footerView
         }
         return UIView()
