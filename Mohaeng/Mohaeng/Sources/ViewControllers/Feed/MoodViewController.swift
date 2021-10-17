@@ -14,7 +14,7 @@ class MoodViewController: UIViewController {
     let cellSize = CGSize(width: 160, height: 160)
     var minItemSpacing: CGFloat = 10
     let moodImageArray = [Const.Image.badImage, Const.Image.sosoImage, Const.Image.happyImage]
-    var moodImage = Const.Image.badImage
+    var moodImageNum = 0
     
     private var currentDate: AppDate?
     private var signUpUser: SignUpUser?
@@ -135,12 +135,9 @@ class MoodViewController: UIViewController {
     // MARK: - @IBAction Properties
     
     @IBAction func touchNextButton(_ sender: Any) {
-        if let moodImage = moodImage {
-            let writingViewController = WritingViewController(with: moodImage)
-            
-            self.navigationController?.pushViewController(writingViewController, animated: true)
-        }
-        
+        let writingViewController = WritingViewController(with: moodImageNum)
+        self.navigationController?.pushViewController(writingViewController, animated: true)
+    
     }
     
     @objc
@@ -181,7 +178,7 @@ extension MoodViewController: UICollectionViewDelegate {
             break
         }
         
-        moodImage = moodImageArray[Int(roundedIndex)]
+        moodImageNum = Int(roundedIndex)
     }
 }
 
