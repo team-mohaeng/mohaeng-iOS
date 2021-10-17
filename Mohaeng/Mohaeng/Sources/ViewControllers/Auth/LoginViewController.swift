@@ -13,15 +13,21 @@ class LoginViewController: UIViewController {
     @IBOutlet var kakaoLoginButton: UIButton!
     @IBOutlet var appleLoginButton: UIButton!
     @IBOutlet var emailLoginButton: UIButton!
+    @IBOutlet weak var mohaengLabel: UILabel!
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavigationBar()
+        setLabelFont()
         setButtonUI()
     }
     
     // MARK: - Functions
+    
+    private func setLabelFont() {
+        mohaengLabel.font = .gmarketFont(weight: GmarketFontSize.medium, size: 24)
+    }
     
     private func initNavigationBar() {
         self.navigationController?.initTransparentNavBar()
