@@ -31,6 +31,7 @@ extension Const {
             static let notification = "Notification"
             static let characterStyle = "CharacterStyle"
             static let myPage = "MyPage"
+            static let happyPopUp = "HappyPopUpViewController"
             
             // 챌린지 탭
             static let emptyChallenge = "EmptyChallenge"
