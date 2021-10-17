@@ -17,11 +17,11 @@ class MyDrawerViewController: UIViewController {
     // MARK: - Properties
     
     private var myDrawer: [Feed] = [
-        Feed(postID: 0, course: "뽀득뽀득 세균 퇴치", challenge: 3, image: "imageUrl", mood: 2, content: "맛있는 피자에 시원한 맥주 먹고 승찬이 개때리러간다 ㅋㅋ ", nickname: "초이초이", year: "2021", month: "8", day: "22", weekday: "일", emoji: [Emoji(emojiID: 1, emojiCount: 5)], myEmoji: 0, isReport: true, isDelete: false),
-        Feed(postID: 0, course: "나는야 지구촌 촌장", challenge: 1, image: "imageUrl", mood: 2, content: "맛있는 피자에 시원한 맥주 먹고 덤덤댄스 릴스 췄당 ㅋㅋ", nickname: "초이초이", year: "2021", month: "8", day: "21", weekday: "일", emoji: [Emoji(emojiID: 1, emojiCount: 5)], myEmoji: 0, isReport: true, isDelete: false),
-        Feed(postID: 0, course: "초급 사진가", challenge: 2, image: "imageUrl", mood: 2, content: "맛있는 피자에 시원한 맥주 먹고 선선한 날씨에 산책했어요. 윤예지 정초이 어쩌구 저쩌구 메롱 야호", nickname: "초이초이", year: "2021", month: "8", day: "20", weekday: "일", emoji: [Emoji(emojiID: 1, emojiCount: 5)], myEmoji: 0, isReport: true, isDelete: false),
-        Feed(postID: 0, course: "거침없이 하이킥", challenge: 2, image: "imageUrl", mood: 2, content: "초이초이 ㅋㅋ", nickname: "김승찬", year: "2021", month: "8", day: "19", weekday: "일", emoji: [Emoji(emojiID: 1, emojiCount: 5)], myEmoji: 0, isReport: true, isDelete: false),
-        Feed(postID: 0, course: "초급 사진가", challenge: 2, image: "imageUrl", mood: 2, content: "맛있는 피자에 시원한 맥주 먹고 선선한 날씨에 산책했어요. 윤예지 정초이 어쩌구 저쩌구 메롱 야호", nickname: "초이초이", year: "2021", month: "8", day: "20", weekday: "일", emoji: [Emoji(emojiID: 1, emojiCount: 5)], myEmoji: 0, isReport: true, isDelete: false)]
+        Feed(postID: 0, course: "뽀득뽀득 세균 퇴치", challenge: 3, image: "", mood: 2, content: "맛있는 피자에 시원한 맥주 먹고 승찬이 개때리러간다 ㅋㅋ ", nickname: "초이초이", year: "2021", month: "8", day: "22", weekday: "일", emoji: [Emoji(id: 1, count: 5)], myEmoji: 0, isReport: true, isDelete: false),
+        Feed(postID: 0, course: "나는야 지구촌 촌장", challenge: 1, image: "", mood: 2, content: "맛있는 피자에 시원한 맥주 먹고 덤덤댄스 릴스 췄당 ㅋㅋ", nickname: "초이초이", year: "2021", month: "8", day: "21", weekday: "일", emoji: [Emoji(id: 1, count: 5)], myEmoji: 0, isReport: true, isDelete: false),
+        Feed(postID: 0, course: "초급 사진가", challenge: 2, image: "", mood: 2, content: "맛있는 피자에 시원한 맥주 먹고 선선한 날씨에 산책했어요. 윤예지 정초이 어쩌구 저쩌구 메롱 야호", nickname: "초이초이", year: "2021", month: "8", day: "20", weekday: "일", emoji: [Emoji(id: 1, count: 5)], myEmoji: 0, isReport: true, isDelete: false),
+        Feed(postID: 0, course: "거침없이 하이킥", challenge: 2, image: "", mood: 2, content: "초이초이 ㅋㅋ", nickname: "김승찬", year: "2021", month: "8", day: "19", weekday: "일", emoji: [Emoji(id: 1, count: 5)], myEmoji: 0, isReport: true, isDelete: false),
+        Feed(postID: 0, course: "초급 사진가", challenge: 2, image: "", mood: 2, content: "맛있는 피자에 시원한 맥주 먹고 선선한 날씨에 산책했어요. 윤예지 정초이 어쩌구 저쩌구 메롱 야호", nickname: "초이초이", year: "2021", month: "8", day: "20", weekday: "일", emoji: [Emoji(id: 1, count: 5)], myEmoji: 0, isReport: true, isDelete: false)]
     private var modalDateView: DatePickerViewController?
     private var currentDate: AppDate?
     private var feedCount = 0
