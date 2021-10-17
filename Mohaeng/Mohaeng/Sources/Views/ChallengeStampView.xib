@@ -171,7 +171,13 @@
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <connections>
+                <outlet property="availableBadgeLabel" destination="mSo-3o-n7F" id="ALG-BN-5qy"/>
+                <outlet property="availableHappyLabel" destination="UqL-NJ-4Mx" id="2Jf-11-jah"/>
+                <outlet property="challengeNameLabel" destination="yCh-eY-nvn" id="BwZ-EH-BnX"/>
+                <outlet property="characterImageView" destination="BV7-E8-JT9" id="QCx-hx-Roz"/>
+                <outlet property="characterLineLabel" destination="H2g-88-EEw" id="Yoo-gv-gUO"/>
                 <outlet property="characterLineView" destination="1Of-o4-vt6" id="V6R-eg-QbR"/>
+                <outlet property="dayLabel" destination="TRQ-Vn-owg" id="xDI-Yo-5Pt"/>
                 <outlet property="dayLabelView" destination="Sw0-eU-8jJ" id="u12-Vk-BR4"/>
                 <outlet property="stampBgView" destination="Tk3-Ar-b0Y" id="7jj-AU-UCH"/>
                 <outlet property="stampImageView" destination="ZCr-7b-eZA" id="8JW-le-mBr"/>

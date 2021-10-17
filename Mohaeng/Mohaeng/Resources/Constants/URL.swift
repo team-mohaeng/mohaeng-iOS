@@ -46,11 +46,8 @@ extension Const {
         
         // MARK: - Challenge Service
         
-        // 전체 챌린지 지도 조회 (GET)
-        static let challengesURL = "/challenges"
-        
-        // 오늘의 챌린지 조회 (GET) :
-        // "/challenges/:courseId"
+        // 전체 챌린지 지도 조회 (GET), 오늘의 챌린지 조회 (GET)
+        static let challengesURL = "/today"
         
         // 챌린지 인증 (PUT)
         // "/challenges/:courseId/:challengeId"

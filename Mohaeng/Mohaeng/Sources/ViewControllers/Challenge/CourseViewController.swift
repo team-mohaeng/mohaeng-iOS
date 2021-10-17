@@ -13,11 +13,7 @@ class CourseViewController: UIViewController {
     // MARK: - Properties
 
     // default data
-    var course: Course = Course(id: 0, title: "", courseDescription: "", totalDays: 0, situation: 0, property: 0, challenges: [
-        Challenge(id: 0, situation: 0, title: "", challengeDescription: "", successDescription: "", year: "", month: "", day: "", currentStamp: 0, totalStamp: 0, userMents: []),
-        Challenge(id: 0, situation: 0, title: "", challengeDescription: "", successDescription: "", year: "", month: "", day: "", currentStamp: 0, totalStamp: 0, userMents: []),
-        Challenge(id: 0, situation: 0, title: "", challengeDescription: "", successDescription: "", year: "", month: "", day: "", currentStamp: 0, totalStamp: 0, userMents: [])
-    ])
+    var course: TodayChallengeCourse = TodayChallengeCourse(id: 0, situation: 1, property: 0, title: "", totalDays: 0, currentDay: 0, year: "", month: "", date: "", challenges: [])
 
     var backgroundView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
     
@@ -36,7 +32,7 @@ class CourseViewController: UIViewController {
         registerXib()
         assignDelegation()
         initViewRounding()
-        // getCourse()
+        getCourse()
     }
     
     override func viewDidLayoutSubviews() {
@@ -90,9 +86,11 @@ class CourseViewController: UIViewController {
         self.courseTableView.tableHeaderView?.frame.size.height = UIScreen.main.bounds.height - topbarHeight - tabBarHeight
     }
     
-    func updateData(data: CourseData) {
+    func updateData(data: TodayChallengeData) {
         self.course = data.course
         
+        // header view
+        self.headerView?.setData(data: data)
         // table view
         self.courseTableView.reloadData()
         
@@ -131,11 +129,15 @@ extension CourseViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: Const.Xib.Identifier.courseHeaderView) as? CourseHeaderView {
             
-            headerView.headerBgView.makeRoundedSpecificCorner(corners: [.bottomLeft, .bottomRight], cornerRadius: 10)
+            headerView.headerBgView.makeRoundedSpecificCorner(corners: [.bottomLeft, .bottomRight], cornerRadius: 25)
             headerView.layer.shadowOpacity = 0.12
             headerView.layer.shadowRadius = 0
             headerView.layer.shadowOffset = CGSize(width: 0, height: 2)
             headerView.layer.shadowColor = UIColor.black.cgColor
+            
+            // data
+            headerView.setProperty(by: self.course.property)
+            headerView.setCourseName(name: self.course.title)
             
             return headerView
         }
@@ -147,15 +149,19 @@ extension CourseViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 95
     }
-    
+
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: Const.Xib.Identifier.courseFooterView) as? CourseFooterView {
-            if course.challenges[course.challenges.count - 1].situation == 2 {
-                footerView.isDone = .done
-            } else {
-                footerView.isDone = .undone
+            if course.challenges.count > 1 {
+                if course.challenges[course.challenges.count - 1].situation == 2 {
+                    footerView.setIslandImage(isDone: true)
+                    footerView.initLastPath(isDone: true)
+                } else {
+                    footerView.setIslandImage(isDone: false)
+                    footerView.initLastPath(isDone: false)
+                }
+                footerView.setNextButton(isOnboarding: false)
             }
-            footerView.initLastPath()
             return footerView
         }
         return UIView()
@@ -174,10 +180,8 @@ extension CourseViewController: UITableViewDataSource {
         if indexPath.row == 0 {
             if let cell = courseTableView.dequeueReusableCell(withIdentifier: Const.Xib.Identifier.firstDayTableViewCell) as? FirstDayTableViewCell {
                 
-                cell.setCell(challenge: course.challenges[indexPath.row])
+                cell.setCell(challenge: course.challenges[indexPath.row], property: course.property)
                 cell.setNextSituation(next: course.challenges[indexPath.row + 1].situation)
-                cell.property = course.property
-                
                 return cell
             }
             return UITableViewCell()
@@ -187,12 +191,11 @@ extension CourseViewController: UITableViewDataSource {
             // 짝수일차
             if let cell = courseTableView.dequeueReusableCell(withIdentifier: Const.Xib.Identifier.evenDayTableViewCell) as? EvenDayTableViewCell {
                 
-                cell.setCell(challenge: course.challenges[indexPath.row])
+                cell.setCell(challenge: course.challenges[indexPath.row], property: course.property)
                 
                 if indexPath.row < course.challenges.count-1 {
                     cell.setNextSituation(next: course.challenges[indexPath.row + 1].situation)
                 }
-                cell.property = course.property
                 
                 return cell
             }
@@ -201,7 +204,7 @@ extension CourseViewController: UITableViewDataSource {
             // 홀수일차
             if let cell = courseTableView.dequeueReusableCell(withIdentifier: Const.Xib.Identifier.oddDayTableViewCell) as? OddDayTableViewCell {
                 
-                cell.setCell(challenge: course.challenges[indexPath.row])
+                cell.setCell(challenge: course.challenges[indexPath.row], property: course.property)
                 
                 if indexPath.row < course.challenges.count-1 {
                     cell.setNextSituation(next: course.challenges[indexPath.row + 1].situation)
@@ -209,7 +212,6 @@ extension CourseViewController: UITableViewDataSource {
                     // 맨 마지막 cell일 때
                     cell.setNextSituation(next: 9)
                 }
-                cell.property = course.property
                 
                 return cell
             }
@@ -242,6 +244,8 @@ extension CourseViewController: ChallengePopUpProtocol {
     }
     
     func pushToFinishViewController() {
+        // 스탬프 이미지 done으로 변경
+        
         // TODO: - 다음 뷰 나오면 storyboard, vc 수정 필요
         let courseLibraryStoryboard = UIStoryboard(name: Const.Storyboard.Name.courseLibrary, bundle: nil)
         guard let courseLibraryViewController = courseLibraryStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.courseLibrary) as? CourseLibraryViewController else {
@@ -250,14 +254,7 @@ extension CourseViewController: ChallengePopUpProtocol {
         self.navigationController?.pushViewController(courseLibraryViewController, animated: true)
     }
     
-    func pushToNextOnboardingViewController() {
-        // TODO: - 다음 뷰 나오면 storyboard, vc 수정 필요
-        let courseLibraryStoryboard = UIStoryboard(name: Const.Storyboard.Name.courseLibrary, bundle: nil)
-        guard let courseLibraryViewController = courseLibraryStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.courseLibrary) as? CourseLibraryViewController else {
-            return
-        }
-        self.navigationController?.pushViewController(courseLibraryViewController, animated: true)
-    }
+    func pushToNextOnboardingViewController() {}
 }
 
 // MARK: - 서버 통신
@@ -270,10 +267,10 @@ extension CourseViewController {
             
             switch response {
             case .success(let course):
-                
-                if let data = course as? CourseData {
+                if let data = course as? TodayChallengeData {
                     self.updateData(data: data)
                 }
+                
             case .requestErr(let message):
                 print("requestErr", message)
             case .pathErr:

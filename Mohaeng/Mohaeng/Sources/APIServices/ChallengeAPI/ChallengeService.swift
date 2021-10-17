@@ -9,10 +9,8 @@ import Foundation
 import Moya
 
 enum ChallengeService {
-    // 전체 챌린지 지도 조회
+    // 전체 챌린지 지도 조회, 오늘의 챌린지 조회
     case getAllChallenges
-    // 오늘의 챌린지 조회
-    case getTodayChallenge(courseId: Int)
     // 챌린지 인증
     case putTodayChallenge(courseId: Int, challengeId: Int)
 }
@@ -24,12 +22,9 @@ extension ChallengeService: TargetType {
     
     var path: String {
         switch self {
-        // 전체 챌린지 지도 조회
+        // 전체 챌린지 지도 조회, 오늘의 챌린지 조회
         case .getAllChallenges:
             return Const.URL.challengesURL
-        // 오늘의 챌린지 조회
-        case .getTodayChallenge(let courseId):
-            return Const.URL.challengesURL + "/\(courseId)"
         // 챌린지 인증
         case .putTodayChallenge(let courseId, let challengeId):
             return Const.URL.challengesURL + "/\(courseId)/\(challengeId)"
@@ -40,9 +35,6 @@ extension ChallengeService: TargetType {
         switch self {
         // 전체 챌린지 지도 조회
         case .getAllChallenges:
-            return .get
-        // 오늘의 챌린지 조회
-        case .getTodayChallenge(_):
             return .get
         // 챌린지 인증
         case .putTodayChallenge(_, _):
@@ -60,7 +52,7 @@ extension ChallengeService: TargetType {
     var task: Task {
         switch self {
         // params가 없는 API - .requestPlain
-        case .getAllChallenges, .getTodayChallenge(_), .putTodayChallenge(_, _):
+        case .getAllChallenges, .putTodayChallenge(_, _):
             return .requestPlain
         }
     }
