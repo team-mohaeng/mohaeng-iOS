@@ -60,6 +60,9 @@
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="270" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TwG-O7-R8B">
                     <rect key="frame" x="179" y="798" width="32" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="y5e-qE-nVe"/>
+                    </constraints>
                     <state key="normal" image="scrollDownIcn"/>
                 </button>
                 <view contentMode="scaleToFill" verticalHuggingPriority="270" verticalCompressionResistancePriority="27" translatesAutoresizingMaskIntoConstraints="NO" id="Tk3-Ar-b0Y">

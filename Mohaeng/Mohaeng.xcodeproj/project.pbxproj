@@ -157,7 +157,14 @@
 		569C39652712B28800DED361 /* ChallengeCompletePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C39632712B28800DED361 /* ChallengeCompletePopUpViewController.swift */; };
 		569C39662712B28800DED361 /* ChallengeCompletePopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569C39642712B28800DED361 /* ChallengeCompletePopUpViewController.xib */; };
 		569C39682712BDB300DED361 /* ChallengePopUpProcotol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C39672712BDB300DED361 /* ChallengePopUpProcotol.swift */; };
+		569E8B2027154E6C00D67712 /* CourseHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569E8B1F27154E6C00D67712 /* CourseHistory.storyboard */; };
+		569E8B2227154E7A00D67712 /* CourseHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569E8B2127154E7A00D67712 /* CourseHistoryViewController.swift */; };
+		569E8B2727154F6300D67712 /* CourseHistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569E8B2527154F6300D67712 /* CourseHistoryCollectionViewCell.swift */; };
+		569E8B2827154F6300D67712 /* CourseHistoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569E8B2627154F6300D67712 /* CourseHistoryCollectionViewCell.xib */; };
 		56A05EB22700699D006D6ECE /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A05EB12700699D006D6ECE /* DateCollectionViewCell.swift */; };
+		56A190CD2715C2F0002A03E4 /* CourseHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A190CC2715C2F0002A03E4 /* CourseHistory.swift */; };
+		56AD4D1B27155FC900272EE4 /* CourseHistoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AD4D1A27155FC900272EE4 /* CourseHistoryHeaderView.swift */; };
+		56AD4D1D27155FD000272EE4 /* CourseHistoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AD4D1C27155FD000272EE4 /* CourseHistoryHeaderView.xib */; };
 		56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA6C2689C0D10056155A /* .swiftlint.yml */; };
 		AA190EBF26FE62E30059E100 /* BackgroundCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA190EBD26FE62E30059E100 /* BackgroundCollectionViewCell.swift */; };
 		AA190EC026FE62E30059E100 /* BackgroundCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA190EBE26FE62E30059E100 /* BackgroundCollectionViewCell.xib */; };
@@ -341,7 +348,14 @@
 		569C39632712B28800DED361 /* ChallengeCompletePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCompletePopUpViewController.swift; sourceTree = "<group>"; };
 		569C39642712B28800DED361 /* ChallengeCompletePopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeCompletePopUpViewController.xib; sourceTree = "<group>"; };
 		569C39672712BDB300DED361 /* ChallengePopUpProcotol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengePopUpProcotol.swift; sourceTree = "<group>"; };
+		569E8B1F27154E6C00D67712 /* CourseHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CourseHistory.storyboard; sourceTree = "<group>"; };
+		569E8B2127154E7A00D67712 /* CourseHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHistoryViewController.swift; sourceTree = "<group>"; };
+		569E8B2527154F6300D67712 /* CourseHistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHistoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		569E8B2627154F6300D67712 /* CourseHistoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseHistoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		56A05EB12700699D006D6ECE /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
+		56A190CC2715C2F0002A03E4 /* CourseHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHistory.swift; sourceTree = "<group>"; };
+		56AD4D1A27155FC900272EE4 /* CourseHistoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHistoryHeaderView.swift; sourceTree = "<group>"; };
+		56AD4D1C27155FD000272EE4 /* CourseHistoryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseHistoryHeaderView.xib; sourceTree = "<group>"; };
 		56DCAA242689BB9B0056155A /* Mohaeng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mohaeng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCAA6C2689C0D10056155A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		AA190EBD26FE62E30059E100 /* BackgroundCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -448,6 +462,7 @@
 				561D75D626F0BFA30028DBCA /* Notification.storyboard */,
 				AA7E0AAA26FC615C00106DC2 /* CharacterStyle.storyboard */,
 				561D777C26F36C520028DBCA /* MyPage.storyboard */,
+				569E8B1F27154E6C00D67712 /* CourseHistory.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -567,6 +582,7 @@
 				AA190EBD26FE62E30059E100 /* BackgroundCollectionViewCell.swift */,
 				AA190EBE26FE62E30059E100 /* BackgroundCollectionViewCell.xib */,
 				56A05EB027006963006D6ECE /* MyPageCalendar */,
+				569E8B2427154F3800D67712 /* ChallengeHistoryCollectionView */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -666,11 +682,11 @@
 			isa = PBXGroup;
 			children = (
 				DDF595FD26F72852004C5D74 /* Badge */,
+				569E8B2327154EC000D67712 /* Mypage */,
 				561D763526F0BFA40028DBCA /* SettingViewController.swift */,
 				561D763726F0BFA40028DBCA /* HomeViewController.swift */,
 				561D763826F0BFA40028DBCA /* NotificationViewController.swift */,
 				AA7E0AAC26FC64D500106DC2 /* CharacterStyleViewController.swift */,
-				561D777E26F36C970028DBCA /* MyPageViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -815,6 +831,7 @@
 				561D767F26F0BFA40028DBCA /* Feed.swift */,
 				561D768026F0BFA40028DBCA /* CourseLibrary.swift */,
 				565A1EF72700CF81000CAB1B /* MyPage.swift */,
+				56A190CC2715C2F0002A03E4 /* CourseHistory.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -840,6 +857,8 @@
 				561D769326F0BFA40028DBCA /* CourseHeaderView.xib */,
 				561D769426F0BFA40028DBCA /* YearPickerViewController.xib */,
 				EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */,
+				56AD4D1A27155FC900272EE4 /* CourseHistoryHeaderView.swift */,
+				56AD4D1C27155FD000272EE4 /* CourseHistoryHeaderView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -861,6 +880,24 @@
 				569C39642712B28800DED361 /* ChallengeCompletePopUpViewController.xib */,
 			);
 			path = ChallengeComplete;
+			sourceTree = "<group>";
+		};
+		569E8B2327154EC000D67712 /* Mypage */ = {
+			isa = PBXGroup;
+			children = (
+				561D777E26F36C970028DBCA /* MyPageViewController.swift */,
+				569E8B2127154E7A00D67712 /* CourseHistoryViewController.swift */,
+			);
+			path = Mypage;
+			sourceTree = "<group>";
+		};
+		569E8B2427154F3800D67712 /* ChallengeHistoryCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				569E8B2527154F6300D67712 /* CourseHistoryCollectionViewCell.swift */,
+				569E8B2627154F6300D67712 /* CourseHistoryCollectionViewCell.xib */,
+			);
+			path = ChallengeHistoryCollectionView;
 			sourceTree = "<group>";
 		};
 		56A05EB027006963006D6ECE /* MyPageCalendar */ = {
@@ -1026,8 +1063,10 @@
 				561D76BF26F0BFA40028DBCA /* BMHANNA_11yrs_otf.otf in Resources */,
 				561D76AD26F0BFA40028DBCA /* CourseLibrary.storyboard in Resources */,
 				AA7E0AB826FC998000106DC2 /* CharacterColorCollectionViewCell.xib in Resources */,
+				56AD4D1D27155FD000272EE4 /* CourseHistoryHeaderView.xib in Resources */,
 				AAED18DA26F11DF0009FE781 /* StickerCollectionViewCell.xib in Resources */,
 				561D76A326F0BFA40028DBCA /* Code.storyboard in Resources */,
+				569E8B2027154E6C00D67712 /* CourseHistory.storyboard in Resources */,
 				561D769E26F0BFA40028DBCA /* SignUpSecond.storyboard in Resources */,
 				561D773A26F0BFA40028DBCA /* YearPickerViewController.xib in Resources */,
 				561D76A926F0BFA40028DBCA /* FeedDetail.storyboard in Resources */,
@@ -1037,6 +1076,7 @@
 				561D76A626F0BFA40028DBCA /* LaunchScreen.storyboard in Resources */,
 				561D76C226F0BFA40028DBCA /* SpoqaHanSansNeo-Bold.otf in Resources */,
 				561D76A126F0BFA40028DBCA /* Login.storyboard in Resources */,
+				569E8B2827154F6300D67712 /* CourseHistoryCollectionViewCell.xib in Resources */,
 				561D76A426F0BFA40028DBCA /* SignUpFirst.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1168,15 +1208,19 @@
 				561D773E26F0BFA50028DBCA /* SceneDelegate.swift in Sources */,
 				561D76D826F0BFA40028DBCA /* OddDayTableViewCell.swift in Sources */,
 				AA190EBF26FE62E30059E100 /* BackgroundCollectionViewCell.swift in Sources */,
+				56A190CD2715C2F0002A03E4 /* CourseHistory.swift in Sources */,
 				561D771E26F0BFA40028DBCA /* MyDrawer.swift in Sources */,
 				561D771B26F0BFA40028DBCA /* SignUpUser.swift in Sources */,
 				561D76CA26F0BFA40028DBCA /* BubbleCollectionViewCell.swift in Sources */,
 				561D76FE26F0BFA40028DBCA /* MoodViewController.swift in Sources */,
 				561D771526F0BFA40028DBCA /* AppModelsExmaple.swift in Sources */,
+				569E8B2227154E7A00D67712 /* CourseHistoryViewController.swift in Sources */,
 				561D773826F0BFA40028DBCA /* FeedHeaderView.swift in Sources */,
+				569E8B2727154F6300D67712 /* CourseHistoryCollectionViewCell.swift in Sources */,
 				561D76B826F0BFA40028DBCA /* Font.swift in Sources */,
 				AA7E0AB726FC998000106DC2 /* CharacterColorCollectionViewCell.swift in Sources */,
 				561D76BB26F0BFA40028DBCA /* LottieExmaple.swift in Sources */,
+				56AD4D1B27155FC900272EE4 /* CourseHistoryHeaderView.swift in Sources */,
 				AA190EFC2709D29D0059E100 /* StickerViewController.swift in Sources */,
 				561D771826F0BFA40028DBCA /* AppDate.swift in Sources */,
 				561D771F26F0BFA40028DBCA /* PushNoti.swift in Sources */,
