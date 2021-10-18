@@ -426,6 +426,8 @@
                         <outlet property="calendarBgView" destination="m8j-Aj-SRl" id="3iQ-dK-JmP"/>
                         <outlet property="calendarCollectionView" destination="P0G-AX-9Lu" id="CpC-ZZ-xIK"/>
                         <outlet property="calendarShadowView" destination="zNV-Cq-MZs" id="Oq6-8s-3RP"/>
+                        <outlet property="courseHistoryButtonView" destination="p6w-Fr-UTf" id="zIw-Rr-3Za"/>
+                        <outlet property="courseHistoryShadowView" destination="jE6-xA-0aA" id="UFu-hJ-an0"/>
                         <outlet property="challengeRecordButtonView" destination="p6w-Fr-UTf" id="zIw-Rr-3Za"/>
                         <outlet property="challengeRecordShadowView" destination="jE6-xA-0aA" id="UFu-hJ-an0"/>
                         <outlet property="completeChallengeCountLabel" destination="oz1-LL-JBv" id="DQQ-PV-S4z"/>
