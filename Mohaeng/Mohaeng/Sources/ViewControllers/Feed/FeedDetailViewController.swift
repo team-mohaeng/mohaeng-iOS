@@ -16,11 +16,7 @@ class FeedDetailViewController: UIViewController {
     
     // MARK: - Properties
     
-    var feedDummy: FeedInfo = FeedInfo(isNew: true, hasFeed: 0, userCount: 50, feed: [
-                                        Feed(postID: 0, course: "뽀득뽀득 세균 퇴치", challenge: 3, image: "img", mood: 2, content: "맛있는 피자에 시원한 맥주 먹고 승찬이 개때리러간다 ㅋㅋ ", nickname: "초야초야", year: "2021", month: "8", day: "22", weekday: "일", emoji: [Emoji(emojiID: 1, emojiCount: 5)], myEmoji: 0, isReport: true, isDelete: false),
-                                        Feed(postID: 0, course: "나는야 지구촌 촌장", challenge: 1, image: "", mood: 2, content: "맛있는 피자에 시원한 맥주 먹고 덤덤댄스 릴스 췄당 ㅋㅋ", nickname: "정초이", year: "2021", month: "8", day: "21", weekday: "일", emoji: [Emoji(emojiID: 1, emojiCount: 5), Emoji(emojiID: 2, emojiCount: 5), Emoji(emojiID: 3, emojiCount: 5), Emoji(emojiID: 4, emojiCount: 99), Emoji(emojiID: 5, emojiCount: 99), Emoji(emojiID: 6, emojiCount: 99)], myEmoji: 0, isReport: true, isDelete: false),
-                                        Feed(postID: 0, course: "초급 사진가", challenge: 2, image: "bgGraphicHappy", mood: 2, content: "맛있는 피자에 시원한 맥주 먹고 선선한 날씨에 산책했어요.", nickname: "뽈씨", year: "2021", month: "8", day: "20", weekday: "일", emoji: [Emoji(emojiID: 1, emojiCount: 5), Emoji(emojiID: 1, emojiCount: 5), Emoji(emojiID: 2, emojiCount: 5), Emoji(emojiID: 3, emojiCount: 5), Emoji(emojiID: 4, emojiCount: 99), Emoji(emojiID: 4, emojiCount: 99) ], myEmoji: 0, isReport: true, isDelete: false),
-                                        Feed(postID: 0, course: "거침없이 하이킥", challenge: 2, image: "", mood: 2, content: "초이초이 ㅋㅋ", nickname: "김승찬", year: "2021", month: "8", day: "19", weekday: "일", emoji: [], myEmoji: 0, isReport: true, isDelete: false)])
+    var feedDummy: FeedResponse = FeedResponse(isNew: false, hasFeed: 0, userCount: 0, feeds: [Feed]())
     
     // MARK: - View Life Cycle
     
@@ -74,13 +70,13 @@ class FeedDetailViewController: UIViewController {
 extension FeedDetailViewController: UICollectionViewDataSource {
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return feedDummy.feed.count
+        return feedDummy.feeds.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = feedCollectionView.dequeueReusableCell(withReuseIdentifier: "FDCollectionViewCell", for: indexPath) as? FeedDetailCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.setData(feed: feedDummy.feed[indexPath.row])
+        cell.setData(feed: feedDummy.feeds[indexPath.row])
         
         return cell
     }
@@ -97,11 +93,11 @@ extension FeedDetailViewController: UICollectionViewDelegateFlowLayout {
         let width: CGFloat = UIScreen.main.bounds.width
         let imageHeight: CGFloat = width
         
-        let baseHeight: CGFloat = feedDummy.feed[indexPath.row].image.isEmpty ? 588 - imageHeight : 588
+        let baseHeight: CGFloat = feedDummy.feeds[indexPath.row].image.isEmpty ? 588 - imageHeight : 588
         let maximumHeight: CGFloat = (674 / 812) * UIScreen.main.bounds.height
         
         let dummyCell = FeedDetailCollectionViewCell(frame: CGRect(x: 0, y: 0, width: width, height: maximumHeight))
-        dummyCell.setData(feed: feedDummy.feed[indexPath.row])
+        dummyCell.setData(feed: feedDummy.feeds[indexPath.row])
         dummyCell.layoutIfNeeded()
         
         let contentsHeight = dummyCell.getDynamicContentsHeight()

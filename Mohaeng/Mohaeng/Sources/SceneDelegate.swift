@@ -16,9 +16,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
+        UserDefaults.standard.setValue("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozMX0sImlhdCI6MTYzMzc4MTQ5N30.5Ocd1asw3QRqpiWnI5tkskH-8kRpdxtIlzYEH4soNkM", forKey: "jwtToken")
                 
         if !hasJwtToken() {
-            setRootViewControllerToLogin()
+            setRootViewControllerToOnBoarding()
         } else {
             print(UserDefaults.standard.string(forKey: "jwtToken"))
             setRootViewControllerToTabbar()
@@ -31,6 +33,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func hasJwtToken() -> Bool {
         return UserDefaults.standard.object(forKey: "jwtToken") != nil
+    }
+    
+    private func setRootViewControllerToOnBoarding() {
+        self.navigationController = UINavigationController(rootViewController: OnBoarding1ViewController())
+        self.window?.rootViewController = self.navigationController
     }
     
     private func setRootViewControllerToLogin() {

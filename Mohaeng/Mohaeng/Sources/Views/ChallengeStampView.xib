@@ -51,6 +51,9 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dh-y5-8RN">
                     <rect key="frame" x="158" y="91" width="28" height="28"/>
                     <state key="normal" image="challengeHelpButton"/>
+                    <connections>
+                        <action selector="touchHelp:" destination="iN0-l3-epB" eventType="touchUpInside" id="Mma-Mc-lE9"/>
+                    </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleChallengeRacoon" translatesAutoresizingMaskIntoConstraints="NO" id="BV7-E8-JT9">
                     <rect key="frame" x="23.999999999999993" y="134" width="82.333333333333314" height="113"/>
