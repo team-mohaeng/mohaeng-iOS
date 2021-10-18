@@ -189,6 +189,10 @@
 		AAED18DA26F11DF0009FE781 /* StickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAED18D426F11DEF009FE781 /* StickerCollectionViewCell.xib */; };
 		AAED18DD26F11DF0009FE781 /* PlusButtonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAED18D726F11DEF009FE781 /* PlusButtonCollectionViewCell.xib */; };
 		AAED18E026F313E3009FE781 /* FeedDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAED18DF26F313E3009FE781 /* FeedDetailCollectionViewCell.swift */; };
+		AAEDB361271C050000E26615 /* LottieFileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB360271C050000E26615 /* LottieFileProvider.swift */; };
+		AAEDB363271C05CC00E26615 /* AnimationView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB362271C05CC00E26615 /* AnimationView+Extension.swift */; };
+		AAEDB36B271C142F00E26615 /* HappyPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB369271C142F00E26615 /* HappyPopUpViewController.swift */; };
+		AAEDB36C271C142F00E26615 /* HappyPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAEDB36A271C142F00E26615 /* HappyPopUpViewController.xib */; };
 		C96CDD968727E45C25BA11DB /* Pods_Mohaeng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF85070BA1F5A448133681A6 /* Pods_Mohaeng.framework */; };
 		DD515C672711D77700E76D4B /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD515C662711D77700E76D4B /* MoyaLoggingPlugin.swift */; };
 		DD515C6A2711F39100E76D4B /* OnBoarding1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD515C692711F39100E76D4B /* OnBoarding1ViewController.swift */; };
@@ -403,6 +407,10 @@
 		AAED18D426F11DEF009FE781 /* StickerCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StickerCollectionViewCell.xib; sourceTree = "<group>"; };
 		AAED18D726F11DEF009FE781 /* PlusButtonCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlusButtonCollectionViewCell.xib; sourceTree = "<group>"; };
 		AAED18DF26F313E3009FE781 /* FeedDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		AAEDB360271C050000E26615 /* LottieFileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieFileProvider.swift; sourceTree = "<group>"; };
+		AAEDB362271C05CC00E26615 /* AnimationView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimationView+Extension.swift"; sourceTree = "<group>"; };
+		AAEDB369271C142F00E26615 /* HappyPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyPopUpViewController.swift; sourceTree = "<group>"; };
+		AAEDB36A271C142F00E26615 /* HappyPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HappyPopUpViewController.xib; sourceTree = "<group>"; };
 		CE6F11BC23DA1F9010B4D5A7 /* Pods-Mohaeng.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mohaeng.debug.xcconfig"; path = "Target Support Files/Pods-Mohaeng/Pods-Mohaeng.debug.xcconfig"; sourceTree = "<group>"; };
 		DD515C662711D77700E76D4B /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
 		DD515C692711F39100E76D4B /* OnBoarding1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding1ViewController.swift; sourceTree = "<group>"; };
@@ -707,6 +715,7 @@
 				DDF110442709DFB1004FD5FB /* UIButton+Extension.swift */,
 				DD515C6B2712042D00E76D4B /* UILabel+Extension.swift */,
 				DD79BB15271166E9001F342C /* UIImageView+Extension.swift */,
+				AAEDB362271C05CC00E26615 /* AnimationView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -728,6 +737,7 @@
 		561D763426F0BFA40028DBCA /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				AAEDB35F271C04DE00E26615 /* lottie */,
 				DDF595FD26F72852004C5D74 /* Badge */,
 				569E8B2327154EC000D67712 /* Mypage */,
 				561D763526F0BFA40028DBCA /* SettingViewController.swift */,
@@ -741,6 +751,7 @@
 		561D763926F0BFA40028DBCA /* PopUp */ = {
 			isa = PBXGroup;
 			children = (
+				AAEDB364271C13DD00E26615 /* HomeHappy */,
 				569E8B1A2715479400D67712 /* ChallengeHelp */,
 				569C395E2712B20500DED361 /* ChallengeComplete */,
 				561D763B26F0BFA40028DBCA /* PopUpViewController.xib */,
@@ -794,9 +805,9 @@
 				DD515C662711D77700E76D4B /* MoyaLoggingPlugin.swift */,
 				DDEBD21A270F5FCA0011EDC6 /* BadgeAPI */,
 				561D765726F0BFA40028DBCA /* ChallengeAPI */,
-				561D765A26F0BFA40028DBCA /* FeedAPI */,
 				561D765E26F0BFA40028DBCA /* AuthAPI */,
 				561D766626F0BFA40028DBCA /* CourseAPI */,
+				561D765A26F0BFA40028DBCA /* FeedAPI */,
 				561D766926F0BFA40028DBCA /* HomeAPI */,
 				56A30E00271C62DE0097FD75 /* PushNotiAPI */,
 				56C019B5271C2C0200735761 /* MyPageAPI */,
@@ -1029,6 +1040,23 @@
 			path = CharaterCollectionView;
 			sourceTree = "<group>";
 		};
+		AAEDB35F271C04DE00E26615 /* lottie */ = {
+			isa = PBXGroup;
+			children = (
+				AAEDB360271C050000E26615 /* LottieFileProvider.swift */,
+			);
+			path = lottie;
+			sourceTree = "<group>";
+		};
+		AAEDB364271C13DD00E26615 /* HomeHappy */ = {
+			isa = PBXGroup;
+			children = (
+				AAEDB369271C142F00E26615 /* HappyPopUpViewController.swift */,
+				AAEDB36A271C142F00E26615 /* HappyPopUpViewController.xib */,
+			);
+			path = HomeHappy;
+			sourceTree = "<group>";
+		};
 		DD515C682711F1C000E76D4B /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -1185,6 +1213,7 @@
 				561D76AB26F0BFA40028DBCA /* Mood.storyboard in Resources */,
 				561D76BD26F0BFA40028DBCA /* GmarketSansTTFBold.ttf in Resources */,
 				AA190EFA2709AB310059E100 /* Sticker.storyboard in Resources */,
+				AAEDB36C271C142F00E26615 /* HappyPopUpViewController.xib in Resources */,
 				561D769A26F0BFA40028DBCA /* Setting.storyboard in Resources */,
 				561D76A026F0BFA40028DBCA /* EmailLogin.storyboard in Resources */,
 				561D76B126F0BFA40028DBCA /* Colors.xcassets in Resources */,
@@ -1288,6 +1317,7 @@
 				561D770326F0BFA40028DBCA /* CourseLibraryViewController.swift in Sources */,
 				569E8B1D271547AD00D67712 /* ChallengeHelpPopUpViewController.swift in Sources */,
 				DDF110452709DFB1004FD5FB /* UIButton+Extension.swift in Sources */,
+				AAEDB361271C050000E26615 /* LottieFileProvider.swift in Sources */,
 				561D771326F0BFA40028DBCA /* HomeService.swift in Sources */,
 				561D76EE26F0BFA40028DBCA /* PopUpViewController.swift in Sources */,
 				561D772126F0BFA40028DBCA /* Challenge.swift in Sources */,
@@ -1302,8 +1332,10 @@
 				56C21992271BE6DC008049A8 /* TodayChallenge.swift in Sources */,
 				561D771726F0BFA40028DBCA /* AppCourse.swift in Sources */,
 				561D76B626F0BFA40028DBCA /* URL.swift in Sources */,
+				AAEDB36B271C142F00E26615 /* HappyPopUpViewController.swift in Sources */,
 				56A30E04271C63040097FD75 /* PushNotiAPI.swift in Sources */,
 				561D76D026F0BFA40028DBCA /* FeedCollectionViewCell.swift in Sources */,
+				AAEDB363271C05CC00E26615 /* AnimationView+Extension.swift in Sources */,
 				561D772026F0BFA40028DBCA /* Auth.swift in Sources */,
 				561D76F326F0BFA40028DBCA /* FindPasswordViewController.swift in Sources */,
 				DD9EFFC727154D7800B3F871 /* AnimationFactory.swift in Sources */,

@@ -7,19 +7,18 @@
 
 import Foundation
 
-// MARK: - HomeData
-struct HomeData: Codable {
-    let situation, affinity: Int
-    var course: Course?
-    
-    enum CodingKeys: String, CodingKey {
-        case situation, affinity, course
-    }
-    
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        self.situation = (try? values.decode(Int.self, forKey: .situation)) ?? 0
-        self.affinity = (try? values.decode(Int.self, forKey: .affinity)) ?? 0
-        self.course = (try? values.decode(Course.self, forKey: .course)) ?? nil
-    }
+// MARK: - Home
+
+struct Home: Codable {
+    let nickname, level: String
+    let happy, fullHappy: Int
+    let characterLottie, characterSkin: String
+    let isStyleNew, isBadgeNew: Bool
+    let course: CourseInfo
+}
+
+// MARK: - Course
+struct CourseInfo: Codable {
+    let challengeTitle: String
+    let percent: Int
 }

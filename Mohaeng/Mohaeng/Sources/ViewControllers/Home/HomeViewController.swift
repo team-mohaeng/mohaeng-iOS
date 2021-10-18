@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Lottie
+
 class HomeViewController: UIViewController {
     
     // MARK: - @IBOutlet Properties
@@ -18,14 +20,21 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var challengeInfoShadowView: UIView!
     @IBOutlet weak var progressShadowView: UIView!
     @IBOutlet weak var customCharaterShadowView: UIView!
+    @IBOutlet weak var courseProgressLabel: UILabel!
+    @IBOutlet weak var challengeTitleLabel: UILabel!
+    @IBOutlet weak var characterLottieView: UIView!
+    @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     // MARK: - Properties
     
+    private let happyPopUp = HappyPopUpViewController()
+    private let animationView = AnimationView()
     private var rewardButton: UIBarButtonItem!
     private var chattingButton: UIBarButtonItem!
     private var mypageButton: UIBarButtonItem!
-    private var morningText: String = "아라아라! 아침이야!\n오늘 하루도 화이팅"
-    private var nightText: String = "아라아라! 벌써 밤이야!\n인증하고 일찍자자"
+    private var morningText: String = "아침이야!\n오늘 하루도 화이팅"
+    private var nightText: String = "벌써 밤이야!\n인증하고 일찍자자"
     
     // MARK: - View Life Cycle
     
@@ -33,9 +42,10 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         initAttributes()
+        rotateProgressView()
         makeShadow()
-        setHourlyMent()
-        addCharaterStyleTapGesture()
+        addTapGesture()
+        getHomeInfomation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,6 +84,13 @@ class HomeViewController: UIViewController {
         self.navigationController?.pushViewController(charaterStyleViewController, animated: true)
     }
     
+    @objc func presentHappyPopUp() {
+        happyPopUp.modalTransitionStyle = .crossDissolve
+        happyPopUp.modalPresentationStyle = .overCurrentContext
+        
+        tabBarController?.present(happyPopUp, animated: true, completion: nil)
+    }
+    
     // MARK: - Functions
     
     private func initNavigationBar() {
@@ -91,12 +108,14 @@ class HomeViewController: UIViewController {
     private func initAttributes() {
         challengInfoView.makeRounded(radius: 10)
         
-        rotateProgressView()
-        progressView.setProgress(0.4, animated: false)
         progressView.progressViewStyle = .bar
         progressView.makeRoundedWithBorder(radius: 22, color: UIColor.white.cgColor, borderWith: 2)
         
         customCharaterButtonView.makeRoundedWithBorder(radius: 22, color: UIColor.white.cgColor, borderWith: 2)
+    }
+    
+    private func setProgressBar(percent: Float) {
+        progressView.setProgress(percent, animated: false)
     }
     
     private func makeShadow() {
@@ -108,9 +127,12 @@ class HomeViewController: UIViewController {
         customCharaterShadowView.dropShadowWithMaskLayer(rounded: 10)
     }
     
-    private func addCharaterStyleTapGesture() {
+    private func addTapGesture() {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(pushToStyleController))
         customCharaterButtonView.addGestureRecognizer(gesture)
+        
+        let gesture2 = UITapGestureRecognizer(target: self, action: #selector(presentHappyPopUp))
+        progressView.addGestureRecognizer(gesture2)
     }
     
     private func rotateProgressView() {
@@ -118,16 +140,65 @@ class HomeViewController: UIViewController {
         progressShadowView.transform = CGAffineTransform(rotationAngle: .pi * -0.5)
     }
     
-    private func setHourlyMent() {
+    private func setHourlyMent(nickname: String) {
         let hour = AppDate().getHour()
         
         switch hour {
         case 6...18:
-            hourlyMentLabel.text = morningText
+            hourlyMentLabel.text = "\(nickname)! " + morningText
         case 0...5, 18...24:
-            hourlyMentLabel.text = nightText
+            hourlyMentLabel.text = "\(nickname)! " + nightText
         default:
             return
+        }
+    }
+    
+    private func setLottieView(url: URL) {
+        animationView.frame = characterLottieView.bounds
+        animationView.contentMode = .scaleAspectFill
+        animationView.loopMode = .loop
+        
+        characterLottieView.addSubview(animationView)
+        playLottieAnimation(url: url)
+    }
+    
+    private func playLottieAnimation(url: URL) {
+        animationView.setAnimation(from: url) { (animationView) in
+            animationView.play()
+        }
+    }
+    
+    private func updateData(data: Home) {
+        backgroundImageView.updateServerImage(data.characterSkin)
+        setHourlyMent(nickname: data.nickname)
+        courseProgressLabel.text = "코스 진행률 \(data.course.percent)%"
+        challengeTitleLabel.text = data.course.challengeTitle
+        setProgressBar(percent: Float(data.happy / data.fullHappy))
+        setLottieView(url: URL(string: data.characterLottie)!)
+        levelLabel.text = "Lv \(data.level)"
+        happyPopUp.data = data
+    }
+    
+}
+
+extension HomeViewController {
+    
+    func getHomeInfomation() {
+        HomeAPI.shared.getHomeInfo { response in
+            switch response {
+            case .success(let data):
+                if let data = data as? Home {
+                    self.updateData(data: data)
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
         }
     }
     
