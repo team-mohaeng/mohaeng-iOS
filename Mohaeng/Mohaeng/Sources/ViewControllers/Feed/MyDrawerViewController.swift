@@ -114,10 +114,13 @@ extension MyDrawerViewController: DatePickerViewDelegate {
         self.selectedYear = Int(year)
         self.selectedMonth = Int(month)
         
+        guard let unwrappedYear = selectedYear else { return }
+        guard let unwrappedMonth = selectedMonth else { return }
+        
         let yearMonthDate = [year, month]
         NotificationCenter.default.post(name: NSNotification.Name("datePickerSelected"), object: yearMonthDate)
         
-        getMyDrawer(year: Int(year)!, month: Int(month)!)
+        getMyDrawer(year: unwrappedYear, month: unwrappedMonth)
         feedCollectionView.reloadData()
     }
 }
