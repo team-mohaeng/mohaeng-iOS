@@ -120,7 +120,6 @@
 		561D771B26F0BFA40028DBCA /* SignUpUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D767326F0BFA40028DBCA /* SignUpUser.swift */; };
 		561D771C26F0BFA40028DBCA /* RoadMapPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D767426F0BFA40028DBCA /* RoadMapPath.swift */; };
 		561D771D26F0BFA40028DBCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D767526F0BFA40028DBCA /* AppDelegate.swift */; };
-		561D771E26F0BFA40028DBCA /* MyDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D767726F0BFA40028DBCA /* MyDrawer.swift */; };
 		561D771F26F0BFA40028DBCA /* PushNoti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D767826F0BFA40028DBCA /* PushNoti.swift */; };
 		561D772026F0BFA40028DBCA /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D767926F0BFA40028DBCA /* Auth.swift */; };
 		561D772126F0BFA40028DBCA /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D767A26F0BFA40028DBCA /* Challenge.swift */; };
@@ -337,7 +336,6 @@
 		561D767326F0BFA40028DBCA /* SignUpUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpUser.swift; sourceTree = "<group>"; };
 		561D767426F0BFA40028DBCA /* RoadMapPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoadMapPath.swift; sourceTree = "<group>"; };
 		561D767526F0BFA40028DBCA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		561D767726F0BFA40028DBCA /* MyDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDrawer.swift; sourceTree = "<group>"; };
 		561D767826F0BFA40028DBCA /* PushNoti.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNoti.swift; sourceTree = "<group>"; };
 		561D767926F0BFA40028DBCA /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		561D767A26F0BFA40028DBCA /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
@@ -884,7 +882,6 @@
 			isa = PBXGroup;
 			children = (
 				56C21990271BE6AA008049A8 /* TodayChallenge */,
-				561D767726F0BFA40028DBCA /* MyDrawer.swift */,
 				561D767826F0BFA40028DBCA /* PushNoti.swift */,
 				561D767926F0BFA40028DBCA /* Auth.swift */,
 				561D767A26F0BFA40028DBCA /* Challenge.swift */,
@@ -1386,7 +1383,6 @@
 				561D76D826F0BFA40028DBCA /* OddDayTableViewCell.swift in Sources */,
 				AA190EBF26FE62E30059E100 /* BackgroundCollectionViewCell.swift in Sources */,
 				56A190CD2715C2F0002A03E4 /* CourseHistory.swift in Sources */,
-				561D771E26F0BFA40028DBCA /* MyDrawer.swift in Sources */,
 				561D771B26F0BFA40028DBCA /* SignUpUser.swift in Sources */,
 				DD68AC322712AB9E0081B905 /* OnBoardingChallengeCardView.swift in Sources */,
 				561D76CA26F0BFA40028DBCA /* BubbleCollectionViewCell.swift in Sources */,
