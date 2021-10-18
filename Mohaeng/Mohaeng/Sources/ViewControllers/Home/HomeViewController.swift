@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var challengeTitleLabel: UILabel!
     @IBOutlet weak var characterLottieView: UIView!
     @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     // MARK: - Properties
     
@@ -168,6 +169,7 @@ class HomeViewController: UIViewController {
     }
     
     private func updateData(data: Home) {
+        backgroundImageView.updateServerImage(data.characterSkin)
         setHourlyMent(nickname: data.nickname)
         courseProgressLabel.text = "코스 진행률 \(data.course.percent)%"
         challengeTitleLabel.text = data.course.challengeTitle

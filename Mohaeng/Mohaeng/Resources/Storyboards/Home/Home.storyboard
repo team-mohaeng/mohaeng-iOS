@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aBgGrp" translatesAutoresizingMaskIntoConstraints="NO" id="ddC-dI-ZRd">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aBgGrp" translatesAutoresizingMaskIntoConstraints="NO" id="ddC-dI-ZRd">
                                 <rect key="frame" x="0.0" y="-12" width="414" height="875"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6l-iR-QUJ">
@@ -150,6 +150,7 @@
                     <navigationItem key="navigationItem" id="59D-N3-NKB"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="backgroundImageView" destination="ddC-dI-ZRd" id="Deh-7D-y4G"/>
                         <outlet property="challengInfoView" destination="KAB-QO-e2z" id="J52-4X-PFx"/>
                         <outlet property="challengeInfoShadowView" destination="M6l-iR-QUJ" id="hna-Tc-mgc"/>
                         <outlet property="challengeTitleLabel" destination="OEl-4P-pUw" id="uh9-sh-og5"/>
