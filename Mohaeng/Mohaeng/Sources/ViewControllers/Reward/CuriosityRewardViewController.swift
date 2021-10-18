@@ -17,13 +17,12 @@ class CuriosityRewardViewController: RewardBaseViewController {
         type = .curiosity
     }
     
-    // TODO : - 플로우에 따라 분기처리
     override func touchButton() {
         navigationController?.pushViewController(WritingRewardViewController(), animated: true)
     }
     
     override func touchSubButton() {
-        
+        dismiss(animated: true, completion: nil)
     }
 
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// RewardBaseViewController를 상속받아 사용하므로 Level 값을 꼭 넣어주세요
 class LevelUpRewardViewController: RewardBaseViewController {
 
     override func viewDidLoad() {
@@ -14,14 +15,15 @@ class LevelUpRewardViewController: RewardBaseViewController {
     }
 
     override func setUp() {
-        level = 15
         type = .levelUp
-
     }
     
-    // TODO : - 플로우에 따라 분기처리
     override func touchButton() {
-        navigationController?.pushViewController(CuriosityRewardViewController(), animated: true)
+        if navigationController?.previousViewController is WritingRewardViewController {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            navigationController?.pushViewController(CuriosityRewardViewController(), animated: true)
+        }
     }
 
 }

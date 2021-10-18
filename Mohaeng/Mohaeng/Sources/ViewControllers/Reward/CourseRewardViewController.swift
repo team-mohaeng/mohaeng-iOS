@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+/// RewardBaseViewController를 상속받아 사용하므로 happy 값을 꼭 넣어주세요
 class CourseRewardViewController: RewardBaseViewController {
 
     override func viewDidLoad() {

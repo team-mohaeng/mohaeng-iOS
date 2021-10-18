@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: - WritingRequestData
+// MARK: - WritingRequest
 struct WritingRequest {
     var content: String
     var mood: Int
@@ -19,11 +19,11 @@ struct WritingRequest {
 struct WritingResponse: Codable {
     let happy, userHappy, totalHappy: Int
     let isPenalty: Bool
-    let levelUp: LevelUp?
+    let levelUp: LevelUp
 }
 
 // MARK: - LevelUp
 struct LevelUp: Codable {
-    let level: Int
-    let styleImg: String
+    let level: Int?
+    let styleImg: String?
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// RewardBaseViewController를 상속받아 사용하므로 happy 값을 꼭 넣어주세요
 class ChallengeRewardViewController: RewardBaseViewController {
 
     override func viewDidLoad() {
@@ -18,7 +19,7 @@ class ChallengeRewardViewController: RewardBaseViewController {
         type = .challenge
     }
     
-    // TODO : - 플로우에 따라 분기처리
+    // TODO : 우선순위 1) 코스 완주 2) 레벨업 3) 글쓰기 유도
     override func touchButton() {
         navigationController?.pushViewController(CourseRewardViewController(), animated: true)
     }
