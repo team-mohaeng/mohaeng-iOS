@@ -25,7 +25,6 @@
 		561D76AB26F0BFA40028DBCA /* Mood.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D75E826F0BFA30028DBCA /* Mood.storyboard */; };
 		561D76AC26F0BFA40028DBCA /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D75E926F0BFA30028DBCA /* Tabbar.storyboard */; };
 		561D76AD26F0BFA40028DBCA /* CourseLibrary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D75EB26F0BFA30028DBCA /* CourseLibrary.storyboard */; };
-		561D76AE26F0BFA40028DBCA /* Course.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D75EC26F0BFA30028DBCA /* Course.storyboard */; };
 		561D76B126F0BFA40028DBCA /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 561D75EF26F0BFA40028DBCA /* Colors.xcassets */; };
 		561D76B226F0BFA40028DBCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D75F126F0BFA40028DBCA /* ViewController.swift */; };
 		561D76B326F0BFA40028DBCA /* Xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D75F226F0BFA40028DBCA /* Xib.swift */; };
@@ -154,21 +153,22 @@
 		561D777D26F36C520028DBCA /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D777C26F36C520028DBCA /* MyPage.storyboard */; };
 		561D777F26F36C970028DBCA /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D777E26F36C970028DBCA /* MyPageViewController.swift */; };
 		565A1EF82700CF81000CAB1B /* MyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565A1EF72700CF81000CAB1B /* MyPage.swift */; };
+		56931AC8271D7D87000EECF5 /* Course.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56931AC7271D7D87000EECF5 /* Course.storyboard */; };
 		569C39652712B28800DED361 /* ChallengeCompletePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C39632712B28800DED361 /* ChallengeCompletePopUpViewController.swift */; };
 		569C39662712B28800DED361 /* ChallengeCompletePopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569C39642712B28800DED361 /* ChallengeCompletePopUpViewController.xib */; };
 		569C39682712BDB300DED361 /* ChallengePopUpProcotol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C39672712BDB300DED361 /* ChallengePopUpProcotol.swift */; };
+		569E8B1D271547AD00D67712 /* ChallengeHelpPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569E8B1B271547AD00D67712 /* ChallengeHelpPopUpViewController.swift */; };
+		569E8B1E271547AD00D67712 /* ChallengeHelpPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569E8B1C271547AD00D67712 /* ChallengeHelpPopUpViewController.xib */; };
 		569E8B2027154E6C00D67712 /* CourseHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569E8B1F27154E6C00D67712 /* CourseHistory.storyboard */; };
 		569E8B2227154E7A00D67712 /* CourseHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569E8B2127154E7A00D67712 /* CourseHistoryViewController.swift */; };
 		569E8B2727154F6300D67712 /* CourseHistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569E8B2527154F6300D67712 /* CourseHistoryCollectionViewCell.swift */; };
 		569E8B2827154F6300D67712 /* CourseHistoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569E8B2627154F6300D67712 /* CourseHistoryCollectionViewCell.xib */; };
-		569E8B1D271547AD00D67712 /* ChallengeHelpPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569E8B1B271547AD00D67712 /* ChallengeHelpPopUpViewController.swift */; };
-		569E8B1E271547AD00D67712 /* ChallengeHelpPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569E8B1C271547AD00D67712 /* ChallengeHelpPopUpViewController.xib */; };
 		56A05EB22700699D006D6ECE /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A05EB12700699D006D6ECE /* DateCollectionViewCell.swift */; };
-		56A39D97271C21E500865FEC /* OnboardingCourseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A39D96271C21E400865FEC /* OnboardingCourseProtocol.swift */; };
-		56C21992271BE6DC008049A8 /* TodayChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C21991271BE6DC008049A8 /* TodayChallenge.swift */; };
 		56A190CD2715C2F0002A03E4 /* CourseHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A190CC2715C2F0002A03E4 /* CourseHistory.swift */; };
+		56A39D97271C21E500865FEC /* OnboardingCourseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A39D96271C21E400865FEC /* OnboardingCourseProtocol.swift */; };
 		56AD4D1B27155FC900272EE4 /* CourseHistoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AD4D1A27155FC900272EE4 /* CourseHistoryHeaderView.swift */; };
 		56AD4D1D27155FD000272EE4 /* CourseHistoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AD4D1C27155FD000272EE4 /* CourseHistoryHeaderView.xib */; };
+		56C21992271BE6DC008049A8 /* TodayChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C21991271BE6DC008049A8 /* TodayChallenge.swift */; };
 		56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA6C2689C0D10056155A /* .swiftlint.yml */; };
 		AA190EBF26FE62E30059E100 /* BackgroundCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA190EBD26FE62E30059E100 /* BackgroundCollectionViewCell.swift */; };
 		AA190EC026FE62E30059E100 /* BackgroundCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA190EBE26FE62E30059E100 /* BackgroundCollectionViewCell.xib */; };
@@ -234,7 +234,6 @@
 		561D75E826F0BFA30028DBCA /* Mood.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mood.storyboard; sourceTree = "<group>"; };
 		561D75E926F0BFA30028DBCA /* Tabbar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
 		561D75EB26F0BFA30028DBCA /* CourseLibrary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CourseLibrary.storyboard; sourceTree = "<group>"; };
-		561D75EC26F0BFA30028DBCA /* Course.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Course.storyboard; sourceTree = "<group>"; };
 		561D75EF26F0BFA40028DBCA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		561D75F126F0BFA40028DBCA /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		561D75F226F0BFA40028DBCA /* Xib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Xib.swift; sourceTree = "<group>"; };
@@ -364,21 +363,22 @@
 		561D777C26F36C520028DBCA /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		561D777E26F36C970028DBCA /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		565A1EF72700CF81000CAB1B /* MyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPage.swift; sourceTree = "<group>"; };
+		56931AC7271D7D87000EECF5 /* Course.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Course.storyboard; sourceTree = "<group>"; };
 		569C39632712B28800DED361 /* ChallengeCompletePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCompletePopUpViewController.swift; sourceTree = "<group>"; };
 		569C39642712B28800DED361 /* ChallengeCompletePopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeCompletePopUpViewController.xib; sourceTree = "<group>"; };
 		569C39672712BDB300DED361 /* ChallengePopUpProcotol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengePopUpProcotol.swift; sourceTree = "<group>"; };
+		569E8B1B271547AD00D67712 /* ChallengeHelpPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeHelpPopUpViewController.swift; sourceTree = "<group>"; };
+		569E8B1C271547AD00D67712 /* ChallengeHelpPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeHelpPopUpViewController.xib; sourceTree = "<group>"; };
 		569E8B1F27154E6C00D67712 /* CourseHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CourseHistory.storyboard; sourceTree = "<group>"; };
 		569E8B2127154E7A00D67712 /* CourseHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHistoryViewController.swift; sourceTree = "<group>"; };
 		569E8B2527154F6300D67712 /* CourseHistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHistoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		569E8B2627154F6300D67712 /* CourseHistoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseHistoryCollectionViewCell.xib; sourceTree = "<group>"; };
-		569E8B1B271547AD00D67712 /* ChallengeHelpPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeHelpPopUpViewController.swift; sourceTree = "<group>"; };
-		569E8B1C271547AD00D67712 /* ChallengeHelpPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeHelpPopUpViewController.xib; sourceTree = "<group>"; };
 		56A05EB12700699D006D6ECE /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
-		56A39D96271C21E400865FEC /* OnboardingCourseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCourseProtocol.swift; sourceTree = "<group>"; };
-		56C21991271BE6DC008049A8 /* TodayChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayChallenge.swift; sourceTree = "<group>"; };
 		56A190CC2715C2F0002A03E4 /* CourseHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHistory.swift; sourceTree = "<group>"; };
+		56A39D96271C21E400865FEC /* OnboardingCourseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCourseProtocol.swift; sourceTree = "<group>"; };
 		56AD4D1A27155FC900272EE4 /* CourseHistoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHistoryHeaderView.swift; sourceTree = "<group>"; };
 		56AD4D1C27155FD000272EE4 /* CourseHistoryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseHistoryHeaderView.xib; sourceTree = "<group>"; };
+		56C21991271BE6DC008049A8 /* TodayChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayChallenge.swift; sourceTree = "<group>"; };
 		56DCAA242689BB9B0056155A /* Mohaeng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mohaeng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCAA6C2689C0D10056155A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		AA190EBD26FE62E30059E100 /* BackgroundCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -535,7 +535,7 @@
 		561D75EA26F0BFA30028DBCA /* Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				561D75EC26F0BFA30028DBCA /* Course.storyboard */,
+				56931AC7271D7D87000EECF5 /* Course.storyboard */,
 				561D75EB26F0BFA30028DBCA /* CourseLibrary.storyboard */,
 			);
 			path = Challenge;
@@ -879,7 +879,6 @@
 				565A1EF72700CF81000CAB1B /* MyPage.swift */,
 				56A190CC2715C2F0002A03E4 /* CourseHistory.swift */,
 				DDEBD21F270F6CFA0011EDC6 /* Badge.swift */,
-				56C2198E271BD891008049A8 /* CourseHistory.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -932,6 +931,15 @@
 			path = ChallengeComplete;
 			sourceTree = "<group>";
 		};
+		569E8B1A2715479400D67712 /* ChallengeHelp */ = {
+			isa = PBXGroup;
+			children = (
+				569E8B1B271547AD00D67712 /* ChallengeHelpPopUpViewController.swift */,
+				569E8B1C271547AD00D67712 /* ChallengeHelpPopUpViewController.xib */,
+			);
+			path = ChallengeHelp;
+			sourceTree = "<group>";
+		};
 		569E8B2327154EC000D67712 /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
@@ -948,15 +956,6 @@
 				569E8B2627154F6300D67712 /* CourseHistoryCollectionViewCell.xib */,
 			);
 			path = ChallengeHistoryCollectionView;
-      sourceTree = "<group>";
-		};
-		569E8B1A2715479400D67712 /* ChallengeHelp */ = {
-			isa = PBXGroup;
-			children = (
-				569E8B1B271547AD00D67712 /* ChallengeHelpPopUpViewController.swift */,
-				569E8B1C271547AD00D67712 /* ChallengeHelpPopUpViewController.xib */,
-			);
-			path = ChallengeHelp;
 			sourceTree = "<group>";
 		};
 		56A05EB027006963006D6ECE /* MyPageCalendar */ = {
@@ -1177,8 +1176,8 @@
 				561D769E26F0BFA40028DBCA /* SignUpSecond.storyboard in Resources */,
 				561D773A26F0BFA40028DBCA /* YearPickerViewController.xib in Resources */,
 				561D76A926F0BFA40028DBCA /* FeedDetail.storyboard in Resources */,
-				561D76AE26F0BFA40028DBCA /* Course.storyboard in Resources */,
 				561D76D926F0BFA40028DBCA /* OddDayTableViewCell.xib in Resources */,
+				56931AC8271D7D87000EECF5 /* Course.storyboard in Resources */,
 				561D76C426F0BFA40028DBCA /* SpoqaHanSansNeo-Regular.otf in Resources */,
 				561D76A626F0BFA40028DBCA /* LaunchScreen.storyboard in Resources */,
 				561D76C226F0BFA40028DBCA /* SpoqaHanSansNeo-Bold.otf in Resources */,
@@ -1392,7 +1391,6 @@
 				561D771026F0BFA40028DBCA /* GenericResponse.swift in Sources */,
 				561D76E226F0BFA40028DBCA /* UIColor+Extension.swift in Sources */,
 				561D771C26F0BFA40028DBCA /* RoadMapPath.swift in Sources */,
-				56C2198F271BD891008049A8 /* CourseHistory.swift in Sources */,
 				561D76CE26F0BFA40028DBCA /* ProfileBubbleCollectionViewCell.swift in Sources */,
 				561D76B726F0BFA40028DBCA /* Const.swift in Sources */,
 			);
