@@ -20,16 +20,7 @@ class WritingViewController: UIViewController {
     
     private let imagePicker = UIImagePickerController()
     
-    private let moodImageArray = [Const.Image.badImage, Const.Image.sosoImage, Const.Image.happyImage]
-    
-    private let closeButton = UIButton().then {
-        $0.setImage(UIImage(named: "btnWritingX")?.resized(to: CGSize(width: 20, height: 20)), for: .normal )
-        $0.snp.makeConstraints {
-            $0.width.equalTo(63)
-            $0.height.equalTo(44)
-        }
-        $0.tintColor = .Black
-    }
+    private let moodImageArray = Const.Image.moodImageArray
     
     private let titleLabel = UILabel().then {
         $0.font = .gmarketFont(weight: .medium, size: 22)
@@ -156,8 +147,7 @@ class WritingViewController: UIViewController {
     }
     
     private func initNavigationBar() {
-        navigationController?.initWithBackButton()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: closeButton)
+        navigationController?.initWithBackAndCloseButton(navigationItem: self.navigationItem, closeButtonClosure: #selector(buttonDidTapped(_:)))
         let currentDate = AppDate()
         let currentMonth = currentDate.getMonth()
         let currentDay = currentDate.getDay()
@@ -181,7 +171,7 @@ class WritingViewController: UIViewController {
     }
     
     private func setTarget() {
-        [closeButton, checkBoxButton, removePhotoButton, doneButton].forEach {
+        [checkBoxButton, removePhotoButton, doneButton].forEach {
             $0.addTarget(self, action: #selector(buttonDidTapped(_:)), for: .touchUpInside)
         }
     }
@@ -251,7 +241,7 @@ extension WritingViewController {
     @objc
     private func buttonDidTapped(_ sender: UIButton) {
         switch sender {
-        case closeButton:
+        case navigationItem.rightBarButtonItem:
             dismiss(animated: true, completion: nil)
         case checkBoxButton:
             checkBoxButton.isSelected.toggle()

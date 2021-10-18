@@ -198,7 +198,6 @@
 		DDEBD21E270F5FE90011EDC6 /* BadgeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBD21D270F5FE90011EDC6 /* BadgeAPI.swift */; };
 		DDEBD220270F6CFA0011EDC6 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBD21F270F6CFA0011EDC6 /* Badge.swift */; };
 		DDF110452709DFB1004FD5FB /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF110442709DFB1004FD5FB /* UIButton+Extension.swift */; };
-		DDF110472709DFEA004FD5FB /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF110462709DFEA004FD5FB /* UIImage+Extension.swift */; };
 		EC2FF5C626F343C000411F31 /* MoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */; };
 		EC2FF5C726F343C000411F31 /* MoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */; };
 		EC31776326FDB50E0076BCEC /* CarouselLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */; };
@@ -400,7 +399,6 @@
 		DDEBD21D270F5FE90011EDC6 /* BadgeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAPI.swift; sourceTree = "<group>"; };
 		DDEBD21F270F6CFA0011EDC6 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		DDF110442709DFB1004FD5FB /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
-		DDF110462709DFEA004FD5FB /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoodCollectionViewCell.swift; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MoodCollectionViewCell.xib; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselLayoutView.swift; sourceTree = "<group>"; };
@@ -679,7 +677,6 @@
 				561D763126F0BFA40028DBCA /* ModalPresentationController.swift */,
 				561D763226F0BFA40028DBCA /* UIViewController+Extension.swift */,
 				DDF110442709DFB1004FD5FB /* UIButton+Extension.swift */,
-				DDF110462709DFEA004FD5FB /* UIImage+Extension.swift */,
 				DD515C6B2712042D00E76D4B /* UILabel+Extension.swift */,
 				DD79BB15271166E9001F342C /* UIImageView+Extension.swift */,
 			);
@@ -1327,7 +1324,6 @@
 				561D76F726F0BFA40028DBCA /* SignUpSecondViewController.swift in Sources */,
 				561D772726F0BFA40028DBCA /* CourseLibrary.swift in Sources */,
 				561D771426F0BFA40028DBCA /* HomeAPI.swift in Sources */,
-				DDF110472709DFEA004FD5FB /* UIImage+Extension.swift in Sources */,
 				561D771026F0BFA40028DBCA /* GenericResponse.swift in Sources */,
 				561D76E226F0BFA40028DBCA /* UIColor+Extension.swift in Sources */,
 				561D771C26F0BFA40028DBCA /* RoadMapPath.swift in Sources */,
