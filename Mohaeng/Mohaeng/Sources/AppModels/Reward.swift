@@ -60,7 +60,7 @@ enum Reward {
                 $0.contentMode = .scaleAspectFit
             }
             
-            view.addSubviews(animationView, imageView)
+            view.addSubviews(imageView, animationView)
             animationView.snp.makeConstraints {
                 $0.edges.equalToSuperview()
             }
