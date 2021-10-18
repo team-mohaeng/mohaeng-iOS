@@ -14,13 +14,8 @@ class FeedViewController: UIViewController {
     // MARK: - Properties
     
     /// dummy data
-    var feedDummy: FeedInfo = FeedInfo(isNew: true, hasFeed: 0, userCount: 50, feed: [
-                                                                                    Feed(postID: 0, course: "뽀득뽀득 세균 퇴치", challenge: 3, image: "imageUrl", mood: 2, content: "맛있는 피자에 시원한 맥주 먹고 승찬이 개때리러간다 ㅋㅋ ", nickname: "정초이", year: "2021", month: "8", day: "22", weekday: "일", emoji: [Emoji(emojiID: 1, emojiCount: 5)], myEmoji: 0, isReport: true, isDelete: false),
-                                                                                    Feed(postID: 0, course: "나는야 지구촌 촌장", challenge: 1, image: "imageUrl", mood: 2, content: "맛있는 피자에 시원한 맥주 먹고 덤덤댄스 릴스 췄당 ㅋㅋ", nickname: "정초이", year: "2021", month: "8", day: "21", weekday: "일", emoji: [Emoji(emojiID: 1, emojiCount: 5)], myEmoji: 0, isReport: true, isDelete: false),
-                                                                                    Feed(postID: 0, course: "초급 사진가", challenge: 2, image: "imageUrl", mood: 2, content: "맛있는 피자에 시원한 맥주 먹고 선선한 날씨에 산책했어요. 윤예지 정초이 어쩌구 저쩌구 메롱 야호", nickname: "윤예지", year: "2021", month: "8", day: "20", weekday: "일", emoji: [Emoji(emojiID: 1, emojiCount: 5)], myEmoji: 0, isReport: true, isDelete: false),
-                                                                                    Feed(postID: 0, course: "거침없이 하이킥", challenge: 2, image: "imageUrl", mood: 2, content: "초이초이 ㅋㅋ", nickname: "김승찬", year: "2021", month: "8", day: "19", weekday: "일", emoji: [Emoji(emojiID: 1, emojiCount: 5)], myEmoji: 0, isReport: true, isDelete: false),
-                                                                                    Feed(postID: 0, course: "초급 사진가", challenge: 2, image: "imageUrl", mood: 2, content: "맛있는 피자에 시원한 맥주 먹고 선선한 날씨에 산책했어요. 윤예지 정초이 어쩌구 저쩌구 메롱 야호", nickname: "윤예지", year: "2021", month: "8", day: "20", weekday: "일", emoji: [Emoji(emojiID: 1, emojiCount: 5)], myEmoji: 0, isReport: true, isDelete: false)])
-                                                                                    
+    private var allFeeds: FeedResponse = FeedResponse(isNew: false, hasFeed: 0, userCount: 0, feeds: [Feed]())
+    
     enum Size {
         static let FeedCollectionViewTopConstraint: CGFloat = 167
         static let FeedRoundingTopViewHeightConstraint: CGFloat = 20
@@ -63,6 +58,7 @@ class FeedViewController: UIViewController {
         registerXib()
         initAtrributes()
         setupAutoLayout()
+        getFeeds()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,7 +67,7 @@ class FeedViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         headerView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-        headerView.setHeaderData(hasNewContents: feedDummy.isNew, contents: feedDummy.feed.count)
+        headerView.setHeaderData(hasNewContents: allFeeds.isNew, contents: allFeeds.feeds.count)
         setHeaderViewDelegate()
         
         feedCollectionView.insertSubview(feedBackgroundFrame, at: 0)
@@ -121,6 +117,12 @@ class FeedViewController: UIViewController {
         }
     }
     
+    private func updateData(feed: FeedResponse) {
+        allFeeds = feed
+        feedCollectionView.reloadData()
+        feedUserCountLabel.text = "오늘은 \(feed.feeds.count)개의\n안부가 남겨졌어요"
+    }
+    
     // MARK: - @IBAction Properties
     
     @IBAction func touchFloatingTopButton(_ sender: Any) {
@@ -134,13 +136,13 @@ class FeedViewController: UIViewController {
 extension FeedViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return feedDummy.feed.count
+        return allFeeds.feeds.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Name.feedCollectionViewCell, for: indexPath) as? FeedCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.setData(data: feedDummy.feed[indexPath.row])
+        cell.setData(data: allFeeds.feeds[indexPath.row])
         
         return cell
     }
@@ -234,6 +236,30 @@ extension FeedViewController: HeaderViewDelegate {
         let navigationController = UINavigationController(rootViewController: moodViewController)
         navigationController.modalPresentationStyle = .fullScreen
         self.present(navigationController, animated: true, completion: nil)
+    }
+    
+}
+
+// MARK: - SERVER CONNECT
+
+extension FeedViewController {
+    func getFeeds() {
+        FeedAPI.shared.getAllFeed { response in
+            switch response {
+            case .success(let data):
+                if let data = data as? FeedResponse {
+                    self.updateData(feed: data)
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
     }
     
 }

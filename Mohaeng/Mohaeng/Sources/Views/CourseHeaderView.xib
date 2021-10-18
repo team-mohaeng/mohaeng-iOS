@@ -50,7 +50,7 @@
                                 <constraint firstAttribute="bottom" secondItem="dbb-5A-m81" secondAttribute="bottom" constant="5" id="cdc-ww-cjf"/>
                             </constraints>
                         </view>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueBigImage" translatesAutoresizingMaskIntoConstraints="NO" id="GDU-kz-Tsl">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueBigImage" translatesAutoresizingMaskIntoConstraints="NO" id="GDU-kz-Tsl">
                             <rect key="frame" x="124" y="0.0" width="290" height="132"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지구촌 촌장되기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ck0-Df-bEx">
@@ -60,14 +60,15 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="GDU-kz-Tsl" firstAttribute="top" secondItem="59K-0Z-pkC" secondAttribute="top" id="67k-Rb-AAW"/>
                         <constraint firstAttribute="trailing" secondItem="GDU-kz-Tsl" secondAttribute="trailing" id="7sm-Ci-yFX"/>
                         <constraint firstAttribute="bottom" secondItem="GDU-kz-Tsl" secondAttribute="bottom" id="E4C-a5-fqc"/>
+                        <constraint firstAttribute="bottom" secondItem="GDU-kz-Tsl" secondAttribute="bottom" id="HHr-be-dOh"/>
                         <constraint firstItem="1V1-w9-Y4I" firstAttribute="leading" secondItem="59K-0Z-pkC" secondAttribute="leading" constant="24" id="IMW-l5-1cY"/>
                         <constraint firstItem="Ck0-Df-bEx" firstAttribute="top" secondItem="1V1-w9-Y4I" secondAttribute="bottom" constant="14" id="SWE-SI-WzZ"/>
                         <constraint firstItem="Ck0-Df-bEx" firstAttribute="leading" secondItem="59K-0Z-pkC" secondAttribute="leading" constant="24" id="TET-Vm-9UC"/>
+                        <constraint firstAttribute="trailing" secondItem="GDU-kz-Tsl" secondAttribute="trailing" id="XRc-b8-lIT"/>
                         <constraint firstItem="puH-PZ-Opz" firstAttribute="centerY" secondItem="Ck0-Df-bEx" secondAttribute="centerY" id="XZL-FD-DwF"/>
                         <constraint firstItem="1V1-w9-Y4I" firstAttribute="top" secondItem="59K-0Z-pkC" secondAttribute="top" constant="64" id="bOO-P5-dvm"/>
                         <constraint firstItem="puH-PZ-Opz" firstAttribute="leading" secondItem="Ck0-Df-bEx" secondAttribute="trailing" constant="10" id="ysE-yd-aba"/>

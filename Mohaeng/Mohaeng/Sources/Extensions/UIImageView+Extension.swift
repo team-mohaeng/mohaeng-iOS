@@ -11,6 +11,7 @@ import Kingfisher
 extension UIImageView {
     func updateServerImage(_ imagePath: String) {
         guard let url = URL(string: imagePath) else {
+            self.image = Const.Image.imageNoneGrp
             return
         }
         self.kf.indicatorType = .activity
@@ -23,8 +24,8 @@ extension UIImageView {
                 .cacheOriginalImage
             ]) { result in
             switch result {
-            case .success(let value):
-                print("Task done for: \(value.source.url?.absoluteString ?? "")")
+            case .success:
+                return
             case .failure(let error):
                 print("Job failed: \(error.localizedDescription)")
             }

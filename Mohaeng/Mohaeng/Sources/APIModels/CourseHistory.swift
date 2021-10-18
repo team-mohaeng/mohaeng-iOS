@@ -2,12 +2,10 @@
 //  CourseHistory.swift
 //  Mohaeng
 //
-//  Created by 초이 on 2021/10/17.
+//  Created by 초이 on 2021/10/12.
 //
 
 import Foundation
-
-// 커밋하기 전에 지워야 함
 
 // MARK: - CourseHistoryData
 struct CourseHistoryData: Codable {
