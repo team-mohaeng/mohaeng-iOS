@@ -34,25 +34,6 @@ public class ChallengeAPI {
         }
     }
     
-    func getTodayChallenge(completion: @escaping (NetworkResult<Any>) -> Void, courseId: Int) {
-        challengeProvider.request(.getTodayChallenge(courseId: courseId)) { (result) in
-            
-            switch result {
-            case.success(let response):
-                
-                let statusCode = response.statusCode
-                let data = response.data
-                
-                let networkResult = self.judgeStatus(by: statusCode, data)
-                completion(networkResult)
-                
-            case .failure(let err):
-                print(err)
-            }
-            
-        }
-    }
-    
     func putTodayChallenge(completion: @escaping (NetworkResult<Any>) -> Void, courseId: Int, challengeId: Int) {
         challengeProvider.request(.putTodayChallenge(courseId: courseId, challengeId: challengeId)) { (result) in
             switch result {
@@ -75,7 +56,7 @@ public class ChallengeAPI {
     private func judgeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
         
-        guard let decodedData = try? decoder.decode(GenericResponse<CourseData>.self, from: data) else {
+        guard let decodedData = try? decoder.decode(GenericResponse<TodayChallengeData>.self, from: data) else {
             return .pathErr
         }
         

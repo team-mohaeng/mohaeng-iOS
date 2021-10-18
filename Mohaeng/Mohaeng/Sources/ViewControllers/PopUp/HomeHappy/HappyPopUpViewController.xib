@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GmarketSansTTFBold.ttf">
+            <string>GmarketSansTTFBold</string>
+        </array>
+        <array key="GmarketSansTTFMedium.ttf">
+            <string>GmarketSansTTFMedium</string>
+        </array>
+        <array key="SpoqaHanSansNeo-Regular.otf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HappyPopUpViewController" customModule="Mohaeng" customModuleProvider="target">
+            <connections>
+                <outlet property="happyPercentLabel" destination="ELM-D6-9uA" id="zF3-YT-Zjc"/>
+                <outlet property="levelLabel" destination="OTD-EQ-S5G" id="hgp-sI-fra"/>
+                <outlet property="popUpView" destination="LER-v8-C23" id="lqh-6h-PTn"/>
+                <outlet property="progressView" destination="Q2H-nc-Qda" id="t0F-GK-mV8"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LER-v8-C23">
+                    <rect key="frame" x="43" y="215.5" width="328" height="475"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lv. 22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTD-EQ-S5G">
+                            <rect key="frame" x="129.5" y="66" width="69" height="22"/>
+                            <fontDescription key="fontDescription" name="GmarketSansTTFBold" family="Gmarket Sans TTF" pointSize="22"/>
+                            <color key="textColor" name="Yellow2"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Q2H-nc-Qda">
+                            <rect key="frame" x="35" y="112" width="259" height="17"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="17" id="1CR-dv-4YG"/>
+                            </constraints>
+                            <color key="progressTintColor" name="Yellow2"/>
+                            <color key="trackTintColor" name="Yellow6"/>
+                        </progressView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해피지수  160/200 (80%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELM-D6-9uA">
+                            <rect key="frame" x="91.5" y="149" width="145" height="12"/>
+                            <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCI-sb-wGX">
+                            <rect key="frame" x="0.0" y="237" width="328" height="1"/>
+                            <color key="backgroundColor" name="Grey4"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="sxI-1p-q0v"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해피지수란 ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7m-XM-mPt">
+                            <rect key="frame" x="30" y="272" width="69" height="12"/>
+                            <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="하루 챌린지를 달성할 때, 코스를 완료할 때, 안부를 작성했을 때 제공되는 지수입니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0m-Ig-eeb">
+                            <rect key="frame" x="30" y="296" width="262" height="28"/>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="11"/>
+                            <color key="textColor" name="Grey2"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해피지수란 ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teF-4o-By2">
+                            <rect key="frame" x="30" y="350" width="69" height="12"/>
+                            <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해피 지수 게이지가 다 차면 레벨이 넘어가게 됩니다. 레벨이 한 번 오를 때마다 한 가지 캐릭터 스타일을 얻을 수 있어요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJK-qm-S2I">
+                            <rect key="frame" x="30" y="374" width="269" height="28"/>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="11"/>
+                            <color key="textColor" name="Grey2"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fH8-Df-zJK">
+                            <rect key="frame" x="280" y="14" width="34" height="34"/>
+                            <state key="normal" image="icnPopX"/>
+                            <connections>
+                                <action selector="dismissSelf:" destination="-1" eventType="touchUpInside" id="TbJ-L1-sOs"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="sCI-sb-wGX" firstAttribute="leading" secondItem="LER-v8-C23" secondAttribute="leading" id="0R3-PR-aR1"/>
+                        <constraint firstItem="z7m-XM-mPt" firstAttribute="top" secondItem="sCI-sb-wGX" secondAttribute="bottom" constant="34" id="0vh-Fi-RTj"/>
+                        <constraint firstItem="Q2H-nc-Qda" firstAttribute="top" secondItem="OTD-EQ-S5G" secondAttribute="bottom" constant="24" id="32a-xG-Pru"/>
+                        <constraint firstItem="ELM-D6-9uA" firstAttribute="centerX" secondItem="LER-v8-C23" secondAttribute="centerX" id="4WG-nE-pVu"/>
+                        <constraint firstItem="OTD-EQ-S5G" firstAttribute="top" secondItem="LER-v8-C23" secondAttribute="top" constant="66" id="5IZ-Sk-GbC"/>
+                        <constraint firstItem="Q2H-nc-Qda" firstAttribute="leading" secondItem="LER-v8-C23" secondAttribute="leading" constant="35" id="ARV-Q6-aUq"/>
+                        <constraint firstItem="fH8-Df-zJK" firstAttribute="top" secondItem="LER-v8-C23" secondAttribute="top" constant="14" id="DT0-Vi-nCm"/>
+                        <constraint firstItem="sCI-sb-wGX" firstAttribute="centerY" secondItem="LER-v8-C23" secondAttribute="centerY" id="IDV-mE-WA6"/>
+                        <constraint firstItem="teF-4o-By2" firstAttribute="top" secondItem="h0m-Ig-eeb" secondAttribute="bottom" constant="26" id="IVI-Ju-YG4"/>
+                        <constraint firstAttribute="trailing" secondItem="Q2H-nc-Qda" secondAttribute="trailing" constant="34" id="IYW-EQ-wf0"/>
+                        <constraint firstItem="teF-4o-By2" firstAttribute="leading" secondItem="h0m-Ig-eeb" secondAttribute="leading" id="MkO-K4-bJd"/>
+                        <constraint firstItem="FJK-qm-S2I" firstAttribute="leading" secondItem="teF-4o-By2" secondAttribute="leading" id="Pc3-YF-U5B"/>
+                        <constraint firstAttribute="trailing" secondItem="FJK-qm-S2I" secondAttribute="trailing" constant="29" id="Veu-s5-bcU"/>
+                        <constraint firstAttribute="trailing" secondItem="sCI-sb-wGX" secondAttribute="trailing" id="Ycf-IY-pxR"/>
+                        <constraint firstAttribute="width" secondItem="LER-v8-C23" secondAttribute="height" multiplier="290:420" id="Zky-4q-PHm"/>
+                        <constraint firstItem="OTD-EQ-S5G" firstAttribute="centerX" secondItem="LER-v8-C23" secondAttribute="centerX" id="d09-No-fNq"/>
+                        <constraint firstItem="h0m-Ig-eeb" firstAttribute="leading" secondItem="z7m-XM-mPt" secondAttribute="leading" id="fr2-e2-rXr"/>
+                        <constraint firstItem="z7m-XM-mPt" firstAttribute="leading" secondItem="LER-v8-C23" secondAttribute="leading" constant="30" id="kns-qs-5Bv"/>
+                        <constraint firstAttribute="trailing" secondItem="h0m-Ig-eeb" secondAttribute="trailing" constant="36" id="ljP-pM-gHC"/>
+                        <constraint firstItem="sCI-sb-wGX" firstAttribute="centerX" secondItem="LER-v8-C23" secondAttribute="centerX" id="pMj-Zt-Wv1"/>
+                        <constraint firstItem="FJK-qm-S2I" firstAttribute="top" secondItem="teF-4o-By2" secondAttribute="bottom" constant="12" id="wqh-MT-5yQ"/>
+                        <constraint firstItem="ELM-D6-9uA" firstAttribute="top" secondItem="Q2H-nc-Qda" secondAttribute="bottom" constant="20" id="wxu-IM-v6V"/>
+                        <constraint firstAttribute="trailing" secondItem="fH8-Df-zJK" secondAttribute="trailing" constant="14" id="yNh-3a-Uvz"/>
+                        <constraint firstItem="h0m-Ig-eeb" firstAttribute="top" secondItem="z7m-XM-mPt" secondAttribute="bottom" constant="12" id="yYT-cz-rR4"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LER-v8-C23" secondAttribute="trailing" constant="43" id="g84-0V-hXy"/>
+                <constraint firstItem="LER-v8-C23" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="43" id="hX9-6E-5wC"/>
+                <constraint firstItem="LER-v8-C23" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="z3E-Ab-IUb"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="106"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icnPopX" width="34" height="34"/>
+        <namedColor name="Grey2">
+            <color red="0.48199999332427979" green="0.48199999332427979" blue="0.48199999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Grey4">
+            <color red="0.80800002813339233" green="0.80800002813339233" blue="0.80800002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Yellow2">
+            <color red="1" green="0.76899999380111694" blue="0.32499998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Yellow6">
+            <color red="1" green="0.94900000095367432" blue="0.81599998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

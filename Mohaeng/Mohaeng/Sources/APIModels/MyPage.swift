@@ -11,13 +11,10 @@ import Foundation
 
 struct MyPage: Codable {
     let nickname: String
-    let level: Int
     let email: String
-    let characterType: Int
-    let characterImage: String
     let completeCourseCount: Int
     let completeChallengeCount: Int
-    let postCount: Int
+    let feedCount: Int
     let badgeCount: Int
     let calendar: [MyPageCalendar]
 }
