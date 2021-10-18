@@ -28,7 +28,7 @@ class RewardBaseViewController: UIViewController {
             case .challenge, .course, .curiosity, .writing:
                 label.text = type.getTitleText()
             case .levelUp:
-                label.text = type.getTitleText(level: self.level)
+                label.text = type.getTitleText(level: level)
             }
             label.setLineHeight(lineHeight: 40)
             
@@ -111,12 +111,14 @@ class RewardBaseViewController: UIViewController {
         initNavigationBar()
         setLayouts()
         addTargets()
+        setUp()
     }
     
 // MARK: - Public Functions
     
     @objc public func touchButton() {}
     @objc public func touchSubButton() {}
+    public func setUp() {}
 
 // MARK: - Private Functions
     
