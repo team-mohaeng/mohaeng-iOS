@@ -15,6 +15,7 @@ extension Const {
         static let gnbIcnBack = UIImage(named: "gnbIcnBack")!
         static let settingIcn = UIImage(named: "settingIcn")!
         static let gnbIcnList = UIImage(named: "gnbIcnList")!
+        static let gnbIconX = UIImage(named: "gnbIconX")!
         
         // medal, course property image
         static let typeCwithColor = UIImage(named: "typeCwithColor")
@@ -187,7 +188,8 @@ extension Const {
         static let badImage = UIImage(named: "badImage")
         static let sosoImage = UIImage(named: "sosoImage")
         static let happyImage = UIImage(named: "happyImage")
-        static let rightBackButton = UIImage(named: "rightBackButton")
+        
+        static let moodImageArray = [Const.Image.happyImage, Const.Image.sosoImage, Const.Image.badImage]
         
         // writing
         static let plusPhotoImage = UIImage(named: "iconPlusPhoto")

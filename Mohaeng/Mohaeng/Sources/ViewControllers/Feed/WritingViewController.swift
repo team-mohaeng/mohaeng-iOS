@@ -11,19 +11,16 @@ import SnapKit
 import Then
 
 class WritingViewController: UIViewController {
+
+// MARK: - Properties
     
+    private var writingRequest = WritingRequest(content: "", mood: 0, isPrivate: false, image: nil)
+        
     private let hasNotch = UIDevice.current.hasNotch
     
     private let imagePicker = UIImagePickerController()
     
-    private let closeButton = UIButton().then {
-        $0.setImage(UIImage(named: "btnWritingX")?.resized(to: CGSize(width: 20, height: 20)), for: .normal )
-        $0.snp.makeConstraints {
-            $0.width.equalTo(63)
-            $0.height.equalTo(44)
-        }
-        $0.tintColor = .Black
-    }
+    private let moodImageArray = Const.Image.moodImageArray
     
     private let titleLabel = UILabel().then {
         $0.font = .gmarketFont(weight: .medium, size: 22)
@@ -108,11 +105,12 @@ class WritingViewController: UIViewController {
         $0.isEnabled = false
     }
     
-    // MARK: - View Life Cycle
+// MARK: - View Life Cycle
     
-    init(with moodImage: UIImage) {
+    init(with mood: Int) {
         super.init(nibName: nil, bundle: nil)
-        moodImageView.image = moodImage
+        moodImageView.image = moodImageArray[mood]
+        writingRequest.mood = mood
     }
     
     required init?(coder: NSCoder) {
@@ -137,7 +135,7 @@ class WritingViewController: UIViewController {
         makeRoundedViews()
     }
     
-    // MARK: - Functions
+// MARK: - Functions
     private func makeRoundedViews() {
         yellowBackgroundView.makeRounded(radius: 20)
         doneButton.makeRoundedSpecificCorner(corners: [.topLeft, .topRight], cornerRadius: 30.0)
@@ -149,8 +147,7 @@ class WritingViewController: UIViewController {
     }
     
     private func initNavigationBar() {
-        navigationController?.initWithBackButton()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: closeButton)
+        navigationController?.initWithBackAndCloseButton(navigationItem: self.navigationItem, closeButtonClosure: #selector(buttonDidTapped(_:)))
         let currentDate = AppDate()
         let currentMonth = currentDate.getMonth()
         let currentDay = currentDate.getDay()
@@ -174,7 +171,7 @@ class WritingViewController: UIViewController {
     }
     
     private func setTarget() {
-        [closeButton, checkBoxButton, removePhotoButton, doneButton].forEach {
+        [checkBoxButton, removePhotoButton, doneButton].forEach {
             $0.addTarget(self, action: #selector(buttonDidTapped(_:)), for: .touchUpInside)
         }
     }
@@ -228,6 +225,7 @@ class WritingViewController: UIViewController {
     }
     
     private func removePhoto() {
+        writingRequest.image = nil
         addPhotoView.isHidden = false
         photoImageView.isHidden = true
         yellowBackgroundView.snp.updateConstraints {
@@ -237,18 +235,27 @@ class WritingViewController: UIViewController {
     
 }
 
+// MARK: - @objc Functions
+
 extension WritingViewController {
     @objc
     private func buttonDidTapped(_ sender: UIButton) {
         switch sender {
-        case closeButton:
+        case navigationItem.rightBarButtonItem:
             dismiss(animated: true, completion: nil)
         case checkBoxButton:
             checkBoxButton.isSelected.toggle()
+            writingRequest.isPrivate = !checkBoxButton.isSelected
         case removePhotoButton:
             removePhoto()
         case doneButton:
-            dismiss(animated: true, completion: nil)
+            postFeedWriting { [weak self] in
+                NotificationCenter.default.post(name: NSNotification.Name("RefreshFeedCollectionView"),
+                                                object: nil,
+                                                userInfo: nil)
+                self?.dismiss(animated: true, completion: nil)
+            }
+           
         default:
             break
         }
@@ -259,6 +266,8 @@ extension WritingViewController {
     }
 }
 
+// MARK: - UIImagePickerControllerDelegate
+
 extension WritingViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         let originalImage = info[UIImagePickerController.InfoKey(rawValue: UIImagePickerController.InfoKey.originalImage.rawValue)] as? UIImage
@@ -266,6 +275,7 @@ extension WritingViewController: UIImagePickerControllerDelegate {
         let selectedImage = editedImage ?? originalImage
         
         photoImageView.image = selectedImage
+        writingRequest.image = selectedImage
         imagePicker.dismiss(animated: true) {[weak self] in
             guard let self = self else {return}
             self.addPhotoView.isHidden = true
@@ -277,7 +287,11 @@ extension WritingViewController: UIImagePickerControllerDelegate {
     }
 }
 
+// MARK: - UINavigationControllerDelegate
+
 extension WritingViewController: UINavigationControllerDelegate {}
+
+// MARK: - UITextViewDelegate
 
 extension WritingViewController: UITextViewDelegate {
     
@@ -328,6 +342,31 @@ extension WritingViewController: UITextViewDelegate {
     }
     
 }
+
+extension WritingViewController {
+    func postFeedWriting(completion: @escaping() -> Void) {
+        writingRequest.content = textView.text
+        FeedAPI.shared.postFeed(writingRequest: writingRequest) { (response) in
+            switch response {
+            case .success(let data):
+                if let data = data as? WritingResponse {
+                    
+                }
+                completion()
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+}
+
+// MARK: - Layouts
 
 extension WritingViewController {
     private func setViewHierachy() {

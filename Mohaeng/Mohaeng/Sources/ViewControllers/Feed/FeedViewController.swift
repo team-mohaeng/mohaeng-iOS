@@ -59,6 +59,7 @@ class FeedViewController: UIViewController {
         initAtrributes()
         setupAutoLayout()
         getFeeds()
+        addObserver()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,6 +91,10 @@ class FeedViewController: UIViewController {
     
     private func setHeaderViewDelegate() {
         headerView.delegate = self
+    }
+    
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(getFeeds), name: NSNotification.Name("RefreshFeedCollectionView"), object: nil)
     }
     
     private func initAtrributes() {
@@ -243,7 +248,7 @@ extension FeedViewController: HeaderViewDelegate {
 // MARK: - SERVER CONNECT
 
 extension FeedViewController {
-    func getFeeds() {
+    @objc func getFeeds() {
         FeedAPI.shared.getAllFeed { response in
             switch response {
             case .success(let data):
@@ -263,3 +268,4 @@ extension FeedViewController {
     }
     
 }
+
