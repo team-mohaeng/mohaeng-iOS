@@ -61,6 +61,7 @@
                         </label>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="GDU-kz-Tsl" firstAttribute="top" secondItem="59K-0Z-pkC" secondAttribute="top" id="67k-Rb-AAW"/>
                         <constraint firstAttribute="trailing" secondItem="GDU-kz-Tsl" secondAttribute="trailing" id="7sm-Ci-yFX"/>
                         <constraint firstAttribute="bottom" secondItem="GDU-kz-Tsl" secondAttribute="bottom" id="E4C-a5-fqc"/>
                         <constraint firstAttribute="bottom" secondItem="GDU-kz-Tsl" secondAttribute="bottom" id="HHr-be-dOh"/>
@@ -70,7 +71,6 @@
                         <constraint firstAttribute="trailing" secondItem="GDU-kz-Tsl" secondAttribute="trailing" id="XRc-b8-lIT"/>
                         <constraint firstItem="puH-PZ-Opz" firstAttribute="centerY" secondItem="Ck0-Df-bEx" secondAttribute="centerY" id="XZL-FD-DwF"/>
                         <constraint firstItem="1V1-w9-Y4I" firstAttribute="top" secondItem="59K-0Z-pkC" secondAttribute="top" constant="64" id="bOO-P5-dvm"/>
-                        <constraint firstItem="GDU-kz-Tsl" firstAttribute="top" secondItem="59K-0Z-pkC" secondAttribute="top" id="uCq-BO-Sfu"/>
                         <constraint firstItem="puH-PZ-Opz" firstAttribute="leading" secondItem="Ck0-Df-bEx" secondAttribute="trailing" constant="10" id="ysE-yd-aba"/>
                     </constraints>
                 </view>
@@ -86,8 +86,10 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="courseNameLabel" destination="Ck0-Df-bEx" id="Y95-Wj-Rha"/>
                 <outlet property="dayBgView" destination="puH-PZ-Opz" id="3yx-Bo-nRb"/>
                 <outlet property="headerBgView" destination="59K-0Z-pkC" id="IHF-6e-Ura"/>
+                <outlet property="propertyImageView" destination="GDU-kz-Tsl" id="XgV-4c-n6l"/>
             </connections>
             <point key="canvasLocation" x="44.927536231884062" y="95.758928571428569"/>
         </view>

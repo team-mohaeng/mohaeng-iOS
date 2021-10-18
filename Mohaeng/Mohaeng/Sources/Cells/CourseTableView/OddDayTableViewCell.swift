@@ -14,7 +14,7 @@ class OddDayTableViewCell: UITableViewCell {
     let currentLine = CAShapeLayer()
     let nextLine = CAShapeLayer()
     
-    var property: Int = 0
+    var appCourse: AppCourse = AppCourse(rawValue: 0)!
     
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var propertyImageView: UIImageView!
@@ -31,7 +31,6 @@ class OddDayTableViewCell: UITableViewCell {
         initViewRounding()
         initOddPath()
         initNextPath()
-        setProperty(by: property)
     }
     
     // MARK: - Functions
@@ -72,10 +71,14 @@ class OddDayTableViewCell: UITableViewCell {
         self.contentView.layer.insertSublayer(nextLine, at: 2)
     }
     
-    func setCell(challenge: Challenge) {
+    func setCell(challenge: TodayChallenge, property: Int) {
+        guard let course = AppCourse(rawValue: property) else { return }
+        appCourse = course
+        
         // 날짜 label
         if challenge.year != "" {
             dayLabelBgView.isHidden = false
+            dayLabelBgView.backgroundColor = appCourse.getDarkColor()
             
             dayLabel.text = "\(challenge.month).\(challenge.day) 완료"
         } else {
@@ -83,16 +86,30 @@ class OddDayTableViewCell: UITableViewCell {
         }
         
         // n일차 label
-        dayCountLabel.text = "\(challenge.id)일차"
+        dayCountLabel.text = "\(challenge.day)일차"
         // 미션 label
         descriptionLabel.text = challenge.title
         
         // situation에 따른 색상 분기처리
         setColorBySituation(situation: challenge.situation)
         
+        // property에 따라 속성 아이콘 변경
+        setStamp(situation: challenge.situation)
+        
         // 미션 숨기기
         if challenge.situation == 0 {
             descriptionLabel.text = "쉿, 아직 비밀이야."
+        }
+    }
+    
+    // set property functions
+    
+    func setStamp(situation: Int) {
+        // 도장 이미지
+        if situation == 2 {
+            propertyImageView.image = appCourse.getSmallImage()
+        } else {
+            propertyImageView.image = appCourse.getUndoneStampImage()
         }
     }
     
@@ -102,10 +119,10 @@ class OddDayTableViewCell: UITableViewCell {
             nextLine.strokeColor = UIColor.Grey4.cgColor
             setDashedLine(line: nextLine)
         case 1:
-            nextLine.strokeColor = UIColor.sampleGreen.cgColor
+            nextLine.strokeColor = appCourse.getDarkColor().cgColor
             setDashedLine(line: nextLine)
         case 2:
-            nextLine.strokeColor = UIColor.sampleGreen.cgColor
+            nextLine.strokeColor = appCourse.getDarkColor().cgColor
             setPlainLine(line: nextLine)
             
         // 맨 마지막 챌린지일 경우
@@ -127,11 +144,11 @@ class OddDayTableViewCell: UITableViewCell {
             setDashedLine(line: currentLine)
         
         case 1: // 진행 중인 챌린지
-            currentLine.strokeColor = UIColor.sampleGreen.cgColor
+            currentLine.strokeColor = appCourse.getDarkColor().cgColor
             setDashedLine(line: currentLine)
             
         case 2: // 완료 된 챌린지
-            currentLine.strokeColor = UIColor.sampleGreen.cgColor
+            currentLine.strokeColor = appCourse.getDarkColor().cgColor
             setPlainLine(line: currentLine)
             
         default:
@@ -148,46 +165,6 @@ class OddDayTableViewCell: UITableViewCell {
     
     func setPlainLine(line: CAShapeLayer) {
         line.lineDashPattern = [1]
-    }
-
-    // set property functions
-    
-    func setProperty(by property: Int) {
-        switch property {
-        case Property.health.rawValue:
-            setProperty0()
-        case Property.memory.rawValue:
-            setProperty1()
-        case Property.observation.rawValue:
-            setProperty2()
-        case Property.challenge.rawValue:
-            setProperty3()
-        default:
-            return
-        }
-    }
-    
-    // 0: 건강 1: 기억 2: 관찰 3: 도전
-    func setProperty0() {
-        propertyImageView.image = Const.Image.typeHchallengeC
-    }
-    
-    func setProperty1() {
-        propertyImageView.image = Const.Image.typeMchallengeC
-    }
-    
-    func setProperty2() {
-        propertyImageView.image = Const.Image.typeSchallengeC
-    }
-    
-    func setProperty3() {
-        propertyImageView.image = Const.Image.typeCchallengeC
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

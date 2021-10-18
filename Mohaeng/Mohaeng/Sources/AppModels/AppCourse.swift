@@ -151,11 +151,41 @@ enum AppCourse: Int {
     }
     
     func getUndoneStampImage() -> UIImage {
-        return UIImage()
+        switch self {
+        case .love:
+            return Const.Image.redUndoneStampImage
+        case .culture:
+            return Const.Image.orangeUndoneStampImage
+        case .memory:
+            return Const.Image.yellowUndoneStampImage
+        case .health:
+            return Const.Image.greenUndoneStampImage
+        case .selfCare:
+            return Const.Image.blueUndoneStampImage
+        case .habit:
+            return Const.Image.indigoUndoneStampImage
+        case .challenge:
+            return Const.Image.purpleUndoneStampImage
+        }
     }
     
     func getDoneStampImage() -> UIImage {
-        return UIImage()
+        switch self {
+        case .love:
+            return Const.Image.redDoneStampImage
+        case .culture:
+            return Const.Image.orangeDoneStampImage
+        case .memory:
+            return Const.Image.yellowDoneStampImage
+        case .health:
+            return Const.Image.greenDoneStampImage
+        case .selfCare:
+            return Const.Image.blueDoneStampImage
+        case .habit:
+            return Const.Image.indigoDoneStampImage
+        case .challenge:
+            return Const.Image.purpleDoneStampImage
+        }
     }
     
     func getOnBoardingDescription() -> String {
@@ -175,6 +205,27 @@ enum AppCourse: Int {
             return "친구, 가족, 멘토와 관련된 챌린지"
         case .culture:
             return "교양과 관련된 챌린지"
+        }
+        
+    }
+    
+    func getOnboardingCourse() -> [String] {
+        
+        switch self {
+        case .health:
+            return ["햇살 가득한 하루", "햇빛 아래에서 광합성하기"]
+        case .selfCare:
+            return ["내가 제일 잘 나가", "오늘의 나한테 칭찬해주기"]
+        case .habit:
+            return ["일찍 일어나는 새", "나를 위한 응원의 한 마디"]
+        case .challenge:
+            return ["밤에 듣는 즉흥환상곡", "밤에 산책 또는 자전거타기"]
+        case .memory:
+            return ["중급 사진가", "오늘 입은 옷 찍기"]
+        case .love:
+            return ["친구찾아 삼만리", "오늘의 tmi 물어보기"]
+        case .culture:
+            return ["지구촌 촌장되기", "3개 국어 인삿말 말하기"]
         }
         
     }

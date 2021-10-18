@@ -1,22 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoqaHanSansNeo-Bold.otf">
+            <string>SpoqaHanSansNeo-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CourseFooterView" customModule="Journey" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CourseFooterView" customModule="Mohaeng" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="111"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ku-FR-4lg">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="111"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4Y-hg-8Mm">
+                            <rect key="frame" x="24" y="36" width="366" height="51"/>
+                            <color key="backgroundColor" name="Yellow3"/>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="16"/>
+                            <color key="tintColor" name="White"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="알겠어, 얼른 넘어가줘!"/>
+                            <connections>
+                                <action selector="touchNextButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="fTe-oW-b2Y"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" name="BgLightYellow"/>
+                    <constraints>
+                        <constraint firstItem="l4Y-hg-8Mm" firstAttribute="leading" secondItem="8ku-FR-4lg" secondAttribute="leading" constant="24" id="JGy-5K-PbP"/>
+                        <constraint firstAttribute="trailing" secondItem="l4Y-hg-8Mm" secondAttribute="trailing" constant="24" id="QVx-WI-DSZ"/>
+                        <constraint firstAttribute="bottom" secondItem="l4Y-hg-8Mm" secondAttribute="bottom" constant="24" id="v8X-go-aZX"/>
+                    </constraints>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="undoneIsland" translatesAutoresizingMaskIntoConstraints="NO" id="hJW-kM-p1a">
                     <rect key="frame" x="330" y="-36" width="60" height="60"/>
@@ -24,6 +48,7 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
+                <constraint firstItem="l4Y-hg-8Mm" firstAttribute="top" secondItem="hJW-kM-p1a" secondAttribute="bottom" constant="12" id="23I-9V-LI0"/>
                 <constraint firstItem="8ku-FR-4lg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7LX-o3-hgI"/>
                 <constraint firstItem="8ku-FR-4lg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Vi4-t6-JVY"/>
                 <constraint firstAttribute="trailing" secondItem="hJW-kM-p1a" secondAttribute="trailing" constant="24" id="Ygn-Wt-Lig"/>
@@ -37,6 +62,7 @@
             <connections>
                 <outlet property="bgView" destination="8ku-FR-4lg" id="b3k-Wc-BbH"/>
                 <outlet property="islandImageView" destination="hJW-kM-p1a" id="bT7-DZ-lyM"/>
+                <outlet property="nextButton" destination="l4Y-hg-8Mm" id="6tX-b9-OkS"/>
             </connections>
             <point key="canvasLocation" x="44.927536231884062" y="95.424107142857139"/>
         </view>
@@ -45,6 +71,12 @@
         <image name="undoneIsland" width="60" height="60"/>
         <namedColor name="BgLightYellow">
             <color red="1" green="0.98400002717971802" blue="0.93699997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Yellow3">
+            <color red="1" green="0.77999997138977051" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
