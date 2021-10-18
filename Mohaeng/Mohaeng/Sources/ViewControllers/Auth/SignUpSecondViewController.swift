@@ -9,205 +9,78 @@ import UIKit
 
 class SignUpSecondViewController: UIViewController {
     
-    // MARK: - Properties
+    // MARK: - @IBOutlets
     
-    private var modalYearView: YearPickerViewController?
-    private var currentYear: AppYear?
-    private var selectedYear: AppYear?
-    var signupuser = SignUpUser.shared
-    // MARK: - @IBOutlet Properties**
-    
-    @IBOutlet weak var womanButton: UIButton!
-    @IBOutlet weak var manButton: UIButton!
-    @IBOutlet weak var touchNextPage2Button: UIButton!
-    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet var buttons: [UIButton]!
+    @IBOutlet var firstCheckButton: UIButton!
+    @IBOutlet var secondCheckButton: UIButton!
+    @IBOutlet var thirdCheckButton: UIButton!
+    @IBOutlet var agreeButton: UIButton!
     
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        makeButtonRounded()
+    }
+    // MARK: - Functions
+    
+    private func makeButtonRounded() {
+        agreeButton.makeRounded(radius: 20)
+    }
+    
+    private func setAgreeButton(color: UIColor, bool: Bool) {
+        agreeButton.backgroundColor = color
+        agreeButton.isEnabled = bool
+    }
+    
+    private func pushSignUpThirdViewController() {
+        let signUpThirdStoryboard = UIStoryboard(name: Const.Storyboard.Name.signUpThird, bundle: nil)
         
-        initNavigationBar()
-        changeButtonAttribute()
-        makeButtonRound()
-        initCurrentYear()
+        guard let signUpThirdViewController = signUpThirdStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.signUpThird) as?
+                SignUpThirdViewController else {
+                    return
+                }
+        self.navigationController?.pushViewController(signUpThirdViewController, animated: true)
     }
     
     // MARK: - @IBAction Properties
     
-    @IBAction func touchWomanButton(_ sender: Any) {
-        womanButton.isSelected = !womanButton.isSelected
-        if womanButton.isSelected == true {
-            changeWomanPinkColor()
-            
-            if manButton.isSelected == true {
-                changeManGreyColor()
-                if yearLabel.text == "출생연도 선택" {
-                    touchNextPage2Button.backgroundColor = UIColor.Grey1Bg
-                    touchNextPage2Button.isEnabled = false
-                } else {
-                    touchNextPage2Button.backgroundColor = UIColor.Pink2
-                    touchNextPage2Button.isEnabled = true
-                }
-                
+    @IBAction func touchCheckButton(_ sender: UIButton) {
+        
+        switch sender.tag {
+        case 0:
+            sender.isSelected.toggle()
+            buttons[1].isSelected = sender.isSelected
+            buttons[2].isSelected = sender.isSelected
+        case 1:
+            sender.isSelected.toggle()
+            if buttons[1].isSelected && buttons[2].isSelected {
+                buttons[0].isSelected = true
             } else {
-                if yearLabel.text == "출생연도 선택" {
-                    touchNextPage2Button.backgroundColor = UIColor.Grey1Bg
-                    touchNextPage2Button.isEnabled = false
-                } else {
-                    touchNextPage2Button.backgroundColor = UIColor.Pink2
-                    touchNextPage2Button.isEnabled = true
-                }
+                buttons[0].isSelected = false
             }
-        } else {
-            changeWomanGreyColor()
-            touchNextPage2Button.backgroundColor = UIColor.Grey1Bg
-            touchNextPage2Button.isEnabled = false
-        }
-    }
-    @IBAction func touchManButton(_ sender: Any) {
-        manButton.isSelected = !manButton.isSelected
-        if manButton.isSelected == true {
-            changeManPinkColor()
-            if womanButton.isSelected == true {
-                changeWomanGreyColor()
-                if yearLabel.text == "출생연도 선택" {
-                    touchNextPage2Button.backgroundColor = UIColor.Grey1Bg
-                    touchNextPage2Button.isEnabled = false
-                    
-                } else {
-                    touchNextPage2Button.backgroundColor = UIColor.Pink2
-                    touchNextPage2Button.isEnabled = true
-                    
-                }
+        default:
+            sender.isSelected.toggle()
+            if buttons[1].isSelected && buttons[2].isSelected {
+                buttons[0].isSelected = true
             } else {
-                if yearLabel.text == "출생연도 선택" {
-                    touchNextPage2Button.backgroundColor = UIColor.Grey1Bg
-                    
-                    touchNextPage2Button.isEnabled = false
-                } else {
-                    touchNextPage2Button.backgroundColor = UIColor.Pink2
-                    touchNextPage2Button.isEnabled = true
-                    
-                }
+                buttons[0].isSelected = false
             }
-            
-        } else {
-            changeManGreyColor()
-            
-            touchNextPage2Button.backgroundColor = UIColor.Grey1Bg
-            touchNextPage2Button.isEnabled = false
-            
         }
-    }
-    @IBAction func touchModalButton(_ sender: Any) {
-        presentYearPickerView(year: 19)
+        
+        let first = firstCheckButton.isSelected
+        let second = secondCheckButton.isSelected
+        let third = thirdCheckButton.isSelected
+        
+        if first && second && third {
+            setAgreeButton(color: .DeepYellow, bool: true)
+        } else {
+            setAgreeButton(color: .LoginYellow, bool: false)
+        }
     }
     
-    @IBAction func touchNextSecondButton(_ sender: Any) {
-        
-        if womanButton.isSelected == true {
-            signupuser.gender = 0
-        } else {
-            signupuser.gender = 1
-        }
-        signupuser.birthyear = Int(yearLabel.text!)
-        
+    @IBAction func touchAgreeButton(_ sender: UIButton) {
         pushSignUpThirdViewController()
-    }
-    
-    // MARK: - Functions
-    
-    private func initNavigationBar() {
-        self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
-        navigationItem.title = "회원가입"
-    }
-    
-    private func changeButtonAttribute() {
-        womanButton.makeRoundedWithBorder(radius: 10, color: UIColor.Grey1Line.cgColor )
-        manButton.makeRoundedWithBorder(radius: 10, color: UIColor.Grey1Line.cgColor )
-    }
-    
-    private func makeButtonRound() {
-        touchNextPage2Button.makeRounded(radius: 24)
-    }
-    
-    private func changeManGreyColor() {
-        manButton.isSelected = false
-        manButton.layer.borderColor = UIColor.Grey1Line.cgColor
-        manButton.setTitleColor(.Grey1Line, for: .normal)
-        manButton.layer.borderWidth = 1
-    }
-    
-    private func changeManPinkColor() {
-        manButton.isSelected = true
-        manButton.layer.borderColor = UIColor.Pink2.cgColor
-        manButton.setTitleColor(.Pink2, for: .selected)
-        manButton.layer.borderWidth = 3
-    }
-    
-    private func changeWomanGreyColor() {
-        womanButton.isSelected = false
-        womanButton.layer.borderColor = UIColor.Grey1Line.cgColor
-        womanButton.setTitleColor(.Grey1Line, for: .normal)
-        womanButton.layer.borderWidth = 1
-    }
-    
-    private func changeWomanPinkColor() {
-        womanButton.isSelected = true
-        womanButton.layer.borderColor = UIColor.Pink2.cgColor
-        womanButton.setTitleColor(.Pink2, for: .selected)
-        womanButton.layer.borderWidth = 3
-    }
-    
-    private func initCurrentYear() {
-        self.currentYear = AppYear()
-        self.selectedYear = AppYear()
-        self.modalYearView = YearPickerViewController()
-        
-    }
-    
-    private func presentYearPickerView(year: Int) {
-        guard let modalYearView = self.modalYearView else { return }
-        modalYearView.year = year
-        modalYearView.yearPickerDataDelegate = self
-        modalYearView.modalPresentationStyle = .custom
-        modalYearView.transitioningDelegate = self
-        self.present(modalYearView, animated: true, completion: nil)
-    }
-    
-    private func pushSignUpThirdViewController() {
-        
-        let signupThirdStoryboard = UIStoryboard(name: Const.Storyboard.Name.signUpThird, bundle: nil)
-        guard let signUpThirdViewController  = signupThirdStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.signUpThird) as? SignUpThirdViewController else {
-            return
-        }
-        self.navigationController?.pushViewController(signUpThirdViewController, animated: true)
-    }
-    
-}
-
-// MARK: - Extensions
-
-// MARK: - UIPickerViewDelegate
-
-extension SignUpSecondViewController: YearPickerViewDelegate {
-    func passData(_ year: String) {
-        self.selectedYear = AppYear(formattedDate: year, with: "")
-        yearLabel.text = year
-        yearLabel.textColor = .black
-        if womanButton.isSelected || manButton.isSelected {
-            touchNextPage2Button.isEnabled = true
-            touchNextPage2Button.backgroundColor = UIColor.Pink2
-        }
-    }
-    
-}
-
-// MARK: - UIViewControllerTransitioningDelegate
-
-extension SignUpSecondViewController: UIViewControllerTransitioningDelegate {
-    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        ModalPresentationController(presentedViewController: presented, presenting: presenting)
     }
 }

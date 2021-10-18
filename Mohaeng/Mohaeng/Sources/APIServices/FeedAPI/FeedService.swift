@@ -11,7 +11,9 @@ import Moya
 
 enum FeedService {
     case getAllFeed
+    case postFeed(content: String, mood: Int, isPrivate: Bool, image: UIImage?)
 }
+// {"content": "엄마 나 모행 다녀올게", "mood": 2, "isPrivate": false}
 
 extension FeedService: TargetType {
     var baseURL: URL {
@@ -20,15 +22,18 @@ extension FeedService: TargetType {
     
     var path: String {
         switch self {
-        case .getAllFeed:
+        case .getAllFeed, .postFeed:
             return Const.URL.feedURL
         }
+    
     }
     
     var method: Moya.Method {
         switch self {
         case .getAllFeed:
             return .get
+        case .postFeed:
+            return .post
         }
     }
     
@@ -40,6 +45,28 @@ extension FeedService: TargetType {
         switch self {
         case .getAllFeed:
             return .requestPlain
+        case .postFeed(let content, let mood, let isPrivate, let image):
+            var multiPartFormData: [MultipartFormData] = []
+            let json: [String: Any] = [
+                "content": content,
+                "mood": mood,
+                "isPrivate": isPrivate
+            ]
+
+            let jsondata = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+            guard let data = jsondata else { return .uploadMultipart([]) }
+
+            let jsonString = String(data: data, encoding: .utf8)!
+            let multipartData = MultipartFormData(provider: .data(jsonString.data(using: String.Encoding.utf8)!), name: "feed")
+            multiPartFormData.append(multipartData)
+            
+            if let image = image,
+               let imageData = image.jpegData(compressionQuality: 1.0) {
+                let imgData = MultipartFormData(provider: .data(imageData), name: "image", fileName: "image", mimeType: "image/jpeg")
+                multiPartFormData.append(imgData)
+            }
+
+            return .uploadMultipart(multiPartFormData)
         }
     }
     
@@ -50,6 +77,12 @@ extension FeedService: TargetType {
                 "Content-Type": "application/json",
                 "Bearer": UserDefaults.standard.string(forKey: "jwtToken") ?? ""
             ]
+        case .postFeed:
+            return [
+                "Content-Type": "multipart/form-data",
+                "Bearer": UserDefaults.standard.string(forKey: "jwtToken") ?? ""
+            ]
+        
         }
     }
     

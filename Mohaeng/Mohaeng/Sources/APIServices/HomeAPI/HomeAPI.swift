@@ -35,7 +35,7 @@ public class HomeAPI {
     private func judgeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
         
         let decoder = JSONDecoder()
-            guard let decodedData = try? decoder.decode(GenericResponse<HomeData>.self, from: data)
+            guard let decodedData = try? decoder.decode(GenericResponse<Home>.self, from: data)
             else {
                     return .pathErr
             }
