@@ -23,9 +23,16 @@ class CourseViewController: UIViewController {
     
     var headerView: ChallengeStampView?
     
+    enum CourseViewUsage: Int {
+        case course = 0, history
+    }
+    
+    var courseViewUsage: CourseViewUsage = .course
+    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var courseTableView: UITableView!
+    @IBOutlet weak var courseTableViewToTopConstraint: NSLayoutConstraint!
     
     // MARK: - View Life Cycle
     
@@ -42,17 +49,27 @@ class CourseViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        self.initHeaderView()
+        if courseViewUsage == .course {
+            self.initHeaderView()
+        } else if courseViewUsage == .history {
+            courseTableView.contentInsetAdjustmentBehavior = .never
+            hidesBottomBarWhenPushed = true
+        }
     }
     
     // MARK: - Functions
     
     private func initNavigationBar() {
-        self.navigationController?.initWithOneCustomButton(
-            navigationItem: self.navigationItem,
-            firstButtonImage: Const.Image.gnbIcnList,
-            firstButtonClosure: #selector(touchLibraryButton(_:)))
-        self.navigationItem.setHidesBackButton(true, animated: true)
+        
+        if courseViewUsage == .course {
+            self.navigationController?.initWithOneCustomButton(
+                navigationItem: self.navigationItem,
+                firstButtonImage: Const.Image.gnbIcnList,
+                firstButtonClosure: #selector(touchLibraryButton(_:)))
+            self.navigationItem.setHidesBackButton(true, animated: true)
+        } else if courseViewUsage == .history {
+            self.navigationController?.initWithBackButton()
+        }
     }
     
     @objc func touchLibraryButton(_ sender: UIBarButtonItem) {
@@ -72,6 +89,8 @@ class CourseViewController: UIViewController {
         
         courseTableView.register(UINib(nibName: Const.Xib.Name.courseHeaderView, bundle: nil), forHeaderFooterViewReuseIdentifier: Const.Xib.Identifier.courseHeaderView)
         courseTableView.register(UINib(nibName: Const.Xib.Name.courseFooterView, bundle: nil), forHeaderFooterViewReuseIdentifier: Const.Xib.Identifier.courseFooterView)
+        
+        courseTableView.register(UINib(nibName: Const.Xib.Name.courseHistoryHeaderView, bundle: nil), forHeaderFooterViewReuseIdentifier: Const.Xib.Identifier.courseHistoryHeaderView)
     }
     
     private func assignDelegation() {
@@ -125,21 +144,59 @@ extension CourseViewController: UITableViewDelegate {
     
     // section header
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 132
+        
+        switch courseViewUsage {
+        case .course:
+            return 132
+        case .history:
+            return 176
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: Const.Xib.Identifier.courseHeaderView) as? CourseHeaderView {
-            
-            headerView.headerBgView.makeRoundedSpecificCorner(corners: [.bottomLeft, .bottomRight], cornerRadius: 10)
-            headerView.layer.shadowOpacity = 0.12
-            headerView.layer.shadowRadius = 0
-            headerView.layer.shadowOffset = CGSize(width: 0, height: 2)
-            headerView.layer.shadowColor = UIColor.black.cgColor
-            
-            return headerView
-        }
         
+        switch courseViewUsage {
+        case .course:
+            if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: Const.Xib.Identifier.courseHeaderView) as? CourseHeaderView {
+                
+                let headerBgView: UIView = {
+                    let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 132))
+                    view.backgroundColor = .white
+                    view.makeRoundedSpecificCorner(corners: [.bottomLeft, .bottomRight], cornerRadius: 10)
+                    
+                    return view
+                }()
+                
+                headerView.backgroundView = headerBgView
+                // TODO: - shadow refactoring
+                headerView.layer.shadowOpacity = 0.12
+                headerView.layer.shadowRadius = 0
+                headerView.layer.shadowOffset = CGSize(width: 0, height: 2)
+                headerView.layer.shadowColor = UIColor.black.cgColor
+                
+                return headerView
+            }
+        case .history:
+            if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: Const.Xib.Identifier.courseHistoryHeaderView) as? CourseHistoryHeaderView {
+                
+                let headerBgView: UIView = {
+                    let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 176))
+                    view.backgroundColor = .white
+                    view.makeRoundedSpecificCorner(corners: [.bottomLeft, .bottomRight], cornerRadius: 25)
+                    
+                    return view
+                }()
+                
+                headerView.backgroundView = headerBgView
+                // TODO: - shadow refactoring
+                headerView.layer.shadowOpacity = 0.12
+                headerView.layer.shadowRadius = 2
+                headerView.layer.shadowOffset = CGSize(width: 0, height: 2)
+                headerView.layer.shadowColor = UIColor.black.cgColor
+                
+                return headerView
+            }
+        }
         return UIView()
     }
     

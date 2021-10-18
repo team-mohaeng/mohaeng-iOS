@@ -19,14 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="8at-xF-psI">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" name="BgLightYellow"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="8at-xF-psI" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Mth-F0-dEA"/>
+                            <constraint firstItem="8at-xF-psI" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Mth-F0-dEA"/>
                             <constraint firstAttribute="bottom" secondItem="8at-xF-psI" secondAttribute="bottom" id="WE4-bA-7Ke"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="8at-xF-psI" secondAttribute="trailing" id="ZE2-NB-sg0"/>
                             <constraint firstItem="8at-xF-psI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="r0L-Ye-4h8"/>
@@ -36,6 +36,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="courseTableView" destination="8at-xF-psI" id="VAy-u0-i5v"/>
+                        <outlet property="courseTableViewToTopConstraint" destination="Mth-F0-dEA" id="99h-lN-Kj2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

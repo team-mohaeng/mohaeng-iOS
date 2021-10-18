@@ -28,8 +28,8 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var calendarShadowView: UIView!
     @IBOutlet weak var calendarBgView: UIView!
     @IBOutlet weak var yearMonthLabel: UILabel!
-    @IBOutlet weak var challengeRecordButtonView: UIView!
-    @IBOutlet weak var challengeRecordShadowView: UIView!
+    @IBOutlet weak var courseHistoryButtonView: UIView!
+    @IBOutlet weak var courseHistoryShadowView: UIView!
     
     // MARK: - Properties
     
@@ -52,7 +52,7 @@ class MyPageViewController: UIViewController {
         setRangeDates()
         selectRangeDate()
         setTotalSectionCount()
-        
+        addTapGestureRecognizer()
     }
     
     // MARK: - @IBAction Functions
@@ -63,6 +63,14 @@ class MyPageViewController: UIViewController {
     
     @IBAction func touchRightArrowButton(_ sender: Any) {
         touchArrowButton(isLeft: false)
+    }
+    
+    @objc func touchCourseHistoryButton(_ sender: Any) {
+        let courseHistoryStoryboard = UIStoryboard(name: Const.Storyboard.Name.courseHistory, bundle: nil)
+        guard let courseHistoryViewController = courseHistoryStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.courseHistory) as? CourseHistoryViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(courseHistoryViewController, animated: true)
     }
     
     // MARK: - Functions
@@ -105,8 +113,8 @@ class MyPageViewController: UIViewController {
         calendarBgView.makeRounded(radius: 14)
         
         // 챌린지 기록 보기 버튼 뷰
-        challengeRecordButtonView.makeRounded(radius: 14)
-        challengeRecordShadowView.addShadowWithOpaqueBackground(opacity: 0.05, radius: 20)
+        courseHistoryButtonView.makeRounded(radius: 14)
+        courseHistoryShadowView.addShadowWithOpaqueBackground(opacity: 0.05, radius: 20)
         
     }
     
@@ -228,6 +236,11 @@ class MyPageViewController: UIViewController {
     func setTotalSectionCount() {
         // TODO: - 날짜 response보고 리팩토링 필요
         totalSectionCount = 9
+    }
+    
+    private func addTapGestureRecognizer() {
+        let courseHistoryGesture = UITapGestureRecognizer(target: self, action: #selector(touchCourseHistoryButton(_:)))
+        courseHistoryButtonView.addGestureRecognizer(courseHistoryGesture)
     }
 }
 
