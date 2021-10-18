@@ -32,7 +32,7 @@ class CharacterColorCollectionViewCell: UICollectionViewCell {
     }
     
     func showSelectedView() {
-        makeRoundedWithBorder(radius: 4, color: UIColor.systemYellow.cgColor)
+        makeRoundedWithBorder(radius: 4, color: UIColor.YellowButton2.cgColor)
         selectedImageView.isHidden = false
     }
     
@@ -41,16 +41,12 @@ class CharacterColorCollectionViewCell: UICollectionViewCell {
         selectedImageView.isHidden = true
     }
     
-    func setLockCharacter() {
-        DispatchQueue.main.async {
-            self.charaterImageView.image = Const.Image.lockDuck
-        }
+    func setLockCharacter(typeId: Int) {
+        self.charaterImageView.image = AppCharacter(rawValue: typeId)?.getCardLockImage()
     }
     
-    func setUnlockCharacter() {
-        DispatchQueue.main.async {
-            self.charaterImageView.image = Const.Image.unlockDuck
-        }
+    func setUnlockCharacter(image: String) {
+        self.charaterImageView.updateServerImage(image)
     }
     
     func showNewIndicator() {
@@ -62,4 +58,3 @@ class CharacterColorCollectionViewCell: UICollectionViewCell {
     }
     
 }
-

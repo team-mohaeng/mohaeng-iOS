@@ -31,6 +31,7 @@ extension Const {
         
         // 홈 (GET)
         static let homeURL = "/home"
+        static let characterURL = "/character"
         
         // MARK: - Challenge
         

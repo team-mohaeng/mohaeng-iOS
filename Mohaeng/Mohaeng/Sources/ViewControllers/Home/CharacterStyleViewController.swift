@@ -10,103 +10,41 @@ import UIKit
 import SnapKit
 import Then
 
-enum BackgroundSkin {
-    
-    case yellowBg
-    case spreadBg
-    case cloudBg
-    case fieldBg
-    case nightBg
-    case figureBg
-    
-    func getOwnedSkinIcn() -> UIImage {
-        switch self {
-        case .yellowBg:
-            return Const.Image.yellowBg
-        case .spreadBg:
-            return Const.Image.spreadBg
-        case .cloudBg:
-            return Const.Image.cloudBg
-        case .fieldBg:
-            return Const.Image.fieldBg
-        case .nightBg:
-            return Const.Image.nightBg
-        case .figureBg:
-            return Const.Image.figureBg
-        }
-    }
-    
-    func getLockSkinIcn() -> UIImage {
-        switch self {
-        case .yellowBg:
-            return Const.Image.yellowLock
-        case .spreadBg:
-            return Const.Image.spreadLock
-        case .cloudBg:
-            return Const.Image.cloudLock
-        case .fieldBg:
-            return Const.Image.fieldLock
-        case .nightBg:
-            return Const.Image.nightLock
-        case .figureBg:
-            return Const.Image.figureLock
-        }
-    }
-    
-    func getSelectedSkinIcn() -> UIImage {
-        switch self {
-        case .yellowBg:
-            return Const.Image.yellowSelected
-        case .spreadBg:
-            return Const.Image.spreadSelected
-        case .cloudBg:
-            return Const.Image.cloudSelected
-        case .fieldBg:
-            return Const.Image.fieldSelected
-        case .nightBg:
-            return Const.Image.nightSelected
-        case .figureBg:
-            return Const.Image.figureSelected
-        }
-    }
-}
-
 class CharacterStyleViewController: UIViewController {
     
     // MARK: - IBOutlet Properties
     
-    @IBOutlet weak var charaterSelectView: UIView!
-    @IBOutlet weak var charaterChoiceButton: UIButton!
-    @IBOutlet weak var charaterTypeCollectionView: UICollectionView!
-    @IBOutlet weak var charaterColorCollectionView: UICollectionView!
+    @IBOutlet weak var characterSelectView: UIView!
+    @IBOutlet weak var characterChoiceButton: UIButton!
+    @IBOutlet weak var characterTypeCollectionView: UICollectionView!
+    @IBOutlet weak var characterCardCollectionView: UICollectionView!
     @IBOutlet weak var backgroundSelectView: UIView!
     @IBOutlet weak var backgroundSelectButton: UIButton!
     @IBOutlet weak var backgroundSelectViewHeight: NSLayoutConstraint!
     @IBOutlet weak var choiceButtonTopSpacing: NSLayoutConstraint!
     @IBOutlet weak var backgroundCollectionView: UICollectionView!
     @IBOutlet weak var shadowView: UIView!
+    @IBOutlet weak var emptyViewLabel: UILabel!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     // MARK: - Properties
     
     private var backgroundSkins: [BackgroundSkin] = [.yellowBg, .spreadBg, .cloudBg, .fieldBg, .nightBg, .figureBg]
     private var selectedSkinIndex: Int = 0
     private var selectedTypeIndex: Int = 0
-    private var selectedColorIndex: Int = 0
+    private var selectedCardIndex: Int = 0
+    private var allCardSelectedInfo: [[Bool]] = Array(repeating: Array(repeating: false, count: 9), count: 7)
     private var isOpen = false
-    
-    /// Dummy Properties
-    var hasSkin: [Bool] = [true, true, false, true, false, true]
-    var isNew: [Bool] = [false, false, false, false, false, true, false, true, false]
-    var hasColor: [Bool] = [true, true, false, false, false, true, false, true, false]
-    var isSelected: [Bool] = [true, false, false, false, false, false, false, false, false]
+    private var selectedCardId: Int = 0
+    private var characterData: CharacterStyle = CharacterStyle(currentCharacter: Current(id: 0, image: ""), currentSkin: Current(id: 0, image: ""), characters: [Character(type: 0, cards: [Card(id: 0, image: "", hasCard: false, isNew: false)])], skins: [Skin(id: 0, image: "", hasSkin: false)])
     
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getUserCharacterInfo()
         initNavigationBar()
-        initConstraint()
         hideTabarController()
         registerXib()
         setDelegation()
@@ -121,13 +59,14 @@ class CharacterStyleViewController: UIViewController {
     
     // MARK: - Functions
     
+    private func setCurrentCharacterCellSelect(typeIndex: Int, cardIndex: Int) {
+        allCardSelectedInfo[typeIndex][cardIndex - 1] = true
+        characterCardCollectionView.reloadData()
+    }
+    
     private func initNavigationBar() {
         navigationController?.initWithBackButton()
         self.navigationItem.title = "캐릭터 스타일"
-    }
-    
-    private func initConstraint() {
-        choiceButtonTopSpacing.constant = 48 / 812 * UIScreen.main.bounds.height
     }
     
     private func hideTabarController() {
@@ -135,29 +74,29 @@ class CharacterStyleViewController: UIViewController {
     }
     
     private func registerXib() {
-        charaterTypeCollectionView.register(UINib(nibName: Const.Xib.Name.characterTypeCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.characterTypeCollectionViewCell)
-        charaterColorCollectionView.register(UINib(nibName: Const.Xib.Name.characterColorCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.characterColorCollectionViewCell)
+        characterTypeCollectionView.register(UINib(nibName: Const.Xib.Name.characterTypeCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.characterTypeCollectionViewCell)
+        characterCardCollectionView.register(UINib(nibName: Const.Xib.Name.characterColorCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.characterColorCollectionViewCell)
         backgroundCollectionView.register(UINib(nibName: Const.Xib.Name.backgroundCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.backgroundCollectionViewCell)
     }
     
     private func setDelegation() {
-        charaterColorCollectionView.delegate = self
-        charaterColorCollectionView.dataSource = self
-        charaterTypeCollectionView.delegate = self
-        charaterTypeCollectionView.dataSource = self
+        characterCardCollectionView.delegate = self
+        characterCardCollectionView.dataSource = self
+        characterTypeCollectionView.delegate = self
+        characterTypeCollectionView.dataSource = self
         backgroundCollectionView.delegate = self
         backgroundCollectionView.dataSource = self
     }
     
     private func makeViewRounded() {
-        charaterChoiceButton.makeRounded(radius: charaterChoiceButton.bounds.height / 2)
+        characterChoiceButton.makeRounded(radius: characterChoiceButton.bounds.height / 2)
         backgroundSelectView.makeRounded(radius: backgroundSelectView.bounds.height / 2)
         backgroundSelectButton.makeRounded(radius: backgroundSelectButton.bounds.height / 2)
         
         /// makeRoundedSpecificCorner 가 안먹어서 이 부분 코드리뷰 받고 수정할게요
-        charaterSelectView.clipsToBounds = true
-        charaterSelectView.layer.cornerRadius = 20
-        charaterSelectView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
+        characterSelectView.clipsToBounds = true
+        characterSelectView.layer.cornerRadius = 20
+        characterSelectView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
     }
     
     private func initViewShadow() {
@@ -188,6 +127,12 @@ class CharacterStyleViewController: UIViewController {
         }
     }
     
+    @IBAction func touchStyleSelectButton(_ sender: Any) {
+        putCharacterStyle(data: CharacterStyleReqeust(characterSkin: selectedSkinIndex + 64,
+                                                      characterType: selectedCardId / 9 + 1,
+                                                      characterCard: selectedCardId))
+    }
+    
 }
 
 // MARK: - UICollectionViewDelegate
@@ -197,14 +142,14 @@ extension CharacterStyleViewController: UICollectionViewDelegateFlowLayout {
         let width = UIScreen.main.bounds.width
         
         switch collectionView {
-        case charaterTypeCollectionView:
-            let cellWidth = width * (60 / 375)
-            let cellHeight = cellWidth * (60 / 60)
+        case characterTypeCollectionView:
+            let cellWidth = width * (52 / 375)
+            let cellHeight = cellWidth * (52 / 52)
     
             return CGSize(width: cellWidth, height: cellHeight)
-        case charaterColorCollectionView:
-            let cellWidth = width * (100 / 375)
-            let cellHeight = cellWidth * (120 / 100)
+        case characterCardCollectionView:
+            let cellWidth = width * (95 / 375)
+            let cellHeight = cellWidth * (130 / 95)
             
             return CGSize(width: cellWidth, height: cellHeight)
         case backgroundCollectionView:
@@ -219,9 +164,9 @@ extension CharacterStyleViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         switch collectionView {
-        case charaterTypeCollectionView:
-            return UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)
-        case charaterColorCollectionView:
+        case characterTypeCollectionView:
+            return UIEdgeInsets(top: 14, left: 24, bottom: 0, right: 24)
+        case characterCardCollectionView:
             return UIEdgeInsets(top: 32, left: 24, bottom: 16, right: 24)
         case backgroundCollectionView:
             return UIEdgeInsets(top: 14, left: 0, bottom: 24, right: 0)
@@ -232,9 +177,9 @@ extension CharacterStyleViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         switch collectionView {
-        case charaterTypeCollectionView:
-            return 20
-        case charaterColorCollectionView:
+        case characterTypeCollectionView:
+            return 26
+        case characterCardCollectionView:
             return 14
         case backgroundCollectionView:
             return 12
@@ -246,10 +191,10 @@ extension CharacterStyleViewController: UICollectionViewDelegateFlowLayout {
     /// 컬러 / 배경을 가지고 있지 않을 때 셀 선택 비활성화
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         switch collectionView {
-        case charaterColorCollectionView:
-            return hasColor[indexPath.row]
+        case characterCardCollectionView:
+            return characterData.characters[selectedTypeIndex].cards[indexPath.row].hasCard
         case backgroundCollectionView:
-            return hasSkin[indexPath.row]
+            return characterData.skins[indexPath.row].hasSkin
         default:
             return true
         }
@@ -257,14 +202,27 @@ extension CharacterStyleViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView {
-        case charaterTypeCollectionView:
+        case characterTypeCollectionView:
             selectedTypeIndex = indexPath.row
-            charaterTypeCollectionView.reloadData()
-        case charaterColorCollectionView:
-            selectedColorIndex = indexPath.row
-            charaterColorCollectionView.reloadData()
+            if characterData.characters[indexPath.row].cards[0].hasCard {
+                emptyViewLabel.isHidden = true
+                characterCardCollectionView.isHidden = false
+            } else {
+                emptyViewLabel.isHidden = false
+                characterCardCollectionView.isHidden = true
+            }
+            characterTypeCollectionView.reloadData()
+            characterCardCollectionView.reloadData()
+        case characterCardCollectionView:
+            allCardSelectedInfo = Array(repeating: Array(repeating: false, count: 9), count: 7)
+            selectedCardIndex = indexPath.row
+            selectedCardId = selectedTypeIndex * 9 + selectedCardIndex + 1
+            allCardSelectedInfo[selectedTypeIndex][selectedCardIndex] = true
+            characterCardCollectionView.reloadData()
         case backgroundCollectionView:
             selectedSkinIndex = indexPath.row
+            backgroundSelectButton.setImage(backgroundSkins[indexPath.row].getOwnedSkinIcn(), for: .normal)
+            backgroundImageView.updateServerImage(characterData.skins[indexPath.row].image)
             backgroundCollectionView.reloadData()
         default:
             return
@@ -278,12 +236,12 @@ extension CharacterStyleViewController: UICollectionViewDelegateFlowLayout {
 extension CharacterStyleViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
-        case charaterTypeCollectionView:
-            return 7
-        case charaterColorCollectionView:
-            return 9
+        case characterTypeCollectionView:
+            return characterData.characters.count
+        case characterCardCollectionView:
+            return characterData.characters[selectedTypeIndex].cards.count
         case backgroundCollectionView:
-            return backgroundSkins.count
+            return characterData.skins.count
         default:
             return 0
         }
@@ -291,8 +249,8 @@ extension CharacterStyleViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView {
-        case charaterTypeCollectionView:
-            guard let cell = charaterTypeCollectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.characterTypeCollectionViewCell, for: indexPath) as? CharacterTypeCollectionViewCell else { return UICollectionViewCell() }
+        case characterTypeCollectionView:
+            guard let cell = characterTypeCollectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.characterTypeCollectionViewCell, for: indexPath) as? CharacterTypeCollectionViewCell else { return UICollectionViewCell() }
             
             if indexPath.row == selectedTypeIndex {
                 cell.showSelectView()
@@ -300,12 +258,18 @@ extension CharacterStyleViewController: UICollectionViewDataSource {
                 cell.hideSelectView()
             }
             
-            return cell
-        case charaterColorCollectionView:
-            guard let cell = charaterColorCollectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.characterColorCollectionViewCell, for: indexPath) as? CharacterColorCollectionViewCell else { return UICollectionViewCell() }
+            if characterData.characters[indexPath.row].cards[0].hasCard {
+                cell.setData(image: AppCharacter(rawValue: indexPath.row)!.getThumbnailCharacterImg())
+            } else {
+                cell.setData(image: AppCharacter(rawValue: indexPath.row)!.getThumbnailCharacterLockImg())
+            }
             
-            indicateIsNewColor(cell, indexPath: indexPath)
-            indicateOwnedColor(cell, indexPath: indexPath)
+            return cell
+        case characterCardCollectionView:
+            guard let cell = characterCardCollectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.characterColorCollectionViewCell, for: indexPath) as? CharacterColorCollectionViewCell else { return UICollectionViewCell() }
+            
+            indicateIsNewCard(cell, indexPath: indexPath)
+            indicateOwnedCard(cell, indexPath: indexPath)
             markCellSeletedState(cell, indexPath: indexPath)
             
             return cell
@@ -314,7 +278,7 @@ extension CharacterStyleViewController: UICollectionViewDataSource {
             
             if indexPath.row == selectedSkinIndex {
                 cell.setData(image: backgroundSkins[indexPath.row].getSelectedSkinIcn())
-            } else if hasSkin[indexPath.row] {
+            } else if characterData.skins[indexPath.row].hasSkin {
                 cell.setData(image: backgroundSkins[indexPath.row].getOwnedSkinIcn())
             } else {
                 cell.setData(image: backgroundSkins[indexPath.row].getLockSkinIcn())
@@ -326,24 +290,24 @@ extension CharacterStyleViewController: UICollectionViewDataSource {
         }
     }
     
-    func indicateIsNewColor(_ cell: CharacterColorCollectionViewCell, indexPath: IndexPath) {
-        if isNew[indexPath.row] {
+    func indicateIsNewCard(_ cell: CharacterColorCollectionViewCell, indexPath: IndexPath) {
+        if characterData.characters[selectedTypeIndex].cards[indexPath.row].isNew {
             cell.showNewIndicator()
         } else {
             cell.hideNewIndicator()
         }
     }
     
-    func indicateOwnedColor(_ cell: CharacterColorCollectionViewCell, indexPath: IndexPath) {
-        if hasColor[indexPath.row] {
-            cell.setUnlockCharacter()
+    func indicateOwnedCard(_ cell: CharacterColorCollectionViewCell, indexPath: IndexPath) {
+        if characterData.characters[selectedTypeIndex].cards[indexPath.row].hasCard {
+            cell.setUnlockCharacter(image: characterData.characters[selectedTypeIndex].cards[indexPath.row].image)
         } else {
-            cell.setLockCharacter()
+            cell.setLockCharacter(typeId: characterData.characters[selectedTypeIndex].type - 1)
         }
     }
     
     func markCellSeletedState(_ cell: CharacterColorCollectionViewCell, indexPath: IndexPath) {
-        if selectedColorIndex == indexPath.row {
+        if allCardSelectedInfo[selectedTypeIndex][indexPath.row] {
             cell.showSelectedView()
             changeNewState(cell, indexPath: indexPath)
         } else {
@@ -352,9 +316,63 @@ extension CharacterStyleViewController: UICollectionViewDataSource {
     }
     
     func changeNewState(_ cell: CharacterColorCollectionViewCell, indexPath: IndexPath) {
-        if isNew[indexPath.row] {
+        if characterData.characters[selectedTypeIndex].cards[indexPath.row].isNew {
             cell.hideNewIndicator()
-            isNew[indexPath.row] = false
+            characterData.characters[selectedTypeIndex].cards[indexPath.row].isNew = false
+        }
+    }
+    
+}
+
+extension CharacterStyleViewController {
+    
+    /*
+     skin id가 64부터 시작하기 때문에 collectionView indexPath랑 맞추기 위해서 64 뺌
+     card id가 탭별로 9배수이기 때문에 selectedCell Point를 2차원 배열로 관리하기 위해서 나누기, 나머지 연산 수행
+     */
+    func getUserCharacterInfo() {
+        CharacterAPI.shared.getCharacterInfo { response in
+            switch response {
+            case .success(let data):
+                if let data = data as? CharacterStyle {
+                    self.characterData = data
+                    self.selectedSkinIndex = data.currentSkin.id - 64
+                    self.selectedTypeIndex = data.currentCharacter.id / 9
+                    self.selectedCardIndex = data.currentCharacter.id % 9
+                    self.selectedCardId = data.currentCharacter.id
+                    self.setCurrentCharacterCellSelect(typeIndex: self.selectedTypeIndex, cardIndex: self.selectedCardIndex)
+                    self.backgroundImageView.updateServerImage(data.currentSkin.image)
+                    self.backgroundSelectButton.setImage(BackgroundSkin(rawValue: data.currentSkin.id - 64)?.getOwnedSkinIcn(), for: .normal)
+                    self.characterCardCollectionView.reloadData()
+                    self.characterTypeCollectionView.reloadData()
+                    self.backgroundCollectionView.reloadData()
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+    
+    func putCharacterStyle(data: CharacterStyleReqeust) {
+        CharacterAPI.shared.putCharacterStyle(data: data) { response in
+            switch response {
+            case .success(let data):
+                print(data)
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
         }
     }
     
