@@ -22,10 +22,14 @@ extension UINavigationController {
     
     // MARK: - 뒤로가기 버튼
     
-    func initWithBackButton() {
+    func initWithBackButton(backgroundColor: UIColor? = nil) {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithTransparentBackground()
         appearance.initBackButtonAppearance()
+        
+        if backgroundColor != nil {
+            appearance.backgroundColor = backgroundColor
+        }
         
         self.navigationBar.standardAppearance = appearance
         self.navigationBar.scrollEdgeAppearance = appearance

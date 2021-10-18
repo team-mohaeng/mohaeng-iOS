@@ -78,6 +78,10 @@ extension Const {
         // 배지 조회 (GET)
         static let badge = "/badge"
         
+        // MARK: - 푸쉬 알림 (채팅 뷰)
+        
+        static let notification = "/message"
+      
         // MARK: - 마이페이지
         
         static let myPage = "/profile"

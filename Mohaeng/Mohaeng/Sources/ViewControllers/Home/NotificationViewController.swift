@@ -10,20 +10,7 @@ import UIKit
 class NotificationViewController: UIViewController {
     
     // 더미데이터
-    var noti = PushNoti(messages: [
-        Message(date: "6일 전", message: ["아라아랑, 오늘 어땠어?", "많이 힘들었구나 ㅜㅜ", "챌린지 인증하고 푹 자자!"], isNew: false),
-        Message(date: "5일 전", message: ["너의 안부에 스티커가 붙여졌어!"], isNew: false),
-        Message(date: "4일 전", message: ["아라아랑, 오늘 어땠어?", "많이 힘들었구나 ㅜㅜ", "챌린지 인증하고 푹 자자!"], isNew: false),
-        Message(date: "3일 전", message: ["너의 안부에 스티커가 붙여졌어!"], isNew: false),
-        Message(date: "2일 전", message: ["너의 안부에 스티커가 붙여졌어!"], isNew: false),
-        Message(date: "1일 전", message: ["아라아랑, 오늘 어땠어?", "많이 힘들었구나 ㅜㅜ", "챌린지 인증하고 푹 자자!"], isNew: false),
-        Message(date: "1일 전", message: ["아라아랑, 오늘 어땠어?", "많이 힘들었구나 ㅜㅜ", "챌린지 인증하고 푹 자자!"], isNew: false),
-        Message(date: "1시간 전", message: ["너의 안부에 스티커가 붙여졌어!"], isNew: false),
-        Message(date: "1시간 전", message: ["너의 안부에 스티커가 붙여졌어!"], isNew: true),
-        Message(date: "30분 전", message: ["아라아랑, 오늘 어땠어?", "많이 힘들었구나 ㅜㅜ", "챌린지 인증하고 푹 자자!"], isNew: true),
-        Message(date: "30분 전", message: ["아라아랑, 오늘 어땠어?", "많이 힘들었구나 ㅜㅜ", "챌린지 인증하고 푹 자자!"], isNew: true),
-        Message(date: "방금 전", message: ["초이초이", "초이초이ㅋㅋ", "와와와왕"], isNew: true)
-    ])
+    var noti = PushNoti(messages: [])
     
     var oldNoti: [Message] = []
     var newNoti: [Message] = []
@@ -33,20 +20,24 @@ class NotificationViewController: UIViewController {
     @IBOutlet weak var notificationCollectionView: UICollectionView!
     
     // MARK: - View Life Cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         initNavigationBar()
         assignDelegate()
         registerXib()
-        makeNewNotiArray(noti: noti)
+        getNotification()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
     
     // MARK: - Functions
     
     private func initNavigationBar() {
-        self.navigationController?.initWithBackButton()
+        self.navigationController?.initWithBackButton(backgroundColor: .YellowBg1)
         self.navigationItem.title = "알림"
     }
     
@@ -64,8 +55,36 @@ class NotificationViewController: UIViewController {
     func makeNewNotiArray(noti: PushNoti) {
         for msg in noti.messages {
             
+            // date 변환
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+            let startDate = dateFormatter.date(from: msg.date)!
+            
+            let calendar = Calendar.current
+            let start = calendar.startOfDay(for: startDate)
+            let end = calendar.startOfDay(for: Date())
+            let dayBefore = calendar.dateComponents([.day], from: start, to: end)
+            
+            // day String
+            var dayString = ""
+            if dayBefore.day == 0 {
+                let minBefore = calendar.dateComponents([.minute], from: start, to: end)
+                if minBefore.minute! < 30 {
+                    dayString = "방금 전"
+                } else if minBefore.minute! < 59 {
+                    dayString = "1시간 전"
+                } else {
+                    let hourBefore = calendar.dateComponents([.hour], from: start, to: end)
+                    dayString = "\(hourBefore.hour ?? 1)시간 전"
+                }
+                
+            } else {
+                dayString = "\(dayBefore.day ?? 1)일 전"
+            }
+            
+            // create new arrays
             for idx in 0..<msg.message.count {
-                let newMsg = Message(date: idx == msg.message.count - 1 ? msg.date : "", message: [msg.message[idx]], isNew: msg.isNew)
+                let newMsg = Message(date: idx == msg.message.count - 1 ? dayString : "", message: [msg.message[idx]], isNew: msg.isNew)
                 
                 if msg.isNew {
                     newNoti.append(newMsg)
@@ -77,8 +96,21 @@ class NotificationViewController: UIViewController {
         }
         
         notificationCollectionView.reloadData()
+        
+        // scroll to bottom
+        if newNoti.isEmpty {
+            notificationCollectionView.scrollToItem(at: IndexPath(item: oldNoti.count-1, section: 0), at: .bottom, animated: false)
+        } else {
+            notificationCollectionView.scrollToItem(at: IndexPath(item: newNoti.count-1, section: 1), at: .bottom, animated: false)
+        }
     }
-
+    
+    // 서버 통신 후 데이터 업데이트
+    func updateData(data: PushNoti) {
+        noti = data
+        makeNewNotiArray(noti: noti)
+    }
+    
 }
 
 // MARK: - UICollectionViewFlowLayout
@@ -106,7 +138,11 @@ extension NotificationViewController: UICollectionViewDataSource {
         if section == 0 {
             return CGSize.zero
         } else {
-            return CGSize(width: view.frame.width, height: 60)
+            if newNoti.isEmpty {
+                return CGSize.zero
+            } else {
+                return CGSize(width: view.frame.width, height: 60)
+            }
         }
     }
     
@@ -217,5 +253,34 @@ extension NotificationViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-     
+    
+}
+
+// MARK: - 통신
+
+extension NotificationViewController {
+    
+    func getNotification() {
+        
+        PushNotiAPI.shared.getNotifications { (response) in
+            
+            switch response {
+            case .success(let data):
+                
+                if let data = data as? PushNoti {
+                    self.updateData(data: data)
+                }
+                
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+    
 }

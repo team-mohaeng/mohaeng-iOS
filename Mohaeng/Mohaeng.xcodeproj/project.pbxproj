@@ -164,6 +164,8 @@
 		569E8B2727154F6300D67712 /* CourseHistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569E8B2527154F6300D67712 /* CourseHistoryCollectionViewCell.swift */; };
 		569E8B2827154F6300D67712 /* CourseHistoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569E8B2627154F6300D67712 /* CourseHistoryCollectionViewCell.xib */; };
 		56A05EB22700699D006D6ECE /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A05EB12700699D006D6ECE /* DateCollectionViewCell.swift */; };
+		56A30E02271C62FA0097FD75 /* PushNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A30E01271C62FA0097FD75 /* PushNotiService.swift */; };
+		56A30E04271C63040097FD75 /* PushNotiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A30E03271C63040097FD75 /* PushNotiAPI.swift */; };
 		56A190CD2715C2F0002A03E4 /* CourseHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A190CC2715C2F0002A03E4 /* CourseHistory.swift */; };
 		56A39D97271C21E500865FEC /* OnboardingCourseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A39D96271C21E400865FEC /* OnboardingCourseProtocol.swift */; };
 		56AD4D1B27155FC900272EE4 /* CourseHistoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AD4D1A27155FC900272EE4 /* CourseHistoryHeaderView.swift */; };
@@ -376,6 +378,8 @@
 		569E8B2527154F6300D67712 /* CourseHistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHistoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		569E8B2627154F6300D67712 /* CourseHistoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseHistoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		56A05EB12700699D006D6ECE /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
+		56A30E01271C62FA0097FD75 /* PushNotiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotiService.swift; sourceTree = "<group>"; };
+		56A30E03271C63040097FD75 /* PushNotiAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotiAPI.swift; sourceTree = "<group>"; };
 		56A190CC2715C2F0002A03E4 /* CourseHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHistory.swift; sourceTree = "<group>"; };
 		56A39D96271C21E400865FEC /* OnboardingCourseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCourseProtocol.swift; sourceTree = "<group>"; };
 		56AD4D1A27155FC900272EE4 /* CourseHistoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHistoryHeaderView.swift; sourceTree = "<group>"; };
@@ -789,14 +793,15 @@
 			isa = PBXGroup;
 			children = (
 				561D766526F0BFA40028DBCA /* GenericResponse.swift */,
+				561D765D26F0BFA40028DBCA /* NetworkResult.swift */,
 				DD515C662711D77700E76D4B /* MoyaLoggingPlugin.swift */,
 				DDEBD21A270F5FCA0011EDC6 /* BadgeAPI */,
 				561D765726F0BFA40028DBCA /* ChallengeAPI */,
 				561D765A26F0BFA40028DBCA /* FeedAPI */,
-				561D765D26F0BFA40028DBCA /* NetworkResult.swift */,
 				561D765E26F0BFA40028DBCA /* AuthAPI */,
 				561D766626F0BFA40028DBCA /* CourseAPI */,
 				561D766926F0BFA40028DBCA /* HomeAPI */,
+				56A30E00271C62DE0097FD75 /* PushNotiAPI */,
 				56C019B5271C2C0200735761 /* MyPageAPI */,
 			);
 			path = APIServices;
@@ -970,6 +975,15 @@
 			);
 			path = MyPageCalendar;
 			sourceTree = "<group>";
+		};
+		56A30E00271C62DE0097FD75 /* PushNotiAPI */ = {
+			isa = PBXGroup;
+			children = (
+				56A30E01271C62FA0097FD75 /* PushNotiService.swift */,
+				56A30E03271C63040097FD75 /* PushNotiAPI.swift */,
+			);
+			path = PushNotiAPI;
+      sourceTree = "<group>";
 		};
 		56C21990271BE6AA008049A8 /* TodayChallenge */ = {
 			isa = PBXGroup;
@@ -1291,6 +1305,7 @@
 				56C21992271BE6DC008049A8 /* TodayChallenge.swift in Sources */,
 				561D771726F0BFA40028DBCA /* AppCourse.swift in Sources */,
 				561D76B626F0BFA40028DBCA /* URL.swift in Sources */,
+				56A30E04271C63040097FD75 /* PushNotiAPI.swift in Sources */,
 				561D76D026F0BFA40028DBCA /* FeedCollectionViewCell.swift in Sources */,
 				561D772026F0BFA40028DBCA /* Auth.swift in Sources */,
 				561D76F326F0BFA40028DBCA /* FindPasswordViewController.swift in Sources */,
@@ -1314,6 +1329,7 @@
 				AA7E0AB326FC6C1900106DC2 /* CharacterTypeCollectionViewCell.swift in Sources */,
 				561D772826F0BFA40028DBCA /* MyDrawerCollectionReusableView.swift in Sources */,
 				561D76DD26F0BFA40028DBCA /* EvenDayTableViewCell.swift in Sources */,
+				56A30E02271C62FA0097FD75 /* PushNotiService.swift in Sources */,
 				DD8452662715C11E007B4C2B /* OnBoarding5ViewController.swift in Sources */,
 				561D770026F0BFA40028DBCA /* TabbarViewController.swift in Sources */,
 				561D773526F0BFA40028DBCA /* YearPickerViewController.swift in Sources */,
