@@ -74,7 +74,7 @@ public class CourseAPI {
     private func judgeGetCourseLibraryStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
         
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(GenericResponse<CourseData>.self, from: data) else {
+        guard let decodedData = try? decoder.decode(GenericResponse<CourseLibraryData>.self, from: data) else {
             return .pathErr
         }
         

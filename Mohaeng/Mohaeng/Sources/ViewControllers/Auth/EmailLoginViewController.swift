@@ -13,7 +13,7 @@ class EmailLoginViewController: UIViewController {
     
     var signUpUser = SignUpUser.shared
     
-    // MARK: - @IBOutlet Properties
+    // MARK: - @IBOutlets
     
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
@@ -23,22 +23,23 @@ class EmailLoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var findPasswordButton: UIButton!
     @IBOutlet weak var emailBottomView: UIView!
-    @IBOutlet weak var passwordBottonView: UIView!
+    @IBOutlet weak var passwordBottomView: UIView!
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         assignDelegate()
-        makeButtonRound()
+        setButtonUI()
         initNavigationBar()
     }
     
-    // MARK: - @IBAction Function
-    @IBAction func touchLoginButton(_ sender: Any) {
+    // MARK: - @IBActions
+    
+    @IBAction func touchLoginButton(_ sender: UIButton!) {
         pushHomeViewController()
-        
+      
     }
-    @IBAction func touchFindPasswordButton(_ sender: Any) {
+    @IBAction func touchFindPasswordButton(_ sender: UIButton!) {
         pushFindPasswordViewController()
     }
     // MARK: - Functions
@@ -52,8 +53,9 @@ class EmailLoginViewController: UIViewController {
         passwordTextField.delegate = self
     }
     
-    private func makeButtonRound() {
+    private func setButtonUI() {
         loginButton.makeRounded(radius: 20)
+        loginButton.tintColor = .white
     }
     
     private func errorMessage() {
@@ -64,20 +66,31 @@ class EmailLoginViewController: UIViewController {
         emailLabel.textColor = .Grey2Text
         emailBottomView.backgroundColor = .Grey5
         passwordLabel.textColor = .Grey2Text
-        passwordBottonView.backgroundColor = .Grey5
+        passwordBottomView.backgroundColor = .Grey5
+    }
+    
+    func changeRootViewController(_ viewControllerToPresent: UITabBarController) {
+            viewControllerToPresent.modalPresentationStyle = .overFullScreen
+            self.present(viewControllerToPresent, animated: true, completion: nil)
     }
     
     func pushHomeViewController() {
-        let homeStoryboard = UIStoryboard(name: Const.Storyboard.Name.home, bundle: nil)
-        guard let homeViewController = homeStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.home) as? HomeViewController else {
+        let tabbarStoryboard = UIStoryboard(name: Const.Storyboard.Name.tabbar, bundle: nil)
+        guard let tabbarViewController = tabbarStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.tabbar) as? TabbarViewController else {
             return
         }
-        self.navigationController?.pushViewController(homeViewController, animated: true)
+        self.changeRootViewController(tabbarViewController)
     }
     
     func enableLoginButton() {
         loginButton.backgroundColor = .DeepYellow
         loginButton.isEnabled = true
+    }
+    
+    func changeEditingTextField(label: UILabel, bottomView: UIView) {
+        label.textColor = .Black1Text
+        bottomView.backgroundColor = .black
+        loginButton.backgroundColor = .DeepYellow
     }
     
     private func pushFindPasswordViewController() {
@@ -97,58 +110,28 @@ extension EmailLoginViewController: UITextFieldDelegate {
     // Editing 하면서 호출
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if emailTextField.isEditing {
-            emailLabel.textColor = .Black1Text
-            emailBottomView.backgroundColor = .black
-            loginButton.backgroundColor = .DeepYellow
+            changeEditingTextField(label: emailLabel, bottomView: emailBottomView)
         }
         
         if passwordTextField.isEditing {
-            passwordLabel.textColor = .Black1Text
-            passwordBottonView.backgroundColor = .black
-            loginButton.backgroundColor = .DeepYellow
+            changeEditingTextField(label: passwordLabel, bottomView: passwordBottomView)
         }
     }
     
     // Editing 끝나고 호출
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
+      
         finishEditingTextField()
         
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        
         // emailTextField, passwordTextField 둘 중 하나라도 없으면 버튼 색 바꾸기
-        if emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
+        if email.isEmpty || password.isEmpty {
             loginButton.backgroundColor = .LoginYellow
             loginButton.isEnabled = false
+        } else {
+            loginButton.isEnabled = true
         }
-    }
-}
-
-extension EmailLoginViewController {
-    func postLogin() {
-        guard let password = passwordTextField.text else {
-            return
-        }
-        
-        guard let email = emailTextField.text else {
-            return
-        }
-        LoginAPI.shared.postSignIn(completion: { (response) in
-            switch response {
-            case .success(let jwt):
-                if let data = jwt as? JwtData {
-                    UserDefaults.standard.setValue(data.jwt, forKey: "jwtToken")
-                    self.enableLoginButton()
-                    self.pushHomeViewController()
-                }
-            case .requestErr(let message):
-                print("requestErr", message)
-            case .pathErr:
-                print("pathErr")
-                self.errorMessage()
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
-            }
-        }, email: email, password: password)
     }
 }

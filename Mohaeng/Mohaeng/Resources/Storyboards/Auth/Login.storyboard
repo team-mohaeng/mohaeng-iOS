@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tsp-Eh-swM">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -14,11 +14,11 @@
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="LoginViewController" customModule="Mohaeng" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="5EZ-qb-Rvc">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="6Os-uS-eQv">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="6Os-uS-eQv">
                                 <rect key="frame" x="113.33333333333333" y="715" width="148.33333333333337" height="11"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미 계정이 있나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wV-JM-dXV">
@@ -53,7 +53,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="fXW-Co-4M0">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="fXW-Co-4M0">
                                 <rect key="frame" x="24" y="515" width="327" height="172"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2a-JG-M90">
@@ -108,9 +108,9 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOHAENG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAC-d7-iEM">
-                                <rect key="frame" x="127.33333333333334" y="144" width="120.33333333333334" height="28"/>
+                                <rect key="frame" x="127.33333333333334" y="148.33333333333334" width="120.33333333333334" height="28"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="YQn-JM-5vc"/>
+                                    <constraint firstAttribute="height" constant="28" id="YpL-mu-FHG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                 <color key="textColor" red="1" green="0.7803921568627451" blue="0.3529411764705882" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
@@ -123,7 +123,6 @@
                             <constraint firstItem="JAC-d7-iEM" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" multiplier="0.4" id="7qq-GR-Zg4"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fXW-Co-4M0" secondAttribute="trailing" constant="24" id="BVT-xS-MjP"/>
                             <constraint firstItem="fXW-Co-4M0" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="FTp-84-gXe"/>
-                            <constraint firstItem="JAC-d7-iEM" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="100" id="GUn-ua-6m6"/>
                             <constraint firstItem="fXW-Co-4M0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="c9p-8n-g4O"/>
                             <constraint firstItem="uks-BU-gX2" firstAttribute="top" secondItem="8QL-M1-Wbx" secondAttribute="bottom" constant="28" id="kPx-5G-bik"/>
                             <constraint firstItem="JAC-d7-iEM" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="rMg-gj-WQT"/>
@@ -131,15 +130,35 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="6Os-uS-eQv" secondAttribute="bottom" constant="52" id="wJB-Pv-D1s"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="sv0-EL-xFa"/>
                     <connections>
                         <outlet property="appleLoginButton" destination="2lw-aU-RLf" id="D7a-LV-WNn"/>
                         <outlet property="emailLoginButton" destination="8QL-M1-Wbx" id="2U3-52-0lT"/>
                         <outlet property="kakaoLoginButton" destination="c2a-JG-M90" id="qTG-Id-7LT"/>
+                        <outlet property="mohaengLabel" destination="JAC-d7-iEM" id="Hnf-r7-aI8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-542" y="42"/>
+            <point key="canvasLocation" x="399.19999999999999" y="41.379310344827587"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="i7n-vE-600">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tsp-Eh-swM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hy5-sx-VoV">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="MSq-qD-HfX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bU7-G2-XNC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-543.20000000000005" y="41.379310344827587"/>
         </scene>
     </scenes>
     <resources>

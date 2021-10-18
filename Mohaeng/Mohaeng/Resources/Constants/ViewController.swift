@@ -32,10 +32,9 @@ extension Const {
             static let characterStyle = "CharacterStyleViewController"
             static let myPage = "MyPageViewController"
             static let happyPopUp = "happyPopUpViewController"
+            static let courseHistory = "CourseHistoryViewController"
             
             // 챌린지 탭
-            static let emptyChallenge = "EmptyChallengeViewController"
-            static let challenge = "ChallengeViewController"
             static let course = "CourseViewController"
             static let courseLibrary = "CourseLibraryViewController"
             

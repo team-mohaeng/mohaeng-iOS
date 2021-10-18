@@ -22,10 +22,14 @@ extension UINavigationController {
     
     // MARK: - 뒤로가기 버튼
     
-    func initWithBackButton() {
+    func initWithBackButton(backgroundColor: UIColor? = nil) {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithTransparentBackground()
         appearance.initBackButtonAppearance()
+        
+        if backgroundColor != nil {
+            appearance.backgroundColor = backgroundColor
+        }
         
         self.navigationBar.standardAppearance = appearance
         self.navigationBar.scrollEdgeAppearance = appearance
@@ -59,7 +63,16 @@ extension UINavigationController {
         
         let spacing = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         spacing.width = 16
-        navigationItem?.rightBarButtonItems = [thirdButton, spacing, secondButton, spacing,  firstButton]
+        navigationItem?.rightBarButtonItems = [thirdButton, spacing, secondButton, spacing, firstButton]
+    }
+    
+    // MARK: - 뒤로가기 버튼 + 닫기 버튼 - 글쓰기 뷰에서만 사용
+    
+    func initWithBackAndCloseButton(navigationItem: UINavigationItem?, closeButtonClosure: Selector) {
+        initWithBackButton()
+        
+        let closeButton = UIBarButtonItem(image: Const.Image.gnbIconX, style: .plain, target: self.topViewController, action: closeButtonClosure)
+        navigationItem?.rightBarButtonItem = closeButton
     }
     
     // MARK: - @objc function

@@ -25,7 +25,6 @@
 		561D76AB26F0BFA40028DBCA /* Mood.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D75E826F0BFA30028DBCA /* Mood.storyboard */; };
 		561D76AC26F0BFA40028DBCA /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D75E926F0BFA30028DBCA /* Tabbar.storyboard */; };
 		561D76AD26F0BFA40028DBCA /* CourseLibrary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D75EB26F0BFA30028DBCA /* CourseLibrary.storyboard */; };
-		561D76AE26F0BFA40028DBCA /* Course.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D75EC26F0BFA30028DBCA /* Course.storyboard */; };
 		561D76B126F0BFA40028DBCA /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 561D75EF26F0BFA40028DBCA /* Colors.xcassets */; };
 		561D76B226F0BFA40028DBCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D75F126F0BFA40028DBCA /* ViewController.swift */; };
 		561D76B326F0BFA40028DBCA /* Xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D75F226F0BFA40028DBCA /* Xib.swift */; };
@@ -151,15 +150,29 @@
 		561D773B26F0BFA50028DBCA /* AnimationPopUpDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D769626F0BFA40028DBCA /* AnimationPopUpDelegate.swift */; };
 		561D773C26F0BFA50028DBCA /* PopUpActionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D769726F0BFA40028DBCA /* PopUpActionDelegate.swift */; };
 		561D773E26F0BFA50028DBCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D769926F0BFA40028DBCA /* SceneDelegate.swift */; };
-		561D777D26F36C520028DBCA /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561D777C26F36C520028DBCA /* MyPage.storyboard */; };
 		561D777F26F36C970028DBCA /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D777E26F36C970028DBCA /* MyPageViewController.swift */; };
+		564781AF271DB23D00802D76 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564781AE271DB23D00802D76 /* MyPage.storyboard */; };
 		565A1EF82700CF81000CAB1B /* MyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565A1EF72700CF81000CAB1B /* MyPage.swift */; };
+		56931AC8271D7D87000EECF5 /* Course.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56931AC7271D7D87000EECF5 /* Course.storyboard */; };
 		569C39652712B28800DED361 /* ChallengeCompletePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C39632712B28800DED361 /* ChallengeCompletePopUpViewController.swift */; };
 		569C39662712B28800DED361 /* ChallengeCompletePopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569C39642712B28800DED361 /* ChallengeCompletePopUpViewController.xib */; };
 		569C39682712BDB300DED361 /* ChallengePopUpProcotol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C39672712BDB300DED361 /* ChallengePopUpProcotol.swift */; };
 		569E8B1D271547AD00D67712 /* ChallengeHelpPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569E8B1B271547AD00D67712 /* ChallengeHelpPopUpViewController.swift */; };
 		569E8B1E271547AD00D67712 /* ChallengeHelpPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569E8B1C271547AD00D67712 /* ChallengeHelpPopUpViewController.xib */; };
+		569E8B2027154E6C00D67712 /* CourseHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569E8B1F27154E6C00D67712 /* CourseHistory.storyboard */; };
+		569E8B2227154E7A00D67712 /* CourseHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569E8B2127154E7A00D67712 /* CourseHistoryViewController.swift */; };
+		569E8B2727154F6300D67712 /* CourseHistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569E8B2527154F6300D67712 /* CourseHistoryCollectionViewCell.swift */; };
+		569E8B2827154F6300D67712 /* CourseHistoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569E8B2627154F6300D67712 /* CourseHistoryCollectionViewCell.xib */; };
 		56A05EB22700699D006D6ECE /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A05EB12700699D006D6ECE /* DateCollectionViewCell.swift */; };
+		56A190CD2715C2F0002A03E4 /* CourseHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A190CC2715C2F0002A03E4 /* CourseHistory.swift */; };
+		56A30E02271C62FA0097FD75 /* PushNotiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A30E01271C62FA0097FD75 /* PushNotiService.swift */; };
+		56A30E04271C63040097FD75 /* PushNotiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A30E03271C63040097FD75 /* PushNotiAPI.swift */; };
+		56A39D97271C21E500865FEC /* OnboardingCourseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A39D96271C21E400865FEC /* OnboardingCourseProtocol.swift */; };
+		56AD4D1B27155FC900272EE4 /* CourseHistoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AD4D1A27155FC900272EE4 /* CourseHistoryHeaderView.swift */; };
+		56AD4D1D27155FD000272EE4 /* CourseHistoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AD4D1C27155FD000272EE4 /* CourseHistoryHeaderView.xib */; };
+		56C019B4271C2BFE00735761 /* MyPageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C019B3271C2BFE00735761 /* MyPageAPI.swift */; };
+		56C019B7271C2C3900735761 /* MyPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C019B6271C2C3900735761 /* MyPageService.swift */; };
+		56C21992271BE6DC008049A8 /* TodayChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C21991271BE6DC008049A8 /* TodayChallenge.swift */; };
 		56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA6C2689C0D10056155A /* .swiftlint.yml */; };
 		AA190EBF26FE62E30059E100 /* BackgroundCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA190EBD26FE62E30059E100 /* BackgroundCollectionViewCell.swift */; };
 		AA190EC026FE62E30059E100 /* BackgroundCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA190EBE26FE62E30059E100 /* BackgroundCollectionViewCell.xib */; };
@@ -202,7 +215,6 @@
 		DDEBD21E270F5FE90011EDC6 /* BadgeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBD21D270F5FE90011EDC6 /* BadgeAPI.swift */; };
 		DDEBD220270F6CFA0011EDC6 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBD21F270F6CFA0011EDC6 /* Badge.swift */; };
 		DDF110452709DFB1004FD5FB /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF110442709DFB1004FD5FB /* UIButton+Extension.swift */; };
-		DDF110472709DFEA004FD5FB /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF110462709DFEA004FD5FB /* UIImage+Extension.swift */; };
 		EC2FF5C626F343C000411F31 /* MoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */; };
 		EC2FF5C726F343C000411F31 /* MoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */; };
 		EC31776326FDB50E0076BCEC /* CarouselLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */; };
@@ -229,7 +241,6 @@
 		561D75E826F0BFA30028DBCA /* Mood.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mood.storyboard; sourceTree = "<group>"; };
 		561D75E926F0BFA30028DBCA /* Tabbar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
 		561D75EB26F0BFA30028DBCA /* CourseLibrary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CourseLibrary.storyboard; sourceTree = "<group>"; };
-		561D75EC26F0BFA30028DBCA /* Course.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Course.storyboard; sourceTree = "<group>"; };
 		561D75EF26F0BFA40028DBCA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		561D75F126F0BFA40028DBCA /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		561D75F226F0BFA40028DBCA /* Xib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Xib.swift; sourceTree = "<group>"; };
@@ -356,15 +367,29 @@
 		561D769626F0BFA40028DBCA /* AnimationPopUpDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationPopUpDelegate.swift; sourceTree = "<group>"; };
 		561D769726F0BFA40028DBCA /* PopUpActionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpActionDelegate.swift; sourceTree = "<group>"; };
 		561D769926F0BFA40028DBCA /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		561D777C26F36C520028DBCA /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		561D777E26F36C970028DBCA /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		564781AE271DB23D00802D76 /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		565A1EF72700CF81000CAB1B /* MyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPage.swift; sourceTree = "<group>"; };
+		56931AC7271D7D87000EECF5 /* Course.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Course.storyboard; sourceTree = "<group>"; };
 		569C39632712B28800DED361 /* ChallengeCompletePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCompletePopUpViewController.swift; sourceTree = "<group>"; };
 		569C39642712B28800DED361 /* ChallengeCompletePopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeCompletePopUpViewController.xib; sourceTree = "<group>"; };
 		569C39672712BDB300DED361 /* ChallengePopUpProcotol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengePopUpProcotol.swift; sourceTree = "<group>"; };
 		569E8B1B271547AD00D67712 /* ChallengeHelpPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeHelpPopUpViewController.swift; sourceTree = "<group>"; };
 		569E8B1C271547AD00D67712 /* ChallengeHelpPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeHelpPopUpViewController.xib; sourceTree = "<group>"; };
+		569E8B1F27154E6C00D67712 /* CourseHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CourseHistory.storyboard; sourceTree = "<group>"; };
+		569E8B2127154E7A00D67712 /* CourseHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHistoryViewController.swift; sourceTree = "<group>"; };
+		569E8B2527154F6300D67712 /* CourseHistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHistoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		569E8B2627154F6300D67712 /* CourseHistoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseHistoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		56A05EB12700699D006D6ECE /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
+		56A190CC2715C2F0002A03E4 /* CourseHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHistory.swift; sourceTree = "<group>"; };
+		56A30E01271C62FA0097FD75 /* PushNotiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotiService.swift; sourceTree = "<group>"; };
+		56A30E03271C63040097FD75 /* PushNotiAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotiAPI.swift; sourceTree = "<group>"; };
+		56A39D96271C21E400865FEC /* OnboardingCourseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCourseProtocol.swift; sourceTree = "<group>"; };
+		56AD4D1A27155FC900272EE4 /* CourseHistoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHistoryHeaderView.swift; sourceTree = "<group>"; };
+		56AD4D1C27155FD000272EE4 /* CourseHistoryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseHistoryHeaderView.xib; sourceTree = "<group>"; };
+		56C019B3271C2BFE00735761 /* MyPageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAPI.swift; sourceTree = "<group>"; };
+		56C019B6271C2C3900735761 /* MyPageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageService.swift; sourceTree = "<group>"; };
+		56C21991271BE6DC008049A8 /* TodayChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayChallenge.swift; sourceTree = "<group>"; };
 		56DCAA242689BB9B0056155A /* Mohaeng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mohaeng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCAA6C2689C0D10056155A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		AA190EBD26FE62E30059E100 /* BackgroundCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -408,7 +433,6 @@
 		DDEBD21D270F5FE90011EDC6 /* BadgeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAPI.swift; sourceTree = "<group>"; };
 		DDEBD21F270F6CFA0011EDC6 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		DDF110442709DFB1004FD5FB /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
-		DDF110462709DFEA004FD5FB /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoodCollectionViewCell.swift; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MoodCollectionViewCell.xib; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselLayoutView.swift; sourceTree = "<group>"; };
@@ -489,7 +513,8 @@
 				561D75D526F0BFA30028DBCA /* Home.storyboard */,
 				561D75D626F0BFA30028DBCA /* Notification.storyboard */,
 				AA7E0AAA26FC615C00106DC2 /* CharacterStyle.storyboard */,
-				561D777C26F36C520028DBCA /* MyPage.storyboard */,
+				564781AE271DB23D00802D76 /* MyPage.storyboard */,
+				569E8B1F27154E6C00D67712 /* CourseHistory.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -524,8 +549,8 @@
 		561D75EA26F0BFA30028DBCA /* Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				56931AC7271D7D87000EECF5 /* Course.storyboard */,
 				561D75EB26F0BFA30028DBCA /* CourseLibrary.storyboard */,
-				561D75EC26F0BFA30028DBCA /* Course.storyboard */,
 			);
 			path = Challenge;
 			sourceTree = "<group>";
@@ -610,6 +635,7 @@
 				AA190EBD26FE62E30059E100 /* BackgroundCollectionViewCell.swift */,
 				AA190EBE26FE62E30059E100 /* BackgroundCollectionViewCell.xib */,
 				56A05EB027006963006D6ECE /* MyPageCalendar */,
+				569E8B2427154F3800D67712 /* ChallengeHistoryCollectionView */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -654,11 +680,11 @@
 		561D762026F0BFA40028DBCA /* CourseTableView */ = {
 			isa = PBXGroup;
 			children = (
-				561D762126F0BFA40028DBCA /* OddDayTableViewCell.swift */,
-				561D762226F0BFA40028DBCA /* OddDayTableViewCell.xib */,
 				561D762326F0BFA40028DBCA /* FirstDayTableViewCell.xib */,
-				561D762426F0BFA40028DBCA /* EvenDayTableViewCell.xib */,
 				561D762526F0BFA40028DBCA /* FirstDayTableViewCell.swift */,
+				561D762226F0BFA40028DBCA /* OddDayTableViewCell.xib */,
+				561D762126F0BFA40028DBCA /* OddDayTableViewCell.swift */,
+				561D762426F0BFA40028DBCA /* EvenDayTableViewCell.xib */,
 				561D762626F0BFA40028DBCA /* EvenDayTableViewCell.swift */,
 			);
 			path = CourseTableView;
@@ -687,7 +713,6 @@
 				561D763126F0BFA40028DBCA /* ModalPresentationController.swift */,
 				561D763226F0BFA40028DBCA /* UIViewController+Extension.swift */,
 				DDF110442709DFB1004FD5FB /* UIButton+Extension.swift */,
-				DDF110462709DFEA004FD5FB /* UIImage+Extension.swift */,
 				DD515C6B2712042D00E76D4B /* UILabel+Extension.swift */,
 				DD79BB15271166E9001F342C /* UIImageView+Extension.swift */,
 				AAEDB362271C05CC00E26615 /* AnimationView+Extension.swift */,
@@ -714,11 +739,11 @@
 			children = (
 				AAEDB35F271C04DE00E26615 /* lottie */,
 				DDF595FD26F72852004C5D74 /* Badge */,
+				569E8B2327154EC000D67712 /* Mypage */,
 				561D763526F0BFA40028DBCA /* SettingViewController.swift */,
 				561D763726F0BFA40028DBCA /* HomeViewController.swift */,
 				561D763826F0BFA40028DBCA /* NotificationViewController.swift */,
 				AA7E0AAC26FC64D500106DC2 /* CharacterStyleViewController.swift */,
-				561D777E26F36C970028DBCA /* MyPageViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -776,14 +801,16 @@
 			isa = PBXGroup;
 			children = (
 				561D766526F0BFA40028DBCA /* GenericResponse.swift */,
-				DD515C662711D77700E76D4B /* MoyaLoggingPlugin.swift */,
 				561D765D26F0BFA40028DBCA /* NetworkResult.swift */,
-				561D765E26F0BFA40028DBCA /* AuthAPI */,
+				DD515C662711D77700E76D4B /* MoyaLoggingPlugin.swift */,
 				DDEBD21A270F5FCA0011EDC6 /* BadgeAPI */,
 				561D765726F0BFA40028DBCA /* ChallengeAPI */,
+				561D765E26F0BFA40028DBCA /* AuthAPI */,
 				561D766626F0BFA40028DBCA /* CourseAPI */,
 				561D765A26F0BFA40028DBCA /* FeedAPI */,
 				561D766926F0BFA40028DBCA /* HomeAPI */,
+				56A30E00271C62DE0097FD75 /* PushNotiAPI */,
+				56C019B5271C2C0200735761 /* MyPageAPI */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -856,6 +883,7 @@
 		561D767626F0BFA40028DBCA /* APIModels */ = {
 			isa = PBXGroup;
 			children = (
+				56C21990271BE6AA008049A8 /* TodayChallenge */,
 				561D767726F0BFA40028DBCA /* MyDrawer.swift */,
 				561D767826F0BFA40028DBCA /* PushNoti.swift */,
 				561D767926F0BFA40028DBCA /* Auth.swift */,
@@ -867,6 +895,7 @@
 				561D767F26F0BFA40028DBCA /* Feed.swift */,
 				561D768026F0BFA40028DBCA /* CourseLibrary.swift */,
 				565A1EF72700CF81000CAB1B /* MyPage.swift */,
+				56A190CC2715C2F0002A03E4 /* CourseHistory.swift */,
 				DDEBD21F270F6CFA0011EDC6 /* Badge.swift */,
 			);
 			path = APIModels;
@@ -893,6 +922,8 @@
 				561D768F26F0BFA40028DBCA /* YearPickerViewController.swift */,
 				561D769426F0BFA40028DBCA /* YearPickerViewController.xib */,
 				EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */,
+				56AD4D1A27155FC900272EE4 /* CourseHistoryHeaderView.swift */,
+				56AD4D1C27155FD000272EE4 /* CourseHistoryHeaderView.xib */,
 				561D768A26F0BFA40028DBCA /* CustomIntensityVisualEffectView.swift */,
 			);
 			path = Views;
@@ -904,6 +935,7 @@
 				561D769626F0BFA40028DBCA /* AnimationPopUpDelegate.swift */,
 				561D769726F0BFA40028DBCA /* PopUpActionDelegate.swift */,
 				569C39672712BDB300DED361 /* ChallengePopUpProcotol.swift */,
+				56A39D96271C21E400865FEC /* OnboardingCourseProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -926,12 +958,56 @@
 			path = ChallengeHelp;
 			sourceTree = "<group>";
 		};
+		569E8B2327154EC000D67712 /* Mypage */ = {
+			isa = PBXGroup;
+			children = (
+				561D777E26F36C970028DBCA /* MyPageViewController.swift */,
+				569E8B2127154E7A00D67712 /* CourseHistoryViewController.swift */,
+			);
+			path = Mypage;
+			sourceTree = "<group>";
+		};
+		569E8B2427154F3800D67712 /* ChallengeHistoryCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				569E8B2527154F6300D67712 /* CourseHistoryCollectionViewCell.swift */,
+				569E8B2627154F6300D67712 /* CourseHistoryCollectionViewCell.xib */,
+			);
+			path = ChallengeHistoryCollectionView;
+			sourceTree = "<group>";
+		};
 		56A05EB027006963006D6ECE /* MyPageCalendar */ = {
 			isa = PBXGroup;
 			children = (
 				56A05EB12700699D006D6ECE /* DateCollectionViewCell.swift */,
 			);
 			path = MyPageCalendar;
+			sourceTree = "<group>";
+		};
+		56A30E00271C62DE0097FD75 /* PushNotiAPI */ = {
+			isa = PBXGroup;
+			children = (
+				56A30E01271C62FA0097FD75 /* PushNotiService.swift */,
+				56A30E03271C63040097FD75 /* PushNotiAPI.swift */,
+			);
+			path = PushNotiAPI;
+			sourceTree = "<group>";
+		};
+		56C019B5271C2C0200735761 /* MyPageAPI */ = {
+			isa = PBXGroup;
+			children = (
+				56C019B6271C2C3900735761 /* MyPageService.swift */,
+				56C019B3271C2BFE00735761 /* MyPageAPI.swift */,
+			);
+			path = MyPageAPI;
+			sourceTree = "<group>";
+		};
+		56C21990271BE6AA008049A8 /* TodayChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				56C21991271BE6DC008049A8 /* TodayChallenge.swift */,
+			);
+			path = TodayChallenge;
 			sourceTree = "<group>";
 		};
 		56DCAA1B2689BB9B0056155A = {
@@ -1108,6 +1184,7 @@
 				561D76D626F0BFA40028DBCA /* CourseLibraryCollectionViewCell.xib in Resources */,
 				AA7E0AAB26FC615C00106DC2 /* CharacterStyle.storyboard in Resources */,
 				561D76C026F0BFA40028DBCA /* GmarketSansTTFMedium.ttf in Resources */,
+				564781AF271DB23D00802D76 /* MyPage.storyboard in Resources */,
 				561D76AA26F0BFA40028DBCA /* Feed.storyboard in Resources */,
 				569C39662712B28800DED361 /* ChallengeCompletePopUpViewController.xib in Resources */,
 				EC2FF5C726F343C000411F31 /* MoodCollectionViewCell.xib in Resources */,
@@ -1130,7 +1207,6 @@
 				561D76A826F0BFA40028DBCA /* MyDrawer.storyboard in Resources */,
 				561D772B26F0BFA40028DBCA /* CourseFooterView.xib in Resources */,
 				561D76BA26F0BFA40028DBCA /* GoogleService-Info.plist in Resources */,
-				561D777D26F36C520028DBCA /* MyPage.storyboard in Resources */,
 				561D772F26F0BFA40028DBCA /* FeedHeaderView.xib in Resources */,
 				56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */,
 				561D76A226F0BFA40028DBCA /* NewPassword.storyboard in Resources */,
@@ -1147,17 +1223,20 @@
 				561D76BF26F0BFA40028DBCA /* BMHANNA_11yrs_otf.otf in Resources */,
 				561D76AD26F0BFA40028DBCA /* CourseLibrary.storyboard in Resources */,
 				AA7E0AB826FC998000106DC2 /* CharacterColorCollectionViewCell.xib in Resources */,
+				56AD4D1D27155FD000272EE4 /* CourseHistoryHeaderView.xib in Resources */,
 				AAED18DA26F11DF0009FE781 /* StickerCollectionViewCell.xib in Resources */,
 				561D76A326F0BFA40028DBCA /* Code.storyboard in Resources */,
+				569E8B2027154E6C00D67712 /* CourseHistory.storyboard in Resources */,
 				561D769E26F0BFA40028DBCA /* SignUpSecond.storyboard in Resources */,
 				561D773A26F0BFA40028DBCA /* YearPickerViewController.xib in Resources */,
 				561D76A926F0BFA40028DBCA /* FeedDetail.storyboard in Resources */,
-				561D76AE26F0BFA40028DBCA /* Course.storyboard in Resources */,
 				561D76D926F0BFA40028DBCA /* OddDayTableViewCell.xib in Resources */,
+				56931AC8271D7D87000EECF5 /* Course.storyboard in Resources */,
 				561D76C426F0BFA40028DBCA /* SpoqaHanSansNeo-Regular.otf in Resources */,
 				561D76A626F0BFA40028DBCA /* LaunchScreen.storyboard in Resources */,
 				561D76C226F0BFA40028DBCA /* SpoqaHanSansNeo-Bold.otf in Resources */,
 				561D76A126F0BFA40028DBCA /* Login.storyboard in Resources */,
+				569E8B2827154F6300D67712 /* CourseHistoryCollectionViewCell.xib in Resources */,
 				561D76A426F0BFA40028DBCA /* SignUpFirst.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1243,15 +1322,18 @@
 				561D76EE26F0BFA40028DBCA /* PopUpViewController.swift in Sources */,
 				561D772126F0BFA40028DBCA /* Challenge.swift in Sources */,
 				DD9EFFCF2715798100B3F871 /* OnBoarding4ViewController.swift in Sources */,
+				56C019B4271C2BFE00735761 /* MyPageAPI.swift in Sources */,
 				561D771626F0BFA40028DBCA /* AppYear.swift in Sources */,
 				561D76E626F0BFA40028DBCA /* ModalPresentationController.swift in Sources */,
 				561D772226F0BFA40028DBCA /* Medal.swift in Sources */,
 				561D76E026F0BFA40028DBCA /* UIDevice+Extension.swift in Sources */,
 				561D76EA26F0BFA40028DBCA /* HomeViewController.swift in Sources */,
 				EC2FF5C626F343C000411F31 /* MoodCollectionViewCell.swift in Sources */,
+				56C21992271BE6DC008049A8 /* TodayChallenge.swift in Sources */,
 				561D771726F0BFA40028DBCA /* AppCourse.swift in Sources */,
 				561D76B626F0BFA40028DBCA /* URL.swift in Sources */,
 				AAEDB36B271C142F00E26615 /* HappyPopUpViewController.swift in Sources */,
+				56A30E04271C63040097FD75 /* PushNotiAPI.swift in Sources */,
 				561D76D026F0BFA40028DBCA /* FeedCollectionViewCell.swift in Sources */,
 				AAEDB363271C05CC00E26615 /* AnimationView+Extension.swift in Sources */,
 				561D772026F0BFA40028DBCA /* Auth.swift in Sources */,
@@ -1270,11 +1352,13 @@
 				DD515C672711D77700E76D4B /* MoyaLoggingPlugin.swift in Sources */,
 				565A1EF82700CF81000CAB1B /* MyPage.swift in Sources */,
 				561D771D26F0BFA40028DBCA /* AppDelegate.swift in Sources */,
+				56A39D97271C21E500865FEC /* OnboardingCourseProtocol.swift in Sources */,
 				561D76EB26F0BFA40028DBCA /* NotificationViewController.swift in Sources */,
 				561D773C26F0BFA50028DBCA /* PopUpActionDelegate.swift in Sources */,
 				AA7E0AB326FC6C1900106DC2 /* CharacterTypeCollectionViewCell.swift in Sources */,
 				561D772826F0BFA40028DBCA /* MyDrawerCollectionReusableView.swift in Sources */,
 				561D76DD26F0BFA40028DBCA /* EvenDayTableViewCell.swift in Sources */,
+				56A30E02271C62FA0097FD75 /* PushNotiService.swift in Sources */,
 				DD8452662715C11E007B4C2B /* OnBoarding5ViewController.swift in Sources */,
 				561D770026F0BFA40028DBCA /* TabbarViewController.swift in Sources */,
 				561D773526F0BFA40028DBCA /* YearPickerViewController.swift in Sources */,
@@ -1301,16 +1385,21 @@
 				561D773E26F0BFA50028DBCA /* SceneDelegate.swift in Sources */,
 				561D76D826F0BFA40028DBCA /* OddDayTableViewCell.swift in Sources */,
 				AA190EBF26FE62E30059E100 /* BackgroundCollectionViewCell.swift in Sources */,
+				56A190CD2715C2F0002A03E4 /* CourseHistory.swift in Sources */,
 				561D771E26F0BFA40028DBCA /* MyDrawer.swift in Sources */,
 				561D771B26F0BFA40028DBCA /* SignUpUser.swift in Sources */,
 				DD68AC322712AB9E0081B905 /* OnBoardingChallengeCardView.swift in Sources */,
 				561D76CA26F0BFA40028DBCA /* BubbleCollectionViewCell.swift in Sources */,
 				561D76FE26F0BFA40028DBCA /* MoodViewController.swift in Sources */,
+				56C019B7271C2C3900735761 /* MyPageService.swift in Sources */,
 				561D771526F0BFA40028DBCA /* AppModelsExmaple.swift in Sources */,
+				569E8B2227154E7A00D67712 /* CourseHistoryViewController.swift in Sources */,
 				561D773826F0BFA40028DBCA /* FeedHeaderView.swift in Sources */,
+				569E8B2727154F6300D67712 /* CourseHistoryCollectionViewCell.swift in Sources */,
 				561D76B826F0BFA40028DBCA /* Font.swift in Sources */,
 				AA7E0AB726FC998000106DC2 /* CharacterColorCollectionViewCell.swift in Sources */,
 				561D76BB26F0BFA40028DBCA /* LottieExmaple.swift in Sources */,
+				56AD4D1B27155FC900272EE4 /* CourseHistoryHeaderView.swift in Sources */,
 				AA190EFC2709D29D0059E100 /* StickerViewController.swift in Sources */,
 				561D771826F0BFA40028DBCA /* AppDate.swift in Sources */,
 				561D771F26F0BFA40028DBCA /* PushNoti.swift in Sources */,
@@ -1359,7 +1448,6 @@
 				561D76F726F0BFA40028DBCA /* SignUpSecondViewController.swift in Sources */,
 				561D772726F0BFA40028DBCA /* CourseLibrary.swift in Sources */,
 				561D771426F0BFA40028DBCA /* HomeAPI.swift in Sources */,
-				DDF110472709DFEA004FD5FB /* UIImage+Extension.swift in Sources */,
 				561D771026F0BFA40028DBCA /* GenericResponse.swift in Sources */,
 				561D76E226F0BFA40028DBCA /* UIColor+Extension.swift in Sources */,
 				561D771C26F0BFA40028DBCA /* RoadMapPath.swift in Sources */,
