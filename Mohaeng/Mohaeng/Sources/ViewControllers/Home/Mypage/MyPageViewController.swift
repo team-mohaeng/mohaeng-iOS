@@ -11,12 +11,8 @@ import JTAppleCalendar
 class MyPageViewController: UIViewController {
     
     // 더미데이터
-    var myPageData = MyPage(nickname: "초이초잉", level: 7, email: "choyi@apple.com", characterType: 1, characterImage: "이미지", completeCourseCount: 6, completeChallengeCount: 28, postCount: 1, badgeCount: 20, calendar: [
-        MyPageCalendar(property: 0, date: ["2021-08-02"]),
-        MyPageCalendar(property: 0, date: ["2021-08-04", "2021-08-05", "2021-08-06", "2021-08-07"]),
-        MyPageCalendar(property: 2, date: ["2021-08-09", "2021-08-10", "2021-08-11", "2021-08-12", "2021-08-13", "2021-08-14", "2021-08-15"]),
-        MyPageCalendar(property: 3, date: ["2021-08-22"]),
-        MyPageCalendar(property: 6, date: ["2021-08-24", "2021-08-25", "2021-08-26", "2021-08-27"])
+    var myPageData = MyPage(nickname: "", email: "", completeCourseCount: 0, completeChallengeCount: 0, feedCount: 0, badgeCount: 0, calendar: [
+        MyPageCalendar(property: 0, date: [])
     ])
     
     // MARK: - @IBOutlet Properties
@@ -28,8 +24,15 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var calendarShadowView: UIView!
     @IBOutlet weak var calendarBgView: UIView!
     @IBOutlet weak var yearMonthLabel: UILabel!
-    @IBOutlet weak var challengeRecordButtonView: UIView!
-    @IBOutlet weak var challengeRecordShadowView: UIView!
+    @IBOutlet weak var courseHistoryButtonView: UIView!
+    @IBOutlet weak var courseHistoryShadowView: UIView!
+    
+    @IBOutlet weak var nicknameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var completeCourseCountLabel: UILabel!
+    @IBOutlet weak var completeChallengeCountLabel: UILabel!
+    @IBOutlet weak var feedCountLabel: UILabel!
+    @IBOutlet weak var badgeCountLabel: UILabel!
     
     // MARK: - Properties
     
@@ -48,11 +51,12 @@ class MyPageViewController: UIViewController {
         initNavigationBar()
         initViewRoundingAndShadow()
         initCalendar()
+        getMyPage()
         assignDelegate()
         setRangeDates()
         selectRangeDate()
         setTotalSectionCount()
-        
+        addTapGestureRecognizer()
     }
     
     // MARK: - @IBAction Functions
@@ -63,6 +67,14 @@ class MyPageViewController: UIViewController {
     
     @IBAction func touchRightArrowButton(_ sender: Any) {
         touchArrowButton(isLeft: false)
+    }
+    
+    @objc func touchCourseHistoryButton(_ sender: Any) {
+        let courseHistoryStoryboard = UIStoryboard(name: Const.Storyboard.Name.courseHistory, bundle: nil)
+        guard let courseHistoryViewController = courseHistoryStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.courseHistory) as? CourseHistoryViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(courseHistoryViewController, animated: true)
     }
     
     // MARK: - Functions
@@ -105,8 +117,8 @@ class MyPageViewController: UIViewController {
         calendarBgView.makeRounded(radius: 14)
         
         // 챌린지 기록 보기 버튼 뷰
-        challengeRecordButtonView.makeRounded(radius: 14)
-        challengeRecordShadowView.addShadowWithOpaqueBackground(opacity: 0.05, radius: 20)
+        courseHistoryButtonView.makeRounded(radius: 14)
+        courseHistoryShadowView.addShadowWithOpaqueBackground(opacity: 0.05, radius: 20)
         
     }
     
@@ -193,9 +205,6 @@ class MyPageViewController: UIViewController {
             cell.isHidden = false
             cell.dateLabel.textColor = .black
         } else {
-            // TODO: - 디팟한테 textColor 물어보기
-            // myCustomCell.dateLabel.textColor = .lightGray
-            
             cell.isHidden = true
         }
         
@@ -220,14 +229,44 @@ class MyPageViewController: UIViewController {
             calendarCollectionView.scrollToItem(at: IndexPath.init(row: 0, section: currentSection), at: .left, animated: true)
         }
         
-        // TODO: - 날짜 response보고 리팩토링 필요
         let month = 1 + currentSection
         yearMonthLabel.text = "2021년 \(month)월"
     }
     
     func setTotalSectionCount() {
-        // TODO: - 날짜 response보고 리팩토링 필요
-        totalSectionCount = 9
+        formatter.dateFormat = "yyyy MM dd"
+        let startDate = formatter.date(from: "2021 01 01")!
+        
+        let calendar = Calendar.current
+        let start = calendar.startOfDay(for: startDate)
+        let end = calendar.startOfDay(for: Date())
+        let components = calendar.dateComponents([.month], from: start, to: end)
+        
+        totalSectionCount = components.month ?? 1
+    }
+    
+    // 통신 후 data 업데이트
+    func updateData(data: MyPage) {
+        self.myPageData = data
+        
+        nicknameLabel.text = data.nickname
+        emailLabel.text = data.email
+        
+        completeCourseCountLabel.text = String(data.completeCourseCount)
+        completeChallengeCountLabel.text = String(data.completeChallengeCount)
+        feedCountLabel.text = String(data.feedCount)
+        badgeCountLabel.text = String(data.badgeCount)
+        
+        setTotalSectionCount()
+        setRangeDates()
+        selectRangeDate()
+        
+        calendarCollectionView.reloadData()
+    }
+    
+    private func addTapGestureRecognizer() {
+        let courseHistoryGesture = UITapGestureRecognizer(target: self, action: #selector(touchCourseHistoryButton(_:)))
+        courseHistoryButtonView.addGestureRecognizer(courseHistoryGesture)
     }
 }
 
@@ -270,4 +309,30 @@ extension MyPageViewController: JTACMonthViewDataSource {
         return ConfigurationParameters(startDate: startDate, endDate: endDate)
     }
     
+}
+
+// MARK: - 통신
+
+extension MyPageViewController {
+    func getMyPage() {
+            
+            MyPageAPI.shared.getMyPage { (response) in
+                
+                switch response {
+                case .success(let data):
+                    
+                    if let data = data as? MyPage {
+                        self.updateData(data: data)
+                    }
+                case .requestErr(let message):
+                    print("requestErr", message)
+                case .pathErr:
+                    print(".pathErr")
+                case .serverErr:
+                    print("serverErr")
+                case .networkFail:
+                    print("networkFail")
+                }
+            }
+        }
 }

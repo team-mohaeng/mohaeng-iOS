@@ -421,12 +421,20 @@
                     </view>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
+                        <outlet property="badgeCountLabel" destination="QDk-nG-Enr" id="3ck-j0-k0d"/>
                         <outlet property="bgCircleView" destination="WIJ-GA-thH" id="yXX-pP-JQG"/>
                         <outlet property="calendarBgView" destination="m8j-Aj-SRl" id="3iQ-dK-JmP"/>
                         <outlet property="calendarCollectionView" destination="P0G-AX-9Lu" id="CpC-ZZ-xIK"/>
                         <outlet property="calendarShadowView" destination="zNV-Cq-MZs" id="Oq6-8s-3RP"/>
+                        <outlet property="courseHistoryButtonView" destination="p6w-Fr-UTf" id="zIw-Rr-3Za"/>
+                        <outlet property="courseHistoryShadowView" destination="jE6-xA-0aA" id="UFu-hJ-an0"/>
                         <outlet property="challengeRecordButtonView" destination="p6w-Fr-UTf" id="zIw-Rr-3Za"/>
                         <outlet property="challengeRecordShadowView" destination="jE6-xA-0aA" id="UFu-hJ-an0"/>
+                        <outlet property="completeChallengeCountLabel" destination="oz1-LL-JBv" id="DQQ-PV-S4z"/>
+                        <outlet property="completeCourseCountLabel" destination="gVo-rS-84V" id="sCs-sE-wCz"/>
+                        <outlet property="emailLabel" destination="ln8-N4-EKx" id="pQS-yH-X1n"/>
+                        <outlet property="feedCountLabel" destination="XRw-ze-S7w" id="Khc-ag-Qjh"/>
+                        <outlet property="nicknameLabel" destination="P2s-Uq-6Ej" id="WlI-YQ-d5E"/>
                         <outlet property="shadowStackView" destination="eIB-D7-Uhn" id="FRA-Z6-4ZU"/>
                         <outlet property="summaryStackView" destination="qwM-Ta-IOs" id="5Tx-Jp-5J3"/>
                         <outlet property="yearMonthLabel" destination="Y8m-dE-Jrh" id="0aX-F7-9vg"/>

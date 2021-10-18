@@ -57,6 +57,10 @@ extension Const {
             
             // 마이페이지 뷰
             static let dateCell = "dateCell"
+            
+            // 코스 기록 뷰
+            static let courseHistoryCollectionViewCell = "CourseHistoryCollectionViewCell"
+            static let courseHistoryHeaderView = "CourseHistoryHeaderView"
         }
         
         struct Identifier {
@@ -103,6 +107,10 @@ extension Const {
             
             // 마이페이지 뷰
             static let dateCell = "dateCell"
+            
+            // 코스 기록 뷰
+            static let courseHistoryCollectionViewCell = "CourseHistoryCollectionViewCell"
+            static let courseHistoryHeaderView = "CourseHistoryHeaderView"
         }
         
     }
