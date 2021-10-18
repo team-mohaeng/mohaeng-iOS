@@ -72,7 +72,7 @@ class RewardBaseViewController: UIViewController {
     
     private lazy var subButton  = UIButton(type: .system).then {
         $0.setTitleColor(.Yellow3, for: .normal)
-        $0.titleLabel?.font = .spoqaHanSansNeo(weight: .bold, size: 18)
+        $0.titleLabel?.font = .spoqaHanSansNeo(weight: .medium, size: 18)
         $0.setTitle("나중에", for: .normal)
     }
     
@@ -93,7 +93,7 @@ class RewardBaseViewController: UIViewController {
             if !isHidden {
                 view.addSubview(subButton)
                 subButton.snp.makeConstraints {
-                    $0.height.equalTo(30)
+                    $0.height.equalTo(hasNotch ? 30 : 20)
                     $0.leading.trailing.equalTo(button)
                     $0.top.equalTo(button.snp.bottom).offset(8)
                 }
@@ -102,6 +102,8 @@ class RewardBaseViewController: UIViewController {
             }
         }
     }
+    
+    private let hasNotch = UIDevice.current.hasNotch
     
 // MARK: - View Life Cycle
     
@@ -152,14 +154,14 @@ class RewardBaseViewController: UIViewController {
         
         label.snp.makeConstraints {
             $0.height.equalTo(104)
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(74)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(hasNotch ? 74 : 50)
             $0.leading.trailing.equalToSuperview().inset(44)
         }
         
         graphicView.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(10)
+            $0.leading.trailing.equalToSuperview().inset(hasNotch ? 10 : 20)
             $0.height.equalTo(graphicView.snp.width)
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(152)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(hasNotch ? 152 : 100)
         }
         
         descriptionView.snp.makeConstraints {
