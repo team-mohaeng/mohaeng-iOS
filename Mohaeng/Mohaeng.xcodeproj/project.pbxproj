@@ -169,6 +169,8 @@
 		56AD4D1B27155FC900272EE4 /* CourseHistoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AD4D1A27155FC900272EE4 /* CourseHistoryHeaderView.swift */; };
 		56AD4D1D27155FD000272EE4 /* CourseHistoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AD4D1C27155FD000272EE4 /* CourseHistoryHeaderView.xib */; };
 		56C21992271BE6DC008049A8 /* TodayChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C21991271BE6DC008049A8 /* TodayChallenge.swift */; };
+		56C019B4271C2BFE00735761 /* MyPageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C019B3271C2BFE00735761 /* MyPageAPI.swift */; };
+		56C019B7271C2C3900735761 /* MyPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C019B6271C2C3900735761 /* MyPageService.swift */; };
 		56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA6C2689C0D10056155A /* .swiftlint.yml */; };
 		AA190EBF26FE62E30059E100 /* BackgroundCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA190EBD26FE62E30059E100 /* BackgroundCollectionViewCell.swift */; };
 		AA190EC026FE62E30059E100 /* BackgroundCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA190EBE26FE62E30059E100 /* BackgroundCollectionViewCell.xib */; };
@@ -379,6 +381,8 @@
 		56AD4D1A27155FC900272EE4 /* CourseHistoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHistoryHeaderView.swift; sourceTree = "<group>"; };
 		56AD4D1C27155FD000272EE4 /* CourseHistoryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseHistoryHeaderView.xib; sourceTree = "<group>"; };
 		56C21991271BE6DC008049A8 /* TodayChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayChallenge.swift; sourceTree = "<group>"; };
+		56C019B3271C2BFE00735761 /* MyPageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAPI.swift; sourceTree = "<group>"; };
+		56C019B6271C2C3900735761 /* MyPageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageService.swift; sourceTree = "<group>"; };
 		56DCAA242689BB9B0056155A /* Mohaeng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mohaeng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCAA6C2689C0D10056155A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		AA190EBD26FE62E30059E100 /* BackgroundCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -784,15 +788,16 @@
 		561D765626F0BFA40028DBCA /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				561D766526F0BFA40028DBCA /* GenericResponse.swift */,
+				DD515C662711D77700E76D4B /* MoyaLoggingPlugin.swift */,
 				DDEBD21A270F5FCA0011EDC6 /* BadgeAPI */,
 				561D765726F0BFA40028DBCA /* ChallengeAPI */,
 				561D765A26F0BFA40028DBCA /* FeedAPI */,
 				561D765D26F0BFA40028DBCA /* NetworkResult.swift */,
 				561D765E26F0BFA40028DBCA /* AuthAPI */,
-				561D766526F0BFA40028DBCA /* GenericResponse.swift */,
 				561D766626F0BFA40028DBCA /* CourseAPI */,
 				561D766926F0BFA40028DBCA /* HomeAPI */,
-				DD515C662711D77700E76D4B /* MoyaLoggingPlugin.swift */,
+				56C019B5271C2C0200735761 /* MyPageAPI */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -972,6 +977,15 @@
 				56C21991271BE6DC008049A8 /* TodayChallenge.swift */,
 			);
 			path = TodayChallenge;
+			sourceTree = "<group>";
+		};
+		56C019B5271C2C0200735761 /* MyPageAPI */ = {
+			isa = PBXGroup;
+			children = (
+				56C019B6271C2C3900735761 /* MyPageService.swift */,
+				56C019B3271C2BFE00735761 /* MyPageAPI.swift */,
+			);
+			path = MyPageAPI;
 			sourceTree = "<group>";
 		};
 		56DCAA1B2689BB9B0056155A = {
@@ -1267,6 +1281,7 @@
 				561D76EE26F0BFA40028DBCA /* PopUpViewController.swift in Sources */,
 				561D772126F0BFA40028DBCA /* Challenge.swift in Sources */,
 				DD9EFFCF2715798100B3F871 /* OnBoarding4ViewController.swift in Sources */,
+				56C019B4271C2BFE00735761 /* MyPageAPI.swift in Sources */,
 				561D771626F0BFA40028DBCA /* AppYear.swift in Sources */,
 				561D76E626F0BFA40028DBCA /* ModalPresentationController.swift in Sources */,
 				561D772226F0BFA40028DBCA /* Medal.swift in Sources */,
@@ -1331,6 +1346,7 @@
 				DD68AC322712AB9E0081B905 /* OnBoardingChallengeCardView.swift in Sources */,
 				561D76CA26F0BFA40028DBCA /* BubbleCollectionViewCell.swift in Sources */,
 				561D76FE26F0BFA40028DBCA /* MoodViewController.swift in Sources */,
+				56C019B7271C2C3900735761 /* MyPageService.swift in Sources */,
 				561D771526F0BFA40028DBCA /* AppModelsExmaple.swift in Sources */,
 				569E8B2227154E7A00D67712 /* CourseHistoryViewController.swift in Sources */,
 				561D773826F0BFA40028DBCA /* FeedHeaderView.swift in Sources */,
