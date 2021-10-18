@@ -21,7 +21,7 @@ struct CourseLibrary: Codable {
 
     enum CodingKeys: String, CodingKey {
         case id, situation, property, title
-        case courseDescription
+        case courseDescription = "description"
         case totalDays
     }
 }
