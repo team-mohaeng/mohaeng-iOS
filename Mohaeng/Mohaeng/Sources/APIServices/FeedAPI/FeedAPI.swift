@@ -11,7 +11,7 @@ import Moya
 public class FeedAPI {
     
     static let shared = FeedAPI()
-    var feedProvider = MoyaProvider<FeedService>(plugins: [MoyaLoggingPlugin()])
+    var feedProvider = MoyaProvider<FeedService>()
     
     enum ResponseData {
         case feed
