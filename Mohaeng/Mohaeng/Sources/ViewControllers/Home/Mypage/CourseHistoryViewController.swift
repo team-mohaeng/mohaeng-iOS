@@ -92,3 +92,29 @@ extension CourseHistoryViewController: UICollectionViewDataSource {
         return UICollectionViewCell()
     }
 }
+
+// MARK: - 통신
+
+extension CourseHistoryViewController {
+    func getCourseHistory() {
+        
+        CourseHistoryAPI.shared.getCourseHistory { (response) in
+            
+            switch response {
+            case .success(let course):
+                
+                if let data = course as? CourseHistoryData {
+                    //self.updateData(data: data)
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+}

@@ -41,8 +41,8 @@ extension Const {
         
         // 코스 진행하기 (PUT) : "/courses/:id"
         
-        // 완료한 코스 메달 조회 (GET)
-        static let medalURL = "/complete"
+        // 완료한 코스 기록 조회 (GET)
+        static let courseHistoryURL = "/courses/complete"
         
         // MARK: - Challenge Service
         
