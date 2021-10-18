@@ -9,24 +9,18 @@ import UIKit
 
 class CourseFooterView: UITableViewHeaderFooterView {
     
-    enum IsDone {
-        case done
-        case undone
-    }
-    
-    var isDone: IsDone?
+    weak var onboardingCourseProtocol: OnboardingCourseProtocol?
     
     private let line = CAShapeLayer()
 
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var islandImageView: UIImageView!
+    @IBOutlet weak var nextButton: UIButton!
     
     override func awakeFromNib() {
-        initLastPath()
-        setIslandImage()
     }
     
-    func initLastPath() {
+    func initLastPath(isDone: Bool) {
         let leftPath = RoadMapPath(centerY: 0).getVeryLastPath()
         
         line.fillMode = .forwards
@@ -35,30 +29,36 @@ class CourseFooterView: UITableViewHeaderFooterView {
         line.path = leftPath.cgPath
         line.lineCap = .round
         
-        switch isDone {
-        case .done:
+        if isDone {
             line.lineDashPattern = [1]
             line.strokeColor = UIColor.sampleGreen.cgColor
-        case .undone:
+        } else {
             line.lineDashPhase = 5
             line.lineDashPattern = [RoadMapPath(centerY: 0).getDashPattern(), RoadMapPath(centerY: 0).getBlankPattern()]
             line.strokeColor = UIColor.Grey4.cgColor
-        case .none:
-            return
         }
         
         self.bgView.layer.insertSublayer(line, at: 2)
     }
     
-    func setIslandImage() {
-        switch isDone {
-        case .done:
+    func setIslandImage(isDone: Bool) {
+        if isDone {
             islandImageView.image = Const.Image.doneIsland
-        case .undone:
+        } else {
             islandImageView.image = Const.Image.undoneIsland
-        case .none:
-            return
         }
     }
+    
+    func setNextButton(isOnboarding: Bool) {
+        if isOnboarding {
+            nextButton.isHidden = false
+        } else {
+            nextButton.isHidden = true
+        }
+        nextButton.makeRounded(radius: nextButton.frame.height / 2)
+    }
 
+    @IBAction func touchNextButton(_ sender: UIButton) {
+        self.onboardingCourseProtocol?.touchNextButton(sender)
+    }
 }
