@@ -36,7 +36,7 @@
                     <rect key="frame" x="24" y="149" width="342" height="98"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2g-88-EEw">
-                            <rect key="frame" x="88" y="31.333333333333346" width="242" height="35.333333333333343"/>
+                            <rect key="frame" x="118" y="31.333333333333346" width="212" height="35.333333333333343"/>
                             <string key="text">어제 외운 단어 기억 나지?
 어제 외운 단어로 문장을 만들어봐~ </string>
                             <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
@@ -59,10 +59,10 @@
                     </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleChallengeRacoon" translatesAutoresizingMaskIntoConstraints="NO" id="BV7-E8-JT9">
-                    <rect key="frame" x="24" y="102.33333333333333" width="80" height="144.66666666666669"/>
+                    <rect key="frame" x="24" y="95.666666666666671" width="110" height="151.33333333333331"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="80" id="TgE-kn-eIu"/>
-                        <constraint firstAttribute="width" secondItem="BV7-E8-JT9" secondAttribute="height" multiplier="259:468" id="uch-V9-52E"/>
+                        <constraint firstAttribute="width" constant="110" id="TgE-kn-eIu"/>
+                        <constraint firstAttribute="width" secondItem="BV7-E8-JT9" secondAttribute="height" multiplier="80:110" id="uch-V9-52E"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="270" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TwG-O7-R8B">
