@@ -192,21 +192,27 @@ extension Const {
         static let moodImageArray = [Const.Image.happyImage, Const.Image.sosoImage, Const.Image.badImage]
         
         // writing
-        static let plusPhotoImage = UIImage(named: "iconPlusPhoto")
-        static let checkBoxImage = UIImage(named: "btnCheck")
-        static let checkBoxLineImage = UIImage(named: "btnCheck_line")
-        static let photoXbtnImage = UIImage(named: "photoXbtn")
+        static let plusPhotoImage = UIImage(named: "iconPlusPhoto")!
+        static let checkBoxImage = UIImage(named: "btnCheck")!
+        static let checkBoxLineImage = UIImage(named: "btnCheck_line")!
+        static let photoXbtnImage = UIImage(named: "photoXbtn")!
         
-        // on boarding 1
-        static let messageBoxSmall = UIImage(named: "messageBoxSmall")
-        static let messageBoxLarge = UIImage(named: "messageBoxLarge")
-        static let grpXonboarding1 = UIImage(named: "grpXonboarding1")
-        static let grpXonboarding2 = UIImage(named: "grpXonboarding2")
-        static let grpXonboarding3 = UIImage(named: "grpXonboarding3")
-        static let grpXonboarding4 = UIImage(named: "grpXonboarding4")
-        static let grpXonboarding5 = UIImage(named: "grpXonboarding5")
-        static let iconScroll = UIImage(named: "iconScroll")
-        static let feedEx = UIImage(named: "feedEx")
+        // on boarding
+        static let messageBoxSmall = UIImage(named: "messageBoxSmall")!
+        static let messageBoxLarge = UIImage(named: "messageBoxLarge")!
+        static let grpXonboarding1 = UIImage(named: "grpXonboarding1")!
+        static let grpXonboarding2 = UIImage(named: "grpXonboarding2")!
+        static let grpXonboarding3 = UIImage(named: "grpXonboarding3")!
+        static let grpXonboarding4 = UIImage(named: "grpXonboarding4")!
+        static let grpXonboarding5 = UIImage(named: "grpXonboarding5")!
+        static let iconScroll = UIImage(named: "iconScroll")!
+        static let feedEx = UIImage(named: "feedEx")!
+        
+        // reward
+        static let grpChallengeCompletion = UIImage(named: "grpChallengeCompletion")!
+        static let grpCuriousity = UIImage(named: "grpCuriousity")!
+        static let grpWritingCompletion = UIImage(named: "grpWritingCompletion")!
+        static let styleCardBg = UIImage(named: "styleCardBg")!
 
         // character style
         static let duckImg = UIImage(named: "stylechactab1")!

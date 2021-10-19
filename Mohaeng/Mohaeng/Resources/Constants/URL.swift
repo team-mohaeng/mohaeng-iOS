@@ -51,7 +51,7 @@ extension Const {
         static let challengesURL = "/today"
         
         // 챌린지 인증 (PUT)
-        // "/challenges/:courseId/:challengeId"
+        // "/today/:courseId/:challengeId"
         
         // 소확행 입력(POST)
         static let writeURL = "/write"

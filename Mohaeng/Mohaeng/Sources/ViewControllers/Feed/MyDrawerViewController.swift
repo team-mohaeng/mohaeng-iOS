@@ -16,17 +16,13 @@ class MyDrawerViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var myDrawer: [Feed] = [
-        Feed(postID: 0, course: "뽀득뽀득 세균 퇴치", challenge: 3, image: "", mood: 2, content: "맛있는 피자에 시원한 맥주 먹고 승찬이 개때리러간다 ㅋㅋ ", nickname: "초이초이", year: "2021", month: "8", day: "22", weekday: "일", emoji: [Emoji(id: 1, count: 5)], myEmoji: 0, isReport: true, isDelete: false),
-        Feed(postID: 0, course: "나는야 지구촌 촌장", challenge: 1, image: "", mood: 2, content: "맛있는 피자에 시원한 맥주 먹고 덤덤댄스 릴스 췄당 ㅋㅋ", nickname: "초이초이", year: "2021", month: "8", day: "21", weekday: "일", emoji: [Emoji(id: 1, count: 5)], myEmoji: 0, isReport: true, isDelete: false),
-        Feed(postID: 0, course: "초급 사진가", challenge: 2, image: "", mood: 2, content: "맛있는 피자에 시원한 맥주 먹고 선선한 날씨에 산책했어요. 윤예지 정초이 어쩌구 저쩌구 메롱 야호", nickname: "초이초이", year: "2021", month: "8", day: "20", weekday: "일", emoji: [Emoji(id: 1, count: 5)], myEmoji: 0, isReport: true, isDelete: false),
-        Feed(postID: 0, course: "거침없이 하이킥", challenge: 2, image: "", mood: 2, content: "초이초이 ㅋㅋ", nickname: "김승찬", year: "2021", month: "8", day: "19", weekday: "일", emoji: [Emoji(id: 1, count: 5)], myEmoji: 0, isReport: true, isDelete: false),
-        Feed(postID: 0, course: "초급 사진가", challenge: 2, image: "", mood: 2, content: "맛있는 피자에 시원한 맥주 먹고 선선한 날씨에 산책했어요. 윤예지 정초이 어쩌구 저쩌구 메롱 야호", nickname: "초이초이", year: "2021", month: "8", day: "20", weekday: "일", emoji: [Emoji(id: 1, count: 5)], myEmoji: 0, isReport: true, isDelete: false)]
+    private var myDrawer: [Feed] = []
     private var modalDateView: DatePickerViewController?
     private var currentDate: AppDate?
     private var feedCount = 0
     private var selectedYear: Int?
     private var selectedMonth: Int?
+    private var writingStatus: Int = 0
     
     // MARK: - Life Cycle
     
@@ -61,7 +57,7 @@ class MyDrawerViewController: UIViewController {
         
         guard let year = selectedYear else { return }
         guard let month = selectedMonth else { return }
-        //        getMyDrawer(year: "\(year)", month: convertMonthFormat(month: "\(month)"))
+        getMyDrawer(year: year, month: month)
     }
     
     private func setDelegation() {
@@ -81,18 +77,14 @@ class MyDrawerViewController: UIViewController {
         }
     }
     
-    private func updateData(data: MyDrawerData) {
-        self.myDrawer = data.myDrawerSmallSatisfactions
+    private func updateData(data: [Feed]) {
+        self.myDrawer = data
         checkEmptyView()
         feedCollectionView.reloadData()
     }
     
-    private func convertMonthFormat(month: String) -> String {
-        if month.count < 2 {
-            return "0\(month)"
-        } else {
-            return month
-        }
+    func setWritingStatus(writingInt: Int) {
+        writingStatus = writingInt
     }
     
     @objc func presentPickerView(notification: NSNotification) {
@@ -122,10 +114,13 @@ extension MyDrawerViewController: DatePickerViewDelegate {
         self.selectedYear = Int(year)
         self.selectedMonth = Int(month)
         
+        guard let unwrappedYear = selectedYear else { return }
+        guard let unwrappedMonth = selectedMonth else { return }
+        
         let yearMonthDate = [year, month]
         NotificationCenter.default.post(name: NSNotification.Name("datePickerSelected"), object: yearMonthDate)
         
-        //        getMyDrawer(year: year, month: convertMonthFormat(month: month))
+        getMyDrawer(year: unwrappedYear, month: unwrappedMonth)
         feedCollectionView.reloadData()
     }
 }
@@ -137,8 +132,6 @@ extension MyDrawerViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Name.feedCollectionViewCell, for: indexPath) as? FeedCollectionViewCell else { return UICollectionViewCell() }
-        
-        let writingStatus: Int = 1 /// temp
         
         if writingStatus == 1 && indexPath.row == 0 {
             cell.configureTodayCellUI()
@@ -176,6 +169,30 @@ extension MyDrawerViewController: UICollectionViewDelegateFlowLayout {
         let cellHeight = cellWidth * (144 / 375)
         
         return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
+}
+
+extension MyDrawerViewController {
+    
+    func getMyDrawer(year: Int, month: Int) {
+        FeedAPI.shared.getMyDrawer(year: year, month: month) { response in
+            switch response {
+            case .success(let data):
+                if let data = data as? [Feed] {
+                    self.updateData(data: data)
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+        
     }
     
 }

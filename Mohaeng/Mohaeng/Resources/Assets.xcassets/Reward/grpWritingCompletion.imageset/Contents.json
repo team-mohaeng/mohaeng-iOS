@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "purpleUndoneStampImage.png",
+      "filename" : "grpWritingCompletion.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "purpleUndoneStampImage@2x.png",
+      "filename" : "grpWritingCompletion@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "purpleUndoneStampImage@3x.png",
+      "filename" : "grpWritingCompletion@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

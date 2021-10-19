@@ -14,7 +14,7 @@ class OddDayTableViewCell: UITableViewCell {
     let currentLine = CAShapeLayer()
     let nextLine = CAShapeLayer()
     
-    var appCourse: AppCourse = AppCourse(rawValue: 0)!
+    var appCourse: AppCourse = AppCourse(rawValue: 1)!
     
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var propertyImageView: UIImageView!
