@@ -11,9 +11,12 @@ enum AppCourse: Int {
     // 늘 건강행, 나 케어행, 꼭 지켜야행, 꺅 일탈행, 호 추억행, 쪽 사랑행, 짱 똑똑행
     // 건강, 셀프케어, 습관, 도전, 추억, 사랑, 교양
     
-    case challenge = 0, habit, selfCare, health, memory, culture, love
+    // rawValue 순서대로
+    // 지켜야행, 케어행, 건강행, 추억행, 똑똑행, 사랑행, 일탈행
     
-    static var count: Int { return AppCourse.culture.rawValue + 1}
+    case habit = 1, selfCare, health, memory, culture, love, challenge
+    
+    static var count: Int { return AppCourse.challenge.rawValue + 1 }
     
     func getKorean() -> String {
         
