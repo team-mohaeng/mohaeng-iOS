@@ -21,7 +21,7 @@ extension CharacterService: TargetType {
     var path: String {
         switch self {
         case .getCharacter:
-            return Const.URL.characterURL
+            return Const.URL.characterURL + "/ios"
         case .putCharacter:
             return Const.URL.characterURL
         }
