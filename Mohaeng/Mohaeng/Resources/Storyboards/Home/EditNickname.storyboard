@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoqaHanSansNeo-Regular.otf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Edit Nickname View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="EditNicknameViewController" customModule="Mohaeng" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nickNameImage" translatesAutoresizingMaskIntoConstraints="NO" id="WGE-4k-Y1M">
+                                <rect key="frame" x="107" y="89" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="K9I-XD-pdm"/>
+                                    <constraint firstAttribute="height" constant="200" id="lel-Uq-mfg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임은 한글 6자 이내로 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGZ-RZ-vRm">
+                                <rect key="frame" x="125" y="301" width="164.5" height="13"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="10"/>
+                                <color key="textColor" name="black4Text"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아라아랑아라" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AuM-uX-VaT">
+                                <rect key="frame" x="24" y="354" width="366" height="18.5"/>
+                                <color key="tintColor" name="Black"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDg-gW-4NE">
+                                <rect key="frame" x="24" y="382.5" width="366" height="1"/>
+                                <color key="backgroundColor" name="Grey5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Bcq-d3-8kN"/>
+                                </constraints>
+                            </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용 불가능한 닉네임입니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JT-hZ-C1Q">
+                                <rect key="frame" x="280" y="395.5" width="110" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" name="Red"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aec-5O-KKW">
+                                <rect key="frame" x="24" y="433.5" width="366" height="40"/>
+                                <color key="backgroundColor" name="Yellow3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="LaX-HY-mix"/>
+                                </constraints>
+                                <color key="tintColor" name="White"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="닉네임 수정하기">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="touchEditNicknameButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Faq-jh-8na"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4JT-hZ-C1Q" firstAttribute="trailing" secondItem="wDg-gW-4NE" secondAttribute="trailing" id="1Fy-ZU-169"/>
+                            <constraint firstItem="wDg-gW-4NE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="BJm-eH-gIY"/>
+                            <constraint firstItem="WGE-4k-Y1M" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="45" id="DR5-bu-4IF"/>
+                            <constraint firstItem="oGZ-RZ-vRm" firstAttribute="top" secondItem="WGE-4k-Y1M" secondAttribute="bottom" constant="12" id="Fbe-ff-YCE"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="AuM-uX-VaT" secondAttribute="trailing" constant="24" id="PEv-Le-nqg"/>
+                            <constraint firstItem="AuM-uX-VaT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="Rwp-fn-rG1"/>
+                            <constraint firstItem="AuM-uX-VaT" firstAttribute="top" secondItem="oGZ-RZ-vRm" secondAttribute="bottom" constant="40" id="Vo6-Ob-rPT"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wDg-gW-4NE" secondAttribute="trailing" constant="24" id="WPS-PT-Mdq"/>
+                            <constraint firstItem="aec-5O-KKW" firstAttribute="top" secondItem="4JT-hZ-C1Q" secondAttribute="bottom" constant="26" id="dQl-xs-cRt"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aec-5O-KKW" secondAttribute="trailing" constant="24" id="f2T-k8-FdN"/>
+                            <constraint firstItem="wDg-gW-4NE" firstAttribute="top" secondItem="AuM-uX-VaT" secondAttribute="bottom" constant="10" id="jYe-v6-epK"/>
+                            <constraint firstItem="oGZ-RZ-vRm" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="pS0-7Y-FhA"/>
+                            <constraint firstItem="aec-5O-KKW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="skM-q2-2iq"/>
+                            <constraint firstItem="4JT-hZ-C1Q" firstAttribute="top" secondItem="wDg-gW-4NE" secondAttribute="bottom" constant="12" id="uA3-8c-QIW"/>
+                            <constraint firstItem="WGE-4k-Y1M" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="yuz-Y2-7W4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="editNicknameButton" destination="aec-5O-KKW" id="8zs-gB-veE"/>
+                        <outlet property="nicknameBottomView" destination="wDg-gW-4NE" id="GQN-lM-0HR"/>
+                        <outlet property="nicknameErrorLabel" destination="4JT-hZ-C1Q" id="fbe-Rz-Jld"/>
+                        <outlet property="nicknameTextField" destination="AuM-uX-VaT" id="Vda-cX-qYN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-16" y="67"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="nickNameImage" width="201" height="200"/>
+        <namedColor name="Black">
+            <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Grey5">
+            <color red="0.91399997472763062" green="0.91399997472763062" blue="0.91399997472763062" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Red">
+            <color red="0.9179999828338623" green="0.027000000700354576" blue="0.027000000700354576" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Yellow3">
+            <color red="1" green="0.77999997138977051" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="black4Text">
+            <color red="0.67500001192092896" green="0.67500001192092896" blue="0.67500001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
