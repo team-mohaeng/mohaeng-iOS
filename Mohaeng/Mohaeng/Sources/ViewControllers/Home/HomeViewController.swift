@@ -173,7 +173,7 @@ class HomeViewController: UIViewController {
         setHourlyMent(nickname: data.nickname)
         courseProgressLabel.text = "코스 진행률 \(data.course.percent)%"
         challengeTitleLabel.text = data.course.challengeTitle
-        setProgressBar(percent: Float(data.happy / data.fullHappy))
+        setProgressBar(percent: Float(data.happy) / Float(data.fullHappy))
         setLottieView(url: URL(string: data.characterLottie)!)
         levelLabel.text = "Lv \(data.level)"
         happyPopUp.data = data
