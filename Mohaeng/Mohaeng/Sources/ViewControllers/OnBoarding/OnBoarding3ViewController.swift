@@ -32,10 +32,6 @@ class OnBoarding3ViewController: UIViewController {
         $0.showsVerticalScrollIndicator = false
         $0.separatorStyle = .none
         $0.backgroundColor = .White
-        var frame = CGRect.zero
-        frame.size.height = .leastNormalMagnitude
-        $0.tableHeaderView = UIView(frame: frame)
-       
     }
     
     private let headerView = OnBoarding3HeaderView()
@@ -50,6 +46,10 @@ class OnBoarding3ViewController: UIViewController {
         setDelegation()
         setLayout()
         registerXib()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         initHeaderView()
     }
     
