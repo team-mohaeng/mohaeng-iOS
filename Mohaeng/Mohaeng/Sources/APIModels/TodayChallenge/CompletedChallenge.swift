@@ -27,9 +27,3 @@ struct CourseCompletion: Codable {
     let title: String?
     let happy, userHappy, fullHappy: Int?
 }
-
-// MARK: - LevelUp
-struct LevelUp: Codable {
-    let level: Int?
-    let styleImg: String?
-}
