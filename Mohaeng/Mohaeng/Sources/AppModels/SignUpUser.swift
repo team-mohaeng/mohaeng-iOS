@@ -12,6 +12,4 @@ class SignUpUser {
     var email: String?
     var password: String?
     var nickname: String?
-    var gender: Int?
-    var birthyear: Int?
 }
