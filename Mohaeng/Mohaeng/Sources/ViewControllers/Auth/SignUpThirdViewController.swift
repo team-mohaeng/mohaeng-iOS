@@ -114,6 +114,7 @@ extension SignUpThirdViewController {
             switch response {
             case .success(let jwt):
                 if let data = jwt as? JwtData {
+                    UserDefaults.standard.setValue(data.jwt, forKey: "jwtToken")
                     self.pushHomeViewController()
                 }
             case .requestErr(let message):
