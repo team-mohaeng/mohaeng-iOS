@@ -56,7 +56,7 @@ class OnBoardingChallengeCardView: UIView {
         $0.makeSpring()
     }
     
-    private var subtitleLabel = UILabel().then {
+    private let subtitleLabel = UILabel().then {
         $0.text = "인증버튼을 눌러봐!"
         $0.font = .gmarketFont(weight: .medium, size: 12)
         $0.textColor = .Grey2
