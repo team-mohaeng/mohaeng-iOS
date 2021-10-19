@@ -62,7 +62,7 @@ class FeedDetailCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properteis
     
-    var stickerDummy: [Emoji?] = []
+    var stickerDummy: [Emoji] = []
     var hasImage: Bool = false
     
     // MARK: - View Life Cycle
@@ -142,7 +142,7 @@ extension FeedDetailCollectionViewCell: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             
-            cell.setData(text: "\(stickerDummy[indexPath.row - 1]?.count)")
+            cell.setData(text: "\(stickerDummy[indexPath.row - 1].count)")
             
             return cell
         }
