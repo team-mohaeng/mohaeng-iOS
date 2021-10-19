@@ -197,6 +197,7 @@
                         <outlet property="backgroundSelectViewHeight" destination="om2-bF-vvs" id="s9B-l2-RyU"/>
                         <outlet property="characterCardCollectionView" destination="sNd-W2-WC5" id="6Ev-Er-Oiy"/>
                         <outlet property="characterChoiceButton" destination="E45-Zm-5ol" id="MDi-AQ-hFp"/>
+                        <outlet property="characterImageView" destination="Jwy-gZ-tGW" id="Q6q-56-Dbf"/>
                         <outlet property="characterSelectView" destination="fvm-ni-dxA" id="1T2-dh-mJA"/>
                         <outlet property="characterTypeCollectionView" destination="0gj-5Q-QtD" id="uuB-S7-Ejr"/>
                         <outlet property="choiceButtonTopSpacing" destination="faZ-zg-4WG" id="sSK-VY-WOQ"/>

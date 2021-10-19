@@ -26,6 +26,7 @@ class CharacterStyleViewController: UIViewController {
     @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var emptyViewLabel: UILabel!
     @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var characterImageView: UIImageView!
     
     // MARK: - Properties
     
@@ -217,6 +218,7 @@ extension CharacterStyleViewController: UICollectionViewDelegateFlowLayout {
             allCardSelectedInfo = Array(repeating: Array(repeating: false, count: 9), count: 7)
             selectedCardIndex = indexPath.row
             selectedCardId = selectedTypeIndex * 9 + selectedCardIndex + 1
+            characterImageView.updateServerImage(characterData.characters[selectedTypeIndex].cards[indexPath.row].image)
             allCardSelectedInfo[selectedTypeIndex][selectedCardIndex] = true
             characterCardCollectionView.reloadData()
         case backgroundCollectionView:
@@ -336,6 +338,7 @@ extension CharacterStyleViewController {
             case .success(let data):
                 if let data = data as? CharacterStyle {
                     self.characterData = data
+                    self.characterImageView.updateServerImage(data.currentCharacter.image)
                     self.selectedSkinIndex = data.currentSkin.id - 64
                     self.selectedTypeIndex = data.currentCharacter.id / 9
                     self.selectedCardIndex = data.currentCharacter.id % 9
@@ -363,7 +366,7 @@ extension CharacterStyleViewController {
         CharacterAPI.shared.putCharacterStyle(data: data) { response in
             switch response {
             case .success(let data):
-                print(data)
+                self.showToast(message: "스타일이 변경되었습니다.", font: .spoqaHanSansNeo(size: 12))
             case .requestErr(let message):
                 print("requestErr", message)
             case .pathErr:
