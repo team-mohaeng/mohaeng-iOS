@@ -24,7 +24,7 @@ public class ChallengeAPI {
                 let statusCode = response.statusCode
                 let data = response.data
                 
-                let networkResult = self.judgeStatus(by: statusCode, data)
+                let networkResult = self.judgeGetAllChallengeStatus(by: statusCode, data)
                 completion(networkResult)
                 
             case .failure(let err):
@@ -41,7 +41,7 @@ public class ChallengeAPI {
                 let statusCode = response.statusCode
                 let data = response.data
                 
-                let networkResult = self.judgeStatus(by: statusCode, data)
+                let networkResult = self.judgePutTodayChallengeStatus(by: statusCode, data)
                 completion(networkResult)
                 
             case .failure(let err):
@@ -53,7 +53,7 @@ public class ChallengeAPI {
     
     // MARK: - judging status function
     
-    private func judgeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
+    private func judgeGetAllChallengeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
         
         guard let decodedData = try? decoder.decode(GenericResponse<TodayChallengeData>.self, from: data) else {
@@ -71,4 +71,24 @@ public class ChallengeAPI {
             return .networkFail
         }
     }
+    
+    private func judgePutTodayChallengeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
+        let decoder = JSONDecoder()
+        
+        guard let decodedData = try? decoder.decode(GenericResponse<CompletedChallengeData>.self, from: data) else {
+            return .pathErr
+        }
+        
+        switch statusCode {
+        case 200:
+            return .success(decodedData.data)
+        case 400..<500:
+            return .requestErr(decodedData.message)
+        case 500:
+            return .serverErr
+        default:
+            return .networkFail
+        }
+    }
+    
 }

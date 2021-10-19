@@ -163,7 +163,7 @@ extension OnBoarding3ViewController: UITableViewDataSource {
                 
                 cell.setOnboardingCell(challengeName: course!.getOnboardingCourse()[1], property: course!.rawValue)
                 cell.setNextSituation(next: 0)
-                cell.appCourse = course ?? AppCourse(rawValue: 0)!
+                cell.appCourse = course ?? AppCourse(rawValue: 1)!
                 
                 return cell
             }
