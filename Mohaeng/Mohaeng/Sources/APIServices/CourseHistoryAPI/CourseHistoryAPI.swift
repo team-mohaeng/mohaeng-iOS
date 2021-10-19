@@ -11,12 +11,12 @@ import Moya
 public class CourseHistoryAPI {
     
     static let shared = CourseHistoryAPI()
-    var CourseHistoryProvider = MoyaProvider<CourseHistoryService>(plugins: [MoyaLoggingPlugin()])
+    var courseHistoryProvider = MoyaProvider<CourseHistoryService>()
     
     public init() { }
     
     func getCourseHistory(completion: @escaping (NetworkResult<Any>) -> Void) {
-        CourseHistoryProvider.request(.getCourseHistory) { (result) in
+        courseHistoryProvider.request(.getCourseHistory) { (result) in
             switch result {
             case .success(let response):
                 
