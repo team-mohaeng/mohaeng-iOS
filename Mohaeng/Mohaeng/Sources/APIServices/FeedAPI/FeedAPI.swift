@@ -15,6 +15,8 @@ public class FeedAPI {
     
     enum ResponseData {
         case feed
+        case writing
+        case myDrawer
     }
     
     public init() { }
@@ -36,11 +38,44 @@ public class FeedAPI {
         }
     }
     
+    func postFeed(writingRequest: WritingRequest, completion: @escaping (NetworkResult<Any>) -> Void) {
+        feedProvider.request(.postFeed(content: writingRequest.content,
+                                       mood: writingRequest.mood,
+                                       isPrivate: writingRequest.isPrivate,
+                                       image: writingRequest.image)) { (result) in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .writing)
+                completion(networkResult)
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
+    func getMyDrawer(year: Int, month: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
+        feedProvider.request(.getMyDrawer(year: year, month: month)) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .myDrawer)
+                completion(networkResult)
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
     private func judgeStatus(by statusCode: Int, _ data: Data, responseData: ResponseData) -> NetworkResult<Any> {
         switch statusCode {
         case 200:
             switch responseData {
-            case .feed:
+            case .feed, .writing, .myDrawer:
                 return isValidData(data: data, responseData: responseData)
             }
         case 400..<500:
@@ -61,6 +96,16 @@ public class FeedAPI {
                 return .pathErr
             }
             return .success(decodedData.data)
+        case .writing:
+            guard let decodedData = try? decoder.decode(GenericResponse<WritingResponse>.self, from: data) else {
+                return .pathErr
+            }
+            return .success(decodedData.data)
+        case .myDrawer:
+            guard let decodedData = try? decoder.decode(GenericResponse<FeedResponse>.self, from: data) else {
+                return .pathErr
+            }
+            return .success(decodedData.data?.feeds)
         }
     }
 }

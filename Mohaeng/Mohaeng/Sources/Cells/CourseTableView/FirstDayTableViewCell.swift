@@ -14,6 +14,8 @@ class FirstDayTableViewCell: UITableViewCell {
     private let currentLine = CAShapeLayer()
     private let nextLine = CAShapeLayer()
     
+    var appCourse: AppCourse = AppCourse(rawValue: 1)!
+    
     enum Size {
         // all
         static let smallRadius: CGFloat = 60
@@ -42,8 +44,6 @@ class FirstDayTableViewCell: UITableViewCell {
     // 방향 바꾸기 테스트용 CGPoints
     private let pathStartPoint = CGPoint(x: Size.horizontalSpacing, y: Size.lineLength + Size.smallRadius + Size.radius + Size.startOffset)
     
-    var property: Int = 0
-    
     // MARK: - @IBOutlet Properties
 
     @IBOutlet weak var propertyImageView: UIImageView!
@@ -60,7 +60,6 @@ class FirstDayTableViewCell: UITableViewCell {
         initViewRounding()
         initFirstPath()
         initNextPath()
-        setProperty(by: property)
     }
     
     // MARK: - Functions
@@ -104,10 +103,14 @@ class FirstDayTableViewCell: UITableViewCell {
         
     }
     
-    func setCell(challenge: Challenge) {
+    func setCell(challenge: TodayChallenge, property: Int) {
+        guard let course = AppCourse(rawValue: property) else { return }
+        appCourse = course
+        
         // 날짜 label
         if challenge.year != "" {
             dayLabelBgView.isHidden = false
+            dayLabelBgView.backgroundColor = appCourse.getDarkColor()
             
             dayLabel.text = "\(challenge.month).\(challenge.day) 완료"
         } else {
@@ -115,7 +118,7 @@ class FirstDayTableViewCell: UITableViewCell {
         }
         
         // n일차 label
-        dayCountLabel.text = "\(challenge.id)일차"
+        dayCountLabel.text = "1일차"
         // 미션 label
         descriptionLabel.text = challenge.title
         
@@ -123,7 +126,43 @@ class FirstDayTableViewCell: UITableViewCell {
         setColorBySituation(situation: challenge.situation)
         
         // property에 따라 속성 아이콘 변경
+        setStamp(situation: challenge.situation)
+    }
+    
+    func setOnboardingCell(challengeName: String, property: Int) {
+        guard let course = AppCourse(rawValue: property) else { return }
+        appCourse = course
         
+        dayLabelBgView.isHidden = false
+        if let appCourse = AppCourse(rawValue: property) {
+            dayLabelBgView.backgroundColor = appCourse.getDarkColor()
+        }
+        dayLabel.text = "  완료  "
+        dayCountLabel.text = "1일차"
+        descriptionLabel.text = challengeName
+        setColorBySituation(situation: 2)
+        setStamp(situation: 2)
+    }
+    
+    // 점선, 실선 처리
+    func setDashedLine(line: CAShapeLayer) {
+        line.lineDashPattern = [RoadMapPath(centerY: 0).getDashPattern(), RoadMapPath(centerY: 0).getBlankPattern()]
+        line.lineDashPhase = 5
+    }
+    
+    func setPlainLine(line: CAShapeLayer) {
+        line.lineDashPattern = [1]
+    }
+    
+    // set property functions
+    
+    func setStamp(situation: Int) {
+        // 도장 이미지
+        if situation == 2 {
+            propertyImageView.image = appCourse.getSmallImage()
+        } else {
+            propertyImageView.image = appCourse.getUndoneStampImage()
+        }
     }
     
     func setNextSituation(next: Int) {
@@ -132,10 +171,10 @@ class FirstDayTableViewCell: UITableViewCell {
             nextLine.strokeColor = UIColor.Grey4.cgColor
             setDashedLine(line: nextLine)
         case 1:
-            nextLine.strokeColor = UIColor.sampleGreen.cgColor
+            nextLine.strokeColor = appCourse.getDarkColor().cgColor
             setDashedLine(line: nextLine)
         case 2:
-            nextLine.strokeColor = UIColor.sampleGreen.cgColor
+            nextLine.strokeColor = appCourse.getDarkColor().cgColor
             setPlainLine(line: nextLine)
             
         default:
@@ -151,61 +190,17 @@ class FirstDayTableViewCell: UITableViewCell {
             setDashedLine(line: currentLine)
         
         case 1: // 진행 중인 챌린지
-            currentLine.strokeColor = UIColor.sampleGreen.cgColor
+            currentLine.strokeColor = appCourse.getDarkColor().cgColor
             setDashedLine(line: currentLine)
             
         case 2: // 완료 된 챌린지
-            currentLine.strokeColor = UIColor.sampleGreen.cgColor
+            currentLine.strokeColor = appCourse.getDarkColor().cgColor
             setPlainLine(line: currentLine)
             
         default:
             break
         }
         self.contentView.layer.insertSublayer(currentLine, at: 1)
-    }
-    
-    // 점선, 실선 처리
-    func setDashedLine(line: CAShapeLayer) {
-        line.lineDashPattern = [RoadMapPath(centerY: 0).getDashPattern(), RoadMapPath(centerY: 0).getBlankPattern()]
-        line.lineDashPhase = 5
-    }
-    
-    func setPlainLine(line: CAShapeLayer) {
-        line.lineDashPattern = [1]
-    }
-    
-    // set property functions
-    
-    func setProperty(by property: Int) {
-        switch property {
-        case Property.health.rawValue:
-            setProperty0()
-        case Property.memory.rawValue:
-            setProperty1()
-        case Property.observation.rawValue:
-            setProperty2()
-        case Property.challenge.rawValue:
-            setProperty3()
-        default:
-            return
-        }
-    }
-    
-    // 0: 건강 1: 기억 2: 관찰 3: 도전
-    func setProperty0() {
-        propertyImageView.image = Const.Image.typeHchallengeC
-    }
-    
-    func setProperty1() {
-        propertyImageView.image = Const.Image.typeMchallengeC
-    }
-    
-    func setProperty2() {
-        propertyImageView.image = Const.Image.typeSchallengeC
-    }
-    
-    func setProperty3() {
-        propertyImageView.image = Const.Image.typeCchallengeC
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

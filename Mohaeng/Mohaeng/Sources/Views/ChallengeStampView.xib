@@ -25,6 +25,9 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 챌린지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFX-Dy-UWZ">
                     <rect key="frame" x="24" y="94" width="134" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="4IM-Eh-Xfh"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -33,7 +36,7 @@
                     <rect key="frame" x="24" y="149" width="342" height="98"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2g-88-EEw">
-                            <rect key="frame" x="90.333333333333329" y="31.333333333333346" width="239.66666666666669" height="35.333333333333343"/>
+                            <rect key="frame" x="118" y="31.333333333333346" width="212" height="35.333333333333343"/>
                             <string key="text">어제 외운 단어 기억 나지?
 어제 외운 단어로 문장을 만들어봐~ </string>
                             <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
@@ -56,13 +59,17 @@
                     </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleChallengeRacoon" translatesAutoresizingMaskIntoConstraints="NO" id="BV7-E8-JT9">
-                    <rect key="frame" x="23.999999999999993" y="134" width="82.333333333333314" height="113"/>
+                    <rect key="frame" x="24" y="95.666666666666671" width="110" height="151.33333333333331"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="BV7-E8-JT9" secondAttribute="height" multiplier="8:11" id="OWy-bO-kCI"/>
+                        <constraint firstAttribute="width" constant="110" id="TgE-kn-eIu"/>
+                        <constraint firstAttribute="width" secondItem="BV7-E8-JT9" secondAttribute="height" multiplier="80:110" id="uch-V9-52E"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="270" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TwG-O7-R8B">
                     <rect key="frame" x="179" y="798" width="32" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="y5e-qE-nVe"/>
+                    </constraints>
                     <state key="normal" image="scrollDownIcn"/>
                 </button>
                 <view contentMode="scaleToFill" verticalHuggingPriority="270" verticalCompressionResistancePriority="27" translatesAutoresizingMaskIntoConstraints="NO" id="Tk3-Ar-b0Y">
@@ -151,7 +158,6 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="BV7-E8-JT9" firstAttribute="top" secondItem="TFX-Dy-UWZ" secondAttribute="bottom" constant="18" id="1FJ-Ub-BJp"/>
                 <constraint firstItem="Tk3-Ar-b0Y" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="1iN-Nv-sZp"/>
                 <constraint firstItem="5dh-y5-8RN" firstAttribute="centerY" secondItem="TFX-Dy-UWZ" secondAttribute="centerY" id="8iU-dn-8wJ"/>
                 <constraint firstItem="1Of-o4-vt6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="9AK-Vc-eDS"/>
@@ -171,7 +177,13 @@
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <connections>
+                <outlet property="availableBadgeLabel" destination="mSo-3o-n7F" id="ALG-BN-5qy"/>
+                <outlet property="availableHappyLabel" destination="UqL-NJ-4Mx" id="2Jf-11-jah"/>
+                <outlet property="challengeNameLabel" destination="yCh-eY-nvn" id="BwZ-EH-BnX"/>
+                <outlet property="characterImageView" destination="BV7-E8-JT9" id="QCx-hx-Roz"/>
+                <outlet property="characterLineLabel" destination="H2g-88-EEw" id="Yoo-gv-gUO"/>
                 <outlet property="characterLineView" destination="1Of-o4-vt6" id="V6R-eg-QbR"/>
+                <outlet property="dayLabel" destination="TRQ-Vn-owg" id="xDI-Yo-5Pt"/>
                 <outlet property="dayLabelView" destination="Sw0-eU-8jJ" id="u12-Vk-BR4"/>
                 <outlet property="stampBgView" destination="Tk3-Ar-b0Y" id="7jj-AU-UCH"/>
                 <outlet property="stampImageView" destination="ZCr-7b-eZA" id="8JW-le-mBr"/>

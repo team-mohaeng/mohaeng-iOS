@@ -13,8 +13,8 @@ class MoodViewController: UIViewController {
     
     let cellSize = CGSize(width: 160, height: 160)
     var minItemSpacing: CGFloat = 10
-    let moodImageArray = [Const.Image.badImage, Const.Image.sosoImage, Const.Image.happyImage]
-    var moodImage = Const.Image.badImage
+    let moodImageArray = Const.Image.moodImageArray
+    var moodImageNum = 0
     
     private var currentDate: AppDate?
     private var signUpUser: SignUpUser?
@@ -36,15 +36,6 @@ class MoodViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     
     @IBOutlet weak var nextButtonHeightConstraint: NSLayoutConstraint!
-    
-    private let closeButton = UIButton().then {
-        $0.setImage(UIImage(named: "btnWritingX")?.resized(to: CGSize(width: 20, height: 20)), for: .normal )
-        $0.snp.makeConstraints {
-            $0.width.equalTo(63)
-            $0.height.equalTo(44)
-        }
-        $0.tintColor = .Black
-    }
     
     // MARK: - View Life Cycle
     
@@ -77,10 +68,7 @@ class MoodViewController: UIViewController {
     }
     
     private func initNavigationBar() {
-        navigationController?.initWithBackButton()
-        closeButton.addTarget(self, action: #selector(buttonDidTapped(_:)), for: .touchUpInside)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: closeButton)
-
+        navigationController?.initWithBackAndCloseButton(navigationItem: self.navigationItem, closeButtonClosure: #selector(buttonDidTapped(_:)))
         let currentDate = AppDate()
         let currentMonth = currentDate.getMonth()
         let currentDay = currentDate.getDay()
@@ -135,18 +123,15 @@ class MoodViewController: UIViewController {
     // MARK: - @IBAction Properties
     
     @IBAction func touchNextButton(_ sender: Any) {
-        if let moodImage = moodImage {
-            let writingViewController = WritingViewController(with: moodImage)
-            
-            self.navigationController?.pushViewController(writingViewController, animated: true)
-        }
-        
+        let writingViewController = WritingViewController(with: moodImageNum)
+        self.navigationController?.pushViewController(writingViewController, animated: true)
+    
     }
     
     @objc
     private func buttonDidTapped(_ sender: UIButton) {
         switch sender {
-        case closeButton:
+        case navigationItem.rightBarButtonItem:
             self.dismiss(animated: true, completion: nil)
         default:
             break
@@ -181,7 +166,7 @@ extension MoodViewController: UICollectionViewDelegate {
             break
         }
         
-        moodImage = moodImageArray[Int(roundedIndex)]
+        moodImageNum = Int(roundedIndex)
     }
 }
 

@@ -11,9 +11,12 @@ enum AppCourse: Int {
     // 늘 건강행, 나 케어행, 꼭 지켜야행, 꺅 일탈행, 호 추억행, 쪽 사랑행, 짱 똑똑행
     // 건강, 셀프케어, 습관, 도전, 추억, 사랑, 교양
     
-    case challenge = 0, habit, selfCare, health, memory, culture, love
+    // rawValue 순서대로
+    // 건강행, 케어행, 지켜야행, 일탈행, 추억행, 사랑행, 똑똑행
     
-    static var count: Int { return AppCourse.culture.rawValue + 1}
+    case health = 1, selfCare, habit, challenge, memory, love, culture
+    
+    static var count: Int { return AppCourse.culture.rawValue + 1 }
     
     func getKorean() -> String {
         
@@ -151,11 +154,41 @@ enum AppCourse: Int {
     }
     
     func getUndoneStampImage() -> UIImage {
-        return UIImage()
+        switch self {
+        case .love:
+            return Const.Image.redUndoneStampImage
+        case .culture:
+            return Const.Image.orangeUndoneStampImage
+        case .memory:
+            return Const.Image.yellowUndoneStampImage
+        case .health:
+            return Const.Image.greenUndoneStampImage
+        case .selfCare:
+            return Const.Image.blueUndoneStampImage
+        case .habit:
+            return Const.Image.indigoUndoneStampImage
+        case .challenge:
+            return Const.Image.purpleUndoneStampImage
+        }
     }
     
     func getDoneStampImage() -> UIImage {
-        return UIImage()
+        switch self {
+        case .love:
+            return Const.Image.redDoneStampImage
+        case .culture:
+            return Const.Image.orangeDoneStampImage
+        case .memory:
+            return Const.Image.yellowDoneStampImage
+        case .health:
+            return Const.Image.greenDoneStampImage
+        case .selfCare:
+            return Const.Image.blueDoneStampImage
+        case .habit:
+            return Const.Image.indigoDoneStampImage
+        case .challenge:
+            return Const.Image.purpleDoneStampImage
+        }
     }
     
     func getOnBoardingDescription() -> String {
@@ -175,6 +208,27 @@ enum AppCourse: Int {
             return "친구, 가족, 멘토와 관련된 챌린지"
         case .culture:
             return "교양과 관련된 챌린지"
+        }
+        
+    }
+    
+    func getOnboardingCourse() -> [String] {
+        
+        switch self {
+        case .health:
+            return ["햇살 가득한 하루", "햇빛 아래에서 광합성하기"]
+        case .selfCare:
+            return ["내가 제일 잘 나가", "오늘의 나한테 칭찬해주기"]
+        case .habit:
+            return ["일찍 일어나는 새", "나를 위한 응원의 한 마디"]
+        case .challenge:
+            return ["밤에 듣는 즉흥환상곡", "밤에 산책 또는 자전거타기"]
+        case .memory:
+            return ["중급 사진가", "오늘 입은 옷 찍기"]
+        case .love:
+            return ["친구찾아 삼만리", "오늘의 tmi 물어보기"]
+        case .culture:
+            return ["지구촌 촌장되기", "3개 국어 인삿말 말하기"]
         }
         
     }

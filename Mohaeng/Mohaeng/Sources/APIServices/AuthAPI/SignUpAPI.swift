@@ -15,8 +15,8 @@ public class SignUpAPI {
     
     public init() { }
     
-    func postSignUp(completion: @escaping (NetworkResult<Any>) -> Void, email: String, password: String, nickname: String, gender: Int, birthyear: Int) {
-        signupProvider.request(.postSignUp(email: email, password: password, nickname: nickname, gender: gender, birthyear: birthyear)) { (result) in
+    func postSignUp(completion: @escaping (NetworkResult<Any>) -> Void, email: String, password: String, nickname: String) {
+        signupProvider.request(.postSignUp(email: email, password: password, nickname: nickname)) { (result) in
             switch result {
             case .success(let response):
                 let statusCode = response.statusCode

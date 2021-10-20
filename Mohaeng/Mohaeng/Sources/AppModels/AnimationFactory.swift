@@ -7,10 +7,10 @@
 
 import UIKit
 
-typealias Animation = (UITableViewCell, IndexPath, UITableView) -> Void
+typealias TableViewAnimation = (UITableViewCell, IndexPath, UITableView) -> Void
 
 enum AnimationFactory {
-    static func makeMoveUpWithFade(rowHeight: CGFloat, duration: TimeInterval, delayFactor: Double) -> Animation {
+    static func makeMoveUpWithFade(rowHeight: CGFloat, duration: TimeInterval, delayFactor: Double) -> TableViewAnimation {
         return { cell, indexPath, _ in
             cell.transform = CGAffineTransform(translationX: 0, y: rowHeight / 2)
             cell.alpha = 0
@@ -28,9 +28,9 @@ enum AnimationFactory {
 }
 
 final class Animator {
-    private let animation: Animation
+    private let animation: TableViewAnimation
 
-    init(animation: @escaping Animation) {
+    init(animation: @escaping TableViewAnimation) {
         self.animation = animation
     }
 

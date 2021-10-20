@@ -10,9 +10,6 @@ import UIKit
 class CourseLibraryViewController: UIViewController {
     
     // MARK: - Properties
-    // dummy data
-    var courses: [Course] = []
-    
     var doingCourse: Bool = true
     var courseListViewModel = CourseListViewModel()
     var askPopUp: PopUpViewController = PopUpViewController()
@@ -72,6 +69,7 @@ class CourseLibraryViewController: UIViewController {
     }
     
     private func updateUI() {
+        doingCourse = courseListViewModel.isProgress
         self.courseLibraryCollectionView.reloadData()
     }
     
@@ -138,7 +136,7 @@ extension CourseLibraryViewController: UICollectionViewDataSource {
                 if indexPath.row == 0 {
                     cell.setLabel(title: "전체")
                 } else {
-                    if let title = AppCourse(rawValue: indexPath.row-1)?.getKorean() {
+                    if let title = AppCourse(rawValue: indexPath.row)?.getKorean() {
                         cell.setLabel(title: title)
                     }
                 }
@@ -243,6 +241,8 @@ extension CourseLibraryViewController: UICollectionViewDelegateFlowLayout {
     }
     
 }
+
+// MARK: - 통신
 
 extension CourseLibraryViewController {
     func startCourse(courseId: Int) {
