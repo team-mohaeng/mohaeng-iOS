@@ -103,7 +103,7 @@ class RewardBaseViewController: UIViewController {
         }
     }
     
-    private let hasNotch = UIDevice.current.hasNotch
+    private lazy var hasNotch = UIDevice.current.hasNotch
     
 // MARK: - View Life Cycle
     

@@ -232,4 +232,8 @@ enum AppCourse: Int {
         }
         
     }
+    
+    func getRewardCards() -> String {
+        return "awards_sok" + "\(self.rawValue)"
+    }
 }

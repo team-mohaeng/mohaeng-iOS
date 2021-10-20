@@ -28,9 +28,11 @@ enum Reward {
     func getTitleText(level: Int? = nil) -> String {
         switch self {
         case .challenge:
-            return "오늘의 챌린지 성공!"
+            return ""
+//                "오늘의 챌린지 성공!"
         case .course:
-            return "코스를 완료했어!"
+            return ""
+//            return "코스를 완료했어!"
         case .levelUp:
             guard let level = level else { return ""}
             return """
@@ -47,7 +49,7 @@ enum Reward {
         }
     }
     
-    func setGraphicView(view: UIView, styleCard: String? = nil) {
+    func setGraphicView(view: UIView, styleCard: String? = nil, rewardCard: String? = nil) {
         switch self {
         case .challenge:
             let animationView = AnimationView(name: "awards_congrats").then {
