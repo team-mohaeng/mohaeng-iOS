@@ -3,21 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>500289567899-3bcsu71p0jiji54pvdvmtr1skqcc2gp5.apps.googleusercontent.com</string>
+	<string>495078612836-7mtco3ip5f9bhsd8sj6eaq8e120mnb3i.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.500289567899-3bcsu71p0jiji54pvdvmtr1skqcc2gp5</string>
+	<string>com.googleusercontent.apps.495078612836-7mtco3ip5f9bhsd8sj6eaq8e120mnb3i</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>495078612836-bgbm4kua517jauukin8jde8855bvupl4.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAE2QOoUF8UWEliQgz6qnDURtcREFZqkh8</string>
+	<string>AIzaSyAiNAh_VlniaLaw1_sUN84shPbbZI467Ek</string>
 	<key>GCM_SENDER_ID</key>
-	<string>500289567899</string>
+	<string>495078612836</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.choyi.Journey</string>
+	<string>choyi.mohaeng</string>
 	<key>PROJECT_ID</key>
-	<string>journeyandroid-53388</string>
+	<string>mohaeng-26dcc</string>
 	<key>STORAGE_BUCKET</key>
-	<string>journeyandroid-53388.appspot.com</string>
+	<string>mohaeng-26dcc.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:500289567899:ios:2be8c9108f60d0e3571a3e</string>
+	<string>1:495078612836:ios:a39bf45c5386143f24e471</string>
 </dict>
 </plist>
