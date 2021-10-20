@@ -128,7 +128,7 @@ extension OnBoarding3ViewController: UITableViewDelegate {
             footerView.setIslandImage(isDone: false)
             footerView.setNextButton(isOnboarding: true)
             footerView.onboardingCourseProtocol = self
-            footerView.initLastPath(isDone: false)
+            footerView.initLastPath(isDone: false, property: course?.rawValue ?? 1)
             return footerView
         }
         return UIView()

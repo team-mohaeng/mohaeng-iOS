@@ -348,24 +348,30 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jE6-xA-0aA">
-                                                <rect key="frame" x="24" y="562.33333333333337" width="366" height="71.666666666666629"/>
+                                                <rect key="frame" x="24" y="562.33333333333337" width="366" height="64"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p6w-Fr-UTf">
-                                                <rect key="frame" x="24" y="562.33333333333337" width="366" height="71.666666666666629"/>
+                                                <rect key="frame" x="24" y="562.33333333333337" width="366" height="64"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="챌린지 기록 보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqt-Na-xYJ">
-                                                        <rect key="frame" x="19" y="27.666666666666629" width="117" height="16"/>
+                                                        <rect key="frame" x="19" y="24" width="117" height="16"/>
                                                         <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag" translatesAutoresizingMaskIntoConstraints="NO" id="DcS-bR-OeN">
+                                                        <rect key="frame" x="231" y="0.0" width="113" height="64"/>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="0.96862745098039216" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="eqt-Na-xYJ" firstAttribute="leading" secondItem="p6w-Fr-UTf" secondAttribute="leading" constant="19" id="7eW-4V-yV4"/>
-                                                    <constraint firstAttribute="width" secondItem="p6w-Fr-UTf" secondAttribute="height" multiplier="327:64" id="Ot4-tb-cUH"/>
+                                                    <constraint firstAttribute="bottom" secondItem="DcS-bR-OeN" secondAttribute="bottom" id="EgO-Cc-Myb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="DcS-bR-OeN" secondAttribute="trailing" constant="22" id="TEb-2Q-IbV"/>
+                                                    <constraint firstAttribute="height" constant="64" id="ZYJ-2r-nC5"/>
                                                     <constraint firstItem="eqt-Na-xYJ" firstAttribute="centerY" secondItem="p6w-Fr-UTf" secondAttribute="centerY" id="fIn-ac-Wy8"/>
+                                                    <constraint firstItem="DcS-bR-OeN" firstAttribute="top" secondItem="p6w-Fr-UTf" secondAttribute="top" id="nOX-Wu-5jY"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -447,6 +453,7 @@
         <image name="chevron_left" width="24" height="24"/>
         <image name="chevron_right" width="24" height="24"/>
         <image name="editTch" width="16" height="16"/>
+        <image name="flag" width="113" height="63.666667938232422"/>
         <namedColor name="Black">
             <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

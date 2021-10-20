@@ -84,7 +84,11 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="courseNameLabel" destination="Y0a-mF-nIl" id="S6U-Ri-p0w"/>
+                <outlet property="dayBgView" destination="H7F-En-f8K" id="757-M1-YD5"/>
+                <outlet property="dayLabel" destination="d4l-Wu-pV1" id="8tn-hW-HfL"/>
                 <outlet property="headerBgView" destination="ibZ-hW-nAO" id="xVZ-gg-ULU"/>
+                <outlet property="propertyImageView" destination="Luw-Fo-ILl" id="Ti4-T8-uui"/>
             </connections>
             <point key="canvasLocation" x="162.31884057971016" y="-161.71875"/>
         </view>
