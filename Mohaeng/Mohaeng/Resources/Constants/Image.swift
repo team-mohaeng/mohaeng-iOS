@@ -214,5 +214,15 @@ extension Const {
         static let grpWritingCompletion = UIImage(named: "grpWritingCompletion")!
         static let styleCardBg = UIImage(named: "styleCardBg")!
 
+        // feed
+        static let report = UIImage(named: "btnReport")!
+        
+        // emoji
+        static let sticker1 = UIImage(named: "sticker1")!
+        static let sticker2 = UIImage(named: "sticker2")!
+        static let sticker3 = UIImage(named: "sticker3")!
+        static let sticker4 = UIImage(named: "sticker4")!
+        static let sticker5 = UIImage(named: "sticker5")!
+        static let sticker6 = UIImage(named: "sticker6")!
     }
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 class StickerViewController: UIViewController {
-
+    
     // MARK: - IBOutlet Properties
     
     @IBOutlet weak var sticker1Button: UIButton!
@@ -17,6 +17,10 @@ class StickerViewController: UIViewController {
     @IBOutlet weak var sticker4Button: UIButton!
     @IBOutlet weak var sticker5Button: UIButton!
     @IBOutlet weak var sticker6Button: UIButton!
+    
+    // MARK: - Properties
+    
+    var postId = 0
     
     // MARK: - View Life Cycle
     
@@ -41,9 +45,65 @@ class StickerViewController: UIViewController {
         }
     }
     
+    func postNotification() {
+        NotificationCenter.default.post(name: NSNotification.Name("stickerButtonDidTap"),
+                                        object: nil,
+                                        userInfo: nil)
+    }
+    
     // MARK: - IBAction Properties
     
     @IBAction func touchCloseButton(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: false) {
+            self.postNotification()
+        }
     }
+    
+    @IBAction func touchSticker1(_ sender: Any) {
+        postEmoji(emojiId: 1, postId: postId)
+    }
+    
+    @IBAction func touchSticker2(_ sender: Any) {
+        postEmoji(emojiId: 2, postId: postId)
+    }
+    
+    @IBAction func touchSticker3(_ sender: Any) {
+        postEmoji(emojiId: 3, postId: postId)
+    }
+    
+    @IBAction func touchSticker4(_ sender: Any) {
+        postEmoji(emojiId: 4, postId: postId)
+    }
+    
+    @IBAction func touchSticker5(_ sender: Any) {
+        postEmoji(emojiId: 5, postId: postId)
+    }
+    
+    @IBAction func touchSticker6(_ sender: Any) {
+        postEmoji(emojiId: 6, postId: postId)
+    }
+    
+}
+
+extension StickerViewController {
+    
+    func postEmoji(emojiId: Int, postId: Int) {
+        FeedAPI.shared.postEmoji(emojiId: emojiId, postId: postId) { response in
+            switch response {
+            case .success:
+                self.dismiss(animated: false) {
+                    self.postNotification()
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+    
 }

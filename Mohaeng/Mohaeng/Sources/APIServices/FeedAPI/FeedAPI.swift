@@ -11,12 +11,14 @@ import Moya
 public class FeedAPI {
     
     static let shared = FeedAPI()
-    var feedProvider = MoyaProvider<FeedService>()
+    var feedProvider = MoyaProvider<FeedService>(plugins: [MoyaLoggingPlugin()])
     
     enum ResponseData {
         case feed
         case writing
         case myDrawer
+        case report
+        case emoji
     }
     
     public init() { }
@@ -71,15 +73,43 @@ public class FeedAPI {
         }
     }
     
+    func postReport(id: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
+        feedProvider.request(.postReport(id: id)) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .report)
+                completion(networkResult)
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
+    func postEmoji(emojiId: Int, postId: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
+        feedProvider.request(.putEmoji(emojiId: emojiId, postId: postId)) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .emoji)
+                completion(networkResult)
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
     private func judgeStatus(by statusCode: Int, _ data: Data, responseData: ResponseData) -> NetworkResult<Any> {
         switch statusCode {
-        case 200:
+        case 200, 400..<500:
             switch responseData {
-            case .feed, .writing, .myDrawer:
+            case .feed, .writing, .myDrawer, .report, .emoji:
                 return isValidData(data: data, responseData: responseData)
             }
-        case 400..<500:
-            return .requestErr(data)
         case 500:
             return .serverErr
         default:
@@ -106,6 +136,11 @@ public class FeedAPI {
                 return .pathErr
             }
             return .success(decodedData.data?.feeds)
+        case .report, .emoji:
+            guard let decodedData = try? decoder.decode(GenericResponse<String>.self, from: data) else {
+                return .pathErr
+            }
+            return .success(decodedData.message)
         }
     }
 }
