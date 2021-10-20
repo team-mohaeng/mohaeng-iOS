@@ -110,7 +110,6 @@
 		561D771226F0BFA40028DBCA /* CourseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D766826F0BFA40028DBCA /* CourseService.swift */; };
 		561D771326F0BFA40028DBCA /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D766A26F0BFA40028DBCA /* HomeService.swift */; };
 		561D771426F0BFA40028DBCA /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D766B26F0BFA40028DBCA /* HomeAPI.swift */; };
-		561D771526F0BFA40028DBCA /* AppModelsExmaple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D766D26F0BFA40028DBCA /* AppModelsExmaple.swift */; };
 		561D771626F0BFA40028DBCA /* AppYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D766E26F0BFA40028DBCA /* AppYear.swift */; };
 		561D771726F0BFA40028DBCA /* AppCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D766F26F0BFA40028DBCA /* AppCourse.swift */; };
 		561D771826F0BFA40028DBCA /* AppDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D767026F0BFA40028DBCA /* AppDate.swift */; };
@@ -188,6 +187,11 @@
 		AAED18DA26F11DF0009FE781 /* StickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAED18D426F11DEF009FE781 /* StickerCollectionViewCell.xib */; };
 		AAED18DD26F11DF0009FE781 /* PlusButtonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAED18D726F11DEF009FE781 /* PlusButtonCollectionViewCell.xib */; };
 		AAED18E026F313E3009FE781 /* FeedDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAED18DF26F313E3009FE781 /* FeedDetailCollectionViewCell.swift */; };
+		AAEDB370271C5E8E00E26615 /* CharacterStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB36F271C5E8E00E26615 /* CharacterStyle.swift */; };
+		AAEDB372271C638100E26615 /* AppCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB371271C638100E26615 /* AppCharacter.swift */; };
+		AAEDB375271C688000E26615 /* CharacterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB374271C688000E26615 /* CharacterAPI.swift */; };
+		AAEDB377271C689800E26615 /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB376271C689800E26615 /* CharacterService.swift */; };
+		AAEDB379271C9D4600E26615 /* BackgroundSkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB378271C9D4600E26615 /* BackgroundSkin.swift */; };
 		AAEDB361271C050000E26615 /* LottieFileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB360271C050000E26615 /* LottieFileProvider.swift */; };
 		AAEDB363271C05CC00E26615 /* AnimationView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB362271C05CC00E26615 /* AnimationView+Extension.swift */; };
 		AAEDB36B271C142F00E26615 /* HappyPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB369271C142F00E26615 /* HappyPopUpViewController.swift */; };
@@ -335,7 +339,6 @@
 		561D766826F0BFA40028DBCA /* CourseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseService.swift; sourceTree = "<group>"; };
 		561D766A26F0BFA40028DBCA /* HomeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		561D766B26F0BFA40028DBCA /* HomeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
-		561D766D26F0BFA40028DBCA /* AppModelsExmaple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModelsExmaple.swift; sourceTree = "<group>"; };
 		561D766E26F0BFA40028DBCA /* AppYear.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppYear.swift; sourceTree = "<group>"; };
 		561D766F26F0BFA40028DBCA /* AppCourse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCourse.swift; sourceTree = "<group>"; };
 		561D767026F0BFA40028DBCA /* AppDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDate.swift; sourceTree = "<group>"; };
@@ -414,6 +417,11 @@
 		AAED18D426F11DEF009FE781 /* StickerCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StickerCollectionViewCell.xib; sourceTree = "<group>"; };
 		AAED18D726F11DEF009FE781 /* PlusButtonCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlusButtonCollectionViewCell.xib; sourceTree = "<group>"; };
 		AAED18DF26F313E3009FE781 /* FeedDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		AAEDB36F271C5E8E00E26615 /* CharacterStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStyle.swift; sourceTree = "<group>"; };
+		AAEDB371271C638100E26615 /* AppCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCharacter.swift; sourceTree = "<group>"; };
+		AAEDB374271C688000E26615 /* CharacterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAPI.swift; sourceTree = "<group>"; };
+		AAEDB376271C689800E26615 /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
+		AAEDB378271C9D4600E26615 /* BackgroundSkin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSkin.swift; sourceTree = "<group>"; };
 		AAEDB360271C050000E26615 /* LottieFileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieFileProvider.swift; sourceTree = "<group>"; };
 		AAEDB362271C05CC00E26615 /* AnimationView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimationView+Extension.swift"; sourceTree = "<group>"; };
 		AAEDB369271C142F00E26615 /* HappyPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyPopUpViewController.swift; sourceTree = "<group>"; };
@@ -818,6 +826,7 @@
 		561D765626F0BFA40028DBCA /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				AAEDB373271C686400E26615 /* CharacterAPI */,
 				561D766526F0BFA40028DBCA /* GenericResponse.swift */,
 				561D765D26F0BFA40028DBCA /* NetworkResult.swift */,
 				DD515C662711D77700E76D4B /* MoyaLoggingPlugin.swift */,
@@ -885,7 +894,6 @@
 		561D766C26F0BFA40028DBCA /* AppModels */ = {
 			isa = PBXGroup;
 			children = (
-				561D766D26F0BFA40028DBCA /* AppModelsExmaple.swift */,
 				561D766E26F0BFA40028DBCA /* AppYear.swift */,
 				561D766F26F0BFA40028DBCA /* AppCourse.swift */,
 				561D767026F0BFA40028DBCA /* AppDate.swift */,
@@ -894,6 +902,8 @@
 				561D767326F0BFA40028DBCA /* SignUpUser.swift */,
 				561D767426F0BFA40028DBCA /* RoadMapPath.swift */,
 				DD9EFFC627154D7800B3F871 /* AnimationFactory.swift */,
+				AAEDB371271C638100E26615 /* AppCharacter.swift */,
+				AAEDB378271C9D4600E26615 /* BackgroundSkin.swift */,
 				DD6BB492271DA8A00086240B /* Reward.swift */,
 			);
 			path = AppModels;
@@ -915,6 +925,7 @@
 				565A1EF72700CF81000CAB1B /* MyPage.swift */,
 				56A190CC2715C2F0002A03E4 /* CourseHistory.swift */,
 				DDEBD21F270F6CFA0011EDC6 /* Badge.swift */,
+				AAEDB36F271C5E8E00E26615 /* CharacterStyle.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -1059,6 +1070,13 @@
 			path = CharaterCollectionView;
 			sourceTree = "<group>";
 		};
+		AAEDB373271C686400E26615 /* CharacterAPI */ = {
+			isa = PBXGroup;
+			children = (
+				AAEDB374271C688000E26615 /* CharacterAPI.swift */,
+				AAEDB376271C689800E26615 /* CharacterService.swift */,
+			);
+			path = CharacterAPI;
 		AAEDB35F271C04DE00E26615 /* lottie */ = {
 			isa = PBXGroup;
 			children = (
@@ -1356,7 +1374,9 @@
 				561D771326F0BFA40028DBCA /* HomeService.swift in Sources */,
 				561D76EE26F0BFA40028DBCA /* PopUpViewController.swift in Sources */,
 				561D772126F0BFA40028DBCA /* Challenge.swift in Sources */,
+				AAEDB372271C638100E26615 /* AppCharacter.swift in Sources */,
 				DD9EFFCF2715798100B3F871 /* OnBoarding4ViewController.swift in Sources */,
+				AAEDB379271C9D4600E26615 /* BackgroundSkin.swift in Sources */,
 				56C019B4271C2BFE00735761 /* MyPageAPI.swift in Sources */,
 				561D771626F0BFA40028DBCA /* AppYear.swift in Sources */,
 				561D76E626F0BFA40028DBCA /* ModalPresentationController.swift in Sources */,
@@ -1394,6 +1414,7 @@
 				AA7E0AB326FC6C1900106DC2 /* CharacterTypeCollectionViewCell.swift in Sources */,
 				561D772826F0BFA40028DBCA /* MyDrawerCollectionReusableView.swift in Sources */,
 				561D76DD26F0BFA40028DBCA /* EvenDayTableViewCell.swift in Sources */,
+				AAEDB370271C5E8E00E26615 /* CharacterStyle.swift in Sources */,
 				56A30E02271C62FA0097FD75 /* PushNotiService.swift in Sources */,
 				DD8452662715C11E007B4C2B /* OnBoarding5ViewController.swift in Sources */,
 				561D770026F0BFA40028DBCA /* TabbarViewController.swift in Sources */,
@@ -1410,6 +1431,7 @@
 				561D771126F0BFA40028DBCA /* CourseAPI.swift in Sources */,
 				561D76D426F0BFA40028DBCA /* CourseLibraryCollectionViewCell.swift in Sources */,
 				561D770D26F0BFA40028DBCA /* LoginService.swift in Sources */,
+				AAEDB375271C688000E26615 /* CharacterAPI.swift in Sources */,
 				561D772D26F0BFA40028DBCA /* DatePickerViewController.swift in Sources */,
 				DD9EFFC927154F5C00B3F871 /* OnBoarding2HeaderView.swift in Sources */,
 				DD6BB49E271DD3690086240B /* CuriosityRewardViewController.swift in Sources */,
@@ -1471,6 +1493,7 @@
 				DD860D322700BACD00835AC0 /* WritingViewController.swift in Sources */,
 				561D772E26F0BFA40028DBCA /* UnreadNotificationHeaderView.swift in Sources */,
 				561D76E426F0BFA40028DBCA /* UIView+Extension.swift in Sources */,
+				AAEDB377271C689800E26615 /* CharacterService.swift in Sources */,
 				561D76DC26F0BFA40028DBCA /* FirstDayTableViewCell.swift in Sources */,
 				569C39682712BDB300DED361 /* ChallengePopUpProcotol.swift in Sources */,
 				561D76FF26F0BFA40028DBCA /* FeedViewController.swift in Sources */,
