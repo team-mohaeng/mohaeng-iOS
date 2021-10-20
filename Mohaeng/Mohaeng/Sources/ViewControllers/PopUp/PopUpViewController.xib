@@ -91,8 +91,8 @@
                             </constraints>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DT-Wz-vlA">
-                            <rect key="frame" x="270" y="13.999999999999972" width="44" height="44"/>
-                            <state key="normal" image="gnbIconX"/>
+                            <rect key="frame" x="280" y="13.999999999999972" width="34" height="34"/>
+                            <state key="normal" image="icnPopX"/>
                             <connections>
                                 <action selector="touchCloseButton:" destination="-1" eventType="touchUpInside" id="Bdw-It-H3M"/>
                             </connections>
@@ -140,8 +140,8 @@
         </view>
     </objects>
     <resources>
-        <image name="gnbIconX" width="44" height="44"/>
         <image name="grpXChangeChallenge" width="160" height="160"/>
+        <image name="icnPopX" width="34" height="34"/>
         <namedColor name="Black1Text">
             <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
