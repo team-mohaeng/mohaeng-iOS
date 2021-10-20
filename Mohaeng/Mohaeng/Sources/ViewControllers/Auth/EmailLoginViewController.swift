@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Moya
 
 class EmailLoginViewController: UIViewController {
     
@@ -36,7 +37,7 @@ class EmailLoginViewController: UIViewController {
     // MARK: - @IBActions
     
     @IBAction func touchLoginButton(_ sender: UIButton!) {
-        pushHomeViewController()
+        postLogin()
       
     }
     @IBAction func touchFindPasswordButton(_ sender: UIButton!) {
@@ -133,5 +134,36 @@ extension EmailLoginViewController: UITextFieldDelegate {
         } else {
             loginButton.isEnabled = true
         }
+    }
+}
+
+extension EmailLoginViewController {
+
+    func postLogin() {
+        
+        guard let password = passwordTextField.text else {
+            return
+        }
+        guard let email = emailTextField.text else {
+            return
+        }
+
+       LoginAPI.shared.postSignIn(completion: { (response) in
+            switch response {
+            case .success(let jwt):
+                if let data = jwt as? JwtData {
+                    UserDefaults.standard.setValue(data.jwt, forKey: "jwtToken")
+                    self.pushHomeViewController()
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }, email: email, password: password)
     }
 }
