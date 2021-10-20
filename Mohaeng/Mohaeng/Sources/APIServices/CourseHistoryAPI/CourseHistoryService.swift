@@ -1,42 +1,33 @@
 //
-//  CourseService.swift
-//  Journey
+//  CourseHistoryService.swift
+//  Mohaeng
 //
-//  Created by 초이 on 2021/07/11.
+//  Created by 초이 on 2021/10/18.
 //
 
 import Foundation
 import Moya
 
-// MARK: - Course Service
-
-enum CourseService {
-    // 코스 라이브러리 조회
-    case getCourseLibrary
-    // 코스 진행하기
-    case putCourseProgress(id: Int)
+enum CourseHistoryService {
+    case getCourseHistory
 }
 
-extension CourseService: TargetType {
+extension CourseHistoryService: TargetType {
     var baseURL: URL {
         return URL(string: Const.URL.baseURL)!
     }
     
     var path: String {
         switch self {
-        case .getCourseLibrary:
-            return Const.URL.coursesURL
-        case .putCourseProgress(let id):
-            return Const.URL.coursesURL + "/\(id)"
+        case .getCourseHistory:
+            return Const.URL.courseHistoryURL
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getCourseLibrary:
+        case .getCourseHistory:
             return .get
-        case .putCourseProgress(_):
-            return .put
         }
     }
     
@@ -46,7 +37,7 @@ extension CourseService: TargetType {
     
     var task: Task {
         switch self {
-        case .getCourseLibrary, .putCourseProgress(_):
+        case .getCourseHistory:
             return .requestPlain
         }
     }
@@ -57,4 +48,5 @@ extension CourseService: TargetType {
             "Bearer": UserDefaults.standard.string(forKey: "jwtToken") ?? ""
         ]
     }
+        
 }

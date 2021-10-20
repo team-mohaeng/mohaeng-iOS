@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - CourseHistoryData
 struct CourseHistoryData: Codable {
-    let courses: [Course]
+    let courses: [CourseHistory]
 }
 
 // MARK: - CourseHistory
