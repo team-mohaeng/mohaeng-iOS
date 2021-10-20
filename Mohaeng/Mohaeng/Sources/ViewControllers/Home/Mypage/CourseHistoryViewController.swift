@@ -11,6 +11,10 @@ class CourseHistoryViewController: UIViewController {
     
     // MARK: - Properties
     
+    var courseHistory = CourseHistoryData(courses: [])
+    var startNewCoursePopUp = PopUpViewController()
+    var selectedCourseId: Int?
+    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var courseHistoryCollectionView: UICollectionView!
@@ -23,6 +27,7 @@ class CourseHistoryViewController: UIViewController {
         initNavigationBar()
         setDelegation()
         registerXib()
+        getCourseHistory()
     }
     
     // MARK: - Functions
@@ -39,6 +44,44 @@ class CourseHistoryViewController: UIViewController {
     
     private func registerXib() {
         courseHistoryCollectionView.register(UINib(nibName: Const.Xib.Name.courseHistoryCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.courseHistoryCollectionViewCell)
+    }
+    
+    private func updateData(courses: CourseHistoryData) {
+        self.courseHistory = courses
+        self.courseHistoryCollectionView.reloadData()
+    }
+    
+    private func mapDataToTodayChallengeCourse(courseHistory: CourseHistory) -> TodayChallengeCourse {
+        var course = TodayChallengeCourse(
+            id: courseHistory.id,
+            situation: courseHistory.situation,
+            property: courseHistory.property,
+            title: courseHistory.title,
+            totalDays: courseHistory.totalDays,
+            currentDay: courseHistory.totalDays,
+            year: courseHistory.year,
+            month: courseHistory.month,
+            date: courseHistory.date,
+            challenges: [])
+        
+        for challenge in courseHistory.challenges {
+            
+            let todayChallenge = TodayChallenge(
+                day: challenge.day,
+                situation: challenge.situation,
+                title: challenge.title,
+                happy: 0,
+                beforeMent: "",
+                afterMent: "",
+                year: challenge.year,
+                month: challenge.month,
+                date: challenge.date,
+                badges: [])
+            
+            course.challenges.append(todayChallenge)
+        }
+        
+        return course
     }
     
     // MARK: - @IBAction Functions
@@ -71,6 +114,8 @@ extension CourseHistoryViewController: UICollectionViewDelegateFlowLayout {
             return
         }
         courseViewController.courseViewUsage = .history
+        courseViewController.course = mapDataToTodayChallengeCourse(courseHistory: courseHistory.courses[indexPath.row])
+        
         self.navigationController?.pushViewController(courseViewController, animated: true)
     }
 }
@@ -78,17 +123,75 @@ extension CourseHistoryViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - UICollectionViewDataSource
 
 extension CourseHistoryViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return courseHistory.courses.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.courseHistoryCollectionViewCell, for: indexPath) as? CourseHistoryCollectionViewCell {
             
-            cell.setCell()
+            cell.setCell(course: courseHistory.courses[indexPath.row])
+            cell.coursePopUpProtocol = self
             
             return cell
         }
         return UICollectionViewCell()
+    }
+}
+
+// MARK: - CoursePopUpProtocol
+
+extension CourseHistoryViewController: CoursePopUpProtocol {
+    func touchStartNewCourseButton(_ sender: UIButton, courseId: Int) {
+        
+        selectedCourseId = courseId
+        
+        startNewCoursePopUp = PopUpViewController(nibName: Const.Xib.Name.popUp, bundle: nil)
+        startNewCoursePopUp.modalPresentationStyle = .overCurrentContext
+        startNewCoursePopUp.modalTransitionStyle = .crossDissolve
+        startNewCoursePopUp.popUpUsage = .twoButtonWithImage
+        startNewCoursePopUp.setText(title: "안녕하세요타이틀", description: "이런부분은나중에strings파일만들어서관리하려고합니다어떤가용?")
+        startNewCoursePopUp.popUpActionDelegate = self
+        tabBarController?.present(startNewCoursePopUp, animated: true, completion: nil)
+        
+    }
+}
+
+// MARK: - PopUpActionDelegate
+
+extension CourseHistoryViewController: PopUpActionDelegate {
+    func touchGreyButton(button: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func touchYellowButton(button: UIButton) {
+        print("yellow")
+    }
+}
+
+// MARK: - 통신
+
+extension CourseHistoryViewController {
+    func getCourseHistory() {
+        
+        CourseHistoryAPI.shared.getCourseHistory { (response) in
+            
+            switch response {
+            case .success(let courses):
+                
+                if let data = courses as? CourseHistoryData {
+                    self.updateData(courses: data)
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
     }
 }

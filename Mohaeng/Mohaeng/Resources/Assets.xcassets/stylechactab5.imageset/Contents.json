@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "1Grp.png",
+      "filename" : "stylechactab5.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "1Grp@2x.png",
+      "filename" : "stylechactab5@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "1Grp@3x.png",
+      "filename" : "stylechactab5@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
