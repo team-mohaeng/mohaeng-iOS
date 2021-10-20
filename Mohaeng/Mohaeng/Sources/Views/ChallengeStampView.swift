@@ -65,13 +65,12 @@ class ChallengeStampView: UIView {
             // 스탬프
             if let appCourse = AppCourse(rawValue: data.course.property) {
                 stampImageView.image = appCourse.getUndoneStampImage()
-                print(appCourse.rawValue)
             }
             stampImageView.isUserInteractionEnabled = true
         } else {
             // 완료한 챌린지
             // 대사
-            characterLineLabel.text = challenge.beforeMent
+            characterLineLabel.text = challenge.afterMent
             // 스탬프
             if let appCourse = AppCourse(rawValue: data.course.property) {
                 stampImageView.image = appCourse.getDoneStampImage()
@@ -89,7 +88,7 @@ class ChallengeStampView: UIView {
         availableHappyLabel.text = "오늘의 챌린지를 성공하면 해피지수가 \(challenge.happy)% 올라가!"
         
         if !challenge.badges.isEmpty {
-            availableBadgeLabel.text = "획득 가능한 뱃지는 \(challenge.badges)"
+            availableBadgeLabel.text = "획득 가능한 뱃지는 \(challenge.badges.joined(separator: ", "))"
         }
     }
     

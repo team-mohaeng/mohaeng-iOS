@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Moya
 
 class SignUpThirdViewController: UIViewController {
+    
+    var signupuser = SignUpUser.shared
     
     // MARK: - @IBOutlet Properties
     
@@ -36,12 +39,17 @@ class SignUpThirdViewController: UIViewController {
         return nicknameTest.evaluate(with: nickname)
     }
     
-    private func pushHomeViewController() {
-        let homeStoryboard = UIStoryboard(name: Const.Storyboard.Name.home, bundle: nil)
-        guard let homeViewController  = homeStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.home) as? HomeViewController else {
+    func pushHomeViewController() {
+        let tabbarStoryboard = UIStoryboard(name: Const.Storyboard.Name.tabbar, bundle: nil)
+        guard let tabbarViewController = tabbarStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.tabbar) as? TabbarViewController else {
             return
         }
-        self.navigationController?.pushViewController(homeViewController, animated: true)
+        self.changeRootViewController(tabbarViewController)
+    }
+    
+    func changeRootViewController(_ viewControllerToPresent: UITabBarController) {
+            viewControllerToPresent.modalPresentationStyle = .overFullScreen
+            self.present(viewControllerToPresent, animated: true, completion: nil)
     }
     
     private func changeNickNameTextFieldAttribute(labelBool: Bool, buttonBool: Bool, color: UIColor) {
@@ -82,5 +90,42 @@ class SignUpThirdViewController: UIViewController {
         if nickname.isEmpty {
             setEmptyNickNameTextField()
         }
+    }
+    @IBAction func touchNicknameCheckButton(_ sender: UIButton) {
+        postSignUp()
+    }
+}
+
+extension SignUpThirdViewController {
+    
+    func postSignUp() {
+        
+        guard let email = signupuser.email else {
+            return
+        }
+        guard let password = signupuser.password else {
+            return
+        }
+        guard let nickname = nickNameTextField.text else {
+            return
+        }
+        
+        SignUpAPI.shared.postSignUp(completion: { (response) in
+            switch response {
+            case .success(let jwt):
+                if let data = jwt as? JwtData {
+                    UserDefaults.standard.setValue(data.jwt, forKey: "jwtToken")
+                    self.pushHomeViewController()
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }, email: email, password: password, nickname: nickname)
     }
 }

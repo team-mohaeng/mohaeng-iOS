@@ -20,7 +20,7 @@ class CourseFooterView: UITableViewHeaderFooterView {
     override func awakeFromNib() {
     }
     
-    func initLastPath(isDone: Bool) {
+    func initLastPath(isDone: Bool, property: Int) {
         let leftPath = RoadMapPath(centerY: 0).getVeryLastPath()
         
         line.fillMode = .forwards
@@ -31,7 +31,7 @@ class CourseFooterView: UITableViewHeaderFooterView {
         
         if isDone {
             line.lineDashPattern = [1]
-            line.strokeColor = UIColor.sampleGreen.cgColor
+            line.strokeColor = AppCourse(rawValue: property) != nil ? AppCourse(rawValue: property)?.getDarkColor().cgColor : UIColor.Grey4.cgColor
         } else {
             line.lineDashPhase = 5
             line.lineDashPattern = [RoadMapPath(centerY: 0).getDashPattern(), RoadMapPath(centerY: 0).getBlankPattern()]

@@ -59,6 +59,9 @@
                                 <state key="normal" title="닉네임 설정하기">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="touchNicknameCheckButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="GAl-Se-DzE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>

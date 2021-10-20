@@ -19,7 +19,11 @@ class CharacterTypeCollectionViewCell: UICollectionViewCell {
     }
     
     func makeSelectedViewRounded() {
-        selectIndicatorView.makeRounded(radius: selectIndicatorView.bounds.height / 2)
+        selectIndicatorView.makeRounded(radius: 5)
+    }
+    
+    func setData(image: UIImage) {
+        charaterImageView.image = image
     }
     
     func showSelectView() {

@@ -25,6 +25,9 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 챌린지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFX-Dy-UWZ">
                     <rect key="frame" x="24" y="94" width="134" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="4IM-Eh-Xfh"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -32,10 +35,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Of-o4-vt6">
                     <rect key="frame" x="24" y="149" width="342" height="98"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2g-88-EEw">
-                            <rect key="frame" x="90.333333333333329" y="31.333333333333346" width="239.66666666666669" height="35.333333333333343"/>
-                            <string key="text">어제 외운 단어 기억 나지?
-어제 외운 단어로 문장을 만들어봐~ </string>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2g-88-EEw">
+                            <rect key="frame" x="98" y="49" width="232" height="0.0"/>
                             <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -55,10 +56,11 @@
                         <action selector="touchHelp:" destination="iN0-l3-epB" eventType="touchUpInside" id="Mma-Mc-lE9"/>
                     </connections>
                 </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleChallengeRacoon" translatesAutoresizingMaskIntoConstraints="NO" id="BV7-E8-JT9">
-                    <rect key="frame" x="23.999999999999993" y="134" width="82.333333333333314" height="113"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BV7-E8-JT9">
+                    <rect key="frame" x="24" y="123.33333333333331" width="90" height="123.66666666666669"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="BV7-E8-JT9" secondAttribute="height" multiplier="8:11" id="OWy-bO-kCI"/>
+                        <constraint firstAttribute="width" constant="90" id="TgE-kn-eIu"/>
+                        <constraint firstAttribute="width" secondItem="BV7-E8-JT9" secondAttribute="height" multiplier="80:110" id="uch-V9-52E"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="270" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TwG-O7-R8B">
@@ -90,7 +92,7 @@
                                 <constraint firstItem="TRQ-Vn-owg" firstAttribute="top" secondItem="Sw0-eU-8jJ" secondAttribute="top" constant="6" id="ppT-yb-s2h"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어제 외운 단어로 문장 만들기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCh-eY-nvn">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCh-eY-nvn">
                             <rect key="frame" x="0.0" y="72" width="342" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="25" id="atj-Ek-i48"/>
@@ -154,7 +156,6 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="BV7-E8-JT9" firstAttribute="top" secondItem="TFX-Dy-UWZ" secondAttribute="bottom" constant="18" id="1FJ-Ub-BJp"/>
                 <constraint firstItem="Tk3-Ar-b0Y" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="1iN-Nv-sZp"/>
                 <constraint firstItem="5dh-y5-8RN" firstAttribute="centerY" secondItem="TFX-Dy-UWZ" secondAttribute="centerY" id="8iU-dn-8wJ"/>
                 <constraint firstItem="1Of-o4-vt6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="9AK-Vc-eDS"/>
@@ -190,7 +191,6 @@
     </objects>
     <resources>
         <image name="challengeHelpButton" width="28" height="28"/>
-        <image name="sampleChallengeRacoon" width="80" height="110"/>
         <image name="scrollDownIcn" width="31.333333969116211" height="19.333333969116211"/>
         <image name="typeMchallenge" width="144" height="144"/>
         <systemColor name="systemBackgroundColor">

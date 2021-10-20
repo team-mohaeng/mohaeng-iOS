@@ -15,8 +15,6 @@ enum CourseService {
     case getCourseLibrary
     // 코스 진행하기
     case putCourseProgress(id: Int)
-    // 완료한 코스 메달 조회
-    case getMedal
 }
 
 extension CourseService: TargetType {
@@ -30,8 +28,6 @@ extension CourseService: TargetType {
             return Const.URL.coursesURL
         case .putCourseProgress(let id):
             return Const.URL.coursesURL + "/\(id)"
-        case .getMedal:
-            return Const.URL.coursesURL + Const.URL.medalURL
         }
     }
     
@@ -41,8 +37,6 @@ extension CourseService: TargetType {
             return .get
         case .putCourseProgress(_):
             return .put
-        case .getMedal:
-            return .get
         }
     }
     
@@ -52,7 +46,7 @@ extension CourseService: TargetType {
     
     var task: Task {
         switch self {
-        case .getCourseLibrary, .getMedal, .putCourseProgress(_):
+        case .getCourseLibrary, .putCourseProgress(_):
             return .requestPlain
         }
     }

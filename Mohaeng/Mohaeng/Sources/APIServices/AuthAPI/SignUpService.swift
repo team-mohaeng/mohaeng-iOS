@@ -10,7 +10,7 @@ import Moya
 
 enum SignUpService {
     
-    case postSignUp(email: String, password: String, nickname: String, gender: Int, birthyear: Int)
+    case postSignUp(email: String, password: String, nickname: String)
 }
 
 extension SignUpService: TargetType {
@@ -19,14 +19,14 @@ extension SignUpService: TargetType {
     }
     var path: String {
         switch self {
-        case .postSignUp(_, _, _, _, _):
+        case .postSignUp(_, _, _):
             return Const.URL.signUpURL
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .postSignUp(_, _, _, _, _):
+        case .postSignUp(_, _, _):
             return .post
         }
     }
@@ -37,13 +37,11 @@ extension SignUpService: TargetType {
     
     var task: Task {
         switch self {
-        case .postSignUp(let email, let password, let nickname, let gender, let birthyear):
+        case .postSignUp(let email, let password, let nickname):
             return .requestParameters(parameters: [
-                "userId": email,
-                "userPw": password,
-                "nickname": nickname,
-                "gender": gender,
-                "birthYear": birthyear
+                "email": email,
+                "password": password,
+                "nickname": nickname
             ], encoding: JSONEncoding.default)
         }
     }
