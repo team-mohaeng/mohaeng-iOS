@@ -15,8 +15,8 @@ public class KakaoAPI {
     
     private init() {}
     
-    func postKakao(completion: @escaping (NetworkResult<Any>) -> Void) {
-        kakaoProvider.request(.postKakao) { (result) in
+    func postKakao(token: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+        kakaoProvider.request(.postKakao(token: token)) { (result) in
             switch result {
             case.success(let response):
                 
@@ -31,12 +31,30 @@ public class KakaoAPI {
             }
         }
     }
+    
+    func postSocialNickname(completion: @escaping (NetworkResult<Any>) -> Void, token: String, nickname: String) {
+        kakaoProvider.request(.socialNickname(token: token, nickname: nickname)) { (result) in
+            switch result {
+            case.success(let response):
+                
+                let statusCode = response.statusCode
+                let data = response.data
+
+                let networkResult = self.judgeStatus(by: statusCode, data)
+                completion(networkResult)
+                
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
     // MARK: - judging status function
     
     private func judgeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
         
-        guard let decodedData = try? decoder.decode(GenericResponse<BadgesData>.self, from: data) else {
+        guard let decodedData = try? decoder.decode(GenericResponse<JwtData>.self, from: data) else {
             return .pathErr
         }
         

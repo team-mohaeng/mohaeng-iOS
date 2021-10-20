@@ -13,13 +13,19 @@ import KakaoSDKCommon
 
 class LoginViewController: UIViewController {
     
-    // MARK: - @IBOutlet
+    // MARK: - Properties
+    
+    var signUpUser = SignUpUser.shared
+    
+    // MARK: - @IBOutlet Properties
+    
     @IBOutlet var kakaoLoginButton: UIButton!
     @IBOutlet var appleLoginButton: UIButton!
     @IBOutlet var emailLoginButton: UIButton!
     @IBOutlet weak var mohaengLabel: UILabel!
     
     // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavigationBar()
@@ -53,10 +59,11 @@ class LoginViewController: UIViewController {
     }
     
     private func pushSignUpSecondViewController() {
-        let signupSecondStoryboard = UIStoryboard(name: Const.Storyboard.Name.signUpSecond, bundle: nil)
-        guard let signUpSecondViewController  = signupSecondStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.signUpSecond) as? SignUpSecondViewController else {
+        let signUpSecondStoryboard = UIStoryboard(name: Const.Storyboard.Name.signUpSecond, bundle: nil)
+        guard let signUpSecondViewController  = signUpSecondStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.signUpSecond) as? SignUpSecondViewController else {
             return
         }
+        
         self.navigationController?.pushViewController(signUpSecondViewController, animated: true)
     }
     
@@ -82,30 +89,25 @@ class LoginViewController: UIViewController {
     @IBAction func touchKakaoLoginButton(_ sender: UIButton) {
         
         if (UserApi.isKakaoTalkLoginAvailable()) {
-                   UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-                       if let error = error {
-                           print(error)
-                       }
-                       else {
-                           print("loginWithKakaoTalk() success.")
-           
-                            _ = oauthToken
-                           if let accessToken = oauthToken?.accessToken {
-                               print("-------------------------------")
-                               print(accessToken)
-                               print("-------------------------------")
-                               UserDefaults.standard.setValue(accessToken, forKey: "jwtToken")
-                               self.postKakao()
-                           }
-                           
-
-                       }
-                   }
-               }
-               // 카카오톡 미설치
-               else {
-                   print("카카오톡 미설치")
-               }
+            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("loginWithKakaoTalk() success.")
+                    
+                    _ = oauthToken
+                    if let accessToken = oauthToken?.accessToken {
+                        self.postKakao(token: accessToken)
+                    }
+                    
+                }
+            }
+        }
+        // 카카오톡 미설치
+        else {
+            print("카카오톡 미설치")
+        }
     }
     
     // 편의용 (나중에 지워야 함)
@@ -121,11 +123,12 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController {
-    func postKakao() {
-        KakaoAPI.shared.postKakao(completion: { (response) in
+    func postKakao(token: String) {
+        KakaoAPI.shared.postKakao(token: token, completion: { (response) in
             switch response {
-            case .success(let jwt):
-                UserDefaults.standard.setValue(KakaoService.postKakao.headers, forKey: "jwtToken")
+            case .success(let message):
+                UserDefaults.standard.setValue(token, forKey: "jwtToken")
+                self.signUpUser.isSocial = true
                 self.pushSignUpSecondViewController()
             case .requestErr(let message):
                 print("requestErr", message)
@@ -137,5 +140,5 @@ extension LoginViewController {
                 print("networkFail")
             }
         }
-        )}
+    )}
 }
