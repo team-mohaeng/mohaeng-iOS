@@ -162,6 +162,8 @@ extension FeedViewController: UICollectionViewDelegate {
         let feedDetailStoryboard = UIStoryboard.init(name: Const.Storyboard.Name.feedDetail, bundle: nil)
         guard let feedDetailViewController = feedDetailStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.feedDetail) as? FeedDetailViewController else { return }
         
+        feedDetailViewController.setData(feeds: allFeeds)
+        feedDetailViewController.setSelectedContentsIndexPath(indexPath: indexPath)
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(feedDetailViewController, animated: true)
     }
@@ -269,4 +271,3 @@ extension FeedViewController {
     }
     
 }
-

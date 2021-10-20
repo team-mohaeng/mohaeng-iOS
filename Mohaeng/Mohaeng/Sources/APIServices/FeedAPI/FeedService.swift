@@ -13,6 +13,8 @@ enum FeedService {
     case getAllFeed
     case getMyDrawer(year: Int, month: Int)
     case postFeed(content: String, mood: Int, isPrivate: Bool, image: UIImage?)
+    case postReport(id: Int)
+    case putEmoji(emojiId: Int, postId: Int)
 }
 // {"content": "엄마 나 모행 다녀올게", "mood": 2, "isPrivate": false}
 
@@ -27,6 +29,10 @@ extension FeedService: TargetType {
             return Const.URL.feedURL
         case .getMyDrawer(let year, let month):
             return Const.URL.feedURL + "/\(year)" + "/\(month)"
+        case .postReport(let id):
+            return Const.URL.feedURL + "/\(id)"
+        case .putEmoji(_, let postId):
+            return Const.URL.feedURL + Const.URL.emojiURL + "/\(postId)"
         }
     
     }
@@ -35,8 +41,10 @@ extension FeedService: TargetType {
         switch self {
         case .getAllFeed, .getMyDrawer:
             return .get
-        case .postFeed:
+        case .postFeed, .postReport:
             return .post
+        case .putEmoji:
+            return .put
         }
     }
     
@@ -46,8 +54,10 @@ extension FeedService: TargetType {
     
     var task: Task {
         switch self {
-        case .getAllFeed, .getMyDrawer:
+        case .getAllFeed, .getMyDrawer, .postReport:
             return .requestPlain
+        case .putEmoji(let emojiId, _):
+            return .requestParameters(parameters: ["emojiId" : emojiId], encoding: JSONEncoding.default)
         case .postFeed(let content, let mood, let isPrivate, let image):
             var multiPartFormData: [MultipartFormData] = []
             let json: [String: Any] = [
@@ -75,7 +85,7 @@ extension FeedService: TargetType {
     
     var headers: [String: String]? {
         switch self {
-        case .getAllFeed, .getMyDrawer:
+        case .getAllFeed, .getMyDrawer, .postReport, .putEmoji:
             return [
                 "Content-Type": "application/json",
                 "Bearer": UserDefaults.standard.string(forKey: "jwtToken") ?? ""

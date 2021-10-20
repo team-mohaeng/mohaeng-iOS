@@ -34,14 +34,22 @@ class FeedDetailCollectionViewCell: UICollectionViewCell {
         $0.font = UIFont.spoqaHanSansNeo(weight: .regular, size: 10)
     }
     
+    private lazy var reportButton = UIButton().then {
+        $0.setBackgroundImage(Const.Image.report, for: .normal)
+        $0.addTarget(self, action: #selector(touchReportButton), for: .touchUpInside)
+    }
+    
     private var noImageLineView = UIView().then {
         $0.backgroundColor = UIColor.init(red: 0.879, green: 0.879, blue: 0.879, alpha: 1)
     }
     
-    private var uploadedImageView = UIImageView()
+    private var uploadedImageView = UIImageView().then {
+        $0.contentMode = .scaleAspectFill
+    }
     
     private var courseDayLabel = UILabel().then {
         $0.font = UIFont.gmarketFont(size: 14)
+        $0.textColor = .Yellow1
     }
     
     private var contentsLabel = UILabel().then {
@@ -60,9 +68,11 @@ class FeedDetailCollectionViewCell: UICollectionViewCell {
         $0.backgroundColor = .white
     }
     
+    private var currentPostId: Int = 0
+    
     // MARK: - Properteis
     
-    var stickerDummy: [Emoji] = []
+    var stickers: [Emoji] = []
     var hasImage: Bool = false
     
     // MARK: - View Life Cycle
@@ -92,14 +102,24 @@ class FeedDetailCollectionViewCell: UICollectionViewCell {
     }
     
     func setData(feed: Feed) {
+        switch feed.mood {
+        case 0:
+            moodImageView.image = Const.Image.happyImage
+        case 1:
+            moodImageView.image = Const.Image.sosoImage
+        case 2:
+            moodImageView.image = Const.Image.badImage
+        default:
+            return
+        }
+        currentPostId = feed.postID
         nicknameLabel.text = feed.nickname
         dateLabel.text = feed.month + "월 " + feed.day + "일"
         courseDayLabel.text = "\(feed.course) \(feed.challenge)일차"
         contentsLabel.text = feed.content
-        stickerDummy = feed.emoji
+        stickers = feed.emoji
         stickerCollectionView.reloadData()
-        if let image = UIImage(named: feed.image) {
-            uploadedImageView.image = image
+        if uploadedImageView.updateServerImage(feed.image) {
             configureImageUI(hasImage: true)
         } else {
             configureImageUI(hasImage: false)
@@ -118,7 +138,23 @@ class FeedDetailCollectionViewCell: UICollectionViewCell {
     func getDynamicCollectionViewHeight() -> CGFloat {
         return stickerCollectionView.collectionViewLayout.collectionViewContentSize.height
     }
-
+    
+    @objc
+    func touchReportButton() {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let reportAction = UIAlertAction(title: "신고하기", style: .destructive) { _ in
+            self.postReport(id: self.currentPostId)
+        }
+        actionSheet.addAction(reportAction)
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        cancelAction.setValue(UIColor.Grey3, forKey: "titleTextColor")
+        actionSheet.addAction(cancelAction)
+        
+        self.window?.rootViewController?.present(actionSheet, animated: true, completion: nil)
+    }
+    
 }
 
 // MARK: - UIColelctionViewDataSource
@@ -126,7 +162,7 @@ class FeedDetailCollectionViewCell: UICollectionViewCell {
 extension FeedDetailCollectionViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return stickerDummy.count + 1
+        return stickers.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -136,13 +172,15 @@ extension FeedDetailCollectionViewCell: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             
+            cell.setPostId(postId: currentPostId)
+            
             return cell
         default:
             guard let cell = stickerCollectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.stickerCollectionViewCell, for: indexPath) as? StickerCollectionViewCell else {
                 return UICollectionViewCell()
             }
             
-            cell.setData(text: "\(stickerDummy[indexPath.row - 1].count)")
+            cell.setData(data: stickers[indexPath.row - 1])
             
             return cell
         }
@@ -156,7 +194,7 @@ extension FeedDetailCollectionViewCell {
     private func setViewHierachy() {
         addSubviews(stackView, seperatorLine)
         
-        postInfoView.addSubviews(moodImageView, nicknameLabel, dateLabel, noImageLineView)
+        postInfoView.addSubviews(moodImageView, nicknameLabel, dateLabel, noImageLineView, reportButton)
         imageContainerView.addSubview(uploadedImageView)
         contentsInfoView.addSubviews(courseDayLabel, contentsLabel, stickerCollectionView)
     }
@@ -169,7 +207,7 @@ extension FeedDetailCollectionViewCell {
         postInfoView.snp.makeConstraints {
             $0.height.equalTo(90)
         }
-
+        
         imageContainerView.snp.makeConstraints {
             $0.height.equalTo(stackView.snp.width)
         }
@@ -179,29 +217,36 @@ extension FeedDetailCollectionViewCell {
         moodImageView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(22)
             $0.leading.equalToSuperview().offset(24)
+            $0.width.equalTo(52)
+            $0.height.equalTo(52)
         }
-
+        
         nicknameLabel.snp.makeConstraints {
             $0.leading.equalTo(moodImageView.snp.trailing).offset(12)
             $0.bottom.equalTo(dateLabel.snp.top)
         }
-
+        
         dateLabel.snp.makeConstraints {
             $0.leading.equalTo(moodImageView.snp.trailing).offset(12)
             $0.bottom.equalTo(moodImageView.snp.bottom)
+        }
+        
+        reportButton.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(24)
+            $0.bottom.equalTo(dateLabel.snp.bottom)
         }
         
         noImageLineView.snp.makeConstraints {
             $0.leading.trailing.bottom.equalToSuperview()
             $0.height.equalTo(1)
         }
-
+        
         /// imageContainerView
-    
+        
         uploadedImageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
-
+        
         /// contentsInfoView
         
         courseDayLabel.snp.makeConstraints {
@@ -214,7 +259,7 @@ extension FeedDetailCollectionViewCell {
             $0.leading.equalTo(courseDayLabel.snp.leading)
             $0.trailing.equalToSuperview().offset(-24)
         }
-
+        
         stickerCollectionView.snp.makeConstraints {
             $0.top.equalTo(contentsLabel.snp.bottom).offset(24)
             $0.leading.equalTo(contentsLabel.snp.leading)
@@ -250,4 +295,27 @@ class CollectionViewLeftAlignFlowLayout: UICollectionViewFlowLayout {
         }
         return attributes
     }
+}
+
+extension FeedDetailCollectionViewCell {
+    
+    func postReport(id: Int) {
+        FeedAPI.shared.postReport(id: id) { response in
+            switch response {
+            case .success(let data):
+                if let data = data as? String {
+                    self.window?.rootViewController?.showToast(message: data, font: .spoqaHanSansNeo(size: 12))
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+    
 }

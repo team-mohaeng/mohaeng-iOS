@@ -12,7 +12,7 @@ struct CompletedChallengeData: Codable {
     let characterImg: String
     let challengeCompletion: ChallengeCompletion
     let courseCompletion: CourseCompletion
-    let levelUp: LevelUp
+    let levelUp: CompletionLevelUp
 }
 
 // MARK: - ChallengeCompletion
@@ -26,4 +26,10 @@ struct CourseCompletion: Codable {
     let property: Int?
     let title: String?
     let happy, userHappy, fullHappy: Int?
+}
+
+// MARK: - CompletionLevelUp
+struct CompletionLevelUp: Codable {
+    let level: Int?
+    let styleImg: String?
 }
