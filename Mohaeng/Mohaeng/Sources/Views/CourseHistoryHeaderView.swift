@@ -16,6 +16,7 @@ class CourseHistoryHeaderView: UITableViewHeaderFooterView {
     @IBOutlet weak var dayBgView: UIView!
     @IBOutlet weak var courseNameLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var successDateLabel: UILabel!
     
     // MARK: - View Life Cycle
     
@@ -24,14 +25,15 @@ class CourseHistoryHeaderView: UITableViewHeaderFooterView {
     
     // MARK: - Functions
     
-    func setProperty(by property: Int, day: Int) {
-        if let course = AppCourse(rawValue: property) {
-            propertyImageView.image = course.getBigImage()
+    func setData(by course: TodayChallengeCourse) {
+        if let appCourse = AppCourse(rawValue: course.property) {
+            propertyImageView.image = appCourse.getBigImage()
             dayBgView.backgroundColor = .clear
-            dayBgView.makeRoundedWithBorder(radius: dayBgView.frame.height / 2, color: course.getDarkColor().cgColor)
-            dayLabel.text = "\(course.getKorean()) \(day)일 코스"
-            dayLabel.textColor = course.getDarkColor()
+            dayBgView.makeRoundedWithBorder(radius: dayBgView.frame.height / 2, color: appCourse.getDarkColor().cgColor)
+            dayLabel.text = "\(appCourse.getKorean()) \(course.totalDays)일 코스"
+            dayLabel.textColor = appCourse.getDarkColor()
         }
+        successDateLabel.text = "\(course.year)년 \(course.month)월 \(course.date)일 성공"
     }
     
     func setCourseName(name: String) {

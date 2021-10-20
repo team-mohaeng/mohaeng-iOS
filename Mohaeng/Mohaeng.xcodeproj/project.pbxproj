@@ -168,6 +168,8 @@
 		56AD4D1D27155FD000272EE4 /* CourseHistoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AD4D1C27155FD000272EE4 /* CourseHistoryHeaderView.xib */; };
 		56AE34DC271EECDC00D7F4D8 /* CoursePopUpProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE34DB271EECDC00D7F4D8 /* CoursePopUpProtocol.swift */; };
 		56AE34DE271FE30700D7F4D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56AE34DD271FE30600D7F4D8 /* GoogleService-Info.plist */; };
+		56AE34E1271FFDDC00D7F4D8 /* MoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE34DF271FFDDC00D7F4D8 /* MoodCollectionViewCell.swift */; };
+		56AE34E2271FFDDC00D7F4D8 /* MoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AE34E0271FFDDC00D7F4D8 /* MoodCollectionViewCell.xib */; };
 		56C019B4271C2BFE00735761 /* MyPageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C019B3271C2BFE00735761 /* MyPageAPI.swift */; };
 		56C019B7271C2C3900735761 /* MyPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C019B6271C2C3900735761 /* MyPageService.swift */; };
 		56C21992271BE6DC008049A8 /* TodayChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C21991271BE6DC008049A8 /* TodayChallenge.swift */; };
@@ -192,8 +194,6 @@
 		AAEDB363271C05CC00E26615 /* AnimationView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB362271C05CC00E26615 /* AnimationView+Extension.swift */; };
 		AAEDB36B271C142F00E26615 /* HappyPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB369271C142F00E26615 /* HappyPopUpViewController.swift */; };
 		AAEDB36C271C142F00E26615 /* HappyPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAEDB36A271C142F00E26615 /* HappyPopUpViewController.xib */; };
-		AAEDB380271F234A00E26615 /* MoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB37E271F234A00E26615 /* MoodCollectionViewCell.swift */; };
-		AAEDB381271F234A00E26615 /* MoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAEDB37F271F234A00E26615 /* MoodCollectionViewCell.xib */; };
 		AAEDB370271C5E8E00E26615 /* CharacterStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB36F271C5E8E00E26615 /* CharacterStyle.swift */; };
 		AAEDB372271C638100E26615 /* AppCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB371271C638100E26615 /* AppCharacter.swift */; };
 		AAEDB375271C688000E26615 /* CharacterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB374271C688000E26615 /* CharacterAPI.swift */; };
@@ -397,6 +397,8 @@
 		56AD4D1C27155FD000272EE4 /* CourseHistoryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseHistoryHeaderView.xib; sourceTree = "<group>"; };
 		56AE34DB271EECDC00D7F4D8 /* CoursePopUpProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePopUpProtocol.swift; sourceTree = "<group>"; };
 		56AE34DD271FE30600D7F4D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		56AE34DF271FFDDC00D7F4D8 /* MoodCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodCollectionViewCell.swift; sourceTree = "<group>"; };
+		56AE34E0271FFDDC00D7F4D8 /* MoodCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoodCollectionViewCell.xib; sourceTree = "<group>"; };
 		56C019B3271C2BFE00735761 /* MyPageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAPI.swift; sourceTree = "<group>"; };
 		56C019B6271C2C3900735761 /* MyPageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageService.swift; sourceTree = "<group>"; };
 		56C21991271BE6DC008049A8 /* TodayChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayChallenge.swift; sourceTree = "<group>"; };
@@ -422,8 +424,6 @@
 		AAEDB362271C05CC00E26615 /* AnimationView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimationView+Extension.swift"; sourceTree = "<group>"; };
 		AAEDB369271C142F00E26615 /* HappyPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyPopUpViewController.swift; sourceTree = "<group>"; };
 		AAEDB36A271C142F00E26615 /* HappyPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HappyPopUpViewController.xib; sourceTree = "<group>"; };
-		AAEDB37E271F234A00E26615 /* MoodCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoodCollectionViewCell.swift; path = ../../../../../../../.Trash/MoodCollectionViewCell.swift; sourceTree = "<group>"; };
-		AAEDB37F271F234A00E26615 /* MoodCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MoodCollectionViewCell.xib; path = ../../../../../../../.Trash/MoodCollectionViewCell.xib; sourceTree = "<group>"; };
 		AAEDB36F271C5E8E00E26615 /* CharacterStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStyle.swift; sourceTree = "<group>"; };
 		AAEDB371271C638100E26615 /* AppCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCharacter.swift; sourceTree = "<group>"; };
 		AAEDB374271C688000E26615 /* CharacterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAPI.swift; sourceTree = "<group>"; };
@@ -680,8 +680,8 @@
 		561D761626F0BFA40028DBCA /* FeedCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				AAEDB37E271F234A00E26615 /* MoodCollectionViewCell.swift */,
-				AAEDB37F271F234A00E26615 /* MoodCollectionViewCell.xib */,
+				56AE34DF271FFDDC00D7F4D8 /* MoodCollectionViewCell.swift */,
+				56AE34E0271FFDDC00D7F4D8 /* MoodCollectionViewCell.xib */,
 				AAED18D226F11DEF009FE781 /* PlusButtonCollectionViewCell.swift */,
 				AAED18D726F11DEF009FE781 /* PlusButtonCollectionViewCell.xib */,
 				AAED18D326F11DEF009FE781 /* StickerCollectionViewCell.swift */,
@@ -1233,7 +1233,7 @@
 				561D76CB26F0BFA40028DBCA /* NewNotificationCollectionReusableView.xib in Resources */,
 				DD6BB48D271D619A0086240B /* awards_crs_sok2.json in Resources */,
 				561D76D126F0BFA40028DBCA /* FeedCollectionViewCell.xib in Resources */,
-				AAEDB381271F234A00E26615 /* MoodCollectionViewCell.xib in Resources */,
+				56AE34E2271FFDDC00D7F4D8 /* MoodCollectionViewCell.xib in Resources */,
 				DD6BB495271DB5CF0086240B /* awards_congrats.json in Resources */,
 				561D76DA26F0BFA40028DBCA /* FirstDayTableViewCell.xib in Resources */,
 				561D76D626F0BFA40028DBCA /* CourseLibraryCollectionViewCell.xib in Resources */,
@@ -1422,7 +1422,6 @@
 				561D770026F0BFA40028DBCA /* TabbarViewController.swift in Sources */,
 				561D773526F0BFA40028DBCA /* YearPickerViewController.swift in Sources */,
 				DD68AC302712AA5F0081B905 /* OnBoarding3ViewController.swift in Sources */,
-				AAEDB380271F234A00E26615 /* MoodCollectionViewCell.swift in Sources */,
 				561D773726F0BFA40028DBCA /* CourseFooterView.swift in Sources */,
 				561D76FB26F0BFA40028DBCA /* FeedDetailViewController.swift in Sources */,
 				561D771A26F0BFA40028DBCA /* User.swift in Sources */,
@@ -1456,6 +1455,7 @@
 				56C019B7271C2C3900735761 /* MyPageService.swift in Sources */,
 				569E8B2227154E7A00D67712 /* CourseHistoryViewController.swift in Sources */,
 				561D773826F0BFA40028DBCA /* FeedHeaderView.swift in Sources */,
+				56AE34E1271FFDDC00D7F4D8 /* MoodCollectionViewCell.swift in Sources */,
 				569E8B2727154F6300D67712 /* CourseHistoryCollectionViewCell.swift in Sources */,
 				561D76B826F0BFA40028DBCA /* Font.swift in Sources */,
 				AA7E0AB726FC998000106DC2 /* CharacterColorCollectionViewCell.swift in Sources */,

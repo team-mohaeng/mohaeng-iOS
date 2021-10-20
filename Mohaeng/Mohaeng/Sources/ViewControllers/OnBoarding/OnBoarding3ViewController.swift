@@ -93,7 +93,9 @@ class OnBoarding3ViewController: UIViewController {
     
     private func initHeaderView() {
         self.tableView.tableHeaderView = self.headerView
-        self.tableView.tableHeaderView?.frame.size.height = view.safeAreaLayoutGuide.layoutFrame.height - topbarHeight + 36
+        let window = UIApplication.shared.keyWindow
+        let bottomPadding = window?.safeAreaInsets.bottom ?? 0
+        self.tableView.tableHeaderView?.frame.size.height = view.safeAreaLayoutGuide.layoutFrame.height + bottomPadding
     }
 
 }
@@ -174,7 +176,7 @@ extension OnBoarding3ViewController: UITableViewDataSource {
             // 짝수일차
             if let cell = tableView.dequeueReusableCell(withIdentifier: Const.Xib.Identifier.evenDayTableViewCell) as? EvenDayTableViewCell {
                 
-                cell.setCell(challenge: TodayChallenge(day: 0, situation: 0, title: "", happy: 0, beforeMent: "", afterMent: "", year: "", month: "", date: "", badges: []), property: 0)
+                cell.setCell(challenge: TodayChallenge(day: 2, situation: 0, title: "", happy: 0, beforeMent: "", afterMent: "", year: "", month: "", date: "", badges: []), property: course!.rawValue)
                 cell.setNextSituation(next: 0)
                 
                 return cell
@@ -184,7 +186,7 @@ extension OnBoarding3ViewController: UITableViewDataSource {
             // 홀수일차
             if let cell = tableView.dequeueReusableCell(withIdentifier: Const.Xib.Identifier.oddDayTableViewCell) as? OddDayTableViewCell {
                 
-                cell.setCell(challenge: TodayChallenge(day: 0, situation: 0, title: "", happy: 0, beforeMent: "", afterMent: "", year: "", month: "", date: "", badges: []), property: 0)
+                cell.setCell(challenge: TodayChallenge(day: 3, situation: 0, title: "", happy: 0, beforeMent: "", afterMent: "", year: "", month: "", date: "", badges: []), property: course!.rawValue)
                 cell.setNextSituation(next: 0)
                 
                 return cell
