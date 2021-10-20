@@ -47,7 +47,7 @@ enum Reward {
         }
     }
     
-    func setGraphicView(view: UIView, styleCard: String? = nil, rewardCard: String? = nil) {
+    func setGraphicView(view: UIView, styleCard: String? = nil, courseCompletion: CourseCompletion? = nil) {
         switch self {
         case .challenge:
             let animationView = AnimationView(name: "awards_congrats").then {
@@ -74,15 +74,20 @@ enum Reward {
             animationView.loopMode = .loop
 
         case .course:
-            guard let rewardCard = rewardCard else { return }
+            guard let courseCompletion = courseCompletion else { return }
+            guard let property = courseCompletion.property else { return }
+            guard let rewardCard = AppCourse(rawValue: property)?.getRewardCards() else { return }
+        
             let animationView = AnimationView(name: rewardCard).then {
-                $0.center = view.center
+                $0.frame = view.bounds
                 $0.contentMode = .scaleAspectFill
             }
             view.addSubviews(animationView)
             animationView.snp.makeConstraints {
                 $0.edges.equalToSuperview()
             }
+            animationView.play()
+            animationView.loopMode = .playOnce
             
         case .levelUp:
             guard let styleCard = styleCard else {return}

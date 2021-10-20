@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class CourseRewardViewController: RewardBaseViewController {
     
     public var completedChallengeData: CompletedChallengeData?
@@ -19,9 +18,7 @@ class CourseRewardViewController: RewardBaseViewController {
     override func setUp() {
         guard let data = completedChallengeData else { return }
         happy = data.challengeCompletion.happy
-
-        guard let property = data.courseCompletion.property else { return }
-        course = property
+        courseCompletion = data.courseCompletion
         type = .course
     }
     

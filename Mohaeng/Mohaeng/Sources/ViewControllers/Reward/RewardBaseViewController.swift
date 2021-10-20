@@ -17,8 +17,8 @@ class RewardBaseViewController: UIViewController {
     
     public lazy var level: Int = 0
     public lazy var imgURL: String = ""
-    public lazy var course: Int = 1
     public lazy var happy: Int = 0
+    public var courseCompletion: CourseCompletion?
     
     public var type: Reward? {
         didSet {
@@ -49,8 +49,7 @@ class RewardBaseViewController: UIViewController {
             case .challenge, .curiosity, .writing:
                 type.setGraphicView(view: self.graphicView)
             case .course:
-                guard let courseRewardCard = AppCourse(rawValue: course)?.getRewardCards() else {return}
-                type.setGraphicView(view: self.graphicView, rewardCard: courseRewardCard)
+                type.setGraphicView(view: self.graphicView, courseCompletion: courseCompletion)
             case .levelUp:
                 type.setGraphicView(view: self.graphicView, styleCard: imgURL)
             }
