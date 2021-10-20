@@ -44,8 +44,24 @@ class StickerCollectionViewCell: UICollectionViewCell {
         containerView.makeRoundedWithBorder(radius: 15, color: CGColor.init(red: 1.0, green: 0.95, blue: 0.82, alpha: 1.0))
     }
     
-    func setData(text: String) {
-        stickerCountingLabel.text = text
+    func setData(data: Emoji) {
+        switch data.id {
+        case 1:
+            stickerIconImageView.image = Const.Image.sticker1
+        case 2:
+            stickerIconImageView.image = Const.Image.sticker2
+        case 3:
+            stickerIconImageView.image = Const.Image.sticker3
+        case 4:
+            stickerIconImageView.image = Const.Image.sticker4
+        case 5:
+            stickerIconImageView.image = Const.Image.sticker5
+        case 6:
+            stickerIconImageView.image = Const.Image.sticker6
+        default:
+            return
+        }
+        stickerCountingLabel.text = "\(data.count)"
     }
 
 }

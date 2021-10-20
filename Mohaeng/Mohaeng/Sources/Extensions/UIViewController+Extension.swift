@@ -20,21 +20,21 @@ extension UIViewController {
     }
     
     func showToast(message: String, font: UIFont) {
-        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width / 2 - 106, y: self.view.frame.size.height - 100, width: 212, height: 35))
-        toastLabel.backgroundColor = .Yellow5
-        toastLabel.textColor = .Black
-        toastLabel.font = font
-        toastLabel.textAlignment = .center
-        toastLabel.text = message
-        toastLabel.alpha = 1.0
-        toastLabel.layer.cornerRadius = 10
-        toastLabel.clipsToBounds = true
-        self.view.addSubview(toastLabel)
-        UIView.animate(withDuration: 1.0, delay: 3, options: .curveEaseOut, animations: {
-            toastLabel.alpha = 0.0
-        }, completion: { _ in
-            toastLabel.removeFromSuperview()
-        })
-    }
-
+            let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width / 2 - 106, y: self.view.frame.size.height - 120, width: 240, height: 35))
+            toastLabel.backgroundColor = .Yellow5
+            toastLabel.textColor = .Black
+            toastLabel.font = font
+            toastLabel.textAlignment = .center
+            toastLabel.text = message
+            toastLabel.alpha = 1.0
+            toastLabel.layer.cornerRadius = 10
+            toastLabel.clipsToBounds = true
+            self.view.addSubview(toastLabel)
+            UIView.animate(withDuration: 1.0, delay: 3, options: .curveEaseOut, animations: {
+                toastLabel.alpha = 0.0
+            }, completion: { _ in
+                toastLabel.removeFromSuperview()
+            })
+        }
+    
 }
