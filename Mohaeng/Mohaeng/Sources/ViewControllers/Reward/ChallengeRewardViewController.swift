@@ -7,20 +7,46 @@
 
 import UIKit
 
-/// RewardBaseViewController를 상속받아 사용하므로 happy 값을 꼭 넣어주세요
 class ChallengeRewardViewController: RewardBaseViewController {
 
+    public var completedChallengeData: CompletedChallengeData?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     override func setUp() {
-        happy = 15
+        guard let data = completedChallengeData else { return }
+        happy = data.challengeCompletion.happy
         type = .challenge
     }
     
-    // TODO : 우선순위 1) 코스 완주 2) 레벨업 3) 글쓰기 유도
+    /// 우선 순위 1) 코스 완주 2) 레벨업 3) 글쓰기 유도뷰
     override func touchButton() {
-        navigationController?.pushViewController(CourseRewardViewController(), animated: true)
+        guard let data = completedChallengeData else { return }
+        
+        let levelUp = data.levelUp
+        let courseCompletion = data.courseCompletion
+
+        if courseCompletion.fullHappy != nil,
+           courseCompletion.happy != nil,
+           courseCompletion.userHappy != nil {
+            
+            let viewController = CourseRewardViewController()
+            viewController.completedChallengeData = data
+            navigationController?.pushViewController(viewController, animated: true)
+            return
+        }
+        
+        if levelUp.level != nil,
+           levelUp.styleImg != nil {
+            let viewController = LevelUpRewardViewController()
+            viewController.levelUp = levelUp
+            navigationController?.pushViewController(viewController, animated: true)
+            return
+        }
+        
+        navigationController?.pushViewController(CuriosityRewardViewController(), animated: true)
+        
     }
 }

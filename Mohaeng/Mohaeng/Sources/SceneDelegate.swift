@@ -36,7 +36,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func setRootViewControllerToOnBoarding() {
-        self.navigationController = UINavigationController(rootViewController: OnBoarding1ViewController())
+        let vc = CourseRewardViewController()
+        vc.happy = 10
+        vc.course = 2
+        self.navigationController = UINavigationController(rootViewController: vc)
         self.window?.rootViewController = self.navigationController
     }
     

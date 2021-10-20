@@ -12,13 +12,21 @@ class CuriosityRewardViewController: RewardBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        navigationController?.navigationBar.isHidden = true
+//    }
+//
     override func setUp() {
         type = .curiosity
     }
     
     override func touchButton() {
-        navigationController?.pushViewController(WritingRewardViewController(), animated: true)
+        let moodStoryboard = UIStoryboard(name: Const.Storyboard.Name.mood, bundle: nil)
+        guard let moodViewController = moodStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.mood) as? MoodViewController else { return }
+        
+        navigationController?.pushViewController(moodViewController, animated: true)
     }
     
     override func touchSubButton() {

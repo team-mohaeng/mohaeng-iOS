@@ -28,11 +28,9 @@ enum Reward {
     func getTitleText(level: Int? = nil) -> String {
         switch self {
         case .challenge:
-            return ""
-//                "오늘의 챌린지 성공!"
+            return "오늘의 챌린지 성공!"
         case .course:
-            return ""
-//            return "코스를 완료했어!"
+            return "코스를 완료했어!"
         case .levelUp:
             guard let level = level else { return ""}
             return """
@@ -76,7 +74,8 @@ enum Reward {
             animationView.loopMode = .loop
 
         case .course:
-            let animationView = AnimationView(name: "awards_crs_sok2").then {
+            guard let rewardCard = rewardCard else { return }
+            let animationView = AnimationView(name: rewardCard).then {
                 $0.center = view.center
                 $0.contentMode = .scaleAspectFill
             }
@@ -84,8 +83,6 @@ enum Reward {
             animationView.snp.makeConstraints {
                 $0.edges.equalToSuperview()
             }
-            animationView.play()
-            animationView.loopMode = .loop
             
         case .levelUp:
             guard let styleCard = styleCard else {return}
@@ -151,7 +148,11 @@ enum Reward {
             }
             
             let label = UILabel().then {
-                $0.text = "해피지수 \(String(describing: happy)) 획득!"
+                if happy != 0 {
+                    $0.text = "해피지수 \(String(describing: happy)) 획득!"
+                } else {
+                    $0.text = "챌린지 성공을 축하해"
+                }
                 $0.numberOfLines = 1
                 $0.font = .spoqaHanSansNeo(weight: .bold, size: 18)
                 $0.textColor = .Yellow1

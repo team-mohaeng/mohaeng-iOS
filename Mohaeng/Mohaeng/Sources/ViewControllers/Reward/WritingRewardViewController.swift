@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-/// RewardBaseViewController를 상속받아 사용하므로 happy 값을 꼭 넣어주세요
 class WritingRewardViewController: RewardBaseViewController {
 
 // MARK: - Properties
@@ -16,6 +14,11 @@ class WritingRewardViewController: RewardBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        hideBar()
     }
 
     override func setUp() {
@@ -25,14 +28,21 @@ class WritingRewardViewController: RewardBaseViewController {
     }
     
     override func touchButton() {
-        guard let writingResponse = writingResponse else { return }
-        if let level = writingResponse.levelUp.level {
+        guard let levelUp = writingResponse?.levelUp else { return }
+        
+        if  levelUp.level != nil {
             let levelUpRewardViewController = LevelUpRewardViewController()
-            levelUpRewardViewController.level = level
+            levelUpRewardViewController.levelUp = levelUp
+            
             navigationController?.pushViewController(levelUpRewardViewController, animated: true)
         } else {
             self.dismiss(animated: true, completion: nil)
         }
+    }
+    
+    private func hideBar() {
+        tabBarController?.tabBar.isHidden = false
+        navigationController?.navigationBar.isHidden = false
     }
 
 }

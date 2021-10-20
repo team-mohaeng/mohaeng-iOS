@@ -313,8 +313,19 @@ extension CourseViewController: ChallengePopUpProtocol {
     }
     
     func pushToFinishViewController() {
-        // 스탬프 이미지 done으로 변경
-        putTodayChallenge()
+        putTodayChallenge { [weak self] response in
+            self?.getCourse()
+            let viewController = ChallengeRewardViewController()
+            viewController.completedChallengeData = response
+            
+            let navigationController = UINavigationController(rootViewController: viewController)
+            navigationController.modalPresentationStyle = .fullScreen
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self?.present(navigationController, animated: true, completion: nil)
+                
+            }
+        }
     }
     
     func pushToNextOnboardingViewController() {}
@@ -346,7 +357,7 @@ extension CourseViewController {
         }
     }
     
-    func putTodayChallenge() {
+    func putTodayChallenge(completion: (@escaping(CompletedChallengeData) -> Void)) {
         
         if let courseId = self.courseId, let challengeId = self.challengeId {
             
@@ -355,15 +366,7 @@ extension CourseViewController {
                 switch response {
                 case .success(let completeData):
                     if let data = completeData as? CompletedChallengeData {
-                        self.getCourse()
-                        
-                        // TODO: - Reward 뷰 연결, 데이터 전달
-                        let courseLibraryStoryboard = UIStoryboard(name: Const.Storyboard.Name.courseLibrary, bundle: nil)
-                        guard let courseLibraryViewController = courseLibraryStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.courseLibrary) as? CourseLibraryViewController else {
-                            return
-                        }
-                        self.navigationController?.pushViewController(courseLibraryViewController, animated: true)
-                        
+                        completion(data)
                     }
                     
                 case .requestErr(let message):
