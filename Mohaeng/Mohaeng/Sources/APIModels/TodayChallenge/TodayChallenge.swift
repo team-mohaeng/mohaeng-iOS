@@ -25,7 +25,7 @@ struct TodayChallengeCourse: Codable {
     let year: String
     let month: String
     let date: String
-    let challenges: [TodayChallenge]
+    var challenges: [TodayChallenge]
 }
 
 // MARK: - TodayChallengeChallenge

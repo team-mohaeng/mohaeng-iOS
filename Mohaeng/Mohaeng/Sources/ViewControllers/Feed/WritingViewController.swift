@@ -83,6 +83,7 @@ class WritingViewController: UIViewController {
         $0.setTitleColor(.Black, for: .normal)
         $0.titleLabel?.font = .spoqaHanSansNeo()
         $0.isSelected = true
+        $0.adjustsImageWhenHighlighted = false
         $0.alignTextLeft()
     }
     
@@ -96,7 +97,7 @@ class WritingViewController: UIViewController {
         $0.setImage(Const.Image.photoXbtnImage, for: .normal)
     }
     
-    private let doneButton = UIButton().then {
+    private let doneButton = UIButton(type: .system).then {
         $0.setTitle("작성완료", for: .normal)
         $0.titleLabel?.font = .spoqaHanSansNeo(weight: .bold, size: 16)
         $0.setTitleColor(.White, for: .normal)

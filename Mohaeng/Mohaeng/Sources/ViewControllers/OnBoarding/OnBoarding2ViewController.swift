@@ -76,7 +76,7 @@ extension OnBoarding2ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: OnBoarding2TableViewCell.identifier, for: indexPath) as? OnBoarding2TableViewCell
         else { return UITableViewCell() }
-        cell.course = AppCourse(rawValue: indexPath.row)
+        cell.course = AppCourse(rawValue: indexPath.row + 1)
         return cell
     }
     
@@ -107,7 +107,7 @@ extension OnBoarding2ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let viewController = OnBoarding3ViewController()
-        viewController.course = AppCourse(rawValue: indexPath.row)
+        viewController.course = AppCourse(rawValue: indexPath.row + 1)
         viewController.isDone = false
         self.navigationController?.pushViewController(viewController, animated: true)
     }

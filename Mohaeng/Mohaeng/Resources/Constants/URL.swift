@@ -31,6 +31,7 @@ extension Const {
         
         // 홈 (GET)
         static let homeURL = "/home"
+        static let characterURL = "/character"
         
         // MARK: - Challenge
         
@@ -41,8 +42,8 @@ extension Const {
         
         // 코스 진행하기 (PUT) : "/courses/:id"
         
-        // 완료한 코스 메달 조회 (GET)
-        static let medalURL = "/complete"
+        // 완료한 코스 기록 조회 (GET)
+        static let courseHistoryURL = "/courses/complete"
         
         // MARK: - Challenge Service
         
@@ -50,7 +51,7 @@ extension Const {
         static let challengesURL = "/today"
         
         // 챌린지 인증 (PUT)
-        // "/challenges/:courseId/:challengeId"
+        // "/today/:courseId/:challengeId"
         
         // 소확행 입력(POST)
         static let writeURL = "/write"

@@ -68,7 +68,7 @@ class FeedViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         headerView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-        headerView.setHeaderData(hasNewContents: allFeeds.isNew, contents: allFeeds.feeds.count)
+        headerView.setHeaderData(hasNewContents: allFeeds.isNew ?? false, contents: allFeeds.userCount ?? 0)
         setHeaderViewDelegate()
         
         feedCollectionView.insertSubview(feedBackgroundFrame, at: 0)
@@ -230,6 +230,7 @@ extension FeedViewController: HeaderViewDelegate {
         let myDrawerStoryboard = UIStoryboard(name: Const.Storyboard.Name.myDrawer, bundle: nil)
         guard let myDrawerViewController = myDrawerStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.myDrawer) as? MyDrawerViewController else { return }
         
+        myDrawerViewController.setWritingStatus(writingInt: allFeeds.hasFeed ?? 0)
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(myDrawerViewController, animated: true)
     }

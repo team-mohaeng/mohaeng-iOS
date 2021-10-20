@@ -214,5 +214,25 @@ extension Const {
         static let grpWritingCompletion = UIImage(named: "grpWritingCompletion")!
         static let styleCardBg = UIImage(named: "styleCardBg")!
 
+        // character style
+        static let duckImg = UIImage(named: "stylechactab1")!
+        static let rabbitImg = UIImage(named: "stylechactab2")!
+        static let giraffeImg = UIImage(named: "stylechactab3")!
+        static let elephantImg = UIImage(named: "stylechactab4")!
+        static let hedgehogImg = UIImage(named: "stylechactab5")!
+        static let squirrelImg = UIImage(named: "stylechactab6")!
+        
+        static let rabbitLockImg = UIImage(named: "stylechactabLock2")!
+        static let giraffeLockImg = UIImage(named: "stylechactabLock3")!
+        static let elephantLockImg = UIImage(named: "stylechactabLock4")!
+        static let hedgehogLockImg = UIImage(named: "stylechactabLock5")!
+        static let squirrelLockImg = UIImage(named: "stylechactabLock6")!
+        
+        static let duckCardLockImg = UIImage(named: "stylecardLock1")!
+        static let rabbitCardLockImg = UIImage(named: "stylecardLock2")!
+        static let giraffeCardLockImg = UIImage(named: "stylecardLock3")!
+        static let elephantCardLockImg = UIImage(named: "stylecardLock4")!
+        static let hedgehogCardLockImg = UIImage(named: "stylecardLock5")!
+        static let squirrelCardLockImg = UIImage(named: "stylecardLock6")!
     }
 }

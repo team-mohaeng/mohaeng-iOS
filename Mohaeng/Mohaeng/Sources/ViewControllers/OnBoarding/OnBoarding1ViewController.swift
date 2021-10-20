@@ -57,7 +57,7 @@ class OnBoarding1ViewController: UIViewController {
         $0.image = Const.Image.grpXonboarding2
     }
     
-    let startButton = UIButton().then {
+    let startButton = UIButton(type: .system).then {
         $0.setBackgroundColor(.Yellow3, for: .normal)
         $0.setTitle("새롭게 시작하기", for: .normal)
         $0.setTitleColor(.White, for: .normal)

@@ -136,7 +136,7 @@ extension CourseLibraryViewController: UICollectionViewDataSource {
                 if indexPath.row == 0 {
                     cell.setLabel(title: "전체")
                 } else {
-                    if let title = AppCourse(rawValue: indexPath.row-1)?.getKorean() {
+                    if let title = AppCourse(rawValue: indexPath.row)?.getKorean() {
                         cell.setLabel(title: title)
                     }
                 }

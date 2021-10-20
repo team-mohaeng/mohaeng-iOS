@@ -14,7 +14,7 @@ class FirstDayTableViewCell: UITableViewCell {
     private let currentLine = CAShapeLayer()
     private let nextLine = CAShapeLayer()
     
-    var appCourse: AppCourse = AppCourse(rawValue: 0)!
+    var appCourse: AppCourse = AppCourse(rawValue: 1)!
     
     enum Size {
         // all
