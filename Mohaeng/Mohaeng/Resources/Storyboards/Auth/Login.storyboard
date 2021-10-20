@@ -67,6 +67,9 @@
                                         <state key="normal" title="카카오로 시작하기" image="kakaoIcon">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="touchKakaoLoginButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7u7-HO-maK"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lw-aU-RLf">
                                         <rect key="frame" x="0.0" y="57" width="327" height="45"/>

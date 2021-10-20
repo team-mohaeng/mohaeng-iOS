@@ -11,6 +11,7 @@ import FirebaseMessaging
 import UserNotifications
 import IQKeyboardManagerSwift
 import FontBlaster
+import KakaoSDKCommon
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -41,6 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // custom font load
         FontBlaster.blast()
         
+        // 카카오 로그인
+        KakaoSDKCommon.initSDK(appKey: "76520e61eaf787345929bd73ec5ca3df")
         return true
     }
     
