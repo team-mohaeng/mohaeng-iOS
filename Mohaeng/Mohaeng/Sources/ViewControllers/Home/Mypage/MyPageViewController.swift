@@ -12,7 +12,7 @@ class MyPageViewController: UIViewController {
     
     // 더미데이터
     var myPageData = MyPage(nickname: "", email: "", completeCourseCount: 0, completeChallengeCount: 0, feedCount: 0, badgeCount: 0, calendar: [
-        MyPageCalendar(property: 0, date: [])
+        MyPageCalendar(property: 1, date: [])
     ])
     
     // MARK: - @IBOutlet Properties
@@ -39,7 +39,7 @@ class MyPageViewController: UIViewController {
     let formatter = DateFormatter()
     var frameDimensions: CGFloat = 0.00
     var selected = Date()
-    var rangeDates: [[Date]] = []
+    var rangeDates = [[Date]]()
     var currentSection: Int = 0
     var totalSectionCount: Int = 0
     
@@ -143,6 +143,8 @@ class MyPageViewController: UIViewController {
     }
     
     private func setRangeDates() {
+        self.rangeDates.removeAll()
+        
         guard let gregorianCalendar = NSCalendar(calendarIdentifier: .gregorian) else { return }
         for dateRange in myPageData.calendar {
             var rangeDate: [Date] = []

@@ -168,8 +168,8 @@
 		56A39D97271C21E500865FEC /* OnboardingCourseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A39D96271C21E400865FEC /* OnboardingCourseProtocol.swift */; };
 		56AD4D1B27155FC900272EE4 /* CourseHistoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AD4D1A27155FC900272EE4 /* CourseHistoryHeaderView.swift */; };
 		56AD4D1D27155FD000272EE4 /* CourseHistoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AD4D1C27155FD000272EE4 /* CourseHistoryHeaderView.xib */; };
-		56AE34DE271FE30700D7F4D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56AE34DD271FE30600D7F4D8 /* GoogleService-Info.plist */; };
 		56AE34DC271EECDC00D7F4D8 /* CoursePopUpProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE34DB271EECDC00D7F4D8 /* CoursePopUpProtocol.swift */; };
+		56AE34DE271FE30700D7F4D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56AE34DD271FE30600D7F4D8 /* GoogleService-Info.plist */; };
 		56C019B4271C2BFE00735761 /* MyPageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C019B3271C2BFE00735761 /* MyPageAPI.swift */; };
 		56C019B7271C2C3900735761 /* MyPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C019B6271C2C3900735761 /* MyPageService.swift */; };
 		56C21992271BE6DC008049A8 /* TodayChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C21991271BE6DC008049A8 /* TodayChallenge.swift */; };
@@ -190,15 +190,15 @@
 		AAED18DA26F11DF0009FE781 /* StickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAED18D426F11DEF009FE781 /* StickerCollectionViewCell.xib */; };
 		AAED18DD26F11DF0009FE781 /* PlusButtonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAED18D726F11DEF009FE781 /* PlusButtonCollectionViewCell.xib */; };
 		AAED18E026F313E3009FE781 /* FeedDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAED18DF26F313E3009FE781 /* FeedDetailCollectionViewCell.swift */; };
+		AAEDB361271C050000E26615 /* LottieFileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB360271C050000E26615 /* LottieFileProvider.swift */; };
+		AAEDB363271C05CC00E26615 /* AnimationView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB362271C05CC00E26615 /* AnimationView+Extension.swift */; };
+		AAEDB36B271C142F00E26615 /* HappyPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB369271C142F00E26615 /* HappyPopUpViewController.swift */; };
+		AAEDB36C271C142F00E26615 /* HappyPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAEDB36A271C142F00E26615 /* HappyPopUpViewController.xib */; };
 		AAEDB370271C5E8E00E26615 /* CharacterStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB36F271C5E8E00E26615 /* CharacterStyle.swift */; };
 		AAEDB372271C638100E26615 /* AppCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB371271C638100E26615 /* AppCharacter.swift */; };
 		AAEDB375271C688000E26615 /* CharacterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB374271C688000E26615 /* CharacterAPI.swift */; };
 		AAEDB377271C689800E26615 /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB376271C689800E26615 /* CharacterService.swift */; };
 		AAEDB379271C9D4600E26615 /* BackgroundSkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB378271C9D4600E26615 /* BackgroundSkin.swift */; };
-		AAEDB361271C050000E26615 /* LottieFileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB360271C050000E26615 /* LottieFileProvider.swift */; };
-		AAEDB363271C05CC00E26615 /* AnimationView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB362271C05CC00E26615 /* AnimationView+Extension.swift */; };
-		AAEDB36B271C142F00E26615 /* HappyPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB369271C142F00E26615 /* HappyPopUpViewController.swift */; };
-		AAEDB36C271C142F00E26615 /* HappyPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAEDB36A271C142F00E26615 /* HappyPopUpViewController.xib */; };
 		C96CDD968727E45C25BA11DB /* Pods_Mohaeng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF85070BA1F5A448133681A6 /* Pods_Mohaeng.framework */; };
 		DD515C672711D77700E76D4B /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD515C662711D77700E76D4B /* MoyaLoggingPlugin.swift */; };
 		DD515C6A2711F39100E76D4B /* OnBoarding1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD515C692711F39100E76D4B /* OnBoarding1ViewController.swift */; };
@@ -399,8 +399,8 @@
 		56A39D96271C21E400865FEC /* OnboardingCourseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCourseProtocol.swift; sourceTree = "<group>"; };
 		56AD4D1A27155FC900272EE4 /* CourseHistoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHistoryHeaderView.swift; sourceTree = "<group>"; };
 		56AD4D1C27155FD000272EE4 /* CourseHistoryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseHistoryHeaderView.xib; sourceTree = "<group>"; };
-		56AE34DD271FE30600D7F4D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56AE34DB271EECDC00D7F4D8 /* CoursePopUpProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePopUpProtocol.swift; sourceTree = "<group>"; };
+		56AE34DD271FE30600D7F4D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56C019B3271C2BFE00735761 /* MyPageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAPI.swift; sourceTree = "<group>"; };
 		56C019B6271C2C3900735761 /* MyPageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageService.swift; sourceTree = "<group>"; };
 		56C21991271BE6DC008049A8 /* TodayChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayChallenge.swift; sourceTree = "<group>"; };
@@ -422,15 +422,15 @@
 		AAED18D426F11DEF009FE781 /* StickerCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StickerCollectionViewCell.xib; sourceTree = "<group>"; };
 		AAED18D726F11DEF009FE781 /* PlusButtonCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlusButtonCollectionViewCell.xib; sourceTree = "<group>"; };
 		AAED18DF26F313E3009FE781 /* FeedDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		AAEDB360271C050000E26615 /* LottieFileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieFileProvider.swift; sourceTree = "<group>"; };
+		AAEDB362271C05CC00E26615 /* AnimationView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimationView+Extension.swift"; sourceTree = "<group>"; };
+		AAEDB369271C142F00E26615 /* HappyPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyPopUpViewController.swift; sourceTree = "<group>"; };
+		AAEDB36A271C142F00E26615 /* HappyPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HappyPopUpViewController.xib; sourceTree = "<group>"; };
 		AAEDB36F271C5E8E00E26615 /* CharacterStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStyle.swift; sourceTree = "<group>"; };
 		AAEDB371271C638100E26615 /* AppCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCharacter.swift; sourceTree = "<group>"; };
 		AAEDB374271C688000E26615 /* CharacterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAPI.swift; sourceTree = "<group>"; };
 		AAEDB376271C689800E26615 /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
 		AAEDB378271C9D4600E26615 /* BackgroundSkin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSkin.swift; sourceTree = "<group>"; };
-		AAEDB360271C050000E26615 /* LottieFileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieFileProvider.swift; sourceTree = "<group>"; };
-		AAEDB362271C05CC00E26615 /* AnimationView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimationView+Extension.swift"; sourceTree = "<group>"; };
-		AAEDB369271C142F00E26615 /* HappyPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyPopUpViewController.swift; sourceTree = "<group>"; };
-		AAEDB36A271C142F00E26615 /* HappyPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HappyPopUpViewController.xib; sourceTree = "<group>"; };
 		CE6F11BC23DA1F9010B4D5A7 /* Pods-Mohaeng.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mohaeng.debug.xcconfig"; path = "Target Support Files/Pods-Mohaeng/Pods-Mohaeng.debug.xcconfig"; sourceTree = "<group>"; };
 		DD515C662711D77700E76D4B /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
 		DD515C692711F39100E76D4B /* OnBoarding1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding1ViewController.swift; sourceTree = "<group>"; };
@@ -956,8 +956,8 @@
 				561D768F26F0BFA40028DBCA /* YearPickerViewController.swift */,
 				561D769426F0BFA40028DBCA /* YearPickerViewController.xib */,
 				EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */,
-				56AD4D1A27155FC900272EE4 /* CourseHistoryHeaderView.swift */,
 				56AD4D1C27155FD000272EE4 /* CourseHistoryHeaderView.xib */,
+				56AD4D1A27155FC900272EE4 /* CourseHistoryHeaderView.swift */,
 				561D768A26F0BFA40028DBCA /* CustomIntensityVisualEffectView.swift */,
 			);
 			path = Views;
@@ -1085,15 +1085,6 @@
 			path = CharaterCollectionView;
 			sourceTree = "<group>";
 		};
-		AAEDB373271C686400E26615 /* CharacterAPI */ = {
-			isa = PBXGroup;
-			children = (
-				AAEDB374271C688000E26615 /* CharacterAPI.swift */,
-				AAEDB376271C689800E26615 /* CharacterService.swift */,
-			);
-			path = CharacterAPI;
-            sourceTree = "<group>";
-        };
 		AAEDB35F271C04DE00E26615 /* lottie */ = {
 			isa = PBXGroup;
 			children = (
@@ -1109,6 +1100,15 @@
 				AAEDB36A271C142F00E26615 /* HappyPopUpViewController.xib */,
 			);
 			path = HomeHappy;
+			sourceTree = "<group>";
+		};
+		AAEDB373271C686400E26615 /* CharacterAPI */ = {
+			isa = PBXGroup;
+			children = (
+				AAEDB374271C688000E26615 /* CharacterAPI.swift */,
+				AAEDB376271C689800E26615 /* CharacterService.swift */,
+			);
+			path = CharacterAPI;
 			sourceTree = "<group>";
 		};
 		DD515C682711F1C000E76D4B /* OnBoarding */ = {
@@ -1470,7 +1470,6 @@
 				561D76CA26F0BFA40028DBCA /* BubbleCollectionViewCell.swift in Sources */,
 				561D76FE26F0BFA40028DBCA /* MoodViewController.swift in Sources */,
 				56C019B7271C2C3900735761 /* MyPageService.swift in Sources */,
-				561D771526F0BFA40028DBCA /* AppModelsExmaple.swift in Sources */,
 				569E8B2227154E7A00D67712 /* CourseHistoryViewController.swift in Sources */,
 				561D773826F0BFA40028DBCA /* FeedHeaderView.swift in Sources */,
 				569E8B2727154F6300D67712 /* CourseHistoryCollectionViewCell.swift in Sources */,
