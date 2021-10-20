@@ -1094,6 +1094,8 @@
 				AAEDB376271C689800E26615 /* CharacterService.swift */,
 			);
 			path = CharacterAPI;
+            sourceTree = "<group>";
+        };
 		AAEDB35F271C04DE00E26615 /* lottie */ = {
 			isa = PBXGroup;
 			children = (
