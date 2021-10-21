@@ -59,8 +59,11 @@ class EmailLoginViewController: UIViewController {
         loginButton.tintColor = .white
     }
     
-    private func errorMessage() {
+    private func changeErrorAttributes() {
         errorLabel.isHidden = false
+        loginButton.backgroundColor = .LoginYellow
+        emailTextField.text = ""
+        passwordTextField.text = ""
     }
     
     func finishEditingTextField() {
@@ -92,6 +95,7 @@ class EmailLoginViewController: UIViewController {
         label.textColor = .Black1Text
         bottomView.backgroundColor = .black
         loginButton.backgroundColor = .DeepYellow
+        errorLabel.isHidden = true
     }
     
     private func pushFindPasswordViewController() {
@@ -157,6 +161,7 @@ extension EmailLoginViewController {
                 }
             case .requestErr(let message):
                 print("requestErr", message)
+                self.changeErrorAttributes()
             case .pathErr:
                 print("pathErr")
             case .serverErr:

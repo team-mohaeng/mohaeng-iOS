@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="약관동의" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpb-Sm-v4s">
-                                <rect key="frame" x="24" y="76" width="76.333333333333329" height="26.333333333333329"/>
+                                <rect key="frame" x="24" y="82" width="76.333333333333329" height="26.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="eJf-TE-okF">
-                                <rect key="frame" x="24" y="155.33333333333334" width="327" height="126.00000000000003"/>
+                                <rect key="frame" x="24" y="161.33333333333334" width="327" height="126.00000000000003"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kR-Ru-owS">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="24"/>
@@ -152,7 +152,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLl-sL-jW8">
-                                <rect key="frame" x="24" y="456.33333333333331" width="327" height="40"/>
+                                <rect key="frame" x="24" y="445.33333333333331" width="327" height="40"/>
                                 <color key="backgroundColor" name="LoginYellow"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="frc-RV-bE2"/>
@@ -181,11 +181,11 @@
                             <constraint firstItem="dLl-sL-jW8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="0Gf-Rp-nKl"/>
                             <constraint firstItem="eJf-TE-okF" firstAttribute="top" secondItem="lpb-Sm-v4s" secondAttribute="bottom" constant="53" id="3Di-Il-bgo"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eJf-TE-okF" secondAttribute="trailing" constant="24" id="4fB-wa-CA4"/>
-                            <constraint firstItem="lpb-Sm-v4s" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="32" id="5cW-T3-BWB"/>
+                            <constraint firstItem="lpb-Sm-v4s" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="38" id="5cW-T3-BWB"/>
                             <constraint firstItem="lpb-Sm-v4s" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="7Bt-HT-q9H"/>
                             <constraint firstItem="eJf-TE-okF" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="7u2-Qk-YR2"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dLl-sL-jW8" secondAttribute="trailing" constant="24" id="A4p-Yd-ZPJ"/>
-                            <constraint firstItem="dLl-sL-jW8" firstAttribute="top" secondItem="eJf-TE-okF" secondAttribute="bottom" constant="175" id="QIF-XV-iDY"/>
+                            <constraint firstItem="dLl-sL-jW8" firstAttribute="top" secondItem="eJf-TE-okF" secondAttribute="bottom" constant="158" id="QIF-XV-iDY"/>
                             <constraint firstItem="eJf-TE-okF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="Wae-AD-CMR"/>
                         </constraints>
                     </view>
