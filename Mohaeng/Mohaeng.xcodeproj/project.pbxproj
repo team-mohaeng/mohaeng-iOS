@@ -200,13 +200,7 @@
 		AAEDB377271C689800E26615 /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB376271C689800E26615 /* CharacterService.swift */; };
 		AAEDB379271C9D4600E26615 /* BackgroundSkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB378271C9D4600E26615 /* BackgroundSkin.swift */; };
 		C96CDD968727E45C25BA11DB /* Pods_Mohaeng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF85070BA1F5A448133681A6 /* Pods_Mohaeng.framework */; };
-		DD1C5C3C271FE936004026BC /* awards_sok3.json in Resources */ = {isa = PBXBuildFile; fileRef = DD1C5C35271FE934004026BC /* awards_sok3.json */; };
-		DD1C5C3D271FE936004026BC /* awards_sok1.json in Resources */ = {isa = PBXBuildFile; fileRef = DD1C5C36271FE935004026BC /* awards_sok1.json */; };
-		DD1C5C3E271FE936004026BC /* awards_sok5.json in Resources */ = {isa = PBXBuildFile; fileRef = DD1C5C37271FE935004026BC /* awards_sok5.json */; };
-		DD1C5C3F271FE936004026BC /* awards_sok4.json in Resources */ = {isa = PBXBuildFile; fileRef = DD1C5C38271FE935004026BC /* awards_sok4.json */; };
-		DD1C5C40271FE936004026BC /* awards_sok6.json in Resources */ = {isa = PBXBuildFile; fileRef = DD1C5C39271FE936004026BC /* awards_sok6.json */; };
 		DD1C5C41271FE936004026BC /* awards_sok7.json in Resources */ = {isa = PBXBuildFile; fileRef = DD1C5C3A271FE936004026BC /* awards_sok7.json */; };
-		DD1C5C42271FE936004026BC /* awards_sok2.json in Resources */ = {isa = PBXBuildFile; fileRef = DD1C5C3B271FE936004026BC /* awards_sok2.json */; };
 		DD515C672711D77700E76D4B /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD515C662711D77700E76D4B /* MoyaLoggingPlugin.swift */; };
 		DD515C6A2711F39100E76D4B /* OnBoarding1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD515C692711F39100E76D4B /* OnBoarding1ViewController.swift */; };
 		DD515C6C2712042D00E76D4B /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD515C6B2712042D00E76D4B /* UILabel+Extension.swift */; };
@@ -232,6 +226,12 @@
 		DD9EFFCC2715568700B3F871 /* OnBoarding2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFCB2715568700B3F871 /* OnBoarding2TableViewCell.swift */; };
 		DD9EFFCF2715798100B3F871 /* OnBoarding4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFCE2715798100B3F871 /* OnBoarding4ViewController.swift */; };
 		DD9EFFD227157B8800B3F871 /* OnBoarding3HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFD127157B8800B3F871 /* OnBoarding3HeaderView.swift */; };
+		DDA7EF3927214CFF00F100CA /* awards_sok5.json in Resources */ = {isa = PBXBuildFile; fileRef = DDA7EF3327214CFD00F100CA /* awards_sok5.json */; };
+		DDA7EF3A27214CFF00F100CA /* awards_sok6.json in Resources */ = {isa = PBXBuildFile; fileRef = DDA7EF3427214CFD00F100CA /* awards_sok6.json */; };
+		DDA7EF3B27214CFF00F100CA /* awards_sok3.json in Resources */ = {isa = PBXBuildFile; fileRef = DDA7EF3527214CFD00F100CA /* awards_sok3.json */; };
+		DDA7EF3C27214CFF00F100CA /* awards_sok2.json in Resources */ = {isa = PBXBuildFile; fileRef = DDA7EF3627214CFE00F100CA /* awards_sok2.json */; };
+		DDA7EF3D27214CFF00F100CA /* awards_sok1.json in Resources */ = {isa = PBXBuildFile; fileRef = DDA7EF3727214CFE00F100CA /* awards_sok1.json */; };
+		DDA7EF3E27214CFF00F100CA /* awards_sok4.json in Resources */ = {isa = PBXBuildFile; fileRef = DDA7EF3827214CFF00F100CA /* awards_sok4.json */; };
 		DDEBD21C270F5FDC0011EDC6 /* BadgeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBD21B270F5FDC0011EDC6 /* BadgeService.swift */; };
 		DDEBD21E270F5FE90011EDC6 /* BadgeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBD21D270F5FE90011EDC6 /* BadgeAPI.swift */; };
 		DDEBD220270F6CFA0011EDC6 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBD21F270F6CFA0011EDC6 /* Badge.swift */; };
@@ -436,13 +436,7 @@
 		AAEDB376271C689800E26615 /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
 		AAEDB378271C9D4600E26615 /* BackgroundSkin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSkin.swift; sourceTree = "<group>"; };
 		CE6F11BC23DA1F9010B4D5A7 /* Pods-Mohaeng.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mohaeng.debug.xcconfig"; path = "Target Support Files/Pods-Mohaeng/Pods-Mohaeng.debug.xcconfig"; sourceTree = "<group>"; };
-		DD1C5C35271FE934004026BC /* awards_sok3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_sok3.json; sourceTree = "<group>"; };
-		DD1C5C36271FE935004026BC /* awards_sok1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_sok1.json; sourceTree = "<group>"; };
-		DD1C5C37271FE935004026BC /* awards_sok5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_sok5.json; sourceTree = "<group>"; };
-		DD1C5C38271FE935004026BC /* awards_sok4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_sok4.json; sourceTree = "<group>"; };
-		DD1C5C39271FE936004026BC /* awards_sok6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_sok6.json; sourceTree = "<group>"; };
 		DD1C5C3A271FE936004026BC /* awards_sok7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_sok7.json; sourceTree = "<group>"; };
-		DD1C5C3B271FE936004026BC /* awards_sok2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_sok2.json; sourceTree = "<group>"; };
 		DD515C662711D77700E76D4B /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
 		DD515C692711F39100E76D4B /* OnBoarding1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding1ViewController.swift; sourceTree = "<group>"; };
 		DD515C6B2712042D00E76D4B /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
@@ -468,6 +462,12 @@
 		DD9EFFCB2715568700B3F871 /* OnBoarding2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding2TableViewCell.swift; sourceTree = "<group>"; };
 		DD9EFFCE2715798100B3F871 /* OnBoarding4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding4ViewController.swift; sourceTree = "<group>"; };
 		DD9EFFD127157B8800B3F871 /* OnBoarding3HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding3HeaderView.swift; sourceTree = "<group>"; };
+		DDA7EF3327214CFD00F100CA /* awards_sok5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_sok5.json; sourceTree = "<group>"; };
+		DDA7EF3427214CFD00F100CA /* awards_sok6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_sok6.json; sourceTree = "<group>"; };
+		DDA7EF3527214CFD00F100CA /* awards_sok3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_sok3.json; sourceTree = "<group>"; };
+		DDA7EF3627214CFE00F100CA /* awards_sok2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_sok2.json; sourceTree = "<group>"; };
+		DDA7EF3727214CFE00F100CA /* awards_sok1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_sok1.json; sourceTree = "<group>"; };
+		DDA7EF3827214CFF00F100CA /* awards_sok4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_sok4.json; sourceTree = "<group>"; };
 		DDEBD21B270F5FDC0011EDC6 /* BadgeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeService.swift; sourceTree = "<group>"; };
 		DDEBD21D270F5FE90011EDC6 /* BadgeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAPI.swift; sourceTree = "<group>"; };
 		DDEBD21F270F6CFA0011EDC6 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
@@ -1112,12 +1112,12 @@
 		DD1C5C43271FE93A004026BC /* RewardCards */ = {
 			isa = PBXGroup;
 			children = (
-				DD1C5C36271FE935004026BC /* awards_sok1.json */,
-				DD1C5C3B271FE936004026BC /* awards_sok2.json */,
-				DD1C5C35271FE934004026BC /* awards_sok3.json */,
-				DD1C5C38271FE935004026BC /* awards_sok4.json */,
-				DD1C5C37271FE935004026BC /* awards_sok5.json */,
-				DD1C5C39271FE936004026BC /* awards_sok6.json */,
+				DDA7EF3727214CFE00F100CA /* awards_sok1.json */,
+				DDA7EF3627214CFE00F100CA /* awards_sok2.json */,
+				DDA7EF3527214CFD00F100CA /* awards_sok3.json */,
+				DDA7EF3827214CFF00F100CA /* awards_sok4.json */,
+				DDA7EF3327214CFD00F100CA /* awards_sok5.json */,
+				DDA7EF3427214CFD00F100CA /* awards_sok6.json */,
 				DD1C5C3A271FE936004026BC /* awards_sok7.json */,
 			);
 			path = RewardCards;
@@ -1253,24 +1253,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				561D76AC26F0BFA40028DBCA /* Tabbar.storyboard in Resources */,
+				DDA7EF3927214CFF00F100CA /* awards_sok5.json in Resources */,
 				561D772A26F0BFA40028DBCA /* UnreadNotificationHeaderView.xib in Resources */,
 				561D76BC26F0BFA40028DBCA /* GmarketSansTTFLight.ttf in Resources */,
 				561D769B26F0BFA40028DBCA /* Home.storyboard in Resources */,
 				561D76CB26F0BFA40028DBCA /* NewNotificationCollectionReusableView.xib in Resources */,
 				561D76D126F0BFA40028DBCA /* FeedCollectionViewCell.xib in Resources */,
-				DD1C5C42271FE936004026BC /* awards_sok2.json in Resources */,
-				DD1C5C3D271FE936004026BC /* awards_sok1.json in Resources */,
 				56AE34E2271FFDDC00D7F4D8 /* MoodCollectionViewCell.xib in Resources */,
 				DD6BB495271DB5CF0086240B /* awards_congrats.json in Resources */,
 				561D76DA26F0BFA40028DBCA /* FirstDayTableViewCell.xib in Resources */,
+				DDA7EF3E27214CFF00F100CA /* awards_sok4.json in Resources */,
 				561D76D626F0BFA40028DBCA /* CourseLibraryCollectionViewCell.xib in Resources */,
 				AA7E0AAB26FC615C00106DC2 /* CharacterStyle.storyboard in Resources */,
-				DD1C5C40271FE936004026BC /* awards_sok6.json in Resources */,
 				561D76C026F0BFA40028DBCA /* GmarketSansTTFMedium.ttf in Resources */,
 				564781AF271DB23D00802D76 /* MyPage.storyboard in Resources */,
 				561D76AA26F0BFA40028DBCA /* Feed.storyboard in Resources */,
 				569C39662712B28800DED361 /* ChallengeCompletePopUpViewController.xib in Resources */,
-				DD1C5C3C271FE936004026BC /* awards_sok3.json in Resources */,
 				561D769F26F0BFA40028DBCA /* SignUpThird.storyboard in Resources */,
 				AA7E0AB426FC6C1900106DC2 /* CharacterTypeCollectionViewCell.xib in Resources */,
 				561D773326F0BFA40028DBCA /* ChallengeStampView.xib in Resources */,
@@ -1280,6 +1278,7 @@
 				561D76C126F0BFA40028DBCA /* SpoqaHanSansNeo-Light.otf in Resources */,
 				561D773926F0BFA40028DBCA /* CourseHeaderView.xib in Resources */,
 				561D76B926F0BFA40028DBCA /* Assets.xcassets in Resources */,
+				DDA7EF3D27214CFF00F100CA /* awards_sok1.json in Resources */,
 				561D76DB26F0BFA40028DBCA /* EvenDayTableViewCell.xib in Resources */,
 				561D773426F0BFA40028DBCA /* DatePickerViewController.xib in Resources */,
 				56AE34DE271FE30700D7F4D8 /* GoogleService-Info.plist in Resources */,
@@ -1288,7 +1287,6 @@
 				561D76BE26F0BFA40028DBCA /* SpoqaHanSansNeo-Thin.otf in Resources */,
 				569E8B1E271547AD00D67712 /* ChallengeHelpPopUpViewController.xib in Resources */,
 				AAED18DD26F11DF0009FE781 /* PlusButtonCollectionViewCell.xib in Resources */,
-				DD1C5C3E271FE936004026BC /* awards_sok5.json in Resources */,
 				561D76A826F0BFA40028DBCA /* MyDrawer.storyboard in Resources */,
 				DD1C5C41271FE936004026BC /* awards_sok7.json in Resources */,
 				561D772B26F0BFA40028DBCA /* CourseFooterView.xib in Resources */,
@@ -1302,15 +1300,16 @@
 				561D769A26F0BFA40028DBCA /* Setting.storyboard in Resources */,
 				561D76A026F0BFA40028DBCA /* EmailLogin.storyboard in Resources */,
 				561D76B126F0BFA40028DBCA /* Colors.xcassets in Resources */,
+				DDA7EF3C27214CFF00F100CA /* awards_sok2.json in Resources */,
 				561D76ED26F0BFA40028DBCA /* PopUpViewController.xib in Resources */,
 				561D76C326F0BFA40028DBCA /* SpoqaHanSansNeo-Medium.otf in Resources */,
 				561D76CD26F0BFA40028DBCA /* ProfileBubbleCollectionViewCell.xib in Resources */,
 				561D76BF26F0BFA40028DBCA /* BMHANNA_11yrs_otf.otf in Resources */,
 				561D76AD26F0BFA40028DBCA /* CourseLibrary.storyboard in Resources */,
 				AA7E0AB826FC998000106DC2 /* CharacterColorCollectionViewCell.xib in Resources */,
+				DDA7EF3A27214CFF00F100CA /* awards_sok6.json in Resources */,
 				56AD4D1D27155FD000272EE4 /* CourseHistoryHeaderView.xib in Resources */,
 				AAED18DA26F11DF0009FE781 /* StickerCollectionViewCell.xib in Resources */,
-				DD1C5C3F271FE936004026BC /* awards_sok4.json in Resources */,
 				561D76A326F0BFA40028DBCA /* Code.storyboard in Resources */,
 				569E8B2027154E6C00D67712 /* CourseHistory.storyboard in Resources */,
 				561D769E26F0BFA40028DBCA /* SignUpSecond.storyboard in Resources */,
@@ -1320,6 +1319,7 @@
 				56931AC8271D7D87000EECF5 /* Course.storyboard in Resources */,
 				561D76C426F0BFA40028DBCA /* SpoqaHanSansNeo-Regular.otf in Resources */,
 				561D76A626F0BFA40028DBCA /* LaunchScreen.storyboard in Resources */,
+				DDA7EF3B27214CFF00F100CA /* awards_sok3.json in Resources */,
 				561D76C226F0BFA40028DBCA /* SpoqaHanSansNeo-Bold.otf in Resources */,
 				561D76A126F0BFA40028DBCA /* Login.storyboard in Resources */,
 				569E8B2827154F6300D67712 /* CourseHistoryCollectionViewCell.xib in Resources */,
@@ -1693,7 +1693,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EQ7Z68Z2F2;
+				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				INFOPLIST_FILE = Mohaeng/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1717,7 +1717,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EQ7Z68Z2F2;
+				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				INFOPLIST_FILE = Mohaeng/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
