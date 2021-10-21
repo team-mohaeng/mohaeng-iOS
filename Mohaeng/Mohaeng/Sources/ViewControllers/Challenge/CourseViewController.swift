@@ -39,13 +39,14 @@ class CourseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initNavigationBar()
         registerXib()
         assignDelegation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+        initNavigationBar()
         
         switch courseViewUsage {
         case .course:

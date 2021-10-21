@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -24,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tND-pp-FQB">
-                                <rect key="frame" x="0.0" y="87" width="414" height="809"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0fF-P7-Z7w">
                                     <size key="itemSize" width="128" height="128"/>
@@ -57,7 +58,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3c-Hr-fXI">
                                                     <rect key="frame" x="48.5" y="14" width="31" height="15.5"/>
                                                     <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" name="Grey4"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -72,17 +73,27 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGL-52-8PX">
+                                <rect key="frame" x="0.0" y="87" width="414" height="1"/>
+                                <color key="backgroundColor" red="0.80784313725490198" green="0.80784313725490198" blue="0.80784313725490198" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="RT4-F0-5CR"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iyh-eH-Bc2" secondAttribute="trailing" id="BnH-Eu-SH4"/>
                             <constraint firstAttribute="bottom" secondItem="tND-pp-FQB" secondAttribute="bottom" id="D35-OB-fAm"/>
-                            <constraint firstItem="tND-pp-FQB" firstAttribute="top" secondItem="iyh-eH-Bc2" secondAttribute="bottom" id="Gqe-F9-7Uf"/>
+                            <constraint firstItem="cGL-52-8PX" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="HNe-7d-QdG"/>
                             <constraint firstItem="iyh-eH-Bc2" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="L36-hR-x8V"/>
                             <constraint firstItem="tND-pp-FQB" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="QPO-s4-geM"/>
+                            <constraint firstItem="cGL-52-8PX" firstAttribute="top" secondItem="iyh-eH-Bc2" secondAttribute="bottom" id="Uc1-3g-3iT"/>
                             <constraint firstItem="tND-pp-FQB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="mKF-a6-XS5"/>
                             <constraint firstItem="iyh-eH-Bc2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="qh8-0r-tOj"/>
+                            <constraint firstAttribute="trailing" secondItem="cGL-52-8PX" secondAttribute="trailing" id="tI7-Nj-yKk"/>
+                            <constraint firstItem="tND-pp-FQB" firstAttribute="top" secondItem="cGL-52-8PX" secondAttribute="bottom" id="uUW-Zq-1I3"/>
                         </constraints>
                     </view>
                     <connections>
@@ -96,6 +107,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="Grey4">
+            <color red="0.80800002813339233" green="0.80800002813339233" blue="0.80800002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
