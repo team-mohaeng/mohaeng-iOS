@@ -8,20 +8,30 @@
 import UIKit
 
 class LevelUpRewardViewController: RewardBaseViewController {
+    
+    public var levelUp: LevelUp?
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     override func setUp() {
-        level = 15
+        if let level = levelUp?.level,
+           let imgURL = levelUp?.styleImg {
+            self.level = level
+            self.imgURL = imgURL
+        }
+        
         type = .levelUp
-
     }
     
-    // TODO : - 플로우에 따라 분기처리
+    /// 이전 VC가 WritingRewardViewController인 경우만 dismiss
     override func touchButton() {
-        navigationController?.pushViewController(CuriosityRewardViewController(), animated: true)
+        if navigationController?.previousViewController is WritingRewardViewController {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            navigationController?.pushViewController(CuriosityRewardViewController(), animated: true)
+        }
     }
 
 }

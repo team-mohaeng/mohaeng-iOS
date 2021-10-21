@@ -68,6 +68,7 @@ class MoodViewController: UIViewController {
     }
     
     private func initNavigationBar() {
+        navigationController?.navigationBar.isHidden = false
         navigationController?.initWithBackAndCloseButton(navigationItem: self.navigationItem, closeButtonClosure: #selector(buttonDidTapped(_:)))
         let currentDate = AppDate()
         let currentMonth = currentDate.getMonth()

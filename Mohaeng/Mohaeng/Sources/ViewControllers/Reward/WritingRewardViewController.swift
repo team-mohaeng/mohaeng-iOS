@@ -9,18 +9,40 @@ import UIKit
 
 class WritingRewardViewController: RewardBaseViewController {
 
+// MARK: - Properties
+    public var writingResponse: WritingResponse?
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        hideBar()
+    }
 
     override func setUp() {
-        happy = 15
+        guard let writingResponse = writingResponse else { return }
+        happy = writingResponse.happy
         type = .writing
     }
     
-    // TODO : - 플로우에 따라 분기처리
     override func touchButton() {
-        navigationController?.pushViewController(ChallengeRewardViewController(), animated: true)
+        guard let levelUp = writingResponse?.levelUp else { return }
+        
+        if  levelUp.level != nil {
+            let levelUpRewardViewController = LevelUpRewardViewController()
+            levelUpRewardViewController.levelUp = levelUp
+            
+            navigationController?.pushViewController(levelUpRewardViewController, animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    private func hideBar() {
+        tabBarController?.tabBar.isHidden = false
+        navigationController?.navigationBar.isHidden = false
     }
 
 }
