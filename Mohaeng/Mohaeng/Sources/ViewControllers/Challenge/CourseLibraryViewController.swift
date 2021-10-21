@@ -117,7 +117,7 @@ extension CourseLibraryViewController: UICollectionViewDataSource {
         
         switch collectionView {
         case propertyCollectionView:
-            return AppCourse.count
+            return AppCourse.count + 2
             
         case courseLibraryCollectionView:
             return courseListViewModel.numberOfRowsInSection(property: selectedProperty, section: 0)
@@ -135,6 +135,8 @@ extension CourseLibraryViewController: UICollectionViewDataSource {
                 
                 if indexPath.row == 0 {
                     cell.setLabel(title: "전체")
+                } else if indexPath.row == AppCourse.count + 1 {
+                    cell.setLabel(title: "다했어요!")
                 } else {
                     if let title = AppCourse(rawValue: indexPath.row)?.getKorean() {
                         cell.setLabel(title: title)

@@ -78,7 +78,7 @@ class CourseViewController: UIViewController {
                 backgroundColor: .white)
             self.navigationItem.setHidesBackButton(true, animated: true)
         } else if courseViewUsage == .history {
-            self.navigationController?.initWithBackButton(backgroundColor: .white)
+            self.navigationController?.initWithBackButton()
         }
     }
     

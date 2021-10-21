@@ -16,7 +16,7 @@ enum AppCourse: Int {
     
     case health = 1, selfCare, habit, challenge, memory, love, culture
     
-    static var count: Int { return AppCourse.culture.rawValue + 1 }
+    static var count: Int { return AppCourse.culture.rawValue }
     
     func getKorean() -> String {
         
