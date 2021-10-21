@@ -106,9 +106,17 @@ extension OnBoarding3ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: Const.Xib.Identifier.courseHeaderView) as? CourseHeaderView {
             
-            headerView.headerBgView.makeRoundedSpecificCorner(corners: [.bottomLeft, .bottomRight], cornerRadius: 25)
+            let headerBgView: UIView = {
+                let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 132))
+                view.backgroundColor = .white
+                view.makeRoundedSpecificCorner(corners: [.bottomLeft, .bottomRight], cornerRadius: 25)
+                
+                return view
+            }()
+            headerView.backgroundView = headerBgView
+            
             headerView.layer.shadowOpacity = 0.12
-            headerView.layer.shadowRadius = 0
+            headerView.layer.shadowRadius = 1
             headerView.layer.shadowOffset = CGSize(width: 0, height: 2)
             headerView.layer.shadowColor = UIColor.black.cgColor
             
