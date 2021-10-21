@@ -250,11 +250,13 @@ extension WritingViewController {
         case removePhotoButton:
             removePhoto()
         case doneButton:
-            postFeedWriting { [weak self] in
+            postFeedWriting {[weak self] response in
                 NotificationCenter.default.post(name: NSNotification.Name("RefreshFeedCollectionView"),
                                                 object: nil,
                                                 userInfo: nil)
-                self?.dismiss(animated: true, completion: nil)
+                let writingRewardViewController = WritingRewardViewController()
+                writingRewardViewController.writingResponse = response
+                self?.navigationController?.pushViewController(writingRewardViewController, animated: true)
             }
            
         default:
@@ -345,15 +347,14 @@ extension WritingViewController: UITextViewDelegate {
 }
 
 extension WritingViewController {
-    func postFeedWriting(completion: @escaping() -> Void) {
+    func postFeedWriting(completion: @escaping(WritingResponse) -> Void) {
         writingRequest.content = textView.text
         FeedAPI.shared.postFeed(writingRequest: writingRequest) { (response) in
             switch response {
             case .success(let data):
                 if let data = data as? WritingResponse {
-                    
+                    completion(data)
                 }
-                completion()
             case .requestErr(let message):
                 print("requestErr", message)
             case .pathErr:

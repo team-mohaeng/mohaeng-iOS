@@ -8,19 +8,34 @@
 import UIKit
 
 class CourseRewardViewController: RewardBaseViewController {
+    
+    public var completedChallengeData: CompletedChallengeData?
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     override func setUp() {
-        happy = 15
+        guard let data = completedChallengeData else { return }
+        happy = data.challengeCompletion.happy
+        courseCompletion = data.courseCompletion
         type = .course
     }
     
-    // TODO : - 플로우에 따라 분기처리
+    /// 우선 순위 1) 레벨업 2) 글쓰기 유도뷰
     override func touchButton() {
-        navigationController?.pushViewController(LevelUpRewardViewController(), animated: true)
+        guard let data = completedChallengeData else { return }
+        let levelUp = data.levelUp
+        
+        if levelUp.level != nil,
+           levelUp.styleImg != nil {
+            let viewController = LevelUpRewardViewController()
+            viewController.levelUp = levelUp
+            navigationController?.pushViewController(viewController, animated: true)
+            return
+        }
+        
+        navigationController?.pushViewController(WritingRewardViewController(), animated: true)
     }
 
 }

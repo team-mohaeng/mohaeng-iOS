@@ -17,4 +17,7 @@ target 'Mohaeng' do
 	pod 'Kingfisher'
 	pod 'FontBlaster'
 	pod 'JTAppleCalendar'
+	pod 'KakaoSDKCommon'
+	pod 'KakaoSDKAuth'
+	pod 'KakaoSDKUser'  
 end

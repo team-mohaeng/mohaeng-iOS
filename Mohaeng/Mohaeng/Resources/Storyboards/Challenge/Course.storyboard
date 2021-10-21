@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TuI-sr-lBb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TuI-sr-lBb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -47,7 +47,7 @@
         <scene sceneID="IVp-gs-VCh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TuI-sr-lBb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="챌린지" image="challengeIcon" id="cUU-n5-gkM"/>
+                    <tabBarItem key="tabBarItem" title="챌린지" image="tabIcnChallenge0" id="cUU-n5-gkM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gGg-fW-Rh7">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

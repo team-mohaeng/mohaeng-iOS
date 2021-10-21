@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DatePickerViewController" customModule="Journey" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DatePickerViewController" customModule="Mohaeng" customModuleProvider="target">
             <connections>
                 <outlet property="applyButton" destination="hdR-GS-LJm" id="C32-rc-wwX"/>
                 <outlet property="cancelButton" destination="lfs-j1-hpy" id="KpG-P0-q7P"/>
@@ -34,16 +34,16 @@
                     <rect key="frame" x="10" y="167" width="365" height="253"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="j1g-uB-Rnf">
-                            <rect key="frame" x="72" y="28" width="221" height="142"/>
+                            <rect key="frame" x="52.5" y="28" width="260" height="142"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JSS-3D-bsl">
-                                    <rect key="frame" x="0.0" y="0.0" width="110.5" height="142"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="130" height="142"/>
                                     <subviews>
                                         <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awR-kU-Xeh">
-                                            <rect key="frame" x="0.0" y="0.0" width="82.5" height="142"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="102" height="142"/>
                                         </pickerView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="년" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Hu-zq-aVK">
-                                            <rect key="frame" x="90.5" y="0.0" width="20" height="142"/>
+                                            <rect key="frame" x="110" y="0.0" width="20" height="142"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="20" id="y0l-TF-UW5"/>
                                             </constraints>
@@ -54,13 +54,13 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sp4-Gb-thl">
-                                    <rect key="frame" x="110.5" y="0.0" width="110.5" height="142"/>
+                                    <rect key="frame" x="130" y="0.0" width="130" height="142"/>
                                     <subviews>
                                         <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7C-sc-58G">
-                                            <rect key="frame" x="0.0" y="0.0" width="82.5" height="142"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="102" height="142"/>
                                         </pickerView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="월" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4M-zw-ZDL">
-                                            <rect key="frame" x="90.5" y="0.0" width="20" height="142"/>
+                                            <rect key="frame" x="110" y="0.0" width="20" height="142"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="20" id="iPU-pf-OHP"/>
                                             </constraints>
@@ -73,7 +73,7 @@
                             </subviews>
                             <constraints>
                                 <constraint firstAttribute="height" constant="142" id="06s-UJ-3CU"/>
-                                <constraint firstAttribute="width" constant="221" id="zAO-IZ-eom"/>
+                                <constraint firstAttribute="width" constant="260" id="zAO-IZ-eom"/>
                             </constraints>
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgg-oe-YQ3">

@@ -47,7 +47,7 @@ enum Reward {
         }
     }
     
-    func setGraphicView(view: UIView, styleCard: String? = nil) {
+    func setGraphicView(view: UIView, styleCard: String? = nil, courseCompletion: CourseCompletion? = nil) {
         switch self {
         case .challenge:
             let animationView = AnimationView(name: "awards_congrats").then {
@@ -74,8 +74,12 @@ enum Reward {
             animationView.loopMode = .loop
 
         case .course:
-            let animationView = AnimationView(name: "awards_crs_sok2").then {
-                $0.center = view.center
+            guard let courseCompletion = courseCompletion else { return }
+            guard let property = courseCompletion.property else { return }
+            guard let rewardCard = AppCourse(rawValue: property)?.getRewardCards() else { return }
+        
+            let animationView = AnimationView(name: rewardCard).then {
+                $0.frame = view.bounds
                 $0.contentMode = .scaleAspectFill
             }
             view.addSubviews(animationView)
@@ -83,7 +87,7 @@ enum Reward {
                 $0.edges.equalToSuperview()
             }
             animationView.play()
-            animationView.loopMode = .loop
+            animationView.loopMode = .playOnce
             
         case .levelUp:
             guard let styleCard = styleCard else {return}
@@ -149,7 +153,11 @@ enum Reward {
             }
             
             let label = UILabel().then {
-                $0.text = "해피지수 \(String(describing: happy)) 획득!"
+                if happy != 0 {
+                    $0.text = "해피지수 \(String(describing: happy)) 획득!"
+                } else {
+                    $0.text = "챌린지 성공을 축하해"
+                }
                 $0.numberOfLines = 1
                 $0.font = .spoqaHanSansNeo(weight: .bold, size: 18)
                 $0.textColor = .Yellow1

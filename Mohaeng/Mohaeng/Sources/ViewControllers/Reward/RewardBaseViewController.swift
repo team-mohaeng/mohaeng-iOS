@@ -18,6 +18,7 @@ class RewardBaseViewController: UIViewController {
     public lazy var level: Int = 0
     public lazy var imgURL: String = ""
     public lazy var happy: Int = 0
+    public var courseCompletion: CourseCompletion?
     
     public var type: Reward? {
         didSet {
@@ -45,8 +46,10 @@ class RewardBaseViewController: UIViewController {
             
             /// Graphic
             switch type {
-            case .challenge, .course, .curiosity, .writing:
+            case .challenge, .curiosity, .writing:
                 type.setGraphicView(view: self.graphicView)
+            case .course:
+                type.setGraphicView(view: self.graphicView, courseCompletion: courseCompletion)
             case .levelUp:
                 type.setGraphicView(view: self.graphicView, styleCard: imgURL)
             }
@@ -103,17 +106,21 @@ class RewardBaseViewController: UIViewController {
         }
     }
     
-    private let hasNotch = UIDevice.current.hasNotch
+    private lazy var hasNotch = UIDevice.current.hasNotch
     
 // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         render()
-        initNavigationBar()
         setLayouts()
         addTargets()
         setUp()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hideNavigationBar()
     }
     
 // MARK: - Public Functions
@@ -132,8 +139,9 @@ class RewardBaseViewController: UIViewController {
         view.backgroundColor = .White
     }
     
-    private func initNavigationBar() {
+    private func hideNavigationBar() {
         navigationController?.navigationBar.isHidden = true
+        navigationController?.initWithBackButton()
     }
     
     private func setLayouts() {

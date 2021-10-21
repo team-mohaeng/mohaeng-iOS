@@ -45,7 +45,8 @@ extension HomeService: TargetType {
     var headers: [String: String]? {
         return [
             "Content-Type": "application/json",
-            "Bearer": UserDefaults.standard.string(forKey: "jwtToken") ?? ""
+            "Bearer": UserDefaults.standard.string(forKey: "jwtToken") ?? "",
+            "client": "ios"
         ]
     }
         

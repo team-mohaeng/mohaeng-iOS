@@ -6,16 +6,26 @@
 //
 
 import UIKit
+import Moya
+import KakaoSDKAuth
+import KakaoSDKUser
+import KakaoSDKCommon
 
 class LoginViewController: UIViewController {
     
-    // MARK: - @IBOutlet
+    // MARK: - Properties
+    
+    var signUpUser = SignUpUser.shared
+    
+    // MARK: - @IBOutlet Properties
+    
     @IBOutlet var kakaoLoginButton: UIButton!
     @IBOutlet var appleLoginButton: UIButton!
     @IBOutlet var emailLoginButton: UIButton!
     @IBOutlet weak var mohaengLabel: UILabel!
     
     // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavigationBar()
@@ -48,6 +58,15 @@ class LoginViewController: UIViewController {
         self.navigationController?.pushViewController(signUpFirstViewController, animated: true)
     }
     
+    private func pushSignUpSecondViewController() {
+        let signUpSecondStoryboard = UIStoryboard(name: Const.Storyboard.Name.signUpSecond, bundle: nil)
+        guard let signUpSecondViewController  = signUpSecondStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.signUpSecond) as? SignUpSecondViewController else {
+            return
+        }
+        
+        self.navigationController?.pushViewController(signUpSecondViewController, animated: true)
+    }
+    
     private func pushEmailLoginViewController() {
         let emailLoginStoryboard = UIStoryboard(name: Const.Storyboard.Name.emailLogin, bundle: nil)
         guard let emailLoginViewController = emailLoginStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.emailLogin) as?
@@ -67,6 +86,29 @@ class LoginViewController: UIViewController {
     @IBAction func touchAppleLoginButton(_ sender: Any) {
         presentHomeViewController()
     }
+    @IBAction func touchKakaoLoginButton(_ sender: UIButton) {
+        
+        if (UserApi.isKakaoTalkLoginAvailable()) {
+            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("loginWithKakaoTalk() success.")
+                    
+                    _ = oauthToken
+                    if let accessToken = oauthToken?.accessToken {
+                        self.postKakao(token: accessToken)
+                    }
+                    
+                }
+            }
+        }
+        // 카카오톡 미설치
+        else {
+            print("카카오톡 미설치")
+        }
+    }
     
     // 편의용 (나중에 지워야 함)
     func presentHomeViewController() {
@@ -78,4 +120,25 @@ class LoginViewController: UIViewController {
         tabbarViewController.modalTransitionStyle = .crossDissolve
         self.present(tabbarViewController, animated: true, completion: nil)
     }
+}
+
+extension LoginViewController {
+    func postKakao(token: String) {
+        KakaoAPI.shared.postKakao(token: token, completion: { (response) in
+            switch response {
+            case .success(let message):
+                UserDefaults.standard.setValue(token, forKey: "jwtToken")
+                self.signUpUser.isSocial = true
+                self.pushSignUpSecondViewController()
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    )}
 }

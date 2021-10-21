@@ -12,18 +12,20 @@ class CuriosityRewardViewController: RewardBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     override func setUp() {
         type = .curiosity
     }
     
-    // TODO : - 플로우에 따라 분기처리
     override func touchButton() {
-        navigationController?.pushViewController(WritingRewardViewController(), animated: true)
+        let moodStoryboard = UIStoryboard(name: Const.Storyboard.Name.mood, bundle: nil)
+        guard let moodViewController = moodStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.mood) as? MoodViewController else { return }
+        
+        navigationController?.pushViewController(moodViewController, animated: true)
     }
     
     override func touchSubButton() {
-        
+        dismiss(animated: true, completion: nil)
     }
 
 }
