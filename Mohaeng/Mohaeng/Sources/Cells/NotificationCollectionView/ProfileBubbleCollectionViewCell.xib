@@ -73,6 +73,9 @@
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1시간 전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jx-Zw-0dj">
                                 <rect key="frame" x="316" y="76" width="34" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="ARA-ZI-8V8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" name="GreyTextPush2"/>
                                 <nil key="highlightedColor"/>
