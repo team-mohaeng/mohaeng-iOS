@@ -27,11 +27,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNT-2U-G1g">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNT-2U-G1g">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1wx-o1-JGL">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="652.33333333333337"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WIJ-GA-thH">
                                                 <rect key="frame" x="-95" y="-203" width="604" height="534.66666666666663"/>
@@ -375,7 +375,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="jE6-xA-0aA" firstAttribute="bottom" secondItem="p6w-Fr-UTf" secondAttribute="bottom" id="0E9-cR-btj"/>
                                             <constraint firstAttribute="trailing" secondItem="zNV-Cq-MZs" secondAttribute="trailing" constant="24" id="0gm-v5-Xx6"/>
@@ -387,6 +387,7 @@
                                             <constraint firstItem="P2s-Uq-6Ej" firstAttribute="centerX" secondItem="1wx-o1-JGL" secondAttribute="centerX" id="Ayq-Gq-mpF"/>
                                             <constraint firstItem="jE6-xA-0aA" firstAttribute="trailing" secondItem="p6w-Fr-UTf" secondAttribute="trailing" id="DY2-c0-XXF"/>
                                             <constraint firstItem="eIB-D7-Uhn" firstAttribute="leading" secondItem="1wx-o1-JGL" secondAttribute="leading" constant="23" id="GrR-3Q-IWf"/>
+                                            <constraint firstAttribute="bottom" secondItem="p6w-Fr-UTf" secondAttribute="bottom" constant="26" id="HEq-7Z-xvl"/>
                                             <constraint firstItem="91S-vx-e62" firstAttribute="leading" secondItem="P2s-Uq-6Ej" secondAttribute="trailing" constant="8" id="IOR-Xi-HIh"/>
                                             <constraint firstItem="P2s-Uq-6Ej" firstAttribute="top" secondItem="1wx-o1-JGL" secondAttribute="top" constant="30" id="N7I-i4-MaF"/>
                                             <constraint firstAttribute="trailing" secondItem="WIJ-GA-thH" secondAttribute="trailing" constant="-95" id="Pv4-AH-PDj"/>
@@ -415,11 +416,11 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" name="Yellow6"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="1wx-o1-JGL" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="BS8-d3-s8h"/>
                             <constraint firstItem="QNT-2U-G1g" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="EG1-C2-RFc"/>
-                            <constraint firstItem="1wx-o1-JGL" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" priority="750" id="PxU-F1-V33"/>
+                            <constraint firstItem="1wx-o1-JGL" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" priority="250" id="PxU-F1-V33"/>
                             <constraint firstItem="QNT-2U-G1g" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="axO-iY-all"/>
                             <constraint firstAttribute="bottom" secondItem="QNT-2U-G1g" secondAttribute="bottom" id="uaW-11-cnQ"/>
                             <constraint firstItem="QNT-2U-G1g" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="vWq-Ql-wgC"/>
