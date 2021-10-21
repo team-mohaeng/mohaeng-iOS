@@ -32,6 +32,10 @@ class ProfileBubbleCollectionViewCell: UICollectionViewCell {
         bubbleBgView.makeRounded(radius: 10)
     }
     
+    func setProfileImage(url: String) {
+        profileImageView.updateServerImage(url)
+    }
+    
     func setCell(msg: Message) {
         bubbleTextLabel.text = msg.message[0]
         dateLabel.text = msg.date

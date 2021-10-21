@@ -10,7 +10,7 @@ import UIKit
 class NotificationViewController: UIViewController {
     
     // 더미데이터
-    var noti = PushNoti(messages: [])
+    var noti = PushNoti(profileImg: "", messages: [])
     
     var oldNoti: [Message] = []
     var newNoti: [Message] = []
@@ -177,6 +177,7 @@ extension NotificationViewController: UICollectionViewDataSource {
                 } else {
                     cell.setCell(msg: newNoti[indexPath.row])
                 }
+                cell.setProfileImage(url: noti.profileImg)
                 
                 return cell
             }
@@ -187,6 +188,7 @@ extension NotificationViewController: UICollectionViewDataSource {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.profileBubbleCollectionViewCell, for: indexPath) as? ProfileBubbleCollectionViewCell {
                 
                 cell.setCell(msg: newNoti[indexPath.row])
+                cell.setProfileImage(url: noti.profileImg)
                 
                 return cell
             }
@@ -196,6 +198,7 @@ extension NotificationViewController: UICollectionViewDataSource {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.profileBubbleCollectionViewCell, for: indexPath) as? ProfileBubbleCollectionViewCell {
                 
                 cell.setCell(msg: oldNoti[indexPath.row])
+                cell.setProfileImage(url: noti.profileImg)
                 
                 return cell
             }
