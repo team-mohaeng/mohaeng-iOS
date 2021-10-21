@@ -51,7 +51,6 @@ class MyPageViewController: UIViewController {
         initNavigationBar()
         initViewRoundingAndShadow()
         initCalendar()
-        getMyPage()
         assignDelegate()
         setRangeDates()
         selectRangeDate()
@@ -59,6 +58,11 @@ class MyPageViewController: UIViewController {
         addTapGestureRecognizer()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getMyPage()
+    }
+
     // MARK: - @IBAction Functions
     
     @IBAction func touchLeftArrowButton(_ sender: Any) {
@@ -67,6 +71,9 @@ class MyPageViewController: UIViewController {
     
     @IBAction func touchRightArrowButton(_ sender: Any) {
         touchArrowButton(isLeft: false)
+    }
+    @IBAction func touchEditNicknameButton(_ sender: UIButton) {
+        pushNickNameEditViewController()
     }
     
     @objc func touchCourseHistoryButton(_ sender: Any) {
@@ -269,6 +276,16 @@ class MyPageViewController: UIViewController {
     private func addTapGestureRecognizer() {
         let courseHistoryGesture = UITapGestureRecognizer(target: self, action: #selector(touchCourseHistoryButton(_:)))
         courseHistoryButtonView.addGestureRecognizer(courseHistoryGesture)
+    }
+    
+    private func pushNickNameEditViewController() {
+        let signUpThirdStoryboard = UIStoryboard(name: Const.Storyboard.Name.signUpThird, bundle: nil)
+        guard let signUpThirdViewController = signUpThirdStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.signUpThird) as?
+                SignUpThirdViewController else {
+                    return
+                }
+        signUpThirdViewController.nicknameUsage = .myPage
+        self.navigationController?.pushViewController(signUpThirdViewController, animated: true)
     }
 }
 

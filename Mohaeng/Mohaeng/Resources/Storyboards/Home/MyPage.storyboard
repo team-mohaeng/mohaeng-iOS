@@ -49,6 +49,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91S-vx-e62">
                                                 <rect key="frame" x="257.33333333333331" y="30" width="16" height="22"/>
                                                 <state key="normal" image="editTch"/>
+                                                <connections>
+                                                    <action selector="touchEditNicknameButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0zI-bk-m4Y"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="choyi@apple.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ln8-N4-EKx">
                                                 <rect key="frame" x="165.33333333333334" y="63.999999999999993" width="83.333333333333343" height="12.666666666666664"/>

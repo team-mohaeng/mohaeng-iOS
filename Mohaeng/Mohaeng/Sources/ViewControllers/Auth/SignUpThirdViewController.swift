@@ -15,7 +15,7 @@ class SignUpThirdViewController: UIViewController {
     var signUpUser = SignUpUser.shared
     
     enum NicknameUsage: Int {
-        case signUp = 0, myPage = 1
+        case signUp = 0, myPage
     }
     
     var nicknameUsage: NicknameUsage?
@@ -61,7 +61,6 @@ class SignUpThirdViewController: UIViewController {
         nickNameSetLabel.isHidden = true
         checkButton.setTitle("닉네임 수정하기", for: .normal)
         title = "닉네임 수정"
-        nickNameTextField.placeholder = "아라아랑아라"
     }
     private func makeButtonRound() {
         checkButton.makeRounded(radius: 20)
@@ -84,6 +83,10 @@ class SignUpThirdViewController: UIViewController {
     func changeRootViewController(_ viewControllerToPresent: UITabBarController) {
             viewControllerToPresent.modalPresentationStyle = .overFullScreen
             self.present(viewControllerToPresent, animated: true, completion: nil)
+    }
+    
+    func popMyPageViewController() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     private func changeNickNameTextFieldAttribute(labelBool: Bool, buttonBool: Bool, color: UIColor) {
@@ -139,7 +142,7 @@ class SignUpThirdViewController: UIViewController {
                 postSignUp()
             }
         case.myPage :
-            print("1")
+            putNickname()
             
         default :
             break
@@ -204,5 +207,26 @@ extension SignUpThirdViewController {
         },
                                            token: UserDefaults.standard.string(forKey: "jwtToken") ?? "",
                                            nickname: nickname)
+    }
+    
+    func putNickname() {
+        guard let nickname = nickNameTextField.text else {
+            return
+        }
+     
+        MyPageAPI.shared.putNickname(completion: { (response) in
+            switch response {
+            case .success(let jwt):
+                self.popMyPageViewController()
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }, nickname: nickname)
     }
 }
