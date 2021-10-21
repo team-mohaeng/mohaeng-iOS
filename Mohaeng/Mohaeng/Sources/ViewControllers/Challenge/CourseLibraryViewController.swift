@@ -171,7 +171,7 @@ extension CourseLibraryViewController: UICollectionViewDataSource {
         
         switch collectionView {
         case propertyCollectionView:
-            return UIEdgeInsets(top: 19, left: 18, bottom: 10, right: 18)
+            return UIEdgeInsets(top: 0, left: 18, bottom: 10, right: 18)
         case courseLibraryCollectionView:
             return UIEdgeInsets(top: 22, left: 24, bottom: 0, right: 24)
         default:
@@ -189,7 +189,26 @@ extension CourseLibraryViewController: UICollectionViewDelegateFlowLayout {
         
         switch collectionView {
         case propertyCollectionView:
-            return CGSize(width: 59, height: 14)
+            
+            var categorySize = CGSize()
+            
+            if indexPath.row == 0 {
+                categorySize = NSString(string: "전체").size(withAttributes: [
+                    NSAttributedString.Key.font: UIFont.spoqaHanSansNeo(weight: .regular, size: 12)
+                ])
+            } else if indexPath.row == AppCourse.count + 1 {
+                categorySize = NSString(string: "다했어요!").size(withAttributes: [
+                    NSAttributedString.Key.font: UIFont.spoqaHanSansNeo(weight: .regular, size: 12)
+                ])
+            } else {
+                if let title = AppCourse(rawValue: indexPath.row)?.getKorean() {
+                    categorySize = NSString(string: title).size(withAttributes: [
+                        NSAttributedString.Key.font: UIFont.spoqaHanSansNeo(weight: .regular, size: 12)
+                    ])
+                }
+            }
+            
+            return CGSize(width: categorySize.width + 10, height: 43)
         case courseLibraryCollectionView:
             return unDoneCellSize(for: indexPath)
         default:
