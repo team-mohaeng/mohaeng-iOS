@@ -106,20 +106,20 @@ class MyPageViewController: UIViewController {
         // 요약 뷰 뒤 그림자 뷰 rounding, shadow init
         for shadowView in shadowStackView.subviews {
             shadowView.makeRounded(radius: 14)
-            shadowView.addShadowWithOpaqueBackground(opacity: 0.1, radius: 20)
+            shadowView.addShadowWithOpaqueBackground(opacity: 0.1, radius: 14)
         }
         
         // calendar 뒤 그림자 뷰 rounding, shadow init
         calendarShadowView.makeRounded(radius: 14)
-        calendarShadowView.addShadowWithOpaqueBackground(opacity: 0.1, radius: 20)
+        calendarShadowView.addShadowWithOpaqueBackground(opacity: 0.1, radius: 14)
         
         // calendar bg view rounding
         calendarBgView.makeRounded(radius: 14)
         
         // 챌린지 기록 보기 버튼 뷰
         courseHistoryButtonView.makeRounded(radius: 14)
-        courseHistoryShadowView.backgroundColor = .clear
-        courseHistoryShadowView.addShadowWithOpaqueBackground(opacity: 0.1, radius: 20)
+        courseHistoryShadowView.makeRounded(radius: 14)
+        courseHistoryShadowView.addShadowWithOpaqueBackground(opacity: 0.1, radius: 14)
         
     }
     
