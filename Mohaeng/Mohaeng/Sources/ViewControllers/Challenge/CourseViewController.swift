@@ -74,10 +74,11 @@ class CourseViewController: UIViewController {
             self.navigationController?.initWithOneCustomButton(
                 navigationItem: self.navigationItem,
                 firstButtonImage: Const.Image.gnbIcnList,
-                firstButtonClosure: #selector(touchLibraryButton(_:)))
+                firstButtonClosure: #selector(touchLibraryButton(_:)),
+                backgroundColor: .white)
             self.navigationItem.setHidesBackButton(true, animated: true)
         } else if courseViewUsage == .history {
-            self.navigationController?.initWithBackButton()
+            self.navigationController?.initWithBackButton(backgroundColor: .white)
         }
     }
     

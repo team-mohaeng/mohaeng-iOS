@@ -38,8 +38,8 @@ extension UINavigationController {
     
     // MARK: - 뒤로가기 버튼 + 완료 버튼
     
-    func initWithBackAndDoneButton(navigationItem: UINavigationItem?, doneButtonClosure: Selector) {
-        initWithBackButton()
+    func initWithBackAndDoneButton(navigationItem: UINavigationItem?, doneButtonClosure: Selector, backgroundColor: UIColor? = nil) {
+        initWithBackButton(backgroundColor: backgroundColor)
         
         // done Button
         let doneButton = UIBarButtonItem(title: "완료", style: .done, target: self.topViewController, action: doneButtonClosure)
@@ -48,8 +48,8 @@ extension UINavigationController {
     
     // MARK: - 뒤로가기 버튼 + 커스텀 버튼 1개
     
-    func initWithOneCustomButton(navigationItem: UINavigationItem?, firstButtonImage: UIImage, firstButtonClosure: Selector) {
-        initWithBackButton()
+    func initWithOneCustomButton(navigationItem: UINavigationItem?, firstButtonImage: UIImage, firstButtonClosure: Selector, backgroundColor: UIColor? = nil) {
+        initWithBackButton(backgroundColor: backgroundColor)
         
         let firstButton = UIBarButtonItem(image: firstButtonImage, style: .plain, target: self.topViewController, action: firstButtonClosure)
         navigationItem?.rightBarButtonItem = firstButton
