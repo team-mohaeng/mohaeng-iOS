@@ -15,28 +15,54 @@ class SignUpThirdViewController: UIViewController {
     var signUpUser = SignUpUser.shared
     
     enum NicknameUsage: Int {
-        case signUp = 0, myPage
+        case signUp = 0, myPage = 1
     }
     
     var nicknameUsage: NicknameUsage?
     
     // MARK: - @IBOutlet Properties
     
+    @IBOutlet var nickNameSetLabel: UILabel!
     @IBOutlet weak var nickNameTextField: UITextField!
     @IBOutlet weak var nickNameBottomView: UIView!
     @IBOutlet weak var nickNameErrorLabel: UILabel!
     @IBOutlet weak var checkButton: UIButton!
-    
+    @IBOutlet var nickNameConditionLabel: UILabel!
+    @IBOutlet var imageToNicknameTextField: NSLayoutConstraint!
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         makeButtonRound()
         checkNickNameTextField()
+        divideViewControllerCase()
+    }
+    
+    private func divideViewControllerCase() {
+        switch nicknameUsage {
+        case .signUp:
+            setCaseSignUP()
+        case .myPage:
+            setCaseMyPage()
+        case .none:
+            break
+        }
     }
     
     // MARK: - Functions
     
+    private func setCaseSignUP() {
+        nickNameConditionLabel.isHidden = true
+        imageToNicknameTextField.constant = 40
+    }
+    
+    private func setCaseMyPage() {
+        nickNameConditionLabel.isHidden = false
+        nickNameSetLabel.isHidden = true
+        checkButton.setTitle("닉네임 수정하기", for: .normal)
+        title = "닉네임 수정"
+        nickNameTextField.placeholder = "아라아랑아라"
+    }
     private func makeButtonRound() {
         checkButton.makeRounded(radius: 20)
     }
@@ -101,16 +127,25 @@ class SignUpThirdViewController: UIViewController {
     }
     @IBAction func touchNicknameCheckButton(_ sender: UIButton) {
         
-        guard let isSocial = signUpUser.isSocial else {
-            return
-        }
-        
-        if isSocial {
-            postSocialNickname()
-        } else {
-            postSignUp()
+        switch nicknameUsage {
+        case.signUp :
+            guard let isSocial = signUpUser.isSocial else {
+                return
+            }
+            
+            if isSocial {
+                postSocialNickname()
+            } else {
+                postSignUp()
+            }
+        case.myPage :
+            print("1")
+            
+        default :
+            break
         }
     }
+    
 }
 
 extension SignUpThirdViewController {
