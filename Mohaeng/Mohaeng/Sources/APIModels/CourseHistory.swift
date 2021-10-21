@@ -9,6 +9,7 @@ import Foundation
 
 // MARK: - CourseHistoryData
 struct CourseHistoryData: Codable {
+    let isProgress: Bool
     let courses: [CourseHistory]
 }
 
