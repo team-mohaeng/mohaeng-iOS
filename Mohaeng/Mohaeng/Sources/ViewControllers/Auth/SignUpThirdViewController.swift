@@ -10,7 +10,15 @@ import Moya
 
 class SignUpThirdViewController: UIViewController {
     
-    var signupuser = SignUpUser.shared
+    // MARK: - Properties
+    
+    var signUpUser = SignUpUser.shared
+    
+    enum NicknameUsage: Int {
+        case signUp = 0, myPage
+    }
+    
+    var nicknameUsage: NicknameUsage?
     
     // MARK: - @IBOutlet Properties
     
@@ -92,18 +100,26 @@ class SignUpThirdViewController: UIViewController {
         }
     }
     @IBAction func touchNicknameCheckButton(_ sender: UIButton) {
-        postSignUp()
+        
+        guard let isSocial = signUpUser.isSocial else {
+            return
+        }
+        
+        if isSocial {
+            postSocialNickname()
+        } else {
+            postSignUp()
+        }
     }
 }
 
 extension SignUpThirdViewController {
     
     func postSignUp() {
-        
-        guard let email = signupuser.email else {
+        guard let email = signUpUser.email else {
             return
         }
-        guard let password = signupuser.password else {
+        guard let password = signUpUser.password else {
             return
         }
         guard let nickname = nickNameTextField.text else {
@@ -127,5 +143,31 @@ extension SignUpThirdViewController {
                 print("networkFail")
             }
         }, email: email, password: password, nickname: nickname)
+    }
+    
+    func postSocialNickname() {
+        guard let nickname = nickNameTextField.text else {
+            return
+        }
+        
+        KakaoAPI.shared.postSocialNickname(completion: { (response) in
+            switch response {
+            case .success(let jwt):
+                if let data = jwt as? JwtData {
+                    UserDefaults.standard.setValue(data.jwt, forKey: "jwtToken")
+                    self.pushHomeViewController()
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        },
+                                           token: UserDefaults.standard.string(forKey: "jwtToken") ?? "",
+                                           nickname: nickname)
     }
 }

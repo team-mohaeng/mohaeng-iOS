@@ -12,4 +12,5 @@ class SignUpUser {
     var email: String?
     var password: String?
     var nickname: String?
+    var isSocial: Bool?
 }
