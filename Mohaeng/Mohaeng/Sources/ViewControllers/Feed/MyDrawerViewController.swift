@@ -16,13 +16,13 @@ class MyDrawerViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var myDrawer: [Feed] = []
+    private var myDrawer: [Feed] = [Feed(postID: 0, course: "", challenge: 0, image: "", mood: 0, content: "", nickname: "", year: "", month: "", day: "", weekday: "", emoji: [Emoji(id: 0, count: 0)], myEmoji: 0, isReport: false, isDelete: false)]
     private var modalDateView: DatePickerViewController?
     private var currentDate: AppDate?
     private var feedCount = 0
     private var selectedYear: Int?
     private var selectedMonth: Int?
-    private var writingStatus: Int = 0
+    private var writingStatus: Bool = false
     
     // MARK: - Life Cycle
     
@@ -83,8 +83,8 @@ class MyDrawerViewController: UIViewController {
         feedCollectionView.reloadData()
     }
     
-    func setWritingStatus(writingInt: Int) {
-        writingStatus = writingInt
+    func setWritingStatus(writingStatus: Bool) {
+        self.writingStatus = writingStatus
     }
     
     @objc func presentPickerView(notification: NSNotification) {
@@ -126,6 +126,17 @@ extension MyDrawerViewController: DatePickerViewDelegate {
 }
 
 extension MyDrawerViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let feedDetailStoryboard = UIStoryboard.init(name: Const.Storyboard.Name.feedDetail, bundle: nil)
+        guard let feedDetailViewController = feedDetailStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.feedDetail) as? FeedDetailViewController else { return }
+        
+        feedDetailViewController.setMyDrawer(feeds: myDrawer)
+        feedDetailViewController.setPreviousController(viewController: .myDrawer)
+        feedDetailViewController.setSelectedContentsIndexPath(indexPath: indexPath)
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.pushViewController(feedDetailViewController, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return myDrawer.count
     }
@@ -133,7 +144,7 @@ extension MyDrawerViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Name.feedCollectionViewCell, for: indexPath) as? FeedCollectionViewCell else { return UICollectionViewCell() }
         
-        if writingStatus == 1 && indexPath.row == 0 {
+        if writingStatus && indexPath.row == 0 {
             cell.configureTodayCellUI()
         } else {
             cell.configureDefaultUI()

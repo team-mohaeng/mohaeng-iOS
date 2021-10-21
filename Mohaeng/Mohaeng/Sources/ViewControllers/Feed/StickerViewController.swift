@@ -54,9 +54,7 @@ class StickerViewController: UIViewController {
     // MARK: - IBAction Properties
     
     @IBAction func touchCloseButton(_ sender: Any) {
-        self.dismiss(animated: false) {
-            self.postNotification()
-        }
+        self.dismiss(animated: false)
     }
     
     @IBAction func touchSticker1(_ sender: Any) {

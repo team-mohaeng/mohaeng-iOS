@@ -9,7 +9,7 @@ import UIKit
 
 enum AppCharacter: Int {
     
-    case duck = 0, rabbit, giraffe, elephant, hedgehog, squirrel, bear
+    case duck = 0, rabbit, giraffe, elephant, squirrel, bear, hedgehog
     
     func getThumbnailCharacterLockImg() -> UIImage {
         switch self {
@@ -26,7 +26,7 @@ enum AppCharacter: Int {
         case .squirrel:
             return Const.Image.squirrelLockImg
         case .bear:
-            return UIImage()
+            return Const.Image.bearLockImg
         }
     }
     
@@ -45,7 +45,7 @@ enum AppCharacter: Int {
         case .squirrel:
             return Const.Image.squirrelImg
         case .bear:
-            return UIImage()
+            return Const.Image.bearImg
         }
     }
     
@@ -64,7 +64,7 @@ enum AppCharacter: Int {
         case .squirrel:
             return Const.Image.squirrelCardLockImg
         case .bear:
-            return UIImage()
+            return Const.Image.bearCardLockImg
         }
     }
     
