@@ -153,7 +153,7 @@ extension CourseHistoryViewController: CoursePopUpProtocol {
         startNewCoursePopUp.modalPresentationStyle = .overCurrentContext
         startNewCoursePopUp.modalTransitionStyle = .crossDissolve
         startNewCoursePopUp.popUpUsage = .twoButtonWithImage
-        if !doingCourse {
+        if doingCourse {
             startNewCoursePopUp.setText(title: Const.String.changeCoursePopUpTitle, description: Const.String.changeCoursePopUpContent)
         } else {
             startNewCoursePopUp.setText(title: Const.String.startCoursePopUpTitle, description: Const.String.startCoursePopUpTitle)
