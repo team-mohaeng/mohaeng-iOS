@@ -285,6 +285,7 @@ class MyPageViewController: UIViewController {
                     return
                 }
         signUpThirdViewController.nicknameUsage = .myPage
+        signUpThirdViewController.placeholder = nicknameLabel.text
         self.navigationController?.pushViewController(signUpThirdViewController, animated: true)
     }
 }

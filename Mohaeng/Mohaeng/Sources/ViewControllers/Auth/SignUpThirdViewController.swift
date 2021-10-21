@@ -13,13 +13,12 @@ class SignUpThirdViewController: UIViewController {
     // MARK: - Properties
     
     var signUpUser = SignUpUser.shared
-    
+    var placeholder: String?
     enum NicknameUsage: Int {
         case signUp = 0, myPage
     }
     
     var nicknameUsage: NicknameUsage?
-    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet var nickNameSetLabel: UILabel!
@@ -61,6 +60,13 @@ class SignUpThirdViewController: UIViewController {
         nickNameSetLabel.isHidden = true
         checkButton.setTitle("닉네임 수정하기", for: .normal)
         title = "닉네임 수정"
+        setNicknameTextField()
+    }
+    
+    private func setNicknameTextField() {
+        if let nickname = self.placeholder {
+            nickNameTextField.placeholder = nickname
+        }
     }
     private func makeButtonRound() {
         checkButton.makeRounded(radius: 20)
