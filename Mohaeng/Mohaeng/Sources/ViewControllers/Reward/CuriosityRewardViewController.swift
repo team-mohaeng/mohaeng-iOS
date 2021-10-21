@@ -13,11 +13,6 @@ class CuriosityRewardViewController: RewardBaseViewController {
         super.viewDidLoad()
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        navigationController?.navigationBar.isHidden = true
-//    }
-//
     override func setUp() {
         type = .curiosity
     }
