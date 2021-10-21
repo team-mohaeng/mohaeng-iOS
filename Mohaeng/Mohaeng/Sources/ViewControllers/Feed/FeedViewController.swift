@@ -32,7 +32,6 @@ class FeedViewController: UIViewController {
     private var feedUserCountLabel = UILabel().then {
         $0.font = UIFont.gmarketFont(weight: .medium, size: 18)
         $0.numberOfLines = 2
-        $0.text = "오늘은 64개의\n안부가 남겨졌어요"
     }
     
     private var feedBackgroundFrame = UIView().then {
@@ -47,6 +46,8 @@ class FeedViewController: UIViewController {
         guard let nib = UINib(nibName: Const.Xib.Name.feedHeaderView, bundle: nil).instantiate(withOwner: self, options: nil).first as? FeedHeaderView else { return FeedHeaderView() }
         return nib
     }()
+    
+    private var refreshControl = UIRefreshControl()
 
     // MARK: - View Life Cycle
     
@@ -58,11 +59,11 @@ class FeedViewController: UIViewController {
         registerXib()
         initAtrributes()
         setupAutoLayout()
-        getFeeds()
         addObserver()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        getFeeds()
         self.navigationController?.isNavigationBarHidden = true
     }
     
@@ -87,6 +88,8 @@ class FeedViewController: UIViewController {
     private func setDelegation() {
         feedCollectionView.delegate = self
         feedCollectionView.dataSource = self
+        feedCollectionView.refreshControl = refreshControl
+        feedCollectionView.refreshControl?.addTarget(self, action: #selector(getFeeds), for: .valueChanged)
     }
     
     private func setHeaderViewDelegate() {
@@ -163,6 +166,7 @@ extension FeedViewController: UICollectionViewDelegate {
         guard let feedDetailViewController = feedDetailStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.feedDetail) as? FeedDetailViewController else { return }
         
         feedDetailViewController.setData(feeds: allFeeds)
+        feedDetailViewController.setPreviousController(viewController: .community)
         feedDetailViewController.setSelectedContentsIndexPath(indexPath: indexPath)
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(feedDetailViewController, animated: true)
@@ -232,7 +236,7 @@ extension FeedViewController: HeaderViewDelegate {
         let myDrawerStoryboard = UIStoryboard(name: Const.Storyboard.Name.myDrawer, bundle: nil)
         guard let myDrawerViewController = myDrawerStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.myDrawer) as? MyDrawerViewController else { return }
         
-        myDrawerViewController.setWritingStatus(writingInt: allFeeds.hasFeed ?? 0)
+        myDrawerViewController.setWritingStatus(writingStatus: allFeeds.isNew ?? false)
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(myDrawerViewController, animated: true)
     }
@@ -257,6 +261,7 @@ extension FeedViewController {
             case .success(let data):
                 if let data = data as? FeedResponse {
                     self.updateData(feed: data)
+                    self.refreshControl.endRefreshing()
                 }
             case .requestErr(let message):
                 print("requestErr", message)

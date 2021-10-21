@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5p0-b4-EDM">
                         <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nightBg" translatesAutoresizingMaskIntoConstraints="NO" id="Lbm-Bd-LET">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nightBg" translatesAutoresizingMaskIntoConstraints="NO" id="Lbm-Bd-LET">
                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
                             </imageView>
                         </subviews>

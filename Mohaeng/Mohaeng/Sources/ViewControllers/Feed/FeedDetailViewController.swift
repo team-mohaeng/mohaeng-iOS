@@ -8,15 +8,23 @@
 import UIKit
 import Kingfisher
 
+enum FeedDetail {
+    case community
+    case myDrawer
+}
+
 class FeedDetailViewController: UIViewController {
     
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var feedDetailCollectionView: UICollectionView!
+    private var refreshControl = UIRefreshControl()
+    private var previousController: FeedDetail = .myDrawer
     
     // MARK: - Properties
     
     private var allFeed: FeedResponse = FeedResponse(isNew: false, hasFeed: 0, userCount: 0, feeds: [Feed]())
+    private var myFeed: [Feed] = []
     private var selectedContents: IndexPath = IndexPath(row: 0, section: 0)
     
     // MARK: - View Life Cycle
@@ -25,10 +33,14 @@ class FeedDetailViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        initNavigationBar()
         registerXib()
         setDelegation()
         addObserver()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        initNavigationBar()
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     // MARK: - Functions
@@ -48,6 +60,8 @@ class FeedDetailViewController: UIViewController {
         feedDetailCollectionView.dataSource = self
         feedDetailCollectionView.layoutIfNeeded()
         feedDetailCollectionView.scrollToItem(at: selectedContents, at: .top, animated: true)
+        feedDetailCollectionView.refreshControl = refreshControl
+        feedDetailCollectionView.refreshControl?.addTarget(self, action: #selector(getFeeds), for: .valueChanged)
     }
     
     private func addObserver() {
@@ -61,7 +75,15 @@ class FeedDetailViewController: UIViewController {
     func setData(feeds: FeedResponse) {
         allFeed = feeds
     }
+    
+    func setMyDrawer(feeds: [Feed]) {
+        myFeed = feeds
+    }
 
+    func setPreviousController(viewController: FeedDetail) {
+        previousController = viewController
+    }
+    
     func setSelectedContentsIndexPath(indexPath: IndexPath) {
         selectedContents = indexPath
     }
@@ -88,13 +110,23 @@ class FeedDetailViewController: UIViewController {
 extension FeedDetailViewController: UICollectionViewDataSource {
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allFeed.feeds.count
+        switch previousController {
+        case .myDrawer:
+            return myFeed.count
+        case .community:
+            return allFeed.feeds.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = feedDetailCollectionView.dequeueReusableCell(withReuseIdentifier: "FDCollectionViewCell", for: indexPath) as? FeedDetailCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.setData(feed: allFeed.feeds[indexPath.row])
+        switch previousController {
+        case .myDrawer:
+            cell.setData(feed: myFeed[indexPath.row], viewController: .myDrawer)
+        case .community:
+            cell.setData(feed: allFeed.feeds[indexPath.row], viewController: .community)
+        }
         
         return cell
     }
@@ -110,14 +142,23 @@ extension FeedDetailViewController: UICollectionViewDelegateFlowLayout {
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width: CGFloat = UIScreen.main.bounds.width
         let imageHeight: CGFloat = width
+        var baseHeight: CGFloat = 0
+        let maximumHeight: CGFloat = (674 / 812) * UIScreen.main.bounds.height
+        let dummyCell = FeedDetailCollectionViewCell(frame: CGRect(x: 0, y: 0, width: width, height: maximumHeight))
         
         let dummyImage = UIImageView()
-        dummyImage.updateServerImage(allFeed.feeds[indexPath.row].image)
-        let baseHeight: CGFloat = allFeed.feeds[indexPath.row].image.isEmpty ? 588 - imageHeight : 588
-        let maximumHeight: CGFloat = (674 / 812) * UIScreen.main.bounds.height
         
-        let dummyCell = FeedDetailCollectionViewCell(frame: CGRect(x: 0, y: 0, width: width, height: maximumHeight))
-        dummyCell.setData(feed: allFeed.feeds[indexPath.row])
+        switch previousController {
+        case .community:
+            dummyImage.updateServerImage(allFeed.feeds[indexPath.row].image)
+            baseHeight = allFeed.feeds[indexPath.row].image.isEmpty ? 588 - imageHeight : 588
+            dummyCell.setData(feed: allFeed.feeds[indexPath.row], viewController: .community)
+        case .myDrawer:
+            dummyImage.updateServerImage(myFeed[indexPath.row].image)
+            baseHeight = myFeed[indexPath.row].image.isEmpty ? 588 - imageHeight : 588
+            dummyCell.setData(feed: myFeed[indexPath.row], viewController: .myDrawer)
+        }
+        
         dummyCell.layoutIfNeeded()
         
         let contentsHeight = dummyCell.getDynamicContentsHeight()
@@ -129,13 +170,14 @@ extension FeedDetailViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension FeedDetailViewController {
-    func getFeeds() {
+    @objc func getFeeds() {
         FeedAPI.shared.getAllFeed { response in
             switch response {
             case .success(let data):
                 if let data = data as? FeedResponse {
                     self.allFeed = data
                     self.feedDetailCollectionView.reloadData()
+                    self.refreshControl.endRefreshing()
                 }
             case .requestErr(let message):
                 print("requestErr", message)

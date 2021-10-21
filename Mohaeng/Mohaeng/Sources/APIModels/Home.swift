@@ -19,6 +19,6 @@ struct Home: Codable {
 
 // MARK: - Course
 struct CourseInfo: Codable {
-    let challengeTitle: String
-    let percent: Int
+    let challengeTitle: String?
+    let percent: Int?
 }

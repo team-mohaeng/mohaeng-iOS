@@ -15,6 +15,9 @@
         <array key="GmarketSansTTFMedium.ttf">
             <string>GmarketSansTTFMedium</string>
         </array>
+        <array key="SpoqaHanSansNeo-Bold.otf">
+            <string>SpoqaHanSansNeo-Bold</string>
+        </array>
         <array key="SpoqaHanSansNeo-Regular.otf">
             <string>SpoqaHanSansNeo-Regular</string>
         </array>
@@ -22,7 +25,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HappyPopUpViewController" customModule="Mohaeng" customModuleProvider="target">
             <connections>
+                <outlet property="happyDescription" destination="h0m-Ig-eeb" id="kiw-1h-z0Q"/>
                 <outlet property="happyPercentLabel" destination="ELM-D6-9uA" id="zF3-YT-Zjc"/>
+                <outlet property="levelDescription" destination="FJK-qm-S2I" id="1WK-A7-u52"/>
                 <outlet property="levelLabel" destination="OTD-EQ-S5G" id="hgp-sI-fra"/>
                 <outlet property="popUpView" destination="LER-v8-C23" id="lqh-6h-PTn"/>
                 <outlet property="progressView" destination="Q2H-nc-Qda" id="t0F-GK-mV8"/>
@@ -35,16 +40,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LER-v8-C23">
-                    <rect key="frame" x="43" y="215.5" width="328" height="475"/>
+                    <rect key="frame" x="81" y="238" width="290" height="430"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lv. 22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTD-EQ-S5G">
-                            <rect key="frame" x="129.5" y="66" width="69" height="22"/>
+                            <rect key="frame" x="116" y="62" width="58.5" height="26"/>
                             <fontDescription key="fontDescription" name="GmarketSansTTFBold" family="Gmarket Sans TTF" pointSize="22"/>
                             <color key="textColor" name="Yellow2"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Q2H-nc-Qda">
-                            <rect key="frame" x="35" y="112" width="259" height="17"/>
+                            <rect key="frame" x="35" y="112" width="221" height="17"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="17" id="1CR-dv-4YG"/>
                             </constraints>
@@ -52,44 +57,44 @@
                             <color key="trackTintColor" name="Yellow6"/>
                         </progressView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해피지수  160/200 (80%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELM-D6-9uA">
-                            <rect key="frame" x="91.5" y="149" width="145" height="12"/>
+                            <rect key="frame" x="81.5" y="149" width="127.5" height="14"/>
                             <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCI-sb-wGX">
-                            <rect key="frame" x="0.0" y="237" width="328" height="1"/>
+                            <rect key="frame" x="0.0" y="204" width="290" height="1"/>
                             <color key="backgroundColor" name="Grey4"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="sxI-1p-q0v"/>
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해피지수란 ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7m-XM-mPt">
-                            <rect key="frame" x="30" y="272" width="69" height="12"/>
-                            <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="12"/>
-                            <nil key="textColor"/>
+                            <rect key="frame" x="30" y="239" width="62" height="14"/>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="12"/>
+                            <color key="textColor" name="Grey1"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="하루 챌린지를 달성할 때, 코스를 완료할 때, 안부를 작성했을 때 제공되는 지수입니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0m-Ig-eeb">
-                            <rect key="frame" x="30" y="296" width="262" height="28"/>
+                            <rect key="frame" x="30" y="265" width="224" height="26"/>
                             <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="11"/>
                             <color key="textColor" name="Grey2"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해피지수란 ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teF-4o-By2">
-                            <rect key="frame" x="30" y="350" width="69" height="12"/>
-                            <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="12"/>
-                            <nil key="textColor"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="레벨이란 ? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teF-4o-By2">
+                            <rect key="frame" x="30" y="315" width="55" height="14"/>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="12"/>
+                            <color key="textColor" name="Grey1"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해피 지수 게이지가 다 차면 레벨이 넘어가게 됩니다. 레벨이 한 번 오를 때마다 한 가지 캐릭터 스타일을 얻을 수 있어요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJK-qm-S2I">
-                            <rect key="frame" x="30" y="374" width="269" height="28"/>
+                            <rect key="frame" x="30" y="341" width="233" height="38.5"/>
                             <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="11"/>
                             <color key="textColor" name="Grey2"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fH8-Df-zJK">
-                            <rect key="frame" x="280" y="14" width="34" height="34"/>
+                            <rect key="frame" x="242" y="14" width="34" height="34"/>
                             <state key="normal" image="icnPopX"/>
                             <connections>
                                 <action selector="dismissSelf:" destination="-1" eventType="touchUpInside" id="TbJ-L1-sOs"/>
@@ -99,25 +104,25 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="sCI-sb-wGX" firstAttribute="leading" secondItem="LER-v8-C23" secondAttribute="leading" id="0R3-PR-aR1"/>
-                        <constraint firstItem="z7m-XM-mPt" firstAttribute="top" secondItem="sCI-sb-wGX" secondAttribute="bottom" constant="34" id="0vh-Fi-RTj"/>
                         <constraint firstItem="Q2H-nc-Qda" firstAttribute="top" secondItem="OTD-EQ-S5G" secondAttribute="bottom" constant="24" id="32a-xG-Pru"/>
                         <constraint firstItem="ELM-D6-9uA" firstAttribute="centerX" secondItem="LER-v8-C23" secondAttribute="centerX" id="4WG-nE-pVu"/>
-                        <constraint firstItem="OTD-EQ-S5G" firstAttribute="top" secondItem="LER-v8-C23" secondAttribute="top" constant="66" id="5IZ-Sk-GbC"/>
+                        <constraint firstItem="sCI-sb-wGX" firstAttribute="top" secondItem="ELM-D6-9uA" secondAttribute="bottom" constant="41" id="6Fi-sb-9Ze"/>
                         <constraint firstItem="Q2H-nc-Qda" firstAttribute="leading" secondItem="LER-v8-C23" secondAttribute="leading" constant="35" id="ARV-Q6-aUq"/>
                         <constraint firstItem="fH8-Df-zJK" firstAttribute="top" secondItem="LER-v8-C23" secondAttribute="top" constant="14" id="DT0-Vi-nCm"/>
-                        <constraint firstItem="sCI-sb-wGX" firstAttribute="centerY" secondItem="LER-v8-C23" secondAttribute="centerY" id="IDV-mE-WA6"/>
-                        <constraint firstItem="teF-4o-By2" firstAttribute="top" secondItem="h0m-Ig-eeb" secondAttribute="bottom" constant="26" id="IVI-Ju-YG4"/>
+                        <constraint firstItem="teF-4o-By2" firstAttribute="top" secondItem="h0m-Ig-eeb" secondAttribute="bottom" constant="24" id="IVI-Ju-YG4"/>
                         <constraint firstAttribute="trailing" secondItem="Q2H-nc-Qda" secondAttribute="trailing" constant="34" id="IYW-EQ-wf0"/>
                         <constraint firstItem="teF-4o-By2" firstAttribute="leading" secondItem="h0m-Ig-eeb" secondAttribute="leading" id="MkO-K4-bJd"/>
                         <constraint firstItem="FJK-qm-S2I" firstAttribute="leading" secondItem="teF-4o-By2" secondAttribute="leading" id="Pc3-YF-U5B"/>
-                        <constraint firstAttribute="trailing" secondItem="FJK-qm-S2I" secondAttribute="trailing" constant="29" id="Veu-s5-bcU"/>
+                        <constraint firstAttribute="trailing" secondItem="FJK-qm-S2I" secondAttribute="trailing" constant="27" id="Veu-s5-bcU"/>
+                        <constraint firstAttribute="width" constant="290" id="Wny-dp-L7L"/>
                         <constraint firstAttribute="trailing" secondItem="sCI-sb-wGX" secondAttribute="trailing" id="Ycf-IY-pxR"/>
-                        <constraint firstAttribute="width" secondItem="LER-v8-C23" secondAttribute="height" multiplier="290:420" id="Zky-4q-PHm"/>
                         <constraint firstItem="OTD-EQ-S5G" firstAttribute="centerX" secondItem="LER-v8-C23" secondAttribute="centerX" id="d09-No-fNq"/>
                         <constraint firstItem="h0m-Ig-eeb" firstAttribute="leading" secondItem="z7m-XM-mPt" secondAttribute="leading" id="fr2-e2-rXr"/>
                         <constraint firstItem="z7m-XM-mPt" firstAttribute="leading" secondItem="LER-v8-C23" secondAttribute="leading" constant="30" id="kns-qs-5Bv"/>
+                        <constraint firstItem="OTD-EQ-S5G" firstAttribute="top" secondItem="LER-v8-C23" secondAttribute="top" constant="62" id="lfe-0O-UFx"/>
                         <constraint firstAttribute="trailing" secondItem="h0m-Ig-eeb" secondAttribute="trailing" constant="36" id="ljP-pM-gHC"/>
-                        <constraint firstItem="sCI-sb-wGX" firstAttribute="centerX" secondItem="LER-v8-C23" secondAttribute="centerX" id="pMj-Zt-Wv1"/>
+                        <constraint firstItem="z7m-XM-mPt" firstAttribute="top" secondItem="sCI-sb-wGX" secondAttribute="bottom" constant="34" id="rfD-Ed-R8U"/>
+                        <constraint firstAttribute="height" constant="430" id="rnO-Kh-S1C"/>
                         <constraint firstItem="FJK-qm-S2I" firstAttribute="top" secondItem="teF-4o-By2" secondAttribute="bottom" constant="12" id="wqh-MT-5yQ"/>
                         <constraint firstItem="ELM-D6-9uA" firstAttribute="top" secondItem="Q2H-nc-Qda" secondAttribute="bottom" constant="20" id="wxu-IM-v6V"/>
                         <constraint firstAttribute="trailing" secondItem="fH8-Df-zJK" secondAttribute="trailing" constant="14" id="yNh-3a-Uvz"/>
@@ -129,14 +134,16 @@
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LER-v8-C23" secondAttribute="trailing" constant="43" id="g84-0V-hXy"/>
-                <constraint firstItem="LER-v8-C23" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="43" id="hX9-6E-5wC"/>
                 <constraint firstItem="LER-v8-C23" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="z3E-Ab-IUb"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="106"/>
+            <point key="canvasLocation" x="137.68115942028987" y="105.80357142857143"/>
         </view>
     </objects>
     <resources>
         <image name="icnPopX" width="34" height="34"/>
+        <namedColor name="Grey1">
+            <color red="0.29399999976158142" green="0.29399999976158142" blue="0.29399999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Grey2">
             <color red="0.48199999332427979" green="0.48199999332427979" blue="0.48199999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
