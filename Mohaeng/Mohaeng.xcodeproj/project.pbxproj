@@ -63,8 +63,6 @@
 		561D76DB26F0BFA40028DBCA /* EvenDayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 561D762426F0BFA40028DBCA /* EvenDayTableViewCell.xib */; };
 		561D76DC26F0BFA40028DBCA /* FirstDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D762526F0BFA40028DBCA /* FirstDayTableViewCell.swift */; };
 		561D76DD26F0BFA40028DBCA /* EvenDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D762626F0BFA40028DBCA /* EvenDayTableViewCell.swift */; };
-		561D76DE26F0BFA40028DBCA /* HashTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D762826F0BFA40028DBCA /* HashTagCollectionViewCell.swift */; };
-		561D76DF26F0BFA40028DBCA /* HashTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 561D762926F0BFA40028DBCA /* HashTagCollectionViewCell.xib */; };
 		561D76E026F0BFA40028DBCA /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D762B26F0BFA40028DBCA /* UIDevice+Extension.swift */; };
 		561D76E126F0BFA40028DBCA /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D762C26F0BFA40028DBCA /* UIFont+Extension.swift */; };
 		561D76E226F0BFA40028DBCA /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D762D26F0BFA40028DBCA /* UIColor+Extension.swift */; };
@@ -168,8 +166,10 @@
 		56A39D97271C21E500865FEC /* OnboardingCourseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A39D96271C21E400865FEC /* OnboardingCourseProtocol.swift */; };
 		56AD4D1B27155FC900272EE4 /* CourseHistoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AD4D1A27155FC900272EE4 /* CourseHistoryHeaderView.swift */; };
 		56AD4D1D27155FD000272EE4 /* CourseHistoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AD4D1C27155FD000272EE4 /* CourseHistoryHeaderView.xib */; };
-		56AE34DE271FE30700D7F4D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56AE34DD271FE30600D7F4D8 /* GoogleService-Info.plist */; };
 		56AE34DC271EECDC00D7F4D8 /* CoursePopUpProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE34DB271EECDC00D7F4D8 /* CoursePopUpProtocol.swift */; };
+		56AE34DE271FE30700D7F4D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56AE34DD271FE30600D7F4D8 /* GoogleService-Info.plist */; };
+		56AE34E1271FFDDC00D7F4D8 /* MoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE34DF271FFDDC00D7F4D8 /* MoodCollectionViewCell.swift */; };
+		56AE34E2271FFDDC00D7F4D8 /* MoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AE34E0271FFDDC00D7F4D8 /* MoodCollectionViewCell.xib */; };
 		56C019B4271C2BFE00735761 /* MyPageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C019B3271C2BFE00735761 /* MyPageAPI.swift */; };
 		56C019B7271C2C3900735761 /* MyPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C019B6271C2C3900735761 /* MyPageService.swift */; };
 		56C21992271BE6DC008049A8 /* TodayChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C21991271BE6DC008049A8 /* TodayChallenge.swift */; };
@@ -236,8 +236,6 @@
 		DDEBD21E270F5FE90011EDC6 /* BadgeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBD21D270F5FE90011EDC6 /* BadgeAPI.swift */; };
 		DDEBD220270F6CFA0011EDC6 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBD21F270F6CFA0011EDC6 /* Badge.swift */; };
 		DDF110452709DFB1004FD5FB /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF110442709DFB1004FD5FB /* UIButton+Extension.swift */; };
-		EC2FF5C626F343C000411F31 /* MoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */; };
-		EC2FF5C726F343C000411F31 /* MoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */; };
 		EC31776326FDB50E0076BCEC /* CarouselLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */; };
 /* End PBXBuildFile section */
 
@@ -300,8 +298,6 @@
 		561D762426F0BFA40028DBCA /* EvenDayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvenDayTableViewCell.xib; sourceTree = "<group>"; };
 		561D762526F0BFA40028DBCA /* FirstDayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstDayTableViewCell.swift; sourceTree = "<group>"; };
 		561D762626F0BFA40028DBCA /* EvenDayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvenDayTableViewCell.swift; sourceTree = "<group>"; };
-		561D762826F0BFA40028DBCA /* HashTagCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashTagCollectionViewCell.swift; sourceTree = "<group>"; };
-		561D762926F0BFA40028DBCA /* HashTagCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HashTagCollectionViewCell.xib; sourceTree = "<group>"; };
 		561D762B26F0BFA40028DBCA /* UIDevice+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		561D762C26F0BFA40028DBCA /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		561D762D26F0BFA40028DBCA /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -405,8 +401,10 @@
 		56A39D96271C21E400865FEC /* OnboardingCourseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCourseProtocol.swift; sourceTree = "<group>"; };
 		56AD4D1A27155FC900272EE4 /* CourseHistoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHistoryHeaderView.swift; sourceTree = "<group>"; };
 		56AD4D1C27155FD000272EE4 /* CourseHistoryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseHistoryHeaderView.xib; sourceTree = "<group>"; };
-		56AE34DD271FE30600D7F4D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56AE34DB271EECDC00D7F4D8 /* CoursePopUpProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePopUpProtocol.swift; sourceTree = "<group>"; };
+		56AE34DD271FE30600D7F4D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		56AE34DF271FFDDC00D7F4D8 /* MoodCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodCollectionViewCell.swift; sourceTree = "<group>"; };
+		56AE34E0271FFDDC00D7F4D8 /* MoodCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoodCollectionViewCell.xib; sourceTree = "<group>"; };
 		56C019B3271C2BFE00735761 /* MyPageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAPI.swift; sourceTree = "<group>"; };
 		56C019B6271C2C3900735761 /* MyPageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageService.swift; sourceTree = "<group>"; };
 		56C21991271BE6DC008049A8 /* TodayChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayChallenge.swift; sourceTree = "<group>"; };
@@ -474,8 +472,6 @@
 		DDEBD21D270F5FE90011EDC6 /* BadgeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAPI.swift; sourceTree = "<group>"; };
 		DDEBD21F270F6CFA0011EDC6 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		DDF110442709DFB1004FD5FB /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
-		EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoodCollectionViewCell.swift; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
-		EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MoodCollectionViewCell.xib; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselLayoutView.swift; sourceTree = "<group>"; };
 		FF85070BA1F5A448133681A6 /* Pods_Mohaeng.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mohaeng.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -672,7 +668,6 @@
 				561D761B26F0BFA40028DBCA /* CourseLibraryCollectionVIew */,
 				561D761F26F0BFA40028DBCA /* SettingTableViewCell.swift */,
 				561D762026F0BFA40028DBCA /* CourseTableView */,
-				561D762726F0BFA40028DBCA /* FeedView */,
 				AA190EBD26FE62E30059E100 /* BackgroundCollectionViewCell.swift */,
 				AA190EBE26FE62E30059E100 /* BackgroundCollectionViewCell.xib */,
 				56A05EB027006963006D6ECE /* MyPageCalendar */,
@@ -697,6 +692,8 @@
 		561D761626F0BFA40028DBCA /* FeedCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				56AE34DF271FFDDC00D7F4D8 /* MoodCollectionViewCell.swift */,
+				56AE34E0271FFDDC00D7F4D8 /* MoodCollectionViewCell.xib */,
 				AAED18D226F11DEF009FE781 /* PlusButtonCollectionViewCell.swift */,
 				AAED18D726F11DEF009FE781 /* PlusButtonCollectionViewCell.xib */,
 				AAED18D326F11DEF009FE781 /* StickerCollectionViewCell.swift */,
@@ -729,17 +726,6 @@
 				561D762626F0BFA40028DBCA /* EvenDayTableViewCell.swift */,
 			);
 			path = CourseTableView;
-			sourceTree = "<group>";
-		};
-		561D762726F0BFA40028DBCA /* FeedView */ = {
-			isa = PBXGroup;
-			children = (
-				561D762826F0BFA40028DBCA /* HashTagCollectionViewCell.swift */,
-				561D762926F0BFA40028DBCA /* HashTagCollectionViewCell.xib */,
-				EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */,
-				EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */,
-			);
-			path = FeedView;
 			sourceTree = "<group>";
 		};
 		561D762A26F0BFA40028DBCA /* Extensions */ = {
@@ -968,8 +954,8 @@
 				561D768F26F0BFA40028DBCA /* YearPickerViewController.swift */,
 				561D769426F0BFA40028DBCA /* YearPickerViewController.xib */,
 				EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */,
-				56AD4D1A27155FC900272EE4 /* CourseHistoryHeaderView.swift */,
 				56AD4D1C27155FD000272EE4 /* CourseHistoryHeaderView.xib */,
+				56AD4D1A27155FC900272EE4 /* CourseHistoryHeaderView.swift */,
 				561D768A26F0BFA40028DBCA /* CustomIntensityVisualEffectView.swift */,
 			);
 			path = Views;
@@ -1272,9 +1258,9 @@
 				561D769B26F0BFA40028DBCA /* Home.storyboard in Resources */,
 				561D76CB26F0BFA40028DBCA /* NewNotificationCollectionReusableView.xib in Resources */,
 				561D76D126F0BFA40028DBCA /* FeedCollectionViewCell.xib in Resources */,
-				561D76DF26F0BFA40028DBCA /* HashTagCollectionViewCell.xib in Resources */,
 				DD1C5C42271FE936004026BC /* awards_sok2.json in Resources */,
 				DD1C5C3D271FE936004026BC /* awards_sok1.json in Resources */,
+				56AE34E2271FFDDC00D7F4D8 /* MoodCollectionViewCell.xib in Resources */,
 				DD6BB495271DB5CF0086240B /* awards_congrats.json in Resources */,
 				561D76DA26F0BFA40028DBCA /* FirstDayTableViewCell.xib in Resources */,
 				561D76D626F0BFA40028DBCA /* CourseLibraryCollectionViewCell.xib in Resources */,
@@ -1284,7 +1270,6 @@
 				564781AF271DB23D00802D76 /* MyPage.storyboard in Resources */,
 				561D76AA26F0BFA40028DBCA /* Feed.storyboard in Resources */,
 				569C39662712B28800DED361 /* ChallengeCompletePopUpViewController.xib in Resources */,
-				EC2FF5C726F343C000411F31 /* MoodCollectionViewCell.xib in Resources */,
 				DD1C5C3C271FE936004026BC /* awards_sok3.json in Resources */,
 				561D769F26F0BFA40028DBCA /* SignUpThird.storyboard in Resources */,
 				AA7E0AB426FC6C1900106DC2 /* CharacterTypeCollectionViewCell.xib in Resources */,
@@ -1433,7 +1418,6 @@
 				561D772226F0BFA40028DBCA /* Medal.swift in Sources */,
 				561D76E026F0BFA40028DBCA /* UIDevice+Extension.swift in Sources */,
 				561D76EA26F0BFA40028DBCA /* HomeViewController.swift in Sources */,
-				EC2FF5C626F343C000411F31 /* MoodCollectionViewCell.swift in Sources */,
 				56C21992271BE6DC008049A8 /* TodayChallenge.swift in Sources */,
 				561D771726F0BFA40028DBCA /* AppCourse.swift in Sources */,
 				561D76B626F0BFA40028DBCA /* URL.swift in Sources */,
@@ -1448,7 +1432,6 @@
 				561D76C626F0BFA40028DBCA /* CourseListViewModel.swift in Sources */,
 				AAED18E026F313E3009FE781 /* FeedDetailCollectionViewCell.swift in Sources */,
 				561D76CF26F0BFA40028DBCA /* NewNotificationCollectionReusableView.swift in Sources */,
-				561D76DE26F0BFA40028DBCA /* HashTagCollectionViewCell.swift in Sources */,
 				561D770226F0BFA40028DBCA /* CourseViewController.swift in Sources */,
 				561D76F526F0BFA40028DBCA /* NewPasswordViewController.swift in Sources */,
 				561D76D526F0BFA40028DBCA /* CourseCategoryCollectionViewCell.swift in Sources */,
@@ -1504,6 +1487,7 @@
 				56C019B7271C2C3900735761 /* MyPageService.swift in Sources */,
 				569E8B2227154E7A00D67712 /* CourseHistoryViewController.swift in Sources */,
 				561D773826F0BFA40028DBCA /* FeedHeaderView.swift in Sources */,
+				56AE34E1271FFDDC00D7F4D8 /* MoodCollectionViewCell.swift in Sources */,
 				569E8B2727154F6300D67712 /* CourseHistoryCollectionViewCell.swift in Sources */,
 				561D76B826F0BFA40028DBCA /* Font.swift in Sources */,
 				AA7E0AB726FC998000106DC2 /* CharacterColorCollectionViewCell.swift in Sources */,

@@ -42,7 +42,17 @@ class CourseViewController: UIViewController {
         initNavigationBar()
         registerXib()
         assignDelegation()
-        initViewRounding()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        switch courseViewUsage {
+        case .course:
+            getCourse()
+        case .history:
+            break
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -54,12 +64,6 @@ class CourseViewController: UIViewController {
             courseTableView.contentInsetAdjustmentBehavior = .never
             hidesBottomBarWhenPushed = true
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        getCourse()
     }
     
     // MARK: - Functions
@@ -102,9 +106,6 @@ class CourseViewController: UIViewController {
         courseTableView.delegate = self
         courseTableView.dataSource = self
         self.headerView?.challengePopUpProtocol = self
-    }
-    
-    private func initViewRounding() {
     }
     
     private func initHeaderView() {
@@ -173,7 +174,7 @@ extension CourseViewController: UITableViewDelegate {
                 let headerBgView: UIView = {
                     let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 132))
                     view.backgroundColor = .white
-                    view.makeRoundedSpecificCorner(corners: [.bottomLeft, .bottomRight], cornerRadius: 10)
+                    view.makeRoundedSpecificCorner(corners: [.bottomLeft, .bottomRight], cornerRadius: 25)
                     
                     return view
                 }()
@@ -204,9 +205,12 @@ extension CourseViewController: UITableViewDelegate {
                 headerView.backgroundView = headerBgView
                 // TODO: - shadow refactoring
                 headerView.layer.shadowOpacity = 0.12
-                headerView.layer.shadowRadius = 2
+                headerView.layer.shadowRadius = 0
                 headerView.layer.shadowOffset = CGSize(width: 0, height: 2)
                 headerView.layer.shadowColor = UIColor.black.cgColor
+                
+                headerView.setData(by: course)
+                headerView.setCourseName(name: course.title)
                 
                 return headerView
             }
@@ -221,17 +225,20 @@ extension CourseViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: Const.Xib.Identifier.courseFooterView) as? CourseFooterView {
+            
             if course.challenges.count > 1 {
                 if course.challenges[course.challenges.count - 1].situation == 2 {
                     footerView.setIslandImage(isDone: true)
-                    footerView.initLastPath(isDone: true)
+                    footerView.initLastPath(isDone: true, property: course.property)
                 } else {
                     footerView.setIslandImage(isDone: false)
-                    footerView.initLastPath(isDone: false)
+                    footerView.initLastPath(isDone: false, property: course.property)
                 }
                 footerView.setNextButton(isOnboarding: false)
             }
+            
             return footerView
+            
         }
         return UIView()
     }

@@ -28,18 +28,30 @@
                                     <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6J-I9-CE0" userLabel="sticker1">
                                         <rect key="frame" x="0.0" y="69" width="84" height="84"/>
                                         <state key="normal" image="sticker1"/>
+                                        <connections>
+                                            <action selector="touchSticker1:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="MEq-Mp-p9S"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7G-qp-tnq" userLabel="sticker3">
                                         <rect key="frame" x="227" y="69" width="84" height="84"/>
                                         <state key="normal" image="sticker3"/>
+                                        <connections>
+                                            <action selector="touchSticker3:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="wyE-p8-dAB"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KiB-dE-HqP" userLabel="sticker5">
                                         <rect key="frame" x="113.5" y="235" width="84" height="84"/>
                                         <state key="normal" image="sticker5"/>
+                                        <connections>
+                                            <action selector="touchSticker5:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Sty-nn-nAb"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCf-SN-g6z" userLabel="sticker6">
                                         <rect key="frame" x="0.0" y="185" width="84" height="84"/>
                                         <state key="normal" image="sticker6"/>
+                                        <connections>
+                                            <action selector="touchSticker6:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Z0s-4g-iqc"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhx-uw-a3d" userLabel="sticker2">
                                         <rect key="frame" x="113.5" y="0.0" width="84" height="84"/>
@@ -47,10 +59,16 @@
                                             <constraint firstAttribute="width" constant="84" id="jYl-UP-coR"/>
                                         </constraints>
                                         <state key="normal" image="sticker2"/>
+                                        <connections>
+                                            <action selector="touchSticker2:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="GSk-M2-bVp"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ht3-Hg-Vx6" userLabel="sticker4">
                                         <rect key="frame" x="227" y="185" width="84" height="84"/>
                                         <state key="normal" image="sticker4"/>
+                                        <connections>
+                                            <action selector="touchSticker4:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ehP-qW-COF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

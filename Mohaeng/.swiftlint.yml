@@ -9,3 +9,6 @@ excluded:
 - Mohaeng/Sources/AppDelegate.swift
 - Mohaeng/Sources/SceneDelegate.swift
 
+identifier_name:
+  excluded:
+    - id

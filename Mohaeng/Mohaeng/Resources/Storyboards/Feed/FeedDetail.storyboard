@@ -48,7 +48,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="feedCollectionView" destination="y9G-Nl-Qb1" id="nHo-qC-S2C"/>
+                        <outlet property="feedDetailCollectionView" destination="y9G-Nl-Qb1" id="nHo-qC-S2C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="57B-CC-MBL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

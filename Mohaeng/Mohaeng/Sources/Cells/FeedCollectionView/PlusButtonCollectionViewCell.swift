@@ -13,6 +13,10 @@ class PlusButtonCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var plusButton: UIButton!
     
+    // MARK: - Properties
+    
+    private var postId = 0
+    
     // MARK: - View Life Cycle
     
     override func awakeFromNib() {
@@ -22,9 +26,13 @@ class PlusButtonCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Functions
     
+    func setPostId(postId: Int) {
+        self.postId = postId
+    }
+    
     @IBAction func touchEmojiButton(_ sender: Any) {
         NotificationCenter.default.post(name: NSNotification.Name("PlusButtonDidTap"),
-                                        object: nil,
+                                        object: postId,
                                         userInfo: nil)
     }
 

@@ -41,17 +41,16 @@ extension LoginService: TargetType {
         switch self {
         case .postSignIn(let email, let password):
             return .requestParameters(parameters: [
-                "userId": email,
-                "userPw": password,
-                "userToken": UserDefaults.standard.string(forKey: "fcmToken")
+                "email": email,
+                "password": password
             ], encoding: JSONEncoding.default)
         }
     }
     
     var headers: [String: String]? {
         return [
-            "Conten-Type": "application/json"
+            "Conten-Type": "application/json",
+            "fcm": UserDefaults.standard.string(forKey: "fcmToken") ?? ""
         ]
     }
-    
 }

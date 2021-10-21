@@ -9,10 +9,11 @@ import UIKit
 import Kingfisher
 
 extension UIImageView {
-    func updateServerImage(_ imagePath: String) {
+    @discardableResult
+    func updateServerImage(_ imagePath: String) -> Bool {
         guard let url = URL(string: imagePath) else {
             self.image = Const.Image.imageNoneGrp
-            return
+            return false
         }
         self.kf.indicatorType = .activity
         self.kf.setImage(
@@ -30,5 +31,6 @@ extension UIImageView {
                 print("Job failed: \(error.localizedDescription)")
             }
         }
+        return true
     }
 }
