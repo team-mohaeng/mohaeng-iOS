@@ -9,6 +9,7 @@ import Foundation
 
 // MARK: - Notification
 struct PushNoti: Codable {
+    let profileImg: String
     let messages: [Message]
 }
 

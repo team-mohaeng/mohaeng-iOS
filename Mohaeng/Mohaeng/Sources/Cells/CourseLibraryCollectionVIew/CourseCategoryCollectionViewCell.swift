@@ -15,14 +15,31 @@ class CourseCategoryCollectionViewCell: UICollectionViewCell {
     
     // MARK: - View Life Cycle
     
-    override class func awakeFromNib() {
+    override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
     
     // MARK: - Functions
     
+    func initSelectedState() {
+        if isSelected {
+            selectCell()
+        } else {
+            deselectCell()
+        }
+    }
+    
     func setLabel(title: String) {
         categoryLabel.text = title
+    }
+    
+    func selectCell() {
+        self.isSelected = true
+        categoryLabel.textColor = .Black
+    }
+    
+    func deselectCell() {
+        self.isSelected = false
+        categoryLabel.textColor = .Grey4
     }
 }

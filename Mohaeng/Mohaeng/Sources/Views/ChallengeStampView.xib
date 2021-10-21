@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +12,9 @@
     <customFonts key="customFonts">
         <array key="GmarketSansTTFMedium.ttf">
             <string>GmarketSansTTFMedium</string>
+        </array>
+        <array key="SpoqaHanSansNeo-Bold.otf">
+            <string>SpoqaHanSansNeo-Bold</string>
         </array>
         <array key="SpoqaHanSansNeo-Regular.otf">
             <string>SpoqaHanSansNeo-Regular</string>
@@ -24,7 +28,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 챌린지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFX-Dy-UWZ">
-                    <rect key="frame" x="24" y="94" width="134" height="22"/>
+                    <rect key="frame" x="24" y="94" width="133.33333333333334" height="22"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="4IM-Eh-Xfh"/>
                     </constraints>
@@ -50,7 +54,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dh-y5-8RN">
-                    <rect key="frame" x="158" y="91" width="28" height="28"/>
+                    <rect key="frame" x="157.33333333333334" y="91" width="28" height="28"/>
                     <state key="normal" image="challengeHelpButton"/>
                     <connections>
                         <action selector="touchHelp:" destination="iN0-l3-epB" eventType="touchUpInside" id="Mma-Mc-lE9"/>
@@ -64,7 +68,7 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="270" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TwG-O7-R8B">
-                    <rect key="frame" x="179" y="798" width="32" height="22"/>
+                    <rect key="frame" x="179.33333333333334" y="798" width="31.333333333333343" height="22"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="y5e-qE-nVe"/>
                     </constraints>
@@ -74,10 +78,10 @@
                     <rect key="frame" x="24" y="267" width="342" height="517"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sw0-eU-8jJ">
-                            <rect key="frame" x="140.66666666666666" y="28" width="61" height="24"/>
+                            <rect key="frame" x="140.66666666666666" y="28" width="60.666666666666657" height="24"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1일차" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRQ-Vn-owg">
-                                    <rect key="frame" x="16" y="6" width="29" height="12"/>
+                                    <rect key="frame" x="16" y="6" width="28.666666666666671" height="12"/>
                                     <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="12"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -101,24 +105,35 @@
                             <color key="textColor" red="0.10588235294117647" green="0.75686274509803919" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 챌린지를 성공하면 해피지수가 2% 올라가!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UqL-NJ-4Mx">
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27E-xI-eMe">
                             <rect key="frame" x="48.666666666666686" y="447" width="245" height="15.666666666666686"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 챌린지를 성공하면 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hC-pz-UFf">
+                                    <rect key="frame" x="0.0" y="0.0" width="129.66666666666666" height="15.666666666666666"/>
+                                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                    <color key="textColor" name="Grey2"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해피지수가 2%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UqL-NJ-4Mx">
+                                    <rect key="frame" x="129.66666666666669" y="0.0" width="76" height="15.666666666666666"/>
+                                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                    <color key="textColor" name="Grey2"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 올라가!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zq-SE-hTm">
+                                    <rect key="frame" x="205.66666666666663" y="0.0" width="39.333333333333343" height="15.666666666666666"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="15.666666666666686" id="baT-0q-Ekw"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                    <color key="textColor" name="Grey2"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
                             <constraints>
-                                <constraint firstAttribute="height" constant="15.666666666666686" id="ygw-nq-HNk"/>
+                                <constraint firstAttribute="height" constant="15.666666666666686" id="gfj-G7-Hnm"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="획득 가능한 뱃지는 없지롱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSo-3o-n7F">
-                            <rect key="frame" x="106" y="470.66666666666663" width="130" height="15.333333333333314"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="15.333333333333314" id="iI7-kW-uNU"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        </stackView>
                         <view contentMode="scaleToFill" horizontalCompressionResistancePriority="720" verticalCompressionResistancePriority="720" translatesAutoresizingMaskIntoConstraints="NO" id="dFr-OB-I9c">
                             <rect key="frame" x="60" y="141" width="222" height="265"/>
                             <subviews>
@@ -134,21 +149,47 @@
                                 <constraint firstItem="ZCr-7b-eZA" firstAttribute="centerY" secondItem="dFr-OB-I9c" secondAttribute="centerY" id="VjN-A6-Rb1"/>
                             </constraints>
                         </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35C-2X-fX0">
+                            <rect key="frame" x="106" y="470.66666666666663" width="130" height="15.333333333333314"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="획득 가능한 뱃지는 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zuq-pt-F85">
+                                    <rect key="frame" x="0.0" y="0.0" width="96.666666666666671" height="15.333333333333334"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="15.333333333333314" id="hGx-Cg-xGl"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                    <color key="textColor" name="Grey2"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="없지롱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSo-3o-n7F">
+                                    <rect key="frame" x="96.666666666666657" y="0.0" width="33.333333333333343" height="15.333333333333334"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="15.333333333333314" id="iI7-kW-uNU"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                    <color key="textColor" name="Grey2"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15.333333333333334" id="zqW-Cm-ygR"/>
+                            </constraints>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.98431372549019602" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="mSo-3o-n7F" firstAttribute="centerX" secondItem="Tk3-Ar-b0Y" secondAttribute="centerX" id="3AN-w0-DfD"/>
+                        <constraint firstAttribute="bottom" secondItem="35C-2X-fX0" secondAttribute="bottom" constant="31" id="1Ty-zb-ZbV"/>
                         <constraint firstItem="Sw0-eU-8jJ" firstAttribute="centerX" secondItem="Tk3-Ar-b0Y" secondAttribute="centerX" id="5zR-ov-74C"/>
-                        <constraint firstAttribute="bottom" secondItem="mSo-3o-n7F" secondAttribute="bottom" constant="31" id="6d1-Sd-aBK"/>
-                        <constraint firstItem="mSo-3o-n7F" firstAttribute="top" secondItem="UqL-NJ-4Mx" secondAttribute="bottom" constant="8" id="AD8-0A-g2X"/>
                         <constraint firstItem="yCh-eY-nvn" firstAttribute="top" secondItem="Sw0-eU-8jJ" secondAttribute="bottom" constant="20" id="AKY-9K-45u"/>
                         <constraint firstItem="dFr-OB-I9c" firstAttribute="top" secondItem="yCh-eY-nvn" secondAttribute="bottom" constant="44" id="CQr-n9-ZrP"/>
-                        <constraint firstItem="UqL-NJ-4Mx" firstAttribute="top" secondItem="dFr-OB-I9c" secondAttribute="bottom" constant="41" id="OQk-aS-NO5"/>
                         <constraint firstAttribute="trailing" secondItem="dFr-OB-I9c" secondAttribute="trailing" constant="60" id="b2r-sN-Hds"/>
+                        <constraint firstItem="27E-xI-eMe" firstAttribute="top" secondItem="dFr-OB-I9c" secondAttribute="bottom" constant="41" id="bAT-rr-hIR"/>
                         <constraint firstItem="Sw0-eU-8jJ" firstAttribute="top" secondItem="Tk3-Ar-b0Y" secondAttribute="top" constant="28" id="dox-Td-jTm"/>
                         <constraint firstItem="dFr-OB-I9c" firstAttribute="leading" secondItem="Tk3-Ar-b0Y" secondAttribute="leading" constant="60" id="hgo-cx-VVO"/>
-                        <constraint firstItem="UqL-NJ-4Mx" firstAttribute="centerX" secondItem="Tk3-Ar-b0Y" secondAttribute="centerX" id="oVv-wf-Ebf"/>
+                        <constraint firstItem="27E-xI-eMe" firstAttribute="centerX" secondItem="Tk3-Ar-b0Y" secondAttribute="centerX" id="k8b-7o-w13"/>
+                        <constraint firstItem="35C-2X-fX0" firstAttribute="top" secondItem="27E-xI-eMe" secondAttribute="bottom" constant="8" id="loT-oQ-w1m"/>
                         <constraint firstAttribute="trailing" secondItem="yCh-eY-nvn" secondAttribute="trailing" id="pIc-rW-HJw"/>
+                        <constraint firstItem="35C-2X-fX0" firstAttribute="centerX" secondItem="Tk3-Ar-b0Y" secondAttribute="centerX" id="tDu-PQ-gcv"/>
                         <constraint firstItem="yCh-eY-nvn" firstAttribute="leading" secondItem="Tk3-Ar-b0Y" secondAttribute="leading" id="yaZ-Fo-fG1"/>
                     </constraints>
                 </view>
@@ -193,6 +234,9 @@
         <image name="challengeHelpButton" width="28" height="28"/>
         <image name="scrollDownIcn" width="31.333333969116211" height="19.333333969116211"/>
         <image name="typeMchallenge" width="144" height="144"/>
+        <namedColor name="Grey2">
+            <color red="0.48199999332427979" green="0.48199999332427979" blue="0.48199999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

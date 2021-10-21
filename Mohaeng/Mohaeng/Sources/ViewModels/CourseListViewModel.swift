@@ -19,6 +19,8 @@ class CourseListViewModel {
         switch property {
         case 0:
             return self.courses
+        case 8:
+            return courses.filter { $0.situation == 2 }
         default:
             return courses.filter { $0.property == property }
         }

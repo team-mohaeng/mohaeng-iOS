@@ -85,10 +85,10 @@ class ChallengeStampView: UIView {
             dayLabelView.backgroundColor = appCourse.getDarkColor()
             challengeNameLabel.textColor = appCourse.getDarkColor()
         }
-        availableHappyLabel.text = "오늘의 챌린지를 성공하면 해피지수가 \(challenge.happy)% 올라가!"
+        availableHappyLabel.text = "해피지수가 \(challenge.happy)%"
         
         if !challenge.badges.isEmpty {
-            availableBadgeLabel.text = "획득 가능한 뱃지는 \(challenge.badges.joined(separator: ", "))"
+            availableBadgeLabel.text = "\(challenge.badges.joined(separator: ", "))"
         }
     }
     
