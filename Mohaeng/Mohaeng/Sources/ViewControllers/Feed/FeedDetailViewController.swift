@@ -48,7 +48,12 @@ class FeedDetailViewController: UIViewController {
     // MARK: - Functions
     
     private func initNavigationBar() {
-        navigationItem.title = "피드 둘러보기"
+        switch previousController {
+        case .community:
+            navigationItem.title = "피드 둘러보기"
+        case .myDrawer:
+            navigationItem.title = "내 서랍장"
+        }
         navigationController?.initWithBackButton()
     }
     
