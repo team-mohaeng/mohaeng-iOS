@@ -34,9 +34,7 @@ class FeedDetailCollectionViewCell: UICollectionViewCell {
         $0.font = UIFont.spoqaHanSansNeo(weight: .regular, size: 10)
     }
     
-    private lazy var reportTrashButton = UIButton().then {
-        $0.addTarget(self, action: #selector(touchReportButton), for: .touchUpInside)
-    }
+    private lazy var reportTrashButton = UIButton()
     
     private var noImageLineView = UIView().then {
         $0.backgroundColor = .Grey5
@@ -73,6 +71,7 @@ class FeedDetailCollectionViewCell: UICollectionViewCell {
     
     var stickers: [Emoji] = []
     var hasImage: Bool = false
+    var viewController: FeedDetail = .myDrawer
     
     // MARK: - View Life Cycle
     
@@ -84,6 +83,7 @@ class FeedDetailCollectionViewCell: UICollectionViewCell {
         registerCell()
         setDelegation()
         setLineHeight()
+        setButtonEvent()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -102,6 +102,7 @@ class FeedDetailCollectionViewCell: UICollectionViewCell {
     }
     
     func setData(feed: Feed, viewController: FeedDetail) {
+        self.viewController = viewController
         setMoodImage(moodStatus: feed.mood)
         setButtonBackgroundImage(viewController: viewController)
         currentPostId = feed.postID
@@ -144,7 +145,7 @@ class FeedDetailCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    private func setButtonEvent(viewController: FeedDetail) {
+    private func setButtonEvent() {
         switch viewController {
         case .community:
             reportTrashButton.addTarget(self, action: #selector(touchReportButton), for: .touchUpInside)
@@ -184,7 +185,14 @@ class FeedDetailCollectionViewCell: UICollectionViewCell {
     
     @objc
     func touchTrashButton() {
+        let deletePopUp = PopUpViewController()
+        deletePopUp.modalTransitionStyle = .crossDissolve
+        deletePopUp.modalPresentationStyle = .overCurrentContext
+        deletePopUp.popUpUsage = .twoButtonNoImage
+        deletePopUp.popUpActionDelegate = self
         
+        self.window?.rootViewController?.present(deletePopUp, animated: true, completion: nil)
+        deletePopUp.setText(title: "삭제하기", description: "안부를 정말 삭제할거야?", buttonTitle: "삭제")
     }
 }
 
@@ -328,6 +336,8 @@ class CollectionViewLeftAlignFlowLayout: UICollectionViewFlowLayout {
     }
 }
 
+// MARK : - SERVER
+
 extension FeedDetailCollectionViewCell {
     
     func postReport(id: Int) {
@@ -347,6 +357,41 @@ extension FeedDetailCollectionViewCell {
                 print("networkFail")
             }
         }
+    }
+    
+    func deletePost(postId: Int) {
+        FeedAPI.shared.deleteMyPost(postId: postId) { response in
+            switch response {
+            case .success(let data):
+                if let data = data as? String {
+                    self.window?.rootViewController?.showToast(message: data, font: .spoqaHanSansNeo(size: 12))
+                    NotificationCenter.default.post(name: NSNotification.Name("DeleteButtonDidTap"), object: nil)
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+    
+}
+
+// MARK: - PopUpActionDelegate
+
+extension FeedDetailCollectionViewCell: PopUpActionDelegate {
+    
+    func touchGreyButton(button: UIButton) {
+        self.window?.rootViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    func touchYellowButton(button: UIButton) {
+        deletePost(postId: currentPostId)
+        self.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
 }

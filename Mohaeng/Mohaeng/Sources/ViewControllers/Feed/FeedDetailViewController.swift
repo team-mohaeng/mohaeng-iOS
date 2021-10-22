@@ -26,6 +26,8 @@ class FeedDetailViewController: UIViewController {
     private var allFeed: FeedResponse = FeedResponse(isNew: false, hasFeed: 0, userCount: 0, feeds: [Feed]())
     private var myFeed: [Feed] = []
     private var selectedContents: IndexPath = IndexPath(row: 0, section: 0)
+    private var year: Int?
+    private var month: Int?
     
     // MARK: - View Life Cycle
     
@@ -70,14 +72,17 @@ class FeedDetailViewController: UIViewController {
                                             name: Notification.Name("PlusButtonDidTap"),
                                             object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView), name: NSNotification.Name("stickerButtonDidTap"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView), name: NSNotification.Name("DeleteButtonDidTap"), object: nil)
     }
     
     func setData(feeds: FeedResponse) {
         allFeed = feeds
     }
     
-    func setMyDrawer(feeds: [Feed]) {
+    func setMyDrawer(feeds: [Feed], year: Int?, month: Int?) {
         myFeed = feeds
+        self.year = year
+        self.month = month
     }
 
     func setPreviousController(viewController: FeedDetail) {
@@ -89,7 +94,15 @@ class FeedDetailViewController: UIViewController {
     }
     
     @objc func reloadCollectionView() {
-        getFeeds()
+        switch previousController {
+        case .community:
+            getFeeds()
+        case .myDrawer:
+            if let year = year,
+               let month = month {
+                getMyDrawer(year: year, month: month)
+            }
+        }
     }
     
     @objc func presentStickerViewController(postId: NSNotification) {
@@ -97,6 +110,7 @@ class FeedDetailViewController: UIViewController {
         guard let stickerViewController = storyboard.instantiateViewController(identifier: Const.ViewController.Identifier.sticker) as? StickerViewController else { return }
         stickerViewController.modalPresentationStyle = .overCurrentContext
         stickerViewController.modalTransitionStyle = .crossDissolve
+        
         if let postId = postId.object as? Int {
             stickerViewController.postId = postId
         }
@@ -189,6 +203,32 @@ extension FeedDetailViewController {
                 print("networkFail")
             }
         }
+    }
+    
+}
+
+extension FeedDetailViewController {
+    
+    func getMyDrawer(year: Int, month: Int) {
+        FeedAPI.shared.getMyDrawer(year: year, month: month) { response in
+            switch response {
+            case .success(let data):
+                if let data = data as? [Feed] {
+                    self.myFeed = data
+                    self.feedDetailCollectionView.reloadData()
+                    self.refreshControl.endRefreshing()
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+        
     }
     
 }
