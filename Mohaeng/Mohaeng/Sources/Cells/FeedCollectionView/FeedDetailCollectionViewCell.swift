@@ -83,7 +83,6 @@ class FeedDetailCollectionViewCell: UICollectionViewCell {
         registerCell()
         setDelegation()
         setLineHeight()
-        setButtonEvent()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -103,6 +102,7 @@ class FeedDetailCollectionViewCell: UICollectionViewCell {
     
     func setData(feed: Feed, viewController: FeedDetail) {
         self.viewController = viewController
+        setButtonEvent()
         setMoodImage(moodStatus: feed.mood)
         setButtonBackgroundImage(viewController: viewController)
         currentPostId = feed.postID
