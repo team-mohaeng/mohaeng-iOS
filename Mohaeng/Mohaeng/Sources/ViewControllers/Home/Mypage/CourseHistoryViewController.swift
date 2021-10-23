@@ -11,7 +11,8 @@ class CourseHistoryViewController: UIViewController {
     
     // MARK: - Properties
     
-    var courseHistory = CourseHistoryData(courses: [])
+    var doingCourse: Bool = true
+    var courseHistory = CourseHistoryData(isProgress: true, courses: [])
     var startNewCoursePopUp = PopUpViewController()
     var selectedCourseId: Int?
     
@@ -47,6 +48,7 @@ class CourseHistoryViewController: UIViewController {
     }
     
     private func updateData(courses: CourseHistoryData) {
+        self.doingCourse = courses.isProgress
         self.courseHistory = courses
         self.courseHistoryCollectionView.reloadData()
     }
@@ -151,7 +153,11 @@ extension CourseHistoryViewController: CoursePopUpProtocol {
         startNewCoursePopUp.modalPresentationStyle = .overCurrentContext
         startNewCoursePopUp.modalTransitionStyle = .crossDissolve
         startNewCoursePopUp.popUpUsage = .twoButtonWithImage
-        startNewCoursePopUp.setText(title: "안녕하세요타이틀", description: "이런부분은나중에strings파일만들어서관리하려고합니다어떤가용?")
+        if doingCourse {
+            startNewCoursePopUp.setText(title: Const.String.changeCoursePopUpTitle, description: Const.String.changeCoursePopUpContent)
+        } else {
+            startNewCoursePopUp.setText(title: Const.String.startCoursePopUpTitle, description: Const.String.startCoursePopUpTitle)
+        }
         startNewCoursePopUp.popUpActionDelegate = self
         tabBarController?.present(startNewCoursePopUp, animated: true, completion: nil)
         
@@ -166,7 +172,12 @@ extension CourseHistoryViewController: PopUpActionDelegate {
     }
     
     func touchYellowButton(button: UIButton) {
-        print("yellow")
+        
+        if let selectedCourseId = self.selectedCourseId {
+            self.startCourse(courseId: selectedCourseId)
+        }
+        self.dismiss(animated: true, completion: nil)
+        
     }
 }
 
@@ -193,5 +204,31 @@ extension CourseHistoryViewController {
                 print("networkFail")
             }
         }
+    }
+    
+    func startCourse(courseId: Int) {
+        CourseAPI.shared.putCourseProgress(completion: { (response) in
+            switch response {
+            case .success(let course):
+                
+                if let data = course as? CourseData {
+                    var startCompletePopUp = PopUpViewController()
+                    startCompletePopUp = PopUpViewController(nibName: Const.Xib.Name.popUp, bundle: nil)
+                    startCompletePopUp.modalPresentationStyle = .overCurrentContext
+                    startCompletePopUp.modalTransitionStyle = .crossDissolve
+                    startCompletePopUp.popUpUsage = .noButton
+                    startCompletePopUp.setText(title: "코스 변경 완료", description: "코스가 변경됐어!")
+                    self.tabBarController?.present(startCompletePopUp, animated: true, completion: nil)
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }, courseId: courseId)
     }
 }

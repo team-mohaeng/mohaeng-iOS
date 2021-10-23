@@ -79,7 +79,13 @@ class CourseLibraryViewController: UIViewController {
         askPopUp.modalPresentationStyle = .overCurrentContext
         askPopUp.modalTransitionStyle = .crossDissolve
         askPopUp.popUpUsage = .twoButtonWithImage
-        askPopUp.setText(title: "안녕하세요타이틀", description: "이런부분은나중에strings파일만들어서관리하려고합니다어떤가용?")
+        
+        if doingCourse {
+            askPopUp.setText(title: Const.String.changeCoursePopUpTitle, description: Const.String.changeCoursePopUpContent)
+        } else {
+            askPopUp.setText(title: Const.String.startCoursePopUpTitle, description: Const.String.startCoursePopUpTitle)
+        }
+        
         askPopUp.popUpActionDelegate = self
         tabBarController?.present(askPopUp, animated: true, completion: nil)
     }
