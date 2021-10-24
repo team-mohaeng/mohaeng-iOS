@@ -161,7 +161,7 @@ extension FeedDetailViewController: UICollectionViewDelegateFlowLayout {
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width: CGFloat = UIScreen.main.bounds.width
         let imageHeight: CGFloat = width
-        var baseHeight: CGFloat = 0
+        var baseHeight: CGFloat = (588 / 812) * UIScreen.main.bounds.height
         let maximumHeight: CGFloat = (674 / 812) * UIScreen.main.bounds.height
         let dummyCell = FeedDetailCollectionViewCell(frame: CGRect(x: 0, y: 0, width: width, height: maximumHeight))
         
@@ -170,11 +170,11 @@ extension FeedDetailViewController: UICollectionViewDelegateFlowLayout {
         switch previousController {
         case .community:
             dummyImage.updateServerImage(allFeed.feeds[indexPath.row].image)
-            baseHeight = allFeed.feeds[indexPath.row].image.isEmpty ? 588 - imageHeight : 588
+            baseHeight = allFeed.feeds[indexPath.row].image.isEmpty ? baseHeight - imageHeight : baseHeight
             dummyCell.setData(feed: allFeed.feeds[indexPath.row], viewController: .community)
         case .myDrawer:
             dummyImage.updateServerImage(myFeed[indexPath.row].image)
-            baseHeight = myFeed[indexPath.row].image.isEmpty ? 588 - imageHeight : 588
+            baseHeight = myFeed[indexPath.row].image.isEmpty ? baseHeight - imageHeight : baseHeight
             dummyCell.setData(feed: myFeed[indexPath.row], viewController: .myDrawer)
         }
         
