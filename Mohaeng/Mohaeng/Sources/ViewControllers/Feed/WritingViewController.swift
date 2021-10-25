@@ -13,10 +13,17 @@ import Then
 class WritingViewController: UIViewController {
 
 // MARK: - Properties
+    public var mood: Int? {
+        didSet {
+            guard let mood = mood else { return }
+            moodImageView.image = moodImageArray[mood]
+            writingRequest.mood = mood
+        }
+    }
+    
+    private lazy var hasNotch = UIDevice.current.hasNotch
     
     private var writingRequest = WritingRequest(content: "", mood: 0, isPrivate: false, image: nil)
-        
-    private let hasNotch = UIDevice.current.hasNotch
     
     private let imagePicker = UIImagePickerController()
     
@@ -107,17 +114,6 @@ class WritingViewController: UIViewController {
     }
     
 // MARK: - View Life Cycle
-    
-    init(with mood: Int) {
-        super.init(nibName: nil, bundle: nil)
-        moodImageView.image = moodImageArray[mood]
-        writingRequest.mood = mood
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

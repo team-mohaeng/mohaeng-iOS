@@ -124,9 +124,9 @@ class MoodViewController: UIViewController {
     // MARK: - @IBAction Properties
     
     @IBAction func touchNextButton(_ sender: Any) {
-        let writingViewController = WritingViewController(with: moodImageNum)
+        let writingViewController = WritingViewController()
+        writingViewController.mood = moodImageNum
         self.navigationController?.pushViewController(writingViewController, animated: true)
-    
     }
     
     @objc
