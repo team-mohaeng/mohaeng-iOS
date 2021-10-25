@@ -246,6 +246,8 @@ extension WritingViewController {
         case removePhotoButton:
             removePhoto()
         case doneButton:
+            doneButton.setBackgroundColor(.YellowButton1, for: .disabled)
+            doneButton.isEnabled = false
             postFeedWriting {[weak self] response in
                 NotificationCenter.default.post(name: NSNotification.Name("RefreshFeedCollectionView"),
                                                 object: nil,
