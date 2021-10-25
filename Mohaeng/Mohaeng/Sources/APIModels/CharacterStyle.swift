@@ -35,6 +35,7 @@ struct Character: Codable {
 struct Card: Codable {
     let id: Int
     let image: String
+    let preview: String?
     let hasCard: Bool
     var isNew: Bool
 }

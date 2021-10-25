@@ -37,7 +37,7 @@ class CharacterStyleViewController: UIViewController {
     private var allCardSelectedInfo: [[Bool]] = Array(repeating: Array(repeating: false, count: 9), count: 7)
     private var isOpen = false
     private var selectedCardId: Int = 0
-    private var characterData: CharacterStyle = CharacterStyle(currentCharacter: Current(id: 0, image: ""), currentSkin: Current(id: 0, image: ""), characters: [Character(type: 0, cards: [Card(id: 0, image: "", hasCard: false, isNew: false)])], skins: [Skin(id: 0, image: "", hasSkin: false)])
+    private var characterData: CharacterStyle = CharacterStyle(currentCharacter: Current(id: 0, image: ""), currentSkin: Current(id: 0, image: ""), characters: [Character(type: 0, cards: [Card(id: 0, image: "", preview: "", hasCard: false, isNew: false)])], skins: [Skin(id: 0, image: "", hasSkin: false)])
     
     // MARK: - View Life Cycle
     
@@ -302,7 +302,8 @@ extension CharacterStyleViewController: UICollectionViewDataSource {
     
     func indicateOwnedCard(_ cell: CharacterColorCollectionViewCell, indexPath: IndexPath) {
         if characterData.characters[selectedTypeIndex].cards[indexPath.row].hasCard {
-            cell.setUnlockCharacter(image: characterData.characters[selectedTypeIndex].cards[indexPath.row].image)
+            guard let image = characterData.characters[selectedTypeIndex].cards[indexPath.row].preview else { return }
+            cell.setUnlockCharacter(image: image)
         } else {
             cell.setLockCharacter(typeId: characterData.characters[selectedTypeIndex].type - 1)
         }
@@ -365,7 +366,7 @@ extension CharacterStyleViewController {
     func putCharacterStyle(data: CharacterStyleReqeust) {
         CharacterAPI.shared.putCharacterStyle(data: data) { response in
             switch response {
-            case .success(let data):
+            case .success:
                 self.showToast(message: "스타일이 변경되었습니다.", font: .spoqaHanSansNeo(size: 12))
             case .requestErr(let message):
                 print("requestErr", message)
