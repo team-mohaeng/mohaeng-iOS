@@ -10,6 +10,7 @@ import Moya
 
 enum MyPageService {
     case getMyPage
+    case putNickname(nickname: String)
 }
 
 extension MyPageService: TargetType {
@@ -21,6 +22,8 @@ extension MyPageService: TargetType {
         switch self {
         case .getMyPage:
             return Const.URL.myPage
+        case .putNickname(_):
+            return Const.URL.myPage
         }
     }
     
@@ -28,6 +31,8 @@ extension MyPageService: TargetType {
         switch self {
         case .getMyPage:
             return .get
+        case .putNickname(_):
+            return .put
         }
     }
     
@@ -39,6 +44,10 @@ extension MyPageService: TargetType {
         switch self {
         case .getMyPage:
             return .requestPlain
+        case .putNickname(let nickname):
+            return .requestParameters(parameters: [
+                "nickname": nickname
+            ], encoding: JSONEncoding.default)
         }
     }
     

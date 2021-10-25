@@ -15,8 +15,8 @@ enum FeedService {
     case postFeed(content: String, mood: Int, isPrivate: Bool, image: UIImage?)
     case postReport(id: Int)
     case putEmoji(emojiId: Int, postId: Int)
+    case deletePost(postId: Int)
 }
-// {"content": "엄마 나 모행 다녀올게", "mood": 2, "isPrivate": false}
 
 extension FeedService: TargetType {
     var baseURL: URL {
@@ -33,6 +33,8 @@ extension FeedService: TargetType {
             return Const.URL.feedURL + "/\(id)"
         case .putEmoji(_, let postId):
             return Const.URL.feedURL + Const.URL.emojiURL + "/\(postId)"
+        case .deletePost(let postId):
+            return Const.URL.feedURL + "/\(postId)"
         }
     
     }
@@ -45,6 +47,8 @@ extension FeedService: TargetType {
             return .post
         case .putEmoji:
             return .put
+        case .deletePost:
+            return .delete
         }
     }
     
@@ -54,7 +58,7 @@ extension FeedService: TargetType {
     
     var task: Task {
         switch self {
-        case .getAllFeed, .getMyDrawer, .postReport:
+        case .getAllFeed, .getMyDrawer, .postReport, .deletePost:
             return .requestPlain
         case .putEmoji(let emojiId, _):
             return .requestParameters(parameters: ["emojiId" : emojiId], encoding: JSONEncoding.default)
@@ -85,7 +89,7 @@ extension FeedService: TargetType {
     
     var headers: [String: String]? {
         switch self {
-        case .getAllFeed, .getMyDrawer, .postReport, .putEmoji:
+        case .getAllFeed, .getMyDrawer, .postReport, .putEmoji, .deletePost:
             return [
                 "Content-Type": "application/json",
                 "Bearer": UserDefaults.standard.string(forKey: "jwtToken") ?? ""

@@ -118,7 +118,6 @@
 		561D771F26F0BFA40028DBCA /* PushNoti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D767826F0BFA40028DBCA /* PushNoti.swift */; };
 		561D772026F0BFA40028DBCA /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D767926F0BFA40028DBCA /* Auth.swift */; };
 		561D772126F0BFA40028DBCA /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D767A26F0BFA40028DBCA /* Challenge.swift */; };
-		561D772226F0BFA40028DBCA /* Medal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D767B26F0BFA40028DBCA /* Medal.swift */; };
 		561D772326F0BFA40028DBCA /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D767C26F0BFA40028DBCA /* Home.swift */; };
 		561D772426F0BFA40028DBCA /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D767D26F0BFA40028DBCA /* Course.swift */; };
 		561D772526F0BFA40028DBCA /* Writing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D767E26F0BFA40028DBCA /* Writing.swift */; };
@@ -149,6 +148,7 @@
 		564781B2271DBDB000802D76 /* CourseHistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564781B1271DBDB000802D76 /* CourseHistoryService.swift */; };
 		564781B4271DBDB800802D76 /* CourseHistoryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564781B3271DBDB800802D76 /* CourseHistoryAPI.swift */; };
 		565A1EF82700CF81000CAB1B /* MyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565A1EF72700CF81000CAB1B /* MyPage.swift */; };
+		568E60FD27217C160016C063 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E60FC27217C160016C063 /* String.swift */; };
 		56931AC8271D7D87000EECF5 /* Course.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56931AC7271D7D87000EECF5 /* Course.storyboard */; };
 		569C39652712B28800DED361 /* ChallengeCompletePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569C39632712B28800DED361 /* ChallengeCompletePopUpViewController.swift */; };
 		569C39662712B28800DED361 /* ChallengeCompletePopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569C39642712B28800DED361 /* ChallengeCompletePopUpViewController.xib */; };
@@ -356,7 +356,6 @@
 		561D767826F0BFA40028DBCA /* PushNoti.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNoti.swift; sourceTree = "<group>"; };
 		561D767926F0BFA40028DBCA /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		561D767A26F0BFA40028DBCA /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
-		561D767B26F0BFA40028DBCA /* Medal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medal.swift; sourceTree = "<group>"; };
 		561D767C26F0BFA40028DBCA /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		561D767D26F0BFA40028DBCA /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		561D767E26F0BFA40028DBCA /* Writing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Writing.swift; sourceTree = "<group>"; };
@@ -387,6 +386,8 @@
 		564781B1271DBDB000802D76 /* CourseHistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHistoryService.swift; sourceTree = "<group>"; };
 		564781B3271DBDB800802D76 /* CourseHistoryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHistoryAPI.swift; sourceTree = "<group>"; };
 		565A1EF72700CF81000CAB1B /* MyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPage.swift; sourceTree = "<group>"; };
+		568E60F82721790C0016C063 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		568E60FC27217C160016C063 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		56931AC7271D7D87000EECF5 /* Course.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Course.storyboard; sourceTree = "<group>"; };
 		569C39632712B28800DED361 /* ChallengeCompletePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCompletePopUpViewController.swift; sourceTree = "<group>"; };
 		569C39642712B28800DED361 /* ChallengeCompletePopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeCompletePopUpViewController.xib; sourceTree = "<group>"; };
@@ -607,6 +608,7 @@
 				561D75F526F0BFA40028DBCA /* URL.swift */,
 				561D75F626F0BFA40028DBCA /* Const.swift */,
 				561D75F726F0BFA40028DBCA /* Font.swift */,
+				568E60FC27217C160016C063 /* String.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -928,7 +930,6 @@
 				561D767826F0BFA40028DBCA /* PushNoti.swift */,
 				561D767926F0BFA40028DBCA /* Auth.swift */,
 				561D767A26F0BFA40028DBCA /* Challenge.swift */,
-				561D767B26F0BFA40028DBCA /* Medal.swift */,
 				561D767C26F0BFA40028DBCA /* Home.swift */,
 				561D767D26F0BFA40028DBCA /* Course.swift */,
 				561D767E26F0BFA40028DBCA /* Writing.swift */,
@@ -1245,6 +1246,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 56DCAA1B2689BB9B0056155A;
 			productRefGroup = 56DCAA252689BB9B0056155A /* Products */;
@@ -1425,7 +1427,6 @@
 				561D771626F0BFA40028DBCA /* AppYear.swift in Sources */,
 				56AE34DC271EECDC00D7F4D8 /* CoursePopUpProtocol.swift in Sources */,
 				561D76E626F0BFA40028DBCA /* ModalPresentationController.swift in Sources */,
-				561D772226F0BFA40028DBCA /* Medal.swift in Sources */,
 				561D76E026F0BFA40028DBCA /* UIDevice+Extension.swift in Sources */,
 				561D76EA26F0BFA40028DBCA /* HomeViewController.swift in Sources */,
 				56C21992271BE6DC008049A8 /* TodayChallenge.swift in Sources */,
@@ -1467,6 +1468,7 @@
 				561D773726F0BFA40028DBCA /* CourseFooterView.swift in Sources */,
 				561D76FB26F0BFA40028DBCA /* FeedDetailViewController.swift in Sources */,
 				561D771A26F0BFA40028DBCA /* User.swift in Sources */,
+				568E60FD27217C160016C063 /* String.swift in Sources */,
 				561D76FC26F0BFA40028DBCA /* MyDrawerViewController.swift in Sources */,
 				561D76FA26F0BFA40028DBCA /* SignUpThirdViewController.swift in Sources */,
 				561D772526F0BFA40028DBCA /* Writing.swift in Sources */,
@@ -1573,6 +1575,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				561D75E226F0BFA30028DBCA /* Base */,
+				568E60F82721790C0016C063 /* ko */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1584,6 +1587,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1645,6 +1649,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1705,7 +1710,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4QG3GC35LA;
+				DEVELOPMENT_TEAM = EQ7Z68Z2F2;
 				INFOPLIST_FILE = Mohaeng/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1729,7 +1734,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4QG3GC35LA;
+				DEVELOPMENT_TEAM = EQ7Z68Z2F2;
 				INFOPLIST_FILE = Mohaeng/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
