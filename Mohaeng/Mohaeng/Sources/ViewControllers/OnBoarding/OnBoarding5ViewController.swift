@@ -31,7 +31,7 @@ class OnBoarding5ViewController: UIViewController {
     
     private lazy var startButton = UIButton(type: .system).then {
         $0.setBackgroundColor(.Yellow3, for: .normal)
-        $0.setTitle("새롭게 시작하기", for: .normal)
+        $0.setTitle("모행과 행복을 향한 챌린지 시작하기", for: .normal)
         $0.setTitleColor(.White, for: .normal)
         $0.titleLabel?.font = .spoqaHanSansNeo(weight: .bold, size: 16)
         $0.makeRounded(radius: 25)
