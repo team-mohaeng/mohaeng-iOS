@@ -43,7 +43,7 @@ class WritingViewController: UIViewController {
     }
   
     private let writingCountLabel = UILabel().then {
-        $0.font = .spoqaHanSansNeo(weight: .regular, size: 10)
+        $0.font = .spoqaHanSansNeo(weight: .regular, size: 11)
     }
     
     private let yellowBackgroundView = UIView().then {
@@ -145,12 +145,11 @@ class WritingViewController: UIViewController {
     }
     
     private func initNavigationBar() {
-        navigationController?.initWithBackAndCloseButton(navigationItem: self.navigationItem, closeButtonClosure: #selector(buttonDidTapped(_:)))
         let currentDate = AppDate()
         let currentMonth = currentDate.getMonth()
         let currentDay = currentDate.getDay()
         navigationItem.title = "\(currentMonth)월 \(currentDay)일"
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.spoqaHanSansNeo(weight: .regular, size: 14), NSAttributedString.Key.foregroundColor: UIColor.Black]
+        navigationController?.initWithBackAndCloseButton(navigationItem: self.navigationItem, closeButtonClosure: #selector(buttonDidTapped(_:)))
     }
     
     private func setLayout() {
