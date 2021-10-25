@@ -447,7 +447,7 @@ extension WritingViewController {
         
         doneButton.snp.makeConstraints {
             $0.leading.trailing.bottom.equalToSuperview()
-            $0.height.equalTo(hasNotch ? 76 : 56)
+            $0.height.equalTo(hasNotch ? 86 : 66)
         }
     }
 }

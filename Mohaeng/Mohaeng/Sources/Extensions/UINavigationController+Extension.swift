@@ -92,8 +92,7 @@ extension UINavigationController {
         self.navigationBar.standardAppearance = appearance
         self.navigationBar.compactAppearance = appearance
         self.navigationBar.scrollEdgeAppearance = appearance
-        
-        navigationItem.title = title
+
     }
     // MARK: - @objc function
     

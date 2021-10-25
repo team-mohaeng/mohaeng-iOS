@@ -53,7 +53,7 @@ class MoodViewController: UIViewController {
     // MARK: - Functions
     
     private func setConstraintWitouthNotch() {
-        nextButtonHeightConstraint.constant = UIDevice.current.hasNotch ? 76 : 56
+        nextButtonHeightConstraint.constant = UIDevice.current.hasNotch ? 86 : 66
     }
     
     private func makeRoundDot() {
