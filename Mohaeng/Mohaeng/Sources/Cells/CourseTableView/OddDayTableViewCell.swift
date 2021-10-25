@@ -80,7 +80,7 @@ class OddDayTableViewCell: UITableViewCell {
             dayLabelBgView.isHidden = false
             dayLabelBgView.backgroundColor = appCourse.getDarkColor()
             
-            dayLabel.text = "\(challenge.month).\(challenge.day) 완료"
+            dayLabel.text = "\(challenge.month).\(challenge.date) 완료"
         } else {
             dayLabelBgView.isHidden = true
         }

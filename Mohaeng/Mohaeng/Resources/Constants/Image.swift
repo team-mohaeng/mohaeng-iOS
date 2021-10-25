@@ -146,7 +146,7 @@ extension Const {
         static let redLibraryImage = UIImage(named: "redLibraryImage")!
         static let redSmallImage = UIImage(named: "redSmallImage")!
         static let redUndoneStampImage = UIImage(named: "redUndoneStampImage")!
-        static let redDoneStampImage = UIImage(named: "redUndoneStampImage")!
+        static let redDoneStampImage = UIImage(named: "redDoneStampImage")!
         /// orange
         static let orangeBigImage = UIImage(named: "orangeBigImage")!
         static let orangeLibraryImage = UIImage(named: "orangeLibraryImage")!

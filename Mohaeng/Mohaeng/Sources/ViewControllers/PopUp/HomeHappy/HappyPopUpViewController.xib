@@ -43,13 +43,13 @@
                     <rect key="frame" x="81" y="238" width="290" height="430"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lv. 22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTD-EQ-S5G">
-                            <rect key="frame" x="116" y="62" width="58.5" height="26"/>
+                            <rect key="frame" x="110.5" y="62" width="69" height="22"/>
                             <fontDescription key="fontDescription" name="GmarketSansTTFBold" family="Gmarket Sans TTF" pointSize="22"/>
                             <color key="textColor" name="Yellow2"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Q2H-nc-Qda">
-                            <rect key="frame" x="35" y="112" width="221" height="17"/>
+                            <rect key="frame" x="35" y="108" width="221" height="17"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="17" id="1CR-dv-4YG"/>
                             </constraints>
@@ -57,38 +57,38 @@
                             <color key="trackTintColor" name="Yellow6"/>
                         </progressView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해피지수  160/200 (80%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELM-D6-9uA">
-                            <rect key="frame" x="81.5" y="149" width="127.5" height="14"/>
+                            <rect key="frame" x="72.5" y="145" width="145" height="12"/>
                             <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCI-sb-wGX">
-                            <rect key="frame" x="0.0" y="204" width="290" height="1"/>
+                            <rect key="frame" x="0.0" y="198" width="290" height="1"/>
                             <color key="backgroundColor" name="Grey4"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="sxI-1p-q0v"/>
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해피지수란 ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7m-XM-mPt">
-                            <rect key="frame" x="30" y="239" width="62" height="14"/>
+                            <rect key="frame" x="30" y="233" width="64.5" height="15.5"/>
                             <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="12"/>
                             <color key="textColor" name="Grey1"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="하루 챌린지를 달성할 때, 코스를 완료할 때, 안부를 작성했을 때 제공되는 지수입니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0m-Ig-eeb">
-                            <rect key="frame" x="30" y="265" width="224" height="26"/>
+                            <rect key="frame" x="30" y="260.5" width="224" height="28"/>
                             <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="11"/>
                             <color key="textColor" name="Grey2"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="레벨이란 ? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teF-4o-By2">
-                            <rect key="frame" x="30" y="315" width="55" height="14"/>
+                            <rect key="frame" x="30" y="312.5" width="56" height="15.5"/>
                             <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="12"/>
                             <color key="textColor" name="Grey1"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해피 지수 게이지가 다 차면 레벨이 넘어가게 됩니다. 레벨이 한 번 오를 때마다 한 가지 캐릭터 스타일을 얻을 수 있어요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJK-qm-S2I">
-                            <rect key="frame" x="30" y="341" width="233" height="38.5"/>
+                            <rect key="frame" x="30" y="340" width="233" height="41.5"/>
                             <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="11"/>
                             <color key="textColor" name="Grey2"/>
                             <nil key="highlightedColor"/>

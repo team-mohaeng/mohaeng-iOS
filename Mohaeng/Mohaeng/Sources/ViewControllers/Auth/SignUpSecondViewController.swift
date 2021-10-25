@@ -36,11 +36,11 @@ class SignUpSecondViewController: UIViewController {
     
     private func pushSignUpThirdViewController() {
         let signUpThirdStoryboard = UIStoryboard(name: Const.Storyboard.Name.signUpThird, bundle: nil)
-        
         guard let signUpThirdViewController = signUpThirdStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.signUpThird) as?
                 SignUpThirdViewController else {
                     return
                 }
+        signUpThirdViewController.nicknameUsage = .signUp
         self.navigationController?.pushViewController(signUpThirdViewController, animated: true)
     }
     

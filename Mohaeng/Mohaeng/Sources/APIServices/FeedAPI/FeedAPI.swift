@@ -11,7 +11,7 @@ import Moya
 public class FeedAPI {
     
     static let shared = FeedAPI()
-    var feedProvider = MoyaProvider<FeedService>(plugins: [MoyaLoggingPlugin()])
+    var feedProvider = MoyaProvider<FeedService>()
     
     enum ResponseData {
         case feed
@@ -19,6 +19,7 @@ public class FeedAPI {
         case myDrawer
         case report
         case emoji
+        case delete
     }
     
     public init() { }
@@ -103,11 +104,26 @@ public class FeedAPI {
         }
     }
     
+    func deleteMyPost(postId: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
+        feedProvider.request(.deletePost(postId: postId)) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .delete)
+                completion(networkResult)
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
     private func judgeStatus(by statusCode: Int, _ data: Data, responseData: ResponseData) -> NetworkResult<Any> {
         switch statusCode {
         case 200, 400..<500:
             switch responseData {
-            case .feed, .writing, .myDrawer, .report, .emoji:
+            case .feed, .writing, .myDrawer, .report, .emoji, .delete:
                 return isValidData(data: data, responseData: responseData)
             }
         case 500:
@@ -136,7 +152,7 @@ public class FeedAPI {
                 return .pathErr
             }
             return .success(decodedData.data?.feeds)
-        case .report, .emoji:
+        case .report, .emoji, .delete:
             guard let decodedData = try? decoder.decode(GenericResponse<String>.self, from: data) else {
                 return .pathErr
             }
