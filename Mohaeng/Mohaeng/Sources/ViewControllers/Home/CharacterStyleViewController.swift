@@ -45,12 +45,16 @@ class CharacterStyleViewController: UIViewController {
         super.viewDidLoad()
         
         getUserCharacterInfo()
-        initNavigationBar()
         hideTabarController()
         registerXib()
         setDelegation()
         makeViewRounded()
         initViewShadow()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        initNavigationBar()
+        tabBarController?.tabBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
