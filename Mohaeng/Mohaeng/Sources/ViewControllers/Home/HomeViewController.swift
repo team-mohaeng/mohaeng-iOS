@@ -173,6 +173,7 @@ class HomeViewController: UIViewController {
     private func updateData(data: Home) {
         backgroundImageView.updateServerImage(data.characterSkin)
         setHourlyMent(nickname: data.nickname)
+        UserDefaults.standard.set(data.nickname, forKey: "nickname")
         if let percent = data.course.percent {
             courseProgressLabel.text = "코스 진행률 \(percent)%"
         } else {
