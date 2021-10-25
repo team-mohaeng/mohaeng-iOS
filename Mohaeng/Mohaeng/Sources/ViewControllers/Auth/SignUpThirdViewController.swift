@@ -223,6 +223,7 @@ extension SignUpThirdViewController {
         MyPageAPI.shared.putNickname(completion: { (response) in
             switch response {
             case .success(let jwt):
+                UserDefaults.standard.set(nickname, forKey: "nickname")
                 self.popMyPageViewController()
             case .requestErr(let message):
                 print("requestErr", message)

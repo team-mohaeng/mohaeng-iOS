@@ -32,7 +32,8 @@ class WritingViewController: UIViewController {
     private let titleLabel = UILabel().then {
         $0.font = .gmarketFont(weight: .medium, size: 22)
         $0.textColor = .Black
-        $0.text = "아라아랑의 오늘을 남겨줘"
+        guard let nickname = UserDefaults.standard.string(forKey: "nickname") else { return }
+        $0.text = "\(nickname)의 오늘을 남겨줘"
     }
     
     private let subTitleLabel = UILabel().then {
