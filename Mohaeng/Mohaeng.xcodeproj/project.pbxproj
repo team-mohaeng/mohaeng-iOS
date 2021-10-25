@@ -226,6 +226,7 @@
 		DD9EFFCC2715568700B3F871 /* OnBoarding2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFCB2715568700B3F871 /* OnBoarding2TableViewCell.swift */; };
 		DD9EFFCF2715798100B3F871 /* OnBoarding4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFCE2715798100B3F871 /* OnBoarding4ViewController.swift */; };
 		DD9EFFD227157B8800B3F871 /* OnBoarding3HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFD127157B8800B3F871 /* OnBoarding3HeaderView.swift */; };
+		DDA572642726EB3F0058809B /* onboardingcard.json in Resources */ = {isa = PBXBuildFile; fileRef = DDA572632726EB3F0058809B /* onboardingcard.json */; };
 		DDA7EF3927214CFF00F100CA /* awards_sok5.json in Resources */ = {isa = PBXBuildFile; fileRef = DDA7EF3327214CFD00F100CA /* awards_sok5.json */; };
 		DDA7EF3A27214CFF00F100CA /* awards_sok6.json in Resources */ = {isa = PBXBuildFile; fileRef = DDA7EF3427214CFD00F100CA /* awards_sok6.json */; };
 		DDA7EF3B27214CFF00F100CA /* awards_sok3.json in Resources */ = {isa = PBXBuildFile; fileRef = DDA7EF3527214CFD00F100CA /* awards_sok3.json */; };
@@ -238,8 +239,6 @@
 		DDF110452709DFB1004FD5FB /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF110442709DFB1004FD5FB /* UIButton+Extension.swift */; };
 		EC087641271FFDB400EB1F51 /* KakaoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC087640271FFDB400EB1F51 /* KakaoAPI.swift */; };
 		EC087643271FFDCB00EB1F51 /* KakaoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC087642271FFDCB00EB1F51 /* KakaoService.swift */; };
-		EC2FF5C626F343C000411F31 /* MoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */; };
-		EC2FF5C726F343C000411F31 /* MoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */; };
 		EC31776326FDB50E0076BCEC /* CarouselLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */; };
 /* End PBXBuildFile section */
 
@@ -466,6 +465,7 @@
 		DD9EFFCB2715568700B3F871 /* OnBoarding2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding2TableViewCell.swift; sourceTree = "<group>"; };
 		DD9EFFCE2715798100B3F871 /* OnBoarding4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding4ViewController.swift; sourceTree = "<group>"; };
 		DD9EFFD127157B8800B3F871 /* OnBoarding3HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding3HeaderView.swift; sourceTree = "<group>"; };
+		DDA572632726EB3F0058809B /* onboardingcard.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = onboardingcard.json; sourceTree = "<group>"; };
 		DDA7EF3327214CFD00F100CA /* awards_sok5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_sok5.json; sourceTree = "<group>"; };
 		DDA7EF3427214CFD00F100CA /* awards_sok6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_sok6.json; sourceTree = "<group>"; };
 		DDA7EF3527214CFD00F100CA /* awards_sok3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_sok3.json; sourceTree = "<group>"; };
@@ -478,8 +478,6 @@
 		DDF110442709DFB1004FD5FB /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		EC087640271FFDB400EB1F51 /* KakaoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPI.swift; sourceTree = "<group>"; };
 		EC087642271FFDCB00EB1F51 /* KakaoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoService.swift; sourceTree = "<group>"; };
-		EC2FF5C426F343C000411F31 /* MoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoodCollectionViewCell.swift; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
-		EC2FF5C526F343C000411F31 /* MoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MoodCollectionViewCell.xib; path = Mohaeng/Sources/Cells/FeedView/MoodCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselLayoutView.swift; sourceTree = "<group>"; };
 		FF85070BA1F5A448133681A6 /* Pods_Mohaeng.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mohaeng.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -616,6 +614,7 @@
 		561D75FA26F0BFA40028DBCA /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				DDA572632726EB3F0058809B /* onboardingcard.json */,
 				DD1C5C43271FE93A004026BC /* RewardCards */,
 				DD6BB494271DB5CF0086240B /* awards_congrats.json */,
 			);
@@ -1280,6 +1279,7 @@
 				561D76AA26F0BFA40028DBCA /* Feed.storyboard in Resources */,
 				569C39662712B28800DED361 /* ChallengeCompletePopUpViewController.xib in Resources */,
 				561D769F26F0BFA40028DBCA /* SignUpThird.storyboard in Resources */,
+				DDA572642726EB3F0058809B /* onboardingcard.json in Resources */,
 				AA7E0AB426FC6C1900106DC2 /* CharacterTypeCollectionViewCell.xib in Resources */,
 				561D773326F0BFA40028DBCA /* ChallengeStampView.xib in Resources */,
 				561D76CC26F0BFA40028DBCA /* BubbleCollectionViewCell.xib in Resources */,

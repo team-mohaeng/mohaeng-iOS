@@ -64,7 +64,7 @@ class OnBoarding2HeaderView: UIView {
         rightCharacterImageView.snp.makeConstraints {
             $0.trailing.equalToSuperview()
             $0.top.equalToSuperview().offset(6)
-            $0.width.equalTo(100)
+            $0.width.equalTo(98)
             $0.height.equalTo(160)
         }
     }

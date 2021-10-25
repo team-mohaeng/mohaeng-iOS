@@ -41,24 +41,30 @@ extension UILabel {
         
         // typing animation
         var textString = ""
-        let characterDelay: TimeInterval = 5.0
+        var highlightedString = ""
+        var highlightedTextArray: [String] = []
+        
+        highlightedText.forEach { highlightedChar  in
+            highlightedString = "\(highlightedString)\(highlightedChar)"
+            highlightedTextArray.append(highlightedString)
+        }
+        
         let writingTask = DispatchWorkItem { [weak self] in
             text.forEach { char in
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     textString.append(char)
                     combination.append(NSAttributedString(string: "\(char)", attributes: attributes))
-                    highlightedText.forEach { highlightedChar  in
-                        let range = NSString(string: textString).range(of: "\(highlightedChar)", options: .caseInsensitive)
+                    highlightedTextArray.forEach { text  in
+                        let range = NSString(string: textString).range(of: text, options: .caseInsensitive)
                         combination.addAttributes(highlightedAttributes, range: range)
                     }
                     self?.attributedText = combination
-                    
-              }
-              Thread.sleep(forTimeInterval: characterDelay/100)
+                }
+                  Thread.sleep(forTimeInterval: 2.0/100)
             }
-          }
+        }
         
-      let queue: DispatchQueue = .init(label: "typespeed", qos: .userInteractive)
-      queue.asyncAfter(deadline: .now() + 0.05, execute: writingTask)
+        let queue: DispatchQueue = .init(label: "typespeed", qos: .userInteractive)
+        queue.async(execute: writingTask)
     }
 }
