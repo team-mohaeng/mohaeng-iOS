@@ -12,7 +12,6 @@ extension UIImageView {
     @discardableResult
     func updateServerImage(_ imagePath: String) -> Bool {
         guard let url = URL(string: imagePath) else {
-            self.image = Const.Image.imageNoneGrp
             return false
         }
         self.kf.indicatorType = .activity

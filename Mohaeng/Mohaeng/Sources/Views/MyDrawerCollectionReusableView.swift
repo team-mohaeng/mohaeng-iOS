@@ -38,7 +38,7 @@ class MyDrawerCollectionReusableView: UICollectionReusableView {
         guard let year = currentDate?.getYearToString() else { return }
         guard let currentMonth = currentDate?.getMonthToString() else { return }
         
-        dateLabel.text = "\(make2DigitYear(year: year))년 \(currentMonth)월 소확행"
+        dateLabel.text = "\(make2DigitYear(year: year))년 \(currentMonth)월 안부"
     }
     
     @objc private func setData(notification: NSNotification) {
@@ -46,7 +46,7 @@ class MyDrawerCollectionReusableView: UICollectionReusableView {
             let year = make2DigitYear(year: date[0])
             let month = date[1]
             
-            dateLabel.text = "\(year)년 \(month)월 소확행"
+            dateLabel.text = "\(year)년 \(month)월 안부"
         }
     }
     

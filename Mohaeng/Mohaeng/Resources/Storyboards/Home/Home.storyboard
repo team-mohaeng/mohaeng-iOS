@@ -39,13 +39,13 @@
                                     <constraint firstAttribute="height" constant="56" id="1t9-IJ-Efp"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEl-4P-pUw">
-                                <rect key="frame" x="106.33333333333333" y="771" width="0.0" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEl-4P-pUw">
+                                <rect key="frame" x="106.33333333333334" y="771" width="271.66666666666663" height="0.0"/>
                                 <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코스 진행률 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEL-OO-URg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" text="코스 진행률 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEL-OO-URg">
                                 <rect key="frame" x="40" y="764" width="58.333333333333343" height="14.333333333333371"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                 <color key="textColor" red="1" green="0.76862745098039209" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -71,15 +71,15 @@
                                 <color key="trackTintColor" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nJu-n7-rBq">
-                                <rect key="frame" x="23" y="194.66666666666666" width="50" height="62.999999999999972"/>
+                                <rect key="frame" x="41.333333333333336" y="214.66666666666666" width="13.333333333333336" height="23"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Staricn" translatesAutoresizingMaskIntoConstraints="NO" id="Oc5-PJ-7iM">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="13"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="13.333333333333334" height="13"/>
                                         <color key="tintColor" red="0.33333333333333331" green="0.25882352941176467" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vJ-mh-pWb">
-                                        <rect key="frame" x="0.0" y="13" width="50" height="50"/>
-                                        <fontDescription key="fontDescription" name="GmarketSansTTFBold" family="Gmarket Sans TTF" pointSize="0.0"/>
+                                        <rect key="frame" x="0.0" y="13" width="13.333333333333334" height="10"/>
+                                        <fontDescription key="fontDescription" name="GmarketSansTTFBold" family="Gmarket Sans TTF" pointSize="10"/>
                                         <color key="textColor" red="0.33333333329999998" green="0.25882352939999997" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -118,11 +118,13 @@
                             <constraint firstItem="ys8-L7-pM4" firstAttribute="top" secondItem="H7M-wz-W4e" secondAttribute="bottom" constant="44" id="Fga-o8-vbG"/>
                             <constraint firstItem="Ohc-G9-CHG" firstAttribute="top" secondItem="ys8-L7-pM4" secondAttribute="top" id="H0X-Tz-y8Y"/>
                             <constraint firstItem="M6l-iR-QUJ" firstAttribute="top" secondItem="77Y-vP-3CA" secondAttribute="bottom" constant="112" id="PiZ-Dk-Nt7"/>
+                            <constraint firstItem="OEl-4P-pUw" firstAttribute="centerY" secondItem="KAB-QO-e2z" secondAttribute="centerY" id="QRy-on-4RS"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ddC-dI-ZRd" secondAttribute="bottom" constant="-100" id="R50-1u-2aU"/>
                             <constraint firstItem="Ohc-G9-CHG" firstAttribute="bottom" secondItem="ys8-L7-pM4" secondAttribute="bottom" id="RJu-TX-ZZh"/>
                             <constraint firstItem="M6l-iR-QUJ" firstAttribute="bottom" secondItem="KAB-QO-e2z" secondAttribute="bottom" id="Ret-fP-3i3"/>
                             <constraint firstItem="KAB-QO-e2z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="U1G-3H-8Nh"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="KAB-QO-e2z" secondAttribute="trailing" constant="24" id="UXx-gN-mhg"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="OEl-4P-pUw" secondAttribute="trailing" constant="36" id="Wpf-Xx-vyz"/>
                             <constraint firstItem="dfe-49-RBu" firstAttribute="top" secondItem="H7M-wz-W4e" secondAttribute="top" id="Z8P-Lq-Geq"/>
                             <constraint firstItem="nJu-n7-rBq" firstAttribute="centerY" secondItem="H7M-wz-W4e" secondAttribute="centerY" id="bUZ-pI-PLX"/>
                             <constraint firstItem="ddC-dI-ZRd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="bj7-LE-lZ4"/>
@@ -142,7 +144,6 @@
                             <constraint firstItem="dfe-49-RBu" firstAttribute="leading" secondItem="H7M-wz-W4e" secondAttribute="leading" id="pza-Mi-Hk9"/>
                             <constraint firstItem="xqV-sk-UiK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="roG-ar-lhP"/>
                             <constraint firstItem="ddC-dI-ZRd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="-100" id="sNR-15-PEy"/>
-                            <constraint firstItem="OEl-4P-pUw" firstAttribute="centerY" secondItem="KAB-QO-e2z" secondAttribute="centerY" id="uth-sH-OS2"/>
                             <constraint firstItem="xqV-sk-UiK" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="35" id="vRC-ol-91r"/>
                             <constraint firstItem="H7M-wz-W4e" firstAttribute="top" secondItem="xqV-sk-UiK" secondAttribute="bottom" constant="57" id="wTF-LT-iR2"/>
                             <constraint firstItem="M6l-iR-QUJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="yTg-Po-0Pq"/>
