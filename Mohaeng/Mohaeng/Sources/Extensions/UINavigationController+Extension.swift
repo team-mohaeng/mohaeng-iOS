@@ -24,6 +24,7 @@ extension UINavigationController {
         appearance.configureWithTransparentBackground()
         self.navigationBar.standardAppearance = appearance
         self.navigationBar.scrollEdgeAppearance = appearance
+        self.setTitleTextAttributes(appearance)
     }
     
     // MARK: - 뒤로가기 버튼
@@ -40,6 +41,7 @@ extension UINavigationController {
         self.navigationBar.standardAppearance = appearance
         self.navigationBar.scrollEdgeAppearance = appearance
         self.navigationBar.tintColor = .black
+        self.setTitleTextAttributes(appearance)
     }
     
     // MARK: - 뒤로가기 버튼 + 완료 버튼
@@ -76,11 +78,22 @@ extension UINavigationController {
     
     func initWithBackAndCloseButton(navigationItem: UINavigationItem?, closeButtonClosure: Selector) {
         initWithBackButton()
-        
+
         let closeButton = UIBarButtonItem(image: Const.Image.gnbIconX, style: .plain, target: self.topViewController, action: closeButtonClosure)
         navigationItem?.rightBarButtonItem = closeButton
     }
     
+    // MARK: - title 추가
+    
+    func setTitleTextAttributes(_ appearance: UINavigationBarAppearance) {
+        appearance.configureWithTransparentBackground()
+        appearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont.spoqaHanSansNeo(weight: .regular, size: 15), NSAttributedString.Key.foregroundColor: UIColor.Black]
+        
+        self.navigationBar.standardAppearance = appearance
+        self.navigationBar.compactAppearance = appearance
+        self.navigationBar.scrollEdgeAppearance = appearance
+
+    }
     // MARK: - @objc function
     
 //    @objc func touchBackButton() {
