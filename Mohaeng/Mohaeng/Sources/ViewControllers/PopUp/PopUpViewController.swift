@@ -22,6 +22,7 @@ class PopUpViewController: UIViewController {
     // text
     var titleString: String?
     var descriptionString: String?
+    var buttonString: String?
     
     // MARK: - @IBOutlet Properties
     
@@ -45,11 +46,11 @@ class PopUpViewController: UIViewController {
         super.viewDidLoad()
 
         initViewRounding()
-        setText()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         initCase(usage: self.popUpUsage ?? .noButton)
+        setText()
     }
     
     // MARK: - Functions
@@ -66,6 +67,9 @@ class PopUpViewController: UIViewController {
         }
         if let descriptionString = self.descriptionString {
             descriptionLabel.text = descriptionString
+        }
+        if let buttonString = self.buttonString {
+            yellowButton.setTitle(buttonString, for: .normal)
         }
     }
 
@@ -127,8 +131,9 @@ class PopUpViewController: UIViewController {
     }
     
     // set functions
-    func setText(title: String, description: String) {
+    func setText(title: String, description: String, buttonTitle: String = "변경") {
         titleString = title
         descriptionString = description
+        buttonString = buttonTitle
     }
 }

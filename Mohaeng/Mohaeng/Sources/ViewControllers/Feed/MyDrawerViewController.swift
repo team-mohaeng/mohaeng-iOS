@@ -130,7 +130,7 @@ extension MyDrawerViewController: UICollectionViewDataSource {
         let feedDetailStoryboard = UIStoryboard.init(name: Const.Storyboard.Name.feedDetail, bundle: nil)
         guard let feedDetailViewController = feedDetailStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.feedDetail) as? FeedDetailViewController else { return }
         
-        feedDetailViewController.setMyDrawer(feeds: myDrawer)
+        feedDetailViewController.setMyDrawer(feeds: myDrawer, year: selectedYear, month: selectedMonth)
         feedDetailViewController.setPreviousController(viewController: .myDrawer)
         feedDetailViewController.setSelectedContentsIndexPath(indexPath: indexPath)
         self.navigationController?.isNavigationBarHidden = false
