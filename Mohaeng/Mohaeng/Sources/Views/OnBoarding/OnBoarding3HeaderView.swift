@@ -17,22 +17,14 @@ class OnBoarding3HeaderView: UIView {
     public var isDone: Bool = false {
         didSet {
             scrollIconImageView.isHidden = !isDone
+            challengeCardView.isDone = isDone
             if isDone {
-                if UIDevice.current.hasNotch {
-                    label.makeTyping(text: """
-                        오늘 챌린지 완료 축하해~
-                        
-                        화면을 위로 당기면
-                        지금 하고있는 코스의 진행상황도 파악할 수 있어
-                        """, highlightedText: "코스의 진행상황")
-                } else {
-                    label.makeTyping(text: """
-                        오늘 챌린지 완료 축하해~
+                label.makeTyping(text: """
+                    오늘 챌린지 수행 축하해~
 
-                        화면을 위로 당기면 지금 하고있는
-                        코스의 진행상황도 파악할 수 있어
-                        """, highlightedText: "코스의 진행상황")
-                }
+                    화면을 위로 당기면 지금 하고있는
+                    코스 진행 상황을 파악할 수 있어
+                    """, highlightedText: "코스 진행 상황")
                 scrollIconImageView.makeFade()
                 scrollIconImageView.makeSpring()
                 challengeCardView.isUserInteractionEnabled = false
@@ -40,8 +32,8 @@ class OnBoarding3HeaderView: UIView {
                 label.makeTyping(text: """
                     재밌는 챌린지를 골랐네~
 
-                    간단하게 수행한 다음,동그란 버튼을 눌러
-                    오늘의 챌린지를 인증해봐!
+                    인증버튼을 눌러서
+                    오늘의 챌린지를 완료해봐!
                     """, highlightedText: "인증")
                 challengeCardView.isUserInteractionEnabled = true
             }
@@ -122,14 +114,14 @@ class OnBoarding3HeaderView: UIView {
         challengeCardView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(24)
             $0.height.equalTo(UIDevice.current.hasNotch ? 426 : 360)
-            $0.bottom.equalToSuperview().offset(-50)
+            $0.bottom.equalToSuperview().offset(UIDevice.current.hasNotch ? -100 : -70)
         }
         
         scrollIconImageView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.height.equalTo(19)
             $0.width.equalTo(31)
-            $0.bottom.equalToSuperview().offset(-16)
+            $0.bottom.equalToSuperview().offset(UIDevice.current.hasNotch ? -40 : -20)
         }
     }
     

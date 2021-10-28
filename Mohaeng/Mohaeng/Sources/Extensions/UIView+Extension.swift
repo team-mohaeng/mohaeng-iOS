@@ -118,7 +118,7 @@ extension UIView {
     func makeSpring() {
         self.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
         UIView.animate( withDuration: 2,
-                        delay: 2.5,
+                        delay: 1,
                         usingSpringWithDamping: 0.3,
                         initialSpringVelocity: 0.1,
                         options: [.curveEaseInOut],

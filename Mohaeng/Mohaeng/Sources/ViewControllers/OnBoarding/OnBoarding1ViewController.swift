@@ -124,15 +124,15 @@ class OnBoarding1ViewController: UIViewController {
         leftCharacterImageView.snp.makeConstraints {
             $0.leading.equalToSuperview()
             $0.width.equalTo(125)
-            $0.height.equalTo(200)
+            $0.height.equalTo(220)
             $0.top.equalTo(largeMessageBoxImageView.snp.bottom).offset(79)
         }
         
         rightCharacterImageView.snp.makeConstraints {
             $0.trailing.equalToSuperview()
             $0.top.equalTo(largeMessageBoxImageView.snp.bottom).offset(20)
-            $0.width.equalTo(200)
-            $0.height.equalTo(280)
+            $0.width.equalTo(180)
+            $0.height.equalTo(300)
         }
         
         startButton.snp.makeConstraints {
