@@ -10,6 +10,7 @@ import Moya
 import KakaoSDKAuth
 import KakaoSDKUser
 import KakaoSDKCommon
+import AuthenticationServices
 
 class LoginViewController: UIViewController {
     
@@ -84,8 +85,16 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func touchAppleLoginButton(_ sender: Any) {
-        presentHomeViewController()
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+            let request = appleIDProvider.createRequest()
+            request.requestedScopes = [.fullName, .email]
+                
+            let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+            authorizationController.delegate = self
+            authorizationController.presentationContextProvider = self
+            authorizationController.performRequests()
     }
+    
     @IBAction func touchKakaoLoginButton(_ sender: UIButton) {
         
         if (UserApi.isKakaoTalkLoginAvailable()) {
@@ -141,4 +150,56 @@ extension LoginViewController {
             }
         }
     )}
+}
+
+// MARK: - ASAuthorizationControllerDelegate
+
+extension LoginViewController: ASAuthorizationControllerDelegate {
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        switch authorization.credential {
+        case let appleIDCredential as ASAuthorizationAppleIDCredential:
+            
+            // Create an account in your system.
+            let userIdentifier = appleIDCredential.user
+            let fullName = appleIDCredential.fullName
+            let email = appleIDCredential.email
+            
+            // 서버에 넘겨줘야 하는 identityToken 값
+            if let identityToken = appleIDCredential.identityToken,
+                   // identityToken은 Data? 라서, 아래와 같이 인코딩해줘야 함
+               let tokenString = String(data: identityToken, encoding: .utf8) {
+                print("apple login token:", tokenString)
+                UserDefaults.standard.setValue(tokenString, forKey: "jwtToken")
+            }
+            
+            // View Transition
+            self.signUpUser.isSocial = true
+            self.pushSignUpSecondViewController()
+        
+        case let passwordCredential as ASPasswordCredential:
+        
+            // Sign in using an existing iCloud Keychain credential.
+            let username = passwordCredential.user
+            let password = passwordCredential.password
+            
+            // For the purpose of this demo app, show the password credential as an alert.
+            DispatchQueue.main.async {
+                // self.showPasswordCredentialAlert(username: username, password: password)
+            }
+            
+        default:
+            break
+        }
+    }
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        print(error)
+    }
+    
+}
+
+extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+          // 사용자에게 로그인 요청 창을 띄울 window 지정
+        return view.window!
+    }
 }
