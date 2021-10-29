@@ -19,10 +19,13 @@ class LoginViewController: UIViewController {
     
     // MARK: - @IBOutlet Properties
     
+    @IBOutlet var backgroundTopSpace: NSLayoutConstraint!
     @IBOutlet var kakaoLoginButton: UIButton!
     @IBOutlet var appleLoginButton: UIButton!
     @IBOutlet var emailLoginButton: UIButton!
-    @IBOutlet weak var mohaengLabel: UILabel!
+    @IBOutlet var mohaengLabel: UILabel!
+    @IBOutlet var welcomeLabel: UILabel!
+    @IBOutlet var loginStackView: UIStackView!
     
     // MARK: - View Life Cycle
     
@@ -31,12 +34,14 @@ class LoginViewController: UIViewController {
         initNavigationBar()
         setLabelFont()
         setButtonUI()
+        setConstraintWitouthNotch()
     }
     
     // MARK: - Functions
     
     private func setLabelFont() {
-        mohaengLabel.font = .gmarketFont(weight: GmarketFontSize.medium, size: 24)
+        mohaengLabel.font = .gmarketFont(weight: .bold, size: 28)
+        welcomeLabel.font = .gmarketFont(weight: .light, size: 19)
     }
     
     private func initNavigationBar() {
@@ -48,6 +53,11 @@ class LoginViewController: UIViewController {
             $0?.makeRounded(radius: 6)
         }
         emailLoginButton.makeRoundedWithBorder(radius: 6, color: UIColor.Grey5.cgColor, borderWith: 1)
+    }
+    
+    private func setConstraintWitouthNotch() {
+        backgroundTopSpace.constant = UIDevice.current.hasNotch ? 0 : -70
+        loginStackView.spacing = UIDevice.current.hasNotch ? 12 : 8
     }
     
     private func pushSignUpFirstViewController() {

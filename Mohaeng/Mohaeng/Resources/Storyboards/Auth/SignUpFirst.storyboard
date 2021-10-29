@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -65,20 +65,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPP-yG-0ej">
-                                <rect key="frame" x="24" y="445.66666666666669" width="327" height="40"/>
-                                <color key="backgroundColor" name="DeepYellow"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Iuz-b8-hzo"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <state key="normal" title="확인">
-                                    <color key="titleColor" name="White"/>
-                                </state>
-                                <connections>
-                                    <action selector="touchNextFirstButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mRa-dU-m9R"/>
-                                </connections>
-                            </button>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowCheck" translatesAutoresizingMaskIntoConstraints="NO" id="oes-7O-zp4">
                                 <rect key="frame" x="325" y="203.66666666666666" width="24" height="24"/>
                                 <constraints>
@@ -139,6 +125,20 @@
                                     <constraint firstAttribute="height" constant="1" id="5rM-OZ-6vr"/>
                                 </constraints>
                             </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPP-yG-0ej">
+                                <rect key="frame" x="24" y="445.66666666666669" width="327" height="40"/>
+                                <color key="backgroundColor" name="DeepYellow"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Iuz-b8-hzo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="확인">
+                                    <color key="titleColor" name="White"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchNextFirstButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mRa-dU-m9R"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -155,6 +155,7 @@
                             <constraint firstItem="GPP-yG-0ej" firstAttribute="top" secondItem="UhB-gj-UlV" secondAttribute="bottom" constant="43" id="8Dx-fg-zdr"/>
                             <constraint firstItem="ORM-ee-v8N" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="8LG-8G-hPI"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="RIZ-UM-hBk" secondAttribute="trailing" constant="26" id="BmP-Sn-b7b"/>
+                            <constraint firstItem="GPP-yG-0ej" firstAttribute="top" secondItem="aMq-Ck-7Rl" secondAttribute="bottom" constant="21" id="EKv-N4-aXJ"/>
                             <constraint firstItem="EFz-b7-TeV" firstAttribute="leading" secondItem="UhB-gj-UlV" secondAttribute="leading" id="GNS-Ih-pUv"/>
                             <constraint firstItem="aMq-Ck-7Rl" firstAttribute="trailing" secondItem="UhB-gj-UlV" secondAttribute="trailing" id="GSf-QO-4Cb"/>
                             <constraint firstItem="UhB-gj-UlV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="H64-1A-7vJ"/>
