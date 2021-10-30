@@ -32,7 +32,7 @@ class CharacterColorCollectionViewCell: UICollectionViewCell {
     }
     
     func showSelectedView() {
-        makeRoundedWithBorder(radius: 4, color: UIColor.YellowButton2.cgColor)
+        makeRoundedWithBorder(radius: 4, color: UIColor.YellowButton2.cgColor, borderWith: 2)
         selectedImageView.isHidden = false
     }
     

@@ -45,12 +45,16 @@ class CharacterStyleViewController: UIViewController {
         super.viewDidLoad()
         
         getUserCharacterInfo()
-        initNavigationBar()
         hideTabarController()
         registerXib()
         setDelegation()
         makeViewRounded()
         initViewShadow()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        initNavigationBar()
+        tabBarController?.tabBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -303,7 +307,8 @@ extension CharacterStyleViewController: UICollectionViewDataSource {
     
     func indicateOwnedCard(_ cell: CharacterColorCollectionViewCell, indexPath: IndexPath) {
         if characterData.characters[selectedTypeIndex].cards[indexPath.row].hasCard {
-            cell.setUnlockCharacter(image: characterData.characters[selectedTypeIndex].cards[indexPath.row].image)
+            guard let image = characterData.characters[selectedTypeIndex].cards[indexPath.row].preview else { return }
+            cell.setUnlockCharacter(image: image)
         } else {
             cell.setLockCharacter(typeId: characterData.characters[selectedTypeIndex].type - 1)
         }
@@ -366,7 +371,7 @@ extension CharacterStyleViewController {
     func putCharacterStyle(data: CharacterStyleReqeust) {
         CharacterAPI.shared.putCharacterStyle(data: data) { response in
             switch response {
-            case .success(let data):
+            case .success:
                 self.showToast(message: "스타일이 변경되었습니다.", font: .spoqaHanSansNeo(size: 12))
             case .requestErr(let message):
                 print("requestErr", message)
