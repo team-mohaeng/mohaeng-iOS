@@ -16,7 +16,9 @@ class NewPasswordViewController: UIViewController {
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordUnderlineView: UIView!
     @IBOutlet weak var passwordCheckTextField: UITextField!
+    @IBOutlet weak var passwordCheckUnderlineView: UIView!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var completeButton: UIButton!
     
@@ -33,7 +35,7 @@ class NewPasswordViewController: UIViewController {
     // MARK: - Functions
     
     private func initNavigationBar() {
-        self.navigationController?.initNavigationBarWithBackButton(navigationItem: self.navigationItem)
+        self.navigationController?.initWithBackButton()
         navigationItem.title = "비밀번호 찾기"
     }
     
@@ -76,12 +78,12 @@ class NewPasswordViewController: UIViewController {
     
     private func makeCompleteButtonEnable() {
         completeButton.isEnabled = true
-        completeButton.backgroundColor = UIColor.Pink2
+        completeButton.alpha = 1.0
     }
     
     private func makeCompleteButtonDisable() {
         completeButton.isEnabled = false
-        completeButton.backgroundColor = UIColor.Grey1Bg
+        completeButton.alpha = 0.3
     }
     
     func validatePassword(password: String) -> Bool {
@@ -103,7 +105,24 @@ class NewPasswordViewController: UIViewController {
 }
 
 extension NewPasswordViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        if textField == passwordTextField {
+            passwordUnderlineView.backgroundColor = UIColor.Black
+        } else if textField == passwordCheckTextField {
+            passwordCheckUnderlineView.backgroundColor = UIColor.Black
+        }
+        
+    }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        if textField == passwordTextField {
+            passwordUnderlineView.backgroundColor = UIColor.Grey5
+        } else if textField == passwordCheckTextField {
+            passwordCheckUnderlineView.backgroundColor = UIColor.Grey5
+        }
         
         guard let password = passwordTextField.text  else {
             return
@@ -142,9 +161,7 @@ extension NewPasswordViewController {
         PasswordAPI.shared.putNewPassword(completion: { (response) in
             switch response {
             case .success(let jwt):
-                if let data = jwt as? JwtData {
-                    self.popToRootViewController()
-                }
+                self.popToRootViewController()
             case .requestErr(let message):
                 print("requestErr", message)
             case .pathErr:
