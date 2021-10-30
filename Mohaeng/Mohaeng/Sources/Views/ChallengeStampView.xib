@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -78,16 +78,16 @@
                     <rect key="frame" x="24" y="267" width="342" height="517"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sw0-eU-8jJ">
-                            <rect key="frame" x="140.66666666666666" y="28" width="60.666666666666657" height="24"/>
+                            <rect key="frame" x="139.33333333333334" y="28" width="63.666666666666657" height="24"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1일차" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRQ-Vn-owg">
-                                    <rect key="frame" x="16" y="6" width="28.666666666666671" height="12"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0일차" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRQ-Vn-owg">
+                                    <rect key="frame" x="16" y="6" width="31.666666666666671" height="12"/>
                                     <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="12"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" red="0.10588235294117647" green="0.75686274509803919" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" name="Yellow6"/>
                             <constraints>
                                 <constraint firstItem="TRQ-Vn-owg" firstAttribute="leading" secondItem="Sw0-eU-8jJ" secondAttribute="leading" constant="16" id="Kqd-pE-Vxn"/>
                                 <constraint firstAttribute="height" constant="24" id="UsF-rd-9Ss"/>
@@ -137,7 +137,7 @@
                         <view contentMode="scaleToFill" horizontalCompressionResistancePriority="720" verticalCompressionResistancePriority="720" translatesAutoresizingMaskIntoConstraints="NO" id="dFr-OB-I9c">
                             <rect key="frame" x="60" y="141" width="222" height="265"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="typeMchallenge" translatesAutoresizingMaskIntoConstraints="NO" id="ZCr-7b-eZA">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="stampSkeleton" translatesAutoresizingMaskIntoConstraints="NO" id="ZCr-7b-eZA">
                                     <rect key="frame" x="0.0" y="-13.333333333333314" width="222" height="291.66666666666669"/>
                                 </imageView>
                             </subviews>
@@ -233,9 +233,12 @@
     <resources>
         <image name="challengeHelpButton" width="28" height="28"/>
         <image name="scrollDownIcn" width="31.333333969116211" height="19.333333969116211"/>
-        <image name="typeMchallenge" width="144" height="144"/>
+        <image name="stampSkeleton" width="160" height="160"/>
         <namedColor name="Grey2">
             <color red="0.48199999332427979" green="0.48199999332427979" blue="0.48199999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Yellow6">
+            <color red="1" green="0.94900000095367432" blue="0.81599998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
