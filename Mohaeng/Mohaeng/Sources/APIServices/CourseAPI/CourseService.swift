@@ -52,9 +52,20 @@ extension CourseService: TargetType {
     }
     
     var headers: [String: String]? {
-        return [
-            "Content-Type": "application/json",
-            "Bearer": UserDefaults.standard.string(forKey: "jwtToken") ?? ""
-        ]
+        
+        switch self {
+        case .getCourseLibrary:
+            return [
+                "Content-Type": "application/json",
+                "Bearer": UserDefaults.standard.string(forKey: "jwtToken") ?? ""
+            ]
+        case .putCourseProgress(_):
+            return [
+                "Content-Type": "application/json",
+                "Bearer": UserDefaults.standard.string(forKey: "jwtToken") ?? "",
+                "client": "ios"
+            ]
+        }
+        
     }
 }

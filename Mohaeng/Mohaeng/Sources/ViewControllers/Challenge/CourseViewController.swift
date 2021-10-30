@@ -33,6 +33,8 @@ class CourseViewController: UIViewController {
     
     @IBOutlet weak var courseTableView: UITableView!
     @IBOutlet weak var courseTableViewToTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var emptyView: UIView!
+    @IBOutlet weak var selectCourseButton: UIButton!
     
     // MARK: - View Life Cycle
     
@@ -76,11 +78,13 @@ class CourseViewController: UIViewController {
                 navigationItem: self.navigationItem,
                 firstButtonImage: Const.Image.gnbIcnList,
                 firstButtonClosure: #selector(touchLibraryButton(_:)),
-                backgroundColor: .white)
+                backgroundColor: UIColor.white)
             self.navigationItem.setHidesBackButton(true, animated: true)
         } else if courseViewUsage == .history {
             self.navigationController?.initWithBackButton()
         }
+        
+        self.navigationController?.navigationBar.barTintColor = .white
     }
     
     @objc func touchLibraryButton(_ sender: UIBarButtonItem) {
@@ -128,6 +132,7 @@ class CourseViewController: UIViewController {
         // 챌린지 인증을 위한 id
         self.courseId = data.course.id
         self.challengeId = findTodayChallenge(course: self.course).day
+        
     }
     
     func findTodayChallenge(course: TodayChallengeCourse) -> TodayChallenge {
@@ -140,6 +145,17 @@ class CourseViewController: UIViewController {
         }
         // 모든 챌린지가 완료되었을 때
         return course.challenges.last!
+    }
+    
+    // MARK: - @IBAction Function
+    
+    @IBAction func touchSelectCourseButton(_ sender: Any) {
+        let courseLibraryStoryboard = UIStoryboard(name: Const.Storyboard.Name.courseLibrary, bundle: nil)
+        guard let courseLibraryViewController = courseLibraryStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.courseLibrary) as? CourseLibraryViewController else {
+            return
+        }
+        courseLibraryViewController.doingCourse = false
+        self.navigationController?.pushViewController(courseLibraryViewController, animated: true)
     }
     
 }
@@ -351,11 +367,19 @@ extension CourseViewController {
             switch response {
             case .success(let course):
                 if let data = course as? TodayChallengeData {
+                    self.emptyView.isHidden = true
                     self.updateData(data: data)
                 }
                 
             case .requestErr(let message):
                 print("requestErr", message)
+                if let message = message as? String {
+                    if message == "진행 중인 코스가 없습니다." {
+                        self.emptyView.isHidden = false
+                        self.selectCourseButton.makeRounded(radius: self.selectCourseButton.frame.height / 2)
+                    }
+                }
+                
             case .pathErr:
                 print(".pathErr")
             case .serverErr:
