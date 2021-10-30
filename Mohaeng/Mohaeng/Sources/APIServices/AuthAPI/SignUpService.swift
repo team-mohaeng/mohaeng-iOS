@@ -48,7 +48,8 @@ extension SignUpService: TargetType {
     
     var headers: [String: String]? {
         return [
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "token": UserDefaults.standard.string(forKey: "fcmToken") ?? ""
         ]
     }
 }
