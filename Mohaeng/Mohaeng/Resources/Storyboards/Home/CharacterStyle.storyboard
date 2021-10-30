@@ -23,10 +23,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aBgGrp" translatesAutoresizingMaskIntoConstraints="NO" id="zt7-AO-TJt">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zt7-AO-TJt">
                                 <rect key="frame" x="0.0" y="-56" width="414" height="918"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample-1" translatesAutoresizingMaskIntoConstraints="NO" id="Jwy-gZ-tGW">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jwy-gZ-tGW">
                                 <rect key="frame" x="169" y="72" width="252" height="415.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Jwy-gZ-tGW" secondAttribute="height" multiplier="196:323" id="Hcd-0j-Lmr"/>
@@ -146,7 +146,6 @@
                                             <constraint firstAttribute="height" constant="42" id="zLl-E2-1GX"/>
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="yellowbg"/>
                                         <connections>
                                             <action selector="touchBackgroundToggleButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ydg-oV-KKf"/>
                                         </connections>
@@ -211,9 +210,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="aBgGrp" width="375" height="746"/>
-        <image name="sample-1" width="196" height="323"/>
-        <image name="yellowbg" width="40" height="40"/>
         <namedColor name="Grey2">
             <color red="0.48199999332427979" green="0.48199999332427979" blue="0.48199999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -37,7 +37,7 @@ class CharacterStyleViewController: UIViewController {
     private var allCardSelectedInfo: [[Bool]] = Array(repeating: Array(repeating: false, count: 9), count: 7)
     private var isOpen = false
     private var selectedCardId: Int = 0
-    private var characterData: CharacterStyle = CharacterStyle(currentCharacter: Current(id: 0, image: ""), currentSkin: Current(id: 0, image: ""), characters: [Character(type: 0, cards: [Card(id: 0, image: "", preview: "", hasCard: false, isNew: false)])], skins: [Skin(id: 0, image: "", hasSkin: false)])
+    private var characterData: CharacterStyle = CharacterStyle(currentCharacter: Current(id: 0, image: ""), currentSkin: Current(id: 0, image: ""), characters: [Character(type: 0, cards: [Card]())], skins: [Skin(id: 0, image: "", hasSkin: false)])
     
     // MARK: - View Life Cycle
     
@@ -264,7 +264,8 @@ extension CharacterStyleViewController: UICollectionViewDataSource {
                 cell.hideSelectView()
             }
             
-            if characterData.characters[indexPath.row].cards[0].hasCard {
+            if characterData.characters[indexPath.row].cards.count > 0
+                && characterData.characters[indexPath.row].cards[0].hasCard {
                 cell.setData(image: AppCharacter(rawValue: indexPath.row)!.getThumbnailCharacterImg())
             } else {
                 cell.setData(image: AppCharacter(rawValue: indexPath.row)!.getThumbnailCharacterLockImg())

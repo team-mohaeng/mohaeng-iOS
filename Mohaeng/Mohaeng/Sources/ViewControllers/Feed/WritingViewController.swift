@@ -13,10 +13,17 @@ import Then
 class WritingViewController: UIViewController {
 
 // MARK: - Properties
+    public var mood: Int? {
+        didSet {
+            guard let mood = mood else { return }
+            moodImageView.image = moodImageArray[mood]
+            writingRequest.mood = mood
+        }
+    }
+    
+    private lazy var hasNotch = UIDevice.current.hasNotch
     
     private var writingRequest = WritingRequest(content: "", mood: 0, isPrivate: false, image: nil)
-        
-    private let hasNotch = UIDevice.current.hasNotch
     
     private let imagePicker = UIImagePickerController()
     
@@ -25,7 +32,8 @@ class WritingViewController: UIViewController {
     private let titleLabel = UILabel().then {
         $0.font = .gmarketFont(weight: .medium, size: 22)
         $0.textColor = .Black
-        $0.text = "아라아랑의 오늘을 남겨줘"
+        guard let nickname = UserDefaults.standard.string(forKey: "nickname") else { return }
+        $0.text = "\(nickname)의 오늘을 남겨줘"
     }
     
     private let subTitleLabel = UILabel().then {
@@ -35,7 +43,7 @@ class WritingViewController: UIViewController {
     }
   
     private let writingCountLabel = UILabel().then {
-        $0.font = .spoqaHanSansNeo(weight: .regular, size: 10)
+        $0.font = .spoqaHanSansNeo(weight: .regular, size: 11)
     }
     
     private let yellowBackgroundView = UIView().then {
@@ -107,17 +115,6 @@ class WritingViewController: UIViewController {
     }
     
 // MARK: - View Life Cycle
-    
-    init(with mood: Int) {
-        super.init(nibName: nil, bundle: nil)
-        moodImageView.image = moodImageArray[mood]
-        writingRequest.mood = mood
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -148,12 +145,11 @@ class WritingViewController: UIViewController {
     }
     
     private func initNavigationBar() {
-        navigationController?.initWithBackAndCloseButton(navigationItem: self.navigationItem, closeButtonClosure: #selector(buttonDidTapped(_:)))
         let currentDate = AppDate()
         let currentMonth = currentDate.getMonth()
         let currentDay = currentDate.getDay()
         navigationItem.title = "\(currentMonth)월 \(currentDay)일"
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.spoqaHanSansNeo(weight: .regular, size: 14), NSAttributedString.Key.foregroundColor: UIColor.Black]
+        navigationController?.initWithBackAndCloseButton(navigationItem: self.navigationItem, closeButtonClosure: #selector(buttonDidTapped(_:)))
     }
     
     private func setLayout() {
@@ -250,6 +246,8 @@ extension WritingViewController {
         case removePhotoButton:
             removePhoto()
         case doneButton:
+            doneButton.setBackgroundColor(.YellowButton1, for: .disabled)
+            doneButton.isEnabled = false
             postFeedWriting {[weak self] response in
                 NotificationCenter.default.post(name: NSNotification.Name("RefreshFeedCollectionView"),
                                                 object: nil,
@@ -451,7 +449,7 @@ extension WritingViewController {
         
         doneButton.snp.makeConstraints {
             $0.leading.trailing.bottom.equalToSuperview()
-            $0.height.equalTo(hasNotch ? 76 : 56)
+            $0.height.equalTo(hasNotch ? 86 : 66)
         }
     }
 }

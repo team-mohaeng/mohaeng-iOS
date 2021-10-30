@@ -54,7 +54,7 @@ class OnBoarding4ViewController: UIViewController {
     }
     
     private func addAnimation() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 6) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) { [weak self] in
             self?.navigationController?.pushViewController(OnBoarding5ViewController(), animated: true)
         }
     }

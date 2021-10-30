@@ -226,6 +226,7 @@
 		DD9EFFCC2715568700B3F871 /* OnBoarding2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFCB2715568700B3F871 /* OnBoarding2TableViewCell.swift */; };
 		DD9EFFCF2715798100B3F871 /* OnBoarding4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFCE2715798100B3F871 /* OnBoarding4ViewController.swift */; };
 		DD9EFFD227157B8800B3F871 /* OnBoarding3HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFD127157B8800B3F871 /* OnBoarding3HeaderView.swift */; };
+		DDA572642726EB3F0058809B /* onboardingcard.json in Resources */ = {isa = PBXBuildFile; fileRef = DDA572632726EB3F0058809B /* onboardingcard.json */; };
 		DDA7EF3927214CFF00F100CA /* awards_sok5.json in Resources */ = {isa = PBXBuildFile; fileRef = DDA7EF3327214CFD00F100CA /* awards_sok5.json */; };
 		DDA7EF3A27214CFF00F100CA /* awards_sok6.json in Resources */ = {isa = PBXBuildFile; fileRef = DDA7EF3427214CFD00F100CA /* awards_sok6.json */; };
 		DDA7EF3B27214CFF00F100CA /* awards_sok3.json in Resources */ = {isa = PBXBuildFile; fileRef = DDA7EF3527214CFD00F100CA /* awards_sok3.json */; };
@@ -385,6 +386,7 @@
 		564781B1271DBDB000802D76 /* CourseHistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHistoryService.swift; sourceTree = "<group>"; };
 		564781B3271DBDB800802D76 /* CourseHistoryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHistoryAPI.swift; sourceTree = "<group>"; };
 		565A1EF72700CF81000CAB1B /* MyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPage.swift; sourceTree = "<group>"; };
+		568E60FE2721879F0016C063 /* Mohaeng.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mohaeng.entitlements; sourceTree = "<group>"; };
 		568E60F82721790C0016C063 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		568E60FC27217C160016C063 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		56931AC7271D7D87000EECF5 /* Course.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Course.storyboard; sourceTree = "<group>"; };
@@ -465,6 +467,7 @@
 		DD9EFFCB2715568700B3F871 /* OnBoarding2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding2TableViewCell.swift; sourceTree = "<group>"; };
 		DD9EFFCE2715798100B3F871 /* OnBoarding4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding4ViewController.swift; sourceTree = "<group>"; };
 		DD9EFFD127157B8800B3F871 /* OnBoarding3HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding3HeaderView.swift; sourceTree = "<group>"; };
+		DDA572632726EB3F0058809B /* onboardingcard.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = onboardingcard.json; sourceTree = "<group>"; };
 		DDA7EF3327214CFD00F100CA /* awards_sok5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_sok5.json; sourceTree = "<group>"; };
 		DDA7EF3427214CFD00F100CA /* awards_sok6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_sok6.json; sourceTree = "<group>"; };
 		DDA7EF3527214CFD00F100CA /* awards_sok3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_sok3.json; sourceTree = "<group>"; };
@@ -513,6 +516,7 @@
 		561D75CF26F0BFA30028DBCA /* Mohaeng */ = {
 			isa = PBXGroup;
 			children = (
+				568E60FE2721879F0016C063 /* Mohaeng.entitlements */,
 				561D75D126F0BFA30028DBCA /* Resources */,
 				561D760726F0BFA40028DBCA /* Sources */,
 			);
@@ -614,6 +618,7 @@
 		561D75FA26F0BFA40028DBCA /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				DDA572632726EB3F0058809B /* onboardingcard.json */,
 				DD1C5C43271FE93A004026BC /* RewardCards */,
 				DD6BB494271DB5CF0086240B /* awards_congrats.json */,
 			);
@@ -1278,6 +1283,7 @@
 				561D76AA26F0BFA40028DBCA /* Feed.storyboard in Resources */,
 				569C39662712B28800DED361 /* ChallengeCompletePopUpViewController.xib in Resources */,
 				561D769F26F0BFA40028DBCA /* SignUpThird.storyboard in Resources */,
+				DDA572642726EB3F0058809B /* onboardingcard.json in Resources */,
 				AA7E0AB426FC6C1900106DC2 /* CharacterTypeCollectionViewCell.xib in Resources */,
 				561D773326F0BFA40028DBCA /* ChallengeStampView.xib in Resources */,
 				561D76CC26F0BFA40028DBCA /* BubbleCollectionViewCell.xib in Resources */,
@@ -1703,7 +1709,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = Mohaeng/Mohaeng.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4QG3GC35LA;
@@ -1727,7 +1733,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = Mohaeng/Mohaeng.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4QG3GC35LA;

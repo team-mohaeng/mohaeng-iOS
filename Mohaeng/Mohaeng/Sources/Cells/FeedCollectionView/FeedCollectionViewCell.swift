@@ -43,7 +43,10 @@ class FeedCollectionViewCell: UICollectionViewCell {
         contentsLabel.text = data.content
         nicknameLabel.text = data.nickname
         dateLabel.text = data.month + "월 " + data.day + "일"
-        previewImageView.updateServerImage(data.image)
+        if !previewImageView.updateServerImage(data.image) {
+            previewImageView.image = Const.Image.placeholder
+        }
+        
     }
     
 }

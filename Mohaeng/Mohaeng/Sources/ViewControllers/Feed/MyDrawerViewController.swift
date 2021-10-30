@@ -37,6 +37,12 @@ class MyDrawerViewController: UIViewController {
         addObservers()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        guard let year = selectedYear,
+              let month = selectedMonth else { return }
+        getMyDrawer(year: year, month: month)
+    }
+    
     // MARK: - function
     
     private func registerXib() {
@@ -54,10 +60,6 @@ class MyDrawerViewController: UIViewController {
         self.currentDate = AppDate()
         self.selectedYear = currentDate?.getYear()
         self.selectedMonth = currentDate?.getMonth()
-        
-        guard let year = selectedYear else { return }
-        guard let month = selectedMonth else { return }
-        getMyDrawer(year: year, month: month)
     }
     
     private func setDelegation() {
@@ -144,7 +146,15 @@ extension MyDrawerViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Name.feedCollectionViewCell, for: indexPath) as? FeedCollectionViewCell else { return UICollectionViewCell() }
         
-        if writingStatus && indexPath.row == 0 {
+        guard let year = myDrawer.first?.year,
+              let month = myDrawer.first?.month,
+              let day = myDrawer.first?.day else {
+            return UICollectionViewCell()
+        }
+        
+        if writingStatus
+            && AppDate(year: Int(year) ?? 0, month: Int(month) ?? 0, day: Int(day) ?? 0) == AppDate()
+            && indexPath.row == 0 {
             cell.configureTodayCellUI()
         } else {
             cell.configureDefaultUI()

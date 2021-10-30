@@ -109,3 +109,9 @@ class AppDate {
         self.weekday = weekday
     }
 }
+
+extension AppDate: Equatable {
+    static func == (lhs: AppDate, rhs: AppDate) -> Bool {
+        return lhs.getFormattedDate(with: ". ") == rhs.getFormattedDate(with: ". ")
+    }
+}

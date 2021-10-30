@@ -25,12 +25,16 @@ class BadgeViewController: UIViewController {
         
         getBadges()
         
-        initViewController()
-        initNavigationBar()
         initCollectionView()
         
         setDelegation()
         setLayout()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        initViewController()
+        initNavigationBar()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -217,6 +217,7 @@ extension Const {
         // feed
         static let report = UIImage(named: "btnReport")!
         static let trash = UIImage(named: "gnbIconTrash")!
+        static let placeholder = UIImage(named: "feedPlaceholder")
         
         // emoji
         static let sticker1 = UIImage(named: "sticker1")!
