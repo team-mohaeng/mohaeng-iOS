@@ -128,11 +128,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="solemage" translatesAutoresizingMaskIntoConstraints="NO" id="D8X-kB-ZFk">
-                                <rect key="frame" x="247.66666666666663" y="219.33333333333334" width="51" height="56.000000000000028"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soleImage" translatesAutoresizingMaskIntoConstraints="NO" id="D8X-kB-ZFk">
+                                <rect key="frame" x="239" y="220" width="39" height="50.000000000000028"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="Ooh-E8-4Yt"/>
-                                    <constraint firstAttribute="width" constant="51" id="WTj-p1-m0c"/>
+                                    <constraint firstAttribute="height" constant="50" id="Ooh-E8-4Yt"/>
+                                    <constraint firstAttribute="width" constant="39" id="WTj-p1-m0c"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -142,15 +142,15 @@
                             <constraint firstItem="Kch-49-QkD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0UB-3K-aeK"/>
                             <constraint firstItem="JAC-d7-iEM" firstAttribute="centerY" secondItem="Kch-49-QkD" secondAttribute="centerY" multiplier="1.3" id="BRe-MC-hYk"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fXW-Co-4M0" secondAttribute="trailing" constant="24" id="BVT-xS-MjP"/>
-                            <constraint firstItem="JAC-d7-iEM" firstAttribute="top" secondItem="D8X-kB-ZFk" secondAttribute="bottom" constant="-20" id="Bpm-wr-9s2"/>
+                            <constraint firstItem="JAC-d7-iEM" firstAttribute="top" secondItem="D8X-kB-ZFk" secondAttribute="bottom" constant="-14" id="Bpm-wr-9s2"/>
                             <constraint firstItem="Kch-49-QkD" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="CjP-8g-Wd2"/>
                             <constraint firstItem="fXW-Co-4M0" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="FTp-84-gXe"/>
                             <constraint firstItem="rM6-Cx-uyl" firstAttribute="top" secondItem="JAC-d7-iEM" secondAttribute="bottom" constant="7" id="Iii-re-d4f"/>
                             <constraint firstItem="JAC-d7-iEM" firstAttribute="centerX" secondItem="Kch-49-QkD" secondAttribute="centerX" id="NFB-T2-A80"/>
-                            <constraint firstItem="D8X-kB-ZFk" firstAttribute="leading" secondItem="JAC-d7-iEM" secondAttribute="trailing" id="Ngd-7p-VGQ"/>
                             <constraint firstItem="6Os-uS-eQv" firstAttribute="top" secondItem="fXW-Co-4M0" secondAttribute="bottom" constant="24" id="ZGM-zx-eYM"/>
                             <constraint firstItem="Kch-49-QkD" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="aF5-HH-0xb"/>
                             <constraint firstItem="fXW-Co-4M0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="c9p-8n-g4O"/>
+                            <constraint firstItem="D8X-kB-ZFk" firstAttribute="leading" secondItem="JAC-d7-iEM" secondAttribute="trailing" constant="-8.6666666666666856" id="cfU-Fk-ieu"/>
                             <constraint firstItem="rM6-Cx-uyl" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="tJs-6W-M7R"/>
                             <constraint firstItem="6Os-uS-eQv" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="vw3-cF-Gzk"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="6Os-uS-eQv" secondAttribute="bottom" constant="56" id="wJB-Pv-D1s"/>
@@ -195,7 +195,7 @@
         <image name="backgroundImage " width="375" height="407"/>
         <image name="kakaoIcon" width="20" height="20"/>
         <image name="messageIcon" width="20" height="20"/>
-        <image name="solemage" width="51" height="56"/>
+        <image name="soleImage" width="39" height="50"/>
         <namedColor name="Grey5">
             <color red="0.91399997472763062" green="0.91399997472763062" blue="0.91399997472763062" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
