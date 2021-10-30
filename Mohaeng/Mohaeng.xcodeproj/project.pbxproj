@@ -237,8 +237,8 @@
 		DDEBD21E270F5FE90011EDC6 /* BadgeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBD21D270F5FE90011EDC6 /* BadgeAPI.swift */; };
 		DDEBD220270F6CFA0011EDC6 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBD21F270F6CFA0011EDC6 /* Badge.swift */; };
 		DDF110452709DFB1004FD5FB /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF110442709DFB1004FD5FB /* UIButton+Extension.swift */; };
-		EC087641271FFDB400EB1F51 /* KakaoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC087640271FFDB400EB1F51 /* KakaoAPI.swift */; };
-		EC087643271FFDCB00EB1F51 /* KakaoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC087642271FFDCB00EB1F51 /* KakaoService.swift */; };
+		EC087641271FFDB400EB1F51 /* SocialAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC087640271FFDB400EB1F51 /* SocialAPI.swift */; };
+		EC087643271FFDCB00EB1F51 /* SocialService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC087642271FFDCB00EB1F51 /* SocialService.swift */; };
 		EC31776326FDB50E0076BCEC /* CarouselLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */; };
 /* End PBXBuildFile section */
 
@@ -386,9 +386,9 @@
 		564781B1271DBDB000802D76 /* CourseHistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHistoryService.swift; sourceTree = "<group>"; };
 		564781B3271DBDB800802D76 /* CourseHistoryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHistoryAPI.swift; sourceTree = "<group>"; };
 		565A1EF72700CF81000CAB1B /* MyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPage.swift; sourceTree = "<group>"; };
-		568E60FE2721879F0016C063 /* Mohaeng.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mohaeng.entitlements; sourceTree = "<group>"; };
 		568E60F82721790C0016C063 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		568E60FC27217C160016C063 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		568E60FE2721879F0016C063 /* Mohaeng.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mohaeng.entitlements; sourceTree = "<group>"; };
 		56931AC7271D7D87000EECF5 /* Course.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Course.storyboard; sourceTree = "<group>"; };
 		569C39632712B28800DED361 /* ChallengeCompletePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCompletePopUpViewController.swift; sourceTree = "<group>"; };
 		569C39642712B28800DED361 /* ChallengeCompletePopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeCompletePopUpViewController.xib; sourceTree = "<group>"; };
@@ -478,8 +478,8 @@
 		DDEBD21D270F5FE90011EDC6 /* BadgeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAPI.swift; sourceTree = "<group>"; };
 		DDEBD21F270F6CFA0011EDC6 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		DDF110442709DFB1004FD5FB /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
-		EC087640271FFDB400EB1F51 /* KakaoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPI.swift; sourceTree = "<group>"; };
-		EC087642271FFDCB00EB1F51 /* KakaoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoService.swift; sourceTree = "<group>"; };
+		EC087640271FFDB400EB1F51 /* SocialAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAPI.swift; sourceTree = "<group>"; };
+		EC087642271FFDCB00EB1F51 /* SocialService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialService.swift; sourceTree = "<group>"; };
 		EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselLayoutView.swift; sourceTree = "<group>"; };
 		FF85070BA1F5A448133681A6 /* Pods_Mohaeng.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mohaeng.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -883,8 +883,8 @@
 				561D766226F0BFA40028DBCA /* LoginService.swift */,
 				561D766326F0BFA40028DBCA /* SignUpService.swift */,
 				561D766426F0BFA40028DBCA /* PasswordService.swift */,
-				EC087640271FFDB400EB1F51 /* KakaoAPI.swift */,
-				EC087642271FFDCB00EB1F51 /* KakaoService.swift */,
+				EC087640271FFDB400EB1F51 /* SocialAPI.swift */,
+				EC087642271FFDCB00EB1F51 /* SocialService.swift */,
 			);
 			path = AuthAPI;
 			sourceTree = "<group>";
@@ -1477,7 +1477,7 @@
 				EC31776326FDB50E0076BCEC /* CarouselLayoutView.swift in Sources */,
 				561D770C26F0BFA40028DBCA /* PasswordAPI.swift in Sources */,
 				561D771126F0BFA40028DBCA /* CourseAPI.swift in Sources */,
-				EC087641271FFDB400EB1F51 /* KakaoAPI.swift in Sources */,
+				EC087641271FFDB400EB1F51 /* SocialAPI.swift in Sources */,
 				561D76D426F0BFA40028DBCA /* CourseLibraryCollectionViewCell.swift in Sources */,
 				561D770D26F0BFA40028DBCA /* LoginService.swift in Sources */,
 				AAEDB375271C688000E26615 /* CharacterAPI.swift in Sources */,
@@ -1521,7 +1521,7 @@
 				561D76F426F0BFA40028DBCA /* EmailLoginViewController.swift in Sources */,
 				561D772426F0BFA40028DBCA /* Course.swift in Sources */,
 				561D770526F0BFA40028DBCA /* ChallengeAPI.swift in Sources */,
-				EC087643271FFDCB00EB1F51 /* KakaoService.swift in Sources */,
+				EC087643271FFDCB00EB1F51 /* SocialService.swift in Sources */,
 				561D773026F0BFA40028DBCA /* CustomIntensityVisualEffectView.swift in Sources */,
 				561D76B226F0BFA40028DBCA /* ViewController.swift in Sources */,
 				561D770E26F0BFA40028DBCA /* SignUpService.swift in Sources */,
@@ -1712,7 +1712,7 @@
 				CODE_SIGN_ENTITLEMENTS = Mohaeng/Mohaeng.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4QG3GC35LA;
+				DEVELOPMENT_TEAM = EQ7Z68Z2F2;
 				INFOPLIST_FILE = Mohaeng/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1736,7 +1736,7 @@
 				CODE_SIGN_ENTITLEMENTS = Mohaeng/Mohaeng.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4QG3GC35LA;
+				DEVELOPMENT_TEAM = EQ7Z68Z2F2;
 				INFOPLIST_FILE = Mohaeng/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
