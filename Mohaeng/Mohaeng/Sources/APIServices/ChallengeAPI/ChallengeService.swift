@@ -58,9 +58,19 @@ extension ChallengeService: TargetType {
     }
     
     var headers: [String: String]? {
-        return [
-            "Content-Type": "application/json",
-            "Bearer": UserDefaults.standard.string(forKey: "jwtToken") ?? ""
-        ]
+        
+        switch self {
+        case .getAllChallenges:
+            return [
+                "Content-Type": "application/json",
+                "Bearer": UserDefaults.standard.string(forKey: "jwtToken") ?? "",
+                "client": "ios"
+            ]
+        case .putTodayChallenge(_, _):
+            return [
+                "Content-Type": "application/json",
+                "Bearer": UserDefaults.standard.string(forKey: "jwtToken") ?? ""
+            ]
+        }
     }
 }
