@@ -18,6 +18,7 @@ class NotificationViewController: UIViewController {
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var notificationCollectionView: UICollectionView!
+    @IBOutlet weak var emptyLabel: UILabel!
     
     // MARK: - View Life Cycle
     
@@ -93,6 +94,9 @@ class NotificationViewController: UIViewController {
                 }
             }
             
+            if !newNoti.isEmpty || !oldNoti.isEmpty {
+                emptyLabel.isHidden = true
+            }
         }
         
         notificationCollectionView.reloadData()
