@@ -80,7 +80,7 @@ class OddDayTableViewCell: UITableViewCell {
             dayLabelBgView.isHidden = false
             dayLabelBgView.backgroundColor = appCourse.getDarkColor()
             
-            dayLabel.text = "\(challenge.month).\(challenge.day) 완료"
+            dayLabel.text = "\(challenge.month).\(challenge.date) 완료"
         } else {
             dayLabelBgView.isHidden = true
         }
@@ -142,6 +142,9 @@ class OddDayTableViewCell: UITableViewCell {
         case 0: // 진행 전 챌린지
             currentLine.strokeColor = UIColor.Grey4.cgColor
             setDashedLine(line: currentLine)
+            
+            dayCountLabel.textColor = UIColor.Grey2
+            descriptionLabel.textColor = UIColor.Grey2
         
         case 1: // 진행 중인 챌린지
             currentLine.strokeColor = appCourse.getDarkColor().cgColor

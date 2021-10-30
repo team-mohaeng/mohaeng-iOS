@@ -13,30 +13,61 @@ class SignUpThirdViewController: UIViewController {
     // MARK: - Properties
     
     var signUpUser = SignUpUser.shared
-    
+    var placeholder: String?
     enum NicknameUsage: Int {
         case signUp = 0, myPage
     }
     
     var nicknameUsage: NicknameUsage?
-    
     // MARK: - @IBOutlet Properties
     
+    @IBOutlet var nickNameSetLabel: UILabel!
     @IBOutlet weak var nickNameTextField: UITextField!
     @IBOutlet weak var nickNameBottomView: UIView!
     @IBOutlet weak var nickNameErrorLabel: UILabel!
     @IBOutlet weak var checkButton: UIButton!
-    
+    @IBOutlet var nickNameConditionLabel: UILabel!
+    @IBOutlet var imageToNicknameTextField: NSLayoutConstraint!
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         makeButtonRound()
         checkNickNameTextField()
+        divideViewControllerCase()
+    }
+    
+    private func divideViewControllerCase() {
+        switch nicknameUsage {
+        case .signUp:
+            setCaseSignUP()
+        case .myPage:
+            setCaseMyPage()
+        case .none:
+            break
+        }
     }
     
     // MARK: - Functions
     
+    private func setCaseSignUP() {
+        nickNameConditionLabel.isHidden = true
+        imageToNicknameTextField.constant = 40
+    }
+    
+    private func setCaseMyPage() {
+        nickNameConditionLabel.isHidden = false
+        nickNameSetLabel.isHidden = true
+        checkButton.setTitle("닉네임 수정하기", for: .normal)
+        title = "닉네임 수정"
+        setNicknameTextField()
+    }
+    
+    private func setNicknameTextField() {
+        if let nickname = self.placeholder {
+            nickNameTextField.placeholder = nickname
+        }
+    }
     private func makeButtonRound() {
         checkButton.makeRounded(radius: 20)
     }
@@ -58,6 +89,10 @@ class SignUpThirdViewController: UIViewController {
     func changeRootViewController(_ viewControllerToPresent: UITabBarController) {
             viewControllerToPresent.modalPresentationStyle = .overFullScreen
             self.present(viewControllerToPresent, animated: true, completion: nil)
+    }
+    
+    func popMyPageViewController() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     private func changeNickNameTextFieldAttribute(labelBool: Bool, buttonBool: Bool, color: UIColor) {
@@ -101,16 +136,25 @@ class SignUpThirdViewController: UIViewController {
     }
     @IBAction func touchNicknameCheckButton(_ sender: UIButton) {
         
-        guard let isSocial = signUpUser.isSocial else {
-            return
-        }
-        
-        if isSocial {
-            postSocialNickname()
-        } else {
-            postSignUp()
+        switch nicknameUsage {
+        case.signUp :
+            guard let isSocial = signUpUser.isSocial else {
+                return
+            }
+            
+            if isSocial {
+                postSocialNickname()
+            } else {
+                postSignUp()
+            }
+        case.myPage :
+            putNickname()
+            
+        default :
+            break
         }
     }
+    
 }
 
 extension SignUpThirdViewController {
@@ -169,5 +213,26 @@ extension SignUpThirdViewController {
         },
                                            token: UserDefaults.standard.string(forKey: "jwtToken") ?? "",
                                            nickname: nickname)
+    }
+    
+    func putNickname() {
+        guard let nickname = nickNameTextField.text else {
+            return
+        }
+     
+        MyPageAPI.shared.putNickname(completion: { (response) in
+            switch response {
+            case .success(let jwt):
+                self.popMyPageViewController()
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }, nickname: nickname)
     }
 }

@@ -36,7 +36,7 @@ class CourseLibraryViewController: UIViewController {
         super.viewWillAppear(true)
         fetchCourses()
     }
-
+    
     // MARK: - Functions
     
     private func initNavigationBar() {
@@ -79,7 +79,13 @@ class CourseLibraryViewController: UIViewController {
         askPopUp.modalPresentationStyle = .overCurrentContext
         askPopUp.modalTransitionStyle = .crossDissolve
         askPopUp.popUpUsage = .twoButtonWithImage
-        askPopUp.setText(title: "안녕하세요타이틀", description: "이런부분은나중에strings파일만들어서관리하려고합니다어떤가용?")
+        
+        if doingCourse {
+            askPopUp.setText(title: Const.String.changeCoursePopUpTitle, description: Const.String.changeCoursePopUpContent)
+        } else {
+            askPopUp.setText(title: Const.String.startCoursePopUpTitle, description: Const.String.startCoursePopUpTitle)
+        }
+        
         askPopUp.popUpActionDelegate = self
         tabBarController?.present(askPopUp, animated: true, completion: nil)
     }
@@ -117,7 +123,7 @@ extension CourseLibraryViewController: UICollectionViewDataSource {
         
         switch collectionView {
         case propertyCollectionView:
-            return AppCourse.count
+            return AppCourse.count + 2
             
         case courseLibraryCollectionView:
             return courseListViewModel.numberOfRowsInSection(property: selectedProperty, section: 0)
@@ -135,11 +141,17 @@ extension CourseLibraryViewController: UICollectionViewDataSource {
                 
                 if indexPath.row == 0 {
                     cell.setLabel(title: "전체")
+                    if selectedProperty == 0 {
+                        cell.selectCell()
+                    }
+                } else if indexPath.row == AppCourse.count + 1 {
+                    cell.setLabel(title: "다했어요!")
                 } else {
                     if let title = AppCourse(rawValue: indexPath.row)?.getKorean() {
                         cell.setLabel(title: title)
                     }
                 }
+                cell.initSelectedState()
                 
                 return cell
                 
@@ -165,7 +177,7 @@ extension CourseLibraryViewController: UICollectionViewDataSource {
         
         switch collectionView {
         case propertyCollectionView:
-            return UIEdgeInsets(top: 19, left: 18, bottom: 10, right: 18)
+            return UIEdgeInsets(top: 0, left: 18, bottom: 10, right: 18)
         case courseLibraryCollectionView:
             return UIEdgeInsets(top: 22, left: 24, bottom: 0, right: 24)
         default:
@@ -183,7 +195,26 @@ extension CourseLibraryViewController: UICollectionViewDelegateFlowLayout {
         
         switch collectionView {
         case propertyCollectionView:
-            return CGSize(width: 59, height: 14)
+            
+            var categorySize = CGSize()
+            
+            if indexPath.row == 0 {
+                categorySize = NSString(string: "전체").size(withAttributes: [
+                    NSAttributedString.Key.font: UIFont.spoqaHanSansNeo(weight: .regular, size: 12)
+                ])
+            } else if indexPath.row == AppCourse.count + 1 {
+                categorySize = NSString(string: "다했어요!").size(withAttributes: [
+                    NSAttributedString.Key.font: UIFont.spoqaHanSansNeo(weight: .regular, size: 12)
+                ])
+            } else {
+                if let title = AppCourse(rawValue: indexPath.row)?.getKorean() {
+                    categorySize = NSString(string: title).size(withAttributes: [
+                        NSAttributedString.Key.font: UIFont.spoqaHanSansNeo(weight: .regular, size: 12)
+                    ])
+                }
+            }
+            
+            return CGSize(width: categorySize.width + 10, height: 43)
         case courseLibraryCollectionView:
             return unDoneCellSize(for: indexPath)
         default:
@@ -200,7 +231,14 @@ extension CourseLibraryViewController: UICollectionViewDelegateFlowLayout {
         
         switch collectionView {
         case propertyCollectionView:
+            if selectedProperty == 0 && indexPath.row != 0 {
+                guard let firstCell = propertyCollectionView.cellForItem(at: IndexPath.init(item: 0, section: 0)) as? CourseCategoryCollectionViewCell else { return }
+                firstCell.deselectCell()
+            }
             selectedProperty = indexPath.row
+            guard let selectedCell = collectionView.cellForItem(at: indexPath) as? CourseCategoryCollectionViewCell else { return }
+            selectedCell.selectCell()
+            
             courseLibraryCollectionView.reloadData()
             
         case courseLibraryCollectionView:
@@ -212,6 +250,16 @@ extension CourseLibraryViewController: UICollectionViewDelegateFlowLayout {
             return
         }
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        switch collectionView {
+        case propertyCollectionView:
+            guard let selectedCell = collectionView.cellForItem(at: indexPath) as? CourseCategoryCollectionViewCell else { return }
+            selectedCell.deselectCell()
+        default:
+            return
+        }
     }
     
     private func unDoneCellSize(for indexPath: IndexPath) -> CGSize {

@@ -16,13 +16,13 @@ class MyDrawerViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var myDrawer: [Feed] = []
+    private var myDrawer: [Feed] = [Feed(postID: 0, course: "", challenge: 0, image: "", mood: 0, content: "", nickname: "", year: "", month: "", day: "", weekday: "", emoji: [Emoji(id: 0, count: 0)], myEmoji: 0, isReport: false, isDelete: false)]
     private var modalDateView: DatePickerViewController?
     private var currentDate: AppDate?
     private var feedCount = 0
     private var selectedYear: Int?
     private var selectedMonth: Int?
-    private var writingStatus: Int = 0
+    private var writingStatus: Bool = false
     
     // MARK: - Life Cycle
     
@@ -35,6 +35,12 @@ class MyDrawerViewController: UIViewController {
         registerXib()
         setDelegation()
         addObservers()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        guard let year = selectedYear,
+              let month = selectedMonth else { return }
+        getMyDrawer(year: year, month: month)
     }
     
     // MARK: - function
@@ -54,10 +60,6 @@ class MyDrawerViewController: UIViewController {
         self.currentDate = AppDate()
         self.selectedYear = currentDate?.getYear()
         self.selectedMonth = currentDate?.getMonth()
-        
-        guard let year = selectedYear else { return }
-        guard let month = selectedMonth else { return }
-        getMyDrawer(year: year, month: month)
     }
     
     private func setDelegation() {
@@ -83,8 +85,8 @@ class MyDrawerViewController: UIViewController {
         feedCollectionView.reloadData()
     }
     
-    func setWritingStatus(writingInt: Int) {
-        writingStatus = writingInt
+    func setWritingStatus(writingStatus: Bool) {
+        self.writingStatus = writingStatus
     }
     
     @objc func presentPickerView(notification: NSNotification) {
@@ -126,6 +128,17 @@ extension MyDrawerViewController: DatePickerViewDelegate {
 }
 
 extension MyDrawerViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let feedDetailStoryboard = UIStoryboard.init(name: Const.Storyboard.Name.feedDetail, bundle: nil)
+        guard let feedDetailViewController = feedDetailStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.feedDetail) as? FeedDetailViewController else { return }
+        
+        feedDetailViewController.setMyDrawer(feeds: myDrawer, year: selectedYear, month: selectedMonth)
+        feedDetailViewController.setPreviousController(viewController: .myDrawer)
+        feedDetailViewController.setSelectedContentsIndexPath(indexPath: indexPath)
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.pushViewController(feedDetailViewController, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return myDrawer.count
     }
@@ -133,7 +146,15 @@ extension MyDrawerViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Name.feedCollectionViewCell, for: indexPath) as? FeedCollectionViewCell else { return UICollectionViewCell() }
         
-        if writingStatus == 1 && indexPath.row == 0 {
+        guard let year = myDrawer.first?.year,
+              let month = myDrawer.first?.month,
+              let day = myDrawer.first?.day else {
+            return UICollectionViewCell()
+        }
+        
+        if writingStatus
+            && AppDate(year: Int(year) ?? 0, month: Int(month) ?? 0, day: Int(day) ?? 0) == AppDate()
+            && indexPath.row == 0 {
             cell.configureTodayCellUI()
         } else {
             cell.configureDefaultUI()

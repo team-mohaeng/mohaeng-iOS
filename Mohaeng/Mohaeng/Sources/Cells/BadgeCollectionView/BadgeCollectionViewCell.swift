@@ -25,6 +25,7 @@ class BadgeCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setLayout()
+        render() 
     }
     
     required init?(coder: NSCoder) {
@@ -38,6 +39,9 @@ class BadgeCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Functions
+    private func render() {
+        contentView.backgroundColor = .YellowThemeLight
+    }
     
     private func setLayout() {
         setViewHierachy()

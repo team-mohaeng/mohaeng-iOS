@@ -15,6 +15,8 @@ class HappyPopUpViewController: UIViewController {
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var happyPercentLabel: UILabel!
+    @IBOutlet weak var happyDescription: UILabel!
+    @IBOutlet weak var levelDescription: UILabel!
     
     // MARK: - Properties
     
@@ -28,8 +30,9 @@ class HappyPopUpViewController: UIViewController {
         // Do any additional setup after loading the view.
         initViewRounding()
         initData()
+        setLineHeight()
     }
-    
+        
     // MARK: - Functions
     
     func initViewRounding() {
@@ -39,8 +42,13 @@ class HappyPopUpViewController: UIViewController {
     
     func initData() {
         levelLabel.text = "Lv.\(data.level)"
-        happyPercentLabel.text = "해피지수 \(data.happy)/\(data.fullHappy) (\(getHappyPercent())%)"
+        happyPercentLabel.text = "해피지수  \(data.happy)/\(data.fullHappy) (\(getHappyPercent())%)"
         progressView.setProgress(Float(data.happy) / Float(data.fullHappy), animated: false)
+    }
+    
+    func setLineHeight() {
+        happyDescription.setLineHeight(lineHeight: 18)
+        levelDescription.setLineHeight(lineHeight: 18)
     }
     
     func getHappyPercent() -> Int {

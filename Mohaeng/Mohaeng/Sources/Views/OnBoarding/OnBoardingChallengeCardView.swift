@@ -29,6 +29,13 @@ class OnBoardingChallengeCardView: UIView {
         }
     }
     
+    public var isDone: Bool = false {
+        didSet {
+            guard let course = course else {return}
+            challengeImageView.image = isDone ? course.getDoneStampImage() : course.getUndoneStampImage()
+        }
+    }
+    
     private let cardTitleLabel = UILabel().then {
         $0.text = "어제 외운 단어로 문장 만들기"
         $0.font = .gmarketFont(weight: .medium, size: 25)
@@ -51,7 +58,6 @@ class OnBoardingChallengeCardView: UIView {
     }
     
     private let challengeImageView = UIImageView().then {
-        $0.image = Const.Image.typeCchallenge
         $0.isUserInteractionEnabled = true
         $0.makeSpring()
     }

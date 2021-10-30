@@ -24,6 +24,7 @@ extension UINavigationController {
         appearance.configureWithTransparentBackground()
         self.navigationBar.standardAppearance = appearance
         self.navigationBar.scrollEdgeAppearance = appearance
+        self.setTitleTextAttributes(appearance)
     }
     
     // MARK: - 뒤로가기 버튼
@@ -40,12 +41,13 @@ extension UINavigationController {
         self.navigationBar.standardAppearance = appearance
         self.navigationBar.scrollEdgeAppearance = appearance
         self.navigationBar.tintColor = .black
+        self.setTitleTextAttributes(appearance)
     }
     
     // MARK: - 뒤로가기 버튼 + 완료 버튼
     
-    func initWithBackAndDoneButton(navigationItem: UINavigationItem?, doneButtonClosure: Selector) {
-        initWithBackButton()
+    func initWithBackAndDoneButton(navigationItem: UINavigationItem?, doneButtonClosure: Selector, backgroundColor: UIColor? = nil) {
+        initWithBackButton(backgroundColor: backgroundColor)
         
         // done Button
         let doneButton = UIBarButtonItem(title: "완료", style: .done, target: self.topViewController, action: doneButtonClosure)
@@ -54,8 +56,8 @@ extension UINavigationController {
     
     // MARK: - 뒤로가기 버튼 + 커스텀 버튼 1개
     
-    func initWithOneCustomButton(navigationItem: UINavigationItem?, firstButtonImage: UIImage, firstButtonClosure: Selector) {
-        initWithBackButton()
+    func initWithOneCustomButton(navigationItem: UINavigationItem?, firstButtonImage: UIImage, firstButtonClosure: Selector, backgroundColor: UIColor? = nil) {
+        initWithBackButton(backgroundColor: backgroundColor)
         
         let firstButton = UIBarButtonItem(image: firstButtonImage, style: .plain, target: self.topViewController, action: firstButtonClosure)
         navigationItem?.rightBarButtonItem = firstButton
@@ -76,11 +78,22 @@ extension UINavigationController {
     
     func initWithBackAndCloseButton(navigationItem: UINavigationItem?, closeButtonClosure: Selector) {
         initWithBackButton()
-        
+
         let closeButton = UIBarButtonItem(image: Const.Image.gnbIconX, style: .plain, target: self.topViewController, action: closeButtonClosure)
         navigationItem?.rightBarButtonItem = closeButton
     }
     
+    // MARK: - title 추가
+    
+    func setTitleTextAttributes(_ appearance: UINavigationBarAppearance) {
+        appearance.configureWithTransparentBackground()
+        appearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont.spoqaHanSansNeo(weight: .regular, size: 15), NSAttributedString.Key.foregroundColor: UIColor.Black]
+        
+        self.navigationBar.standardAppearance = appearance
+        self.navigationBar.compactAppearance = appearance
+        self.navigationBar.scrollEdgeAppearance = appearance
+
+    }
     // MARK: - @objc function
     
 //    @objc func touchBackButton() {

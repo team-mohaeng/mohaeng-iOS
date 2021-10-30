@@ -108,7 +108,7 @@ extension Const {
         static let imgPhotoUpload = UIImage(named: "btnPhotoUp")
         
         // mohaeng feed image
-        static let feedGraphic = UIImage(named: "feedCha")
+        static let feedGraphic = UIImage(named: "grpXFeed")
         static let imageNoneGrp = UIImage(named: "feednoneGrp")
         
         // mohaeng character style image
@@ -146,7 +146,7 @@ extension Const {
         static let redLibraryImage = UIImage(named: "redLibraryImage")!
         static let redSmallImage = UIImage(named: "redSmallImage")!
         static let redUndoneStampImage = UIImage(named: "redUndoneStampImage")!
-        static let redDoneStampImage = UIImage(named: "redUndoneStampImage")!
+        static let redDoneStampImage = UIImage(named: "redDoneStampImage")!
         /// orange
         static let orangeBigImage = UIImage(named: "orangeBigImage")!
         static let orangeLibraryImage = UIImage(named: "orangeLibraryImage")!
@@ -216,6 +216,8 @@ extension Const {
 
         // feed
         static let report = UIImage(named: "btnReport")!
+        static let trash = UIImage(named: "gnbIconTrash")!
+        static let placeholder = UIImage(named: "feedPlaceholder")
         
         // emoji
         static let sticker1 = UIImage(named: "sticker1")!
@@ -232,12 +234,14 @@ extension Const {
         static let elephantImg = UIImage(named: "stylechactab4")!
         static let hedgehogImg = UIImage(named: "stylechactab5")!
         static let squirrelImg = UIImage(named: "stylechactab6")!
+        static let bearImg = UIImage(named: "stylechactab8")!
         
         static let rabbitLockImg = UIImage(named: "stylechactabLock2")!
         static let giraffeLockImg = UIImage(named: "stylechactabLock3")!
         static let elephantLockImg = UIImage(named: "stylechactabLock4")!
         static let hedgehogLockImg = UIImage(named: "stylechactabLock5")!
         static let squirrelLockImg = UIImage(named: "stylechactabLock6")!
+        static let bearLockImg = UIImage(named: "stylechactabLock8")!
         
         static let duckCardLockImg = UIImage(named: "stylecardLock1")!
         static let rabbitCardLockImg = UIImage(named: "stylecardLock2")!
@@ -245,6 +249,7 @@ extension Const {
         static let elephantCardLockImg = UIImage(named: "stylecardLock4")!
         static let hedgehogCardLockImg = UIImage(named: "stylecardLock5")!
         static let squirrelCardLockImg = UIImage(named: "stylecardLock6")!
+        static let bearCardLockImg = UIImage(named: "stylecardLock8")!
 
     }
 }

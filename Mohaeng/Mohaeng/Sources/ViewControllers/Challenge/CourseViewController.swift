@@ -39,13 +39,14 @@ class CourseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initNavigationBar()
         registerXib()
         assignDelegation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+        initNavigationBar()
         
         switch courseViewUsage {
         case .course:
@@ -74,7 +75,8 @@ class CourseViewController: UIViewController {
             self.navigationController?.initWithOneCustomButton(
                 navigationItem: self.navigationItem,
                 firstButtonImage: Const.Image.gnbIcnList,
-                firstButtonClosure: #selector(touchLibraryButton(_:)))
+                firstButtonClosure: #selector(touchLibraryButton(_:)),
+                backgroundColor: .white)
             self.navigationItem.setHidesBackButton(true, animated: true)
         } else if courseViewUsage == .history {
             self.navigationController?.initWithBackButton()
@@ -182,7 +184,7 @@ extension CourseViewController: UITableViewDelegate {
                 headerView.backgroundView = headerBgView
                 // TODO: - shadow refactoring
                 headerView.layer.shadowOpacity = 0.12
-                headerView.layer.shadowRadius = 0
+                headerView.layer.shadowRadius = 1
                 headerView.layer.shadowOffset = CGSize(width: 0, height: 2)
                 headerView.layer.shadowColor = UIColor.black.cgColor
                 
@@ -205,7 +207,7 @@ extension CourseViewController: UITableViewDelegate {
                 headerView.backgroundView = headerBgView
                 // TODO: - shadow refactoring
                 headerView.layer.shadowOpacity = 0.12
-                headerView.layer.shadowRadius = 0
+                headerView.layer.shadowRadius = 1
                 headerView.layer.shadowOffset = CGSize(width: 0, height: 2)
                 headerView.layer.shadowColor = UIColor.black.cgColor
                 

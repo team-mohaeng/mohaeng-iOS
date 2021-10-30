@@ -24,14 +24,18 @@ class OnBoarding3ViewController: UIViewController {
         didSet {
             headerView.isDone = isDone
             tableView.isScrollEnabled = isDone
-            tableView.reloadData()
+            if isDone {
+                scrollToBottom()
+                tableView.reloadData()
+            }
         }
     }
     
     private let tableView = UITableView(frame: CGRect.zero, style: .grouped).then {
         $0.showsVerticalScrollIndicator = false
         $0.separatorStyle = .none
-        $0.backgroundColor = .White
+        $0.backgroundColor = .YellowThemeLight
+        $0.bounces = false
     }
     
     private let headerView = OnBoarding3HeaderView()
@@ -97,6 +101,13 @@ class OnBoarding3ViewController: UIViewController {
         let bottomPadding = window?.safeAreaInsets.bottom ?? 0
         self.tableView.tableHeaderView?.frame.size.height = view.safeAreaLayoutGuide.layoutFrame.height + bottomPadding
     }
+    
+    private func scrollToBottom() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+            guard let self = self else {return}
+            self.tableView.scrollToRow(at: IndexPath(row: 1, section: 0), at: .top, animated: true)
+        }
+    }
 
 }
 
@@ -106,9 +117,17 @@ extension OnBoarding3ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: Const.Xib.Identifier.courseHeaderView) as? CourseHeaderView {
             
-            headerView.headerBgView.makeRoundedSpecificCorner(corners: [.bottomLeft, .bottomRight], cornerRadius: 25)
+            let headerBgView: UIView = {
+                let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 132))
+                view.backgroundColor = .white
+                view.makeRoundedSpecificCorner(corners: [.bottomLeft, .bottomRight], cornerRadius: 25)
+                
+                return view
+            }()
+            headerView.backgroundView = headerBgView
+            
             headerView.layer.shadowOpacity = 0.12
-            headerView.layer.shadowRadius = 0
+            headerView.layer.shadowRadius = 1
             headerView.layer.shadowOffset = CGSize(width: 0, height: 2)
             headerView.layer.shadowColor = UIColor.black.cgColor
             

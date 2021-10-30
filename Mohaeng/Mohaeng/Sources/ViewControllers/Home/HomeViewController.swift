@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
     private var chattingButton: UIBarButtonItem!
     private var mypageButton: UIBarButtonItem!
     private var morningText: String = "아침이야!\n오늘 하루도 화이팅"
-    private var nightText: String = "벌써 밤이야!\n인증하고 일찍자자"
+    private var nightText: String = "벌써 밤이야!\n인증하고 일찍 자자"
     
     // MARK: - View Life Cycle
     
@@ -45,11 +45,11 @@ class HomeViewController: UIViewController {
         rotateProgressView()
         makeShadow()
         addTapGesture()
-        getHomeInfomation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        getHomeInfomation()
         initNavigationBar()
     }
     
@@ -112,6 +112,8 @@ class HomeViewController: UIViewController {
         progressView.makeRoundedWithBorder(radius: 22, color: UIColor.white.cgColor, borderWith: 2)
         
         customCharaterButtonView.makeRoundedWithBorder(radius: 22, color: UIColor.white.cgColor, borderWith: 2)
+        
+        hourlyMentLabel.setLineHeight(lineHeight: 35)
     }
     
     private func setProgressBar(percent: Float) {
@@ -171,11 +173,20 @@ class HomeViewController: UIViewController {
     private func updateData(data: Home) {
         backgroundImageView.updateServerImage(data.characterSkin)
         setHourlyMent(nickname: data.nickname)
-        courseProgressLabel.text = "코스 진행률 \(data.course.percent)%"
-        challengeTitleLabel.text = data.course.challengeTitle
+        UserDefaults.standard.set(data.nickname, forKey: "nickname")
+        if let percent = data.course.percent {
+            courseProgressLabel.text = "코스 진행률 \(percent)%"
+        } else {
+            courseProgressLabel.text = "코스 미선택"
+        }
+        if let title = data.course.challengeTitle {
+            challengeTitleLabel.text = title
+        } else {
+            challengeTitleLabel.text = "코스 선택 후, 챌린지를 시작해봐!"
+        }
         setProgressBar(percent: Float(data.happy) / Float(data.fullHappy))
         setLottieView(url: URL(string: data.characterLottie)!)
-        levelLabel.text = "Lv \(data.level)"
+        levelLabel.text = "Lv.\(data.level)"
         happyPopUp.data = data
     }
     

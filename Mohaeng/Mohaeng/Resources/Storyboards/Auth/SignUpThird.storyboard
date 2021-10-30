@@ -31,26 +31,37 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임 입력(한글 6자 이내)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8vR-cA-ldV">
+
                                 <rect key="frame" x="24" y="370.33333333333331" width="327" height="18.666666666666686"/>
+                             
+
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KnW-qp-7rg">
+
                                 <rect key="frame" x="24" y="397" width="327" height="1"/>
+
                                 <color key="backgroundColor" name="Grey3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="FSD-b2-UwM"/>
                                 </constraints>
                             </view>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용 불가능한 닉네임입니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fH8-vg-Zu1">
+
                                 <rect key="frame" x="241.33333333333334" y="410" width="109.66666666666666" height="12"/>
+
+
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2H-8P-CbD">
+
                                 <rect key="frame" x="24" y="445.66666666666669" width="327" height="40"/>
+
+
                                 <color key="backgroundColor" name="DeepYellow"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="wcF-gd-1y5"/>
@@ -63,17 +74,25 @@
                                     <action selector="touchNicknameCheckButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="GAl-Se-DzE"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임은 한글 6자 이내로 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fpe-hR-aMG">
+                                <rect key="frame" x="107.66666666666669" y="339.33333333333331" width="160" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" name="Grey4"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="a2H-8P-CbD" secondAttribute="trailing" constant="24" id="6Sw-Ur-GZg"/>
+                            <constraint firstItem="8vR-cA-ldV" firstAttribute="top" secondItem="rSm-lZ-pqn" secondAttribute="bottom" constant="64" id="8sw-14-ZIv"/>
                             <constraint firstItem="KnW-qp-7rg" firstAttribute="trailing" secondItem="8vR-cA-ldV" secondAttribute="trailing" id="EGM-k4-phh"/>
                             <constraint firstItem="KnW-qp-7rg" firstAttribute="top" secondItem="8vR-cA-ldV" secondAttribute="bottom" constant="8" id="F7B-Xa-POU"/>
-                            <constraint firstItem="8vR-cA-ldV" firstAttribute="top" secondItem="rSm-lZ-pqn" secondAttribute="bottom" constant="38" id="Oho-zs-jXC"/>
                             <constraint firstItem="rSm-lZ-pqn" firstAttribute="top" secondItem="07g-md-OcR" secondAttribute="bottom" constant="24" id="RXu-Bg-W0n"/>
                             <constraint firstItem="fH8-vg-Zu1" firstAttribute="top" secondItem="KnW-qp-7rg" secondAttribute="bottom" constant="12" id="V7c-fD-Zmi"/>
+
                             <constraint firstItem="a2H-8P-CbD" firstAttribute="top" secondItem="KnW-qp-7rg" secondAttribute="bottom" constant="47.659999999999997" id="YwO-Uy-B8n"/>
+
                             <constraint firstItem="a2H-8P-CbD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="ca0-LA-zMa"/>
                             <constraint firstItem="rSm-lZ-pqn" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="d0d-mN-Rya"/>
                             <constraint firstItem="8vR-cA-ldV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="iHR-oS-b35"/>
@@ -81,13 +100,18 @@
                             <constraint firstItem="07g-md-OcR" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="38" id="kWr-8r-cpk"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="8vR-cA-ldV" secondAttribute="trailing" constant="24" id="nYN-fB-TEv"/>
                             <constraint firstItem="fH8-vg-Zu1" firstAttribute="trailing" secondItem="KnW-qp-7rg" secondAttribute="trailing" id="ncf-la-HHU"/>
+                            <constraint firstItem="Fpe-hR-aMG" firstAttribute="top" secondItem="rSm-lZ-pqn" secondAttribute="bottom" constant="12" id="qK6-H0-K5A"/>
+                            <constraint firstItem="Fpe-hR-aMG" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="v4g-hO-oG6"/>
                             <constraint firstItem="07g-md-OcR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="wJW-5Y-xrE"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="checkButton" destination="a2H-8P-CbD" id="g0H-eK-Jxm"/>
+                        <outlet property="imageToNicknameTextField" destination="8sw-14-ZIv" id="jFU-p8-W1a"/>
                         <outlet property="nickNameBottomView" destination="KnW-qp-7rg" id="F2m-Dn-58q"/>
+                        <outlet property="nickNameConditionLabel" destination="Fpe-hR-aMG" id="W5z-oY-Mxv"/>
                         <outlet property="nickNameErrorLabel" destination="fH8-vg-Zu1" id="htX-eu-WB7"/>
+                        <outlet property="nickNameSetLabel" destination="07g-md-OcR" id="A44-gh-dSL"/>
                         <outlet property="nickNameTextField" destination="8vR-cA-ldV" id="vVK-ho-tFR"/>
                     </connections>
                 </viewController>
@@ -103,6 +127,9 @@
         </namedColor>
         <namedColor name="Grey3">
             <color red="0.67799997329711914" green="0.67799997329711914" blue="0.67799997329711914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Grey4">
+            <color red="0.80800002813339233" green="0.80800002813339233" blue="0.80800002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

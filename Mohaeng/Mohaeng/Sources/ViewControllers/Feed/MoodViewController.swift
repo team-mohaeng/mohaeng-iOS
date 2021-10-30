@@ -53,7 +53,7 @@ class MoodViewController: UIViewController {
     // MARK: - Functions
     
     private func setConstraintWitouthNotch() {
-        nextButtonHeightConstraint.constant = UIDevice.current.hasNotch ? 76 : 56
+        nextButtonHeightConstraint.constant = UIDevice.current.hasNotch ? 86 : 66
     }
     
     private func makeRoundDot() {
@@ -66,16 +66,13 @@ class MoodViewController: UIViewController {
         nextButton.layer.cornerRadius = 29
         nextButton.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
-    
+
     private func initNavigationBar() {
-        navigationController?.navigationBar.isHidden = false
-        navigationController?.initWithBackAndCloseButton(navigationItem: self.navigationItem, closeButtonClosure: #selector(buttonDidTapped(_:)))
         let currentDate = AppDate()
         let currentMonth = currentDate.getMonth()
         let currentDay = currentDate.getDay()
+        navigationController?.initWithBackAndCloseButton(navigationItem: self.navigationItem, closeButtonClosure: #selector(buttonDidTapped(_:)))
         navigationItem.title = "\(currentMonth)월 \(currentDay)일"
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.spoqaHanSansNeo(weight: .regular, size: 14), NSAttributedString.Key.foregroundColor: UIColor.Black]
-
     }
     
     private func assignDelegate() {
@@ -124,9 +121,9 @@ class MoodViewController: UIViewController {
     // MARK: - @IBAction Properties
     
     @IBAction func touchNextButton(_ sender: Any) {
-        let writingViewController = WritingViewController(with: moodImageNum)
+        let writingViewController = WritingViewController()
+        writingViewController.mood = moodImageNum
         self.navigationController?.pushViewController(writingViewController, animated: true)
-    
     }
     
     @objc

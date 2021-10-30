@@ -10,7 +10,7 @@ import UIKit
 class NotificationViewController: UIViewController {
     
     // 더미데이터
-    var noti = PushNoti(messages: [])
+    var noti = PushNoti(profileImg: "", messages: [])
     
     var oldNoti: [Message] = []
     var newNoti: [Message] = []
@@ -111,6 +111,16 @@ class NotificationViewController: UIViewController {
         makeNewNotiArray(noti: noti)
     }
     
+    func getBoundingRect(string: String) -> CGRect {
+        let textRect = NSString(string: string).boundingRect(
+            with: CGSize(width: UIScreen.main.bounds.width - 167, height: CGFloat.greatestFiniteMagnitude),
+            options: .usesLineFragmentOrigin,
+            attributes: [
+                NSAttributedString.Key.font: UIFont.spoqaHanSansNeo(weight: .regular, size: 15)
+            ],
+            context: nil)
+        return textRect
+    }
 }
 
 // MARK: - UICollectionViewFlowLayout
@@ -167,6 +177,7 @@ extension NotificationViewController: UICollectionViewDataSource {
                 } else {
                     cell.setCell(msg: newNoti[indexPath.row])
                 }
+                cell.setProfileImage(url: noti.profileImg)
                 
                 return cell
             }
@@ -177,6 +188,7 @@ extension NotificationViewController: UICollectionViewDataSource {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.profileBubbleCollectionViewCell, for: indexPath) as? ProfileBubbleCollectionViewCell {
                 
                 cell.setCell(msg: newNoti[indexPath.row])
+                cell.setProfileImage(url: noti.profileImg)
                 
                 return cell
             }
@@ -186,6 +198,7 @@ extension NotificationViewController: UICollectionViewDataSource {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.profileBubbleCollectionViewCell, for: indexPath) as? ProfileBubbleCollectionViewCell {
                 
                 cell.setCell(msg: oldNoti[indexPath.row])
+                cell.setProfileImage(url: noti.profileImg)
                 
                 return cell
             }
@@ -210,12 +223,19 @@ extension NotificationViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
+        // dynamic height를 위한 label boundingRect 계산
+        var textSize = CGRect()
+        if indexPath.section == 0 {
+            textSize = getBoundingRect(string: oldNoti[indexPath.row].message[0])
+        } else {
+            textSize = getBoundingRect(string: newNoti[indexPath.row].message[0])
+        }
+        
         // 첫 cell일 때
         if indexPath.row - 1 < 0 {
             // ProfileBubble
             
-            return CGSize(width: view.frame.width, height: 84)
-            
+            return CGSize(width: view.frame.width, height: textSize.height + 66)
         }
         
         if indexPath.section == 0 {
@@ -223,12 +243,12 @@ extension NotificationViewController: UICollectionViewDataSource {
             if oldNoti[indexPath.row-1].date != "" {
                 // 첫 메시지 - ProfileBubble
                 
-                return CGSize(width: view.frame.width, height: 84)
+                return CGSize(width: view.frame.width, height: textSize.height + 66)
                 
             } else {
                 // Bubble
                 
-                return CGSize(width: view.frame.width, height: 47)
+                return CGSize(width: view.frame.width, height: textSize.height + 28)
             }
             
         } else {
@@ -236,12 +256,12 @@ extension NotificationViewController: UICollectionViewDataSource {
             if newNoti[indexPath.row-1].date != "" {
                 // 첫 메시지 - ProfileBubble
                 
-                return CGSize(width: view.frame.width, height: 84)
+                return CGSize(width: view.frame.width, height: textSize.height + 66)
                 
             } else {
                 // Bubble
                 
-                return CGSize(width: view.frame.width, height: 47)
+                return CGSize(width: view.frame.width, height: textSize.height + 28)
             }
         }
     }
