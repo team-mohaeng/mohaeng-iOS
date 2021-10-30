@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tsp-Eh-swM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tsp-Eh-swM">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="6Os-uS-eQv">
-                                <rect key="frame" x="113.33333333333333" y="715" width="148.33333333333337" height="11"/>
+                                <rect key="frame" x="113.33333333333333" y="711" width="148.33333333333337" height="11"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미 계정이 있나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wV-JM-dXV">
                                         <rect key="frame" x="0.0" y="0.0" width="80.333333333333329" height="11"/>
@@ -110,35 +110,61 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOHAENG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAC-d7-iEM">
-                                <rect key="frame" x="127.33333333333334" y="148.33333333333334" width="120.33333333333334" height="28"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundImage " translatesAutoresizingMaskIntoConstraints="NO" id="Kch-49-QkD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="415"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="YpL-mu-FHG"/>
+                                    <constraint firstAttribute="height" constant="415" id="0Di-56-4SH"/>
                                 </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOHAENG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAC-d7-iEM">
+                                <rect key="frame" x="127.33333333333334" y="255.33333333333334" width="120.33333333333334" height="28.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                 <color key="textColor" red="1" green="0.7803921568627451" blue="0.3529411764705882" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모행에 온 것을 환영해!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rM6-Cx-uyl">
+                                <rect key="frame" x="112.33333333333333" y="291" width="150.33333333333337" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="solemage" translatesAutoresizingMaskIntoConstraints="NO" id="D8X-kB-ZFk">
+                                <rect key="frame" x="247.66666666666663" y="219.33333333333334" width="51" height="56.000000000000028"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="Ooh-E8-4Yt"/>
+                                    <constraint firstAttribute="width" constant="51" id="WTj-p1-m0c"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="JAC-d7-iEM" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" multiplier="0.4" id="7qq-GR-Zg4"/>
+                            <constraint firstItem="Kch-49-QkD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0UB-3K-aeK"/>
+                            <constraint firstItem="JAC-d7-iEM" firstAttribute="centerY" secondItem="Kch-49-QkD" secondAttribute="centerY" multiplier="1.3" id="BRe-MC-hYk"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fXW-Co-4M0" secondAttribute="trailing" constant="24" id="BVT-xS-MjP"/>
+                            <constraint firstItem="JAC-d7-iEM" firstAttribute="top" secondItem="D8X-kB-ZFk" secondAttribute="bottom" constant="-20" id="Bpm-wr-9s2"/>
+                            <constraint firstItem="Kch-49-QkD" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="CjP-8g-Wd2"/>
                             <constraint firstItem="fXW-Co-4M0" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="FTp-84-gXe"/>
+                            <constraint firstItem="rM6-Cx-uyl" firstAttribute="top" secondItem="JAC-d7-iEM" secondAttribute="bottom" constant="7" id="Iii-re-d4f"/>
+                            <constraint firstItem="JAC-d7-iEM" firstAttribute="centerX" secondItem="Kch-49-QkD" secondAttribute="centerX" id="NFB-T2-A80"/>
+                            <constraint firstItem="D8X-kB-ZFk" firstAttribute="leading" secondItem="JAC-d7-iEM" secondAttribute="trailing" id="Ngd-7p-VGQ"/>
+                            <constraint firstItem="6Os-uS-eQv" firstAttribute="top" secondItem="fXW-Co-4M0" secondAttribute="bottom" constant="24" id="ZGM-zx-eYM"/>
+                            <constraint firstItem="Kch-49-QkD" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="aF5-HH-0xb"/>
                             <constraint firstItem="fXW-Co-4M0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="c9p-8n-g4O"/>
-                            <constraint firstItem="uks-BU-gX2" firstAttribute="top" secondItem="8QL-M1-Wbx" secondAttribute="bottom" constant="28" id="kPx-5G-bik"/>
-                            <constraint firstItem="JAC-d7-iEM" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="rMg-gj-WQT"/>
+                            <constraint firstItem="rM6-Cx-uyl" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="tJs-6W-M7R"/>
                             <constraint firstItem="6Os-uS-eQv" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="vw3-cF-Gzk"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="6Os-uS-eQv" secondAttribute="bottom" constant="52" id="wJB-Pv-D1s"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="6Os-uS-eQv" secondAttribute="bottom" constant="56" id="wJB-Pv-D1s"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sv0-EL-xFa"/>
                     <connections>
                         <outlet property="appleLoginButton" destination="2lw-aU-RLf" id="D7a-LV-WNn"/>
+                        <outlet property="backgroundTopSpace" destination="CjP-8g-Wd2" id="x2c-BK-6kG"/>
                         <outlet property="emailLoginButton" destination="8QL-M1-Wbx" id="2U3-52-0lT"/>
                         <outlet property="kakaoLoginButton" destination="c2a-JG-M90" id="qTG-Id-7LT"/>
+                        <outlet property="loginStackView" destination="fXW-Co-4M0" id="RbM-nF-Y5e"/>
                         <outlet property="mohaengLabel" destination="JAC-d7-iEM" id="Hnf-r7-aI8"/>
+                        <outlet property="welcomeLabel" destination="rM6-Cx-uyl" id="gZm-a8-gDM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -166,8 +192,10 @@
     </scenes>
     <resources>
         <image name="appleIcon" width="20" height="20"/>
+        <image name="backgroundImage " width="375" height="407"/>
         <image name="kakaoIcon" width="20" height="20"/>
         <image name="messageIcon" width="20" height="20"/>
+        <image name="solemage" width="51" height="56"/>
         <namedColor name="Grey5">
             <color red="0.91399997472763062" green="0.91399997472763062" blue="0.91399997472763062" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
