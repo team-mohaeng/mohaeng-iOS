@@ -212,13 +212,14 @@
 		DD68AC322712AB9E0081B905 /* OnBoardingChallengeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD68AC312712AB9E0081B905 /* OnBoardingChallengeCardView.swift */; };
 		DD6BB490271D8BBC0086240B /* RewardBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6BB48F271D8BBC0086240B /* RewardBaseViewController.swift */; };
 		DD6BB493271DA8A00086240B /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6BB492271DA8A00086240B /* Reward.swift */; };
-		DD6BB495271DB5CF0086240B /* awards_congrats.json in Resources */ = {isa = PBXBuildFile; fileRef = DD6BB494271DB5CF0086240B /* awards_congrats.json */; };
 		DD6BB498271DD2BF0086240B /* ChallengeRewardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6BB497271DD2BF0086240B /* ChallengeRewardViewController.swift */; };
 		DD6BB49A271DD2E70086240B /* CourseRewardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6BB499271DD2E70086240B /* CourseRewardViewController.swift */; };
 		DD6BB49C271DD2FB0086240B /* LevelUpRewardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6BB49B271DD2FB0086240B /* LevelUpRewardViewController.swift */; };
 		DD6BB49E271DD3690086240B /* CuriosityRewardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6BB49D271DD3690086240B /* CuriosityRewardViewController.swift */; };
 		DD6BB4A0271DD3770086240B /* WritingRewardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6BB49F271DD3770086240B /* WritingRewardViewController.swift */; };
 		DD79BB16271166E9001F342C /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD79BB15271166E9001F342C /* UIImageView+Extension.swift */; };
+		DD81D3C9272A86B30066D159 /* awards_congrats.json in Resources */ = {isa = PBXBuildFile; fileRef = DD81D3C8272A86B30066D159 /* awards_congrats.json */; };
+		DD81D3CB272A88C30066D159 /* letter.json in Resources */ = {isa = PBXBuildFile; fileRef = DD81D3CA272A88C30066D159 /* letter.json */; };
 		DD8452662715C11E007B4C2B /* OnBoarding5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8452652715C11E007B4C2B /* OnBoarding5ViewController.swift */; };
 		DD860D322700BACD00835AC0 /* WritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD860D312700BACD00835AC0 /* WritingViewController.swift */; };
 		DD9EFFC727154D7800B3F871 /* AnimationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFC627154D7800B3F871 /* AnimationFactory.swift */; };
@@ -453,13 +454,14 @@
 		DD68AC312712AB9E0081B905 /* OnBoardingChallengeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingChallengeCardView.swift; sourceTree = "<group>"; };
 		DD6BB48F271D8BBC0086240B /* RewardBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardBaseViewController.swift; sourceTree = "<group>"; };
 		DD6BB492271DA8A00086240B /* Reward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
-		DD6BB494271DB5CF0086240B /* awards_congrats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_congrats.json; sourceTree = "<group>"; };
 		DD6BB497271DD2BF0086240B /* ChallengeRewardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeRewardViewController.swift; sourceTree = "<group>"; };
 		DD6BB499271DD2E70086240B /* CourseRewardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRewardViewController.swift; sourceTree = "<group>"; };
 		DD6BB49B271DD2FB0086240B /* LevelUpRewardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelUpRewardViewController.swift; sourceTree = "<group>"; };
 		DD6BB49D271DD3690086240B /* CuriosityRewardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityRewardViewController.swift; sourceTree = "<group>"; };
 		DD6BB49F271DD3770086240B /* WritingRewardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingRewardViewController.swift; sourceTree = "<group>"; };
 		DD79BB15271166E9001F342C /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		DD81D3C8272A86B30066D159 /* awards_congrats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_congrats.json; sourceTree = "<group>"; };
+		DD81D3CA272A88C30066D159 /* letter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = letter.json; sourceTree = "<group>"; };
 		DD8452652715C11E007B4C2B /* OnBoarding5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding5ViewController.swift; sourceTree = "<group>"; };
 		DD860D312700BACD00835AC0 /* WritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingViewController.swift; sourceTree = "<group>"; };
 		DD9EFFC627154D7800B3F871 /* AnimationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationFactory.swift; sourceTree = "<group>"; };
@@ -618,9 +620,9 @@
 		561D75FA26F0BFA40028DBCA /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
-				DDA572632726EB3F0058809B /* onboardingcard.json */,
+				DD81D3CA272A88C30066D159 /* letter.json */,
+				DD81D3C8272A86B30066D159 /* awards_congrats.json */,
 				DD1C5C43271FE93A004026BC /* RewardCards */,
-				DD6BB494271DB5CF0086240B /* awards_congrats.json */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -1273,9 +1275,9 @@
 				561D76CB26F0BFA40028DBCA /* NewNotificationCollectionReusableView.xib in Resources */,
 				561D76D126F0BFA40028DBCA /* FeedCollectionViewCell.xib in Resources */,
 				56AE34E2271FFDDC00D7F4D8 /* MoodCollectionViewCell.xib in Resources */,
-				DD6BB495271DB5CF0086240B /* awards_congrats.json in Resources */,
 				561D76DA26F0BFA40028DBCA /* FirstDayTableViewCell.xib in Resources */,
 				DDA7EF3E27214CFF00F100CA /* awards_sok4.json in Resources */,
+				DD81D3C9272A86B30066D159 /* awards_congrats.json in Resources */,
 				561D76D626F0BFA40028DBCA /* CourseLibraryCollectionViewCell.xib in Resources */,
 				AA7E0AAB26FC615C00106DC2 /* CharacterStyle.storyboard in Resources */,
 				561D76C026F0BFA40028DBCA /* GmarketSansTTFMedium.ttf in Resources */,
@@ -1318,6 +1320,7 @@
 				561D76ED26F0BFA40028DBCA /* PopUpViewController.xib in Resources */,
 				561D76C326F0BFA40028DBCA /* SpoqaHanSansNeo-Medium.otf in Resources */,
 				561D76CD26F0BFA40028DBCA /* ProfileBubbleCollectionViewCell.xib in Resources */,
+				DD81D3CB272A88C30066D159 /* letter.json in Resources */,
 				561D76BF26F0BFA40028DBCA /* BMHANNA_11yrs_otf.otf in Resources */,
 				561D76AD26F0BFA40028DBCA /* CourseLibrary.storyboard in Resources */,
 				AA7E0AB826FC998000106DC2 /* CharacterColorCollectionViewCell.xib in Resources */,

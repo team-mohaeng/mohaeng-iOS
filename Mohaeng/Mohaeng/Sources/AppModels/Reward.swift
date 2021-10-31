@@ -147,7 +147,7 @@ enum Reward {
         switch self {
         case .challenge, .course, .writing:
             guard let happy = happy else {return}
-            let animationView = AnimationView(name: "awards_congrats").then {
+            let animationView = AnimationView(name: "letter").then {
                 $0.frame = view.bounds
                 $0.contentMode = .scaleAspectFill
             }
