@@ -14,6 +14,12 @@ struct JwtData: Codable {
     let jwt: String
 }
 
+// MARK: - SocialLoginData
+struct SocialLoginData: Codable {
+    let user: Bool
+    let jwt: String
+}
+
 // 이메일 인증
 
 // MARK: - DataClass

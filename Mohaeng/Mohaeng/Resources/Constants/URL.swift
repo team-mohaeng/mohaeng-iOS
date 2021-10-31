@@ -22,8 +22,12 @@ extension Const {
         static let signInURL = "/signin"
         
         // 키카오 (POST)
-        static let kakaoURL = "/kakao"
-        static let socialNickname = "/nickname"
+        static let kakaoLoginURL = "/kakao"
+        static let kakaoSignUpURL = "/kakao/signup"
+        
+        // 애플 (POST)
+        static let appleLoginURL = "/apple"
+        static let appleSignUpURL = "/apple/signup"
         
         // 비밀번호 변경 (PUT)
         static let passwordURL = "/password"

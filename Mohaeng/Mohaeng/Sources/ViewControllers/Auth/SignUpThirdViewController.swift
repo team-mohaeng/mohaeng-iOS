@@ -143,7 +143,11 @@ class SignUpThirdViewController: UIViewController {
             }
             
             if isSocial {
-                postSocialNickname()
+                if signUpUser.isKakao {
+                    postKakaoSignUp()
+                } else if signUpUser.isApple {
+                    postAppleSignUp()
+                }
             } else {
                 postSignUp()
             }
@@ -158,6 +162,60 @@ class SignUpThirdViewController: UIViewController {
 }
 
 extension SignUpThirdViewController {
+    
+    // 소셜 회원가입
+    
+    func postKakaoSignUp() {
+        
+        SocialAPI.shared.postKakaoSignUp(
+            idToken: UserDefaults.standard.string(forKey: "idToken") ?? "",
+            nickname: nickNameTextField.text ?? "닉네임") { (response) in
+            switch response {
+            case .success(let data):
+                
+                if let data = data as? JwtData {
+                    UserDefaults.standard.setValue(data.jwt, forKey: "jwtToken")
+                    self.pushHomeViewController()
+                }
+                
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+    
+    func postAppleSignUp() {
+        
+        SocialAPI.shared.postAppleSignUp(
+            idToken: UserDefaults.standard.string(forKey: "idToken") ?? "",
+            nickname: nickNameTextField.text ?? "닉네임") { (response) in
+            switch response {
+            case .success(let data):
+                
+                if let data = data as? JwtData {
+                    UserDefaults.standard.setValue(data.jwt, forKey: "jwtToken")
+                    self.pushHomeViewController()
+                }
+                
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+    
+    // 이메일 회원가입
     
     func postSignUp() {
         guard let email = signUpUser.email else {
@@ -187,32 +245,6 @@ extension SignUpThirdViewController {
                 print("networkFail")
             }
         }, email: email, password: password, nickname: nickname)
-    }
-    
-    func postSocialNickname() {
-        guard let nickname = nickNameTextField.text else {
-            return
-        }
-        
-        KakaoAPI.shared.postSocialNickname(completion: { (response) in
-            switch response {
-            case .success(let jwt):
-                if let data = jwt as? JwtData {
-                    UserDefaults.standard.setValue(data.jwt, forKey: "jwtToken")
-                    self.pushHomeViewController()
-                }
-            case .requestErr(let message):
-                print("requestErr", message)
-            case .pathErr:
-                print("pathErr")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
-            }
-        },
-                                           token: UserDefaults.standard.string(forKey: "jwtToken") ?? "",
-                                           nickname: nickname)
     }
     
     func putNickname() {

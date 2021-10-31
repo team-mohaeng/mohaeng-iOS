@@ -117,7 +117,7 @@ class LoginViewController: UIViewController {
                     
                     _ = oauthToken
                     if let accessToken = oauthToken?.accessToken {
-                        self.postKakao(token: accessToken)
+                        self.postKakaoLogin(idToken: accessToken)
                     }
                     
                 }
@@ -142,13 +142,24 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController {
-    func postKakao(token: String) {
-        KakaoAPI.shared.postKakao(token: token, completion: { (response) in
+    
+    func postKakaoLogin(idToken: String) {
+        SocialAPI.shared.postKakaoLogin(idToken: idToken) { (response) in
             switch response {
-            case .success(let message):
-                UserDefaults.standard.setValue(token, forKey: "jwtToken")
-                self.signUpUser.isSocial = true
-                self.pushSignUpSecondViewController()
+            case .success(let data):
+                
+                if let data = data as? SocialLoginData {
+                    if data.user {
+                        UserDefaults.standard.setValue(data.jwt, forKey: "jwtToken")
+                        self.presentHomeViewController()
+                    } else {
+                        UserDefaults.standard.setValue(idToken, forKey: "idToken")
+                        self.signUpUser.isSocial = true
+                        self.signUpUser.isKakao = true
+                        self.pushSignUpSecondViewController()
+                    }
+                }
+                
             case .requestErr(let message):
                 print("requestErr", message)
             case .pathErr:
@@ -159,7 +170,36 @@ extension LoginViewController {
                 print("networkFail")
             }
         }
-    )}
+    }
+    
+    func postAppleLogin(idToken: String) {
+        SocialAPI.shared.postAppleLogin(idToken: idToken) { (response) in
+            switch response {
+            case .success(let data):
+                
+                if let data = data as? SocialLoginData {
+                    if data.user {
+                        UserDefaults.standard.setValue(data.jwt, forKey: "jwtToken")
+                        self.presentHomeViewController()
+                    } else {
+                        UserDefaults.standard.setValue(idToken, forKey: "idToken")
+                        self.signUpUser.isSocial = true
+                        self.signUpUser.isApple = true
+                        self.pushSignUpSecondViewController()
+                    }
+                }
+                
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
 }
 
 // MARK: - ASAuthorizationControllerDelegate
@@ -180,11 +220,10 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                let tokenString = String(data: identityToken, encoding: .utf8) {
                 print("apple login token:", tokenString)
                 UserDefaults.standard.setValue(tokenString, forKey: "jwtToken")
+                
+                // View Transition
+                postAppleLogin(idToken: tokenString)
             }
-            
-            // View Transition
-            self.signUpUser.isSocial = true
-            self.pushSignUpSecondViewController()
         
         case let passwordCredential as ASPasswordCredential:
         

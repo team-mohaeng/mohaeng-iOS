@@ -13,4 +13,6 @@ class SignUpUser {
     var password: String?
     var nickname: String?
     var isSocial: Bool?
+    var isKakao = false
+    var isApple = false
 }
