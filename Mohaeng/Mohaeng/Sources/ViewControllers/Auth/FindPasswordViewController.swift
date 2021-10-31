@@ -56,7 +56,7 @@ class FindPasswordViewController: UIViewController {
             nextButton.alpha = 0.3
             
             errorLabel.isHidden = false
-            // TODO: - 이메일 형식에 맞지 않음 오류 메세지 fix되면 띄우기
+            errorLabel.text = "이메일을 다시 입력해주세요"
         }
     }
     
@@ -129,7 +129,6 @@ extension FindPasswordViewController {
                 case .requestErr(let message):
                     self.errorLabel.isHidden = false
                     self.errorLabel.text = "\(message)"
-                    print("requestErr", message)
                 case .pathErr:
                     print(".pathErr")
                 case .serverErr:

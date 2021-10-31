@@ -45,8 +45,8 @@ extension PasswordService: TargetType {
         case .putChangedPassword(let email, let password):
             // body가 있는 request - JSONEncoding.default
             return .requestParameters(parameters: [
-                "userId": email,
-                "userPw": password
+                "email": email,
+                "password": password
             ], encoding: JSONEncoding.default)
         case .getEmailCode(_):
             return .requestPlain
