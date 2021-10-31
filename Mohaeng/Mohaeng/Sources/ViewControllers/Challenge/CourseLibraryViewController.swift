@@ -93,21 +93,12 @@ class CourseLibraryViewController: UIViewController {
 
 extension CourseLibraryViewController: PopUpActionDelegate {
     func touchGreyButton(button: UIButton) {
-        if doingCourse {
-            self.dismiss(animated: true, completion: nil)
-        } else {
-            startCourse(courseId: selectedCourseId)
-            self.dismiss(animated: true, completion: nil)
-        }
+        self.dismiss(animated: true, completion: nil)
     }
     
     func touchYellowButton(button: UIButton) {
-        if doingCourse {
-            startCourse(courseId: selectedCourseId)
-            self.dismiss(animated: true, completion: nil)
-        } else {
-            self.dismiss(animated: true, completion: nil)
-        }
+        startCourse(courseId: selectedCourseId)
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -242,7 +233,6 @@ extension CourseLibraryViewController: UICollectionViewDelegateFlowLayout {
             courseLibraryCollectionView.reloadData()
             
         case courseLibraryCollectionView:
-            // TODO: - popUp 변경 시 바꿔야 함 현재 터지는 상태
             presentAskPopUp(doingCourse: doingCourse)
             selectedCourseId = courseListViewModel.courseAtIndex(property: selectedProperty, index: indexPath.row).course.id
             UserDefaults.standard.setValue(selectedCourseId, forKey: "courseId")
