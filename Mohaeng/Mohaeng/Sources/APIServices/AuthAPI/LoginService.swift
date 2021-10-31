@@ -50,7 +50,7 @@ extension LoginService: TargetType {
     var headers: [String: String]? {
         return [
             "Conten-Type": "application/json",
-            "fcm": UserDefaults.standard.string(forKey: "fcmToken") ?? ""
+            "token": UserDefaults.standard.string(forKey: "fcmToken") ?? ""
         ]
     }
 }
