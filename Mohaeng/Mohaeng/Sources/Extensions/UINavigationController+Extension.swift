@@ -31,11 +31,15 @@ extension UINavigationController {
     
     func initWithBackButton(backgroundColor: UIColor? = nil) {
         let appearance = UINavigationBarAppearance()
-        appearance.configureWithTransparentBackground()
         appearance.initBackButtonAppearance()
         
         if backgroundColor != nil {
+            appearance.configureWithOpaqueBackground()
             appearance.backgroundColor = backgroundColor
+            appearance.shadowColor = .clear
+            self.navigationBar.barTintColor = backgroundColor // for iOS 14
+        } else {
+            appearance.configureWithTransparentBackground()
         }
         
         self.navigationBar.standardAppearance = appearance
