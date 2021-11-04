@@ -96,15 +96,15 @@ class SignUpFirstViewController: UIViewController {
         emailCheckImage.isHidden = true
         emailErrorLabel.isHidden = true
         
-        emailLabel.textColor = .Grey2Tab
-        emailBottomView.backgroundColor = .Grey2Tab
+        emailLabel.textColor = .Grey2
+        emailBottomView.backgroundColor = .Grey2
     }
     
     func hideEmailError() {
         emailErrorLabel.isHidden = true
         
         emailLabel.textColor = .Grey2Tab
-        emailBottomView.backgroundColor = .Grey2Tab
+        emailBottomView.backgroundColor = .Grey2
     }
     
     // 이메일 정규식에 맞지 않을 때
@@ -123,8 +123,8 @@ class SignUpFirstViewController: UIViewController {
         passwordCheckImage.isHidden = false
         passwordErrorLabel.isHidden = true
         
-        passwordLabel.textColor = .Grey2Tab
-        passwordBottomView.backgroundColor = .Grey2Tab
+        passwordLabel.textColor = .Grey2
+        passwordBottomView.backgroundColor = .Grey2
         
     }
     
@@ -152,8 +152,8 @@ class SignUpFirstViewController: UIViewController {
         checkingPasswordErrorLabel.isHidden = false
         isPasswordCheckError = true
         
-        passwordLabel.textColor = .Grey2Tab
-        passwordBottomView.backgroundColor = .Grey2Tab
+        passwordLabel.textColor = .Grey2
+        passwordBottomView.backgroundColor = .Grey2
         checkingPasswordErrorLabel.textColor = .Red
         checkPasswordLabel.textColor = .Red
     }
@@ -163,8 +163,8 @@ class SignUpFirstViewController: UIViewController {
         checkingPasswordErrorLabel.isHidden = false
         passwordErrorLabel.isHidden = true
         
-        passwordBottomView.backgroundColor = .Grey2Tab
-        passwordLabel.textColor = .Grey2Tab
+        passwordBottomView.backgroundColor = .Grey2
+        passwordLabel.textColor = .Grey2
         checkPasswordLabel.textColor = .Red
         checkPasswordBottomView.backgroundColor = .Red
         checkingPasswordErrorLabel.text = "비밀번호가 일치하지 않습니다"
@@ -175,16 +175,16 @@ class SignUpFirstViewController: UIViewController {
         checkPasswordCheckImage.isHidden = true
         checkingPasswordErrorLabel.isHidden = true
         
-        checkPasswordBottomView.backgroundColor = .Grey2Tab
-        checkPasswordLabel.textColor = .Grey2Tab
+        checkPasswordBottomView.backgroundColor = .Grey2
+        checkPasswordLabel.textColor = .Grey2
     }
     
     func hidePasswordCheckError() {
         checkPasswordCheckImage.isHidden = false
         checkingPasswordErrorLabel.isHidden = true
         
-        checkPasswordLabel.textColor = .Grey2Tab
-        checkPasswordBottomView.backgroundColor = .Grey2Tab
+        checkPasswordLabel.textColor = .Grey2
+        checkPasswordBottomView.backgroundColor = .Grey2
     }
     
     func checkingPasswordTextCount() {

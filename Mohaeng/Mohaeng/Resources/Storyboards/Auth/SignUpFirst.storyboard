@@ -8,6 +8,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoqaHanSansNeo-Bold.otf">
+            <string>SpoqaHanSansNeo-Bold</string>
+        </array>
+        <array key="SpoqaHanSansNeo-Regular.otf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Sign Up First View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -18,19 +26,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" verticalCompressionResistancePriority="753" text="이메일로 회원가입" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m29-eV-oif">
-                                <rect key="frame" x="24" y="82" width="157" height="27"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="24" y="82" width="167" height="27.666666666666671"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="22"/>
+                                <color key="textColor" name="Black"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="752" text="이메일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORM-ee-v8N">
-                                <rect key="frame" x="24" y="181" width="31.333333333333329" height="14"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" name="Grey2Tab"/>
+                                <rect key="frame" x="24.000000000000004" y="181.66666666666666" width="33.333333333333343" height="15.333333333333343"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                <color key="textColor" name="Grey2"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="예) mohaeng@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oAt-CR-b8Z">
-                                <rect key="frame" x="24" y="199" width="327" height="33"/>
+                                <rect key="frame" x="24" y="201" width="327" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="s2c-oy-Ddw"/>
                                 </constraints>
@@ -38,13 +46,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAH-df-1bn">
-                                <rect key="frame" x="23.999999999999996" y="276" width="41.666666666666657" height="14.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <rect key="frame" x="24.000000000000004" y="278" width="44.333333333333343" height="15.333333333333314"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
                                 <color key="textColor" name="Grey2Tab"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tvZ-5h-gln">
-                                <rect key="frame" x="24" y="294.33333333333331" width="327" height="33"/>
+                                <rect key="frame" x="24" y="297.33333333333331" width="327" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="eCg-Xf-Dnl"/>
                                 </constraints>
@@ -52,13 +60,13 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 확인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phV-WH-t9u">
-                                <rect key="frame" x="24" y="351.33333333333331" width="65.666666666666671" height="14.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <rect key="frame" x="24" y="354.33333333333331" width="69" height="15.333333333333314"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
                                 <color key="textColor" name="Grey2Tab"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UhB-gj-UlV">
-                                <rect key="frame" x="24" y="369.66666666666669" width="327" height="33"/>
+                                <rect key="frame" x="24" y="373.66666666666669" width="327" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="rN1-67-1Na"/>
                                 </constraints>
@@ -66,72 +74,72 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowCheck" translatesAutoresizingMaskIntoConstraints="NO" id="oes-7O-zp4">
-                                <rect key="frame" x="325" y="203.66666666666666" width="24" height="24"/>
+                                <rect key="frame" x="325" y="205.66666666666666" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="ENg-GL-ENK"/>
                                     <constraint firstAttribute="height" constant="24" id="WWG-vd-7qw"/>
                                 </constraints>
                             </imageView>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowCheck" translatesAutoresizingMaskIntoConstraints="NO" id="RIZ-UM-hBk">
-                                <rect key="frame" x="325" y="299" width="24" height="24"/>
+                                <rect key="frame" x="325" y="302" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="9Zb-fB-le9"/>
                                     <constraint firstAttribute="width" constant="24" id="gYo-KZ-2nr"/>
                                 </constraints>
                             </imageView>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowCheck" translatesAutoresizingMaskIntoConstraints="NO" id="0NX-oo-xQs">
-                                <rect key="frame" x="325" y="374.33333333333331" width="24" height="24"/>
+                                <rect key="frame" x="325" y="378.33333333333331" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="AHH-6d-FNw"/>
                                     <constraint firstAttribute="width" constant="24" id="HvC-Hv-rR6"/>
                                 </constraints>
                             </imageView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oF-52-gUj">
-                                <rect key="frame" x="324.66666666666669" y="244" width="26.333333333333314" height="12"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <rect key="frame" x="325.33333333333331" y="246" width="25.666666666666686" height="12.666666666666686"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pok-54-RsC">
-                                <rect key="frame" x="324.66666666666669" y="337.33333333333331" width="26.333333333333314" height="12"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <rect key="frame" x="325.33333333333331" y="340.33333333333331" width="25.666666666666686" height="12.666666666666686"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMq-Ck-7Rl">
-                                <rect key="frame" x="327.66666666666669" y="412.66666666666669" width="23.333333333333314" height="12"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <rect key="frame" x="328" y="416.66666666666669" width="23" height="12"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5E2-IL-MYC">
-                                <rect key="frame" x="24" y="231" width="327" height="1"/>
+                                <rect key="frame" x="24" y="233" width="327" height="1"/>
                                 <color key="backgroundColor" name="Grey2Tab"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="ChH-j6-OPy"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ex1-nC-ccB">
-                                <rect key="frame" x="24" y="326" width="327" height="1"/>
+                                <rect key="frame" x="24" y="329" width="327" height="1"/>
                                 <color key="backgroundColor" name="Grey2Tab"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="3D0-eW-vXA"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFz-b7-TeV">
-                                <rect key="frame" x="24" y="401.33333333333331" width="327" height="1"/>
+                                <rect key="frame" x="24" y="405.33333333333331" width="327" height="1"/>
                                 <color key="backgroundColor" name="Grey2Tab"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="5rM-OZ-6vr"/>
                                 </constraints>
                             </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPP-yG-0ej">
-                                <rect key="frame" x="24" y="445.66666666666669" width="327" height="40"/>
+                                <rect key="frame" x="24" y="449.66666666666669" width="327" height="40"/>
                                 <color key="backgroundColor" name="DeepYellow"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Iuz-b8-hzo"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="16"/>
                                 <state key="normal" title="확인">
                                     <color key="titleColor" name="White"/>
                                 </state>
@@ -216,8 +224,14 @@
     </scenes>
     <resources>
         <image name="yellowCheck" width="24" height="24"/>
+        <namedColor name="Black">
+            <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="DeepYellow">
             <color red="1" green="0.77999997138977051" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Grey2">
+            <color red="0.48199999332427979" green="0.48199999332427979" blue="0.48199999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Grey2Tab">
             <color red="0.50999999046325684" green="0.54100000858306885" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
