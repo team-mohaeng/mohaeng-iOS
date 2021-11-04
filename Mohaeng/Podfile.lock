@@ -1,107 +1,114 @@
 PODS:
-  - Alamofire (5.4.3)
-  - Firebase/Analytics (8.7.0):
+  - Alamofire (5.4.4)
+  - Firebase/Analytics (8.9.1):
     - Firebase/Core
-  - Firebase/Core (8.7.0):
+  - Firebase/Core (8.9.1):
     - Firebase/CoreOnly
-    - FirebaseAnalytics (~> 8.7.0)
-  - Firebase/CoreOnly (8.7.0):
-    - FirebaseCore (= 8.7.0)
-  - Firebase/Messaging (8.7.0):
+    - FirebaseAnalytics (~> 8.9.1)
+  - Firebase/CoreOnly (8.9.1):
+    - FirebaseCore (= 8.9.1)
+  - Firebase/Messaging (8.9.1):
     - Firebase/CoreOnly
-    - FirebaseMessaging (~> 8.7.0)
-  - FirebaseAnalytics (8.7.0):
-    - FirebaseAnalytics/AdIdSupport (= 8.7.0)
+    - FirebaseMessaging (~> 8.9.0)
+  - FirebaseAnalytics (8.9.1):
+    - FirebaseAnalytics/AdIdSupport (= 8.9.1)
     - FirebaseCore (~> 8.0)
     - FirebaseInstallations (~> 8.0)
-    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
-    - GoogleUtilities/MethodSwizzler (~> 7.4)
-    - GoogleUtilities/Network (~> 7.4)
-    - "GoogleUtilities/NSData+zlib (~> 7.4)"
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.6)
+    - GoogleUtilities/MethodSwizzler (~> 7.6)
+    - GoogleUtilities/Network (~> 7.6)
+    - "GoogleUtilities/NSData+zlib (~> 7.6)"
     - nanopb (~> 2.30908.0)
-  - FirebaseAnalytics/AdIdSupport (8.7.0):
+  - FirebaseAnalytics/AdIdSupport (8.9.1):
     - FirebaseCore (~> 8.0)
     - FirebaseInstallations (~> 8.0)
-    - GoogleAppMeasurement (= 8.7.0)
-    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
-    - GoogleUtilities/MethodSwizzler (~> 7.4)
-    - GoogleUtilities/Network (~> 7.4)
-    - "GoogleUtilities/NSData+zlib (~> 7.4)"
+    - GoogleAppMeasurement (= 8.9.1)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.6)
+    - GoogleUtilities/MethodSwizzler (~> 7.6)
+    - GoogleUtilities/Network (~> 7.6)
+    - "GoogleUtilities/NSData+zlib (~> 7.6)"
     - nanopb (~> 2.30908.0)
-  - FirebaseCore (8.7.0):
+  - FirebaseCore (8.9.1):
     - FirebaseCoreDiagnostics (~> 8.0)
-    - GoogleUtilities/Environment (~> 7.4)
-    - GoogleUtilities/Logger (~> 7.4)
-  - FirebaseCoreDiagnostics (8.7.0):
-    - GoogleDataTransport (~> 9.0)
-    - GoogleUtilities/Environment (~> 7.4)
-    - GoogleUtilities/Logger (~> 7.4)
+    - GoogleUtilities/Environment (~> 7.6)
+    - GoogleUtilities/Logger (~> 7.6)
+  - FirebaseCoreDiagnostics (8.9.0):
+    - GoogleDataTransport (~> 9.1)
+    - GoogleUtilities/Environment (~> 7.6)
+    - GoogleUtilities/Logger (~> 7.6)
     - nanopb (~> 2.30908.0)
-  - FirebaseInstallations (8.7.0):
+  - FirebaseInstallations (8.9.0):
     - FirebaseCore (~> 8.0)
-    - GoogleUtilities/Environment (~> 7.4)
-    - GoogleUtilities/UserDefaults (~> 7.4)
+    - GoogleUtilities/Environment (~> 7.6)
+    - GoogleUtilities/UserDefaults (~> 7.6)
     - PromisesObjC (< 3.0, >= 1.2)
-  - FirebaseMessaging (8.7.0):
+  - FirebaseMessaging (8.9.0):
     - FirebaseCore (~> 8.0)
     - FirebaseInstallations (~> 8.0)
-    - GoogleDataTransport (~> 9.0)
-    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
-    - GoogleUtilities/Environment (~> 7.4)
-    - GoogleUtilities/Reachability (~> 7.4)
-    - GoogleUtilities/UserDefaults (~> 7.4)
+    - GoogleDataTransport (~> 9.1)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.6)
+    - GoogleUtilities/Environment (~> 7.6)
+    - GoogleUtilities/Reachability (~> 7.6)
+    - GoogleUtilities/UserDefaults (~> 7.6)
     - nanopb (~> 2.30908.0)
   - FontBlaster (5.2.0)
-  - GoogleAppMeasurement (8.7.0):
-    - GoogleAppMeasurement/AdIdSupport (= 8.7.0)
-    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
-    - GoogleUtilities/MethodSwizzler (~> 7.4)
-    - GoogleUtilities/Network (~> 7.4)
-    - "GoogleUtilities/NSData+zlib (~> 7.4)"
+  - GoogleAppMeasurement (8.9.1):
+    - GoogleAppMeasurement/AdIdSupport (= 8.9.1)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.6)
+    - GoogleUtilities/MethodSwizzler (~> 7.6)
+    - GoogleUtilities/Network (~> 7.6)
+    - "GoogleUtilities/NSData+zlib (~> 7.6)"
     - nanopb (~> 2.30908.0)
-  - GoogleAppMeasurement/AdIdSupport (8.7.0):
-    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
-    - GoogleUtilities/MethodSwizzler (~> 7.4)
-    - GoogleUtilities/Network (~> 7.4)
-    - "GoogleUtilities/NSData+zlib (~> 7.4)"
+  - GoogleAppMeasurement/AdIdSupport (8.9.1):
+    - GoogleAppMeasurement/WithoutAdIdSupport (= 8.9.1)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.6)
+    - GoogleUtilities/MethodSwizzler (~> 7.6)
+    - GoogleUtilities/Network (~> 7.6)
+    - "GoogleUtilities/NSData+zlib (~> 7.6)"
     - nanopb (~> 2.30908.0)
-  - GoogleDataTransport (9.1.0):
+  - GoogleAppMeasurement/WithoutAdIdSupport (8.9.1):
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.6)
+    - GoogleUtilities/MethodSwizzler (~> 7.6)
+    - GoogleUtilities/Network (~> 7.6)
+    - "GoogleUtilities/NSData+zlib (~> 7.6)"
+    - nanopb (~> 2.30908.0)
+  - GoogleDataTransport (9.1.2):
     - GoogleUtilities/Environment (~> 7.2)
     - nanopb (~> 2.30908.0)
     - PromisesObjC (< 3.0, >= 1.2)
-  - GoogleUtilities/AppDelegateSwizzler (7.5.2):
+  - GoogleUtilities/AppDelegateSwizzler (7.6.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
-  - GoogleUtilities/Environment (7.5.2):
+  - GoogleUtilities/Environment (7.6.0):
     - PromisesObjC (< 3.0, >= 1.2)
-  - GoogleUtilities/Logger (7.5.2):
+  - GoogleUtilities/Logger (7.6.0):
     - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (7.5.2):
+  - GoogleUtilities/MethodSwizzler (7.6.0):
     - GoogleUtilities/Logger
-  - GoogleUtilities/Network (7.5.2):
+  - GoogleUtilities/Network (7.6.0):
     - GoogleUtilities/Logger
     - "GoogleUtilities/NSData+zlib"
     - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (7.5.2)"
-  - GoogleUtilities/Reachability (7.5.2):
+  - "GoogleUtilities/NSData+zlib (7.6.0)"
+  - GoogleUtilities/Reachability (7.6.0):
     - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (7.5.2):
+  - GoogleUtilities/UserDefaults (7.6.0):
     - GoogleUtilities/Logger
   - IQKeyboardManagerSwift (6.5.6)
   - JTAppleCalendar (8.0.3)
-  - KakaoSDKAuth (2.7.1):
-    - KakaoSDKCommon (= 2.7.1)
-  - KakaoSDKCommon (2.7.1):
-    - KakaoSDKCommon/Common (= 2.7.1)
-    - KakaoSDKCommon/Network (= 2.7.1)
-  - KakaoSDKCommon/Common (2.7.1)
-  - KakaoSDKCommon/Network (2.7.1):
+  - KakaoSDKAuth (2.8.2):
+    - KakaoSDKCommon (= 2.8.2)
+  - KakaoSDKCommon (2.8.2):
+    - KakaoSDKCommon/Common (= 2.8.2)
+    - KakaoSDKCommon/Network (= 2.8.2)
+  - KakaoSDKCommon/Common (2.8.2)
+  - KakaoSDKCommon/Network (2.8.2):
     - Alamofire (~> 5.1)
-    - KakaoSDKCommon/Common (= 2.7.1)
-  - KakaoSDKUser (2.7.1):
-    - KakaoSDKAuth (= 2.7.1)
-  - Kingfisher (6.3.1)
+    - KakaoSDKCommon/Common (= 2.8.2)
+  - KakaoSDKUser (2.8.2):
+    - KakaoSDKAuth (= 2.8.2)
+  - Kingfisher (7.1.1)
   - lottie-ios (3.2.3)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
@@ -114,7 +121,7 @@ PODS:
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.0.0)
   - SnapKit (5.0.1)
-  - SwiftLint (0.44.0)
+  - SwiftLint (0.45.0)
   - Then (2.7.0)
 
 DEPENDENCIES:
@@ -161,31 +168,31 @@ SPEC REPOS:
     - Then
 
 SPEC CHECKSUMS:
-  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
-  Firebase: bc9325d5ee2041524bac78a5213d0e530c651309
-  FirebaseAnalytics: 52768800c2add1d84b751420cb4caaf8195f2c41
-  FirebaseCore: f4804c1d3f4bbbefc88904d15653038f2c99ddf7
-  FirebaseCoreDiagnostics: b63732f581a1c6a453ec7241f9ab60b3a5bd3450
-  FirebaseInstallations: ede6fb72bb6337914e5888b399271259d0c4910c
-  FirebaseMessaging: 93227dd71d7888e200baef65043f81acb2b6596e
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  Firebase: fb5114cd2bf96e2ff7bcb01d0d9a156cf5fd2f07
+  FirebaseAnalytics: 4ab446ce08a3fe52e8a4303dd997cf26276bf968
+  FirebaseCore: c5aab092d9c4b8efea894946166b04c9d9ef0e68
+  FirebaseCoreDiagnostics: 5daa63f1c1409d981a2d5007daa100b36eac6a34
+  FirebaseInstallations: caa7c8e0d3e2345b8829d2fa9ca1b4dfbf2fcc85
+  FirebaseMessaging: 82c4a48638f53f7b184f3cc9f6cd2cbe533ab316
   FontBlaster: b848e9d7b0ed2f2b3ebaf5b83458eb4ff9ba0764
-  GoogleAppMeasurement: 2be61ce546ad074dbe4dd545f222ac6033bb1d9e
-  GoogleDataTransport: 85fd18ff3019bb85d3f2c551d04c481dedf71fc9
-  GoogleUtilities: 8de2a97a17e15b6b98e38e8770e2d129a57c0040
+  GoogleAppMeasurement: 837649ad3987936c232f6717c5680216f6243d24
+  GoogleDataTransport: 629c20a4d363167143f30ea78320d5a7eb8bd940
+  GoogleUtilities: 684ee790a24f73ebb2d1d966e9711c203f2a4237
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   JTAppleCalendar: 932cadea40b1051beab10f67843451d48ba16c99
-  KakaoSDKAuth: 70cfb1e4e60f543fd5f0ece2995c3b0e879c532e
-  KakaoSDKCommon: 48fe293e8970a8db8d10d5ca63600a7a8cc5f74c
-  KakaoSDKUser: 5609a2679b6beda86298d63c45961953c7203101
-  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
+  KakaoSDKAuth: 2b7e6998d7028cabd037ef8d0d2f987b4eec9f89
+  KakaoSDKCommon: 1b5dc1c785688bed6d6747d05f2c8e08420f09ff
+  KakaoSDKUser: 937f1acc1380192d38483480d5bf01b141471829
+  Kingfisher: f738f9c4a3415823b8e2985d10aa2d6a9f37bc4d
   lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  SwiftLint: e96c0a8c770c7ebbc4d36c55baf9096bb65c4584
+  SwiftLint: e5c7f1fba68eccfc51509d5b2ce1699f5502e0c7
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
 PODFILE CHECKSUM: b1d6e9dd94995e1bce44b6315204f847aba01178
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2
