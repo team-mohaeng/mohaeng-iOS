@@ -37,7 +37,7 @@ extension UINavigationController {
             appearance.configureWithOpaqueBackground()
             appearance.backgroundColor = backgroundColor
             appearance.shadowColor = .clear
-            self.navigationBar.barTintColor = backgroundColor // for iOS 14
+            self.navigationBar.barTintColor = backgroundColor // for iOS14
         } else {
             appearance.configureWithTransparentBackground()
         }
@@ -90,7 +90,6 @@ extension UINavigationController {
     // MARK: - title 추가
     
     func setTitleTextAttributes(_ appearance: UINavigationBarAppearance) {
-        appearance.configureWithTransparentBackground()
         appearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont.spoqaHanSansNeo(weight: .regular, size: 15), NSAttributedString.Key.foregroundColor: UIColor.Black]
         
         self.navigationBar.standardAppearance = appearance
