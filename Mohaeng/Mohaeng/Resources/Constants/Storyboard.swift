@@ -28,6 +28,7 @@ extension Const {
             static let home = "Home"
             static let medal = "Medal"
             static let setting = "Setting"
+            static let makers = "Makers"
             static let notification = "Notification"
             static let characterStyle = "CharacterStyle"
             static let myPage = "MyPage"

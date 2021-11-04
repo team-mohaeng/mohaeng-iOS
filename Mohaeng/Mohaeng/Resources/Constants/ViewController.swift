@@ -28,6 +28,7 @@ extension Const {
             static let home = "HomeViewController"
             static let badge = "BadgeViewController"
             static let setting = "SettingViewController"
+            static let makers = "MakersViewController"
             static let notification = "NotificationViewController"
             static let characterStyle = "CharacterStyleViewController"
             static let myPage = "MyPageViewController"
