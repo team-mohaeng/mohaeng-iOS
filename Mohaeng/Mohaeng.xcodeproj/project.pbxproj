@@ -200,10 +200,10 @@
 		AAEDB377271C689800E26615 /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB376271C689800E26615 /* CharacterService.swift */; };
 		AAEDB379271C9D4600E26615 /* BackgroundSkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDB378271C9D4600E26615 /* BackgroundSkin.swift */; };
 		C96CDD968727E45C25BA11DB /* Pods_Mohaeng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF85070BA1F5A448133681A6 /* Pods_Mohaeng.framework */; };
-		DD1C5C41271FE936004026BC /* awards_sok7.json in Resources */ = {isa = PBXBuildFile; fileRef = DD1C5C3A271FE936004026BC /* awards_sok7.json */; };
 		DD515C672711D77700E76D4B /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD515C662711D77700E76D4B /* MoyaLoggingPlugin.swift */; };
 		DD515C6A2711F39100E76D4B /* OnBoarding1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD515C692711F39100E76D4B /* OnBoarding1ViewController.swift */; };
 		DD515C6C2712042D00E76D4B /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD515C6B2712042D00E76D4B /* UILabel+Extension.swift */; };
+		DD5D0DD52734F3FA00952A2A /* awards_sok7.json in Resources */ = {isa = PBXBuildFile; fileRef = DD5D0DD42734F3FA00952A2A /* awards_sok7.json */; };
 		DD64327626F5CCC100D71787 /* BadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327526F5CCC100D71787 /* BadgeViewController.swift */; };
 		DD64327926F5DC3400D71787 /* BadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */; };
 		DD64327B26F601E400D71787 /* BadgeModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64327A26F601E400D71787 /* BadgeModalViewController.swift */; };
@@ -441,10 +441,10 @@
 		AAEDB376271C689800E26615 /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
 		AAEDB378271C9D4600E26615 /* BackgroundSkin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSkin.swift; sourceTree = "<group>"; };
 		CE6F11BC23DA1F9010B4D5A7 /* Pods-Mohaeng.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mohaeng.debug.xcconfig"; path = "Target Support Files/Pods-Mohaeng/Pods-Mohaeng.debug.xcconfig"; sourceTree = "<group>"; };
-		DD1C5C3A271FE936004026BC /* awards_sok7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_sok7.json; sourceTree = "<group>"; };
 		DD515C662711D77700E76D4B /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
 		DD515C692711F39100E76D4B /* OnBoarding1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding1ViewController.swift; sourceTree = "<group>"; };
 		DD515C6B2712042D00E76D4B /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		DD5D0DD42734F3FA00952A2A /* awards_sok7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_sok7.json; sourceTree = "<group>"; };
 		DD64327526F5CCC100D71787 /* BadgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewController.swift; sourceTree = "<group>"; };
 		DD64327826F5DC3400D71787 /* BadgeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCollectionViewCell.swift; sourceTree = "<group>"; };
 		DD64327A26F601E400D71787 /* BadgeModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModalViewController.swift; sourceTree = "<group>"; };
@@ -1131,7 +1131,7 @@
 				DDA7EF3827214CFF00F100CA /* awards_sok4.json */,
 				DDA7EF3327214CFD00F100CA /* awards_sok5.json */,
 				DDA7EF3427214CFD00F100CA /* awards_sok6.json */,
-				DD1C5C3A271FE936004026BC /* awards_sok7.json */,
+				DD5D0DD42734F3FA00952A2A /* awards_sok7.json */,
 			);
 			path = RewardCards;
 			sourceTree = "<group>";
@@ -1309,7 +1309,6 @@
 				569E8B1E271547AD00D67712 /* ChallengeHelpPopUpViewController.xib in Resources */,
 				AAED18DD26F11DF0009FE781 /* PlusButtonCollectionViewCell.xib in Resources */,
 				561D76A826F0BFA40028DBCA /* MyDrawer.storyboard in Resources */,
-				DD1C5C41271FE936004026BC /* awards_sok7.json in Resources */,
 				561D772B26F0BFA40028DBCA /* CourseFooterView.xib in Resources */,
 				561D772F26F0BFA40028DBCA /* FeedHeaderView.xib in Resources */,
 				56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */,
@@ -1337,6 +1336,7 @@
 				561D769E26F0BFA40028DBCA /* SignUpSecond.storyboard in Resources */,
 				561D773A26F0BFA40028DBCA /* YearPickerViewController.xib in Resources */,
 				561D76A926F0BFA40028DBCA /* FeedDetail.storyboard in Resources */,
+				DD5D0DD52734F3FA00952A2A /* awards_sok7.json in Resources */,
 				561D76D926F0BFA40028DBCA /* OddDayTableViewCell.xib in Resources */,
 				56931AC8271D7D87000EECF5 /* Course.storyboard in Resources */,
 				561D76C426F0BFA40028DBCA /* SpoqaHanSansNeo-Regular.otf in Resources */,

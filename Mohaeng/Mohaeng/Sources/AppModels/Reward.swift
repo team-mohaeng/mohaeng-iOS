@@ -85,7 +85,7 @@ enum Reward {
            
             let courseLabelView = UIView().then {
                 let label = UILabel().then {
-                    $0.text = course.getKorean() + "코스"
+                    $0.text = course.getKorean() + " 코스"
                     $0.font = .spoqaHanSansNeo(weight: .regular, size: 9)
                     $0.textColor = course.getDarkColor()
                 }
@@ -134,7 +134,7 @@ enum Reward {
             }
             
             animationView.play()
-            animationView.loopMode = .playOnce
+            animationView.loopMode = .loop
             
         case .levelUp:
             guard let styleCard = styleCard else {return}
