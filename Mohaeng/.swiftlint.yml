@@ -3,6 +3,7 @@ disabled_rules:
 - trailing_whitespace
 - orphaned_doc_comment
 - nesting
+- function_body_length
 included:
 excluded:
 - Pods

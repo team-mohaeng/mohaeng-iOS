@@ -66,7 +66,11 @@ class BadgeCollectionViewCell: UICollectionViewCell {
     }
     
     public func setData(badge: Badge) {
-        imageView.updateServerImage(badge.image)
+        if let badgeImage = badge.image {
+            imageView.updateServerImage(badgeImage)
+        } else {
+            imageView.image = Const.Image.emptyBadge
+        }
         nameLabel.text = badge.name
     }
     

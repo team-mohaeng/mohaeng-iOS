@@ -117,7 +117,11 @@ class BadgeModalViewController: UIViewController {
     
     private func setData() {
         guard let badge = badge else {return}
-        badgeImageView.updateServerImage(badge.image)
+        if let badgeImage = badge.image {
+            badgeImageView.updateServerImage(badgeImage)
+        } else {
+            badgeImageView.image = Const.Image.emptyBadge
+        }
         nameLabel.text = badge.name
         infoLabel.text = badge.info
     }

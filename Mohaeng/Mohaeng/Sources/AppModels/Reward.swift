@@ -76,18 +76,65 @@ enum Reward {
         case .course:
             guard let courseCompletion = courseCompletion else { return }
             guard let property = courseCompletion.property else { return }
-            guard let rewardCard = AppCourse(rawValue: property)?.getRewardCards() else { return }
+            guard let course = AppCourse(rawValue: property) else {return}
         
-            let animationView = AnimationView(name: rewardCard).then {
+            let animationView = AnimationView(name: course.getRewardCards()).then {
                 $0.frame = view.bounds
                 $0.contentMode = .scaleAspectFill
             }
-            view.addSubviews(animationView)
+           
+            let courseLabelView = UIView().then {
+                let label = UILabel().then {
+                    $0.text = course.getKorean() + " 코스"
+                    $0.font = .spoqaHanSansNeo(weight: .regular, size: 9)
+                    $0.textColor = course.getDarkColor()
+                }
+                $0.makeRounded(radius: 10)
+                $0.layer.borderColor = course.getDarkColor().cgColor
+                $0.layer.borderWidth = 0.3
+                $0.clipsToBounds = true
+                $0.backgroundColor = .clear
+                $0.addSubview(label)
+                label.snp.makeConstraints {
+                    $0.leading.trailing.equalToSuperview().inset(7)
+                    $0.top.bottom.equalToSuperview().inset(4)
+                }
+            }
+            
+            let titleLabel = UILabel().then {
+                $0.text = courseCompletion.title
+                $0.font = .gmarketFont(weight: .medium, size: 20)
+            }
+            
+            let dateLabel = UILabel().then {
+                let currentDate = AppDate()
+                $0.text = "\(currentDate.getYear())년 \(currentDate.getMonth())월 \(currentDate.getDay())일 성공"
+                $0.font = .spoqaHanSansNeo(weight: .thin, size: 14)
+                $0.textColor = .Black
+            }
+            
+            view.addSubviews(animationView, courseLabelView, titleLabel, dateLabel)
             animationView.snp.makeConstraints {
                 $0.edges.equalToSuperview()
             }
+            
+            courseLabelView.snp.makeConstraints {
+                $0.centerX.equalToSuperview()
+                $0.top.equalToSuperview().offset(112)
+            }
+            
+            titleLabel.snp.makeConstraints {
+                $0.centerX.equalToSuperview()
+                $0.top.equalToSuperview().offset(140)
+            }
+            
+            dateLabel.snp.makeConstraints {
+                $0.centerX.equalToSuperview()
+                $0.top.equalToSuperview().offset(182)
+            }
+            
             animationView.play()
-            animationView.loopMode = .playOnce
+            animationView.loopMode = .loop
             
         case .levelUp:
             guard let styleCard = styleCard else {return}
@@ -96,22 +143,29 @@ enum Reward {
             }
             imageView.updateServerImage(styleCard)
             
-            let backgroundImageView = UIImageView().then {
-                $0.contentMode = .scaleAspectFit
-                $0.image = Const.Image.styleCardBg
-            }
-            backgroundImageView.addSubviews(imageView)
-            view.addSubviews(backgroundImageView)
-            imageView.snp.makeConstraints {
-                $0.trailing.equalToSuperview()
-                $0.leading.equalToSuperview().inset(55)
-                $0.bottom.top.equalToSuperview().inset(20)
-            }
-            
-            backgroundImageView.snp.makeConstraints {
-                $0.width.equalTo(189)
-                $0.height.equalTo(259)
-                $0.centerX.bottom.equalToSuperview()
+            if !styleCard.contains("ios") {
+                let backgroundImageView = UIImageView().then {
+                    $0.contentMode = .scaleAspectFit
+                    $0.image = Const.Image.styleCardBg
+                }
+                backgroundImageView.addSubviews(imageView)
+                view.addSubviews(backgroundImageView)
+                imageView.snp.makeConstraints {
+                    $0.trailing.centerY.equalToSuperview()
+                    $0.leading.equalToSuperview().inset(62)
+                }
+                
+                backgroundImageView.snp.makeConstraints {
+                    $0.width.equalTo(189)
+                    $0.height.equalTo(259)
+                    $0.centerX.bottom.equalToSuperview()
+                }
+            } else {
+                view.addSubview(imageView)
+                imageView.snp.makeConstraints {
+                    $0.leading.trailing.bottom.equalToSuperview()
+                    $0.top.equalToSuperview().offset(50)
+                }
             }
            
         case .curiosity:
@@ -147,7 +201,7 @@ enum Reward {
         switch self {
         case .challenge, .course, .writing:
             guard let happy = happy else {return}
-            let animationView = AnimationView(name: "awards_congrats").then {
+            let animationView = AnimationView(name: "letter").then {
                 $0.frame = view.bounds
                 $0.contentMode = .scaleAspectFill
             }
