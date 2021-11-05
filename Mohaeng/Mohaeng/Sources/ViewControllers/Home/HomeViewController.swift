@@ -34,7 +34,6 @@ class HomeViewController: UIViewController {
     private var rewardButton: UIBarButtonItem!
     private var chattingButton: UIBarButtonItem!
     private var mypageButton: UIBarButtonItem!
-    private var ments: [HomeMent] = Ments().mentList
     
     // MARK: - View Life Cycle
     
@@ -148,6 +147,8 @@ class HomeViewController: UIViewController {
     private func setHourlyMent(nickname: String) {
         let hour = AppDate().getHour()
         
+        let ments: [HomeMent] = Ments().mentList
+        
         switch hour {
         case 5...11:
             let numbers = Int.random(in: 0..<4)
@@ -179,7 +180,6 @@ class HomeViewController: UIViewController {
     
     private func updateData(data: Home) {
         backgroundImageView.updateServerImage(data.characterSkin)
-        setHourlyMent(nickname: data.nickname)
         UserDefaults.standard.set(data.nickname, forKey: "nickname")
         if let percent = data.course.percent {
             courseProgressLabel.text = "코스 진행률 \(percent)%"
@@ -195,6 +195,7 @@ class HomeViewController: UIViewController {
         setLottieView(url: URL(string: data.characterLottie)!)
         levelLabel.text = "Lv.\(data.level)"
         happyPopUp.data = data
+        setHourlyMent(nickname: data.nickname)
     }
     
 }
