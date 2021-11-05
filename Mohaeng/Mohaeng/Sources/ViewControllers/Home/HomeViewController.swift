@@ -35,6 +35,8 @@ class HomeViewController: UIViewController {
     private var chattingButton: UIBarButtonItem!
     private var mypageButton: UIBarButtonItem!
     
+    var isFromLogoutOrWithdrawal: Bool = false
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -50,6 +52,15 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         getHomeInfomation()
         initNavigationBar()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if self.isFromLogoutOrWithdrawal {
+            self.isFromLogoutOrWithdrawal = false
+            self.pushToLoginViewController()
+        }
     }
     
     // MARK: - @IBAction Functions
@@ -198,6 +209,14 @@ class HomeViewController: UIViewController {
         setHourlyMent(nickname: data.nickname)
     }
     
+    func pushToLoginViewController() {
+        let loginStoryboard = UIStoryboard(name: Const.Storyboard.Name.login, bundle: nil)
+        guard let loginViewController = loginStoryboard.instantiateInitialViewController() else { return }
+        
+        loginViewController.modalPresentationStyle = .fullScreen
+                
+        self.present(loginViewController, animated: false, completion: nil)
+    }
 }
 
 extension HomeViewController {

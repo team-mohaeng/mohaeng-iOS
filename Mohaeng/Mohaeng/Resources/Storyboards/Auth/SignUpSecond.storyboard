@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="약관동의" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpb-Sm-v4s">
-                                <rect key="frame" x="24" y="82" width="76.333333333333329" height="26.333333333333329"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <rect key="frame" x="24" y="82" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="0.0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLl-sL-jW8">
-                                <rect key="frame" x="24" y="446.66666666666669" width="327" height="40"/>
+                                <rect key="frame" x="24" y="403.33333333333331" width="327" height="40"/>
                                 <color key="backgroundColor" name="LoginYellow"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="frc-RV-bE2"/>
@@ -46,13 +46,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체 동의합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tap-IG-HAy">
-                                <rect key="frame" x="24" y="161.33333333333334" width="93" height="17"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <rect key="frame" x="24" y="135" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="0.0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TP-mj-ugW">
-                                <rect key="frame" x="327" y="158" width="24" height="24"/>
+                                <rect key="frame" x="327" y="123" width="24" height="24"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="RQp-AL-cj8"/>
@@ -66,7 +66,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vws-uc-RVl">
-                                <rect key="frame" x="11" y="205.33333333333334" width="146" height="17"/>
+                                <rect key="frame" x="11" y="162" width="154.33333333333334" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="Mvc-HW-dLc"/>
                                 </constraints>
@@ -76,28 +76,28 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="서비스 이용약관">
                                             <attributes>
-                                                <font key="NSFont" size="14" name="AppleSDGothicNeo-Regular"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="15" name="AppleSDGothicNeo-Regular"/>
                                                 <integer key="NSUnderline" value="1"/>
                                             </attributes>
                                         </fragment>
                                         <fragment content="(">
                                             <attributes>
-                                                <font key="NSFont" size="14" name="AppleSDGothicNeo-Regular"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="15" name="AppleSDGothicNeo-Regular"/>
                                             </attributes>
                                         </fragment>
                                         <fragment content="필수">
                                             <attributes>
-                                                <font key="NSFont" size="14" name="AppleSDGothicNeo-Regular"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="15" name="AppleSDGothicNeo-Regular"/>
                                                 <integer key="NSUnderline" value="1"/>
                                             </attributes>
                                         </fragment>
                                         <fragment content=")">
                                             <attributes>
-                                                <font key="NSFont" size="14" name="AppleSDGothicNeo-Regular"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="15" name="AppleSDGothicNeo-Regular"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -107,7 +107,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Lj-Gk-QiP">
-                                <rect key="frame" x="327" y="201" width="24" height="24"/>
+                                <rect key="frame" x="327" y="157.66666666666666" width="24" height="24"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="N52-3x-TRJ"/>
@@ -121,7 +121,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Guc-Ia-nEj">
-                                <rect key="frame" x="11" y="249.33333333333337" width="205.33333333333334" height="17"/>
+                                <rect key="frame" x="11" y="206" width="218" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="Ol5-Xj-5J8"/>
                                 </constraints>
@@ -131,28 +131,24 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="개인정보 수집 및 이용 동의">
                                             <attributes>
-                                                <font key="NSFont" size="14" name="AppleSDGothicNeo-Regular"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                <font key="NSFont" size="15" name="AppleSDGothicNeo-Regular"/>
                                                 <integer key="NSUnderline" value="1"/>
                                             </attributes>
                                         </fragment>
                                         <fragment content="(">
                                             <attributes>
-                                                <font key="NSFont" size="14" name="AppleSDGothicNeo-Regular"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                <font key="NSFont" size="15" name="AppleSDGothicNeo-Regular"/>
                                             </attributes>
                                         </fragment>
                                         <fragment content="필수">
                                             <attributes>
-                                                <font key="NSFont" size="14" name="AppleSDGothicNeo-Regular"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                <font key="NSFont" size="15" name="AppleSDGothicNeo-Regular"/>
                                                 <integer key="NSUnderline" value="1"/>
                                             </attributes>
                                         </fragment>
                                         <fragment content=")">
                                             <attributes>
-                                                <font key="NSFont" size="14" name="AppleSDGothicNeo-Regular"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                <font key="NSFont" size="15" name="AppleSDGothicNeo-Regular"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -162,7 +158,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdh-je-rUA">
-                                <rect key="frame" x="327" y="246" width="24" height="24"/>
+                                <rect key="frame" x="327" y="202.66666666666666" width="24" height="24"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="THX-yd-d3G"/>
@@ -200,8 +196,12 @@
                     </view>
                     <connections>
                         <outlet property="agreeButton" destination="dLl-sL-jW8" id="vbp-Gd-AhV"/>
+                        <outlet property="agreeLabel" destination="lpb-Sm-v4s" id="VlU-IN-bEW"/>
+                        <outlet property="allAgreeLabel" destination="Tap-IG-HAy" id="tcf-yK-oo9"/>
                         <outlet property="firstCheckButton" destination="4TP-mj-ugW" id="em0-kn-txP"/>
+                        <outlet property="personalButton" destination="Guc-Ia-nEj" id="rPm-NU-h6m"/>
                         <outlet property="secondCheckButton" destination="3Lj-Gk-QiP" id="kQy-UK-rua"/>
+                        <outlet property="serviceButton" destination="vws-uc-RVl" id="buJ-mX-pKF"/>
                         <outlet property="thirdCheckButton" destination="jdh-je-rUA" id="LgU-1O-wMg"/>
                         <outletCollection property="buttons" destination="4TP-mj-ugW" collectionClass="NSMutableArray" id="kby-Ad-OWr"/>
                         <outletCollection property="buttons" destination="3Lj-Gk-QiP" collectionClass="NSMutableArray" id="qFw-MJ-kMb"/>
@@ -210,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="182" y="-93"/>
+            <point key="canvasLocation" x="181.59999999999999" y="-93.103448275862078"/>
         </scene>
     </scenes>
     <resources>
