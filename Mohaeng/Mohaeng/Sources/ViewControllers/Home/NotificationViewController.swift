@@ -123,7 +123,7 @@ class NotificationViewController: UIViewController {
     
     func getBoundingRect(string: String) -> CGRect {
         let textRect = NSString(string: string).boundingRect(
-            with: CGSize(width: UIScreen.main.bounds.width - 190, height: CGFloat.greatestFiniteMagnitude),
+            with: CGSize(width: UIScreen.main.bounds.width - 180, height: CGFloat.greatestFiniteMagnitude),
             options: .usesLineFragmentOrigin,
             attributes: [
                 NSAttributedString.Key.font: UIFont.spoqaHanSansNeo(weight: .regular, size: 15)

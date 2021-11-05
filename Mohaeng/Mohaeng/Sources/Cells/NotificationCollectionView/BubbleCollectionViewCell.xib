@@ -28,7 +28,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="445" height="47"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AYG-cl-qsf">
-                                <rect key="frame" x="84" y="4" width="222" height="39"/>
+                                <rect key="frame" x="86" y="4" width="222" height="39"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="너의 안부에 스티커가 붙여졌어!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZf-oP-ntD">
                                         <rect key="frame" x="14" y="10" width="194" height="19"/>
@@ -46,9 +46,9 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19시간 전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FL-H2-yRf">
-                                <rect key="frame" x="314" y="31" width="50" height="12"/>
+                                <rect key="frame" x="316" y="31" width="41" height="12"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="nSp-bn-NSC"/>
+                                    <constraint firstAttribute="width" constant="41" id="vOW-Li-4UB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" name="GreyTextPush2"/>
@@ -57,11 +57,11 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2FL-H2-yRf" secondAttribute="trailing" constant="23" id="3pS-i1-rhF"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2FL-H2-yRf" secondAttribute="trailing" constant="14" id="3pS-i1-rhF"/>
                             <constraint firstItem="AYG-cl-qsf" firstAttribute="bottom" secondItem="2FL-H2-yRf" secondAttribute="bottom" id="7zh-gp-7XA"/>
                             <constraint firstAttribute="bottom" secondItem="2FL-H2-yRf" secondAttribute="bottom" constant="4" id="TEE-VE-wUY"/>
                             <constraint firstItem="2FL-H2-yRf" firstAttribute="leading" secondItem="AYG-cl-qsf" secondAttribute="trailing" constant="8" id="cqi-By-P28"/>
-                            <constraint firstItem="AYG-cl-qsf" firstAttribute="leading" secondItem="gIE-f2-Nlz" secondAttribute="leading" constant="84" id="obG-uG-eRx"/>
+                            <constraint firstItem="AYG-cl-qsf" firstAttribute="leading" secondItem="gIE-f2-Nlz" secondAttribute="leading" constant="86" id="obG-uG-eRx"/>
                             <constraint firstItem="AYG-cl-qsf" firstAttribute="top" secondItem="gIE-f2-Nlz" secondAttribute="top" constant="4" id="rHM-qx-YoF"/>
                         </constraints>
                     </view>
