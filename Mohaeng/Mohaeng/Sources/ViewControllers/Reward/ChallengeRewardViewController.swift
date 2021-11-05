@@ -42,11 +42,15 @@ class ChallengeRewardViewController: RewardBaseViewController {
            levelUp.styleImg != nil {
             let viewController = LevelUpRewardViewController()
             viewController.levelUp = levelUp
+            viewController.isPanalty = data.challengeCompletion.isPenalty
             navigationController?.pushViewController(viewController, animated: true)
             return
         }
         
+        if !data.challengeCompletion.isPenalty {
         navigationController?.pushViewController(CuriosityRewardViewController(), animated: true)
-        
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }
