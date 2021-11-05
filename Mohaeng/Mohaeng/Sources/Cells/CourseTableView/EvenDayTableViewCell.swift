@@ -161,6 +161,26 @@ class EvenDayTableViewCell: UITableViewCell {
     func setPlainLine(line: CAShapeLayer) {
         line.lineDashPattern = [1]
     }
+    
+    // dot 추가
+    func setDot(property: Int) {
+        let circleLayer = CAShapeLayer()
+        let circleRadius: CGFloat = 12
+        let circleRect = CGRect(x: RoadMapPath.Size.screenWidth - RoadMapPath.Size.horizontalSpacing - circleRadius,
+                                y: RoadMapPath.Size.radius - circleRadius,
+                                width: 24,
+                                height: 24)
+        let path = UIBezierPath(ovalIn: circleRect)
+        
+        guard let course = AppCourse(rawValue: property) else { return }
+        
+        circleLayer.fillMode = .forwards
+        circleLayer.fillColor = course.getDarkColor().cgColor
+        circleLayer.path = path.cgPath
+        circleLayer.name = "circleLayer"
+        
+        self.contentView.layer.insertSublayer(circleLayer, at: 2)
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

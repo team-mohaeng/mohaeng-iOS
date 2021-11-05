@@ -153,11 +153,14 @@ extension CourseHistoryViewController: CoursePopUpProtocol {
         startNewCoursePopUp.modalPresentationStyle = .overCurrentContext
         startNewCoursePopUp.modalTransitionStyle = .crossDissolve
         startNewCoursePopUp.popUpUsage = .twoButtonWithImage
+        
         if doingCourse {
             startNewCoursePopUp.setText(title: Const.String.changeCoursePopUpTitle, description: Const.String.changeCoursePopUpContent)
         } else {
-            startNewCoursePopUp.setText(title: Const.String.startCoursePopUpTitle, description: Const.String.startCoursePopUpTitle)
+            startNewCoursePopUp.setText(title: Const.String.startCoursePopUpTitle, description: Const.String.startCoursePopUpTitle, buttonTitle: "시작")
+            startNewCoursePopUp.setImage(image: Const.Image.grpXStartChallenge)
         }
+        
         startNewCoursePopUp.popUpActionDelegate = self
         tabBarController?.present(startNewCoursePopUp, animated: true, completion: nil)
         

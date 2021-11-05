@@ -83,7 +83,8 @@ class CourseLibraryViewController: UIViewController {
         if doingCourse {
             askPopUp.setText(title: Const.String.changeCoursePopUpTitle, description: Const.String.changeCoursePopUpContent)
         } else {
-            askPopUp.setText(title: Const.String.startCoursePopUpTitle, description: Const.String.startCoursePopUpTitle)
+            askPopUp.setText(title: Const.String.startCoursePopUpTitle, description: Const.String.startCoursePopUpTitle, buttonTitle: "시작")
+            askPopUp.setImage(image: Const.Image.grpXStartChallenge)
         }
         
         askPopUp.popUpActionDelegate = self
@@ -168,7 +169,7 @@ extension CourseLibraryViewController: UICollectionViewDataSource {
         
         switch collectionView {
         case propertyCollectionView:
-            return UIEdgeInsets(top: 0, left: 18, bottom: 10, right: 18)
+            return UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
         case courseLibraryCollectionView:
             return UIEdgeInsets(top: 22, left: 24, bottom: 0, right: 24)
         default:

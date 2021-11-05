@@ -27,7 +27,7 @@ class CourseViewController: UIViewController {
     
     // 챌린지 인증을 위한 정보
     var courseId: Int?
-    var challengeId: Int?
+    var challengeDay: Int?
     
     // MARK: - @IBOutlet Properties
     
@@ -131,7 +131,7 @@ class CourseViewController: UIViewController {
         
         // 챌린지 인증을 위한 id
         self.courseId = data.course.id
-        self.challengeId = findTodayChallenge(course: self.course).day
+        self.challengeDay = findTodayChallenge(course: self.course).day
         
     }
     
@@ -145,6 +145,14 @@ class CourseViewController: UIViewController {
         }
         // 모든 챌린지가 완료되었을 때
         return course.challenges.last!
+    }
+    
+    func findAndRemoveCircleLayer(_ sublayer: CALayer) {
+        if let _ = sublayer as? CAShapeLayer {
+            if sublayer.name == "circleLayer" {
+                sublayer.removeFromSuperlayer()
+            }
+        }
     }
     
     // MARK: - @IBAction Function
@@ -248,9 +256,17 @@ extension CourseViewController: UITableViewDelegate {
                 if course.challenges[course.challenges.count - 1].situation == 2 {
                     footerView.setIslandImage(isDone: true)
                     footerView.initLastPath(isDone: true, property: course.property)
+                    // remove dot
+                    for sublayer in footerView.bgView.layer.sublayers! {
+                        findAndRemoveCircleLayer(sublayer)
+                    }
                 } else {
                     footerView.setIslandImage(isDone: false)
                     footerView.initLastPath(isDone: false, property: course.property)
+                    // add dot
+                    if let challengeDay = challengeDay, challengeDay == course.totalDays {
+                        footerView.setDot(property: course.property)
+                    }
                 }
                 footerView.setNextButton(isOnboarding: false)
             }
@@ -276,6 +292,12 @@ extension CourseViewController: UITableViewDataSource {
                 
                 cell.setCell(challenge: course.challenges[indexPath.row], property: course.property)
                 cell.setNextSituation(next: course.challenges[indexPath.row + 1].situation)
+                
+                // 진행중인 챌린지일 때 dot 추가
+                if let challengeId = challengeDay, challengeId == course.challenges[indexPath.row].day {
+                    cell.setDot(property: course.property)
+                }
+                
                 return cell
             }
             return UITableViewCell()
@@ -290,7 +312,14 @@ extension CourseViewController: UITableViewDataSource {
                 if indexPath.row < course.challenges.count-1 {
                     cell.setNextSituation(next: course.challenges[indexPath.row + 1].situation)
                 }
-                
+                // 진행중인 챌린지일 때 dot 추가
+                if let challengeId = challengeDay, challengeId == course.challenges[indexPath.row].day {
+                    cell.setDot(property: course.property)
+                } else {
+                    for sublayer in cell.contentView.layer.sublayers! {
+                        findAndRemoveCircleLayer(sublayer)
+                    }
+                }
                 return cell
             }
             return UITableViewCell()
@@ -302,11 +331,18 @@ extension CourseViewController: UITableViewDataSource {
                 
                 if indexPath.row < course.challenges.count-1 {
                     cell.setNextSituation(next: course.challenges[indexPath.row + 1].situation)
+                    // 진행중인 챌린지일 때 dot 추가
+                    if let challengeId = challengeDay, challengeId == course.challenges[indexPath.row].day {
+                        cell.setDot(property: course.property)
+                    } else {
+                        for sublayer in cell.contentView.layer.sublayers! {
+                            findAndRemoveCircleLayer(sublayer)
+                        }
+                    }
                 } else {
                     // 맨 마지막 cell일 때
                     cell.setNextSituation(next: 9)
                 }
-                
                 return cell
             }
             return UITableViewCell()
@@ -392,7 +428,7 @@ extension CourseViewController {
     
     func putTodayChallenge(completion: (@escaping(CompletedChallengeData) -> Void)) {
         
-        if let courseId = self.courseId, let challengeId = self.challengeId {
+        if let courseId = self.courseId, let challengeId = self.challengeDay {
             
             ChallengeAPI.shared.putTodayChallenge(completion: { (response) in
                 

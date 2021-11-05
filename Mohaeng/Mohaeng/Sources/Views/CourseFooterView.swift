@@ -57,6 +57,26 @@ class CourseFooterView: UITableViewHeaderFooterView {
         }
         nextButton.makeRounded(radius: nextButton.frame.height / 2)
     }
+    
+    // dot 추가
+    func setDot(property: Int) {
+        let circleLayer = CAShapeLayer()
+        let circleRadius: CGFloat = 12
+        let circleRect = CGRect(x: RoadMapPath.Size.horizontalSpacing - circleRadius,
+                                y: -RoadMapPath.Size.radius - circleRadius,
+                                width: 24,
+                                height: 24)
+        let path = UIBezierPath(ovalIn: circleRect)
+        
+        guard let course = AppCourse(rawValue: property) else { return }
+        
+        circleLayer.fillMode = .forwards
+        circleLayer.fillColor = course.getDarkColor().cgColor
+        circleLayer.path = path.cgPath
+        circleLayer.name = "circleLayer"
+        
+        self.bgView.layer.insertSublayer(circleLayer, at: 10)
+    }
 
     @IBAction func touchNextButton(_ sender: UIButton) {
         self.onboardingCourseProtocol?.touchNextButton(sender)

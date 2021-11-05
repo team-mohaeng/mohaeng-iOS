@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,7 +29,7 @@
                 <outlet property="descriptionToStackViewConstraint" destination="sAv-Kh-lFA" id="dkL-jt-tWb"/>
                 <outlet property="greyButton" destination="cUv-Ed-G37" id="8hm-O0-EtL"/>
                 <outlet property="popUpBgView" destination="YgR-Uh-m6x" id="eg6-dm-gng"/>
-                <outlet property="popUpImageView" destination="bVj-gL-3It" id="gQq-mQ-DrO"/>
+                <outlet property="popUpImageView" destination="bVj-gL-3It" id="4xA-Sh-DUO"/>
                 <outlet property="titleLabel" destination="L6P-UJ-Jpl" id="zmk-gP-HbB"/>
                 <outlet property="titleToDescriptionConstraint" destination="JqV-iB-pB3" id="EVx-kb-m4T"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

@@ -251,5 +251,6 @@ extension Const {
         static let squirrelCardLockImg = UIImage(named: "stylecardLock6")!
         static let bearCardLockImg = UIImage(named: "stylecardLock8")!
 
+        static let grpXStartChallenge = UIImage(named: "grpXStartChallenge")!
     }
 }

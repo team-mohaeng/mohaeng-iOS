@@ -25,6 +25,7 @@ class ChallengeStampView: UIView {
     @IBOutlet weak var characterImageView: UIImageView!
     @IBOutlet weak var availableHappyLabel: UILabel!
     @IBOutlet weak var availableBadgeLabel: UILabel!
+    @IBOutlet weak var completeEffectImageView: UIImageView!
     
     // MARK: - View Life Cycle
     
@@ -67,6 +68,7 @@ class ChallengeStampView: UIView {
                 stampImageView.image = appCourse.getUndoneStampImage()
             }
             stampImageView.isUserInteractionEnabled = true
+            completeEffectImageView.isHidden = true
         } else {
             // 완료한 챌린지
             // 대사
@@ -76,6 +78,7 @@ class ChallengeStampView: UIView {
                 stampImageView.image = appCourse.getDoneStampImage()
             }
             stampImageView.isUserInteractionEnabled = false
+            completeEffectImageView.isHidden = false
         }
         
         // 챌린지 정보
