@@ -255,6 +255,13 @@ class MyPageViewController: UIViewController {
         totalSectionCount = components.month ?? 1
     }
     
+    func scrollToCurrentMonth() {
+        currentSection = totalSectionCount
+        calendarCollectionView.scrollToItem(at: IndexPath.init(row: 0, section: currentSection), at: .left, animated: true)
+        
+        yearMonthLabel.text = "2021년 \(totalSectionCount + 1)월"
+    }
+    
     // 통신 후 data 업데이트
     func updateData(data: MyPage) {
         self.myPageData = data
@@ -270,6 +277,7 @@ class MyPageViewController: UIViewController {
         setTotalSectionCount()
         setRangeDates()
         selectRangeDate()
+        scrollToCurrentMonth()
         
         calendarCollectionView.reloadData()
     }

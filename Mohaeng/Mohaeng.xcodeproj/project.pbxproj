@@ -240,8 +240,12 @@
 		EC087641271FFDB400EB1F51 /* SocialAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC087640271FFDB400EB1F51 /* SocialAPI.swift */; };
 		EC087643271FFDCB00EB1F51 /* SocialService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC087642271FFDCB00EB1F51 /* SocialService.swift */; };
 		EC31776326FDB50E0076BCEC /* CarouselLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */; };
+
 		ECE4BCCF2735092100E5B2BF /* Makers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECE4BCCE2735092100E5B2BF /* Makers.storyboard */; };
 		ECE4BCD12735096900E5B2BF /* MakersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE4BCD02735096900E5B2BF /* MakersViewController.swift */; };
+		ECAC22762735046000B4C71A /* AgreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC22752735046000B4C71A /* AgreeViewController.swift */; };
+		ECAC22782735047800B4C71A /* Agree.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECAC22772735047800B4C71A /* Agree.storyboard */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -483,8 +487,12 @@
 		EC087640271FFDB400EB1F51 /* SocialAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAPI.swift; sourceTree = "<group>"; };
 		EC087642271FFDCB00EB1F51 /* SocialService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialService.swift; sourceTree = "<group>"; };
 		EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselLayoutView.swift; sourceTree = "<group>"; };
+
 		ECE4BCCE2735092100E5B2BF /* Makers.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Makers.storyboard; sourceTree = "<group>"; };
 		ECE4BCD02735096900E5B2BF /* MakersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakersViewController.swift; sourceTree = "<group>"; };
+		ECAC22752735046000B4C71A /* AgreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgreeViewController.swift; sourceTree = "<group>"; };
+		ECAC22772735047800B4C71A /* Agree.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Agree.storyboard; sourceTree = "<group>"; };
+
 		FF85070BA1F5A448133681A6 /* Pods_Mohaeng.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mohaeng.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -572,6 +580,7 @@
 		561D75D826F0BFA30028DBCA /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				ECAC22772735047800B4C71A /* Agree.storyboard */,
 				561D75D926F0BFA30028DBCA /* SignUpSecond.storyboard */,
 				561D75DA26F0BFA30028DBCA /* SignUpThird.storyboard */,
 				561D75DB26F0BFA30028DBCA /* EmailLogin.storyboard */,
@@ -808,6 +817,7 @@
 		561D764126F0BFA40028DBCA /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				ECAC22752735046000B4C71A /* AgreeViewController.swift */,
 				561D764226F0BFA40028DBCA /* FindPasswordViewController.swift */,
 				561D764326F0BFA40028DBCA /* EmailLoginViewController.swift */,
 				561D764426F0BFA40028DBCA /* NewPasswordViewController.swift */,
@@ -1240,7 +1250,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					56DCAA232689BB9B0056155A = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -1306,6 +1316,7 @@
 				561D769C26F0BFA40028DBCA /* Notification.storyboard in Resources */,
 				561D76BE26F0BFA40028DBCA /* SpoqaHanSansNeo-Thin.otf in Resources */,
 				569E8B1E271547AD00D67712 /* ChallengeHelpPopUpViewController.xib in Resources */,
+				ECAC22782735047800B4C71A /* Agree.storyboard in Resources */,
 				AAED18DD26F11DF0009FE781 /* PlusButtonCollectionViewCell.xib in Resources */,
 				561D76A826F0BFA40028DBCA /* MyDrawer.storyboard in Resources */,
 				DD1C5C41271FE936004026BC /* awards_sok7.json in Resources */,
@@ -1535,6 +1546,7 @@
 				561D770E26F0BFA40028DBCA /* SignUpService.swift in Sources */,
 				561D770626F0BFA40028DBCA /* ChallengeService.swift in Sources */,
 				561D773126F0BFA40028DBCA /* CourseHeaderView.swift in Sources */,
+				ECAC22762735046000B4C71A /* AgreeViewController.swift in Sources */,
 				561D76E526F0BFA40028DBCA /* UINavigationController+Extension.swift in Sources */,
 				561D772326F0BFA40028DBCA /* Home.swift in Sources */,
 				561D76E326F0BFA40028DBCA /* UINavigationItem+Extensions.swift in Sources */,
@@ -1730,6 +1742,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = choyi.mohaeng;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1754,6 +1767,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = choyi.mohaeng;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

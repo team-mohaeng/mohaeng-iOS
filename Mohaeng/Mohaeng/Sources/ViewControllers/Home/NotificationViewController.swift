@@ -25,14 +25,15 @@ class NotificationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initNavigationBar()
         assignDelegate()
         registerXib()
         getNotification()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        initNavigationBar()
     }
     
     // MARK: - Functions
@@ -58,27 +59,32 @@ class NotificationViewController: UIViewController {
             
             // date 변환
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+            dateFormatter.locale = NSLocale(localeIdentifier: "ko_kr") as Locale
+            dateFormatter.timeZone = TimeZone(identifier: TimeZone.current.identifier)
             let startDate = dateFormatter.date(from: msg.date)!
             
             let calendar = Calendar.current
             let start = calendar.startOfDay(for: startDate)
-            let end = calendar.startOfDay(for: Date())
+            
+            let end = Date()
+            
             let dayBefore = calendar.dateComponents([.day], from: start, to: end)
             
             // day String
             var dayString = ""
             if dayBefore.day == 0 {
                 let minBefore = calendar.dateComponents([.minute], from: start, to: end)
-                if minBefore.minute! < 30 {
+                let hourBefore = calendar.dateComponents([.hour], from: start, to: end)
+                if hourBefore.hour == 0 && minBefore.minute! < 30 {
+                    print(hourBefore)
+                    print(minBefore)
                     dayString = "방금 전"
-                } else if minBefore.minute! < 59 {
+                } else if hourBefore.hour == 0 && minBefore.minute! < 59 {
                     dayString = "1시간 전"
                 } else {
-                    let hourBefore = calendar.dateComponents([.hour], from: start, to: end)
                     dayString = "\(hourBefore.hour ?? 1)시간 전"
                 }
-                
             } else {
                 dayString = "\(dayBefore.day ?? 1)일 전"
             }
@@ -117,7 +123,7 @@ class NotificationViewController: UIViewController {
     
     func getBoundingRect(string: String) -> CGRect {
         let textRect = NSString(string: string).boundingRect(
-            with: CGSize(width: UIScreen.main.bounds.width - 167, height: CGFloat.greatestFiniteMagnitude),
+            with: CGSize(width: UIScreen.main.bounds.width - 180, height: CGFloat.greatestFiniteMagnitude),
             options: .usesLineFragmentOrigin,
             attributes: [
                 NSAttributedString.Key.font: UIFont.spoqaHanSansNeo(weight: .regular, size: 15)

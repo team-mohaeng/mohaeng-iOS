@@ -31,11 +31,15 @@ extension UINavigationController {
     
     func initWithBackButton(backgroundColor: UIColor? = nil) {
         let appearance = UINavigationBarAppearance()
-        appearance.configureWithTransparentBackground()
         appearance.initBackButtonAppearance()
         
         if backgroundColor != nil {
+            appearance.configureWithOpaqueBackground()
             appearance.backgroundColor = backgroundColor
+            appearance.shadowColor = .clear
+            self.navigationBar.barTintColor = backgroundColor // for iOS14
+        } else {
+            appearance.configureWithTransparentBackground()
         }
         
         self.navigationBar.standardAppearance = appearance
@@ -86,7 +90,6 @@ extension UINavigationController {
     // MARK: - title 추가
     
     func setTitleTextAttributes(_ appearance: UINavigationBarAppearance) {
-        appearance.configureWithTransparentBackground()
         appearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont.spoqaHanSansNeo(weight: .regular, size: 15), NSAttributedString.Key.foregroundColor: UIColor.Black]
         
         self.navigationBar.standardAppearance = appearance
