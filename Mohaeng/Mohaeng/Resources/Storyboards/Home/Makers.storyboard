@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="makerBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Y9c-0q-CAr">
-                                <rect key="frame" x="31" y="44" width="352" height="627"/>
+                                <rect key="frame" x="31" y="44" width="352" height="717"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="j8w-1f-FBj">
-                                <rect key="frame" x="106.5" y="318" width="201" height="19.5"/>
+                                <rect key="frame" x="106.5" y="354" width="201" height="19.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정초이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HV5-4m-aFk">
                                         <rect key="frame" x="0.0" y="0.0" width="42" height="19.5"/>
@@ -50,22 +50,25 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mohaengMakers" translatesAutoresizingMaskIntoConstraints="NO" id="L1U-tf-4ek">
-                                <rect key="frame" x="232" y="647" width="182" height="215"/>
+                                <rect key="frame" x="232" y="698.5" width="182" height="197.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="L1U-tf-4ek" secondAttribute="height" multiplier="144:156" id="W1a-DT-4qZ"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtT-xI-O1q">
-                                <rect key="frame" x="118" y="111.5" width="178.5" height="27"/>
+                                <rect key="frame" x="118.5" y="126.5" width="177" height="29"/>
                                 <attributedString key="attributedText">
                                     <fragment content="모행을 만든 사람들">
                                         <attributes>
                                             <color key="NSColor" name="DarkYellow"/>
-                                            <font key="NSFont" size="24" name=".AppleSDGothicNeoI-Regular"/>
+                                            <font key="NSFont" metaFont="system" size="24"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Design" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMl-fa-4qb">
-                                <rect key="frame" x="152" y="165" width="110" height="28"/>
+                                <rect key="frame" x="152" y="187" width="110" height="28"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="Fip-9q-XqL"/>
@@ -76,7 +79,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueA-6H-bXg">
-                                <rect key="frame" x="152" y="272" width="110" height="28"/>
+                                <rect key="frame" x="152" y="308" width="110" height="28"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="Lkp-N5-MSM"/>
@@ -87,7 +90,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndk-GL-J6f">
-                                <rect key="frame" x="152" y="379.5" width="110" height="28"/>
+                                <rect key="frame" x="152" y="428.5" width="110" height="28"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="ADc-0F-GPj"/>
@@ -98,7 +101,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Server" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALF-9w-3fK">
-                                <rect key="frame" x="152" y="486.5" width="110" height="28"/>
+                                <rect key="frame" x="152" y="549.5" width="110" height="28"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="O74-nm-JkL"/>
@@ -109,7 +112,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7lq-Gi-1eL">
-                                <rect key="frame" x="155" y="425.5" width="104" height="20.5"/>
+                                <rect key="frame" x="155" y="474.5" width="104" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="박주예" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOl-kQ-sjC">
                                         <rect key="frame" x="0.0" y="0.0" width="44.5" height="20.5"/>
@@ -126,7 +129,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lj0-eq-CgI">
-                                <rect key="frame" x="127" y="211" width="160" height="19.5"/>
+                                <rect key="frame" x="127" y="233" width="160" height="19.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="박시원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPt-7t-Pwl">
                                         <rect key="frame" x="0.0" y="0.0" width="42" height="19.5"/>
@@ -149,7 +152,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="nJd-aD-8wK">
-                                <rect key="frame" x="154" y="532.5" width="106" height="20.5"/>
+                                <rect key="frame" x="154" y="595.5" width="106" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="김현지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rly-k9-0IF">
                                         <rect key="frame" x="0.0" y="0.0" width="44.5" height="20.5"/>
@@ -172,6 +175,7 @@
                             <constraint firstItem="j8w-1f-FBj" firstAttribute="top" secondItem="ueA-6H-bXg" secondAttribute="bottom" constant="18" id="3yB-81-dr7"/>
                             <constraint firstItem="MMl-fa-4qb" firstAttribute="centerY" secondItem="Y9c-0q-CAr" secondAttribute="centerY" multiplier="0.5" id="6yQ-fc-aW2"/>
                             <constraint firstItem="nJd-aD-8wK" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="8ad-LV-yhb"/>
+                            <constraint firstAttribute="bottom" secondItem="L1U-tf-4ek" secondAttribute="bottom" id="Bbl-mE-5ll"/>
                             <constraint firstItem="CtT-xI-O1q" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="CKa-91-ON1"/>
                             <constraint firstItem="Lj0-eq-CgI" firstAttribute="top" secondItem="MMl-fa-4qb" secondAttribute="bottom" constant="18" id="FjC-Un-lLL"/>
                             <constraint firstItem="Ndk-GL-J6f" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="KSX-4d-Y69"/>
@@ -187,12 +191,10 @@
                             <constraint firstItem="ALF-9w-3fK" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="dab-mg-vHO"/>
                             <constraint firstItem="ueA-6H-bXg" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="e2K-Zj-rpp"/>
                             <constraint firstItem="L1U-tf-4ek" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.44" id="eLC-7P-JSZ"/>
-                            <constraint firstItem="Y9c-0q-CAr" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.7" id="eaP-rM-DaA"/>
-                            <constraint firstItem="L1U-tf-4ek" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.24" id="gup-El-A5L"/>
+                            <constraint firstItem="Y9c-0q-CAr" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.8" id="eaP-rM-DaA"/>
                             <constraint firstItem="MMl-fa-4qb" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="gwF-e2-pUP"/>
                             <constraint firstItem="7lq-Gi-1eL" firstAttribute="top" secondItem="Ndk-GL-J6f" secondAttribute="bottom" constant="18" id="hIj-SR-mpV"/>
                             <constraint firstItem="Y9c-0q-CAr" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.85" id="rWc-xG-her"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="L1U-tf-4ek" secondAttribute="bottom" id="tuD-l7-bfr"/>
                             <constraint firstItem="ALF-9w-3fK" firstAttribute="centerY" secondItem="Y9c-0q-CAr" secondAttribute="centerY" multiplier="1.4" id="utx-lZ-RFl"/>
                             <constraint firstItem="Y9c-0q-CAr" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="zTM-e0-6I6"/>
                         </constraints>
