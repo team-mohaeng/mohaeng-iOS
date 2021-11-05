@@ -134,7 +134,7 @@ class CharacterStyleViewController: UIViewController {
     
     @IBAction func touchStyleSelectButton(_ sender: Any) {
         putCharacterStyle(data: CharacterStyleReqeust(characterSkin: selectedSkinIndex + 64,
-                                                      characterType: selectedCardId / 9 + 1,
+                                                      characterType: selectedCardId % 9 > 1 ? selectedCardId / 9 + 1 : selectedCardId / 9,
                                                       characterCard: selectedCardId))
     }
     
@@ -346,8 +346,8 @@ extension CharacterStyleViewController {
                     self.characterData = data
                     self.characterImageView.updateServerImage(data.currentCharacter.image)
                     self.selectedSkinIndex = data.currentSkin.id - 64
-                    self.selectedTypeIndex = data.currentCharacter.id / 9
-                    self.selectedCardIndex = data.currentCharacter.id % 9
+                    self.selectedTypeIndex = data.currentCharacter.id % 9 > 1 ? data.currentCharacter.id / 9 : data.currentCharacter.id / 9 - 1
+                    self.selectedCardIndex = data.currentCharacter.id % 9 != 0 ? data.currentCharacter.id % 9 : 9
                     self.selectedCardId = data.currentCharacter.id
                     self.setCurrentCharacterCellSelect(typeIndex: self.selectedTypeIndex, cardIndex: self.selectedCardIndex)
                     self.backgroundImageView.updateServerImage(data.currentSkin.image)
