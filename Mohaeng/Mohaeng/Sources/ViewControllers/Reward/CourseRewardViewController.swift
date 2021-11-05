@@ -31,11 +31,16 @@ class CourseRewardViewController: RewardBaseViewController {
            levelUp.styleImg != nil {
             let viewController = LevelUpRewardViewController()
             viewController.levelUp = levelUp
+            viewController.isPanalty = data.challengeCompletion.isPenalty
             navigationController?.pushViewController(viewController, animated: true)
             return
         }
         
-        navigationController?.pushViewController(WritingRewardViewController(), animated: true)
+        if !data.challengeCompletion.isPenalty {
+            navigationController?.pushViewController(WritingRewardViewController(), animated: true)
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
     }
 
 }

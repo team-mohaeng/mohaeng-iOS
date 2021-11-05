@@ -10,6 +10,7 @@ import UIKit
 class LevelUpRewardViewController: RewardBaseViewController {
     
     public var levelUp: LevelUp?
+    public var isPanalty: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,7 @@ class LevelUpRewardViewController: RewardBaseViewController {
     
     /// 이전 VC가 WritingRewardViewController인 경우만 dismiss
     override func touchButton() {
-        if navigationController?.previousViewController is WritingRewardViewController {
+        if navigationController?.previousViewController is WritingRewardViewController || isPanalty {
             self.dismiss(animated: true, completion: nil)
         } else {
             navigationController?.pushViewController(CuriosityRewardViewController(), animated: true)
