@@ -26,6 +26,12 @@ class SettingViewController: UIViewController {
 
         setDelegation()
         initNavigationBar()
+        updateVersion()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     // MARK: - Functions
@@ -81,13 +87,13 @@ class SettingViewController: UIViewController {
         self.present(openSourceLicenseViewController, animated: true, completion: nil)
     }
     
-    private func pushToM akersViewController() {
-        let openSourceLicenseStoryboard = UIStoryboard(name: Const.Storyboard..openSourceLicense, bundle: nil)
-        guard let openSourceLicenseViewController = openSourceLicenseStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.openSourceLicense) as?
-                OpenSourceLicenseViewController else {
+    private func pushToMakersViewController() {
+        let makersStoryboard = UIStoryboard(name: Const.Storyboard.Name.makers, bundle: nil)
+        guard let makersViewController = makersStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.makers) as?
+                MakersViewController else {
                     return
                 }
-        self.present(openSourceLicenseViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(makersViewController, animated: true)
     }
     
     private func updateVersion() {
@@ -99,6 +105,7 @@ class SettingViewController: UIViewController {
     // MARK: - @IBAction Function
     
     @IBAction func touchMemberButton(_ sender: Any) {
+        pushToMakersViewController()
     }
     
 }
