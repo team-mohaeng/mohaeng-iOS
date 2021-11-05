@@ -33,6 +33,7 @@ class WritingRewardViewController: RewardBaseViewController {
         if  levelUp.level != nil {
             let levelUpRewardViewController = LevelUpRewardViewController()
             levelUpRewardViewController.levelUp = levelUp
+            levelUpRewardViewController.isPanalty = false
             
             navigationController?.pushViewController(levelUpRewardViewController, animated: true)
         } else {
