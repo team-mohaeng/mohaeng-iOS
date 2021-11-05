@@ -173,6 +173,8 @@
 		56C019B4271C2BFE00735761 /* MyPageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C019B3271C2BFE00735761 /* MyPageAPI.swift */; };
 		56C019B7271C2C3900735761 /* MyPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C019B6271C2C3900735761 /* MyPageService.swift */; };
 		56C21992271BE6DC008049A8 /* TodayChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C21991271BE6DC008049A8 /* TodayChallenge.swift */; };
+		56C3973C273524EC00AB802C /* OpenSourceLicense.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56C3973B273524EC00AB802C /* OpenSourceLicense.storyboard */; };
+		56C3973F2735252F00AB802C /* OpenSourceLicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C3973E2735252F00AB802C /* OpenSourceLicenseViewController.swift */; };
 		56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA6C2689C0D10056155A /* .swiftlint.yml */; };
 		56DE352D271ED9DB009649CE /* CompletedChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE352C271ED9DB009649CE /* CompletedChallenge.swift */; };
 		AA190EBF26FE62E30059E100 /* BackgroundCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA190EBD26FE62E30059E100 /* BackgroundCollectionViewCell.swift */; };
@@ -415,6 +417,8 @@
 		56C019B3271C2BFE00735761 /* MyPageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAPI.swift; sourceTree = "<group>"; };
 		56C019B6271C2C3900735761 /* MyPageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageService.swift; sourceTree = "<group>"; };
 		56C21991271BE6DC008049A8 /* TodayChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayChallenge.swift; sourceTree = "<group>"; };
+		56C3973B273524EC00AB802C /* OpenSourceLicense.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OpenSourceLicense.storyboard; sourceTree = "<group>"; };
+		56C3973E2735252F00AB802C /* OpenSourceLicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceLicenseViewController.swift; sourceTree = "<group>"; };
 		56DCAA242689BB9B0056155A /* Mohaeng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mohaeng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCAA6C2689C0D10056155A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		56DE352C271ED9DB009649CE /* CompletedChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedChallenge.swift; sourceTree = "<group>"; };
@@ -564,6 +568,7 @@
 				AA7E0AAA26FC615C00106DC2 /* CharacterStyle.storyboard */,
 				564781AE271DB23D00802D76 /* MyPage.storyboard */,
 				569E8B1F27154E6C00D67712 /* CourseHistory.storyboard */,
+				56C3973B273524EC00AB802C /* OpenSourceLicense.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -781,10 +786,10 @@
 		561D763426F0BFA40028DBCA /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				56C3973D2735250800AB802C /* Setting */,
 				AAEDB35F271C04DE00E26615 /* lottie */,
 				DDF595FD26F72852004C5D74 /* Badge */,
 				569E8B2327154EC000D67712 /* Mypage */,
-				561D763526F0BFA40028DBCA /* SettingViewController.swift */,
 				561D763726F0BFA40028DBCA /* HomeViewController.swift */,
 				561D763826F0BFA40028DBCA /* NotificationViewController.swift */,
 				AA7E0AAC26FC64D500106DC2 /* CharacterStyleViewController.swift */,
@@ -1071,6 +1076,15 @@
 			path = TodayChallenge;
 			sourceTree = "<group>";
 		};
+		56C3973D2735250800AB802C /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				561D763526F0BFA40028DBCA /* SettingViewController.swift */,
+				56C3973E2735252F00AB802C /* OpenSourceLicenseViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		56DCAA1B2689BB9B0056155A = {
 			isa = PBXGroup;
 			children = (
@@ -1325,6 +1339,7 @@
 				561D76ED26F0BFA40028DBCA /* PopUpViewController.xib in Resources */,
 				561D76C326F0BFA40028DBCA /* SpoqaHanSansNeo-Medium.otf in Resources */,
 				561D76CD26F0BFA40028DBCA /* ProfileBubbleCollectionViewCell.xib in Resources */,
+				56C3973C273524EC00AB802C /* OpenSourceLicense.storyboard in Resources */,
 				561D76BF26F0BFA40028DBCA /* BMHANNA_11yrs_otf.otf in Resources */,
 				561D76AD26F0BFA40028DBCA /* CourseLibrary.storyboard in Resources */,
 				AA7E0AB826FC998000106DC2 /* CharacterColorCollectionViewCell.xib in Resources */,
@@ -1558,6 +1573,7 @@
 				561D76FF26F0BFA40028DBCA /* FeedViewController.swift in Sources */,
 				561D771226F0BFA40028DBCA /* CourseService.swift in Sources */,
 				561D76B326F0BFA40028DBCA /* Xib.swift in Sources */,
+				56C3973F2735252F00AB802C /* OpenSourceLicenseViewController.swift in Sources */,
 				561D770F26F0BFA40028DBCA /* PasswordService.swift in Sources */,
 				561D770A26F0BFA40028DBCA /* LoginAPI.swift in Sources */,
 				561D770826F0BFA40028DBCA /* FeedAPI.swift in Sources */,

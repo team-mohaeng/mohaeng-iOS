@@ -16,6 +16,7 @@ class SettingViewController: UIViewController {
     
     // MARK: - @IBOutlet Properties
     
+    @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var settingTableView: UITableView!
     
     // MARK: - View Life Cycle
@@ -70,6 +71,36 @@ class SettingViewController: UIViewController {
         askPopUp.popUpActionDelegate = self
         tabBarController?.present(askPopUp, animated: true, completion: nil)
     }
+    
+    private func pushToOpenSourceLicenseViewController() {
+        let openSourceLicenseStoryboard = UIStoryboard(name: Const.Storyboard.Name.openSourceLicense, bundle: nil)
+        guard let openSourceLicenseViewController = openSourceLicenseStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.openSourceLicense) as?
+                OpenSourceLicenseViewController else {
+                    return
+                }
+        self.present(openSourceLicenseViewController, animated: true, completion: nil)
+    }
+    
+    private func pushToM akersViewController() {
+        let openSourceLicenseStoryboard = UIStoryboard(name: Const.Storyboard..openSourceLicense, bundle: nil)
+        guard let openSourceLicenseViewController = openSourceLicenseStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.openSourceLicense) as?
+                OpenSourceLicenseViewController else {
+                    return
+                }
+        self.present(openSourceLicenseViewController, animated: true, completion: nil)
+    }
+    
+    private func updateVersion() {
+        let nsObject = Bundle.main.infoDictionary?["CFBundleShortVersionString"]
+        guard let version = nsObject as? String else { return }
+        self.versionLabel.text = "Ver. \(version)"
+    }
+    
+    // MARK: - @IBAction Function
+    
+    @IBAction func touchMemberButton(_ sender: Any) {
+    }
+    
 }
 
 // MARK: - UITableViewDelegate
@@ -124,7 +155,8 @@ extension SettingViewController: UITableViewDataSource {
             self.presentAgreeViewController(agree: AgreeViewController.Agree.personal)
         case 2: // 서비스 이용약관
             self.presentAgreeViewController(agree: AgreeViewController.Agree.service)
-//        case 3: // 오픈 소스 라이선스
+        case 3: // 오픈 소스 라이선스
+            self.pushToOpenSourceLicenseViewController()
         case 4: // 로그아웃
             UserDefaults.standard.removeObject(forKey: "jwtToken")
             popToLoginViewController()
