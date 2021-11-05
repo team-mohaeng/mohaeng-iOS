@@ -11,22 +11,46 @@ class SignUpSecondViewController: UIViewController {
     
     // MARK: - @IBOutlets
     
+    @IBOutlet var agreeLabel: UILabel!
+    @IBOutlet var allAgreeLabel: UILabel!
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet var firstCheckButton: UIButton!
     @IBOutlet var secondCheckButton: UIButton!
     @IBOutlet var thirdCheckButton: UIButton!
     @IBOutlet var agreeButton: UIButton!
+    @IBOutlet var serviceButton: UIButton!
+    @IBOutlet var personalButton: UIButton!
     
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        makeButtonRounded()
+        setUI()
+        initNavigationBar()
     }
+    
     // MARK: - Functions
     
-    private func makeButtonRounded() {
+    private func initNavigationBar() {
+        self.navigationController?.initWithBackButton()
+    }
+    
+    func setButtonAttributes(button: UIButton) {
+        let serviceAttribute = NSAttributedString(string: button.titleLabel?.text ?? "", attributes: [NSAttributedString.Key.font: UIFont.spoqaHanSansNeo(weight: .regular, size: 14), NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue])
+        
+        button.setAttributedTitle(serviceAttribute, for: .normal)
+    }
+    
+    private func setUI() {
+        
+        setButtonAttributes(button: serviceButton)
+        setButtonAttributes(button: personalButton)
+        
+        agreeLabel.font = .spoqaHanSansNeo(weight: .bold, size: 22)
+        allAgreeLabel.font = .spoqaHanSansNeo(weight: .bold, size: 14)
+        
         agreeButton.makeRounded(radius: 20)
+        agreeButton.titleLabel?.font = .spoqaHanSansNeo(weight: .bold, size: 16)
     }
     
     private func setAgreeButton(color: UIColor, bool: Bool) {
