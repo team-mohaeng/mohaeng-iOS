@@ -54,7 +54,6 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        initNavigationBar()
         setDelegation()
         registerXib()
         initAtrributes()
@@ -126,9 +125,16 @@ class FeedViewController: UIViewController {
     }
     
     private func updateData(feed: FeedResponse) {
+    
         allFeeds = feed
         feedCollectionView.reloadData()
-        feedUserCountLabel.text = "오늘은 \(feed.feeds.count)개의\n안부가 남겨졌어요"
+        if let userCount = feed.userCount {
+            if userCount > 10 {
+                feedUserCountLabel.text = "오늘은 \(userCount)개의\n안부가 남겨졌어요"
+            } else {
+                feedUserCountLabel.text = userCount > 10 ? "오늘은 \(userCount)개의\n안부가 남겨졌어" : "오늘 하루는 어땠어?\n안부를 기록하고 둘러봐!"
+            }
+        }
     }
     
     // MARK: - @IBAction Properties
@@ -245,9 +251,38 @@ extension FeedViewController: HeaderViewDelegate {
         let moodStoryboard = UIStoryboard(name: Const.Storyboard.Name.mood, bundle: nil)
         guard let moodViewController = moodStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.mood) as? MoodViewController else { return }
         
-        let navigationController = UINavigationController(rootViewController: moodViewController)
-        navigationController.modalPresentationStyle = .fullScreen
-        self.present(navigationController, animated: true, completion: nil)
+        switch allFeeds.hasFeed {
+        case 0: // 작성 가능
+            let navigationController = UINavigationController(rootViewController: moodViewController)
+            navigationController.modalPresentationStyle = .fullScreen
+            self.present(navigationController, animated: true, completion: nil)
+        case 1: // 이미 작성
+            let popUp = PopUpViewController()
+            popUp.modalTransitionStyle = .crossDissolve
+            popUp.modalPresentationStyle = .overCurrentContext
+            popUp.popUpUsage = .noButton
+            popUp.popUpActionDelegate = self
+            self.tabBarController?.present(popUp, animated: true, completion: nil)
+            popUp.setText(title: "오늘의 안부 작성 완료!",
+                          description: """
+                                        안부는 하루에 한 번만 작성할 수 있어.
+                                        내일 챌린지를 인증하고하고 찾아와줘~
+                                        """)
+        case 2: // 챌린지 코스 시작 전
+            let popUp = PopUpViewController()
+            popUp.modalTransitionStyle = .crossDissolve
+            popUp.modalPresentationStyle = .overCurrentContext
+            popUp.popUpUsage = .noButton
+            popUp.popUpActionDelegate = self
+            self.tabBarController?.present(popUp, animated: true, completion: nil)
+            popUp.setText(title: "선 챌린지, 후 안부!",
+                          description: """
+                                        이런, 아직 오늘의 챌린지 안했지?!
+                                        오늘의 챌린지를 인증해야 작성할 수 있어
+                                        """)
+        default:
+            return
+        }
     }
     
 }
@@ -273,6 +308,18 @@ extension FeedViewController {
                 print("networkFail")
             }
         }
+    }
+    
+}
+
+extension FeedViewController: PopUpActionDelegate {
+    
+    func touchGreyButton(button: UIButton) {
+        return
+    }
+    
+    func touchYellowButton(button: UIButton) {
+        return
     }
     
 }
