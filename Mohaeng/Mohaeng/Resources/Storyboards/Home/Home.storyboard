@@ -67,7 +67,7 @@
                                     <constraint firstAttribute="width" constant="88" id="Irb-vJ-JP4"/>
                                     <constraint firstAttribute="height" constant="44" id="x06-Zk-gEf"/>
                                 </constraints>
-                                <color key="progressTintColor" red="0.76470588235294112" green="0.71372549019607845" blue="0.64313725490196072" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="progressTintColor" name="Yellow4"/>
                                 <color key="trackTintColor" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nJu-n7-rBq">
@@ -105,7 +105,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="77Y-vP-3CA">
-                                <rect key="frame" x="129" y="204" width="285" height="427"/>
+                                <rect key="frame" x="129" y="184" width="285" height="529"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -117,7 +117,7 @@
                             <constraint firstItem="dfe-49-RBu" firstAttribute="bottom" secondItem="H7M-wz-W4e" secondAttribute="bottom" id="AOa-Jx-EiB"/>
                             <constraint firstItem="ys8-L7-pM4" firstAttribute="top" secondItem="H7M-wz-W4e" secondAttribute="bottom" constant="44" id="Fga-o8-vbG"/>
                             <constraint firstItem="Ohc-G9-CHG" firstAttribute="top" secondItem="ys8-L7-pM4" secondAttribute="top" id="H0X-Tz-y8Y"/>
-                            <constraint firstItem="M6l-iR-QUJ" firstAttribute="top" secondItem="77Y-vP-3CA" secondAttribute="bottom" constant="112" id="PiZ-Dk-Nt7"/>
+                            <constraint firstItem="M6l-iR-QUJ" firstAttribute="top" secondItem="77Y-vP-3CA" secondAttribute="bottom" constant="30" id="PiZ-Dk-Nt7"/>
                             <constraint firstItem="OEl-4P-pUw" firstAttribute="centerY" secondItem="KAB-QO-e2z" secondAttribute="centerY" id="QRy-on-4RS"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ddC-dI-ZRd" secondAttribute="bottom" constant="-100" id="R50-1u-2aU"/>
                             <constraint firstItem="Ohc-G9-CHG" firstAttribute="bottom" secondItem="ys8-L7-pM4" secondAttribute="bottom" id="RJu-TX-ZZh"/>
@@ -136,7 +136,7 @@
                             <constraint firstItem="nJu-n7-rBq" firstAttribute="centerX" secondItem="H7M-wz-W4e" secondAttribute="centerX" id="jPU-DC-LDv"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ddC-dI-ZRd" secondAttribute="trailing" id="lTN-dm-XcS"/>
                             <constraint firstItem="dfe-49-RBu" firstAttribute="trailing" secondItem="H7M-wz-W4e" secondAttribute="trailing" id="lX9-8I-f6D"/>
-                            <constraint firstItem="77Y-vP-3CA" firstAttribute="top" secondItem="H7M-wz-W4e" secondAttribute="top" id="mle-ry-nSf"/>
+                            <constraint firstItem="77Y-vP-3CA" firstAttribute="top" secondItem="H7M-wz-W4e" secondAttribute="top" constant="-20" id="mle-ry-nSf"/>
                             <constraint firstItem="Ohc-G9-CHG" firstAttribute="trailing" secondItem="ys8-L7-pM4" secondAttribute="trailing" id="nXv-Kq-L6P"/>
                             <constraint firstItem="Ohc-G9-CHG" firstAttribute="leading" secondItem="ys8-L7-pM4" secondAttribute="leading" id="p8i-DQ-wdn"/>
                             <constraint firstItem="QEL-OO-URg" firstAttribute="leading" secondItem="KAB-QO-e2z" secondAttribute="leading" constant="16" id="pdR-tf-Dck"/>
@@ -164,6 +164,7 @@
                         <outlet property="customCharaterShadowView" destination="Ohc-G9-CHG" id="Tuu-co-3Bl"/>
                         <outlet property="hourlyMentLabel" destination="xqV-sk-UiK" id="CYg-l3-XYb"/>
                         <outlet property="levelLabel" destination="5vJ-mh-pWb" id="nRN-nD-bKt"/>
+                        <outlet property="levelStackView" destination="nJu-n7-rBq" id="om7-50-NAe"/>
                         <outlet property="progressShadowView" destination="dfe-49-RBu" id="jSD-QO-usB"/>
                         <outlet property="progressView" destination="H7M-wz-W4e" id="1bz-Uq-Ges"/>
                     </connections>
@@ -199,6 +200,9 @@
         <image name="tabIcnHome0" width="28" height="28"/>
         <namedColor name="Black">
             <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Yellow4">
+            <color red="1" green="0.90600001811981201" blue="0.66299998760223389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

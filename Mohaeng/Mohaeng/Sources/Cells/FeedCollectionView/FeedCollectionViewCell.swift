@@ -39,6 +39,8 @@ class FeedCollectionViewCell: UICollectionViewCell {
     }
     
     func setData(data: Feed) {
+        courseDayLabel.backgroundColor = .clear
+        contentsLabel.backgroundColor = .clear
         courseDayLabel.text = "\(data.course) \(data.challenge)일차"
         contentsLabel.text = data.content
         nicknameLabel.text = data.nickname
