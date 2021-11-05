@@ -45,8 +45,12 @@ class MoodViewController: UIViewController {
         assignDelegate()
         registerXib()
         initCarouselAttribute()
-        initNavigationBar()
         setConstraintWitouthNotch()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        initNavigationBar()
     }
     
     // MARK: - Functions
