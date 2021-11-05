@@ -11,6 +11,7 @@ import Moya
 enum SignUpService {
     
     case postSignUp(email: String, password: String, nickname: String)
+    case deleteUser
 }
 
 extension SignUpService: TargetType {
@@ -21,6 +22,8 @@ extension SignUpService: TargetType {
         switch self {
         case .postSignUp(_, _, _):
             return Const.URL.signUpURL
+        case .deleteUser:
+            return Const.URL.deleteUser
         }
     }
     
@@ -28,6 +31,8 @@ extension SignUpService: TargetType {
         switch self {
         case .postSignUp(_, _, _):
             return .post
+        case .deleteUser:
+            return .delete
         }
     }
     
@@ -43,13 +48,24 @@ extension SignUpService: TargetType {
                 "password": password,
                 "nickname": nickname
             ], encoding: JSONEncoding.default)
+        case .deleteUser:
+            return .requestPlain
         }
     }
     
     var headers: [String: String]? {
-        return [
-            "Content-Type": "application/json",
-            "token": UserDefaults.standard.string(forKey: "fcmToken") ?? ""
-        ]
+        
+        switch self {
+        case .postSignUp(_, _, _):
+            return [
+                "Content-Type": "application/json",
+                "token": UserDefaults.standard.string(forKey: "fcmToken") ?? ""
+            ]
+        case .deleteUser:
+            return [
+                "Content-Type": "application/json",
+                "Bearer": UserDefaults.standard.string(forKey: "jwtToken") ?? ""
+            ]
+        }
     }
 }

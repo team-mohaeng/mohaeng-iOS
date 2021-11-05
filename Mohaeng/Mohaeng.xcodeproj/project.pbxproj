@@ -71,7 +71,6 @@
 		561D76E526F0BFA40028DBCA /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D763026F0BFA40028DBCA /* UINavigationController+Extension.swift */; };
 		561D76E626F0BFA40028DBCA /* ModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D763126F0BFA40028DBCA /* ModalPresentationController.swift */; };
 		561D76E726F0BFA40028DBCA /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D763226F0BFA40028DBCA /* UIViewController+Extension.swift */; };
-		561D76E826F0BFA40028DBCA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D763526F0BFA40028DBCA /* SettingViewController.swift */; };
 		561D76EA26F0BFA40028DBCA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D763726F0BFA40028DBCA /* HomeViewController.swift */; };
 		561D76EB26F0BFA40028DBCA /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561D763826F0BFA40028DBCA /* NotificationViewController.swift */; };
 		561D76ED26F0BFA40028DBCA /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 561D763B26F0BFA40028DBCA /* PopUpViewController.xib */; };
@@ -173,6 +172,9 @@
 		56C019B4271C2BFE00735761 /* MyPageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C019B3271C2BFE00735761 /* MyPageAPI.swift */; };
 		56C019B7271C2C3900735761 /* MyPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C019B6271C2C3900735761 /* MyPageService.swift */; };
 		56C21992271BE6DC008049A8 /* TodayChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C21991271BE6DC008049A8 /* TodayChallenge.swift */; };
+		56C3973F2735252F00AB802C /* OpenSourceLicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C3973E2735252F00AB802C /* OpenSourceLicenseViewController.swift */; };
+		56C397412735291600AB802C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C397402735291600AB802C /* SettingViewController.swift */; };
+		56C3974227352A5B00AB802C /* OpenSourceLicense.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56C3973B273524EC00AB802C /* OpenSourceLicense.storyboard */; };
 		56DCAA6D2689C0D10056155A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56DCAA6C2689C0D10056155A /* .swiftlint.yml */; };
 		56DE352D271ED9DB009649CE /* CompletedChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE352C271ED9DB009649CE /* CompletedChallenge.swift */; };
 		AA190EBF26FE62E30059E100 /* BackgroundCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA190EBD26FE62E30059E100 /* BackgroundCollectionViewCell.swift */; };
@@ -243,12 +245,10 @@
 		EC087641271FFDB400EB1F51 /* SocialAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC087640271FFDB400EB1F51 /* SocialAPI.swift */; };
 		EC087643271FFDCB00EB1F51 /* SocialService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC087642271FFDCB00EB1F51 /* SocialService.swift */; };
 		EC31776326FDB50E0076BCEC /* CarouselLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */; };
-
-		ECE4BCCF2735092100E5B2BF /* Makers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECE4BCCE2735092100E5B2BF /* Makers.storyboard */; };
-		ECE4BCD12735096900E5B2BF /* MakersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE4BCD02735096900E5B2BF /* MakersViewController.swift */; };
 		ECAC22762735046000B4C71A /* AgreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC22752735046000B4C71A /* AgreeViewController.swift */; };
 		ECAC22782735047800B4C71A /* Agree.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECAC22772735047800B4C71A /* Agree.storyboard */; };
-
+		ECE4BCCF2735092100E5B2BF /* Makers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECE4BCCE2735092100E5B2BF /* Makers.storyboard */; };
+		ECE4BCD12735096900E5B2BF /* MakersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE4BCD02735096900E5B2BF /* MakersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -318,7 +318,6 @@
 		561D763026F0BFA40028DBCA /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		561D763126F0BFA40028DBCA /* ModalPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalPresentationController.swift; sourceTree = "<group>"; };
 		561D763226F0BFA40028DBCA /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		561D763526F0BFA40028DBCA /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		561D763726F0BFA40028DBCA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		561D763826F0BFA40028DBCA /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		561D763B26F0BFA40028DBCA /* PopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewController.xib; sourceTree = "<group>"; };
@@ -422,6 +421,9 @@
 		56C019B3271C2BFE00735761 /* MyPageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAPI.swift; sourceTree = "<group>"; };
 		56C019B6271C2C3900735761 /* MyPageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageService.swift; sourceTree = "<group>"; };
 		56C21991271BE6DC008049A8 /* TodayChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayChallenge.swift; sourceTree = "<group>"; };
+		56C3973B273524EC00AB802C /* OpenSourceLicense.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OpenSourceLicense.storyboard; sourceTree = "<group>"; };
+		56C3973E2735252F00AB802C /* OpenSourceLicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceLicenseViewController.swift; sourceTree = "<group>"; };
+		56C397402735291600AB802C /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		56DCAA242689BB9B0056155A /* Mohaeng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mohaeng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DCAA6C2689C0D10056155A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		56DE352C271ED9DB009649CE /* CompletedChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedChallenge.swift; sourceTree = "<group>"; };
@@ -493,12 +495,10 @@
 		EC087640271FFDB400EB1F51 /* SocialAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAPI.swift; sourceTree = "<group>"; };
 		EC087642271FFDCB00EB1F51 /* SocialService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialService.swift; sourceTree = "<group>"; };
 		EC31776226FDB50E0076BCEC /* CarouselLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselLayoutView.swift; sourceTree = "<group>"; };
-
-		ECE4BCCE2735092100E5B2BF /* Makers.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Makers.storyboard; sourceTree = "<group>"; };
-		ECE4BCD02735096900E5B2BF /* MakersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakersViewController.swift; sourceTree = "<group>"; };
 		ECAC22752735046000B4C71A /* AgreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgreeViewController.swift; sourceTree = "<group>"; };
 		ECAC22772735047800B4C71A /* Agree.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Agree.storyboard; sourceTree = "<group>"; };
-
+		ECE4BCCE2735092100E5B2BF /* Makers.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Makers.storyboard; sourceTree = "<group>"; };
+		ECE4BCD02735096900E5B2BF /* MakersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakersViewController.swift; sourceTree = "<group>"; };
 		FF85070BA1F5A448133681A6 /* Pods_Mohaeng.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mohaeng.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -579,6 +579,7 @@
 				AA7E0AAA26FC615C00106DC2 /* CharacterStyle.storyboard */,
 				564781AE271DB23D00802D76 /* MyPage.storyboard */,
 				569E8B1F27154E6C00D67712 /* CourseHistory.storyboard */,
+				56C3973B273524EC00AB802C /* OpenSourceLicense.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -797,10 +798,10 @@
 		561D763426F0BFA40028DBCA /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				56C3973D2735250800AB802C /* Setting */,
 				AAEDB35F271C04DE00E26615 /* lottie */,
 				DDF595FD26F72852004C5D74 /* Badge */,
 				569E8B2327154EC000D67712 /* Mypage */,
-				561D763526F0BFA40028DBCA /* SettingViewController.swift */,
 				ECE4BCD02735096900E5B2BF /* MakersViewController.swift */,
 				561D763726F0BFA40028DBCA /* HomeViewController.swift */,
 				561D763826F0BFA40028DBCA /* NotificationViewController.swift */,
@@ -900,14 +901,14 @@
 		561D765E26F0BFA40028DBCA /* AuthAPI */ = {
 			isa = PBXGroup;
 			children = (
-				561D765F26F0BFA40028DBCA /* LoginAPI.swift */,
-				561D766026F0BFA40028DBCA /* SignUpAPI.swift */,
-				561D766126F0BFA40028DBCA /* PasswordAPI.swift */,
 				561D766226F0BFA40028DBCA /* LoginService.swift */,
+				561D765F26F0BFA40028DBCA /* LoginAPI.swift */,
 				561D766326F0BFA40028DBCA /* SignUpService.swift */,
+				561D766026F0BFA40028DBCA /* SignUpAPI.swift */,
 				561D766426F0BFA40028DBCA /* PasswordService.swift */,
-				EC087640271FFDB400EB1F51 /* SocialAPI.swift */,
+				561D766126F0BFA40028DBCA /* PasswordAPI.swift */,
 				EC087642271FFDCB00EB1F51 /* SocialService.swift */,
+				EC087640271FFDB400EB1F51 /* SocialAPI.swift */,
 			);
 			path = AuthAPI;
 			sourceTree = "<group>";
@@ -1088,6 +1089,15 @@
 				56DE352C271ED9DB009649CE /* CompletedChallenge.swift */,
 			);
 			path = TodayChallenge;
+			sourceTree = "<group>";
+		};
+		56C3973D2735250800AB802C /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				56C397402735291600AB802C /* SettingViewController.swift */,
+				56C3973E2735252F00AB802C /* OpenSourceLicenseViewController.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		56DCAA1B2689BB9B0056155A = {
@@ -1309,6 +1319,7 @@
 				561D76DA26F0BFA40028DBCA /* FirstDayTableViewCell.xib in Resources */,
 				DDA7EF3E27214CFF00F100CA /* awards_sok4.json in Resources */,
 				DD81D3C9272A86B30066D159 /* awards_congrats.json in Resources */,
+				56C3974227352A5B00AB802C /* OpenSourceLicense.storyboard in Resources */,
 				561D76D626F0BFA40028DBCA /* CourseLibraryCollectionViewCell.xib in Resources */,
 				AA7E0AAB26FC615C00106DC2 /* CharacterStyle.storyboard in Resources */,
 				561D76C026F0BFA40028DBCA /* GmarketSansTTFMedium.ttf in Resources */,
@@ -1523,6 +1534,7 @@
 				DD9EFFC927154F5C00B3F871 /* OnBoarding2HeaderView.swift in Sources */,
 				DD6BB49E271DD3690086240B /* CuriosityRewardViewController.swift in Sources */,
 				561D76E726F0BFA40028DBCA /* UIViewController+Extension.swift in Sources */,
+				56C397412735291600AB802C /* SettingViewController.swift in Sources */,
 				DD64327626F5CCC100D71787 /* BadgeViewController.swift in Sources */,
 				561D770926F0BFA40028DBCA /* NetworkResult.swift in Sources */,
 				561D771926F0BFA40028DBCA /* Property.swift in Sources */,
@@ -1553,7 +1565,6 @@
 				561D76D726F0BFA40028DBCA /* SettingTableViewCell.swift in Sources */,
 				DDEBD220270F6CFA0011EDC6 /* Badge.swift in Sources */,
 				561D777F26F36C970028DBCA /* MyPageViewController.swift in Sources */,
-				561D76E826F0BFA40028DBCA /* SettingViewController.swift in Sources */,
 				DD9EFFCC2715568700B3F871 /* OnBoarding2TableViewCell.swift in Sources */,
 				DD64327926F5DC3400D71787 /* BadgeCollectionViewCell.swift in Sources */,
 				561D76F426F0BFA40028DBCA /* EmailLoginViewController.swift in Sources */,
@@ -1590,6 +1601,7 @@
 				561D76FF26F0BFA40028DBCA /* FeedViewController.swift in Sources */,
 				561D771226F0BFA40028DBCA /* CourseService.swift in Sources */,
 				561D76B326F0BFA40028DBCA /* Xib.swift in Sources */,
+				56C3973F2735252F00AB802C /* OpenSourceLicenseViewController.swift in Sources */,
 				561D770F26F0BFA40028DBCA /* PasswordService.swift in Sources */,
 				561D770A26F0BFA40028DBCA /* LoginAPI.swift in Sources */,
 				561D770826F0BFA40028DBCA /* FeedAPI.swift in Sources */,
@@ -1752,7 +1764,7 @@
 				CODE_SIGN_ENTITLEMENTS = Mohaeng/Mohaeng.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4QG3GC35LA;
+				DEVELOPMENT_TEAM = EQ7Z68Z2F2;
 				INFOPLIST_FILE = Mohaeng/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1777,7 +1789,7 @@
 				CODE_SIGN_ENTITLEMENTS = Mohaeng/Mohaeng.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4QG3GC35LA;
+				DEVELOPMENT_TEAM = EQ7Z68Z2F2;
 				INFOPLIST_FILE = Mohaeng/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

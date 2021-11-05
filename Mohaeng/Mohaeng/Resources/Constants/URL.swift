@@ -35,6 +35,9 @@ extension Const {
         // 이메일 인증 (GET)
         // "/password/:userId"
         
+        // 회원 탈퇴 (DELETE)
+        static let deleteUser = "/delete"
+        
         // MARK: - HOME - Home Service
         
         // 홈 (GET)
