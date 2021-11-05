@@ -174,6 +174,7 @@ extension MyDrawerViewController: UICollectionViewDelegate {
             return headerView
         default:
             assert(false, "에러")
+            return UICollectionReusableView()
         }
     }
     
