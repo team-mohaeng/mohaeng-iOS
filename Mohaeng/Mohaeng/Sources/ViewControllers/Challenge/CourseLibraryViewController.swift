@@ -169,7 +169,7 @@ extension CourseLibraryViewController: UICollectionViewDataSource {
         
         switch collectionView {
         case propertyCollectionView:
-            return UIEdgeInsets(top: 0, left: 18, bottom: 10, right: 18)
+            return UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
         case courseLibraryCollectionView:
             return UIEdgeInsets(top: 22, left: 24, bottom: 0, right: 24)
         default:
