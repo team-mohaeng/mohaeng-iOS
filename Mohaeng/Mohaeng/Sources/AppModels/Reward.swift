@@ -143,22 +143,29 @@ enum Reward {
             }
             imageView.updateServerImage(styleCard)
             
-            let backgroundImageView = UIImageView().then {
-                $0.contentMode = .scaleAspectFit
-                $0.image = Const.Image.styleCardBg
-            }
-            backgroundImageView.addSubviews(imageView)
-            view.addSubviews(backgroundImageView)
-            imageView.snp.makeConstraints {
-                $0.trailing.equalToSuperview()
-                $0.leading.equalToSuperview().inset(55)
-                $0.bottom.top.equalToSuperview().inset(20)
-            }
-            
-            backgroundImageView.snp.makeConstraints {
-                $0.width.equalTo(189)
-                $0.height.equalTo(259)
-                $0.centerX.bottom.equalToSuperview()
+            if !styleCard.contains("ios") {
+                let backgroundImageView = UIImageView().then {
+                    $0.contentMode = .scaleAspectFit
+                    $0.image = Const.Image.styleCardBg
+                }
+                backgroundImageView.addSubviews(imageView)
+                view.addSubviews(backgroundImageView)
+                imageView.snp.makeConstraints {
+                    $0.trailing.centerY.equalToSuperview()
+                    $0.leading.equalToSuperview().inset(62)
+                }
+                
+                backgroundImageView.snp.makeConstraints {
+                    $0.width.equalTo(189)
+                    $0.height.equalTo(259)
+                    $0.centerX.bottom.equalToSuperview()
+                }
+            } else {
+                view.addSubview(imageView)
+                imageView.snp.makeConstraints {
+                    $0.leading.trailing.bottom.equalToSuperview()
+                    $0.top.equalToSuperview().offset(50)
+                }
             }
            
         case .curiosity:
