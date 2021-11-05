@@ -25,14 +25,15 @@ class NotificationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initNavigationBar()
         assignDelegate()
         registerXib()
         getNotification()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        initNavigationBar()
     }
     
     // MARK: - Functions
