@@ -208,6 +208,7 @@ class WritingViewController: UIViewController {
     }
 
     private func openLibrary() {
+        imagePicker.sourceType = .photoLibrary
         imagePicker.modalPresentationStyle = .fullScreen
         present(imagePicker, animated: true)
     }

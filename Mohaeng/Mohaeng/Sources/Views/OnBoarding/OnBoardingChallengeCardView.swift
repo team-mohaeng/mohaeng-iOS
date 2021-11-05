@@ -33,6 +33,10 @@ class OnBoardingChallengeCardView: UIView {
         didSet {
             guard let course = course else {return}
             challengeImageView.image = isDone ? course.getDoneStampImage() : course.getUndoneStampImage()
+            completionImageView.isHidden = !isDone
+            if isDone {
+                completionImageView.makeFade()
+            }
         }
     }
     
@@ -69,6 +73,11 @@ class OnBoardingChallengeCardView: UIView {
         $0.textAlignment = .center
     }
     
+    private let completionImageView = UIImageView().then {
+        $0.image = Const.Image.challengeCompletion
+        $0.contentMode = .scaleAspectFit
+    }
+    
 // MARK: - View Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -99,7 +108,7 @@ class OnBoardingChallengeCardView: UIView {
     }
     
     private func setViewHierachy() {
-        addSubviews(dailyLabelView, cardTitleLabel, challengeImageView, subtitleLabel)
+        addSubviews(dailyLabelView, cardTitleLabel, challengeImageView, subtitleLabel, completionImageView)
     }
     
     private func setConstraints() {
@@ -125,6 +134,13 @@ class OnBoardingChallengeCardView: UIView {
             $0.leading.trailing.equalToSuperview()
             $0.top.equalTo(challengeImageView.snp.bottom).offset(UIDevice.current.hasNotch ? 40 : 28)
         }
+        
+        completionImageView.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.centerY.equalTo(challengeImageView.snp.centerY)
+            $0.leading.trailing.equalToSuperview().inset(28)
+        }
+        
     }
 
 }

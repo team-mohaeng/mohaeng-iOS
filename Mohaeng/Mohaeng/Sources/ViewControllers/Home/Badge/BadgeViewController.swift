@@ -132,7 +132,7 @@ extension BadgeViewController: UICollectionViewDelegateFlowLayout {
         }
     
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-            return UIEdgeInsets(top: 30, left: 24, bottom: 24, right: 24)
+            return UIEdgeInsets(top: 0, left: 24, bottom: 24, right: 24)
         }
         
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

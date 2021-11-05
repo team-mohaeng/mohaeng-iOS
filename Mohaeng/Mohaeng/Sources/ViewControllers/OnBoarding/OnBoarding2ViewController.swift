@@ -14,7 +14,7 @@ class OnBoarding2ViewController: UIViewController {
     
 // MARK: - Properties
     
-    let header = OnBoarding2HeaderView()
+    private let header = OnBoarding2HeaderView()
     
     private let tableView = UITableView(frame: CGRect.zero, style: .grouped).then {
         $0.showsVerticalScrollIndicator = false
@@ -22,7 +22,9 @@ class OnBoarding2ViewController: UIViewController {
         $0.backgroundColor = .White
     }
     
-    var cellAnimationsFlags = Array(repeatElement(false, count: 7))
+    private var cellAnimationsFlags = Array(repeatElement(false, count: 7))
+    
+    private let courses: [AppCourse] = [.challenge, .habit, .selfCare, .health, .memory, .culture, .love]
     
 // MARK: - View Life Cycle
 
@@ -76,7 +78,7 @@ extension OnBoarding2ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: OnBoarding2TableViewCell.identifier, for: indexPath) as? OnBoarding2TableViewCell
         else { return UITableViewCell() }
-        cell.course = AppCourse(rawValue: indexPath.row + 1)
+        cell.course = courses[indexPath.row]
         return cell
     }
     
@@ -107,7 +109,7 @@ extension OnBoarding2ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let viewController = OnBoarding3ViewController()
-        viewController.course = AppCourse(rawValue: indexPath.row + 1)
+        viewController.course = courses[indexPath.row]
         viewController.isDone = false
         self.navigationController?.pushViewController(viewController, animated: true)
     }

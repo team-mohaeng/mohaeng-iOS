@@ -31,7 +31,6 @@ class MyDrawerViewController: UIViewController {
         
         initCurrentDate()
         checkEmptyView()
-        initNavigationBar()
         registerXib()
         setDelegation()
         addObservers()
@@ -41,6 +40,8 @@ class MyDrawerViewController: UIViewController {
         guard let year = selectedYear,
               let month = selectedMonth else { return }
         getMyDrawer(year: year, month: month)
+        
+        initNavigationBar()
     }
     
     // MARK: - function
@@ -51,6 +52,7 @@ class MyDrawerViewController: UIViewController {
     }
     
     private func initNavigationBar() {
+        self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.initWithBackButton()
         
         navigationItem.title = "내 서랍장"
