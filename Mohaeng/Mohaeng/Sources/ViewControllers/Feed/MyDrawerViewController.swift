@@ -16,7 +16,7 @@ class MyDrawerViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var myDrawer: [Feed] = [Feed(postID: 0, course: "", challenge: 0, image: "", mood: 0, content: "", nickname: "", year: "", month: "", day: "", weekday: "", emoji: [Emoji(id: 0, count: 0)], myEmoji: 0, isReport: false, isDelete: false)]
+    private var myDrawer: [Feed] = [Feed]()
     private var modalDateView: DatePickerViewController?
     private var currentDate: AppDate?
     private var feedCount = 0

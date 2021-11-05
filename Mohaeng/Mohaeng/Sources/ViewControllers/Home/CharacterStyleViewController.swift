@@ -346,7 +346,7 @@ extension CharacterStyleViewController {
                     self.characterData = data
                     self.characterImageView.updateServerImage(data.currentCharacter.image)
                     self.selectedSkinIndex = data.currentSkin.id - 64
-                    self.selectedTypeIndex = data.currentCharacter.id % 9 > 1 ? data.currentCharacter.id / 9 : data.currentCharacter.id / 9 - 1
+                    self.selectedTypeIndex = data.currentCharacter.id % 9 >= 1 ? data.currentCharacter.id / 9 : data.currentCharacter.id / 9 - 1
                     self.selectedCardIndex = data.currentCharacter.id % 9 != 0 ? data.currentCharacter.id % 9 : 9
                     self.selectedCardId = data.currentCharacter.id
                     self.setCurrentCharacterCellSelect(typeIndex: self.selectedTypeIndex, cardIndex: self.selectedCardIndex)
