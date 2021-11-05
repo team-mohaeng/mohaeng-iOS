@@ -254,5 +254,7 @@ extension Const {
         static let grpXStartChallenge = UIImage(named: "grpXStartChallenge")!
         
         static let emptyBadge = UIImage(named: "badgeBf1")!
+        
+        static let challengeCompletion = UIImage(named: "challengeCompleteEffect")!
     }
 }
