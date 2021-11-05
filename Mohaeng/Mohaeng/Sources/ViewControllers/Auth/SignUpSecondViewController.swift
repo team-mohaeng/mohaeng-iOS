@@ -44,6 +44,16 @@ class SignUpSecondViewController: UIViewController {
         self.navigationController?.pushViewController(signUpThirdViewController, animated: true)
     }
     
+    private func presentAgreeViewController(agree: AgreeViewController.Agree) {
+        let agreeStoryboard = UIStoryboard(name: Const.Storyboard.Name.agree, bundle: nil)
+        guard let agreeViewController = agreeStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.agree) as?
+                AgreeViewController else {
+                    return
+                }
+        agreeViewController.agree = agree
+        self.present(agreeViewController, animated: true, completion: nil)
+    }
+    
     // MARK: - @IBAction Properties
     
     @IBAction func touchCheckButton(_ sender: UIButton) {
@@ -82,5 +92,13 @@ class SignUpSecondViewController: UIViewController {
     
     @IBAction func touchAgreeButton(_ sender: UIButton) {
         pushSignUpThirdViewController()
+    }
+    
+    @IBAction func presentServiceWeb(_ sender: UIButton) {
+        presentAgreeViewController(agree: AgreeViewController.Agree.service)
+    }
+    
+    @IBAction func presentPersonalWeb(_ sender: UIButton) {
+        presentAgreeViewController(agree: AgreeViewController.Agree.personal)
     }
 }

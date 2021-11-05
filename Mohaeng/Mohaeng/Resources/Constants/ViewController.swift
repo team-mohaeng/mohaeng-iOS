@@ -23,6 +23,7 @@ extension Const {
             static let findPassword = "FindPasswordViewController"
             static let code = "CodeViewController"
             static let newPassword = "NewPasswordViewController"
+            static let agree = "AgreeViewController"
 
             // 홈 탭
             static let home = "HomeViewController"
