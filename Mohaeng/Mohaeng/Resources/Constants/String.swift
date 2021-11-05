@@ -16,8 +16,8 @@ extension Const {
         static let changeCoursePopUpContent = "기존 코스를 포기하면 새로 시작한 코스 첫날의 해피지수를  받을 수 없어 ㅠㅠ"
         
         // 코스 시작 팝업
-        static let startCoursePopUpTitle = "코스 시작 팝업 타이틀"
-        static let startCoursePopUpContent = "코스시작합니다 @@코스시작합니다 @@코스시작합니다 @@코스시작합니다 @@"
+        static let startCoursePopUpTitle = "새로운 코스를 시작할 거야?"
+        static let startCoursePopUpContent = "코스를 완료하면 해피 지수가 와르르!마지막 챌린지까지 파이팅이닷"
         
     }
     

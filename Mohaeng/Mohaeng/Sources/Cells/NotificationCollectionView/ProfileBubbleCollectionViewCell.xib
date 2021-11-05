@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -54,10 +54,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4MH-zS-VJF">
-                                <rect key="frame" x="86" y="44" width="222" height="39"/>
+                                <rect key="frame" x="86" y="44" width="227.5" height="39"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="너의 안부에 스티커가 붙여졌어!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="043-uD-Qie">
-                                        <rect key="frame" x="14" y="10" width="194" height="19"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="초디초디, 오늘도 무사히 보냈어?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="043-uD-Qie">
+                                        <rect key="frame" x="14" y="10" width="199.5" height="19"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -71,10 +71,10 @@
                                     <constraint firstItem="043-uD-Qie" firstAttribute="top" secondItem="4MH-zS-VJF" secondAttribute="top" constant="10" id="rx3-3k-hfo"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1시간 전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jx-Zw-0dj">
-                                <rect key="frame" x="316" y="76" width="34" height="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16시간 전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jx-Zw-0dj">
+                                <rect key="frame" x="321.5" y="76" width="41" height="12"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="34" id="ARA-ZI-8V8"/>
+                                    <constraint firstAttribute="width" constant="41" id="85O-Ny-v8y"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" name="GreyTextPush2"/>
@@ -89,7 +89,7 @@
                             <constraint firstItem="f9U-CR-FrZ" firstAttribute="top" secondItem="dBa-hm-uwn" secondAttribute="top" constant="15" id="00C-fg-coD"/>
                             <constraint firstAttribute="bottom" secondItem="3jx-Zw-0dj" secondAttribute="bottom" constant="4" id="9Qz-aV-G2C"/>
                             <constraint firstItem="0mv-fq-pal" firstAttribute="top" secondItem="4MH-zS-VJF" secondAttribute="top" constant="3" id="AIV-3J-eMd"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3jx-Zw-0dj" secondAttribute="trailing" constant="23" id="F8H-Ub-AEy"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3jx-Zw-0dj" secondAttribute="trailing" constant="14" id="F8H-Ub-AEy"/>
                             <constraint firstItem="3jx-Zw-0dj" firstAttribute="leading" secondItem="4MH-zS-VJF" secondAttribute="trailing" constant="8" id="PcE-jB-0Sp"/>
                             <constraint firstItem="v0F-Z8-gwS" firstAttribute="leading" secondItem="f9U-CR-FrZ" secondAttribute="trailing" constant="8" id="U6N-3g-QNM"/>
                             <constraint firstItem="4MH-zS-VJF" firstAttribute="top" secondItem="v0F-Z8-gwS" secondAttribute="bottom" constant="15" id="bwy-vd-Ilv"/>
