@@ -35,6 +35,11 @@ class SignUpThirdViewController: UIViewController {
         makeButtonRound()
         checkNickNameTextField()
         divideViewControllerCase()
+        initNavigationBar()
+    }
+    
+    private func initNavigationBar() {
+        self.navigationController?.initWithBackButton()
     }
     
     private func divideViewControllerCase() {
