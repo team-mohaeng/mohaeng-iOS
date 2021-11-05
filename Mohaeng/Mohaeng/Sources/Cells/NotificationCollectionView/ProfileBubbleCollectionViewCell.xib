@@ -33,7 +33,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f9U-CR-FrZ">
                                 <rect key="frame" x="24" y="15" width="48" height="48"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgcrsselect" translatesAutoresizingMaskIntoConstraints="NO" id="k7v-6k-hII">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueSmallImage" translatesAutoresizingMaskIntoConstraints="NO" id="k7v-6k-hII">
                                         <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
                                     </imageView>
                                 </subviews>
@@ -120,7 +120,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="bgcrsselect" width="229" height="264"/>
+        <image name="blueSmallImage" width="60" height="60"/>
         <image name="textBalloonGraphic" width="11" height="16"/>
         <namedColor name="GreyTextPush2">
             <color red="0.56470588235294117" green="0.56470588235294117" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
