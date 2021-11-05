@@ -15,7 +15,7 @@ class MoodViewController: UIViewController {
     var minItemSpacing: CGFloat = 10
     let moodImageArray = Const.Image.moodImageArray
     var moodImageNum = 0
-    
+  
     private var currentDate: AppDate?
     private var signUpUser: SignUpUser?
     
@@ -41,13 +41,16 @@ class MoodViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        makeRoundDot()
-        makeSpecificRoundButton()
+        setUI()
         assignDelegate()
         registerXib()
         initCarouselAttribute()
-        initNavigationBar()
         setConstraintWitouthNotch()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        initNavigationBar()
     }
     
     // MARK: - Functions
@@ -56,17 +59,19 @@ class MoodViewController: UIViewController {
         nextButtonHeightConstraint.constant = UIDevice.current.hasNotch ? 86 : 66
     }
     
-    private func makeRoundDot() {
+    private func setUI() {
+        if let nickname = UserDefaults.standard.object(forKey: "nickname") {
+            moodTodayLabel.text = "\(nickname)의 오늘의 기분은 어땠어?"
+        }
+        
         firstDot.makeRounded(radius: 5)
         secondDot.makeRounded(radius: 5)
         thirdDot.makeRounded(radius: 5)
-    }
-    
-    private func makeSpecificRoundButton() {
-        nextButton.layer.cornerRadius = 29
+        
+        nextButton.makeRounded(radius: 29)
         nextButton.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
-
+    
     private func initNavigationBar() {
         let currentDate = AppDate()
         let currentMonth = currentDate.getMonth()
