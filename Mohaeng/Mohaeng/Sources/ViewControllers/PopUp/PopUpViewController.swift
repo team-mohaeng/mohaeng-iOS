@@ -24,6 +24,9 @@ class PopUpViewController: UIViewController {
     var descriptionString: String?
     var buttonString: String?
     
+    // image
+    var popUpImage: UIImage?
+    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var popUpBgView: UIView!
@@ -51,6 +54,7 @@ class PopUpViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         initCase(usage: self.popUpUsage ?? .noButton)
         setText()
+        setImage()
     }
     
     // MARK: - Functions
@@ -70,6 +74,12 @@ class PopUpViewController: UIViewController {
         }
         if let buttonString = self.buttonString {
             yellowButton.setTitle(buttonString, for: .normal)
+        }
+    }
+    
+    private func setImage() {
+        if let popUpImage = popUpImage {
+            popUpImageView.image = popUpImage
         }
     }
 
@@ -135,5 +145,9 @@ class PopUpViewController: UIViewController {
         titleString = title
         descriptionString = description
         buttonString = buttonTitle
+    }
+    
+    func setImage(image: UIImage) {
+        popUpImage = image
     }
 }

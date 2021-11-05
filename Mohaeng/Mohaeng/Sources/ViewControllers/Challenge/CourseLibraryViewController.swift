@@ -83,7 +83,8 @@ class CourseLibraryViewController: UIViewController {
         if doingCourse {
             askPopUp.setText(title: Const.String.changeCoursePopUpTitle, description: Const.String.changeCoursePopUpContent)
         } else {
-            askPopUp.setText(title: Const.String.startCoursePopUpTitle, description: Const.String.startCoursePopUpTitle)
+            askPopUp.setText(title: Const.String.startCoursePopUpTitle, description: Const.String.startCoursePopUpTitle, buttonTitle: "시작")
+            askPopUp.setImage(image: Const.Image.grpXStartChallenge)
         }
         
         askPopUp.popUpActionDelegate = self
