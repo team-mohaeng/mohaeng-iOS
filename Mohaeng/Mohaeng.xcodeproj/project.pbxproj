@@ -883,14 +883,14 @@
 		561D765E26F0BFA40028DBCA /* AuthAPI */ = {
 			isa = PBXGroup;
 			children = (
-				561D765F26F0BFA40028DBCA /* LoginAPI.swift */,
-				561D766026F0BFA40028DBCA /* SignUpAPI.swift */,
-				561D766126F0BFA40028DBCA /* PasswordAPI.swift */,
 				561D766226F0BFA40028DBCA /* LoginService.swift */,
+				561D765F26F0BFA40028DBCA /* LoginAPI.swift */,
 				561D766326F0BFA40028DBCA /* SignUpService.swift */,
+				561D766026F0BFA40028DBCA /* SignUpAPI.swift */,
 				561D766426F0BFA40028DBCA /* PasswordService.swift */,
-				EC087640271FFDB400EB1F51 /* SocialAPI.swift */,
+				561D766126F0BFA40028DBCA /* PasswordAPI.swift */,
 				EC087642271FFDCB00EB1F51 /* SocialService.swift */,
+				EC087640271FFDB400EB1F51 /* SocialAPI.swift */,
 			);
 			path = AuthAPI;
 			sourceTree = "<group>";

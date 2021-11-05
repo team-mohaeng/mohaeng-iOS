@@ -36,6 +36,8 @@ class HomeViewController: UIViewController {
     private var morningText: String = "아침이야!\n오늘 하루도 화이팅"
     private var nightText: String = "벌써 밤이야!\n인증하고 일찍 자자"
     
+    var isFromLogoutOrWithdrawal: Bool = false
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -51,6 +53,15 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         getHomeInfomation()
         initNavigationBar()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if self.isFromLogoutOrWithdrawal {
+            self.isFromLogoutOrWithdrawal = false
+            self.pushToLoginViewController()
+        }
     }
     
     // MARK: - @IBAction Functions
@@ -190,6 +201,14 @@ class HomeViewController: UIViewController {
         happyPopUp.data = data
     }
     
+    func pushToLoginViewController() {
+        let loginStoryboard = UIStoryboard(name: Const.Storyboard.Name.login, bundle: nil)
+        guard let loginViewController = loginStoryboard.instantiateInitialViewController() else { return }
+        
+        loginViewController.modalPresentationStyle = .fullScreen
+                
+        self.present(loginViewController, animated: false, completion: nil)
+    }
 }
 
 extension HomeViewController {
