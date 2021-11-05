@@ -146,6 +146,7 @@ extension SettingViewController: PopUpActionDelegate {
     
     func touchYellowButton(button: UIButton) {
         deleteUser()
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
