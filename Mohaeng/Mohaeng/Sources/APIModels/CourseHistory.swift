@@ -15,7 +15,7 @@ struct CourseHistoryData: Codable {
 
 // MARK: - CourseHistory
 struct CourseHistory: Codable {
-    let id, situation, property: Int
+    let index, id, situation, property: Int
     let title: String
     let totalDays: Int
     let year, month, date: String
