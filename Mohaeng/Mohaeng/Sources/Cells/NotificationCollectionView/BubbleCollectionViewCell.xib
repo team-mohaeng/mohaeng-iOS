@@ -45,10 +45,10 @@
                                     <constraint firstAttribute="trailing" secondItem="eZf-oP-ntD" secondAttribute="trailing" constant="14" id="xNT-wh-g8Z"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19시간 전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FL-H2-yRf">
-                                <rect key="frame" x="316" y="31" width="41" height="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24시간 전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FL-H2-yRf">
+                                <rect key="frame" x="316" y="31" width="45" height="12"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="41" id="vOW-Li-4UB"/>
+                                    <constraint firstAttribute="width" constant="45" id="vOW-Li-4UB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" name="GreyTextPush2"/>
