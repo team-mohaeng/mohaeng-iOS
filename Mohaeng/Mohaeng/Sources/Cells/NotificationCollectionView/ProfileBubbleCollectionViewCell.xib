@@ -71,10 +71,10 @@
                                     <constraint firstItem="043-uD-Qie" firstAttribute="top" secondItem="4MH-zS-VJF" secondAttribute="top" constant="10" id="rx3-3k-hfo"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16시간 전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jx-Zw-0dj">
-                                <rect key="frame" x="321.5" y="76" width="41" height="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24시간 전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jx-Zw-0dj">
+                                <rect key="frame" x="321.5" y="76" width="45" height="12"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="41" id="85O-Ny-v8y"/>
+                                    <constraint firstAttribute="width" constant="45" id="85O-Ny-v8y"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" name="GreyTextPush2"/>
