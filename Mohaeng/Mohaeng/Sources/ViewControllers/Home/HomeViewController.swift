@@ -52,6 +52,7 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         getHomeInfomation()
         initNavigationBar()
+        setHourlyMent()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -155,9 +156,8 @@ class HomeViewController: UIViewController {
         progressShadowView.transform = CGAffineTransform(rotationAngle: .pi * -0.5)
     }
     
-    private func setHourlyMent(nickname: String) {
+    private func setHourlyMent() {
         let hour = AppDate().getHour()
-        
         let ments: [HomeMent] = Ments().mentList
         
         switch hour {
@@ -206,7 +206,6 @@ class HomeViewController: UIViewController {
         setLottieView(url: URL(string: data.characterLottie)!)
         levelLabel.text = "Lv.\(data.level)"
         happyPopUp.data = data
-        setHourlyMent(nickname: data.nickname)
     }
     
     func pushToLoginViewController() {
