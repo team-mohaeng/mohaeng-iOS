@@ -134,7 +134,7 @@ class CharacterStyleViewController: UIViewController {
     
     @IBAction func touchStyleSelectButton(_ sender: Any) {
         putCharacterStyle(data: CharacterStyleReqeust(characterSkin: selectedSkinIndex + 64,
-                                                      characterType: selectedCardId % 9 > 1 ? selectedCardId / 9 + 1 : selectedCardId / 9,
+                                                      characterType: selectedCardId % 9 >= 1 ? selectedCardId / 9 + 1 : selectedCardId / 9,
                                                       characterCard: selectedCardId))
     }
     
