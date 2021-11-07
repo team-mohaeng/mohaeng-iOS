@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "nickNameImage.png",
+      "filename" : "btnStartEmail.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "nickNameImage@2x.png",
+      "filename" : "btnStartEmail@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "nickNameImage@3x.png",
+      "filename" : "btnStartEmail@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

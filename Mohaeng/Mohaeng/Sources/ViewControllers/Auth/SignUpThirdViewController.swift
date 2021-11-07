@@ -97,8 +97,10 @@ class SignUpThirdViewController: UIViewController {
     
     private func changeNickNameTextFieldAttribute(labelBool: Bool, buttonBool: Bool, color: UIColor) {
         nickNameErrorLabel.isHidden = labelBool
+        nickNameErrorLabel.text = "사용 불가능한 닉네임입니다."
         checkButton.isHidden = buttonBool
         nickNameBottomView.backgroundColor = color
+        
     }
     
     private func validateNickNameTextField() {
@@ -237,6 +239,11 @@ extension SignUpThirdViewController {
                 }
             case .requestErr(let message):
                 print("requestErr", message)
+                if let message = message as? String {
+                    self.nickNameErrorLabel.isHidden = false
+                    self.nickNameErrorLabel.text = message
+                    self.nickNameBottomView.backgroundColor = .Red
+                }
             case .pathErr:
                 print("pathErr")
             case .serverErr:
@@ -258,6 +265,12 @@ extension SignUpThirdViewController {
                 self.popMyPageViewController()
             case .requestErr(let message):
                 print("requestErr", message)
+                if let message = message as? String? {
+                    self.nickNameErrorLabel.text = message
+                    self.nickNameErrorLabel.isHidden = false
+                    self.nickNameBottomView.backgroundColor = .Red 
+                }
+               
             case .pathErr:
                 print("pathErr")
             case .serverErr:

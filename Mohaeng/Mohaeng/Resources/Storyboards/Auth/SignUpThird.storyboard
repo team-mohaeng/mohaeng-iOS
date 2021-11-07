@@ -34,7 +34,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nickNameImage" translatesAutoresizingMaskIntoConstraints="NO" id="rSm-lZ-pqn">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grpXNickName" translatesAutoresizingMaskIntoConstraints="NO" id="rSm-lZ-pqn">
                                 <rect key="frame" x="87.666666666666686" y="133.66666666666666" width="200" height="199.99999999999997"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="HJr-B2-Sqj"/>
@@ -115,11 +115,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="53.523238380809602"/>
+            <point key="canvasLocation" x="-78" y="-13"/>
         </scene>
     </scenes>
     <resources>
-        <image name="nickNameImage" width="201" height="200"/>
+        <image name="grpXNickName" width="200" height="200"/>
         <namedColor name="DeepYellow">
             <color red="1" green="0.77999997138977051" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
