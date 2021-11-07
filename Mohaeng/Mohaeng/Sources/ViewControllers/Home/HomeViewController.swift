@@ -52,7 +52,6 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         getHomeInfomation()
         initNavigationBar()
-        setHourlyMent()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -192,6 +191,7 @@ class HomeViewController: UIViewController {
     private func updateData(data: Home) {
         backgroundImageView.updateServerImage(data.characterSkin)
         UserDefaults.standard.set(data.nickname, forKey: "nickname")
+        setHourlyMent()
         if let percent = data.course.percent {
             courseProgressLabel.text = "코스 진행률 \(percent)%"
         } else {
