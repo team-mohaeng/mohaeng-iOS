@@ -35,6 +35,7 @@ extension Const {
             static let myPage = "MyPageViewController"
             static let happyPopUp = "happyPopUpViewController"
             static let courseHistory = "CourseHistoryViewController"
+            static let openSourceLicense = "OpenSourceLicenseViewController"
             
             // 챌린지 탭
             static let course = "CourseViewController"

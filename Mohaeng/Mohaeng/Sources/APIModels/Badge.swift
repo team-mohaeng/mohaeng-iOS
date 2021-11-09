@@ -16,7 +16,8 @@ struct BadgesData: Codable {
 // MARK: - Badge
 struct Badge: Codable {
     let id: Int
-    let name, info, image: String
+    let name, info: String
+    let image: String?
     let hasBadge: Bool
 
 }

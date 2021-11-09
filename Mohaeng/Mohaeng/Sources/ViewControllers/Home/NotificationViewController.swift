@@ -62,12 +62,10 @@ class NotificationViewController: UIViewController {
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
             dateFormatter.locale = NSLocale(localeIdentifier: "ko_kr") as Locale
             dateFormatter.timeZone = TimeZone(identifier: TimeZone.current.identifier)
-            let startDate = dateFormatter.date(from: msg.date)!
+            let start = dateFormatter.date(from: msg.date)!
+            let end = Date()
             
             let calendar = Calendar.current
-            let start = calendar.startOfDay(for: startDate)
-            
-            let end = Date()
             
             let dayBefore = calendar.dateComponents([.day], from: start, to: end)
             
@@ -76,9 +74,8 @@ class NotificationViewController: UIViewController {
             if dayBefore.day == 0 {
                 let minBefore = calendar.dateComponents([.minute], from: start, to: end)
                 let hourBefore = calendar.dateComponents([.hour], from: start, to: end)
+                
                 if hourBefore.hour == 0 && minBefore.minute! < 30 {
-                    print(hourBefore)
-                    print(minBefore)
                     dayString = "방금 전"
                 } else if hourBefore.hour == 0 && minBefore.minute! < 59 {
                     dayString = "1시간 전"

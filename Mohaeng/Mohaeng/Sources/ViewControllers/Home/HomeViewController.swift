@@ -25,6 +25,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var characterLottieView: UIView!
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var levelStackView: UIStackView!
     
     // MARK: - Properties
     
@@ -33,8 +34,8 @@ class HomeViewController: UIViewController {
     private var rewardButton: UIBarButtonItem!
     private var chattingButton: UIBarButtonItem!
     private var mypageButton: UIBarButtonItem!
-    private var morningText: String = "아침이야!\n오늘 하루도 화이팅"
-    private var nightText: String = "벌써 밤이야!\n인증하고 일찍 자자"
+    
+    var isFromLogoutOrWithdrawal: Bool = false
     
     // MARK: - View Life Cycle
     
@@ -51,6 +52,15 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         getHomeInfomation()
         initNavigationBar()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if self.isFromLogoutOrWithdrawal {
+            self.isFromLogoutOrWithdrawal = false
+            self.pushToLoginViewController()
+        }
     }
     
     // MARK: - @IBAction Functions
@@ -130,11 +140,14 @@ class HomeViewController: UIViewController {
     }
     
     private func addTapGesture() {
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(pushToStyleController))
-        customCharaterButtonView.addGestureRecognizer(gesture)
+        let pushGesture = UITapGestureRecognizer(target: self, action: #selector(pushToStyleController))
+        customCharaterButtonView.addGestureRecognizer(pushGesture)
         
-        let gesture2 = UITapGestureRecognizer(target: self, action: #selector(presentHappyPopUp))
-        progressView.addGestureRecognizer(gesture2)
+        let presentGesture = UITapGestureRecognizer(target: self, action: #selector(presentHappyPopUp))
+        progressView.addGestureRecognizer(presentGesture)
+        
+        let presentGesture2 = UITapGestureRecognizer(target: self, action: #selector(presentHappyPopUp))
+        levelStackView.addGestureRecognizer(presentGesture2)
     }
     
     private func rotateProgressView() {
@@ -142,14 +155,20 @@ class HomeViewController: UIViewController {
         progressShadowView.transform = CGAffineTransform(rotationAngle: .pi * -0.5)
     }
     
-    private func setHourlyMent(nickname: String) {
+    private func setHourlyMent() {
         let hour = AppDate().getHour()
+        let ments: [HomeMent] = Ments().mentList
         
         switch hour {
-        case 6...18:
-            hourlyMentLabel.text = "\(nickname)! " + morningText
-        case 0...5, 18...24:
-            hourlyMentLabel.text = "\(nickname)! " + nightText
+        case 5...11:
+            let numbers = Int.random(in: 0..<4)
+            hourlyMentLabel.text = ments[numbers].ment
+        case 12...19:
+            let numbers = Int.random(in: 4..<8)
+            hourlyMentLabel.text = ments[numbers].ment
+        case 20...24, 0...4:
+            let numbers = Int.random(in: 9..<12)
+            hourlyMentLabel.text = ments[numbers].ment
         default:
             return
         }
@@ -157,8 +176,7 @@ class HomeViewController: UIViewController {
     
     private func setLottieView(url: URL) {
         animationView.frame = characterLottieView.bounds
-        animationView.contentMode = .scaleAspectFill
-        animationView.loopMode = .loop
+        animationView.contentMode = .scaleAspectFit
         
         characterLottieView.addSubview(animationView)
         playLottieAnimation(url: url)
@@ -172,8 +190,8 @@ class HomeViewController: UIViewController {
     
     private func updateData(data: Home) {
         backgroundImageView.updateServerImage(data.characterSkin)
-        setHourlyMent(nickname: data.nickname)
         UserDefaults.standard.set(data.nickname, forKey: "nickname")
+        setHourlyMent()
         if let percent = data.course.percent {
             courseProgressLabel.text = "코스 진행률 \(percent)%"
         } else {
@@ -190,6 +208,14 @@ class HomeViewController: UIViewController {
         happyPopUp.data = data
     }
     
+    func pushToLoginViewController() {
+        let loginStoryboard = UIStoryboard(name: Const.Storyboard.Name.login, bundle: nil)
+        guard let loginViewController = loginStoryboard.instantiateInitialViewController() else { return }
+        
+        loginViewController.modalPresentationStyle = .fullScreen
+                
+        self.present(loginViewController, animated: false, completion: nil)
+    }
 }
 
 extension HomeViewController {

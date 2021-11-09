@@ -29,8 +29,11 @@ class HappyPopUpViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         initViewRounding()
-        initData()
         setLineHeight()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        initData()
     }
         
     // MARK: - Functions

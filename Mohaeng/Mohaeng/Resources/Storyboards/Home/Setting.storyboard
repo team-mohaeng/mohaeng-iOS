@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="SpoqaHanSansNeo-Bold.otf">
+            <string>SpoqaHanSansNeo-Bold</string>
+        </array>
         <array key="SpoqaHanSansNeo-Regular.otf">
             <string>SpoqaHanSansNeo-Regular</string>
         </array>
@@ -17,66 +21,104 @@
         <!--Setting View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="SettingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="SettingViewController" customModule="Journey" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="SettingViewController" customModule="Mohaeng" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ixA-Ay-y2C">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ixA-Ay-y2C">
+                                <rect key="frame" x="0.0" y="44" width="414" height="420"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="420" id="clp-kl-Gaf"/>
+                                </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingTableViewCell" rowHeight="80" id="VHd-GQ-xZx" customClass="SettingTableViewCell" customModule="Journey" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="settingTableViewCell" rowHeight="80" id="VHd-GQ-xZx" customClass="SettingTableViewCell" customModule="Mohaeng" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VHd-GQ-xZx" id="NYE-90-QDk">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="384.5" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05O-F8-VWo">
-                                                    <rect key="frame" x="30" y="30.5" width="39.5" height="19"/>
-                                                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="16"/>
-                                                    <color key="textColor" name="Black1Text"/>
+                                                    <rect key="frame" x="30" y="31" width="36" height="18"/>
+                                                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
+                                                    <color key="textColor" name="Black"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5IB-Vh-omt">
+                                                    <rect key="frame" x="320.5" y="24.5" width="51" height="31"/>
+                                                    <color key="tintColor" name="Yellow1"/>
+                                                </switch>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="05O-F8-VWo" firstAttribute="centerY" secondItem="NYE-90-QDk" secondAttribute="centerY" id="4V6-3V-moJ"/>
+                                                <constraint firstItem="5IB-Vh-omt" firstAttribute="centerY" secondItem="NYE-90-QDk" secondAttribute="centerY" id="Ffw-jY-LzF"/>
                                                 <constraint firstItem="05O-F8-VWo" firstAttribute="leading" secondItem="NYE-90-QDk" secondAttribute="leading" constant="30" id="OQa-kj-GWX"/>
+                                                <constraint firstAttribute="trailing" secondItem="5IB-Vh-omt" secondAttribute="trailing" constant="15" id="wHI-gJ-3EZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="White"/>
                                         <connections>
+                                            <outlet property="pushNotiSwitch" destination="5IB-Vh-omt" id="BxG-VQ-Lc5"/>
                                             <outlet property="titleLabel" destination="05O-F8-VWo" id="1ck-Fp-g8B"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ver 1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nO7-0V-VQZ">
+                                <rect key="frame" x="179" y="804" width="56" height="18"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
+                                <color key="textColor" name="Grey1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WwA-TU-uhk">
+                                <rect key="frame" x="137" y="724" width="140" height="30"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="14"/>
+                                <color key="tintColor" name="Yellow1"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="모행이들이 궁금하다면?">
+                                    <color key="titleColor" name="Yellow1"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchMemberButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="clQ-Jg-H7y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="nO7-0V-VQZ" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="5gh-xU-ZpH"/>
                             <constraint firstItem="ixA-Ay-y2C" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="9Bf-yN-5CD"/>
+                            <constraint firstItem="nO7-0V-VQZ" firstAttribute="top" secondItem="WwA-TU-uhk" secondAttribute="bottom" constant="50" id="KN3-xW-wNx"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ixA-Ay-y2C" secondAttribute="trailing" id="XFO-tR-xLu"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ixA-Ay-y2C" secondAttribute="bottom" id="ZSM-hv-laF"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="nO7-0V-VQZ" secondAttribute="bottom" constant="40" id="vZ7-2Q-Ekf"/>
+                            <constraint firstItem="WwA-TU-uhk" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="xkL-eo-y4Y"/>
                             <constraint firstItem="ixA-Ay-y2C" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="yXR-de-vJG"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="settingTableView" destination="ixA-Ay-y2C" id="Yfk-Pf-eun"/>
+                        <outlet property="versionLabel" destination="nO7-0V-VQZ" id="tQt-79-l1g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133" y="72"/>
+            <point key="canvasLocation" x="131.8840579710145" y="71.651785714285708"/>
         </scene>
     </scenes>
     <resources>
-        <namedColor name="Black1Text">
+        <namedColor name="Black">
             <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Grey1">
+            <color red="0.29399999976158142" green="0.29399999976158142" blue="0.29399999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Yellow1">
+            <color red="0.96100002527236938" green="0.68199998140335083" blue="0.14100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

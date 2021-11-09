@@ -16,7 +16,7 @@ class MyDrawerViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var myDrawer: [Feed] = [Feed(postID: 0, course: "", challenge: 0, image: "", mood: 0, content: "", nickname: "", year: "", month: "", day: "", weekday: "", emoji: [Emoji(id: 0, count: 0)], myEmoji: 0, isReport: false, isDelete: false)]
+    private var myDrawer: [Feed] = [Feed]()
     private var modalDateView: DatePickerViewController?
     private var currentDate: AppDate?
     private var feedCount = 0
@@ -31,7 +31,6 @@ class MyDrawerViewController: UIViewController {
         
         initCurrentDate()
         checkEmptyView()
-        initNavigationBar()
         registerXib()
         setDelegation()
         addObservers()
@@ -41,6 +40,8 @@ class MyDrawerViewController: UIViewController {
         guard let year = selectedYear,
               let month = selectedMonth else { return }
         getMyDrawer(year: year, month: month)
+        
+        initNavigationBar()
     }
     
     // MARK: - function
@@ -51,6 +52,7 @@ class MyDrawerViewController: UIViewController {
     }
     
     private func initNavigationBar() {
+        self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.initWithBackButton()
         
         navigationItem.title = "내 서랍장"

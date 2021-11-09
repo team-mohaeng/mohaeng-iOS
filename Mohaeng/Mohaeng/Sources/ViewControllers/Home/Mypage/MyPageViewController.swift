@@ -48,7 +48,6 @@ class MyPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initNavigationBar()
         initViewRoundingAndShadow()
         initCalendar()
         assignDelegate()
@@ -60,6 +59,8 @@ class MyPageViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        initNavigationBar()
         getMyPage()
     }
 

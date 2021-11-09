@@ -35,6 +35,11 @@ class SignUpThirdViewController: UIViewController {
         makeButtonRound()
         checkNickNameTextField()
         divideViewControllerCase()
+        initNavigationBar()
+    }
+    
+    private func initNavigationBar() {
+        self.navigationController?.initWithBackButton()
     }
     
     private func divideViewControllerCase() {
@@ -235,6 +240,7 @@ extension SignUpThirdViewController {
             case .success(let jwt):
                 if let data = jwt as? JwtData {
                     UserDefaults.standard.setValue(data.jwt, forKey: "jwtToken")
+                    UserDefaults.standard.set(nickname, forKey: "nickname")
                     self.pushHomeViewController()
                 }
             case .requestErr(let message):
