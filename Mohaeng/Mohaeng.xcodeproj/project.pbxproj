@@ -712,11 +712,11 @@
 		561D760F26F0BFA40028DBCA /* NotificationCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				561D761026F0BFA40028DBCA /* BubbleCollectionViewCell.swift */,
-				561D761126F0BFA40028DBCA /* NewNotificationCollectionReusableView.xib */,
 				561D761226F0BFA40028DBCA /* BubbleCollectionViewCell.xib */,
+				561D761026F0BFA40028DBCA /* BubbleCollectionViewCell.swift */,
 				561D761326F0BFA40028DBCA /* ProfileBubbleCollectionViewCell.xib */,
 				561D761426F0BFA40028DBCA /* ProfileBubbleCollectionViewCell.swift */,
+				561D761126F0BFA40028DBCA /* NewNotificationCollectionReusableView.xib */,
 				561D761526F0BFA40028DBCA /* NewNotificationCollectionReusableView.swift */,
 			);
 			path = NotificationCollectionView;
