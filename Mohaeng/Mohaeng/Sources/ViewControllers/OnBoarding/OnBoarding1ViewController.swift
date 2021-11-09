@@ -87,7 +87,7 @@ class OnBoarding1ViewController: UIViewController {
     }
     
     private func setNavigationBar() {
-        self.navigationController?.hideNavigationBar()
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     private func setTargets() {
