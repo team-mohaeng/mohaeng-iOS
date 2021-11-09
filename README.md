@@ -1,27 +1,27 @@
-# 쟈니<img src="https://user-images.githubusercontent.com/28949235/125798720-ee361799-6821-4460-bd8d-7641254dfb80.png" align=left width=100>
+# 모행<img src="https://user-images.githubusercontent.com/28949235/140954005-a89104e3-fae3-4eb5-ad36-b80dcec98eb5.png" align=left width=100>
 
 
 
 <br>
 <br>
 
-![쟈니보드흰버전](https://user-images.githubusercontent.com/28949235/125825984-5d6087d6-e8bd-4b4b-8ad8-004736141a6d.png)
+![깃허브](https://user-images.githubusercontent.com/28949235/140954031-3b5af5ea-235b-4ebc-8e0e-3477d14ac5e0.png)
 
 </p><div align=center>
 
-<b>잃어버린 당신의 일상을 깨워줄 행복 메이트, 쟈니(Journey)</b><br>
-<b>개발 기간: 2021.06.27 ~ </b>
+<b> 행복을 찾아주는 데일리 챌린지 앱, 모행(MOHAENG)</b><br>
+<b>개발 기간: 2021.06.27 ~ 2021.11.10</b>
 
 </div>
 
-![1](https://user-images.githubusercontent.com/28949235/128605051-5e38ac2e-8d19-4d3c-a683-e90486cd7eea.png)
+![128605051-5e38ac2e-8d19-4d3c-a683-e90486cd7eea](https://user-images.githubusercontent.com/28949235/140956409-827ec41f-b29e-43de-b28a-403a0fec9a7e.png)
 
 
 ## Contributors
 
 | ![제목을 입력해주세요 -001](https://user-images.githubusercontent.com/28949235/124549726-8b4e5b80-de6a-11eb-9bb4-2276af6012c1.png) | ![KakaoTalk_Photo_2021-07-06-15-20-32](https://user-images.githubusercontent.com/28949235/124551860-b71f1080-de6d-11eb-8c6b-7c416886fa20.png) | ![001](https://user-images.githubusercontent.com/28949235/124551273-da958b80-de6c-11eb-913d-c8436a0c1220.png) | ![윤서](https://user-images.githubusercontent.com/28949235/140469545-c5b8f553-9d13-4d56-80ad-5cb356e51bf4.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 초주앙 초센세 [정초이](https://github.com/iamcho2)           | 맛도리 코드를 만드는 [윤예지](https://github.com/yunyezl)    | 바지벗고 코딩하는 도른자 [김승찬](https://github.com/seungchan2) | 굴러온 돌이 박힌 돌 빼는 [김윤서]()                          |
+| 초주앙 초센세 [정초이](https://github.com/iamcho2)           | 맛도리 코드를 만드는 [윤예지](https://github.com/yunyezl)    | 바지벗고 코딩하는 도른자 [김승찬](https://github.com/seungchan2) | 굴러온 돌이 박힌 돌 빼는 [김윤서](https://github.com/ezidayzi) |
 
 ## Service Workflow
 
@@ -93,13 +93,12 @@
 | `Etc`       | 커스텀 팝업         | ✅    | 정초이 |
 | `Etc`       | 애니메이션 팝업     | ✅    | 정초이 |
 
-
 <br><br><br>
 </p><div align=center>
 
-🌹 내가 죽어도 못 끊는 세 가지가 뭔 지 알아?... 니코틴..알코올... 그리고 쟈니 🌹
+🦝🐻🦔🐿🐥🐰🐘💛
 
 </div>
 
-![wefd](https://user-images.githubusercontent.com/28949235/125816091-5befddbd-2405-402d-89be-4b7a8d61e48b.png)
+![asd-402d-89be-4b7a8d61e48b](https://user-images.githubusercontent.com/28949235/140958826-b2d010b0-4735-4309-a01e-7d0875bd1bcd.png)
 
