@@ -129,7 +129,7 @@ class FeedViewController: UIViewController {
         feedCollectionView.reloadData()
         
         if let userCount = feed.userCount {
-            feedUserCountLabel.text = userCount > 10 ? "오늘은 \(userCount)개의\n안부가 남겨졌어" : "오늘 하루는 어땠어?\n네 안부가 궁금해!"
+            feedUserCountLabel.text = userCount > 10 ? "오늘은 \(userCount)개의\n안부가 남겨졌어" : "오늘 하루는 어때?\n네 안부가 궁금해!"
         }
     }
     
