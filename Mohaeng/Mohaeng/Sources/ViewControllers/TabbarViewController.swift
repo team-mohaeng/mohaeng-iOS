@@ -10,10 +10,10 @@ import UIKit
 class TabbarViewController: UITabBarController {
     
     // MARK: - View Life Cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         initTabbar()
     }
     
@@ -37,6 +37,18 @@ class TabbarViewController: UITabBarController {
         
         // set tabbar background image
         self.tabBar.backgroundImage = backgroundView.asImg
-    }
+        
+        if #available(iOS 13.0, *) {
+            let tabBarAppearance: UITabBarAppearance = UITabBarAppearance()
+            tabBarAppearance.backgroundImage = backgroundView.asImg
+            tabBarAppearance.backgroundColor = UIColor.clear
+            tabBarAppearance.backgroundEffect = .none
+            self.tabBar.standardAppearance = tabBarAppearance
 
+            if #available(iOS 15.0, *) {
+                self.tabBar.scrollEdgeAppearance = tabBarAppearance
+            }
+        }
+    }
+    
 }
