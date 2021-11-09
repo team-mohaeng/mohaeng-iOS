@@ -134,7 +134,8 @@ extension CourseLibraryViewController: UICollectionViewDataSource {
                 if indexPath.row == 0 {
                     cell.setLabel(title: "전체")
                     if selectedProperty == 0 {
-                        cell.selectCell()
+                        cell.isSelected = true
+                        collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .init())
                     }
                 } else if indexPath.row == AppCourse.count + 1 {
                     cell.setLabel(title: "다했어요!")
@@ -143,10 +144,8 @@ extension CourseLibraryViewController: UICollectionViewDataSource {
                         cell.setLabel(title: title)
                     }
                 }
-                cell.initSelectedState()
                 
                 return cell
-                
             }
             
         case courseLibraryCollectionView:
@@ -223,14 +222,7 @@ extension CourseLibraryViewController: UICollectionViewDelegateFlowLayout {
         
         switch collectionView {
         case propertyCollectionView:
-            if selectedProperty == 0 && indexPath.row != 0 {
-                guard let firstCell = propertyCollectionView.cellForItem(at: IndexPath.init(item: 0, section: 0)) as? CourseCategoryCollectionViewCell else { return }
-                firstCell.deselectCell()
-            }
             selectedProperty = indexPath.row
-            guard let selectedCell = collectionView.cellForItem(at: indexPath) as? CourseCategoryCollectionViewCell else { return }
-            selectedCell.selectCell()
-            
             courseLibraryCollectionView.reloadData()
             
         case courseLibraryCollectionView:
@@ -241,16 +233,6 @@ extension CourseLibraryViewController: UICollectionViewDelegateFlowLayout {
             return
         }
         
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        switch collectionView {
-        case propertyCollectionView:
-            guard let selectedCell = collectionView.cellForItem(at: indexPath) as? CourseCategoryCollectionViewCell else { return }
-            selectedCell.deselectCell()
-        default:
-            return
-        }
     }
     
     private func unDoneCellSize(for indexPath: IndexPath) -> CGSize {
