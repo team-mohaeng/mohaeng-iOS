@@ -18,9 +18,9 @@ extension Const {
         static let gnbIconX = UIImage(named: "gnbIconX")!
         
         // main home icon
-        static let medalIcon = UIImage(named: "medal")!
-        static let chatIcon = UIImage(named: "Chat")!
-        static let userIcon = UIImage(named: "User")!
+        static let medalIcon = UIImage(named: "gnbIcnMedal")!
+        static let chatIcon = UIImage(named: "gnbIcnNotice")!
+        static let userIcon = UIImage(named: "gnbIcnMypage")!
         
         // challenge nav icon
         static let mapIcon = UIImage(named: "icnMap")!
