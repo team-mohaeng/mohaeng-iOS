@@ -84,9 +84,7 @@ extension SignUpService: TargetType {
         case .postEmailCheck(_):
             return [
                 "Content-Type": "application/json"
-
-        
-        switch self {
+                ]
         case .postSignUp(_, _, _):
             return [
                 "Content-Type": "application/json",
