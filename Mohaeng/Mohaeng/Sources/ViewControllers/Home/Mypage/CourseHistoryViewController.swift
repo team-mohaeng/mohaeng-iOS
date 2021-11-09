@@ -19,6 +19,7 @@ class CourseHistoryViewController: UIViewController {
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var courseHistoryCollectionView: UICollectionView!
+    @IBOutlet weak var emptyView: UIView!
     
     // MARK: - View Life Cycle
 
@@ -51,6 +52,9 @@ class CourseHistoryViewController: UIViewController {
         self.doingCourse = courses.isProgress
         self.courseHistory = courses
         self.courseHistoryCollectionView.reloadData()
+        if !courses.courses.isEmpty {
+            emptyView.isHidden = true
+        }
     }
     
     private func mapDataToTodayChallengeCourse(courseHistory: CourseHistory) -> TodayChallengeCourse {

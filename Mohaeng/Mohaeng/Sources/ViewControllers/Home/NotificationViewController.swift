@@ -75,9 +75,9 @@ class NotificationViewController: UIViewController {
                 let minBefore = calendar.dateComponents([.minute], from: start, to: end)
                 let hourBefore = calendar.dateComponents([.hour], from: start, to: end)
                 
-                if hourBefore.hour == 0 && minBefore.minute! < 30 {
+                if hourBefore.hour == 0 && minBefore.minute! <= 30 {
                     dayString = "방금 전"
-                } else if hourBefore.hour == 0 && minBefore.minute! < 59 {
+                } else if hourBefore.hour == 0 && minBefore.minute! <= 59 {
                     dayString = "1시간 전"
                 } else {
                     dayString = "\(hourBefore.hour ?? 1)시간 전"
@@ -121,17 +121,6 @@ class NotificationViewController: UIViewController {
     func getBoundingRect(string: String) -> CGRect {
         let textRect = NSString(string: string).boundingRect(
             with: CGSize(width: 200, height: CGFloat.greatestFiniteMagnitude),
-            options: .usesLineFragmentOrigin,
-            attributes: [
-                NSAttributedString.Key.font: UIFont.spoqaHanSansNeo(weight: .regular, size: 15)
-            ],
-            context: nil)
-        return textRect
-    }
-    
-    func getProfileBubbleBoundingRect(string: String) -> CGRect {
-        let textRect = NSString(string: string).boundingRect(
-            with: CGSize(width: UIScreen.main.bounds.width - 215, height: CGFloat.greatestFiniteMagnitude),
             options: .usesLineFragmentOrigin,
             attributes: [
                 NSAttributedString.Key.font: UIFont.spoqaHanSansNeo(weight: .regular, size: 15)
