@@ -18,20 +18,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="BubbleCollectionViewCell" customModule="Mohaeng" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="445" height="47"/>
+            <rect key="frame" x="0.0" y="0.0" width="424" height="63"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="445" height="47"/>
+                <rect key="frame" x="0.0" y="0.0" width="424" height="63"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gIE-f2-Nlz">
-                        <rect key="frame" x="0.0" y="0.0" width="445" height="47"/>
+                        <rect key="frame" x="0.0" y="0.0" width="424" height="63"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AYG-cl-qsf">
-                                <rect key="frame" x="86" y="4" width="222" height="39"/>
+                                <rect key="frame" x="86" y="4" width="222" height="55"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="너의 안부에 스티커가 붙여졌어!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZf-oP-ntD">
-                                        <rect key="frame" x="14" y="10" width="194" height="19"/>
+                                        <rect key="frame" x="14" y="10" width="194" height="35"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -46,7 +46,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24시간 전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FL-H2-yRf">
-                                <rect key="frame" x="316" y="31" width="45" height="12"/>
+                                <rect key="frame" x="316" y="47" width="45" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="vOW-Li-4UB"/>
                                 </constraints>
@@ -74,13 +74,13 @@
                 <constraint firstAttribute="bottom" secondItem="gIE-f2-Nlz" secondAttribute="bottom" id="tuP-j3-5l8"/>
                 <constraint firstAttribute="trailing" secondItem="gIE-f2-Nlz" secondAttribute="trailing" id="z9Z-tE-g3e"/>
             </constraints>
-            <size key="customSize" width="445" height="47"/>
+            <size key="customSize" width="424" height="63"/>
             <connections>
                 <outlet property="bubbleBgView" destination="AYG-cl-qsf" id="3id-eZ-A8k"/>
                 <outlet property="bubbleTextLabel" destination="eZf-oP-ntD" id="h4K-fV-fX7"/>
                 <outlet property="dateLabel" destination="2FL-H2-yRf" id="zOo-0L-1Ka"/>
             </connections>
-            <point key="canvasLocation" x="229.71014492753625" y="51.227678571428569"/>
+            <point key="canvasLocation" x="231.8840579710145" y="92.745535714285708"/>
         </collectionViewCell>
     </objects>
     <resources>

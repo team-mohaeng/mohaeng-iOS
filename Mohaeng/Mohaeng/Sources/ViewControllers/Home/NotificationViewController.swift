@@ -120,7 +120,18 @@ class NotificationViewController: UIViewController {
     
     func getBoundingRect(string: String) -> CGRect {
         let textRect = NSString(string: string).boundingRect(
-            with: CGSize(width: UIScreen.main.bounds.width - 180, height: CGFloat.greatestFiniteMagnitude),
+            with: CGSize(width: 200, height: CGFloat.greatestFiniteMagnitude),
+            options: .usesLineFragmentOrigin,
+            attributes: [
+                NSAttributedString.Key.font: UIFont.spoqaHanSansNeo(weight: .regular, size: 15)
+            ],
+            context: nil)
+        return textRect
+    }
+    
+    func getProfileBubbleBoundingRect(string: String) -> CGRect {
+        let textRect = NSString(string: string).boundingRect(
+            with: CGSize(width: UIScreen.main.bounds.width - 215, height: CGFloat.greatestFiniteMagnitude),
             options: .usesLineFragmentOrigin,
             attributes: [
                 NSAttributedString.Key.font: UIFont.spoqaHanSansNeo(weight: .regular, size: 15)
@@ -242,7 +253,7 @@ extension NotificationViewController: UICollectionViewDataSource {
         if indexPath.row - 1 < 0 {
             // ProfileBubble
             
-            return CGSize(width: view.frame.width, height: textSize.height + 66)
+            return CGSize(width: view.frame.width, height: textSize.height + 70)
         }
         
         if indexPath.section == 0 {
@@ -250,12 +261,12 @@ extension NotificationViewController: UICollectionViewDataSource {
             if oldNoti[indexPath.row-1].date != "" {
                 // 첫 메시지 - ProfileBubble
                 
-                return CGSize(width: view.frame.width, height: textSize.height + 66)
+                return CGSize(width: view.frame.width, height: textSize.height + 70)
                 
             } else {
                 // Bubble
                 
-                return CGSize(width: view.frame.width, height: textSize.height + 28)
+                return CGSize(width: view.frame.width, height: textSize.height + 30)
             }
             
         } else {
@@ -263,12 +274,12 @@ extension NotificationViewController: UICollectionViewDataSource {
             if newNoti[indexPath.row-1].date != "" {
                 // 첫 메시지 - ProfileBubble
                 
-                return CGSize(width: view.frame.width, height: textSize.height + 66)
+                return CGSize(width: view.frame.width, height: textSize.height + 70)
                 
             } else {
                 // Bubble
                 
-                return CGSize(width: view.frame.width, height: textSize.height + 28)
+                return CGSize(width: view.frame.width, height: textSize.height + 30)
             }
         }
     }

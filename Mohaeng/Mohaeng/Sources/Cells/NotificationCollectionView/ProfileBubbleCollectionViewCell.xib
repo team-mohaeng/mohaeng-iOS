@@ -21,14 +21,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ProfileBubbleCollectionViewCell" customModule="Mohaeng" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="92"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="97"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="92"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="97"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dBa-hm-uwn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="92"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="97"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f9U-CR-FrZ">
                                 <rect key="frame" x="24" y="15" width="48" height="48"/>
@@ -54,10 +54,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4MH-zS-VJF">
-                                <rect key="frame" x="86" y="44" width="227.5" height="39"/>
+                                <rect key="frame" x="86" y="44" width="227.5" height="49"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="초디초디, 오늘도 무사히 보냈어?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="043-uD-Qie">
-                                        <rect key="frame" x="14" y="10" width="199.5" height="19"/>
+                                        <rect key="frame" x="14" y="10" width="199.5" height="29"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -72,7 +72,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24시간 전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jx-Zw-0dj">
-                                <rect key="frame" x="321.5" y="76" width="45" height="12"/>
+                                <rect key="frame" x="321.5" y="81" width="45" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="85O-Ny-v8y"/>
                                 </constraints>
@@ -92,10 +92,11 @@
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3jx-Zw-0dj" secondAttribute="trailing" constant="14" id="F8H-Ub-AEy"/>
                             <constraint firstItem="3jx-Zw-0dj" firstAttribute="leading" secondItem="4MH-zS-VJF" secondAttribute="trailing" constant="8" id="PcE-jB-0Sp"/>
                             <constraint firstItem="v0F-Z8-gwS" firstAttribute="leading" secondItem="f9U-CR-FrZ" secondAttribute="trailing" constant="8" id="U6N-3g-QNM"/>
-                            <constraint firstItem="4MH-zS-VJF" firstAttribute="top" secondItem="v0F-Z8-gwS" secondAttribute="bottom" constant="15" id="bwy-vd-Ilv"/>
+                            <constraint firstItem="3jx-Zw-0dj" firstAttribute="bottom" secondItem="4MH-zS-VJF" secondAttribute="bottom" id="WM4-cM-oiT"/>
                             <constraint firstItem="4MH-zS-VJF" firstAttribute="leading" secondItem="0mv-fq-pal" secondAttribute="trailing" constant="-5" id="giJ-7Q-cFu"/>
                             <constraint firstItem="4MH-zS-VJF" firstAttribute="leading" secondItem="f9U-CR-FrZ" secondAttribute="trailing" constant="14" id="jVw-PL-aED"/>
                             <constraint firstItem="f9U-CR-FrZ" firstAttribute="leading" secondItem="dBa-hm-uwn" secondAttribute="leading" constant="24" id="kIv-0u-XyC"/>
+                            <constraint firstItem="4MH-zS-VJF" firstAttribute="top" secondItem="dBa-hm-uwn" secondAttribute="top" constant="44" id="zb7-Fr-G1T"/>
                             <constraint firstItem="v0F-Z8-gwS" firstAttribute="top" secondItem="dBa-hm-uwn" secondAttribute="top" constant="17" id="zpg-Ar-BQU"/>
                         </constraints>
                     </view>
@@ -108,7 +109,7 @@
                 <constraint firstItem="dBa-hm-uwn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="aCx-L8-ntK"/>
                 <constraint firstAttribute="trailing" secondItem="dBa-hm-uwn" secondAttribute="trailing" id="hf0-gX-voa"/>
             </constraints>
-            <size key="customSize" width="414" height="92"/>
+            <size key="customSize" width="414" height="97"/>
             <connections>
                 <outlet property="bubbleBgView" destination="4MH-zS-VJF" id="bk3-yd-NsG"/>
                 <outlet property="bubbleTextLabel" destination="043-uD-Qie" id="gb3-eZ-f6Z"/>
@@ -116,7 +117,7 @@
                 <outlet property="profileBgView" destination="f9U-CR-FrZ" id="E8t-Pn-vdz"/>
                 <outlet property="profileImageView" destination="k7v-6k-hII" id="cUk-1h-T4v"/>
             </connections>
-            <point key="canvasLocation" x="397.10144927536237" y="92.410714285714278"/>
+            <point key="canvasLocation" x="397.10144927536237" y="94.084821428571431"/>
         </collectionViewCell>
     </objects>
     <resources>
