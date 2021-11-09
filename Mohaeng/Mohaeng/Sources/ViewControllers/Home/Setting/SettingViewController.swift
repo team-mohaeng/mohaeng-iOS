@@ -102,6 +102,17 @@ class SettingViewController: UIViewController {
         self.versionLabel.text = "Ver. \(version)"
     }
     
+    private func sendMailToMohaengTeam() {
+        let email = "mohaeng_official@naver.com"
+        if let url = URL(string: "mailto:\(email)") {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
+    }
+    
     // MARK: - @IBAction Function
     
     @IBAction func touchMemberButton(_ sender: Any) {
@@ -169,7 +180,8 @@ extension SettingViewController: UITableViewDataSource {
             popToLoginViewController()
         case 5: // 회원 탈퇴
             presentWithdrawalPopUp()
-//        case 6: // 1대 1 문의하기
+        case 6: // 1대 1 문의하기
+            sendMailToMohaengTeam()
         default:
             return
         }
