@@ -262,7 +262,7 @@ extension FeedViewController: HeaderViewDelegate {
             popUp.setText(title: "오늘의 안부 작성 완료!",
                           description: """
                                         안부는 하루에 한 번만 작성할 수 있어.
-                                        내일 챌린지를 인증하고하고 찾아와줘~
+                                        내일 챌린지를 인증하고 찾아와줘~
                                         """)
         case 2: // 챌린지 코스 시작 전
             let popUp = PopUpViewController()
