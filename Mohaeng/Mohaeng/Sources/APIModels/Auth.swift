@@ -27,3 +27,7 @@ struct CodeData: Codable {
     let number: Int
 }
 
+// MARK: - message
+struct EmailCheckData: Codable {
+    let message: String
+}

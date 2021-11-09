@@ -57,26 +57,28 @@
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="45"/>
                                         <color key="backgroundColor" red="0.99607843137254903" green="0.89803921568627454" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="327" id="Iob-gQ-d3W"/>
                                             <constraint firstAttribute="height" constant="45" id="sLf-bc-9cr"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="-12" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="카카오로 시작하기" image="kakaoIcon">
+                                        <state key="normal" backgroundImage="btnStartKakao">
                                             <color key="titleColor" name="Black"/>
                                         </state>
                                         <connections>
                                             <action selector="touchKakaoLoginButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7u7-HO-maK"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lw-aU-RLf">
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lw-aU-RLf">
                                         <rect key="frame" x="0.0" y="57" width="327" height="45"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="327" id="YUd-yM-mpS"/>
                                             <constraint firstAttribute="height" constant="45" id="vrc-yS-qoZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="-12" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Apple로 시작하기" image="appleIcon">
+                                        <state key="normal" backgroundImage="btnStartApple">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -92,13 +94,14 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8QL-M1-Wbx">
                                         <rect key="frame" x="0.0" y="127" width="327" height="45"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="bYD-Ij-WkT"/>
+                                            <constraint firstAttribute="width" constant="327" id="D4k-zv-si0"/>
+                                            <constraint firstAttribute="height" constant="45" id="E6Q-QV-2tu"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="-12" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="이메일로 시작하기" image="messageIcon">
+                                        <state key="normal" backgroundImage="btnStartEmail">
                                             <color key="titleColor" name="Black"/>
                                         </state>
                                         <connections>
@@ -122,7 +125,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모행에 온 것을 환영해!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rM6-Cx-uyl">
                                 <rect key="frame" x="112.33333333333333" y="291" width="150.33333333333337" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="Black"/>
+                                <color key="textColor" name="DarkGrey"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soleImage" translatesAutoresizingMaskIntoConstraints="NO" id="D8X-kB-ZFk">
@@ -146,7 +149,6 @@
                         <constraints>
                             <constraint firstItem="Kch-49-QkD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0UB-3K-aeK"/>
                             <constraint firstItem="JAC-d7-iEM" firstAttribute="centerY" secondItem="Kch-49-QkD" secondAttribute="centerY" multiplier="1.3" id="BRe-MC-hYk"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fXW-Co-4M0" secondAttribute="trailing" constant="24" id="BVT-xS-MjP"/>
                             <constraint firstItem="JAC-d7-iEM" firstAttribute="top" secondItem="D8X-kB-ZFk" secondAttribute="bottom" constant="-14" id="Bpm-wr-9s2"/>
                             <constraint firstItem="Kch-49-QkD" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="CjP-8g-Wd2"/>
                             <constraint firstItem="fXW-Co-4M0" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="FTp-84-gXe"/>
@@ -155,7 +157,6 @@
                             <constraint firstItem="JAC-d7-iEM" firstAttribute="centerX" secondItem="Kch-49-QkD" secondAttribute="centerX" id="NFB-T2-A80"/>
                             <constraint firstItem="6Os-uS-eQv" firstAttribute="top" secondItem="fXW-Co-4M0" secondAttribute="bottom" constant="24" id="ZGM-zx-eYM"/>
                             <constraint firstItem="Kch-49-QkD" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="aF5-HH-0xb"/>
-                            <constraint firstItem="fXW-Co-4M0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="c9p-8n-g4O"/>
                             <constraint firstItem="D8X-kB-ZFk" firstAttribute="leading" secondItem="JAC-d7-iEM" secondAttribute="trailing" constant="-8.6666666666666856" id="cfU-Fk-ieu"/>
                             <constraint firstItem="nQS-Ex-SIs" firstAttribute="bottom" secondItem="uks-BU-gX2" secondAttribute="bottom" id="nx9-FE-Gn7"/>
                             <constraint firstItem="nQS-Ex-SIs" firstAttribute="leading" secondItem="uks-BU-gX2" secondAttribute="leading" id="ojT-wN-M0m"/>
@@ -199,13 +200,16 @@
         </scene>
     </scenes>
     <resources>
-        <image name="appleIcon" width="20" height="20"/>
         <image name="backgroundImage " width="375" height="407"/>
-        <image name="kakaoIcon" width="20" height="20"/>
-        <image name="messageIcon" width="20" height="20"/>
+        <image name="btnStartApple" width="327" height="45"/>
+        <image name="btnStartEmail" width="327" height="45"/>
+        <image name="btnStartKakao" width="327" height="45"/>
         <image name="soleImage" width="39" height="50"/>
         <namedColor name="Black">
             <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DarkGrey">
+            <color red="0.44705882352941179" green="0.396078431372549" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Grey5">
             <color red="0.91399997472763062" green="0.91399997472763062" blue="0.91399997472763062" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

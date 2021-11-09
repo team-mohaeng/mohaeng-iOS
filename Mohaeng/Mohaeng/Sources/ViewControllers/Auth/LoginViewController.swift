@@ -52,6 +52,8 @@ class LoginViewController: UIViewController {
     private func setButtonUI() {
         [kakaoLoginButton, appleLoginButton, emailLoginButton].forEach {
             $0?.makeRounded(radius: 6)
+            $0?.layoutIfNeeded()
+            $0?.subviews.first?.contentMode = .scaleAspectFit
         }
         emailLoginButton.makeRoundedWithBorder(radius: 6, color: UIColor.Grey5.cgColor, borderWith: 1)
     }

@@ -65,14 +65,16 @@
                                     <action selector="touchCheckButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uWj-dR-Xob"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vws-uc-RVl">
-                                <rect key="frame" x="11" y="162" width="154.33333333333334" height="17"/>
+
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vws-uc-RVl">
+                                <rect key="frame" x="24" y="205.33333333333334" width="122" height="17"/>
+
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="Mvc-HW-dLc"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button">
                                     <attributedString key="attributedTitle">
                                         <fragment content="서비스 이용약관">
                                             <attributes>
@@ -101,7 +103,7 @@
                                             </attributes>
                                         </fragment>
                                     </attributedString>
-                                </buttonConfiguration>
+                                </state>
                                 <connections>
                                     <action selector="presentServiceWeb:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ob0-v5-lET"/>
                                 </connections>
@@ -120,39 +122,56 @@
                                     <action selector="touchCheckButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="eQg-un-ME8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Guc-Ia-nEj">
-                                <rect key="frame" x="11" y="206" width="218" height="17"/>
+
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Guc-Ia-nEj">
+
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="Ol5-Xj-5J8"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button">
                                     <attributedString key="attributedTitle">
                                         <fragment content="개인정보 수집 및 이용 동의">
                                             <attributes>
-                                                <font key="NSFont" size="15" name="AppleSDGothicNeo-Regular"/>
+
+                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="14" name="AppleSDGothicNeo-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+
                                                 <integer key="NSUnderline" value="1"/>
                                             </attributes>
                                         </fragment>
                                         <fragment content="(">
                                             <attributes>
-                                                <font key="NSFont" size="15" name="AppleSDGothicNeo-Regular"/>
+
+                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="14" name="AppleSDGothicNeo-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+
                                             </attributes>
                                         </fragment>
                                         <fragment content="필수">
                                             <attributes>
-                                                <font key="NSFont" size="15" name="AppleSDGothicNeo-Regular"/>
+
+                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="14" name="AppleSDGothicNeo-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+
                                                 <integer key="NSUnderline" value="1"/>
                                             </attributes>
                                         </fragment>
                                         <fragment content=")">
                                             <attributes>
-                                                <font key="NSFont" size="15" name="AppleSDGothicNeo-Regular"/>
+
+                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="14" name="AppleSDGothicNeo-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+
                                             </attributes>
                                         </fragment>
                                     </attributedString>
-                                </buttonConfiguration>
+                                </state>
                                 <connections>
                                     <action selector="presentPersonalWeb:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="290-zn-Yzb"/>
                                 </connections>
@@ -180,14 +199,16 @@
                             <constraint firstItem="lpb-Sm-v4s" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="7Bt-HT-q9H"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dLl-sL-jW8" secondAttribute="trailing" constant="24" id="A4p-Yd-ZPJ"/>
                             <constraint firstItem="Guc-Ia-nEj" firstAttribute="top" secondItem="vws-uc-RVl" secondAttribute="bottom" constant="27" id="B84-s8-Kdy"/>
+                            <constraint firstItem="Guc-Ia-nEj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="BwU-ic-mOX"/>
+                            <constraint firstItem="vws-uc-RVl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="Is5-VS-02b"/>
+                            <constraint firstItem="vws-uc-RVl" firstAttribute="leading" secondItem="Tap-IG-HAy" secondAttribute="leading" id="LtH-6d-riG"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jdh-je-rUA" secondAttribute="trailing" constant="24" id="NWg-93-j6u"/>
+                            <constraint firstItem="Guc-Ia-nEj" firstAttribute="leading" secondItem="vws-uc-RVl" secondAttribute="leading" id="OOF-2U-hEC"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3Lj-Gk-QiP" secondAttribute="trailing" constant="24" id="R3x-3g-LmZ"/>
-                            <constraint firstItem="vws-uc-RVl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="11" id="TAe-lc-DMP"/>
                             <constraint firstItem="dLl-sL-jW8" firstAttribute="top" secondItem="Guc-Ia-nEj" secondAttribute="bottom" constant="180.33333333333331" id="WVN-lP-HTk"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4TP-mj-ugW" secondAttribute="trailing" constant="24" id="Z2P-Fx-Jav"/>
                             <constraint firstItem="Tap-IG-HAy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="b4j-gA-35n"/>
                             <constraint firstItem="jdh-je-rUA" firstAttribute="centerY" secondItem="Guc-Ia-nEj" secondAttribute="centerY" id="bak-jy-i9N"/>
-                            <constraint firstItem="Guc-Ia-nEj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="11" id="c3e-Ax-mTC"/>
                             <constraint firstItem="vws-uc-RVl" firstAttribute="top" secondItem="3Lj-Gk-QiP" secondAttribute="bottom" constant="-19.666666666666657" id="c6m-dJ-ZSZ"/>
                             <constraint firstItem="Tap-IG-HAy" firstAttribute="top" secondItem="lpb-Sm-v4s" secondAttribute="bottom" constant="53" id="maw-Dc-uGw"/>
                             <constraint firstItem="4TP-mj-ugW" firstAttribute="centerY" secondItem="Tap-IG-HAy" secondAttribute="centerY" id="rcy-FP-dSS"/>

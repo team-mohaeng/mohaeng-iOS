@@ -11,7 +11,11 @@ import Moya
 enum SignUpService {
     
     case postSignUp(email: String, password: String, nickname: String)
+
+    case postEmailCheck(email: String)
+
     case deleteUser
+
 }
 
 extension SignUpService: TargetType {
@@ -22,8 +26,13 @@ extension SignUpService: TargetType {
         switch self {
         case .postSignUp(_, _, _):
             return Const.URL.signUpURL
+
+        case .postEmailCheck(_):
+            return Const.URL.emailCheckURL
+
         case .deleteUser:
             return Const.URL.deleteUser
+
         }
     }
     
@@ -31,8 +40,13 @@ extension SignUpService: TargetType {
         switch self {
         case .postSignUp(_, _, _):
             return .post
+
+        case .postEmailCheck(_):
+            return .post
+
         case .deleteUser:
             return .delete
+
         }
     }
     
@@ -48,12 +62,29 @@ extension SignUpService: TargetType {
                 "password": password,
                 "nickname": nickname
             ], encoding: JSONEncoding.default)
+          
+        case .postEmailCheck(let email):
+            return .requestParameters(parameters: [
+                "email": email
+            ], encoding: JSONEncoding.default)
+          
         case .deleteUser:
             return .requestPlain
         }
     }
     
     var headers: [String: String]? {
+
+        switch self {
+        case .postSignUp(_, _, _):
+        return [
+            "Content-Type": "application/json",
+            "token": UserDefaults.standard.string(forKey: "fcmToken") ?? ""
+        ]
+        case .postEmailCheck(_):
+            return [
+                "Content-Type": "application/json"
+
         
         switch self {
         case .postSignUp(_, _, _):
@@ -65,6 +96,7 @@ extension SignUpService: TargetType {
             return [
                 "Content-Type": "application/json",
                 "Bearer": UserDefaults.standard.string(forKey: "jwtToken") ?? ""
+
             ]
         }
     }

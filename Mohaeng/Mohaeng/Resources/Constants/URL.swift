@@ -15,6 +15,10 @@ extension Const {
         
         // MARK: - Auth -  Auth Service
         
+        // 이메일 중복 (POST)
+        
+        static let emailCheckURL = "/email"
+        
         // 회원가입 (POST)
         static let signUpURL = "/signup"
         
