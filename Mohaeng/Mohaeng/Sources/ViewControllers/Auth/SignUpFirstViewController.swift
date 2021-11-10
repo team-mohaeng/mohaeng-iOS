@@ -80,6 +80,14 @@ class SignUpFirstViewController: UIViewController {
         passwordTextField.isSecureTextEntry = true
         checkingpasswordTextField.isSecureTextEntry = true
     }
+    
+    func hasSpecialSymbols(password: String) -> Bool {
+        // 특수문자 포함 여부
+        let specialSymbolRegEx = "^(?=.*[~!@#\\$%\\^&\\*\\-\\(\\)\\:\\;\"\\.\\,\\?\\'\\/])[\\w~!@#\\$%\\^&\\*\\-\\(\\)\\:\\;\"\\.\\,\\?\\'\\/]{1,}$"
+        let predicate = NSPredicate(format: "SELF MATCHES %@", specialSymbolRegEx)
+        return predicate.evaluate(with: password)
+    }
+    
     func validateEmail(email: String) -> Bool {
         // Email 정규식
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
@@ -98,6 +106,7 @@ class SignUpFirstViewController: UIViewController {
         emailErrorLabel.isHidden = true
         emailLabel.textColor = .Grey2
         emailBottomView.backgroundColor = .Grey5
+        confirmButton.isHidden = true
     }
     func hideEmailError() {
         emailErrorLabel.isHidden = true
@@ -122,6 +131,8 @@ class SignUpFirstViewController: UIViewController {
         passwordErrorLabel.isHidden = true
         passwordLabel.textColor = .Grey2
         passwordBottomView.backgroundColor = .Black
+        confirmButton.isEnabled = true
+        confirmButton.isHidden = false
     }
     func showPasswordCheckError() {
         checkingPasswordErrorLabel.isHidden = false
@@ -169,7 +180,7 @@ class SignUpFirstViewController: UIViewController {
         confirmButton.isHidden = true
     }
     func hidePasswordCheckError() {
-        checkPasswordCheckImage.isHidden = false
+        
         checkingPasswordErrorLabel.isHidden = true
         checkPasswordLabel.textColor = .Grey2
         checkPasswordBottomView.backgroundColor = .Grey2
@@ -183,42 +194,6 @@ class SignUpFirstViewController: UIViewController {
         passwordErrorLabel.text = "8~16자의 비밀번호를 입력해주세요"
     }
     func changeAttributesSuccess() {
-
-        if let pwString = passwordTextField.text {
-            let strings = pwString.map{String($0)}
-            print("현재 상태",isSpecialCharacter(asciiList: strings))
-            if isSpecialCharacter(asciiList: strings) && checkingpasswordTextField.text == pwString {
-                if isPasswordError && isPasswordCheckError {
-                    confirmButton.backgroundColor = UIColor.DeepYellow
-                    confirmButton.isEnabled = true
-                    confirmButton.isHidden = false
-                    emailCheckImage.isHidden = false
-                } else {
-                    self.confirmButton.isHidden = true
-                    self.confirmButton.isEnabled = false
-                }
-            } else {
-                self.confirmButton.isHidden = true
-                self.confirmButton.isEnabled = false
-            }
-        }
-      
-        func isSpecialCharacter(asciiList : [String]) -> Bool{
-            for character in asciiList {
-                if "a"..."z" ~= character ||
-                    "0"..."9" ~= character ||
-                    "A"..."Z" ~= character{
-                } else {
-                    passwordCheckImage.isHidden = true
-                    checkPasswordCheckImage.isHidden = true
-                    confirmButton.isHidden = true
-                    confirmButton.isEnabled = false
-                    return false
-                }
-            }
-            return true
-
-        }
         emailCheckImage.isHidden = false
         guard let email = emailTextField.text else {
             return
@@ -234,6 +209,7 @@ class SignUpFirstViewController: UIViewController {
         }
     }
     func changeAttributesRequestErr() {
+        confirmButton.isHidden = true
         guard let email = emailTextField.text else { return }
         if email == "" {
             emailErrorLabel.isHidden = true
@@ -282,14 +258,13 @@ class SignUpFirstViewController: UIViewController {
         }
         if textField == emailTextField {
             self.isEmailError = checkEmail()
-            
         } else if textField == passwordTextField || textField == checkingpasswordTextField {
             self.isPasswordError = checkPassword()
             self.isPasswordCheckError = checkPasswordCheck()
         }
-        
         if confirmButton.isEnabled && isPasswordError && isPasswordCheckError {
             postEmailCheck()
+            
         }
     }
     // MARK: - Check Functions
@@ -312,10 +287,10 @@ class SignUpFirstViewController: UIViewController {
         } else {
             // Email이 공백일 때
             showEmailBlankError()
+            
             return false
         }
     }
-    
     func checkPassword() -> Bool {
         guard let password = passwordTextField.text else {
             return false
@@ -331,17 +306,26 @@ class SignUpFirstViewController: UIViewController {
                 }
                 return false
             } else {
-                // Password가 정규식에 맞을 때
-                self.hidePasswordError()
-                return true
+                if hasSpecialSymbols(password: password) {
+                    print("error")
+                    passwordErrorLabel.isHidden = false
+                    passwordErrorLabel.text = "특수문자는 포함할 수 없습니다"
+                    passwordErrorLabel.textColor = .Red
+                    passwordCheckImage.isHidden = true
+                    passwordBottomView.backgroundColor = .Red
+                    passwordLabel.textColor = .Red
+                } else {
+                    self.hidePasswordError()
+                    return true
+                }
             }
         } else {
             // Password가 공백일 때
             self.showPasswordCheckBlankError()
             return false
         }
+        return true
     }
-    
     func checkPasswordCheck() -> Bool {
         // 비밀번호 확인
         guard let passwordCheck = checkingpasswordTextField.text else {
@@ -355,17 +339,39 @@ class SignUpFirstViewController: UIViewController {
             }
             if passwordCheck != password {
                 self.showNotCoincideError()
+                passwordBottomView.backgroundColor = .Grey5
                 return false
             } else {
                 // 비밀번호와 일치할 때
-                self.hidePasswordCheckError()
-                return true
+                if hasSpecialSymbols(password: passwordCheck) {
+                    checkPasswordCheckImage.isHidden = true
+                    confirmButton.isHidden = true
+                    self.hidePasswordCheckError()
+                    return true
+                } else {
+                    if emailTextField.text != "" {
+                        checkingPasswordErrorLabel.isHidden = true
+                        checkPasswordCheckImage.isHidden = false
+                        passwordBottomView.backgroundColor = .Black
+                        checkPasswordBottomView.backgroundColor = .Black
+                        checkPasswordLabel.textColor = .Grey2
+                    }
+                    else {
+                        confirmButton.isHidden = true
+                        checkPasswordLabel.textColor = .Grey2
+                        checkPasswordBottomView.backgroundColor = .Black
+                        checkingPasswordErrorLabel.isHidden = true
+                        passwordBottomView.backgroundColor = .Black
+                        checkPasswordCheckImage.isHidden = false
+                    }
+                }
             }
         } else {
             // 비밀번호 확인란이 공백일 때
             self.showCheckingPasswordCheckBlankError()
             return false
         }
+        return true
     }
 }
 
