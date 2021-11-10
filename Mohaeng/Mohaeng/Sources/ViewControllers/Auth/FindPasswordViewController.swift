@@ -128,7 +128,9 @@ extension FindPasswordViewController {
                     }
                 case .requestErr(let message):
                     self.errorLabel.isHidden = false
-                    self.errorLabel.text = "\(message)"
+                    if let message = message as? String {
+                        self.errorLabel.text = "\(message)"
+                    }
                 case .pathErr:
                     print(".pathErr")
                 case .serverErr:
