@@ -37,7 +37,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Of-o4-vt6">
-                    <rect key="frame" x="24" y="268" width="342" height="98"/>
+                    <rect key="frame" x="24" y="150" width="342" height="98"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2g-88-EEw">
                             <rect key="frame" x="98" y="49" width="232" height="0.0"/>
@@ -54,14 +54,17 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dh-y5-8RN">
-                    <rect key="frame" x="157.33333333333334" y="-28" width="28" height="266"/>
+                    <rect key="frame" x="157.33333333333334" y="90" width="28" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Cjs-3E-Qqg"/>
+                    </constraints>
                     <state key="normal" image="challengeHelpButton"/>
                     <connections>
                         <action selector="touchHelp:" destination="iN0-l3-epB" eventType="touchUpInside" id="Mma-Mc-lE9"/>
                     </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BV7-E8-JT9">
-                    <rect key="frame" x="24" y="242.33333333333334" width="90" height="123.66666666666666"/>
+                    <rect key="frame" x="24" y="124.33333333333331" width="90" height="123.66666666666669"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="90" id="TgE-kn-eIu"/>
                         <constraint firstAttribute="width" secondItem="BV7-E8-JT9" secondAttribute="height" multiplier="80:110" id="uch-V9-52E"/>
@@ -75,7 +78,7 @@
                     <state key="normal" image="scrollDownIcn"/>
                 </button>
                 <view contentMode="scaleToFill" verticalHuggingPriority="270" verticalCompressionResistancePriority="27" translatesAutoresizingMaskIntoConstraints="NO" id="Tk3-Ar-b0Y">
-                    <rect key="frame" x="24" y="386" width="342" height="398"/>
+                    <rect key="frame" x="24" y="268" width="342" height="516"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sw0-eU-8jJ">
                             <rect key="frame" x="139.33333333333334" y="28" width="63.666666666666657" height="24"/>
@@ -106,7 +109,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27E-xI-eMe">
-                            <rect key="frame" x="48.666666666666686" y="328" width="245" height="15.666666666666686"/>
+                            <rect key="frame" x="48.666666666666686" y="446" width="245" height="15.666666666666686"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 챌린지를 성공하면 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hC-pz-UFf">
                                     <rect key="frame" x="0.0" y="0.0" width="129.66666666666666" height="15.666666666666666"/>
@@ -135,16 +138,16 @@
                             </constraints>
                         </stackView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="challengeCompleteEffect" translatesAutoresizingMaskIntoConstraints="NO" id="vcw-f0-6UZ">
-                            <rect key="frame" x="32.666666666666657" y="133.66666666666663" width="276.66666666666674" height="160.66666666666663"/>
+                            <rect key="frame" x="-79" y="127.66666666666666" width="500" height="290.66666666666674"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="vcw-f0-6UZ" secondAttribute="height" multiplier="272:158" id="HuP-oZ-BgR"/>
                             </constraints>
                         </imageView>
                         <view contentMode="scaleToFill" horizontalCompressionResistancePriority="720" verticalCompressionResistancePriority="720" translatesAutoresizingMaskIntoConstraints="NO" id="dFr-OB-I9c">
-                            <rect key="frame" x="60" y="141" width="222" height="146"/>
+                            <rect key="frame" x="60" y="141" width="222" height="264"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="stampSkeleton" translatesAutoresizingMaskIntoConstraints="NO" id="ZCr-7b-eZA">
-                                    <rect key="frame" x="0.0" y="-7.3333333333333712" width="222" height="160.66666666666666"/>
+                                    <rect key="frame" x="0.0" y="-13.333333333333314" width="222" height="290.66666666666669"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -156,7 +159,7 @@
                             </constraints>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35C-2X-fX0">
-                            <rect key="frame" x="106" y="351.66666666666663" width="130" height="15.333333333333314"/>
+                            <rect key="frame" x="106" y="469.66666666666663" width="130" height="15.333333333333314"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="획득 가능한 뱃지는 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zuq-pt-F85">
                                     <rect key="frame" x="0.0" y="0.0" width="96.666666666666671" height="15.333333333333334"/>
