@@ -307,7 +307,6 @@ class SignUpFirstViewController: UIViewController {
                 return false
             } else {
                 if hasSpecialSymbols(password: password) {
-                    print("error")
                     passwordErrorLabel.isHidden = false
                     passwordErrorLabel.text = "특수문자는 포함할 수 없습니다"
                     passwordErrorLabel.textColor = .Red
