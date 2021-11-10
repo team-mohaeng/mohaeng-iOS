@@ -159,6 +159,7 @@ class SignUpFirstViewController: UIViewController {
         checkPasswordBottomView.backgroundColor = .Red
         checkingPasswordErrorLabel.text = "비밀번호가 일치하지 않습니다"
         checkingPasswordErrorLabel.textColor = .Red
+        confirmButton.isHidden = true
     }
     func showCheckingPasswordCheckBlankError() {
         checkPasswordCheckImage.isHidden = true
@@ -183,16 +184,40 @@ class SignUpFirstViewController: UIViewController {
         passwordErrorLabel.text = "8~16자의 비밀번호를 입력해주세요"
     }
     func changeAttributesSuccess() {
-        emailCheckImage.isHidden = false
-        if isPasswordError && isPasswordCheckError {
-            confirmButton.backgroundColor = UIColor.DeepYellow
-            confirmButton.isEnabled = true
-            confirmButton.isHidden = false
-            emailCheckImage.isHidden = false
-        } else {
-            self.confirmButton.isHidden = true
-            self.confirmButton.isEnabled = false
+        if let pwString = passwordTextField.text {
+            let strings = pwString.map{String($0)}
+            print("현재 상태",isSpecialCharacter(asciiList: strings))
+            if isSpecialCharacter(asciiList: strings) && checkingpasswordTextField.text == pwString {
+                if isPasswordError && isPasswordCheckError {
+                    confirmButton.backgroundColor = UIColor.DeepYellow
+                    confirmButton.isEnabled = true
+                    confirmButton.isHidden = false
+                    emailCheckImage.isHidden = false
+                } else {
+                    self.confirmButton.isHidden = true
+                    self.confirmButton.isEnabled = false
+                }
+            } else {
+                self.confirmButton.isHidden = true
+                self.confirmButton.isEnabled = false
+            }
         }
+        func isSpecialCharacter(asciiList : [String]) -> Bool{
+            for character in asciiList {
+                if "a"..."z" ~= character ||
+                    "0"..."9" ~= character ||
+                    "A"..."Z" ~= character{
+                }else{
+                    passwordCheckImage.isHidden = true
+                    checkPasswordCheckImage.isHidden = true
+                    confirmButton.isHidden = true
+                    confirmButton.isEnabled = false
+                    return false
+                }
+            }
+            return true
+        }
+        emailCheckImage.isHidden = false
         guard let email = emailTextField.text else {
             return
         }
