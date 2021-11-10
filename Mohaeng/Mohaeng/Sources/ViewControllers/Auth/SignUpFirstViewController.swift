@@ -153,7 +153,6 @@ class SignUpFirstViewController: UIViewController {
         checkPasswordCheckImage.isHidden = true
         checkingPasswordErrorLabel.isHidden = false
         passwordErrorLabel.isHidden = true
-        passwordBottomView.backgroundColor = .Black
         passwordLabel.textColor = .Grey2
         checkPasswordLabel.textColor = .Red
         checkPasswordBottomView.backgroundColor = .Red
