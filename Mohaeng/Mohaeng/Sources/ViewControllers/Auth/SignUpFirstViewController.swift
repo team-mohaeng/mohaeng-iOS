@@ -57,7 +57,6 @@ class SignUpFirstViewController: UIViewController {
         signUpUser.isSocial = false
         pushSignUpSecondViewController()
     }
-    
     @IBAction func touchOverlapButton(_ sender: UIButton) {
         postEmailCheck()
     }
@@ -150,6 +149,7 @@ class SignUpFirstViewController: UIViewController {
         confirmButton.isHidden = true
     }
     func showNotCoincideError() {
+        confirmButton.isHidden = true
         checkPasswordCheckImage.isHidden = true
         checkingPasswordErrorLabel.isHidden = false
         passwordErrorLabel.isHidden = true
@@ -183,6 +183,7 @@ class SignUpFirstViewController: UIViewController {
         passwordErrorLabel.text = "8~16자의 비밀번호를 입력해주세요"
     }
     func changeAttributesSuccess() {
+
         if let pwString = passwordTextField.text {
             let strings = pwString.map{String($0)}
             print("현재 상태",isSpecialCharacter(asciiList: strings))
@@ -201,12 +202,13 @@ class SignUpFirstViewController: UIViewController {
                 self.confirmButton.isEnabled = false
             }
         }
+      
         func isSpecialCharacter(asciiList : [String]) -> Bool{
             for character in asciiList {
                 if "a"..."z" ~= character ||
                     "0"..."9" ~= character ||
                     "A"..."Z" ~= character{
-                }else{
+                } else {
                     passwordCheckImage.isHidden = true
                     checkPasswordCheckImage.isHidden = true
                     confirmButton.isHidden = true
@@ -215,6 +217,7 @@ class SignUpFirstViewController: UIViewController {
                 }
             }
             return true
+
         }
         emailCheckImage.isHidden = false
         guard let email = emailTextField.text else {
@@ -230,7 +233,6 @@ class SignUpFirstViewController: UIViewController {
             showEmailBlankError()
         }
     }
-    
     func changeAttributesRequestErr() {
         guard let email = emailTextField.text else { return }
         if email == "" {
@@ -244,7 +246,6 @@ class SignUpFirstViewController: UIViewController {
             emailBottomView.backgroundColor = .Red
         }
     }
-    
     private func changeTextFieldAttribute(label: UILabel, view: UIView) {
         label.textColor = .black
         view.backgroundColor = .Black
@@ -256,15 +257,12 @@ class SignUpFirstViewController: UIViewController {
         }
         self.navigationController?.pushViewController(signUpSecondViewController, animated: true)
     }
-    
     private func actionEmailTextField() {
         emailTextField.addTarget(self, action: #selector(SignUpFirstViewController.textFieldDidChange(_:)), for: UIControl.Event.allEditingEvents)
     }
-    
     private func actionPasswordTextField() {
         passwordTextField.addTarget(self, action: #selector(SignUpFirstViewController.textFieldDidChange(_:)), for: UIControl.Event.allEditingEvents)
     }
-    
     private func actionCheckingPasswordTextField() {
         checkingpasswordTextField.addTarget(self, action: #selector(SignUpFirstViewController.textFieldDidChange(_:)), for: UIControl.Event.allEditingEvents)
     }
@@ -289,10 +287,9 @@ class SignUpFirstViewController: UIViewController {
             self.isPasswordError = checkPassword()
             self.isPasswordCheckError = checkPasswordCheck()
         }
-        if emailTextField.isEditing {
-            if confirmButton.isEnabled && isPasswordError && isPasswordCheckError {
-                postEmailCheck()
-            }
+        
+        if confirmButton.isEnabled && isPasswordError && isPasswordCheckError {
+            postEmailCheck()
         }
     }
     // MARK: - Check Functions
@@ -380,18 +377,16 @@ extension SignUpFirstViewController: UITextFieldDelegate {
         if emailTextField.isEditing {
             changeTextFieldAttribute(label: emailLabel, view: emailBottomView)
         }
-        
         if passwordTextField.isEditing {
             changeTextFieldAttribute(label: passwordLabel, view: passwordBottomView)
         }
         if checkingpasswordTextField.isEditing {
-           changeTextFieldAttribute(label: checkPasswordLabel, view: checkPasswordBottomView)
+            changeTextFieldAttribute(label: checkPasswordLabel, view: checkPasswordBottomView)
         }
     }
 }
 extension SignUpFirstViewController {
     func postEmailCheck() {
-        
         guard let email = emailTextField.text else { return }
         SignUpAPI.shared.postEmailCheck(completion: { [self] (response) in
             switch response {

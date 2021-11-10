@@ -31,7 +31,7 @@ class FeedViewController: UIViewController {
     
     private var feedUserCountLabel = UILabel().then {
         $0.font = UIFont.gmarketFont(weight: .medium, size: 18)
-        $0.numberOfLines = 2
+        $0.numberOfLines = 0
     }
     
     private var feedBackgroundFrame = UIView().then {
@@ -125,15 +125,11 @@ class FeedViewController: UIViewController {
     }
     
     private func updateData(feed: FeedResponse) {
-    
         allFeeds = feed
         feedCollectionView.reloadData()
+        
         if let userCount = feed.userCount {
-            if userCount > 10 {
-                feedUserCountLabel.text = "오늘은 \(userCount)개의\n안부가 남겨졌어요"
-            } else {
-                feedUserCountLabel.text = userCount > 10 ? "오늘은 \(userCount)개의\n안부가 남겨졌어" : "오늘 하루는 어땠어?\n안부를 기록하고 둘러봐!"
-            }
+            feedUserCountLabel.text = userCount > 10 ? "오늘은 \(userCount)개의\n안부가 남겨졌어" : "오늘 하루는 어때?\n네 안부가 궁금해!"
         }
     }
     
@@ -266,7 +262,7 @@ extension FeedViewController: HeaderViewDelegate {
             popUp.setText(title: "오늘의 안부 작성 완료!",
                           description: """
                                         안부는 하루에 한 번만 작성할 수 있어.
-                                        내일 챌린지를 인증하고하고 찾아와줘~
+                                        내일 챌린지를 인증하고 찾아와줘~
                                         """)
         case 2: // 챌린지 코스 시작 전
             let popUp = PopUpViewController()

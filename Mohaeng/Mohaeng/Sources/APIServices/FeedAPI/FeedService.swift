@@ -97,7 +97,8 @@ extension FeedService: TargetType {
         case .postFeed:
             return [
                 "Content-Type": "multipart/form-data",
-                "Bearer": UserDefaults.standard.string(forKey: "jwtToken") ?? ""
+                "Bearer": UserDefaults.standard.string(forKey: "jwtToken") ?? "",
+                "client": "ios"
             ]
         
         }

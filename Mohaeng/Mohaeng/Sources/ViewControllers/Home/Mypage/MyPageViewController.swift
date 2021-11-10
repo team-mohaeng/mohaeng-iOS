@@ -168,6 +168,7 @@ class MyPageViewController: UIViewController {
     }
     
     private func selectRangeDate() {
+        calendarCollectionView.deselectAllDates()
         for rangeDate in rangeDates {
             calendarCollectionView.selectDates(rangeDate)
         }
@@ -265,6 +266,7 @@ class MyPageViewController: UIViewController {
     
     // 통신 후 data 업데이트
     func updateData(data: MyPage) {
+        
         self.myPageData = data
         
         nicknameLabel.text = data.nickname
@@ -279,8 +281,6 @@ class MyPageViewController: UIViewController {
         setRangeDates()
         selectRangeDate()
         scrollToCurrentMonth()
-        
-        calendarCollectionView.reloadData()
     }
     
     private func addTapGestureRecognizer() {
