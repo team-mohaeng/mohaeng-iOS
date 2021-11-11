@@ -93,6 +93,13 @@ class NewPasswordViewController: UIViewController {
         return predicate.evaluate(with: password)
     }
     
+    func hasSpecialSymbols(password: String) -> Bool {
+        // 특수문자 포함 여부
+        let specialSymbolRegEx = "^(?=.*[~!@#\\$%\\^&\\*\\-\\(\\)\\:\\;\"\\.\\,\\?\\'\\/])[\\w~!@#\\$%\\^&\\*\\-\\(\\)\\:\\;\"\\.\\,\\?\\'\\/]{1,}$"
+        let predicate = NSPredicate(format: "SELF MATCHES %@", specialSymbolRegEx)
+        return predicate.evaluate(with: password)
+    }
+    
     func popToRootViewController() {
         self.navigationController?.popToRootViewController(animated: true)
     }
@@ -131,7 +138,7 @@ extension NewPasswordViewController: UITextFieldDelegate {
         // 비밀번호
         if password != "" {
             
-            if validatePassword(password: password) {
+            if validatePassword(password: password) && !hasSpecialSymbols(password: password) {
                 if passwordCheckTextField.text != "" {
                     checkPasswordSameness()
                 } else {
