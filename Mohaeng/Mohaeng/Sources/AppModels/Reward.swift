@@ -199,13 +199,13 @@ enum Reward {
     
     func setDescriptionView(view: UIView, happy: Int? = nil) {
         switch self {
-        case .challenge, .course, .writing:
+        case .challenge, .course:
             guard let happy = happy else {return}
             let animationView = AnimationView(name: "letter").then {
                 $0.frame = view.bounds
                 $0.contentMode = .scaleAspectFill
             }
-            
+
             let label = UILabel().then {
                 if happy != 0 {
                     $0.text = "해피지수 \(String(describing: happy)) 획득!"
@@ -225,6 +225,35 @@ enum Reward {
                 }
             }
             
+            animationView.play()
+            animationView.loopMode = .loop
+
+        case .writing:
+            guard let happy = happy else {return}
+            let animationView = AnimationView(name: "letter").then {
+                $0.frame = view.bounds
+                $0.contentMode = .scaleAspectFill
+            }
+
+            let label = UILabel().then {
+                if happy != 0 {
+                    $0.text = "해피지수 \(String(describing: happy)) 획득!"
+                } else {
+                    $0.text = "글 작성을 축하해"
+                }
+                $0.numberOfLines = 1
+                $0.font = .spoqaHanSansNeo(weight: .bold, size: 18)
+                $0.textColor = .Yellow1
+                $0.textAlignment = .center
+            }
+
+            view.addSubviews(animationView, label)
+            [animationView, label].forEach {
+                $0.snp.makeConstraints {
+                    $0.edges.equalToSuperview()
+                }
+            }
+
             animationView.play()
             animationView.loopMode = .loop
            
