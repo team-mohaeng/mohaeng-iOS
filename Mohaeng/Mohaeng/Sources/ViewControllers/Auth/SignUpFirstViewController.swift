@@ -96,7 +96,7 @@ class SignUpFirstViewController: UIViewController {
     }
     func validatePassword(password: String) -> Bool {
         // Password 정규식
-        let passwordRegEx = "(?=.*[A-Za-z])(?=.*[0-9]).{6,20}"
+        let passwordRegEx = "(?=.*[A-Za-z])(?=.*[0-9]).{8,12}"
         let predicate = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
         return predicate.evaluate(with: password)
     }
