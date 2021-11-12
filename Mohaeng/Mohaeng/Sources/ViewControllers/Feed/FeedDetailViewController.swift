@@ -161,28 +161,22 @@ extension FeedDetailViewController: UICollectionViewDelegateFlowLayout {
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width: CGFloat = UIScreen.main.bounds.width
         let imageHeight: CGFloat = width
-        var baseHeight: CGFloat = (588 / 812) * UIScreen.main.bounds.height
-        let maximumHeight: CGFloat = (674 / 812) * UIScreen.main.bounds.height
+        var baseHeight: CGFloat = UIDevice.current.hasNotch ? (588 / 812) * UIScreen.main.bounds.height : 588
+        let maximumHeight: CGFloat = (672 / 812) * UIScreen.main.bounds.height
         let dummyCell = FeedDetailCollectionViewCell(frame: CGRect(x: 0, y: 0, width: width, height: maximumHeight))
-        
-        let dummyImage = UIImageView()
-        
+
         switch previousController {
         case .community:
-            dummyImage.updateServerImage(allFeed.feeds[indexPath.row].image)
             baseHeight = allFeed.feeds[indexPath.row].image.isEmpty ? baseHeight - imageHeight : baseHeight
             dummyCell.setData(feed: allFeed.feeds[indexPath.row], viewController: .community)
         case .myDrawer:
-            dummyImage.updateServerImage(myFeed[indexPath.row].image)
             baseHeight = myFeed[indexPath.row].image.isEmpty ? baseHeight - imageHeight : baseHeight
             dummyCell.setData(feed: myFeed[indexPath.row], viewController: .myDrawer)
         }
-        
         dummyCell.layoutIfNeeded()
-        
+
         let contentsHeight = dummyCell.getDynamicContentsHeight()
         let collectionViewHeight = dummyCell.getDynamicCollectionViewHeight()
-        
         return CGSize(width: width, height: baseHeight + contentsHeight + collectionViewHeight)
     }
     

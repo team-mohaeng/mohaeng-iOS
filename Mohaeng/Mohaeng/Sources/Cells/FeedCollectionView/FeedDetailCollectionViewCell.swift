@@ -302,7 +302,7 @@ extension FeedDetailCollectionViewCell {
         stickerCollectionView.snp.makeConstraints {
             $0.top.equalTo(contentsLabel.snp.bottom).offset(24)
             $0.leading.equalTo(contentsLabel.snp.leading)
-            $0.trailing.equalToSuperview().offset(-24)
+            $0.trailing.equalToSuperview()
             $0.bottom.equalToSuperview().offset(-28)
         }
         
