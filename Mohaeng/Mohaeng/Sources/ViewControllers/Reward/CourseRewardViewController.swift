@@ -37,7 +37,7 @@ class CourseRewardViewController: RewardBaseViewController {
         }
         
         if !data.challengeCompletion.isPenalty {
-            navigationController?.pushViewController(WritingRewardViewController(), animated: true)
+            navigationController?.pushViewController(CuriosityRewardViewController(), animated: true)
         } else {
             dismiss(animated: true, completion: nil)
         }
