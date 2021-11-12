@@ -177,6 +177,7 @@ extension FeedDetailViewController: UICollectionViewDelegateFlowLayout {
 
         let contentsHeight = dummyCell.getDynamicContentsHeight()
         let collectionViewHeight = dummyCell.getDynamicCollectionViewHeight()
+        baseHeight = baseHeight < 0 ? 300 : baseHeight
         return CGSize(width: width, height: baseHeight + contentsHeight + collectionViewHeight)
     }
     
