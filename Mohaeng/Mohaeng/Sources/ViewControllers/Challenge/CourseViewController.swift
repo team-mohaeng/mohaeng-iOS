@@ -213,7 +213,7 @@ extension CourseViewController: UITableViewDelegate {
                 headerView.layer.shadowColor = UIColor.black.cgColor
                 
                 headerView.setProperty(by: course.property)
-                headerView.setCourseName(name: course.title)
+                headerView.setCourseNameAndDay(name: course.title, day: challengeDay ?? 1)
                 
                 return headerView
             }
