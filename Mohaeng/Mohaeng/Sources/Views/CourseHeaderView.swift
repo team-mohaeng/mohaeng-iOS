@@ -13,6 +13,7 @@ class CourseHeaderView: UITableViewHeaderFooterView {
     @IBOutlet weak var dayBgView: UIView!
     @IBOutlet weak var propertyImageView: UIImageView!
     @IBOutlet weak var courseNameLabel: UILabel!
+    @IBOutlet weak var dayLabel: UILabel!
     
     override func awakeFromNib() {
         initViewRounding()
@@ -29,8 +30,9 @@ class CourseHeaderView: UITableViewHeaderFooterView {
         }
     }
     
-    func setCourseName(name: String) {
+    func setCourseNameAndDay(name: String, day: Int) {
         courseNameLabel.text = name
+        dayLabel.text = "\(day)일차"
     }
 
 }

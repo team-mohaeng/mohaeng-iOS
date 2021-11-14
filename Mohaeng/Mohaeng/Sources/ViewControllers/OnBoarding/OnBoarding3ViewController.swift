@@ -132,7 +132,7 @@ extension OnBoarding3ViewController: UITableViewDelegate {
             headerView.layer.shadowColor = UIColor.black.cgColor
             
             headerView.setProperty(by: course?.rawValue ?? 0)
-            headerView.setCourseName(name: course?.getOnboardingCourse()[0] ?? "")
+            headerView.setCourseNameAndDay(name: course?.getOnboardingCourse()[0] ?? "", day: 1)
             
             return headerView
         }

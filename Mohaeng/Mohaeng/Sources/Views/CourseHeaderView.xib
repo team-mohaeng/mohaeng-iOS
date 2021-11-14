@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -88,6 +88,7 @@
             <connections>
                 <outlet property="courseNameLabel" destination="Ck0-Df-bEx" id="Y95-Wj-Rha"/>
                 <outlet property="dayBgView" destination="puH-PZ-Opz" id="3yx-Bo-nRb"/>
+                <outlet property="dayLabel" destination="dbb-5A-m81" id="YPT-kk-LVv"/>
                 <outlet property="headerBgView" destination="59K-0Z-pkC" id="IHF-6e-Ura"/>
                 <outlet property="propertyImageView" destination="GDU-kz-Tsl" id="XgV-4c-n6l"/>
             </connections>
