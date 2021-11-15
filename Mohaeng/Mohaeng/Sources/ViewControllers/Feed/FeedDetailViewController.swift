@@ -28,6 +28,7 @@ class FeedDetailViewController: UIViewController {
     private var selectedContents: IndexPath = IndexPath(row: 0, section: 0)
     private var year: Int?
     private var month: Int?
+    private var currentPostId = 0
     
     // MARK: - View Life Cycle
     
@@ -140,6 +141,8 @@ extension FeedDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = feedDetailCollectionView.dequeueReusableCell(withReuseIdentifier: "FDCollectionViewCell", for: indexPath) as? FeedDetailCollectionViewCell else { return UICollectionViewCell() }
         
+        cell.delegate = self
+        
         switch previousController {
         case .myDrawer:
             cell.setData(feed: myFeed[indexPath.row], viewController: .myDrawer)
@@ -229,6 +232,88 @@ extension FeedDetailViewController {
             }
         }
         
+    }
+    
+}
+
+extension FeedDetailViewController: TrashReportButtonProtocol {
+    func touchTrashButton(_ button: UIButton, postId: Int) {
+        let deletePopUp = PopUpViewController()
+        deletePopUp.modalTransitionStyle = .crossDissolve
+        deletePopUp.modalPresentationStyle = .overCurrentContext
+        deletePopUp.popUpUsage = .twoButtonNoImage
+        deletePopUp.popUpActionDelegate = self
+
+        self.tabBarController?.present(deletePopUp, animated: true, completion: nil)
+        deletePopUp.setText(title: "삭제하기", description: "안부를 정말 삭제할거야?", buttonTitle: "삭제")
+    }
+    
+    func touchReportButton(_ button: UIButton, postId: Int) {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let reportAction = UIAlertAction(title: "신고하기", style: .destructive) { _ in
+            self.postReport(id: postId)
+        }
+        actionSheet.addAction(reportAction)
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        cancelAction.setValue(UIColor.Grey3, forKey: "titleTextColor")
+        actionSheet.addAction(cancelAction)
+        
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+}
+
+extension FeedDetailViewController: PopUpActionDelegate {
+    func touchGreyButton(button: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func touchYellowButton(button: UIButton) {
+        deletePost(postId: currentPostId)
+        self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension FeedDetailViewController {
+    
+    func postReport(id: Int) {
+        FeedAPI.shared.postReport(id: id) { response in
+            switch response {
+            case .success(let data):
+                if let data = data as? String {
+                    self.showToast(message: data, font: .spoqaHanSansNeo(size: 12))
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+    
+    func deletePost(postId: Int) {
+        FeedAPI.shared.deleteMyPost(postId: postId) { response in
+            switch response {
+            case .success(let data):
+                if let data = data as? String {
+                    self.showToast(message: data, font: .spoqaHanSansNeo(size: 12))
+                    NotificationCenter.default.post(name: NSNotification.Name("DeleteButtonDidTap"), object: nil)
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
     }
     
 }

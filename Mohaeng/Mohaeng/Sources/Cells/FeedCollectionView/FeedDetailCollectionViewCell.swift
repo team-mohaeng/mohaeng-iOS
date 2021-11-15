@@ -8,6 +8,11 @@
 import UIKit
 import SnapKit
 
+protocol TrashReportButtonProtocol {
+    func touchTrashButton(_ button: UIButton, postId: Int)
+    func touchReportButton(_ button: UIButton, postId: Int)
+}
+
 class FeedDetailCollectionViewCell: UICollectionViewCell {
     
     // MARK: - UI Properties
@@ -72,6 +77,7 @@ class FeedDetailCollectionViewCell: UICollectionViewCell {
     var stickers: [Emoji] = []
     var hasImage: Bool = false
     var viewController: FeedDetail = .myDrawer
+    var delegate: TrashReportButtonProtocol?
     
     // MARK: - View Life Cycle
     
@@ -169,30 +175,12 @@ class FeedDetailCollectionViewCell: UICollectionViewCell {
     
     @objc
     func touchReportButton() {
-        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        
-        let reportAction = UIAlertAction(title: "신고하기", style: .destructive) { _ in
-            self.postReport(id: self.currentPostId)
-        }
-        actionSheet.addAction(reportAction)
-        
-        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-        cancelAction.setValue(UIColor.Grey3, forKey: "titleTextColor")
-        actionSheet.addAction(cancelAction)
-        
-        self.window?.rootViewController?.present(actionSheet, animated: true, completion: nil)
+        delegate?.touchReportButton(reportTrashButton, postId: currentPostId)
     }
     
     @objc
     func touchTrashButton() {
-        let deletePopUp = PopUpViewController()
-        deletePopUp.modalTransitionStyle = .crossDissolve
-        deletePopUp.modalPresentationStyle = .overCurrentContext
-        deletePopUp.popUpUsage = .twoButtonNoImage
-        deletePopUp.popUpActionDelegate = self
-        
-        self.window?.rootViewController?.present(deletePopUp, animated: true, completion: nil)
-        deletePopUp.setText(title: "삭제하기", description: "안부를 정말 삭제할거야?", buttonTitle: "삭제")
+        delegate?.touchTrashButton(reportTrashButton, postId: currentPostId)
     }
 }
 
@@ -334,64 +322,4 @@ class CollectionViewLeftAlignFlowLayout: UICollectionViewFlowLayout {
         }
         return attributes
     }
-}
-
-// MARK : - SERVER
-
-extension FeedDetailCollectionViewCell {
-    
-    func postReport(id: Int) {
-        FeedAPI.shared.postReport(id: id) { response in
-            switch response {
-            case .success(let data):
-                if let data = data as? String {
-                    self.window?.rootViewController?.showToast(message: data, font: .spoqaHanSansNeo(size: 12))
-                }
-            case .requestErr(let message):
-                print("requestErr", message)
-            case .pathErr:
-                print("pathErr")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
-            }
-        }
-    }
-    
-    func deletePost(postId: Int) {
-        FeedAPI.shared.deleteMyPost(postId: postId) { response in
-            switch response {
-            case .success(let data):
-                if let data = data as? String {
-                    self.window?.rootViewController?.showToast(message: data, font: .spoqaHanSansNeo(size: 12))
-                    NotificationCenter.default.post(name: NSNotification.Name("DeleteButtonDidTap"), object: nil)
-                }
-            case .requestErr(let message):
-                print("requestErr", message)
-            case .pathErr:
-                print("pathErr")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
-            }
-        }
-    }
-    
-}
-
-// MARK: - PopUpActionDelegate
-
-extension FeedDetailCollectionViewCell: PopUpActionDelegate {
-    
-    func touchGreyButton(button: UIButton) {
-        self.window?.rootViewController?.dismiss(animated: true, completion: nil)
-    }
-    
-    func touchYellowButton(button: UIButton) {
-        deletePost(postId: currentPostId)
-        self.window?.rootViewController?.dismiss(animated: true, completion: nil)
-    }
-    
 }
