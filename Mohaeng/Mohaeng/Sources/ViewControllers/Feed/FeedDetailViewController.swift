@@ -244,6 +244,7 @@ extension FeedDetailViewController: TrashReportButtonProtocol {
         deletePopUp.popUpUsage = .twoButtonNoImage
         deletePopUp.popUpActionDelegate = self
 
+        currentPostId = postId
         self.tabBarController?.present(deletePopUp, animated: true, completion: nil)
         deletePopUp.setText(title: "삭제하기", description: "안부를 정말 삭제할거야?", buttonTitle: "삭제")
     }
