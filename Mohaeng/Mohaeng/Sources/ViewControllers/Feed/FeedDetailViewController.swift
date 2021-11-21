@@ -74,9 +74,9 @@ class FeedDetailViewController: UIViewController {
     
     private func addObserver() {
         NotificationCenter.default.addObserver(self,
-                                            selector: #selector(presentStickerViewController),
-                                            name: Notification.Name("PlusButtonDidTap"),
-                                            object: nil)
+                                               selector: #selector(presentStickerViewController),
+                                               name: Notification.Name("PlusButtonDidTap"),
+                                               object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView), name: NSNotification.Name("stickerButtonDidTap"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView), name: NSNotification.Name("DeleteButtonDidTap"), object: nil)
     }
@@ -90,7 +90,7 @@ class FeedDetailViewController: UIViewController {
         self.year = year
         self.month = month
     }
-
+    
     func setPreviousController(viewController: FeedDetail) {
         previousController = viewController
     }
@@ -128,7 +128,7 @@ class FeedDetailViewController: UIViewController {
 // MARK: - UICollectionViewDataSource
 
 extension FeedDetailViewController: UICollectionViewDataSource {
-   
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch previousController {
         case .myDrawer:
@@ -167,7 +167,7 @@ extension FeedDetailViewController: UICollectionViewDelegateFlowLayout {
         var baseHeight: CGFloat = UIDevice.current.hasNotch ? (588 / 812) * UIScreen.main.bounds.height : 588
         let maximumHeight: CGFloat = (672 / 812) * UIScreen.main.bounds.height
         let dummyCell = FeedDetailCollectionViewCell(frame: CGRect(x: 0, y: 0, width: width, height: maximumHeight))
-
+        
         switch previousController {
         case .community:
             baseHeight = allFeed.feeds[indexPath.row].image.isEmpty ? baseHeight - imageHeight : baseHeight
@@ -177,7 +177,7 @@ extension FeedDetailViewController: UICollectionViewDelegateFlowLayout {
             dummyCell.setData(feed: myFeed[indexPath.row], viewController: .myDrawer)
         }
         dummyCell.layoutIfNeeded()
-
+        
         let contentsHeight = dummyCell.getDynamicContentsHeight()
         let collectionViewHeight = dummyCell.getDynamicCollectionViewHeight()
         baseHeight = baseHeight < 0 ? 300 : baseHeight
@@ -187,6 +187,7 @@ extension FeedDetailViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension FeedDetailViewController {
+    
     @objc func getFeeds() {
         FeedAPI.shared.getAllFeed { response in
             switch response {
@@ -237,13 +238,14 @@ extension FeedDetailViewController {
 }
 
 extension FeedDetailViewController: TrashReportButtonProtocol {
+    
     func touchTrashButton(_ button: UIButton, postId: Int) {
         let deletePopUp = PopUpViewController()
         deletePopUp.modalTransitionStyle = .crossDissolve
         deletePopUp.modalPresentationStyle = .overCurrentContext
         deletePopUp.popUpUsage = .twoButtonNoImage
         deletePopUp.popUpActionDelegate = self
-
+        
         currentPostId = postId
         self.tabBarController?.present(deletePopUp, animated: true, completion: nil)
         deletePopUp.setText(title: "삭제하기", description: "안부를 정말 삭제할거야?", buttonTitle: "삭제")
@@ -253,7 +255,7 @@ extension FeedDetailViewController: TrashReportButtonProtocol {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let reportAction = UIAlertAction(title: "신고하기", style: .destructive) { _ in
-            self.postReport(id: postId)
+            self.presentWarningAlert(postId: postId)
         }
         actionSheet.addAction(reportAction)
         
@@ -263,6 +265,24 @@ extension FeedDetailViewController: TrashReportButtonProtocol {
         
         self.present(actionSheet, animated: true, completion: nil)
     }
+    
+    func presentWarningAlert(postId: Int) {
+        let warningAlert = UIAlertController(title: "신고하기",
+                                             message: "신고 시 해당 사용자의 글이 차단됩니다.\n정말 신고하시겠어요?",
+                                             preferredStyle: UIAlertController.Style.alert)
+
+        let cancelAction = UIAlertAction(title: "취소하기", style: .default) { _ in
+            self.dismiss(animated: true, completion: nil)
+        }
+        let reportAction = UIAlertAction(title: "신고하기", style: .destructive) {_ in
+            self.postReport(id: postId)
+        }
+        
+        warningAlert.addAction(cancelAction)
+        warningAlert.addAction(reportAction)
+        present(warningAlert, animated: true, completion: nil)
+    }
+    
 }
 
 extension FeedDetailViewController: PopUpActionDelegate {
@@ -284,6 +304,7 @@ extension FeedDetailViewController {
             case .success(let data):
                 if let data = data as? String {
                     self.showToast(message: data, font: .spoqaHanSansNeo(size: 12))
+                    self.reloadCollectionView()
                 }
             case .requestErr(let message):
                 print("requestErr", message)
