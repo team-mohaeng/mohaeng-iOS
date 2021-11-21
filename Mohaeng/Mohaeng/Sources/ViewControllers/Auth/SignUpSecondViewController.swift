@@ -17,9 +17,11 @@ class SignUpSecondViewController: UIViewController {
     @IBOutlet var firstCheckButton: UIButton!
     @IBOutlet var secondCheckButton: UIButton!
     @IBOutlet var thirdCheckButton: UIButton!
+    @IBOutlet var fourthCheckButton: UIButton!
     @IBOutlet var agreeButton: UIButton!
     @IBOutlet var serviceButton: UIButton!
     @IBOutlet var personalButton: UIButton!
+    @IBOutlet var eulaButton: UIButton!
     
     // MARK: - View Life Cycle
     
@@ -45,6 +47,7 @@ class SignUpSecondViewController: UIViewController {
         
         setButtonAttributes(button: serviceButton)
         setButtonAttributes(button: personalButton)
+        setButtonAttributes(button: eulaButton)
         
         agreeLabel.font = .spoqaHanSansNeo(weight: .bold, size: 22)
         allAgreeLabel.font = .spoqaHanSansNeo(weight: .bold, size: 14)
@@ -87,16 +90,24 @@ class SignUpSecondViewController: UIViewController {
             sender.isSelected.toggle()
             buttons[1].isSelected = sender.isSelected
             buttons[2].isSelected = sender.isSelected
+            buttons[3].isSelected = sender.isSelected
         case 1:
             sender.isSelected.toggle()
-            if buttons[1].isSelected && buttons[2].isSelected {
+            if buttons[1].isSelected && buttons[2].isSelected && buttons[3].isSelected {
+                buttons[0].isSelected = true
+            } else {
+                buttons[0].isSelected = false
+            }
+        case 2:
+            sender.isSelected.toggle()
+            if buttons[1].isSelected && buttons[2].isSelected && buttons[3].isSelected {
                 buttons[0].isSelected = true
             } else {
                 buttons[0].isSelected = false
             }
         default:
             sender.isSelected.toggle()
-            if buttons[1].isSelected && buttons[2].isSelected {
+            if buttons[1].isSelected && buttons[2].isSelected && buttons[3].isSelected {
                 buttons[0].isSelected = true
             } else {
                 buttons[0].isSelected = false
@@ -106,8 +117,9 @@ class SignUpSecondViewController: UIViewController {
         let first = firstCheckButton.isSelected
         let second = secondCheckButton.isSelected
         let third = thirdCheckButton.isSelected
+        let fourth = fourthCheckButton.isSelected
         
-        if first && second && third {
+        if first && second && third && fourth {
             setAgreeButton(color: .DeepYellow, bool: true)
         } else {
             setAgreeButton(color: .LoginYellow, bool: false)
@@ -124,5 +136,8 @@ class SignUpSecondViewController: UIViewController {
     
     @IBAction func presentPersonalWeb(_ sender: UIButton) {
         presentAgreeViewController(agree: AgreeViewController.Agree.personal)
+    }
+    @IBAction func presentEULAWeb(_ sender: UIButton) {
+        presentAgreeViewController(agree: AgreeViewController.Agree.eula)
     }
 }

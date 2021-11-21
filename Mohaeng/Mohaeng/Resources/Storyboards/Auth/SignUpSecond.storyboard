@@ -142,6 +142,52 @@
                                     <action selector="presentPersonalWeb:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="290-zn-Yzb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jjV-d2-ek3">
+                                <rect key="frame" x="24" y="250" width="130" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="B7Y-sT-a4e"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="EULA 약관 동의">
+                                            <attributes>
+                                                <color key="NSColor" name="Black"/>
+                                                <font key="NSFont" size="15" name="AppleSDGothicNeo-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="(">
+                                            <attributes>
+                                                <color key="NSColor" name="Black"/>
+                                                <font key="NSFont" size="15" name="AppleSDGothicNeo-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="필수">
+                                            <attributes>
+                                                <color key="NSColor" name="Black"/>
+                                                <font key="NSFont" size="15" name="AppleSDGothicNeo-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=")">
+                                            <attributes>
+                                                <color key="NSColor" name="Black"/>
+                                                <font key="NSFont" size="15" name="AppleSDGothicNeo-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="presentEULAWeb:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bxx-7G-i1k"/>
+                                    <action selector="presentPersonalWeb:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="39E-h1-aIH"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdh-je-rUA">
                                 <rect key="frame" x="327" y="202.66666666666666" width="24" height="24"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -156,6 +202,20 @@
                                     <action selector="touchCheckButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1vH-kU-52c"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7t5-HF-VIn">
+                                <rect key="frame" x="327" y="246.66666666666663" width="24" height="24"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="u2B-qa-Agn"/>
+                                    <constraint firstAttribute="width" constant="24" id="wP5-br-Ymb"/>
+                                </constraints>
+                                <color key="tintColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="uncheckButton"/>
+                                <state key="selected" image="checkButton"/>
+                                <connections>
+                                    <action selector="touchCheckButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="5w0-yu-mZZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -167,25 +227,31 @@
                             <constraint firstItem="Guc-Ia-nEj" firstAttribute="top" secondItem="vws-uc-RVl" secondAttribute="bottom" constant="27" id="B84-s8-Kdy"/>
                             <constraint firstItem="Guc-Ia-nEj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="BwU-ic-mOX"/>
                             <constraint firstItem="vws-uc-RVl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="Is5-VS-02b"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7t5-HF-VIn" secondAttribute="trailing" constant="24" id="Kv5-pw-SVZ"/>
                             <constraint firstItem="vws-uc-RVl" firstAttribute="leading" secondItem="Tap-IG-HAy" secondAttribute="leading" id="LtH-6d-riG"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jdh-je-rUA" secondAttribute="trailing" constant="24" id="NWg-93-j6u"/>
                             <constraint firstItem="Guc-Ia-nEj" firstAttribute="leading" secondItem="vws-uc-RVl" secondAttribute="leading" id="OOF-2U-hEC"/>
+                            <constraint firstItem="7t5-HF-VIn" firstAttribute="centerY" secondItem="jjV-d2-ek3" secondAttribute="centerY" id="QpF-yL-ZgF"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3Lj-Gk-QiP" secondAttribute="trailing" constant="24" id="R3x-3g-LmZ"/>
-                            <constraint firstItem="dLl-sL-jW8" firstAttribute="top" secondItem="Guc-Ia-nEj" secondAttribute="bottom" constant="180.33333333333331" id="WVN-lP-HTk"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4TP-mj-ugW" secondAttribute="trailing" constant="24" id="Z2P-Fx-Jav"/>
                             <constraint firstItem="Tap-IG-HAy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="b4j-gA-35n"/>
                             <constraint firstItem="jdh-je-rUA" firstAttribute="centerY" secondItem="Guc-Ia-nEj" secondAttribute="centerY" id="bak-jy-i9N"/>
                             <constraint firstItem="vws-uc-RVl" firstAttribute="top" secondItem="3Lj-Gk-QiP" secondAttribute="bottom" constant="-19.666666666666657" id="c6m-dJ-ZSZ"/>
+                            <constraint firstItem="jjV-d2-ek3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="mJH-5s-cYQ"/>
                             <constraint firstItem="Tap-IG-HAy" firstAttribute="top" secondItem="lpb-Sm-v4s" secondAttribute="bottom" constant="53" id="maw-Dc-uGw"/>
+                            <constraint firstItem="dLl-sL-jW8" firstAttribute="top" secondItem="jjV-d2-ek3" secondAttribute="bottom" constant="136.33333333333331" id="pIW-4Z-7ew"/>
                             <constraint firstItem="4TP-mj-ugW" firstAttribute="centerY" secondItem="Tap-IG-HAy" secondAttribute="centerY" id="rcy-FP-dSS"/>
                             <constraint firstItem="vws-uc-RVl" firstAttribute="top" secondItem="Tap-IG-HAy" secondAttribute="bottom" constant="27" id="uEU-8Z-SeB"/>
+                            <constraint firstItem="jjV-d2-ek3" firstAttribute="top" secondItem="Guc-Ia-nEj" secondAttribute="bottom" constant="27" id="wce-Er-aqc"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="agreeButton" destination="dLl-sL-jW8" id="vbp-Gd-AhV"/>
                         <outlet property="agreeLabel" destination="lpb-Sm-v4s" id="VlU-IN-bEW"/>
                         <outlet property="allAgreeLabel" destination="Tap-IG-HAy" id="tcf-yK-oo9"/>
+                        <outlet property="eulaButton" destination="jjV-d2-ek3" id="ege-2d-JvV"/>
                         <outlet property="firstCheckButton" destination="4TP-mj-ugW" id="em0-kn-txP"/>
+                        <outlet property="fourthCheckButton" destination="7t5-HF-VIn" id="wOF-Ty-KU5"/>
                         <outlet property="personalButton" destination="Guc-Ia-nEj" id="rPm-NU-h6m"/>
                         <outlet property="secondCheckButton" destination="3Lj-Gk-QiP" id="kQy-UK-rua"/>
                         <outlet property="serviceButton" destination="vws-uc-RVl" id="buJ-mX-pKF"/>
@@ -193,6 +259,7 @@
                         <outletCollection property="buttons" destination="4TP-mj-ugW" collectionClass="NSMutableArray" id="kby-Ad-OWr"/>
                         <outletCollection property="buttons" destination="3Lj-Gk-QiP" collectionClass="NSMutableArray" id="qFw-MJ-kMb"/>
                         <outletCollection property="buttons" destination="jdh-je-rUA" collectionClass="NSMutableArray" id="aBa-qM-iRo"/>
+                        <outletCollection property="buttons" destination="7t5-HF-VIn" collectionClass="NSMutableArray" id="m1q-s8-EKU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
