@@ -271,9 +271,7 @@ extension FeedDetailViewController: TrashReportButtonProtocol {
                                              message: "신고 시 해당 사용자의 글이 차단됩니다.\n정말 신고하시겠어요?",
                                              preferredStyle: UIAlertController.Style.alert)
 
-        let cancelAction = UIAlertAction(title: "취소하기", style: .default) { _ in
-            self.dismiss(animated: true, completion: nil)
-        }
+        let cancelAction = UIAlertAction(title: "취소하기", style: .cancel)
         let reportAction = UIAlertAction(title: "신고하기", style: .destructive) {_ in
             self.postReport(id: postId)
         }
