@@ -14,6 +14,7 @@ enum FeedService {
     case getMyDrawer(year: Int, month: Int)
     case postFeed(content: String, mood: Int, isPrivate: Bool, image: UIImage?)
     case postReport(id: Int)
+    case postBlock(nickname: String)
     case putEmoji(emojiId: Int, postId: Int)
     case deletePost(postId: Int)
 }
@@ -31,6 +32,8 @@ extension FeedService: TargetType {
             return Const.URL.feedURL + "/\(year)" + "/\(month)"
         case .postReport(let id):
             return Const.URL.feedURL + "/\(id)"
+        case .postBlock:
+            return Const.URL.blockURL
         case .putEmoji(_, let postId):
             return Const.URL.feedURL + Const.URL.emojiURL + "/\(postId)"
         case .deletePost(let postId):
@@ -43,7 +46,7 @@ extension FeedService: TargetType {
         switch self {
         case .getAllFeed, .getMyDrawer:
             return .get
-        case .postFeed, .postReport:
+        case .postFeed, .postReport, .postBlock:
             return .post
         case .putEmoji:
             return .put
@@ -60,8 +63,10 @@ extension FeedService: TargetType {
         switch self {
         case .getAllFeed, .getMyDrawer, .postReport, .deletePost:
             return .requestPlain
+        case .postBlock(let nickName):
+            return .requestParameters(parameters: ["nickname": nickName], encoding: JSONEncoding.default)
         case .putEmoji(let emojiId, _):
-            return .requestParameters(parameters: ["emojiId" : emojiId], encoding: JSONEncoding.default)
+            return .requestParameters(parameters: ["emojiId": emojiId], encoding: JSONEncoding.default)
         case .postFeed(let content, let mood, let isPrivate, let image):
             var multiPartFormData: [MultipartFormData] = []
             let json: [String: Any] = [
@@ -89,7 +94,7 @@ extension FeedService: TargetType {
     
     var headers: [String: String]? {
         switch self {
-        case .getAllFeed, .getMyDrawer, .postReport, .putEmoji, .deletePost:
+        case .getAllFeed, .getMyDrawer, .postReport, .putEmoji, .deletePost, .postBlock:
             return [
                 "Content-Type": "application/json",
                 "Bearer": UserDefaults.standard.string(forKey: "jwtToken") ?? ""

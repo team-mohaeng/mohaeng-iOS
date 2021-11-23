@@ -72,7 +72,7 @@ extension Const {
         
         static let feedURL = "/feed"
         static let emojiURL = "/emoji"
-    
+        static let blockURL = "/block"
         
         // 배지 조회 (GET)
         static let badge = "/badge"
