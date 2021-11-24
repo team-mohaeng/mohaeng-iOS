@@ -13,6 +13,9 @@ class SignUpSecondViewController: UIViewController {
     
     @IBOutlet var agreeLabel: UILabel!
     @IBOutlet var allAgreeLabel: UILabel!
+    @IBOutlet var serviceLabel: UILabel!
+    @IBOutlet var personalLabel: UILabel!
+    @IBOutlet var eulaLabel: UILabel!
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet var firstCheckButton: UIButton!
     @IBOutlet var secondCheckButton: UIButton!
@@ -51,6 +54,10 @@ class SignUpSecondViewController: UIViewController {
         
         agreeLabel.font = .spoqaHanSansNeo(weight: .bold, size: 22)
         allAgreeLabel.font = .spoqaHanSansNeo(weight: .bold, size: 14)
+        
+        [serviceLabel, personalLabel, eulaLabel].forEach {
+            $0.font = .spoqaHanSansNeo(weight: .regular, size: 14)
+        }
         
         agreeButton.makeRounded(radius: 20)
         agreeButton.titleLabel?.font = .spoqaHanSansNeo(weight: .bold, size: 16)
