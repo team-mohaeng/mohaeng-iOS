@@ -8,9 +8,9 @@
 import UIKit
 import SnapKit
 
-protocol TrashReportButtonProtocol {
+protocol TrashReportButtonProtocol: AnyObject {
     func touchTrashButton(_ button: UIButton, postId: Int)
-    func touchReportButton(_ button: UIButton, postId: Int)
+    func touchReportButton(_ button: UIButton, postId: Int, nickname: String)
 }
 
 class FeedDetailCollectionViewCell: UICollectionViewCell {
@@ -77,7 +77,7 @@ class FeedDetailCollectionViewCell: UICollectionViewCell {
     var stickers: [Emoji] = []
     var hasImage: Bool = false
     var viewController: FeedDetail = .myDrawer
-    var delegate: TrashReportButtonProtocol?
+    weak var delegate: TrashReportButtonProtocol?
     
     // MARK: - View Life Cycle
     
@@ -175,7 +175,7 @@ class FeedDetailCollectionViewCell: UICollectionViewCell {
     
     @objc
     func touchReportButton() {
-        delegate?.touchReportButton(reportTrashButton, postId: currentPostId)
+        delegate?.touchReportButton(reportTrashButton, postId: currentPostId, nickname: nicknameLabel.text ?? "")
     }
     
     @objc

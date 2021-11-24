@@ -89,6 +89,21 @@ public class FeedAPI {
         }
     }
     
+    func postBlock(nickname: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+        feedProvider.request(.postBlock(nickname: nickname)) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .report)
+                completion(networkResult)
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
     func postEmoji(emojiId: Int, postId: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
         feedProvider.request(.putEmoji(emojiId: emojiId, postId: postId)) { result in
             switch result {

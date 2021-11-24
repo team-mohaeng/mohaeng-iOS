@@ -251,13 +251,18 @@ extension FeedDetailViewController: TrashReportButtonProtocol {
         deletePopUp.setText(title: "삭제하기", description: "안부를 정말 삭제할거야?", buttonTitle: "삭제")
     }
     
-    func touchReportButton(_ button: UIButton, postId: Int) {
+    func touchReportButton(_ button: UIButton, postId: Int, nickname: String) {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let reportAction = UIAlertAction(title: "신고하기", style: .destructive) { _ in
-            self.presentWarningAlert(postId: postId)
+            self.postReport(id: postId)
         }
         actionSheet.addAction(reportAction)
+        
+        let blockAction = UIAlertAction(title: "차단하기", style: .destructive) { _ in
+            self.presentBlockWarningAlert(nickname: nickname)
+        }
+        actionSheet.addAction(blockAction)
         
         let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         cancelAction.setValue(UIColor.Grey3, forKey: "titleTextColor")
@@ -266,14 +271,14 @@ extension FeedDetailViewController: TrashReportButtonProtocol {
         self.present(actionSheet, animated: true, completion: nil)
     }
     
-    func presentWarningAlert(postId: Int) {
-        let warningAlert = UIAlertController(title: "신고하기",
-                                             message: "신고 시 해당 사용자의 글이 차단됩니다.\n정말 신고하시겠어요?",
+    func presentBlockWarningAlert(nickname: String) {
+        let warningAlert = UIAlertController(title: "차단하기",
+                                             message: "해당 사용자(\(nickname))의\n모든 글이 보이지 않게 됩니다.",
                                              preferredStyle: UIAlertController.Style.alert)
 
         let cancelAction = UIAlertAction(title: "취소하기", style: .cancel)
-        let reportAction = UIAlertAction(title: "신고하기", style: .destructive) {_ in
-            self.postReport(id: postId)
+        let reportAction = UIAlertAction(title: "차단하기", style: .destructive) {_ in
+            self.postBlock(nickname: nickname)
         }
         
         warningAlert.addAction(cancelAction)
@@ -298,6 +303,26 @@ extension FeedDetailViewController {
     
     func postReport(id: Int) {
         FeedAPI.shared.postReport(id: id) { response in
+            switch response {
+            case .success(let data):
+                if let data = data as? String {
+                    self.showToast(message: data, font: .spoqaHanSansNeo(size: 12))
+                    self.reloadCollectionView()
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+    
+    func postBlock(nickname: String) {
+        FeedAPI.shared.postBlock(nickname: nickname) { response in
             switch response {
             case .success(let data):
                 if let data = data as? String {
