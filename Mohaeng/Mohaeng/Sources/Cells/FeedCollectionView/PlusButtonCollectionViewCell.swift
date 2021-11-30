@@ -16,6 +16,7 @@ class PlusButtonCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
     
     private var postId = 0
+    private var indexPath = 0
     
     // MARK: - View Life Cycle
     
@@ -30,9 +31,13 @@ class PlusButtonCollectionViewCell: UICollectionViewCell {
         self.postId = postId
     }
     
+    func setCurrentIndex(index: Int) {
+        indexPath = index
+    }
+    
     @IBAction func touchEmojiButton(_ sender: Any) {
         NotificationCenter.default.post(name: NSNotification.Name("PlusButtonDidTap"),
-                                        object: postId,
+                                        object: [postId, indexPath],
                                         userInfo: nil)
     }
 

@@ -15,6 +15,9 @@ class FeedViewController: UIViewController {
     
     /// dummy data
     private var allFeeds: FeedResponse = FeedResponse(isNew: false, hasFeed: 0, userCount: 0, feeds: [Feed]())
+    private var currentData: FeedResponse = FeedResponse(isNew: false, hasFeed: 0, userCount: 0, feeds: [Feed]())
+    private var currentPage = 0
+    private var isLast = false
     
     enum Size {
         static let FeedCollectionViewTopConstraint: CGFloat = 167
@@ -47,8 +50,10 @@ class FeedViewController: UIViewController {
         return nib
     }()
     
-    private var refreshControl = UIRefreshControl()
-
+    private var refreshControl = UIRefreshControl().then {
+        $0.tintColor = .Yellow4
+    }
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -62,7 +67,7 @@ class FeedViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getFeeds()
+        getFeeds(page: currentPage)
         self.navigationController?.isNavigationBarHidden = true
     }
     
@@ -105,7 +110,8 @@ class FeedViewController: UIViewController {
         
         feedBackgroundFrame.backgroundColor = .white
         feedBackgroundFrame.makeRounded(radius: 24)
-    
+        feedBackgroundFrame.addShadowWithOpaqueBackground(opacity: 0.04, radius: 24)
+        
         floatingTopButton.contentEdgeInsets = UIEdgeInsets(top: 0.01, left: 0, bottom: 0.01, right: 0)
         floatingTopButton.addShadowWithOpaqueBackground(opacity: 0.1, radius: 1)
     }
@@ -125,7 +131,17 @@ class FeedViewController: UIViewController {
     }
     
     private func updateData(feed: FeedResponse) {
-        allFeeds = feed
+        if feed.feeds.isEmpty {
+            isLast = true
+            return
+        }
+        
+        currentData = feed
+        if currentPage == 0 {
+            allFeeds = feed
+        } else {
+            allFeeds.feeds.append(contentsOf: feed.feeds)
+        }
         feedCollectionView.reloadData()
         
         if let userCount = feed.userCount {
@@ -154,6 +170,11 @@ extension FeedViewController: UICollectionViewDataSource {
         
         cell.setData(data: allFeeds.feeds[indexPath.row])
         
+        if indexPath.row == allFeeds.feeds.count - 1 && !isLast {
+            currentPage += 1
+            self.getFeeds(page: currentPage)
+        }
+        
         return cell
     }
     
@@ -167,9 +188,11 @@ extension FeedViewController: UICollectionViewDelegate {
         let feedDetailStoryboard = UIStoryboard.init(name: Const.Storyboard.Name.feedDetail, bundle: nil)
         guard let feedDetailViewController = feedDetailStoryboard.instantiateViewController(identifier: Const.ViewController.Identifier.feedDetail) as? FeedDetailViewController else { return }
         
-        feedDetailViewController.setData(feeds: allFeeds)
+        currentPage = indexPath.row / 15
+        currentData.feeds = isLast ? Array(allFeeds.feeds[15 * currentPage...allFeeds.feeds.count - 1]) : Array(allFeeds.feeds[15 * currentPage...currentPage * 15 + 14])
+        feedDetailViewController.setData(feeds: currentData)
         feedDetailViewController.setPreviousController(viewController: .community)
-        feedDetailViewController.setSelectedContentsIndexPath(indexPath: indexPath)
+        feedDetailViewController.setSelectedContentsIndexPath(indexPath: indexPath, page: indexPath.row / 15)
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(feedDetailViewController, animated: true)
     }
@@ -286,12 +309,13 @@ extension FeedViewController: HeaderViewDelegate {
 // MARK: - SERVER CONNECT
 
 extension FeedViewController {
-    @objc func getFeeds() {
-        FeedAPI.shared.getAllFeed { response in
+    @objc func getFeeds(page: Int) {
+        FeedAPI.shared.getFeed(page: currentPage) { response in
             switch response {
             case .success(let data):
                 if let data = data as? FeedResponse {
                     self.updateData(feed: data)
+                    self.feedCollectionView.reloadData()
                     self.refreshControl.endRefreshing()
                 }
             case .requestErr(let message):

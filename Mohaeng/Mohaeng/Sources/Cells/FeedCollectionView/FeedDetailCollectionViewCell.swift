@@ -182,6 +182,17 @@ class FeedDetailCollectionViewCell: UICollectionViewCell {
     func touchTrashButton() {
         delegate?.touchTrashButton(reportTrashButton, postId: currentPostId)
     }
+    
+    func getIndexPath() -> Int {
+        var indexPath = 0
+        
+        guard let superView = self.superview as? UICollectionView else {
+            return -1
+        }
+        indexPath = superView.indexPath(for: self)!.row
+        
+        return indexPath
+    }
 }
 
 // MARK: - UIColelctionViewDataSource
@@ -200,6 +211,7 @@ extension FeedDetailCollectionViewCell: UICollectionViewDataSource {
             }
             
             cell.setPostId(postId: currentPostId)
+            cell.setCurrentIndex(index: getIndexPath())
             
             return cell
         default:

@@ -10,7 +10,7 @@ import UIKit
 import Moya
 
 enum FeedService {
-    case getAllFeed
+    case getFeed(page: Int)
     case getMyDrawer(year: Int, month: Int)
     case postFeed(content: String, mood: Int, isPrivate: Bool, image: UIImage?)
     case postReport(id: Int)
@@ -26,7 +26,9 @@ extension FeedService: TargetType {
     
     var path: String {
         switch self {
-        case .getAllFeed, .postFeed:
+        case .getFeed(let page):
+            return Const.URL.feedURL + "/\(page)"
+        case .postFeed:
             return Const.URL.feedURL
         case .getMyDrawer(let year, let month):
             return Const.URL.feedURL + "/\(year)" + "/\(month)"
@@ -44,7 +46,7 @@ extension FeedService: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .getAllFeed, .getMyDrawer:
+        case .getFeed, .getMyDrawer:
             return .get
         case .postFeed, .postReport, .postBlock:
             return .post
@@ -61,7 +63,7 @@ extension FeedService: TargetType {
     
     var task: Task {
         switch self {
-        case .getAllFeed, .getMyDrawer, .postReport, .deletePost:
+        case .getFeed, .getMyDrawer, .postReport, .deletePost:
             return .requestPlain
         case .postBlock(let nickName):
             return .requestParameters(parameters: ["nickname": nickName], encoding: JSONEncoding.default)
@@ -94,7 +96,7 @@ extension FeedService: TargetType {
     
     var headers: [String: String]? {
         switch self {
-        case .getAllFeed, .getMyDrawer, .postReport, .putEmoji, .deletePost, .postBlock:
+        case .getFeed, .getMyDrawer, .postReport, .putEmoji, .deletePost, .postBlock:
             return [
                 "Content-Type": "application/json",
                 "Bearer": UserDefaults.standard.string(forKey: "jwtToken") ?? ""

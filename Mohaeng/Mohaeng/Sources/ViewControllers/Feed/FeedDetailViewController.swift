@@ -6,7 +6,9 @@
 //
 
 import UIKit
+
 import Kingfisher
+import Lottie
 
 enum FeedDetail {
     case community
@@ -18,8 +20,18 @@ class FeedDetailViewController: UIViewController {
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var feedDetailCollectionView: UICollectionView!
-    private var refreshControl = UIRefreshControl()
+    private var refreshControl = UIRefreshControl().then {
+        $0.tintColor = .Yellow4
+    }
     private var previousController: FeedDetail = .myDrawer
+    private lazy var loadingView = AnimationView(name: "loading").then {
+        $0.contentMode = .scaleAspectFill
+        $0.loopMode = .loop
+        $0.play()
+        $0.isHidden = true
+        $0.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        $0.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
+    }
     
     // MARK: - Properties
     
@@ -29,6 +41,11 @@ class FeedDetailViewController: UIViewController {
     private var year: Int?
     private var month: Int?
     private var currentPostId = 0
+    private var topPage = 0
+    private var bottomPage = 0
+    private var currentPage = 0
+    private var currentIndex = 0
+    private var isLast: Bool = false
     
     // MARK: - View Life Cycle
     
@@ -36,6 +53,7 @@ class FeedDetailViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        addLoadingView()
         registerXib()
         setDelegation()
         addObserver()
@@ -58,6 +76,10 @@ class FeedDetailViewController: UIViewController {
         navigationController?.initWithBackButton()
     }
     
+    private func addLoadingView() {
+        view.addSubview(loadingView)
+    }
+    
     private func registerXib() {
         feedDetailCollectionView.register(UINib(nibName: Const.Xib.Name.feedDetailCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.feedDetailCollectionViewCell)
         feedDetailCollectionView.register(FeedDetailCollectionViewCell.self, forCellWithReuseIdentifier: "FDCollectionViewCell")
@@ -67,6 +89,7 @@ class FeedDetailViewController: UIViewController {
         feedDetailCollectionView.delegate = self
         feedDetailCollectionView.dataSource = self
         feedDetailCollectionView.layoutIfNeeded()
+        selectedContents.row %= 15
         feedDetailCollectionView.scrollToItem(at: selectedContents, at: .top, animated: true)
         feedDetailCollectionView.refreshControl = refreshControl
         feedDetailCollectionView.refreshControl?.addTarget(self, action: #selector(getFeeds), for: .valueChanged)
@@ -95,14 +118,16 @@ class FeedDetailViewController: UIViewController {
         previousController = viewController
     }
     
-    func setSelectedContentsIndexPath(indexPath: IndexPath) {
+    func setSelectedContentsIndexPath(indexPath: IndexPath, page: Int) {
         selectedContents = indexPath
+        topPage = page
+        bottomPage = page
     }
     
     @objc func reloadCollectionView() {
         switch previousController {
         case .community:
-            getFeeds()
+            getFeeds(currentPage: currentPage, isPrevious: false, isLoadMore: false)
         case .myDrawer:
             if let year = year,
                let month = month {
@@ -111,14 +136,16 @@ class FeedDetailViewController: UIViewController {
         }
     }
     
-    @objc func presentStickerViewController(postId: NSNotification) {
+    @objc func presentStickerViewController(cellInfo: NSNotification) {
         let storyboard = UIStoryboard(name: Const.Storyboard.Name.sticker, bundle: nil)
         guard let stickerViewController = storyboard.instantiateViewController(identifier: Const.ViewController.Identifier.sticker) as? StickerViewController else { return }
         stickerViewController.modalPresentationStyle = .overCurrentContext
         stickerViewController.modalTransitionStyle = .crossDissolve
         
-        if let postId = postId.object as? Int {
-            stickerViewController.postId = postId
+        if let cellInfo = cellInfo.object as? [Int] {
+            stickerViewController.postId = cellInfo[0]
+            self.currentIndex = cellInfo[1]
+            self.currentPage = self.currentIndex / 15 + topPage
         }
         tabBarController?.present(stickerViewController, animated: false, completion: nil)
     }
@@ -140,7 +167,6 @@ extension FeedDetailViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = feedDetailCollectionView.dequeueReusableCell(withReuseIdentifier: "FDCollectionViewCell", for: indexPath) as? FeedDetailCollectionViewCell else { return UICollectionViewCell() }
-        
         cell.delegate = self
         
         switch previousController {
@@ -148,9 +174,31 @@ extension FeedDetailViewController: UICollectionViewDataSource {
             cell.setData(feed: myFeed[indexPath.row], viewController: .myDrawer)
         case .community:
             cell.setData(feed: allFeed.feeds[indexPath.row], viewController: .community)
+            
+            if indexPath.row == allFeed.feeds.count - 1 && !isLast {
+                bottomPage += 1
+                self.loadingView.isHidden = false
+                DispatchQueue.global().async {
+                    self.getFeeds(currentPage: self.bottomPage, isPrevious: false)
+                }
+            }
         }
         
         return cell
+    }
+    
+}
+
+extension FeedDetailViewController: UICollectionViewDelegate {
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        if scrollView.contentOffset.y < 100 && topPage != 0 {
+            loadingView.isHidden = false
+            topPage -= 1
+            DispatchQueue.global().async {
+                self.getFeeds(currentPage: self.topPage, isPrevious: true)
+            }
+        }
     }
     
 }
@@ -188,13 +236,36 @@ extension FeedDetailViewController: UICollectionViewDelegateFlowLayout {
 
 extension FeedDetailViewController {
     
-    @objc func getFeeds() {
-        FeedAPI.shared.getAllFeed { response in
+    func updateFeed(feed: FeedResponse, isPrevious: Bool, isLoadMore: Bool) {
+        if feed.feeds.isEmpty {
+            isLast = true
+            return
+        }
+        
+        if isPrevious {
+            allFeed.feeds.insert(contentsOf: feed.feeds, at: 0)
+        } else if isLoadMore {
+            allFeed.feeds.append(contentsOf: feed.feeds)
+        } else {
+            allFeed.feeds[currentIndex] = feed.feeds[currentIndex % 15]
+        }
+        
+        self.feedDetailCollectionView.reloadData()
+        
+        if isPrevious && isLoadMore { self.fixCurrentPosition() }
+    }
+    
+    func fixCurrentPosition() {
+        self.feedDetailCollectionView.scrollToItem(at: IndexPath(row: 15, section: 0), at: .top, animated: false)
+    }
+    
+    @objc
+    func getFeeds(currentPage: Int, isPrevious: Bool, isLoadMore: Bool = true) {        
+        FeedAPI.shared.getFeed(page: currentPage) { response in
             switch response {
             case .success(let data):
                 if let data = data as? FeedResponse {
-                    self.allFeed = data
-                    self.feedDetailCollectionView.reloadData()
+                    self.updateFeed(feed: data, isPrevious: isPrevious, isLoadMore: isLoadMore)
                     self.refreshControl.endRefreshing()
                 }
             case .requestErr(let message):
@@ -206,6 +277,10 @@ extension FeedDetailViewController {
             case .networkFail:
                 print("networkFail")
             }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.loadingView.isHidden = true
         }
     }
     
