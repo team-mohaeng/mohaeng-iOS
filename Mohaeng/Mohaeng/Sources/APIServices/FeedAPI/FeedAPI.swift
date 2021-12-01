@@ -24,8 +24,8 @@ public class FeedAPI {
     
     public init() { }
     
-    func getAllFeed(completion: @escaping (NetworkResult<Any>) -> Void) {
-        feedProvider.request(.getAllFeed) { (result) in
+    func getFeed(page: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
+        feedProvider.request(.getFeed(page: page)) { (result) in
             switch result {
             case .success(let response):
                 

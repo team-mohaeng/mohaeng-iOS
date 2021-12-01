@@ -12,7 +12,7 @@ import Foundation
 struct FeedResponse: Codable {
     let isNew: Bool?
     let hasFeed, userCount: Int?
-    let feeds: [Feed]
+    var feeds: [Feed]
 }
 
 // MARK: - Feed

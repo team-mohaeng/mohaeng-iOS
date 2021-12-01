@@ -136,7 +136,7 @@ extension MyDrawerViewController: UICollectionViewDataSource {
         
         feedDetailViewController.setMyDrawer(feeds: myDrawer, year: selectedYear, month: selectedMonth)
         feedDetailViewController.setPreviousController(viewController: .myDrawer)
-        feedDetailViewController.setSelectedContentsIndexPath(indexPath: indexPath)
+        feedDetailViewController.setSelectedContentsIndexPath(indexPath: indexPath, page: 0)
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(feedDetailViewController, animated: true)
     }

@@ -187,6 +187,7 @@
 		AA7E0AB426FC6C1900106DC2 /* CharacterTypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA7E0AB226FC6C1900106DC2 /* CharacterTypeCollectionViewCell.xib */; };
 		AA7E0AB726FC998000106DC2 /* CharacterColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7E0AB526FC998000106DC2 /* CharacterColorCollectionViewCell.swift */; };
 		AA7E0AB826FC998000106DC2 /* CharacterColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA7E0AB626FC998000106DC2 /* CharacterColorCollectionViewCell.xib */; };
+		AAA9A52327549E3700FE92DB /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = AAA9A52227549E3700FE92DB /* loading.json */; };
 		AAC7ACFF27350C7A00B2BE1E /* HomeMent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC7ACFE27350C7A00B2BE1E /* HomeMent.swift */; };
 		AAC7AD012735102A00B2BE1E /* Ments.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC7AD002735102900B2BE1E /* Ments.swift */; };
 		AAED18D826F11DF0009FE781 /* PlusButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAED18D226F11DEF009FE781 /* PlusButtonCollectionViewCell.swift */; };
@@ -437,6 +438,7 @@
 		AA7E0AB226FC6C1900106DC2 /* CharacterTypeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterTypeCollectionViewCell.xib; sourceTree = "<group>"; };
 		AA7E0AB526FC998000106DC2 /* CharacterColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA7E0AB626FC998000106DC2 /* CharacterColorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterColorCollectionViewCell.xib; sourceTree = "<group>"; };
+		AAA9A52227549E3700FE92DB /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loading.json; path = ../../../../../../../Downloads/loading.json; sourceTree = "<group>"; };
 		AAC7ACFE27350C7A00B2BE1E /* HomeMent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMent.swift; sourceTree = "<group>"; };
 		AAC7AD002735102900B2BE1E /* Ments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ments.swift; sourceTree = "<group>"; };
 		AAED18D226F11DEF009FE781 /* PlusButtonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlusButtonCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -639,6 +641,7 @@
 		561D75FA26F0BFA40028DBCA /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				AAA9A52227549E3700FE92DB /* loading.json */,
 				DD5D0DD62734F8F400952A2A /* onboardingcard.json */,
 				DD81D3CA272A88C30066D159 /* letter.json */,
 				DD81D3C8272A86B30066D159 /* awards_congrats.json */,
@@ -1340,6 +1343,7 @@
 				561D773426F0BFA40028DBCA /* DatePickerViewController.xib in Resources */,
 				56AE34DE271FE30700D7F4D8 /* GoogleService-Info.plist in Resources */,
 				561D76A526F0BFA40028DBCA /* FindPassword.storyboard in Resources */,
+				AAA9A52327549E3700FE92DB /* loading.json in Resources */,
 				561D769C26F0BFA40028DBCA /* Notification.storyboard in Resources */,
 				561D76BE26F0BFA40028DBCA /* SpoqaHanSansNeo-Thin.otf in Resources */,
 				569E8B1E271547AD00D67712 /* ChallengeHelpPopUpViewController.xib in Resources */,
