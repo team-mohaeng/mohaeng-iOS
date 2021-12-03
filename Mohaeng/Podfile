@@ -11,6 +11,7 @@ target 'Mohaeng' do
 	pod 'lottie-ios'
 	pod 'Firebase/Analytics'
 	pod 'Firebase/Messaging'
+	pod 'Firebase/Crashlytics'
 	pod 'IQKeyboardManagerSwift'
 	pod 'SnapKit'
 	pod 'Then'
