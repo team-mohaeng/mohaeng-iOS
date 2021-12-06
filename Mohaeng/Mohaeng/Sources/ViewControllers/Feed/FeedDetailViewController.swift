@@ -174,6 +174,7 @@ extension FeedDetailViewController: UICollectionViewDataSource {
             cell.setData(feed: myFeed[indexPath.row], viewController: .myDrawer)
         case .community:
             cell.setData(feed: allFeed.feeds[indexPath.row], viewController: .community)
+            cell.setCurrentIndex(currentIndex: indexPath.row)
             
             if indexPath.row == allFeed.feeds.count - 1 && !isLast {
                 bottomPage += 1

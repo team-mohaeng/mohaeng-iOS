@@ -78,6 +78,7 @@ class FeedDetailCollectionViewCell: UICollectionViewCell {
     var hasImage: Bool = false
     var viewController: FeedDetail = .myDrawer
     weak var delegate: TrashReportButtonProtocol?
+    var currentIndex: Int = 0
     
     // MARK: - View Life Cycle
     
@@ -123,6 +124,10 @@ class FeedDetailCollectionViewCell: UICollectionViewCell {
         } else {
             configureImageUI(hasImage: false)
         }
+    }
+    
+    func setCurrentIndex(currentIndex: Int) {
+        self.currentIndex = currentIndex
     }
     
     private func setMoodImage(moodStatus: Int) {
@@ -182,17 +187,6 @@ class FeedDetailCollectionViewCell: UICollectionViewCell {
     func touchTrashButton() {
         delegate?.touchTrashButton(reportTrashButton, postId: currentPostId)
     }
-    
-    func getIndexPath() -> Int {
-        var indexPath = 0
-        
-        guard let superView = self.superview as? UICollectionView else {
-            return -1
-        }
-        indexPath = superView.indexPath(for: self)!.row
-        
-        return indexPath
-    }
 }
 
 // MARK: - UIColelctionViewDataSource
@@ -211,7 +205,7 @@ extension FeedDetailCollectionViewCell: UICollectionViewDataSource {
             }
             
             cell.setPostId(postId: currentPostId)
-            cell.setCurrentIndex(index: getIndexPath())
+            cell.setCurrentIndex(index: currentIndex)
             
             return cell
         default:
