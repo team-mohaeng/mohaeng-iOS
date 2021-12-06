@@ -18,6 +18,7 @@ class FeedViewController: UIViewController {
     private var currentData: FeedResponse = FeedResponse(isNew: false, hasFeed: 0, userCount: 0, feeds: [Feed]())
     private var currentPage = 0
     private var isLast = false
+    private var cachedPages: [Int] = []
     
     enum Size {
         static let FeedCollectionViewTopConstraint: CGFloat = 167
@@ -64,10 +65,10 @@ class FeedViewController: UIViewController {
         initAtrributes()
         setupAutoLayout()
         addObserver()
+        getFeeds(page: currentPage)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getFeeds(page: currentPage)
         self.navigationController?.isNavigationBarHidden = true
     }
     
@@ -140,8 +141,11 @@ class FeedViewController: UIViewController {
         if currentPage == 0 {
             allFeeds = feed
         } else {
-            allFeeds.feeds.append(contentsOf: feed.feeds)
+            if cachedPages.filter({ $0 == currentPage }).count == 0 {
+                allFeeds.feeds.append(contentsOf: feed.feeds)
+            }
         }
+        
         feedCollectionView.reloadData()
         
         if let userCount = feed.userCount {
@@ -317,6 +321,7 @@ extension FeedViewController {
                     self.updateData(feed: data)
                     self.feedCollectionView.reloadData()
                     self.refreshControl.endRefreshing()
+                    self.cachedPages.append(page)
                 }
             case .requestErr(let message):
                 print("requestErr", message)
