@@ -7,6 +7,9 @@ PODS:
     - FirebaseAnalytics (~> 8.9.1)
   - Firebase/CoreOnly (8.9.1):
     - FirebaseCore (= 8.9.1)
+  - Firebase/Crashlytics (8.9.1):
+    - Firebase/CoreOnly
+    - FirebaseCrashlytics (~> 8.9.0)
   - Firebase/Messaging (8.9.1):
     - Firebase/CoreOnly
     - FirebaseMessaging (~> 8.9.0)
@@ -37,6 +40,13 @@ PODS:
     - GoogleUtilities/Environment (~> 7.6)
     - GoogleUtilities/Logger (~> 7.6)
     - nanopb (~> 2.30908.0)
+  - FirebaseCrashlytics (8.9.0):
+    - FirebaseCore (~> 8.0)
+    - FirebaseInstallations (~> 8.0)
+    - GoogleDataTransport (~> 9.1)
+    - GoogleUtilities/Environment (~> 7.6)
+    - nanopb (~> 2.30908.0)
+    - PromisesObjC (< 3.0, >= 1.2)
   - FirebaseInstallations (8.9.0):
     - FirebaseCore (~> 8.0)
     - GoogleUtilities/Environment (~> 7.6)
@@ -126,6 +136,7 @@ PODS:
 
 DEPENDENCIES:
   - Firebase/Analytics
+  - Firebase/Crashlytics
   - Firebase/Messaging
   - FontBlaster
   - IQKeyboardManagerSwift
@@ -147,6 +158,7 @@ SPEC REPOS:
     - FirebaseAnalytics
     - FirebaseCore
     - FirebaseCoreDiagnostics
+    - FirebaseCrashlytics
     - FirebaseInstallations
     - FirebaseMessaging
     - FontBlaster
@@ -173,6 +185,7 @@ SPEC CHECKSUMS:
   FirebaseAnalytics: 4ab446ce08a3fe52e8a4303dd997cf26276bf968
   FirebaseCore: c5aab092d9c4b8efea894946166b04c9d9ef0e68
   FirebaseCoreDiagnostics: 5daa63f1c1409d981a2d5007daa100b36eac6a34
+  FirebaseCrashlytics: 40efbd81157dae307ec95612fa1328347284d2c2
   FirebaseInstallations: caa7c8e0d3e2345b8829d2fa9ca1b4dfbf2fcc85
   FirebaseMessaging: 82c4a48638f53f7b184f3cc9f6cd2cbe533ab316
   FontBlaster: b848e9d7b0ed2f2b3ebaf5b83458eb4ff9ba0764
@@ -193,6 +206,6 @@ SPEC CHECKSUMS:
   SwiftLint: e5c7f1fba68eccfc51509d5b2ce1699f5502e0c7
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: b1d6e9dd94995e1bce44b6315204f847aba01178
+PODFILE CHECKSUM: b599ea8388ac76e26f4a59a72d34809242368ae1
 
 COCOAPODS: 1.11.2
