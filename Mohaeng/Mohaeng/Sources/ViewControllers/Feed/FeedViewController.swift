@@ -6,8 +6,10 @@
 //
 
 import UIKit
+
 import SnapKit
 import Then
+import Lottie
 
 class FeedViewController: UIViewController {
     
@@ -18,6 +20,7 @@ class FeedViewController: UIViewController {
     private var currentData: FeedResponse = FeedResponse(isNew: false, hasFeed: 0, userCount: 0, feeds: [Feed]())
     private var currentPage = 0
     private var isLast = false
+    private var cachedPages: [Int] = []
     
     enum Size {
         static let FeedCollectionViewTopConstraint: CGFloat = 167
@@ -31,6 +34,14 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var feedCollectionView: UICollectionView!
     @IBOutlet weak var statusBarView: UIView!
     @IBOutlet weak var floatingTopButton: UIButton!
+    private lazy var loadingView = AnimationView(name: "loading").then {
+        $0.contentMode = .scaleAspectFill
+        $0.loopMode = .loop
+        $0.play()
+        $0.isHidden = true
+        $0.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        $0.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
+    }
     
     private var feedUserCountLabel = UILabel().then {
         $0.font = UIFont.gmarketFont(weight: .medium, size: 18)
@@ -64,10 +75,10 @@ class FeedViewController: UIViewController {
         initAtrributes()
         setupAutoLayout()
         addObserver()
+        getFeeds(page: currentPage)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getFeeds(page: currentPage)
         self.navigationController?.isNavigationBarHidden = true
     }
     
@@ -105,6 +116,8 @@ class FeedViewController: UIViewController {
     }
     
     private func initAtrributes() {
+        view.addSubview(loadingView)
+        
         feedCollectionView.backgroundView = UIView()
         feedCollectionView.backgroundView?.addSubview(headerView)
         
@@ -140,8 +153,11 @@ class FeedViewController: UIViewController {
         if currentPage == 0 {
             allFeeds = feed
         } else {
-            allFeeds.feeds.append(contentsOf: feed.feeds)
+            if cachedPages.filter({ $0 == currentPage }).count == 0 {
+                allFeeds.feeds.append(contentsOf: feed.feeds)
+            }
         }
+        
         feedCollectionView.reloadData()
         
         if let userCount = feed.userCount {
@@ -310,6 +326,7 @@ extension FeedViewController: HeaderViewDelegate {
 
 extension FeedViewController {
     @objc func getFeeds(page: Int) {
+        loadingView.isHidden = true
         FeedAPI.shared.getFeed(page: currentPage) { response in
             switch response {
             case .success(let data):
@@ -317,6 +334,11 @@ extension FeedViewController {
                     self.updateData(feed: data)
                     self.feedCollectionView.reloadData()
                     self.refreshControl.endRefreshing()
+                    self.cachedPages.append(page)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        self.loadingView.isHidden = false
+                    }
                 }
             case .requestErr(let message):
                 print("requestErr", message)
