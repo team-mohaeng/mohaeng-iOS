@@ -229,6 +229,7 @@ extension HomeViewController {
                 }
             case .requestErr(let message):
                 print("requestErr", message)
+                self.pushToLoginViewController()
             case .pathErr:
                 print("pathErr")
             case .serverErr:
