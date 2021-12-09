@@ -177,6 +177,7 @@ extension SettingViewController: UITableViewDataSource {
             self.pushToOpenSourceLicenseViewController()
         case 4: // 로그아웃
             UserDefaults.standard.removeObject(forKey: "jwtToken")
+            UIApplication.shared.unregisterForRemoteNotifications()
             popToLoginViewController()
         case 5: // 회원 탈퇴
             presentWithdrawalPopUp()
@@ -197,6 +198,7 @@ extension SettingViewController: PopUpActionDelegate {
     
     func touchYellowButton(button: UIButton) {
         deleteUser()
+        UIApplication.shared.unregisterForRemoteNotifications()
         self.dismiss(animated: true, completion: nil)
     }
 }
