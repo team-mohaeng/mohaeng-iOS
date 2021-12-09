@@ -396,7 +396,6 @@ extension SignUpFirstViewController {
         SignUpAPI.shared.postEmailCheck(completion: { [self] (response) in
             switch response {
             case .success(let message):
-                print("success")
                 changeAttributesSuccess()
             case .requestErr(let message):
                 print("requestErr", message)

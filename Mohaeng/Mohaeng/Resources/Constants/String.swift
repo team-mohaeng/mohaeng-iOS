@@ -22,6 +22,12 @@ extension Const {
         // 회원 탈퇴 팝업
         static let withdrawalPopUpTitle = "회원 탈퇴하기"
         static let withdrawalPopUpContent = "탈퇴하면 그동안 모아왔던 해피지수와 캐릭터 스타일 카드가 모두 사라져!"
+        
+        // MARK: - Error Strings
+        
+        static let pathErr = "pathErr 발생. 개발자에게 문의해주세요."
+        static let serverErr = "serverErr 발생. 개발자에게 문의해주세요."
+        static let networkFail = "네트워크 상태가 좋지 않습니다. 잠시 후 다시 시도해주세요."
     }
     
 }
