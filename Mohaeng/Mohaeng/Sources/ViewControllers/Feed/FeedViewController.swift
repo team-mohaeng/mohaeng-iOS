@@ -6,8 +6,10 @@
 //
 
 import UIKit
+
 import SnapKit
 import Then
+import Lottie
 
 class FeedViewController: UIViewController {
     
@@ -32,6 +34,14 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var feedCollectionView: UICollectionView!
     @IBOutlet weak var statusBarView: UIView!
     @IBOutlet weak var floatingTopButton: UIButton!
+    private lazy var loadingView = AnimationView(name: "loading").then {
+        $0.contentMode = .scaleAspectFill
+        $0.loopMode = .loop
+        $0.play()
+        $0.isHidden = true
+        $0.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        $0.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
+    }
     
     private var feedUserCountLabel = UILabel().then {
         $0.font = UIFont.gmarketFont(weight: .medium, size: 18)
@@ -106,6 +116,8 @@ class FeedViewController: UIViewController {
     }
     
     private func initAtrributes() {
+        view.addSubview(loadingView)
+        
         feedCollectionView.backgroundView = UIView()
         feedCollectionView.backgroundView?.addSubview(headerView)
         
@@ -314,6 +326,7 @@ extension FeedViewController: HeaderViewDelegate {
 
 extension FeedViewController {
     @objc func getFeeds(page: Int) {
+        loadingView.isHidden = true
         FeedAPI.shared.getFeed(page: currentPage) { response in
             switch response {
             case .success(let data):
@@ -322,6 +335,10 @@ extension FeedViewController {
                     self.feedCollectionView.reloadData()
                     self.refreshControl.endRefreshing()
                     self.cachedPages.append(page)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        self.loadingView.isHidden = false
+                    }
                 }
             case .requestErr(let message):
                 print("requestErr", message)
