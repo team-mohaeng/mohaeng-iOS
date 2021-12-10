@@ -326,7 +326,7 @@ extension FeedViewController: HeaderViewDelegate {
 
 extension FeedViewController {
     @objc func getFeeds(page: Int) {
-        loadingView.isHidden = true
+        loadingView.isHidden = false
         FeedAPI.shared.getFeed(page: currentPage) { response in
             switch response {
             case .success(let data):
@@ -336,8 +336,8 @@ extension FeedViewController {
                     self.refreshControl.endRefreshing()
                     self.cachedPages.append(page)
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        self.loadingView.isHidden = false
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+                        self.loadingView.isHidden = true
                     }
                 }
             case .requestErr(let message):
@@ -350,6 +350,7 @@ extension FeedViewController {
                 print("networkFail")
             }
         }
+        
     }
     
 }

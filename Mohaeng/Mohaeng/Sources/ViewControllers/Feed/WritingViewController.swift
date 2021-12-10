@@ -20,6 +20,8 @@ class WritingViewController: UIViewController {
             writingRequest.mood = mood
         }
     }
+
+    private let writingTextLength = 80
     
     private lazy var hasNotch = UIDevice.current.hasNotch
     
@@ -42,7 +44,7 @@ class WritingViewController: UIViewController {
         $0.text = "챌린지와 함께한 하루 이야기를 기록으로 남겨봐"
     }
   
-    private let writingCountLabel = UILabel().then {
+    private let writingTextLengthLabel = UILabel().then {
         $0.font = .spoqaHanSansNeo(weight: .regular, size: 11)
     }
     
@@ -141,7 +143,7 @@ class WritingViewController: UIViewController {
     
     private func initViewContoller() {
         view.backgroundColor = .White
-        writingCountLabel.attributedText = setAttributedCustomText(text: "\(String(textView.text?.count ?? 0)) / 40자")
+        writingTextLengthLabel.attributedText = setAttributedCustomText(text: "\(String(textView.text?.count ?? 0)) / \(writingTextLength)자")
     }
     
     private func initNavigationBar() {
@@ -310,20 +312,20 @@ extension WritingViewController: UITextViewDelegate {
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        doneButton.isEnabled = textView.text.count > 0
+        doneButton.isEnabled = textView.text.count > 0 && textView.text.count <= writingTextLength
         
         textView.attributedText = setAttributedText(text: textView.text)
-        writingCountLabel.attributedText = setAttributedCustomText(text: "\(String(textView.text?.count ?? 0)) / 40자")
+        writingTextLengthLabel.attributedText = setAttributedCustomText(text: "\(String(textView.text?.count ?? 0)) / \(writingTextLength)자")
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let newLength = textView.text.count + text.count - range.length
-        return newLength <= 40
+        return newLength <= writingTextLength
     }
     
     func setAttributedCustomText(text: String) -> NSAttributedString {
         let attributeString = NSMutableAttributedString(string: text)
-        attributeString.addAttribute(.foregroundColor, value: UIColor.Yellow3, range: (text as NSString).range(of: "/ 40자"))
+        attributeString.addAttribute(.foregroundColor, value: UIColor.Yellow3, range: (text as NSString).range(of: "\(writingTextLength)자"))
         return attributeString
     }
     
@@ -373,7 +375,7 @@ extension WritingViewController {
     private func setViewHierachy() {
         view.addSubviews(titleLabel, subTitleLabel, yellowBackgroundView, checkBoxButton, doneButton)
         
-        yellowBackgroundView.addSubviews(writingCountLabel, moodImageView, seperatorView, textView, addPhotoView, photoImageView)
+        yellowBackgroundView.addSubviews(writingTextLengthLabel, moodImageView, seperatorView, textView, addPhotoView, photoImageView)
         
         addPhotoView.addSubviews(hStackView)
         hStackView.addArrangedSubview(plusImageView)
@@ -417,9 +419,9 @@ extension WritingViewController {
             $0.height.equalTo(70)
         }
         
-        writingCountLabel.snp.makeConstraints {
+        writingTextLengthLabel.snp.makeConstraints {
             $0.trailing.equalTo(textView.snp.trailing)
-            $0.bottom.equalTo(textView.snp.bottom)
+            $0.top.equalTo(textView.snp.bottom)
         }
         
         addPhotoView.snp.makeConstraints {
