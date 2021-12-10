@@ -153,6 +153,7 @@ extension LoginViewController {
                 if let data = data as? SocialLoginData {
                     if data.user {
                         UserDefaults.standard.setValue(data.jwt, forKey: "jwtToken")
+                        UIApplication.shared.registerForRemoteNotifications()
                         self.presentHomeViewController()
                     } else {
                         UserDefaults.standard.setValue(idToken, forKey: "idToken")
@@ -182,6 +183,7 @@ extension LoginViewController {
                 if let data = data as? SocialLoginData {
                     if data.user {
                         UserDefaults.standard.setValue(data.jwt, forKey: "jwtToken")
+                        UIApplication.shared.registerForRemoteNotifications()
                         self.presentHomeViewController()
                     } else {
                         UserDefaults.standard.setValue(idToken, forKey: "idToken")

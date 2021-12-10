@@ -157,6 +157,7 @@ extension EmailLoginViewController {
             case .success(let jwt):
                 if let data = jwt as? JwtData {
                     UserDefaults.standard.setValue(data.jwt, forKey: "jwtToken")
+                    UIApplication.shared.registerForRemoteNotifications()
                     self.pushHomeViewController()
                 }
             case .requestErr(let message):

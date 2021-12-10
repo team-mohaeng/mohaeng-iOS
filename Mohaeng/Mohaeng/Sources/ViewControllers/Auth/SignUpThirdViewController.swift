@@ -182,6 +182,7 @@ extension SignUpThirdViewController {
                 
                 if let data = data as? JwtData {
                     UserDefaults.standard.setValue(data.jwt, forKey: "jwtToken")
+                    UIApplication.shared.registerForRemoteNotifications()
                     self.pushHomeViewController()
                 }
                 
@@ -207,6 +208,7 @@ extension SignUpThirdViewController {
                 
                 if let data = data as? JwtData {
                     UserDefaults.standard.setValue(data.jwt, forKey: "jwtToken")
+                    UIApplication.shared.registerForRemoteNotifications()
                     self.pushHomeViewController()
                 }
                 
@@ -241,6 +243,7 @@ extension SignUpThirdViewController {
                 if let data = jwt as? JwtData {
                     UserDefaults.standard.setValue(data.jwt, forKey: "jwtToken")
                     UserDefaults.standard.set(nickname, forKey: "nickname")
+                    UIApplication.shared.registerForRemoteNotifications()
                     self.pushHomeViewController()
                 }
             case .requestErr(let message):

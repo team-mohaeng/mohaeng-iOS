@@ -830,12 +830,12 @@
 			children = (
 				ECAC22752735046000B4C71A /* AgreeViewController.swift */,
 				561D764226F0BFA40028DBCA /* FindPasswordViewController.swift */,
-				561D764326F0BFA40028DBCA /* EmailLoginViewController.swift */,
+				561D764826F0BFA40028DBCA /* CodeViewController.swift */,
 				561D764426F0BFA40028DBCA /* NewPasswordViewController.swift */,
+				561D764326F0BFA40028DBCA /* EmailLoginViewController.swift */,
+				561D764726F0BFA40028DBCA /* LoginViewController.swift */,
 				561D764526F0BFA40028DBCA /* SignUpFirstViewController.swift */,
 				561D764626F0BFA40028DBCA /* SignUpSecondViewController.swift */,
-				561D764726F0BFA40028DBCA /* LoginViewController.swift */,
-				561D764826F0BFA40028DBCA /* CodeViewController.swift */,
 				561D764926F0BFA40028DBCA /* SignUpThirdViewController.swift */,
 			);
 			path = Auth;
