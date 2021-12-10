@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
     // MARK: - Properties
     
     var signUpUser = SignUpUser.shared
+    var errorPopUp: PopUpViewController = PopUpViewController()
     
     // MARK: - @IBOutlet Properties
     
@@ -141,7 +142,18 @@ class LoginViewController: UIViewController {
         tabbarViewController.modalTransitionStyle = .crossDissolve
         self.present(tabbarViewController, animated: true, completion: nil)
     }
+    
+    func presentPopUp(errorString: String) {
+        errorPopUp = PopUpViewController(nibName: Const.Xib.Name.popUp, bundle: nil)
+        errorPopUp.modalPresentationStyle = .overCurrentContext
+        errorPopUp.modalTransitionStyle = .crossDissolve
+        errorPopUp.popUpUsage = .noButton
+        errorPopUp.setText(title: "로그인 실패", description: errorString)
+        self.present(errorPopUp, animated: true, completion: nil)
+    }
 }
+
+// MARK: - 통신
 
 extension LoginViewController {
     
@@ -164,12 +176,17 @@ extension LoginViewController {
                 }
                 
             case .requestErr(let message):
-                print("requestErr", message)
+                if let message = message as? String {
+                    self.presentPopUp(errorString: message)
+                }
             case .pathErr:
+                self.presentPopUp(errorString: Const.String.pathErr)
                 print("pathErr")
             case .serverErr:
+                self.presentPopUp(errorString: Const.String.serverErr)
                 print("serverErr")
             case .networkFail:
+                self.presentPopUp(errorString: Const.String.networkFail)
                 print("networkFail")
             }
         }
@@ -194,12 +211,18 @@ extension LoginViewController {
                 }
                 
             case .requestErr(let message):
+                if let message = message as? String {
+                    self.presentPopUp(errorString: message)
+                }
                 print("requestErr", message)
             case .pathErr:
+                self.presentPopUp(errorString: Const.String.pathErr)
                 print("pathErr")
             case .serverErr:
+                self.presentPopUp(errorString: Const.String.serverErr)
                 print("serverErr")
             case .networkFail:
+                self.presentPopUp(errorString: Const.String.networkFail)
                 print("networkFail")
             }
         }
@@ -245,6 +268,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
         }
     }
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        presentPopUp(errorString: error.localizedDescription)
         print(error)
     }
     

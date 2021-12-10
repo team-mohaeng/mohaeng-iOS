@@ -19,6 +19,9 @@ class SignUpThirdViewController: UIViewController {
     }
     
     var nicknameUsage: NicknameUsage?
+    
+    var errorPopUp: PopUpViewController = PopUpViewController()
+    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet var nickNameSetLabel: UILabel!
@@ -28,6 +31,7 @@ class SignUpThirdViewController: UIViewController {
     @IBOutlet weak var checkButton: UIButton!
     @IBOutlet var nickNameConditionLabel: UILabel!
     @IBOutlet var imageToNicknameTextField: NSLayoutConstraint!
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -124,6 +128,15 @@ class SignUpThirdViewController: UIViewController {
         nickNameTextField.addTarget(self, action: #selector(SignUpThirdViewController.textFieldDidChange(_:)), for: UIControl.Event.allEditingEvents)
     }
     
+    func presentPopUp(errorString: String) {
+        errorPopUp = PopUpViewController(nibName: Const.Xib.Name.popUp, bundle: nil)
+        errorPopUp.modalPresentationStyle = .overCurrentContext
+        errorPopUp.modalTransitionStyle = .crossDissolve
+        errorPopUp.popUpUsage = .noButton
+        errorPopUp.setText(title: "에러", description: errorString)
+        self.present(errorPopUp, animated: true, completion: nil)
+    }
+    
     // MARK: @objc Function
     
     @objc func textFieldDidChange(_ textField: UITextField) {
@@ -141,6 +154,7 @@ class SignUpThirdViewController: UIViewController {
             setEmptyNickNameTextField()
         }
     }
+    
     @IBAction func touchNicknameCheckButton(_ sender: UIButton) {
         
         switch nicknameUsage {
@@ -168,6 +182,8 @@ class SignUpThirdViewController: UIViewController {
     
 }
 
+// MARK: - 통신
+
 extension SignUpThirdViewController {
     
     // 소셜 회원가입
@@ -188,11 +204,19 @@ extension SignUpThirdViewController {
                 
             case .requestErr(let message):
                 print("requestErr", message)
+                if let message = message as? String {
+                    self.nickNameErrorLabel.isHidden = false
+                    self.nickNameErrorLabel.text = message
+                    self.nickNameBottomView.backgroundColor = .Red
+                }
             case .pathErr:
+                self.presentPopUp(errorString: Const.String.pathErr)
                 print("pathErr")
             case .serverErr:
+                self.presentPopUp(errorString: Const.String.serverErr)
                 print("serverErr")
             case .networkFail:
+                self.presentPopUp(errorString: Const.String.networkFail)
                 print("networkFail")
             }
         }
@@ -214,11 +238,19 @@ extension SignUpThirdViewController {
                 
             case .requestErr(let message):
                 print("requestErr", message)
+                if let message = message as? String {
+                    self.nickNameErrorLabel.isHidden = false
+                    self.nickNameErrorLabel.text = message
+                    self.nickNameBottomView.backgroundColor = .Red
+                }
             case .pathErr:
+                self.presentPopUp(errorString: Const.String.pathErr)
                 print("pathErr")
             case .serverErr:
+                self.presentPopUp(errorString: Const.String.serverErr)
                 print("serverErr")
             case .networkFail:
+                self.presentPopUp(errorString: Const.String.networkFail)
                 print("networkFail")
             }
         }
@@ -254,10 +286,13 @@ extension SignUpThirdViewController {
                     self.nickNameBottomView.backgroundColor = .Red
                 }
             case .pathErr:
+                self.presentPopUp(errorString: Const.String.pathErr)
                 print("pathErr")
             case .serverErr:
+                self.presentPopUp(errorString: Const.String.serverErr)
                 print("serverErr")
             case .networkFail:
+                self.presentPopUp(errorString: Const.String.networkFail)
                 print("networkFail")
             }
         }, email: email, password: password, nickname: nickname)
@@ -281,10 +316,13 @@ extension SignUpThirdViewController {
                 }
                
             case .pathErr:
+                self.presentPopUp(errorString: Const.String.pathErr)
                 print("pathErr")
             case .serverErr:
+                self.presentPopUp(errorString: Const.String.serverErr)
                 print("serverErr")
             case .networkFail:
+                self.presentPopUp(errorString: Const.String.networkFail)
                 print("networkFail")
             }
         }, nickname: nickname)
