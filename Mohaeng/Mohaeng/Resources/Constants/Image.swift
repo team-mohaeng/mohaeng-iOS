@@ -118,6 +118,8 @@ extension Const {
         static let checkBoxImage = UIImage(named: "btnCheck")!
         static let checkBoxLineImage = UIImage(named: "btnCheck_line")!
         static let photoXbtnImage = UIImage(named: "photoXbtn")!
+        static let photoPopUp = UIImage(named: "btnPhotoUp")!
+        static let writingBubble = UIImage(named: "writingBubble")!
         
         // on boarding
         static let messageBoxSmall = UIImage(named: "messageBoxSmall")!

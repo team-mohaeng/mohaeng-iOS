@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "btnCheck_line.png",
+      "filename" : "btnPhotoUp.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "btnCheck_line@2x.png",
+      "filename" : "btnPhotoUp@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "btnCheck_line@3x.png",
+      "filename" : "btnPhotoUp@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

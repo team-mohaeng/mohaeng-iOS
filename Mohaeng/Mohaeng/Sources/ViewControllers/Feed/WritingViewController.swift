@@ -49,21 +49,20 @@ class WritingViewController: UIViewController {
     }
     
     private let yellowBackgroundView = UIView().then {
+        $0.backgroundColor = .Yellow5
+    }
+
+    private let yellowInnerView = UIView().then {
         $0.backgroundColor = .todayYellow
     }
     
     private let moodImageView = UIImageView()
-    
-    private let seperatorView = UIView().then {
-        $0.backgroundColor = .Yellow4
-    }
     
     private let textView = UITextView().then {
         $0.backgroundColor = .clear
         $0.font = .spoqaHanSansNeo(weight: .regular, size: UIDevice.current.hasNotch ? 14 : 12)
         $0.textColor = .Black
         $0.tintColor = .Yellow3
-        $0.textContainer.maximumNumberOfLines = 5
     }
     
     private let addPhotoView = UIView().then {
@@ -98,13 +97,15 @@ class WritingViewController: UIViewController {
     }
     
     private let photoImageView = UIImageView().then {
-        $0.isHidden = true
-        $0.makeRounded(radius: 4.0)
+        $0.makeRounded(radius: 5.0)
         $0.isUserInteractionEnabled = true
+        $0.backgroundColor = .YellowButton1
+        $0.image = Const.Image.photoPopUp
     }
     
     private let removePhotoButton = UIButton().then {
         $0.setImage(Const.Image.photoXbtnImage, for: .normal)
+        $0.isHidden = true
     }
     
     private let doneButton = UIButton(type: .system).then {
@@ -114,6 +115,28 @@ class WritingViewController: UIViewController {
         $0.setBackgroundColor(.YellowButton1, for: .normal)
         $0.setBackgroundColor(.GreyButton1, for: .disabled)
         $0.isEnabled = false
+    }
+    
+    private let writingBubbleImageView = UIImageView().then {
+        $0.image = Const.Image.writingBubble
+        $0.contentMode = .scaleAspectFit
+    }
+    
+    private var isValidNumberOfLines = true {
+        didSet {
+            if !isValidNumberOfLines {
+                let popUp = PopUpViewController()
+                popUp.modalTransitionStyle = .crossDissolve
+                popUp.modalPresentationStyle = .overCurrentContext
+                popUp.popUpUsage = .noButton
+                popUp.popUpActionDelegate = self
+                present(popUp, animated: true, completion: nil)
+                popUp.setText(
+                    title: "잠깐만!",
+                    description: "오늘의 안부는 5줄 까지만 입력할 수 있어"
+                )
+            }
+        }
     }
     
 // MARK: - View Life Cycle
@@ -137,6 +160,7 @@ class WritingViewController: UIViewController {
     
 // MARK: - Functions
     private func makeRoundedViews() {
+        yellowInnerView.makeRounded(radius: 10)
         yellowBackgroundView.makeRounded(radius: 20)
         doneButton.makeRoundedSpecificCorner(corners: [.topLeft, .topRight], cornerRadius: 30.0)
     }
@@ -176,9 +200,6 @@ class WritingViewController: UIViewController {
     }
     
     private func setGesture() {
-        let addPhotoTapGesture = UITapGestureRecognizer(target: self, action: #selector(addPhoto(sender:)))
-        addPhotoView.addGestureRecognizer(addPhotoTapGesture)
-        
         let addPhotoTapGesture2 = UITapGestureRecognizer(target: self, action: #selector(addPhoto(sender:)))
         photoImageView.addGestureRecognizer(addPhotoTapGesture2)
     }
@@ -226,11 +247,8 @@ class WritingViewController: UIViewController {
     
     private func removePhoto() {
         writingRequest.image = nil
-        addPhotoView.isHidden = false
-        photoImageView.isHidden = true
-        yellowBackgroundView.snp.updateConstraints {
-            $0.height.equalTo(hasNotch ? 356 : 314)
-        }
+        photoImageView.image = Const.Image.photoPopUp
+        removePhotoButton.isHidden = true
     }
     
 }
@@ -280,14 +298,8 @@ extension WritingViewController: UIImagePickerControllerDelegate {
         
         photoImageView.image = selectedImage
         writingRequest.image = selectedImage
-        imagePicker.dismiss(animated: true) {[weak self] in
-            guard let self = self else {return}
-            self.addPhotoView.isHidden = true
-            self.yellowBackgroundView.snp.updateConstraints {
-                $0.height.equalTo(self.hasNotch ? 424 : 360)
-            }
-            self.photoImageView.isHidden = false
-        }
+        removePhotoButton.isHidden = false
+        imagePicker.dismiss(animated: true)
     }
 }
 
@@ -312,10 +324,20 @@ extension WritingViewController: UITextViewDelegate {
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        doneButton.isEnabled = textView.text.count > 0 && textView.text.count <= writingTextLength
+        doneButton.isEnabled = textView.text.count > 0 && textView.text.count <= writingTextLength && textView.numberOfLine() < 6
         
         textView.attributedText = setAttributedText(text: textView.text)
         writingTextLengthLabel.attributedText = setAttributedCustomText(text: "\(String(textView.text?.count ?? 0)) / \(writingTextLength)자")
+        
+        if textView.numberOfLine() > 6 {
+            if isValidNumberOfLines {
+                isValidNumberOfLines.toggle()
+            }
+        } else {
+            if !isValidNumberOfLines {
+                isValidNumberOfLines.toggle()
+            }
+        }
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -325,7 +347,7 @@ extension WritingViewController: UITextViewDelegate {
     
     func setAttributedCustomText(text: String) -> NSAttributedString {
         let attributeString = NSMutableAttributedString(string: text)
-        attributeString.addAttribute(.foregroundColor, value: UIColor.Yellow3, range: (text as NSString).range(of: "\(writingTextLength)자"))
+        attributeString.addAttribute(.foregroundColor, value: UIColor.Yellow3, range: (text as NSString).range(of: "/ \(writingTextLength)자"))
         return attributeString
     }
     
@@ -333,8 +355,8 @@ extension WritingViewController: UITextViewDelegate {
 
         let attributeString = NSMutableAttributedString(string: text)
 
-        let font: UIFont = .spoqaHanSansNeo(weight: .regular, size: hasNotch ? 14 : 12)
-        let lineSpacing: CGFloat = hasNotch ? 10 : 8
+        let font: UIFont = .spoqaHanSansNeo(weight: .regular, size: 14)
+        let lineSpacing: CGFloat = 10 
         
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = lineSpacing
@@ -373,13 +395,25 @@ extension WritingViewController {
 
 extension WritingViewController {
     private func setViewHierachy() {
-        view.addSubviews(titleLabel, subTitleLabel, yellowBackgroundView, checkBoxButton, doneButton)
+        view.addSubviews(
+            titleLabel,
+            subTitleLabel,
+            yellowBackgroundView,
+            doneButton,
+            moodImageView,
+            writingBubbleImageView
+        )
         
-        yellowBackgroundView.addSubviews(writingTextLengthLabel, moodImageView, seperatorView, textView, addPhotoView, photoImageView)
-        
-        addPhotoView.addSubviews(hStackView)
-        hStackView.addArrangedSubview(plusImageView)
-        hStackView.addArrangedSubview(addPhotoLabel)
+        yellowBackgroundView.addSubviews(
+            yellowInnerView,
+            photoImageView,
+            checkBoxButton
+        )
+
+        yellowInnerView.addSubviews(
+            textView,
+            writingTextLengthLabel
+        )
         
         photoImageView.addSubview(removePhotoButton)
     }
@@ -398,51 +432,40 @@ extension WritingViewController {
         yellowBackgroundView.snp.makeConstraints {
             $0.top.equalTo(subTitleLabel.snp.bottom).offset(hasNotch ? 40 : 32)
             $0.leading.trailing.equalTo(titleLabel)
-            $0.height.equalTo(hasNotch ? 356 : 314)
+        }
+
+        photoImageView.snp.makeConstraints {
+            $0.width.height.equalTo(hasNotch ? 100 : 80)
+            $0.centerX.equalToSuperview()
+            $0.top.equalToSuperview().offset(25)
         }
         
         moodImageView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(hasNotch ? 28 : 20)
+            $0.top.equalTo(yellowBackgroundView.snp.bottom).offset(25)
             $0.centerX.equalToSuperview()
-            $0.width.height.equalTo(hasNotch ? 110 : 100)
+            $0.width.height.equalTo(hasNotch ? 90 : 70)
         }
-        
-        seperatorView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(hasNotch ? 166 : 140)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(1)
+
+        yellowInnerView.snp.makeConstraints {
+            $0.top.equalTo(photoImageView.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.bottom.equalToSuperview().inset(44)
         }
-        
+
         textView.snp.makeConstraints {
-            $0.top.equalTo(seperatorView.snp.bottom).offset(20)
-            $0.leading.trailing.equalToSuperview().inset(18)
-            $0.height.equalTo(70)
+            $0.edges.equalToSuperview().inset(12)
+            $0.height.equalTo(hasNotch ? 160 : 120)
         }
-        
+
         writingTextLengthLabel.snp.makeConstraints {
-            $0.trailing.equalTo(textView.snp.trailing)
-            $0.top.equalTo(textView.snp.bottom)
+            $0.trailing.equalToSuperview().inset(14)
+            $0.bottom.equalToSuperview().inset(12)
         }
-        
-        addPhotoView.snp.makeConstraints {
-            $0.height.equalTo(hasNotch ? 72 : 64)
-            $0.leading.trailing.bottom.equalToSuperview()
-        }
-        
-        hStackView.snp.makeConstraints {
-            $0.center.equalToSuperview()
-        }
-        
+
         checkBoxButton.snp.makeConstraints {
-            $0.top.equalTo(yellowBackgroundView.snp.bottom).offset(hasNotch ? 20 : 16)
-            $0.leading.trailing.equalTo(titleLabel)
+            $0.trailing.equalToSuperview().inset(16)
+            $0.bottom.equalToSuperview().inset(14)
             $0.height.equalTo(24)
-        }
-        
-        photoImageView.snp.makeConstraints {
-            $0.width.height.equalTo(hasNotch ? 120 : 90)
-            $0.centerX.equalToSuperview()
-            $0.bottom.equalToSuperview().offset(-20)
         }
         
         removePhotoButton.snp.makeConstraints {
@@ -454,5 +477,33 @@ extension WritingViewController {
             $0.leading.trailing.bottom.equalToSuperview()
             $0.height.equalTo(hasNotch ? 86 : 66)
         }
+        
+        writingBubbleImageView.snp.makeConstraints {
+            $0.top.equalTo(yellowBackgroundView.snp.bottom)
+            $0.width.equalTo(36)
+            $0.height.equalTo(20)
+            $0.centerX.equalToSuperview().offset(-50)
+        }
+    }
+}
+
+extension WritingViewController: PopUpActionDelegate {
+    func touchGreyButton(button: UIButton) {
+        
+    }
+    
+    func touchYellowButton(button: UIButton) {
+        
+    }
+    
+}
+
+extension UITextView {
+    func numberOfLine() -> Int {
+        
+        let size = CGSize(width: frame.width, height: .infinity)
+        let estimatedSize = sizeThatFits(size)
+        
+        return Int(estimatedSize.height / 24)
     }
 }
