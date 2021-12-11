@@ -233,6 +233,7 @@
 		DD9EFFCC2715568700B3F871 /* OnBoarding2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFCB2715568700B3F871 /* OnBoarding2TableViewCell.swift */; };
 		DD9EFFCF2715798100B3F871 /* OnBoarding4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFCE2715798100B3F871 /* OnBoarding4ViewController.swift */; };
 		DD9EFFD227157B8800B3F871 /* OnBoarding3HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9EFFD127157B8800B3F871 /* OnBoarding3HeaderView.swift */; };
+		DDA52FE52764FE210070A966 /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA52FE42764FE210070A966 /* UITextView+Extension.swift */; };
 		DDA7EF3927214CFF00F100CA /* awards_sok5.json in Resources */ = {isa = PBXBuildFile; fileRef = DDA7EF3327214CFD00F100CA /* awards_sok5.json */; };
 		DDA7EF3A27214CFF00F100CA /* awards_sok6.json in Resources */ = {isa = PBXBuildFile; fileRef = DDA7EF3427214CFD00F100CA /* awards_sok6.json */; };
 		DDA7EF3B27214CFF00F100CA /* awards_sok3.json in Resources */ = {isa = PBXBuildFile; fileRef = DDA7EF3527214CFD00F100CA /* awards_sok3.json */; };
@@ -484,6 +485,7 @@
 		DD9EFFCB2715568700B3F871 /* OnBoarding2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding2TableViewCell.swift; sourceTree = "<group>"; };
 		DD9EFFCE2715798100B3F871 /* OnBoarding4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding4ViewController.swift; sourceTree = "<group>"; };
 		DD9EFFD127157B8800B3F871 /* OnBoarding3HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding3HeaderView.swift; sourceTree = "<group>"; };
+		DDA52FE42764FE210070A966 /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
 		DDA7EF3327214CFD00F100CA /* awards_sok5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_sok5.json; sourceTree = "<group>"; };
 		DDA7EF3427214CFD00F100CA /* awards_sok6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_sok6.json; sourceTree = "<group>"; };
 		DDA7EF3527214CFD00F100CA /* awards_sok3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awards_sok3.json; sourceTree = "<group>"; };
@@ -779,6 +781,7 @@
 				DD515C6B2712042D00E76D4B /* UILabel+Extension.swift */,
 				DD79BB15271166E9001F342C /* UIImageView+Extension.swift */,
 				AAEDB362271C05CC00E26615 /* AnimationView+Extension.swift */,
+				DDA52FE42764FE210070A966 /* UITextView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1549,6 +1552,7 @@
 				561D76FA26F0BFA40028DBCA /* SignUpThirdViewController.swift in Sources */,
 				561D772526F0BFA40028DBCA /* Writing.swift in Sources */,
 				EC31776326FDB50E0076BCEC /* CarouselLayoutView.swift in Sources */,
+				DDA52FE52764FE210070A966 /* UITextView+Extension.swift in Sources */,
 				561D770C26F0BFA40028DBCA /* PasswordAPI.swift in Sources */,
 				561D771126F0BFA40028DBCA /* CourseAPI.swift in Sources */,
 				EC087641271FFDB400EB1F51 /* SocialAPI.swift in Sources */,

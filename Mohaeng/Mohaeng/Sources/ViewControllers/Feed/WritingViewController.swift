@@ -133,7 +133,7 @@ class WritingViewController: UIViewController {
                 present(popUp, animated: true, completion: nil)
                 popUp.setText(
                     title: "잠깐만!",
-                    description: "오늘의 안부는 5줄 까지만 입력할 수 있어"
+                    description: "오늘의 안부는 5줄까지만 입력할 수 있어"
                 )
             }
         }
@@ -270,9 +270,11 @@ extension WritingViewController {
             doneButton.setBackgroundColor(.YellowButton1, for: .disabled)
             doneButton.isEnabled = false
             postFeedWriting {[weak self] response in
-                NotificationCenter.default.post(name: NSNotification.Name("RefreshFeedCollectionView"),
-                                                object: nil,
-                                                userInfo: nil)
+                NotificationCenter.default.post(
+                    name: NSNotification.Name("RefreshFeedCollectionView"),
+                    object: nil,
+                    userInfo: nil
+                )
                 let writingRewardViewController = WritingRewardViewController()
                 writingRewardViewController.writingResponse = response
                 self?.navigationController?.pushViewController(writingRewardViewController, animated: true)
@@ -488,22 +490,6 @@ extension WritingViewController {
 }
 
 extension WritingViewController: PopUpActionDelegate {
-    func touchGreyButton(button: UIButton) {
-        
-    }
-    
-    func touchYellowButton(button: UIButton) {
-        
-    }
-    
-}
-
-extension UITextView {
-    func numberOfLine() -> Int {
-        
-        let size = CGSize(width: frame.width, height: .infinity)
-        let estimatedSize = sizeThatFits(size)
-        
-        return Int(estimatedSize.height / 24)
-    }
+    func touchGreyButton(button: UIButton) {}
+    func touchYellowButton(button: UIButton) {}
 }
