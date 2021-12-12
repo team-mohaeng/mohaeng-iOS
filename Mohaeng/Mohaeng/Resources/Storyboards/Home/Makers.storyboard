@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Makers View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="MakersViewController" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="MakersViewController" customModule="Mohaeng" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="makerBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Y9c-0q-CAr">
+                                <rect key="frame" x="31" y="44" width="352" height="717"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="j8w-1f-FBj">
+                                <rect key="frame" x="106.5" y="354" width="201" height="19.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정초이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HV5-4m-aFk">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="윤예지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFi-x9-mNB">
+                                        <rect key="frame" x="53" y="0.0" width="42" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="김승찬" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkH-P7-kTc">
+                                        <rect key="frame" x="106" y="0.0" width="42" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="김윤서" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZb-Lu-bRo">
+                                        <rect key="frame" x="159" y="0.0" width="42" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mohaengMakers" translatesAutoresizingMaskIntoConstraints="NO" id="L1U-tf-4ek">
+                                <rect key="frame" x="232" y="698.5" width="182" height="197.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="L1U-tf-4ek" secondAttribute="height" multiplier="144:156" id="W1a-DT-4qZ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtT-xI-O1q">
+                                <rect key="frame" x="118.5" y="126.5" width="177" height="29"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="모행을 만든 사람들">
+                                        <attributes>
+                                            <color key="NSColor" name="DarkYellow"/>
+                                            <font key="NSFont" metaFont="system" size="24"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Design" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMl-fa-4qb">
+                                <rect key="frame" x="152" y="187" width="110" height="28"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="Fip-9q-XqL"/>
+                                    <constraint firstAttribute="height" constant="28" id="pRH-qn-u4g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="DarkYellow"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueA-6H-bXg">
+                                <rect key="frame" x="152" y="308" width="110" height="28"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="Lkp-N5-MSM"/>
+                                    <constraint firstAttribute="width" constant="110" id="vHy-yX-iM9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="DarkYellow"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndk-GL-J6f">
+                                <rect key="frame" x="152" y="428.5" width="110" height="28"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="ADc-0F-GPj"/>
+                                    <constraint firstAttribute="width" constant="110" id="ybz-LT-NDV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="DarkYellow"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Server" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALF-9w-3fK">
+                                <rect key="frame" x="152" y="549.5" width="110" height="28"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="O74-nm-JkL"/>
+                                    <constraint firstAttribute="height" constant="28" id="Zz5-EL-0SP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="DarkYellow"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7lq-Gi-1eL">
+                                <rect key="frame" x="155" y="474.5" width="104" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="박주예" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOl-kQ-sjC">
+                                        <rect key="frame" x="0.0" y="0.0" width="44.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="김기현" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMw-q9-yEz">
+                                        <rect key="frame" x="59.5" y="0.0" width="44.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lj0-eq-CgI">
+                                <rect key="frame" x="127" y="233" width="160" height="19.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="박시원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPt-7t-Pwl">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최유리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGX-1r-etb">
+                                        <rect key="frame" x="59" y="0.0" width="42" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="조아라" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hip-vs-9tf">
+                                        <rect key="frame" x="118" y="0.0" width="42" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="nJd-aD-8wK">
+                                <rect key="frame" x="154" y="595.5" width="106" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="김현지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rly-k9-0IF">
+                                        <rect key="frame" x="0.0" y="0.0" width="44.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="김기연" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2t-qS-VP6">
+                                        <rect key="frame" x="61.5" y="0.0" width="44.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="Yellow7"/>
+                        <constraints>
+                            <constraint firstItem="j8w-1f-FBj" firstAttribute="top" secondItem="ueA-6H-bXg" secondAttribute="bottom" constant="18" id="3yB-81-dr7"/>
+                            <constraint firstItem="MMl-fa-4qb" firstAttribute="centerY" secondItem="Y9c-0q-CAr" secondAttribute="centerY" multiplier="0.5" id="6yQ-fc-aW2"/>
+                            <constraint firstItem="nJd-aD-8wK" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="8ad-LV-yhb"/>
+                            <constraint firstAttribute="bottom" secondItem="L1U-tf-4ek" secondAttribute="bottom" id="Bbl-mE-5ll"/>
+                            <constraint firstItem="CtT-xI-O1q" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="CKa-91-ON1"/>
+                            <constraint firstItem="Lj0-eq-CgI" firstAttribute="top" secondItem="MMl-fa-4qb" secondAttribute="bottom" constant="18" id="FjC-Un-lLL"/>
+                            <constraint firstItem="Ndk-GL-J6f" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="KSX-4d-Y69"/>
+                            <constraint firstItem="nJd-aD-8wK" firstAttribute="top" secondItem="ALF-9w-3fK" secondAttribute="bottom" constant="18" id="Lfd-gg-eNc"/>
+                            <constraint firstItem="Y9c-0q-CAr" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="MdH-0c-rgd"/>
+                            <constraint firstItem="Ndk-GL-J6f" firstAttribute="centerY" secondItem="Y9c-0q-CAr" secondAttribute="centerY" multiplier="1.1" id="O2X-Hy-7Yb"/>
+                            <constraint firstItem="7lq-Gi-1eL" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="SvA-bp-CgC"/>
+                            <constraint firstItem="CtT-xI-O1q" firstAttribute="centerY" secondItem="Y9c-0q-CAr" secondAttribute="centerY" multiplier="0.35" id="W4g-jK-tEQ"/>
+                            <constraint firstItem="j8w-1f-FBj" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="WVy-pA-91X"/>
+                            <constraint firstItem="Lj0-eq-CgI" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="XGV-af-wv2"/>
+                            <constraint firstItem="ueA-6H-bXg" firstAttribute="centerY" secondItem="Y9c-0q-CAr" secondAttribute="centerY" multiplier="0.8" id="Zhs-9f-ymx"/>
+                            <constraint firstItem="L1U-tf-4ek" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="cWg-bB-caU"/>
+                            <constraint firstItem="ALF-9w-3fK" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="dab-mg-vHO"/>
+                            <constraint firstItem="ueA-6H-bXg" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="e2K-Zj-rpp"/>
+                            <constraint firstItem="L1U-tf-4ek" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.44" id="eLC-7P-JSZ"/>
+                            <constraint firstItem="Y9c-0q-CAr" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.8" id="eaP-rM-DaA"/>
+                            <constraint firstItem="MMl-fa-4qb" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="gwF-e2-pUP"/>
+                            <constraint firstItem="7lq-Gi-1eL" firstAttribute="top" secondItem="Ndk-GL-J6f" secondAttribute="bottom" constant="18" id="hIj-SR-mpV"/>
+                            <constraint firstItem="Y9c-0q-CAr" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.85" id="rWc-xG-her"/>
+                            <constraint firstItem="ALF-9w-3fK" firstAttribute="centerY" secondItem="Y9c-0q-CAr" secondAttribute="centerY" multiplier="1.4" id="utx-lZ-RFl"/>
+                            <constraint firstItem="Y9c-0q-CAr" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="zTM-e0-6I6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mohaengImageTrailing" destination="cWg-bB-caU" id="wJ7-tQ-rH8"/>
+                        <outlet property="mohaengLabel" destination="CtT-xI-O1q" id="WJv-bV-Get"/>
+                        <outletCollection property="partLabels" destination="MMl-fa-4qb" collectionClass="NSMutableArray" id="B0o-YH-uJQ"/>
+                        <outletCollection property="partLabels" destination="ueA-6H-bXg" collectionClass="NSMutableArray" id="Yof-x8-As0"/>
+                        <outletCollection property="partLabels" destination="Ndk-GL-J6f" collectionClass="NSMutableArray" id="BC4-Ff-90y"/>
+                        <outletCollection property="partLabels" destination="ALF-9w-3fK" collectionClass="NSMutableArray" id="kme-lK-L2L"/>
+                        <outletCollection property="nameLabels" destination="YPt-7t-Pwl" collectionClass="NSMutableArray" id="cup-At-HeK"/>
+                        <outletCollection property="nameLabels" destination="zGX-1r-etb" collectionClass="NSMutableArray" id="x3A-qM-ADT"/>
+                        <outletCollection property="nameLabels" destination="hip-vs-9tf" collectionClass="NSMutableArray" id="dSL-NG-CO6"/>
+                        <outletCollection property="nameLabels" destination="HV5-4m-aFk" collectionClass="NSMutableArray" id="FDU-cO-NVl"/>
+                        <outletCollection property="nameLabels" destination="tFi-x9-mNB" collectionClass="NSMutableArray" id="tLc-ld-bBq"/>
+                        <outletCollection property="nameLabels" destination="DkH-P7-kTc" collectionClass="NSMutableArray" id="rHs-gI-SCx"/>
+                        <outletCollection property="nameLabels" destination="HZb-Lu-bRo" collectionClass="NSMutableArray" id="L3E-sJ-Lke"/>
+                        <outletCollection property="nameLabels" destination="SOl-kQ-sjC" collectionClass="NSMutableArray" id="ZPt-v3-d10"/>
+                        <outletCollection property="nameLabels" destination="HMw-q9-yEz" collectionClass="NSMutableArray" id="Ej9-UL-UbT"/>
+                        <outletCollection property="nameLabels" destination="Rly-k9-0IF" collectionClass="NSMutableArray" id="tKO-IL-eD8"/>
+                        <outletCollection property="nameLabels" destination="l2t-qS-VP6" collectionClass="NSMutableArray" id="GWl-rY-shu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="109.82142857142857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="makerBackground" width="327" height="654"/>
+        <image name="mohaengMakers" width="144" height="156"/>
+        <namedColor name="DarkYellow">
+            <color red="0.95686274509803926" green="0.63137254901960782" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Yellow7">
+            <color red="1" green="0.96899998188018799" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

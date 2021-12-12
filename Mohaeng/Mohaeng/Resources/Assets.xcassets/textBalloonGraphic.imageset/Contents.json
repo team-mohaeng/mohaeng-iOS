@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "scale" : "1x",
+      "idiom" : "universal",
+      "filename" : "textBalloonGraphic.png"
+    },
+    {
+      "scale" : "2x",
+      "filename" : "textBalloonGraphic@2x.png",
+      "idiom" : "universal"
+    },
+    {
+      "scale" : "3x",
+      "filename" : "textBalloonGraphic@3x.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

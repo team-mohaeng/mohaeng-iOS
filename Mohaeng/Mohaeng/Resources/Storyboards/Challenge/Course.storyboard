@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TuI-sr-lBb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoqaHanSansNeo-Regular.otf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Course View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="CourseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="CourseViewController" customModule="Mohaeng" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="8at-xF-psI">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" name="BgLightYellow"/>
+                            </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a75-pn-XQR">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="shH-L3-rZO">
+                                        <rect key="frame" x="85.5" y="311" width="243" height="271.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grpXEmptyChallenge" translatesAutoresizingMaskIntoConstraints="NO" id="sHA-n6-RBr">
+                                                <rect key="frame" x="31.5" y="0.0" width="180" height="180"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="180" id="LF4-Zb-HMG"/>
+                                                    <constraint firstAttribute="width" constant="180" id="UA5-j9-bj0"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코스를 선택해서 챌린지를 시작해보자~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhA-8C-JhH">
+                                                <rect key="frame" x="26" y="196" width="191.5" height="15.5"/>
+                                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                                <color key="textColor" name="Grey2Text"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjJ-Qw-FE3">
+                                                <rect key="frame" x="0.0" y="227.5" width="243" height="44"/>
+                                                <color key="backgroundColor" name="YellowButton1"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="STH-vF-NTc"/>
+                                                    <constraint firstAttribute="width" constant="243" id="d0N-Is-aGz"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="코스 선택하기">
+                                                    <fontDescription key="titleFontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="16"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="touchSelectCourseButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="buG-7u-BjQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="shH-L3-rZO" firstAttribute="centerX" secondItem="a75-pn-XQR" secondAttribute="centerX" id="55T-Qc-1mH"/>
+                                    <constraint firstItem="shH-L3-rZO" firstAttribute="centerY" secondItem="a75-pn-XQR" secondAttribute="centerY" constant="40" id="FTc-fJ-wSR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="a75-pn-XQR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="JSq-Lj-yyo"/>
+                            <constraint firstItem="8at-xF-psI" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Mth-F0-dEA"/>
+                            <constraint firstAttribute="bottom" secondItem="8at-xF-psI" secondAttribute="bottom" id="WE4-bA-7Ke"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="8at-xF-psI" secondAttribute="trailing" id="ZE2-NB-sg0"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="a75-pn-XQR" secondAttribute="trailing" id="due-WB-Mge"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="a75-pn-XQR" secondAttribute="bottom" id="mRR-Ol-uHp"/>
+                            <constraint firstItem="a75-pn-XQR" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="pWl-IE-f4Q"/>
+                            <constraint firstItem="8at-xF-psI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="r0L-Ye-4h8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="CMV-2S-H2B"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="courseTableView" destination="8at-xF-psI" id="VAy-u0-i5v"/>
+                        <outlet property="courseTableViewToTopConstraint" destination="Mth-F0-dEA" id="99h-lN-Kj2"/>
+                        <outlet property="emptyView" destination="a75-pn-XQR" id="bKQ-fR-rON"/>
+                        <outlet property="selectCourseButton" destination="zjJ-Qw-FE3" id="p9M-Hr-YPv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="939.13043478260875" y="67.633928571428569"/>
+        </scene>
+        <!--챌린지-->
+        <scene sceneID="IVp-gs-VCh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TuI-sr-lBb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="챌린지" image="tabIcnChallenge0" id="cUU-n5-gkM"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gGg-fW-Rh7">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="MaQ-X8-mFR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m9q-p3-rOL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="67.633928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="grpXEmptyChallenge" width="180" height="180"/>
+        <image name="tabIcnChallenge0" width="28" height="28"/>
+        <namedColor name="BgLightYellow">
+            <color red="1" green="0.98400002717971802" blue="0.93699997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Grey2Text">
+            <color red="0.48199999332427979" green="0.48199999332427979" blue="0.48199999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="YellowButton1">
+            <color red="1" green="0.76899999380111694" blue="0.32499998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoqaHanSansNeo-Bold.otf">
+            <string>SpoqaHanSansNeo-Bold</string>
+        </array>
+        <array key="SpoqaHanSansNeo-Regular.otf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Email Login View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="EmailLoginViewController" id="Y6W-OH-hqX" customClass="EmailLoginViewController" customModule="Mohaeng" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일로 로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odr-lE-3x5">
+                                <rect key="frame" x="24" y="82" width="139.5" height="26"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="22"/>
+                                <color key="textColor" name="Black"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWK-RE-JXu">
+                                <rect key="frame" x="28" y="180" width="31.5" height="14"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                <color key="textColor" name="Grey2"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="예) mohaeng@gmail.com" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="whW-Mh-qnf">
+                                <rect key="frame" x="28" y="202" width="358" height="18"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8f-hY-e8b">
+                                <rect key="frame" x="28" y="264" width="42" height="14"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                <color key="textColor" name="Grey2"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fQ-wx-2n9">
+                                <rect key="frame" x="24" y="396" width="366" height="40"/>
+                                <color key="backgroundColor" name="LoginYellow"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Lw8-6O-y7l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="16"/>
+                                <state key="normal" title="로그인하기">
+                                    <color key="titleColor" name="White"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchLoginButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="52y-JR-kFb"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 입력" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="aQ1-BW-exP">
+                                <rect key="frame" x="28" y="286" width="358" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYV-FS-ex0">
+                                <rect key="frame" x="159.5" y="452" width="95" height="24"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="10"/>
+                                <state key="normal" title="비밀번호를 잊으셨나요?">
+                                    <color key="titleColor" name="Black"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchFindPasswordButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="yJe-Bs-7GW"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="azN-Xq-jJY">
+                                <rect key="frame" x="159.5" y="469.5" width="95" height="0.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="ZMR-LQ-yaw"/>
+                                </constraints>
+                            </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일 계정 또는 비밀번호를 다시 확인해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0e6-Gl-TIl">
+                                <rect key="frame" x="199" y="324" width="187" height="12"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="10"/>
+                                <color key="textColor" name="Red"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0MS-Id-6ar">
+                                <rect key="frame" x="24" y="311" width="366" height="1"/>
+                                <color key="backgroundColor" name="Grey5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="YA9-5D-QYw"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8k1-OZ-i15">
+                                <rect key="frame" x="24" y="228" width="366" height="1"/>
+                                <color key="backgroundColor" name="Grey5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Qv9-YS-Piq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="c8f-hY-e8b" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="28" id="4uh-Qe-dD7"/>
+                            <constraint firstItem="rYV-FS-ex0" firstAttribute="top" secondItem="2fQ-wx-2n9" secondAttribute="bottom" constant="16" id="7HE-1z-dAA"/>
+                            <constraint firstItem="whW-Mh-qnf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="28" id="92r-SD-ZMb"/>
+                            <constraint firstItem="JWK-RE-JXu" firstAttribute="top" secondItem="odr-lE-3x5" secondAttribute="bottom" constant="72" id="CpA-nG-Vox"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2fQ-wx-2n9" secondAttribute="trailing" constant="24" id="Iak-s9-fpF"/>
+                            <constraint firstItem="azN-Xq-jJY" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="JOV-w0-XuG"/>
+                            <constraint firstItem="0e6-Gl-TIl" firstAttribute="trailing" secondItem="aQ1-BW-exP" secondAttribute="trailing" id="Jpv-RV-La1"/>
+                            <constraint firstItem="8k1-OZ-i15" firstAttribute="top" secondItem="whW-Mh-qnf" secondAttribute="bottom" constant="8" id="KjJ-UV-BF7"/>
+                            <constraint firstItem="0MS-Id-6ar" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" constant="4" id="LIU-ei-fXB"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="whW-Mh-qnf" secondAttribute="trailing" constant="28" id="OSb-gh-8EY"/>
+                            <constraint firstItem="azN-Xq-jJY" firstAttribute="width" secondItem="rYV-FS-ex0" secondAttribute="width" id="Q8C-Zc-GhI"/>
+                            <constraint firstItem="aQ1-BW-exP" firstAttribute="top" secondItem="c8f-hY-e8b" secondAttribute="bottom" constant="8" id="Rd3-pL-HFe"/>
+                            <constraint firstItem="8k1-OZ-i15" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="SgU-7k-mkn"/>
+                            <constraint firstItem="0MS-Id-6ar" firstAttribute="top" secondItem="aQ1-BW-exP" secondAttribute="bottom" constant="8" id="UZe-A0-LDU"/>
+                            <constraint firstItem="odr-lE-3x5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="WwO-Xv-ms5"/>
+                            <constraint firstItem="azN-Xq-jJY" firstAttribute="top" secondItem="2fQ-wx-2n9" secondAttribute="bottom" constant="33.5" id="cUd-x8-Rbd"/>
+                            <constraint firstItem="0MS-Id-6ar" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="eMb-dP-Kgh"/>
+                            <constraint firstItem="0e6-Gl-TIl" firstAttribute="top" secondItem="0MS-Id-6ar" secondAttribute="bottom" constant="12" id="eTs-Pj-S4m"/>
+                            <constraint firstItem="8k1-OZ-i15" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" constant="4" id="f3x-Fa-lBj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0MS-Id-6ar" secondAttribute="trailing" constant="4" id="heF-wZ-nFj"/>
+                            <constraint firstItem="JWK-RE-JXu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="28" id="iJi-S0-gU0"/>
+                            <constraint firstItem="2fQ-wx-2n9" firstAttribute="top" secondItem="0e6-Gl-TIl" secondAttribute="bottom" constant="60" id="ls2-GW-WS0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8k1-OZ-i15" secondAttribute="trailing" constant="4" id="mVW-fn-GKI"/>
+                            <constraint firstItem="rYV-FS-ex0" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="oIV-YD-gP7"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aQ1-BW-exP" secondAttribute="trailing" constant="28" id="so9-Ic-IZ8"/>
+                            <constraint firstItem="odr-lE-3x5" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="38" id="t2K-wU-X9E"/>
+                            <constraint firstItem="2fQ-wx-2n9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="tXp-Ov-K73"/>
+                            <constraint firstItem="c8f-hY-e8b" firstAttribute="top" secondItem="whW-Mh-qnf" secondAttribute="bottom" constant="44" id="vdq-E1-qjs"/>
+                            <constraint firstItem="whW-Mh-qnf" firstAttribute="top" secondItem="JWK-RE-JXu" secondAttribute="bottom" constant="8" id="yds-TC-3X8"/>
+                            <constraint firstItem="aQ1-BW-exP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="28" id="yrV-3z-Ct6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ILI-ne-ICI"/>
+                    <connections>
+                        <outlet property="emailBottomView" destination="8k1-OZ-i15" id="Th8-2U-Qn3"/>
+                        <outlet property="emailLabel" destination="JWK-RE-JXu" id="Zwf-FI-rqP"/>
+                        <outlet property="emailTextField" destination="whW-Mh-qnf" id="qqy-j4-Rag"/>
+                        <outlet property="errorLabel" destination="0e6-Gl-TIl" id="eQj-TK-rId"/>
+                        <outlet property="findPasswordButton" destination="rYV-FS-ex0" id="oiY-5p-WXf"/>
+                        <outlet property="loginButton" destination="2fQ-wx-2n9" id="wIP-2h-h1Q"/>
+                        <outlet property="passwordBottomView" destination="0MS-Id-6ar" id="wdM-Xc-BNS"/>
+                        <outlet property="passwordLabel" destination="c8f-hY-e8b" id="Pdg-PF-Atx"/>
+                        <outlet property="passwordTextField" destination="aQ1-BW-exP" id="fth-Uh-eLU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="210" y="86"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Black">
+            <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Grey2">
+            <color red="0.48199999332427979" green="0.48199999332427979" blue="0.48199999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Grey5">
+            <color red="0.91399997472763062" green="0.91399997472763062" blue="0.91399997472763062" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LoginYellow">
+            <color red="1" green="0.94900000095367432" blue="0.81599998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Red">
+            <color red="0.9179999828338623" green="0.027000000700354576" blue="0.027000000700354576" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

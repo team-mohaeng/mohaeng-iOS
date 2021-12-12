@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GmarketSansTTFMedium.ttf">
+            <string>GmarketSansTTFMedium</string>
+        </array>
+        <array key="SpoqaHanSansNeo-Regular.otf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FeedCollectionViewCell" customModule="Mohaeng" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="416" height="146"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="416" height="146"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KdJ-PM-4J3">
+                        <rect key="frame" x="0.0" y="0.0" width="416" height="146"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KPg-rh-7jI">
+                                <rect key="frame" x="24" y="22" width="100" height="102"/>
+                                <color key="backgroundColor" name="Yellow7"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="bev-8A-RV8"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPy-0o-AGU">
+                                <rect key="frame" x="140" y="27" width="0.0" height="0.0"/>
+                                <color key="backgroundColor" name="Yellow7"/>
+                                <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="12"/>
+                                <color key="textColor" red="0.96078431372549022" green="0.68235294117647061" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DT7-SO-eCq">
+                                <rect key="frame" x="140" y="40" width="252" height="0.0"/>
+                                <color key="backgroundColor" name="Yellow7"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아라아랑" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XS-DP-pSN">
+                                <rect key="frame" x="140" y="111" width="37" height="13"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8월 15일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iqo-tK-3Ms">
+                                <rect key="frame" x="353" y="111" width="39" height="13"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="10"/>
+                                <color key="textColor" red="0.4823529411764706" green="0.4823529411764706" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQD-Rx-7FC">
+                                <rect key="frame" x="0.0" y="145.5" width="416" height="0.5"/>
+                                <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="1Wu-xw-AzW"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ktq-jN-qGu">
+                                <rect key="frame" x="24" y="98" width="100" height="26"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 안부" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPY-37-YFG">
+                                        <rect key="frame" x="24.5" y="8" width="51" height="10"/>
+                                        <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="gPY-37-YFG" firstAttribute="centerY" secondItem="ktq-jN-qGu" secondAttribute="centerY" id="NUa-9q-aqd"/>
+                                    <constraint firstItem="gPY-37-YFG" firstAttribute="centerX" secondItem="ktq-jN-qGu" secondAttribute="centerX" id="rWb-uG-GAS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lQD-Rx-7FC" firstAttribute="leading" secondItem="KdJ-PM-4J3" secondAttribute="leading" id="6K5-sG-duc"/>
+                            <constraint firstAttribute="trailing" secondItem="DT7-SO-eCq" secondAttribute="trailing" constant="24" id="BJU-M8-rp4"/>
+                            <constraint firstItem="KPg-rh-7jI" firstAttribute="top" secondItem="KdJ-PM-4J3" secondAttribute="top" constant="22" id="F09-ko-IB2"/>
+                            <constraint firstItem="DT7-SO-eCq" firstAttribute="leading" secondItem="RPy-0o-AGU" secondAttribute="leading" id="FBA-21-Zb5"/>
+                            <constraint firstAttribute="trailing" secondItem="lQD-Rx-7FC" secondAttribute="trailing" id="Fg0-n6-xbm"/>
+                            <constraint firstAttribute="bottom" secondItem="KPg-rh-7jI" secondAttribute="bottom" constant="22" id="G5J-e3-Id6"/>
+                            <constraint firstItem="ktq-jN-qGu" firstAttribute="trailing" secondItem="KPg-rh-7jI" secondAttribute="trailing" id="MWr-oP-CvP"/>
+                            <constraint firstItem="RPy-0o-AGU" firstAttribute="top" secondItem="KPg-rh-7jI" secondAttribute="top" constant="5" id="Ol1-TU-bnA"/>
+                            <constraint firstItem="Iqo-tK-3Ms" firstAttribute="trailing" secondItem="DT7-SO-eCq" secondAttribute="trailing" id="Qdc-RQ-JFI"/>
+                            <constraint firstItem="Iqo-tK-3Ms" firstAttribute="bottom" secondItem="1XS-DP-pSN" secondAttribute="bottom" id="Vqg-cD-p6d"/>
+                            <constraint firstItem="ktq-jN-qGu" firstAttribute="bottom" secondItem="KPg-rh-7jI" secondAttribute="bottom" id="ciq-bX-Acw"/>
+                            <constraint firstItem="ktq-jN-qGu" firstAttribute="leading" secondItem="KPg-rh-7jI" secondAttribute="leading" id="dau-69-dNV"/>
+                            <constraint firstItem="RPy-0o-AGU" firstAttribute="leading" secondItem="KPg-rh-7jI" secondAttribute="trailing" constant="16" id="i4S-an-sSQ"/>
+                            <constraint firstAttribute="bottom" secondItem="lQD-Rx-7FC" secondAttribute="bottom" id="lUf-Nd-aVk"/>
+                            <constraint firstItem="1XS-DP-pSN" firstAttribute="bottom" secondItem="KPg-rh-7jI" secondAttribute="bottom" id="pFm-nL-qZe"/>
+                            <constraint firstItem="1XS-DP-pSN" firstAttribute="leading" secondItem="DT7-SO-eCq" secondAttribute="leading" id="pHZ-C0-NPU"/>
+                            <constraint firstItem="ktq-jN-qGu" firstAttribute="top" secondItem="KPg-rh-7jI" secondAttribute="top" constant="76" id="q8t-dF-waY"/>
+                            <constraint firstItem="DT7-SO-eCq" firstAttribute="top" secondItem="RPy-0o-AGU" secondAttribute="bottom" constant="13" id="wXL-4k-frE"/>
+                            <constraint firstItem="KPg-rh-7jI" firstAttribute="leading" secondItem="KdJ-PM-4J3" secondAttribute="leading" constant="24" id="xBJ-lm-Io2"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="KdJ-PM-4J3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="AOh-Qy-t4U"/>
+                <constraint firstAttribute="trailing" secondItem="KdJ-PM-4J3" secondAttribute="trailing" id="iCf-rR-30q"/>
+                <constraint firstAttribute="bottom" secondItem="KdJ-PM-4J3" secondAttribute="bottom" id="ohY-Xe-RnB"/>
+                <constraint firstItem="KdJ-PM-4J3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qRr-6r-q2X"/>
+            </constraints>
+            <size key="customSize" width="416" height="146"/>
+            <connections>
+                <outlet property="contentsLabel" destination="DT7-SO-eCq" id="Weo-lY-g0A"/>
+                <outlet property="courseDayLabel" destination="RPy-0o-AGU" id="JUu-4K-rCI"/>
+                <outlet property="dateLabel" destination="Iqo-tK-3Ms" id="mpy-aA-DJs"/>
+                <outlet property="nicknameLabel" destination="1XS-DP-pSN" id="vP5-on-nNa"/>
+                <outlet property="previewImageView" destination="KPg-rh-7jI" id="nl0-Ed-7SX"/>
+                <outlet property="todayFeedView" destination="ktq-jN-qGu" id="BHA-Nh-Jma"/>
+            </connections>
+            <point key="canvasLocation" x="352.17391304347831" y="113.83928571428571"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Yellow7">
+            <color red="1" green="0.96899998188018799" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

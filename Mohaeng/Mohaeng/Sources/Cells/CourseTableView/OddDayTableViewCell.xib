@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GmarketSansTTFMedium.ttf">
+            <string>GmarketSansTTFMedium</string>
+        </array>
+        <array key="SpoqaHanSansNeo-Regular.otf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OddDayTableViewCell" rowHeight="166" id="KGk-i7-Jjw" customClass="OddDayTableViewCell" customModule="Mohaeng" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="166"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="166"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueSmallImage" translatesAutoresizingMaskIntoConstraints="NO" id="TN8-Nk-g1o">
+                        <rect key="frame" x="69" y="53" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="TN8-Nk-g1o" secondAttribute="height" multiplier="1:1" id="vzX-ho-efV"/>
+                            <constraint firstAttribute="width" constant="60" id="zsH-kT-MGF"/>
+                        </constraints>
+                    </imageView>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffh-3t-dKY">
+                        <rect key="frame" x="59" y="95.5" width="80.5" height="25.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06.28 완료" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hA5-CL-N1N">
+                                <rect key="frame" x="12" y="5" width="56.5" height="15.5"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                <color key="textColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="SampleGreen"/>
+                        <constraints>
+                            <constraint firstItem="hA5-CL-N1N" firstAttribute="leading" secondItem="ffh-3t-dKY" secondAttribute="leading" constant="12" id="3Uk-0h-oqM"/>
+                            <constraint firstAttribute="bottom" secondItem="hA5-CL-N1N" secondAttribute="bottom" constant="5" id="5Iu-VE-YdK"/>
+                            <constraint firstItem="hA5-CL-N1N" firstAttribute="top" secondItem="ffh-3t-dKY" secondAttribute="top" constant="5" id="Kyt-g0-7jP"/>
+                            <constraint firstAttribute="trailing" secondItem="hA5-CL-N1N" secondAttribute="trailing" constant="12" id="PqI-2u-X91"/>
+                        </constraints>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QmC-Yq-Uzf">
+                        <rect key="frame" x="153" y="59.5" width="88" height="47.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="3일차" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoR-95-xqW">
+                                <rect key="frame" x="0.0" y="0.0" width="62" height="24"/>
+                                <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="24"/>
+                                <color key="textColor" name="Black"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쉿, 아직 비밀이야." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="496-Ws-be2">
+                                <rect key="frame" x="0.0" y="32" width="88" height="15.5"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                <color key="textColor" name="Grey1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" red="1" green="0.98431372549019602" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="TN8-Nk-g1o" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="5e1-dV-0Bb"/>
+                    <constraint firstItem="QmC-Yq-Uzf" firstAttribute="centerY" secondItem="TN8-Nk-g1o" secondAttribute="centerY" id="5ex-0G-Nou"/>
+                    <constraint firstItem="ffh-3t-dKY" firstAttribute="centerX" secondItem="TN8-Nk-g1o" secondAttribute="centerX" id="67v-0u-h9i"/>
+                    <constraint firstItem="ffh-3t-dKY" firstAttribute="bottom" secondItem="TN8-Nk-g1o" secondAttribute="bottom" constant="8" id="GkK-hw-5SE"/>
+                    <constraint firstItem="TN8-Nk-g1o" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="69" id="NL0-fd-Qr7"/>
+                    <constraint firstItem="QmC-Yq-Uzf" firstAttribute="leading" secondItem="TN8-Nk-g1o" secondAttribute="trailing" constant="24" id="mzb-15-Mfo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" name="CourseBgGray"/>
+            <connections>
+                <outlet property="dayCountLabel" destination="JoR-95-xqW" id="44F-VU-sFT"/>
+                <outlet property="dayLabel" destination="hA5-CL-N1N" id="ZmZ-cJ-SKE"/>
+                <outlet property="dayLabelBgView" destination="ffh-3t-dKY" id="1fH-3O-Mpq"/>
+                <outlet property="descriptionLabel" destination="496-Ws-be2" id="FrE-c4-A08"/>
+                <outlet property="propertyImageView" destination="TN8-Nk-g1o" id="YfX-aB-2hU"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="128.57142857142856"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="blueSmallImage" width="60" height="60"/>
+        <namedColor name="Black">
+            <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CourseBgGray">
+            <color red="0.97600001096725464" green="0.97600001096725464" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Grey1">
+            <color red="0.29399999976158142" green="0.29399999976158142" blue="0.29399999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SampleGreen">
+            <color red="0.10599999874830246" green="0.75700002908706665" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

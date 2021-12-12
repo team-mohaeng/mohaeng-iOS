@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GmarketSansTTFMedium.ttf">
+            <string>GmarketSansTTFMedium</string>
+        </array>
+        <array key="SpoqaHanSansNeo-Regular.otf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="CourseHistoryHeaderView" id="iN0-l3-epB" customClass="CourseHistoryHeaderView" customModule="Mohaeng" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="456" height="175"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibZ-hW-nAO">
+                    <rect key="frame" x="0.0" y="0.0" width="456" height="175"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueBigImage" translatesAutoresizingMaskIntoConstraints="NO" id="Luw-Fo-ILl">
+                            <rect key="frame" x="166" y="44" width="290" height="131"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 일일 DJ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0a-mF-nIl">
+                            <rect key="frame" x="24" y="131" width="139" height="20"/>
+                            <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="20"/>
+                            <color key="textColor" name="Black"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021년 8월 30일 성공" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTy-Hx-xXk">
+                            <rect key="frame" x="24" y="101.5" width="113.5" height="15.5"/>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
+                            <color key="textColor" name="Grey1"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7F-En-f8K">
+                            <rect key="frame" x="175" y="130.5" width="85.5" height="21.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="꺅 일탈행 7일 코스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4l-Wu-pV1">
+                                    <rect key="frame" x="8" y="5" width="69.5" height="11.5"/>
+                                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="9"/>
+                                    <color key="textColor" name="OrangeThemeDark"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBrownColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="d4l-Wu-pV1" secondAttribute="trailing" constant="8" id="0J4-xP-lkf"/>
+                                <constraint firstAttribute="bottom" secondItem="d4l-Wu-pV1" secondAttribute="bottom" constant="5" id="64t-Zq-uBJ"/>
+                                <constraint firstItem="d4l-Wu-pV1" firstAttribute="top" secondItem="H7F-En-f8K" secondAttribute="top" constant="5" id="CdU-NQ-gCp"/>
+                                <constraint firstItem="d4l-Wu-pV1" firstAttribute="leading" secondItem="H7F-En-f8K" secondAttribute="leading" constant="8" id="e48-md-aEV"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Y0a-mF-nIl" secondAttribute="bottom" constant="24" id="6Ld-Cn-q30"/>
+                        <constraint firstItem="MTy-Hx-xXk" firstAttribute="leading" secondItem="ibZ-hW-nAO" secondAttribute="leading" constant="24" id="Jr2-3H-y1I"/>
+                        <constraint firstItem="H7F-En-f8K" firstAttribute="centerY" secondItem="Y0a-mF-nIl" secondAttribute="centerY" id="Psf-Hd-HDg"/>
+                        <constraint firstItem="Y0a-mF-nIl" firstAttribute="leading" secondItem="ibZ-hW-nAO" secondAttribute="leading" constant="24" id="TRd-eQ-wC5"/>
+                        <constraint firstItem="H7F-En-f8K" firstAttribute="leading" secondItem="Y0a-mF-nIl" secondAttribute="trailing" constant="12" id="ZYd-Ij-CMP"/>
+                        <constraint firstAttribute="trailing" secondItem="Luw-Fo-ILl" secondAttribute="trailing" id="h3L-Vw-vfR"/>
+                        <constraint firstItem="Y0a-mF-nIl" firstAttribute="top" secondItem="MTy-Hx-xXk" secondAttribute="bottom" constant="14" id="i1G-tf-dQs"/>
+                        <constraint firstAttribute="bottom" secondItem="Luw-Fo-ILl" secondAttribute="bottom" id="roh-VB-nFc"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="ibZ-hW-nAO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="4Hy-Jg-CLb"/>
+                <constraint firstItem="ibZ-hW-nAO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="AMo-0K-Z0L"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ibZ-hW-nAO" secondAttribute="trailing" id="QX1-T0-5QZ"/>
+                <constraint firstAttribute="bottom" secondItem="ibZ-hW-nAO" secondAttribute="bottom" id="acc-vt-ZcH"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="courseNameLabel" destination="Y0a-mF-nIl" id="S6U-Ri-p0w"/>
+                <outlet property="dayBgView" destination="H7F-En-f8K" id="757-M1-YD5"/>
+                <outlet property="dayLabel" destination="d4l-Wu-pV1" id="8tn-hW-HfL"/>
+                <outlet property="headerBgView" destination="ibZ-hW-nAO" id="xVZ-gg-ULU"/>
+                <outlet property="propertyImageView" destination="Luw-Fo-ILl" id="Ti4-T8-uui"/>
+                <outlet property="successDateLabel" destination="MTy-Hx-xXk" id="mKv-xS-ba9"/>
+            </connections>
+            <point key="canvasLocation" x="162.31884057971016" y="-161.71875"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="blueBigImage" width="290" height="131"/>
+        <namedColor name="Black">
+            <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Grey1">
+            <color red="0.29399999976158142" green="0.29399999976158142" blue="0.29399999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="OrangeThemeDark">
+            <color red="1" green="0.6589999794960022" blue="0.41600000858306885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

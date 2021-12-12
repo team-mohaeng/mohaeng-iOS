@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HqF-25-05f">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tabbar View Controller-->
+        <scene sceneID="3Yy-GQ-m75">
+            <objects>
+                <tabBarController storyboardIdentifier="TabbarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HqF-25-05f" customClass="TabbarViewController" customModule="Mohaeng" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4dC-sB-NL4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" name="YellowIconNavi"/>
+                        <color key="selectedImageTintColor" name="YellowIconNavi"/>
+                        <tabBarAppearance key="standardAppearance"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="gfI-Hd-mIH" kind="relationship" relationship="viewControllers" id="dSz-nP-RyZ"/>
+                        <segue destination="h8u-sX-FfF" kind="relationship" relationship="viewControllers" id="8OO-wo-oDA"/>
+                        <segue destination="m31-y5-eEm" kind="relationship" relationship="viewControllers" id="122-au-mcV"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jnj-H9-Yyw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-536" y="-366"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="1d6-fM-7qK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="gfI-Hd-mIH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="iz2-Lj-gTg"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hf0-Zm-yQ3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-901" y="82"/>
+        </scene>
+        <!--Course-->
+        <scene sceneID="Tyy-rw-BPx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Course" id="h8u-sX-FfF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="prF-vF-3Am"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y7f-VJ-eod" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-536" y="82"/>
+        </scene>
+        <!--Feed-->
+        <scene sceneID="hgX-PF-ADP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Feed" id="m31-y5-eEm" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="9pW-rX-0WC"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="41R-iS-KTf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-178" y="82"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="YellowIconNavi">
+            <color red="1" green="0.76899999380111694" blue="0.32499998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

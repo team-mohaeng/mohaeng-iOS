@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GmarketSansTTFMedium.ttf">
+            <string>GmarketSansTTFMedium</string>
+        </array>
+        <array key="SpoqaHanSansNeo-Regular.otf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CourseHeaderView" customModule="Mohaeng" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="132"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59K-0Z-pkC">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="132"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 진행중인 코스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1V1-w9-Y4I">
+                            <rect key="frame" x="24" y="64" width="94" height="15.5"/>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="puH-PZ-Opz">
+                            <rect key="frame" x="174.5" y="93.5" width="44" height="20"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1일차" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbb-5A-m81">
+                                    <rect key="frame" x="10" y="5" width="24" height="10"/>
+                                    <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="10"/>
+                                    <color key="textColor" name="White"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" name="SampleGreen"/>
+                            <constraints>
+                                <constraint firstItem="dbb-5A-m81" firstAttribute="leading" secondItem="puH-PZ-Opz" secondAttribute="leading" constant="10" id="Amg-tl-U2a"/>
+                                <constraint firstItem="dbb-5A-m81" firstAttribute="top" secondItem="puH-PZ-Opz" secondAttribute="top" constant="5" id="NiS-SY-nfL"/>
+                                <constraint firstAttribute="trailing" secondItem="dbb-5A-m81" secondAttribute="trailing" constant="10" id="bWZ-2V-li0"/>
+                                <constraint firstAttribute="bottom" secondItem="dbb-5A-m81" secondAttribute="bottom" constant="5" id="cdc-ww-cjf"/>
+                            </constraints>
+                        </view>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueBigImage" translatesAutoresizingMaskIntoConstraints="NO" id="GDU-kz-Tsl">
+                            <rect key="frame" x="124" y="0.0" width="290" height="132"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지구촌 촌장되기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ck0-Df-bEx">
+                            <rect key="frame" x="24" y="93.5" width="140.5" height="20"/>
+                            <fontDescription key="fontDescription" name="GmarketSansTTFMedium" family="Gmarket Sans TTF" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="GDU-kz-Tsl" firstAttribute="top" secondItem="59K-0Z-pkC" secondAttribute="top" id="67k-Rb-AAW"/>
+                        <constraint firstAttribute="trailing" secondItem="GDU-kz-Tsl" secondAttribute="trailing" id="7sm-Ci-yFX"/>
+                        <constraint firstAttribute="bottom" secondItem="GDU-kz-Tsl" secondAttribute="bottom" id="E4C-a5-fqc"/>
+                        <constraint firstAttribute="bottom" secondItem="GDU-kz-Tsl" secondAttribute="bottom" id="HHr-be-dOh"/>
+                        <constraint firstItem="1V1-w9-Y4I" firstAttribute="leading" secondItem="59K-0Z-pkC" secondAttribute="leading" constant="24" id="IMW-l5-1cY"/>
+                        <constraint firstItem="Ck0-Df-bEx" firstAttribute="top" secondItem="1V1-w9-Y4I" secondAttribute="bottom" constant="14" id="SWE-SI-WzZ"/>
+                        <constraint firstItem="Ck0-Df-bEx" firstAttribute="leading" secondItem="59K-0Z-pkC" secondAttribute="leading" constant="24" id="TET-Vm-9UC"/>
+                        <constraint firstAttribute="trailing" secondItem="GDU-kz-Tsl" secondAttribute="trailing" id="XRc-b8-lIT"/>
+                        <constraint firstItem="puH-PZ-Opz" firstAttribute="centerY" secondItem="Ck0-Df-bEx" secondAttribute="centerY" id="XZL-FD-DwF"/>
+                        <constraint firstItem="1V1-w9-Y4I" firstAttribute="top" secondItem="59K-0Z-pkC" secondAttribute="top" constant="64" id="bOO-P5-dvm"/>
+                        <constraint firstItem="puH-PZ-Opz" firstAttribute="leading" secondItem="Ck0-Df-bEx" secondAttribute="trailing" constant="10" id="ysE-yd-aba"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="59K-0Z-pkC" secondAttribute="bottom" id="Kpq-II-hSu"/>
+                <constraint firstItem="59K-0Z-pkC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Uop-c2-gVm"/>
+                <constraint firstItem="59K-0Z-pkC" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="hqV-Qk-omL"/>
+                <constraint firstItem="59K-0Z-pkC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="slJ-jt-kdy"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="courseNameLabel" destination="Ck0-Df-bEx" id="Y95-Wj-Rha"/>
+                <outlet property="dayBgView" destination="puH-PZ-Opz" id="3yx-Bo-nRb"/>
+                <outlet property="dayLabel" destination="dbb-5A-m81" id="YPT-kk-LVv"/>
+                <outlet property="headerBgView" destination="59K-0Z-pkC" id="IHF-6e-Ura"/>
+                <outlet property="propertyImageView" destination="GDU-kz-Tsl" id="XgV-4c-n6l"/>
+            </connections>
+            <point key="canvasLocation" x="44.927536231884062" y="95.758928571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="blueBigImage" width="290" height="131"/>
+        <namedColor name="SampleGreen">
+            <color red="0.10599999874830246" green="0.75700002908706665" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

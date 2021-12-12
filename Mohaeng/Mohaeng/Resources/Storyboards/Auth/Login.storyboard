@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tsp-Eh-swM">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoqaHanSansNeo-Regular.otf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="LoginViewController" customModule="Mohaeng" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="6Os-uS-eQv">
+                                <rect key="frame" x="110.66666666666669" y="711" width="154" height="11"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미 계정이 있나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wV-JM-dXV">
+                                        <rect key="frame" x="0.0" y="0.0" width="83" height="11"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="11" id="xJh-C9-u0u"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="10"/>
+                                        <color key="textColor" name="Black"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uks-BU-gX2">
+                                        <rect key="frame" x="86.999999999999986" y="0.0" width="67.000000000000014" height="11"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="11" id="KNs-Aq-vHB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="10"/>
+                                        <state key="normal" title="이메일로 로그인">
+                                            <color key="titleColor" name="Yellow3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchEmailLoginButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="PK3-Uk-Z2P"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="fXW-Co-4M0">
+                                <rect key="frame" x="24" y="515" width="327" height="172"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2a-JG-M90">
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="45"/>
+                                        <color key="backgroundColor" red="0.99607843137254903" green="0.89803921568627454" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="327" id="Iob-gQ-d3W"/>
+                                            <constraint firstAttribute="height" constant="45" id="sLf-bc-9cr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="-12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" backgroundImage="kakaoLogin">
+                                            <color key="titleColor" name="Black"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchKakaoLoginButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7u7-HO-maK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lw-aU-RLf">
+                                        <rect key="frame" x="0.0" y="57" width="327" height="45"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="327" id="YUd-yM-mpS"/>
+                                            <constraint firstAttribute="height" constant="45" id="vrc-yS-qoZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="-12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" backgroundImage="appleLogin">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchAppleLoginButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="V4F-C9-wO4"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PVX-bg-Z9w">
+                                        <rect key="frame" x="0.0" y="114" width="327" height="1"/>
+                                        <color key="backgroundColor" name="Grey5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="2pi-Ye-bNC"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8QL-M1-Wbx">
+                                        <rect key="frame" x="0.0" y="127" width="327" height="45"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="327" id="D4k-zv-si0"/>
+                                            <constraint firstAttribute="height" constant="45" id="E6Q-QV-2tu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="-12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" backgroundImage="btnStartEmail">
+                                            <color key="titleColor" name="Black"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchSignEmailButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="UM0-Tu-9kd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundImage " translatesAutoresizingMaskIntoConstraints="NO" id="Kch-49-QkD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="415"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="415" id="0Di-56-4SH"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOHAENG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAC-d7-iEM">
+                                <rect key="frame" x="127.33333333333334" y="255.33333333333334" width="120.33333333333334" height="28.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                <color key="textColor" red="1" green="0.7803921568627451" blue="0.3529411764705882" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모행에 온 것을 환영해!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rM6-Cx-uyl">
+                                <rect key="frame" x="112.33333333333333" y="291" width="150.33333333333337" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="DarkGrey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soleImage" translatesAutoresizingMaskIntoConstraints="NO" id="D8X-kB-ZFk">
+                                <rect key="frame" x="239" y="219.33333333333334" width="39" height="50.000000000000028"/>
+                                <color key="tintColor" name="YellowButton1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ooh-E8-4Yt"/>
+                                    <constraint firstAttribute="width" constant="39" id="WTj-p1-m0c"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nQS-Ex-SIs">
+                                <rect key="frame" x="197.66666666666666" y="721" width="66.999999999999972" height="1"/>
+                                <color key="backgroundColor" name="Yellow3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="SR4-P2-44W"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Kch-49-QkD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0UB-3K-aeK"/>
+                            <constraint firstItem="JAC-d7-iEM" firstAttribute="centerY" secondItem="Kch-49-QkD" secondAttribute="centerY" multiplier="1.3" id="BRe-MC-hYk"/>
+                            <constraint firstItem="JAC-d7-iEM" firstAttribute="top" secondItem="D8X-kB-ZFk" secondAttribute="bottom" constant="-14" id="Bpm-wr-9s2"/>
+                            <constraint firstItem="Kch-49-QkD" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="CjP-8g-Wd2"/>
+                            <constraint firstItem="fXW-Co-4M0" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="FTp-84-gXe"/>
+                            <constraint firstItem="nQS-Ex-SIs" firstAttribute="trailing" secondItem="uks-BU-gX2" secondAttribute="trailing" id="H6k-tU-Czw"/>
+                            <constraint firstItem="rM6-Cx-uyl" firstAttribute="top" secondItem="JAC-d7-iEM" secondAttribute="bottom" constant="7" id="Iii-re-d4f"/>
+                            <constraint firstItem="JAC-d7-iEM" firstAttribute="centerX" secondItem="Kch-49-QkD" secondAttribute="centerX" id="NFB-T2-A80"/>
+                            <constraint firstItem="6Os-uS-eQv" firstAttribute="top" secondItem="fXW-Co-4M0" secondAttribute="bottom" constant="24" id="ZGM-zx-eYM"/>
+                            <constraint firstItem="Kch-49-QkD" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="aF5-HH-0xb"/>
+                            <constraint firstItem="D8X-kB-ZFk" firstAttribute="leading" secondItem="JAC-d7-iEM" secondAttribute="trailing" constant="-8.6666666666666856" id="cfU-Fk-ieu"/>
+                            <constraint firstItem="nQS-Ex-SIs" firstAttribute="bottom" secondItem="uks-BU-gX2" secondAttribute="bottom" id="nx9-FE-Gn7"/>
+                            <constraint firstItem="nQS-Ex-SIs" firstAttribute="leading" secondItem="uks-BU-gX2" secondAttribute="leading" id="ojT-wN-M0m"/>
+                            <constraint firstItem="rM6-Cx-uyl" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="tJs-6W-M7R"/>
+                            <constraint firstItem="6Os-uS-eQv" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="vw3-cF-Gzk"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="6Os-uS-eQv" secondAttribute="bottom" constant="56" id="wJB-Pv-D1s"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sv0-EL-xFa"/>
+                    <connections>
+                        <outlet property="appleLoginButton" destination="2lw-aU-RLf" id="D7a-LV-WNn"/>
+                        <outlet property="backgroundTopSpace" destination="CjP-8g-Wd2" id="x2c-BK-6kG"/>
+                        <outlet property="emailLoginButton" destination="8QL-M1-Wbx" id="2U3-52-0lT"/>
+                        <outlet property="kakaoLoginButton" destination="c2a-JG-M90" id="qTG-Id-7LT"/>
+                        <outlet property="loginStackView" destination="fXW-Co-4M0" id="RbM-nF-Y5e"/>
+                        <outlet property="mohaengLabel" destination="JAC-d7-iEM" id="Hnf-r7-aI8"/>
+                        <outlet property="welcomeLabel" destination="rM6-Cx-uyl" id="gZm-a8-gDM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="399.19999999999999" y="41.379310344827587"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="i7n-vE-600">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tsp-Eh-swM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hy5-sx-VoV">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="MSq-qD-HfX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bU7-G2-XNC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-543.20000000000005" y="41.379310344827587"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="appleLogin" width="327" height="45"/>
+        <image name="backgroundImage " width="375" height="407"/>
+        <image name="btnStartEmail" width="327" height="45"/>
+        <image name="kakaoLogin" width="327" height="45"/>
+        <image name="soleImage" width="39" height="50"/>
+        <namedColor name="Black">
+            <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DarkGrey">
+            <color red="0.44705882352941179" green="0.396078431372549" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Grey5">
+            <color red="0.91399997472763062" green="0.91399997472763062" blue="0.91399997472763062" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Yellow3">
+            <color red="1" green="0.77999997138977051" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="YellowButton1">
+            <color red="1" green="0.76899999380111694" blue="0.32499998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

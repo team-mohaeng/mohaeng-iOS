@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign Up Second View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="SignUpSecondViewController" id="Y6W-OH-hqX" customClass="SignUpSecondViewController" customModule="Mohaeng" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="약관동의" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpb-Sm-v4s">
+                                <rect key="frame" x="24" y="82" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="0.0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLl-sL-jW8">
+                                <rect key="frame" x="24" y="403.33333333333331" width="327" height="40"/>
+                                <color key="backgroundColor" name="LoginYellow"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="frc-RV-bE2"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="동의하기">
+                                            <attributes>
+                                                <color key="NSColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="touchAgreeButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="YtS-rh-E9n"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TP-mj-ugW">
+                                <rect key="frame" x="24" y="130" width="24" height="24"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="RQp-AL-cj8"/>
+                                    <constraint firstAttribute="height" constant="24" id="pfO-Tx-IRM"/>
+                                </constraints>
+                                <color key="tintColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="uncheckButton"/>
+                                <state key="selected" image="checkButton"/>
+                                <connections>
+                                    <action selector="touchCheckButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uWj-dR-Xob"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Lj-Gk-QiP">
+                                <rect key="frame" x="24" y="172" width="24" height="24"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="N52-3x-TRJ"/>
+                                    <constraint firstAttribute="width" constant="24" id="iiq-Ne-dht"/>
+                                </constraints>
+                                <color key="tintColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="uncheckButton"/>
+                                <state key="selected" image="checkButton"/>
+                                <connections>
+                                    <action selector="touchCheckButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="eQg-un-ME8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdh-je-rUA">
+                                <rect key="frame" x="24" y="214" width="24" height="24"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="THX-yd-d3G"/>
+                                    <constraint firstAttribute="height" constant="24" id="gmS-xl-16p"/>
+                                </constraints>
+                                <color key="tintColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="uncheckButton"/>
+                                <state key="selected" image="checkButton"/>
+                                <connections>
+                                    <action selector="touchCheckButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1vH-kU-52c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7t5-HF-VIn">
+                                <rect key="frame" x="24" y="256" width="24" height="24"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="u2B-qa-Agn"/>
+                                    <constraint firstAttribute="width" constant="24" id="wP5-br-Ymb"/>
+                                </constraints>
+                                <color key="tintColor" red="0.96078431610000004" green="0.96078431610000004" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="uncheckButton"/>
+                                <state key="selected" image="checkButton"/>
+                                <connections>
+                                    <action selector="touchCheckButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="5w0-yu-mZZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체 동의합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsL-6O-fpX">
+                                <rect key="frame" x="56" y="133.66666666666666" width="93" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서비스 이용약관(필수) " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrG-fU-ktw">
+                                <rect key="frame" x="56" y="176" width="127" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개인정보 수집 및 이용 동의(필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOQ-t4-2wV">
+                                <rect key="frame" x="56" y="218" width="183" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTt-HQ-XPO">
+                                <rect key="frame" x="325" y="176" width="26" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="26" id="6Wu-k7-DM4"/>
+                                    <constraint firstAttribute="height" constant="16" id="tfb-mt-qLL"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="보기">
+                                    <color key="titleColor" name="Grey2"/>
+                                </state>
+                                <connections>
+                                    <action selector="presentServiceWeb:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fqj-1Q-XvH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyG-Jl-RXH">
+                                <rect key="frame" x="325" y="218" width="26" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="26" id="Ozb-52-4Rt"/>
+                                    <constraint firstAttribute="height" constant="16" id="mL4-ge-8y5"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="보기">
+                                    <color key="titleColor" name="Grey2"/>
+                                </state>
+                                <connections>
+                                    <action selector="presentPersonalWeb:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="AbJ-b0-AZW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sL-4f-yse">
+                                <rect key="frame" x="325" y="260" width="26" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="J71-7i-A7c"/>
+                                    <constraint firstAttribute="width" constant="26" id="lQI-lP-45u"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="보기">
+                                    <color key="titleColor" name="Grey2"/>
+                                </state>
+                                <connections>
+                                    <action selector="presentEULAWeb:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="od2-Jb-guz"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EULA 약관 동의(필수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3c-v8-ob9">
+                                <rect key="frame" x="56" y="259" width="127" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dLl-sL-jW8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="0Gf-Rp-nKl"/>
+                            <constraint firstItem="jdh-je-rUA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="2cj-Lx-qnd"/>
+                            <constraint firstItem="4TP-mj-ugW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="4CE-Vz-1oa"/>
+                            <constraint firstItem="7t5-HF-VIn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="5Ym-f3-OeI"/>
+                            <constraint firstItem="lpb-Sm-v4s" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="38" id="5cW-T3-BWB"/>
+                            <constraint firstItem="QsL-6O-fpX" firstAttribute="leading" secondItem="4TP-mj-ugW" secondAttribute="trailing" constant="8" id="60z-kJ-dea"/>
+                            <constraint firstItem="gyG-Jl-RXH" firstAttribute="centerY" secondItem="jdh-je-rUA" secondAttribute="centerY" id="6Fu-13-Alb"/>
+                            <constraint firstItem="lpb-Sm-v4s" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="7Bt-HT-q9H"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dLl-sL-jW8" secondAttribute="trailing" constant="24" id="A4p-Yd-ZPJ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="8sL-4f-yse" secondAttribute="trailing" constant="24" id="CZu-Md-KD9"/>
+                            <constraint firstItem="4TP-mj-ugW" firstAttribute="top" secondItem="lpb-Sm-v4s" secondAttribute="bottom" constant="48" id="D3P-zK-9N9"/>
+                            <constraint firstItem="8sL-4f-yse" firstAttribute="centerY" secondItem="7t5-HF-VIn" secondAttribute="centerY" id="DPT-4M-MYy"/>
+                            <constraint firstItem="JrG-fU-ktw" firstAttribute="top" secondItem="QsL-6O-fpX" secondAttribute="bottom" constant="25.333333333333343" id="E99-RM-RiH"/>
+                            <constraint firstItem="b3c-v8-ob9" firstAttribute="top" secondItem="XOQ-t4-2wV" secondAttribute="bottom" constant="24" id="EXJ-ZC-hAu"/>
+                            <constraint firstItem="jdh-je-rUA" firstAttribute="top" secondItem="3Lj-Gk-QiP" secondAttribute="bottom" constant="18" id="EqY-YX-tOe"/>
+                            <constraint firstItem="LTt-HQ-XPO" firstAttribute="centerY" secondItem="3Lj-Gk-QiP" secondAttribute="centerY" id="GLY-KQ-urF"/>
+                            <constraint firstItem="b3c-v8-ob9" firstAttribute="leading" secondItem="7t5-HF-VIn" secondAttribute="trailing" constant="8" symbolic="YES" id="IXC-qW-9LT"/>
+                            <constraint firstItem="XOQ-t4-2wV" firstAttribute="top" secondItem="JrG-fU-ktw" secondAttribute="bottom" constant="25" id="LRJ-gc-UTl"/>
+                            <constraint firstItem="JrG-fU-ktw" firstAttribute="leading" secondItem="3Lj-Gk-QiP" secondAttribute="trailing" constant="8" symbolic="YES" id="Qag-Pd-iwL"/>
+                            <constraint firstItem="7t5-HF-VIn" firstAttribute="top" secondItem="jdh-je-rUA" secondAttribute="bottom" constant="18" id="W0S-Je-bdC"/>
+                            <constraint firstItem="dLl-sL-jW8" firstAttribute="top" secondItem="7t5-HF-VIn" secondAttribute="bottom" constant="123.33333333333331" id="XiL-Uu-eM6"/>
+                            <constraint firstItem="3Lj-Gk-QiP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="ZYr-KV-Y1E"/>
+                            <constraint firstItem="XOQ-t4-2wV" firstAttribute="leading" secondItem="jdh-je-rUA" secondAttribute="trailing" constant="8" symbolic="YES" id="Zqh-Qi-gVt"/>
+                            <constraint firstItem="3Lj-Gk-QiP" firstAttribute="top" secondItem="4TP-mj-ugW" secondAttribute="bottom" constant="18" id="ffg-e9-ZIS"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="LTt-HQ-XPO" secondAttribute="trailing" constant="24" id="gu1-Yp-T5H"/>
+                            <constraint firstItem="QsL-6O-fpX" firstAttribute="centerY" secondItem="4TP-mj-ugW" secondAttribute="centerY" id="pUf-fm-Ezu"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gyG-Jl-RXH" secondAttribute="trailing" constant="24" id="rQm-Ti-Yxa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="agreeButton" destination="dLl-sL-jW8" id="vbp-Gd-AhV"/>
+                        <outlet property="agreeLabel" destination="lpb-Sm-v4s" id="VlU-IN-bEW"/>
+                        <outlet property="allAgreeLabel" destination="QsL-6O-fpX" id="c2i-4q-tpS"/>
+                        <outlet property="eulaButton" destination="8sL-4f-yse" id="Gy6-1W-RpC"/>
+                        <outlet property="eulaLabel" destination="b3c-v8-ob9" id="qTh-mH-zZ5"/>
+                        <outlet property="firstCheckButton" destination="4TP-mj-ugW" id="em0-kn-txP"/>
+                        <outlet property="fourthCheckButton" destination="7t5-HF-VIn" id="wOF-Ty-KU5"/>
+                        <outlet property="personalButton" destination="gyG-Jl-RXH" id="LIO-33-HFq"/>
+                        <outlet property="personalLabel" destination="XOQ-t4-2wV" id="3bm-t4-ey4"/>
+                        <outlet property="secondCheckButton" destination="3Lj-Gk-QiP" id="kQy-UK-rua"/>
+                        <outlet property="serviceButton" destination="LTt-HQ-XPO" id="5ng-HQ-dXU"/>
+                        <outlet property="serviceLabel" destination="JrG-fU-ktw" id="9vK-il-lQ4"/>
+                        <outlet property="thirdCheckButton" destination="jdh-je-rUA" id="LgU-1O-wMg"/>
+                        <outletCollection property="buttons" destination="4TP-mj-ugW" collectionClass="NSMutableArray" id="kby-Ad-OWr"/>
+                        <outletCollection property="buttons" destination="3Lj-Gk-QiP" collectionClass="NSMutableArray" id="qFw-MJ-kMb"/>
+                        <outletCollection property="buttons" destination="jdh-je-rUA" collectionClass="NSMutableArray" id="aBa-qM-iRo"/>
+                        <outletCollection property="buttons" destination="7t5-HF-VIn" collectionClass="NSMutableArray" id="m1q-s8-EKU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="181.59999999999999" y="-93.103448275862078"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="checkButton" width="24" height="24"/>
+        <image name="uncheckButton" width="24" height="24"/>
+        <namedColor name="Grey2">
+            <color red="0.48199999332427979" green="0.48199999332427979" blue="0.48199999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LoginYellow">
+            <color red="1" green="0.94900000095367432" blue="0.81599998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
