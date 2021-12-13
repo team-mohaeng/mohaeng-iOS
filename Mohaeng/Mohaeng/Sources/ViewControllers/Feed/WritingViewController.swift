@@ -122,23 +122,6 @@ class WritingViewController: UIViewController {
         $0.contentMode = .scaleAspectFit
     }
     
-    private var isValidNumberOfLines = true {
-        didSet {
-            if !isValidNumberOfLines {
-                let popUp = PopUpViewController()
-                popUp.modalTransitionStyle = .crossDissolve
-                popUp.modalPresentationStyle = .overCurrentContext
-                popUp.popUpUsage = .noButton
-                popUp.popUpActionDelegate = self
-                present(popUp, animated: true, completion: nil)
-                popUp.setText(
-                    title: "잠깐만!",
-                    description: "오늘의 안부는 5줄까지만 입력할 수 있어"
-                )
-            }
-        }
-    }
-    
 // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -326,23 +309,15 @@ extension WritingViewController: UITextViewDelegate {
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        doneButton.isEnabled = textView.text.count > 0 && textView.text.count <= writingTextLength && textView.numberOfLine() < 6
+        doneButton.isEnabled = textView.text.count > 0 && textView.text.count <= writingTextLength
         
         textView.attributedText = setAttributedText(text: textView.text)
         writingTextLengthLabel.attributedText = setAttributedCustomText(text: "\(String(textView.text?.count ?? 0)) / \(writingTextLength)자")
         
-        if textView.numberOfLine() > 6 {
-            if isValidNumberOfLines {
-                isValidNumberOfLines.toggle()
-            }
-        } else {
-            if !isValidNumberOfLines {
-                isValidNumberOfLines.toggle()
-            }
-        }
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        
         let newLength = textView.text.count + text.count - range.length
         return newLength <= writingTextLength
     }
