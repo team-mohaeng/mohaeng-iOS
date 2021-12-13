@@ -296,6 +296,21 @@ extension WritingViewController: UINavigationControllerDelegate {}
 
 extension WritingViewController: UITextViewDelegate {
     
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        if textView.textColor == .Grey4 {
+            textView.text = nil
+        }
+        
+        let spacing = NSMutableParagraphStyle()
+        spacing.lineSpacing = 10
+        spacing.alignment = .left
+        textView.typingAttributes = [
+            NSAttributedString.Key.paragraphStyle: spacing,
+            NSAttributedString.Key.font: UIFont.spoqaHanSansNeo(weight: .regular, size: 14)
+        ]
+        return true
+    }
+    
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == .Grey4 {
             textView.text = nil
@@ -310,8 +325,7 @@ extension WritingViewController: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         doneButton.isEnabled = textView.text.count > 0 && textView.text.count <= writingTextLength
-        
-        textView.attributedText = setAttributedText(text: textView.text)
+
         writingTextLengthLabel.attributedText = setAttributedCustomText(text: "\(String(textView.text?.count ?? 0)) / \(writingTextLength)자")
         
     }
@@ -327,23 +341,6 @@ extension WritingViewController: UITextViewDelegate {
         attributeString.addAttribute(.foregroundColor, value: UIColor.Yellow3, range: (text as NSString).range(of: "/ \(writingTextLength)자"))
         return attributeString
     }
-    
-    func setAttributedText(text: String) -> NSAttributedString {
-
-        let attributeString = NSMutableAttributedString(string: text)
-
-        let font: UIFont = .spoqaHanSansNeo(weight: .regular, size: 14)
-        let lineSpacing: CGFloat = 10 
-        
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = lineSpacing
-        
-        attributeString.addAttribute(.font, value: font, range: (text as NSString).range(of: text))
-        attributeString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: (text as NSString).range(of: text))
-        
-        return attributeString
-    }
-    
 }
 
 extension WritingViewController {
