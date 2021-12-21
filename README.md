@@ -25,20 +25,7 @@
 
 ## Service Workflow
 
-<details>
-  <summary> 서비스 워크플로우 </summary>
-	<div markdown="1">
-    <img src="https://user-images.githubusercontent.com/28949235/125818953-985f2d8b-442d-41e6-833c-c82aaa95f672.png" alt="image" />
-	<img src="https://user-images.githubusercontent.com/28949235/125819660-29a88675-1b4d-4a72-b358-5917d71b4f6b.png" />
-	<img src="https://user-images.githubusercontent.com/28949235/125819715-3f5a355f-5ee7-4465-999d-455550becd82.png" />
-  <img src=" https://user-images.githubusercontent.com/28949235/125819741-01e68d6d-3f88-4af2-8853-4d7e90fd2c9a.png" />
-	<img src="https://user-images.githubusercontent.com/28949235/125819780-cc436895-16f9-4b6c-b90b-9666e15fd5b5.png" />
-	<img src="https://user-images.githubusercontent.com/28949235/125819804-3249000b-28f8-4897-a30c-b00a8b71f844.png" />
-  <img src="https://user-images.githubusercontent.com/28949235/125819842-019d3d42-0af6-4775-8b3e-276752416deb.png" />
-  </div>
-</details>
-
-
+![workflow](https://user-images.githubusercontent.com/28949235/146957319-00b1fa3c-0a70-4936-8885-c9a6a100d199.png)
 
 
 ## Develop Environment
@@ -67,31 +54,40 @@
 
 ## Feature
 
-| 분류        | 기능                | 구현 | 담당   |
-| ----------- | ------------------- | ---- | ------ |
-| `Etc`       | 알림 권한 동의      | ✅    | 정초이 |
-| `Etc`       | Splash              | ✅    | 정초이 |
-| `Auth`      | 로그인              | ✅    | 김승찬 |
-| `Auth`      | 비밀번호 찾기       | ✅    | 정초이 |
-| `Auth`      | 이메일 인증         | ✅    | 정초이 |
-| `Auth`      | 회원가입            | ✅    | 김승찬 |
-| `Etc`       | 푸쉬알림            | ✅    | 정초이 |
-| `Main`      | 메인                | ✅    | 윤예지 |
-| `Challenge` | 코스 지도           | ✅    | 정초이 |
-| `Challenge` | 코스 라이브러리     | ✅    | 정초이 |
-| `Main`      | 리워드              | ✅    | 정초이 |
-| `Etc`       | 환경설정            | ✅    | 정초이 |
-| `Challenge` | 챌린지 뷰 - 시작 전 | ✅    | 정초이 |
-| `Challenge` | 챌린지 뷰 - 진행 중 | ✅    | 김승찬 |
-| `Challenge` | 챌린지 인증 통신    | ✅    | 정초이 |
-| `Feed`      | 소확행 작성하기     | ✅    | 윤예지 |
-| `Feed`      | 소확행 사진 업로드  | ✅    | 윤예지 |
-| `Feed`      | 내 서랍장           | ✅    | 윤예지 |
-| `Feed`      | 소확행 상세보기     | ✅    | 윤예지 |
-| `Feed`      | 소확행 좋아요       | ✅    | 윤예지 |
-| `Feed`      | 소확행 삭제하기     | ✅    | 윤예지 |
-| `Etc`       | 커스텀 팝업         | ✅    | 정초이 |
-| `Etc`       | 애니메이션 팝업     | ✅    | 정초이 |
+| 분류 | 기능 | 담당자 |
+| --- | --- | --- |
+| `auth` | 회원가입 뷰 | [@seungchan2](https://github.com/seungchan2) |
+| `auth` | 로그인 뷰 |[@seungchan2](https://github.com/seungchan2) |
+| `auth` | 소셜 로그인 | [@iamcho2](https://github.com/iamcho2) |
+| `auth` | 패스워드 찾기 |  [@iamcho2](https://github.com/iamcho2)  |
+| `auth` | 이메일 인증 |  [@iamcho2](https://github.com/iamcho2)   |
+| `auth` | 새 패스워드 |  [@iamcho2](https://github.com/iamcho2)   |
+| `main` | 메인 뷰 |  [@yunyezl](https://github.com/yunyezl) | 
+| `main` | 캐릭터 변경 뷰 | [@yunyezl](https://github.com/yunyezl) |
+| `main` | 해피지수 도움말 | [@yunyezl](https://github.com/yunyezl)|
+| `main` | 뱃지 뷰 | [@yunyezl](https://github.com/yunyezl) |
+| `main` | 뱃지 뷰 모달 | [@ezidayzi](https://github.com/ezidayzi) |
+| `main` | 마이페이지 뷰 | [@iamcho2](https://github.com/iamcho2)  |
+| `main` | 채팅 뷰  | [@iamcho2](https://github.com/iamcho2)  |
+| `challenge` | 챌린지 도장 + 지도 뷰 | [@iamcho2](https://github.com/iamcho2)  |
+| `challenge` | 코스 라이브러리 뷰 | [@iamcho2](https://github.com/iamcho2)  |
+| `challenge` | 챌린지 도움말 뷰 | [@iamcho2](https://github.com/iamcho2)  |
+| `challenge` | 챌린지 완료 팝업 | [@iamcho2](https://github.com/iamcho2)  |
+| `challenge` | 챌린지 완료 뷰 | [@iamcho2](https://github.com/iamcho2)  |
+| `feed` | 피드 전체 뷰 | [@yunyezl](https://github.com/yunyezl) |
+| `feed` | 피드 디테일 뷰 | [@yunyezl](https://github.com/yunyezl) |
+| `feed` | 내 서랍장 뷰 | [@yunyezl](https://github.com/yunyezl) |
+| `feed` | 내 서랍장 월 변경 팝업 | [@yunyezl](https://github.com/yunyezl) |
+| `feed` | 피드 스티커 뷰 | [@yunyezl](https://github.com/yunyezl) |
+| `feed` | 피드 작성 - 기분 선택 | [@seungchan2](https://github.com/seungchan2) |
+| `feed` | 피드 작성 - 글 작성 |   [@yunyezl](https://github.com/yunyezl) |
+| `etc` | 푸쉬 알림 | [@iamcho2](https://github.com/iamcho2)  |
+| `etc` | 커스텀 팝업 - 버튼 0개 | [@iamcho2](https://github.com/iamcho2)  |
+| `etc` | 커스텀 팝업 - 버튼 2개 (이미지 x) | [@iamcho2](https://github.com/iamcho2)  |
+| `etc` | 커스텀 팝업 - 버튼 2개 (이미지 o) | [@iamcho2](https://github.com/iamcho2)  |
+| `etc` | 온보딩 1 | [@ezidayzi](https://github.com/ezidayzi)|
+| `etc` | 온보딩 2 | [@iamcho2](https://github.com/iamcho2)  |
+| `etc` | 온보딩 3 | [@ezidayzi](https://github.com/ezidayzi) |
 
 <br><br><br>
 </p><div align=center>
