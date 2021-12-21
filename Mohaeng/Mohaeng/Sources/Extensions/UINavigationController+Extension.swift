@@ -81,7 +81,7 @@ extension UINavigationController {
     // MARK: - 뒤로가기 버튼 + 닫기 버튼 - 글쓰기 뷰에서만 사용
     
     func initWithBackAndCloseButton(navigationItem: UINavigationItem?, closeButtonClosure: Selector) {
-        initWithBackButton()
+        initWithBackButton(backgroundColor: .white)
 
         let closeButton = UIBarButtonItem(image: Const.Image.gnbIconX, style: .plain, target: self.topViewController, action: closeButtonClosure)
         navigationItem?.rightBarButtonItem = closeButton
