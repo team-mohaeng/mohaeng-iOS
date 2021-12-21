@@ -75,7 +75,10 @@
 | `challenge` | 코스 라이브러리 뷰 | [@iamcho2](https://github.com/iamcho2)  |
 | `challenge` | 챌린지 도움말 뷰 | [@iamcho2](https://github.com/iamcho2)  |
 | `challenge` | 챌린지 완료 팝업 | [@iamcho2](https://github.com/iamcho2)  |
-| `challenge` | 챌린지 완료 뷰 | [@iamcho2](https://github.com/iamcho2)  |
+| `challenge` | 챌린지 완료 뷰 - 오늘의 챌린지 성공 | [@ezidayzi](https://github.com/ezidayzi)  |
+| `challenge` | 챌린지 완료 뷰 - 새로운 스타일 | [@ezidayzi](https://github.com/ezidayzi)  |
+| `challenge` | 챌린지 완료 뷰 - 코스 완료 | [@ezidayzi](https://github.com/ezidayzi)  |
+| `challenge` | 챌린지 완료 뷰 - 글쓰기 유도  | [@ezidayzi](https://github.com/ezidayzi)  |
 | `feed` | 피드 전체 뷰 | [@yunyezl](https://github.com/yunyezl) |
 | `feed` | 피드 디테일 뷰 | [@yunyezl](https://github.com/yunyezl) |
 | `feed` | 내 서랍장 뷰 | [@yunyezl](https://github.com/yunyezl) |
