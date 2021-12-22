@@ -67,7 +67,7 @@
 | `main` | 메인 뷰 |  [@yunyezl](https://github.com/yunyezl) | 
 | `main` | 캐릭터 변경 뷰 | [@yunyezl](https://github.com/yunyezl) |
 | `main` | 해피지수 도움말 | [@yunyezl](https://github.com/yunyezl)|
-| `main` | 뱃지 뷰 | [@yunyezl](https://github.com/yunyezl) |
+| `main` | 뱃지 뷰 | [@ezidayzi](https://github.com/ezidayzi) |
 | `main` | 뱃지 뷰 모달 | [@ezidayzi](https://github.com/ezidayzi) |
 | `main` | 마이페이지 뷰 | [@iamcho2](https://github.com/iamcho2)  |
 | `main` | 채팅 뷰  | [@iamcho2](https://github.com/iamcho2)  |
@@ -85,7 +85,7 @@
 | `feed` | 내 서랍장 월 변경 팝업 | [@yunyezl](https://github.com/yunyezl) |
 | `feed` | 피드 스티커 뷰 | [@yunyezl](https://github.com/yunyezl) |
 | `feed` | 피드 작성 - 기분 선택 | [@seungchan2](https://github.com/seungchan2) |
-| `feed` | 피드 작성 - 글 작성 |   [@yunyezl](https://github.com/yunyezl) |
+| `feed` | 피드 작성 - 글 작성 | [@ezidayzi](https://github.com/ezidayzi) |
 | `etc` | 푸쉬 알림 | [@iamcho2](https://github.com/iamcho2)  |
 | `etc` | 커스텀 팝업 - 버튼 0개 | [@iamcho2](https://github.com/iamcho2)  |
 | `etc` | 커스텀 팝업 - 버튼 2개 (이미지 x) | [@iamcho2](https://github.com/iamcho2)  |
