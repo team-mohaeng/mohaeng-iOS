@@ -16,7 +16,7 @@ struct FeedResponse: Codable {
 }
 
 // MARK: - Feed
-struct Feed: Codable {
+struct Feed: Codable, Equatable {
     let postID: Int
     let course: String
     let challenge: Int
@@ -33,6 +33,10 @@ struct Feed: Codable {
         case course, challenge, image, mood, content, nickname, year, month, emoji, myEmoji, isReport, isDelete
         case day = "date"
         case weekday = "day"
+    }
+    
+    static func == (lhs: Feed, rhs: Feed) -> Bool {
+        return lhs.postID == rhs.postID
     }
 }
 

@@ -75,11 +75,11 @@ class FeedViewController: UIViewController {
         initAtrributes()
         setupAutoLayout()
         addObserver()
-        getFeeds(page: currentPage)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
+        getFeeds(page: currentPage)
     }
     
     override func viewWillLayoutSubviews() {
@@ -149,10 +149,20 @@ class FeedViewController: UIViewController {
             return
         }
         
-        currentData = feed
-        if currentPage == 0 {
+        switch feedCollectionView.status {
+        case .initial: // 초기 로드 상태
             allFeeds = feed
-        } else {
+        case .refreshing: // refreshControl로 새로 고침 했을 때 삭제된 피드, 새로 들어온 피드 비교
+            let diff = feed.feeds.difference(from: allFeeds.feeds)
+            diff.forEach { differenceKind in
+                switch differenceKind {
+                case .remove(let offset, _, _):
+                    allFeeds.feeds.remove(at: offset)
+                case .insert(let offset, let element, _):
+                    allFeeds.feeds.insert(element, at: offset)
+                }
+            }
+        case .scrolled: // 페이징 처리할 때 호출됨. 이미 있는 데이터는 거르고 새로운 데이터만 추가함
             if cachedPages.filter({ $0 == currentPage }).count == 0 {
                 allFeeds.feeds.append(contentsOf: feed.feeds)
             }
@@ -325,8 +335,10 @@ extension FeedViewController: HeaderViewDelegate {
 // MARK: - SERVER CONNECT
 
 extension FeedViewController {
-    @objc func getFeeds(page: Int) {
+    @objc
+    func getFeeds(page: Int) {
         loadingView.isHidden = false
+        let currentPage = feedCollectionView.contentOffset.y <= 0 ? 0 : currentPage
         FeedAPI.shared.getFeed(page: currentPage) { response in
             switch response {
             case .success(let data):
@@ -350,9 +362,7 @@ extension FeedViewController {
                 print("networkFail")
             }
         }
-        
     }
-    
 }
 
 extension FeedViewController: PopUpActionDelegate {
@@ -363,6 +373,27 @@ extension FeedViewController: PopUpActionDelegate {
     
     func touchYellowButton(button: UIButton) {
         return
+    }
+    
+}
+
+extension UICollectionView {
+    
+    enum Status {
+        case refreshing
+        case initial
+        case scrolled
+    }
+    
+    var status: Status {
+        if self.contentOffset.y < 0 {
+            return .refreshing
+        } else if self.contentOffset.y == 0 {
+            return .initial
+        } else {
+            return .scrolled
+        }
+            
     }
     
 }
