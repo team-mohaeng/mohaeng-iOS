@@ -14,10 +14,13 @@ class MyPageViewController: UIViewController {
     var myPageData = MyPage(nickname: "", email: "", completeCourseCount: 0, completeChallengeCount: 0, feedCount: 0, badgeCount: 0, calendar: [
         MyPageCalendar(property: 1, date: [])
     ])
+    let currentDate = AppDate()
     
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var calendarCollectionView: JTACMonthView!
+    @IBOutlet weak var calendarLeftButton: UIButton!
+    @IBOutlet weak var calendarRightButton: UIButton!
     @IBOutlet weak var bgCircleView: UIView!
     @IBOutlet weak var shadowStackView: UIStackView!
     @IBOutlet weak var summaryStackView: UIStackView!
@@ -40,8 +43,12 @@ class MyPageViewController: UIViewController {
     var frameDimensions: CGFloat = 0.00
     var selected = Date()
     var rangeDates = [[Date]]()
-    var currentSection: Int = 0
     var totalSectionCount: Int = 0
+    var currentSection: Int = 0 {
+        didSet {
+            hideArrowButton()
+        }
+    }
     
     // MARK: - View Life Cycle
 
@@ -241,8 +248,10 @@ class MyPageViewController: UIViewController {
             calendarCollectionView.scrollToItem(at: IndexPath.init(row: 0, section: currentSection), at: .left, animated: true)
         }
         
-        let month = 1 + currentSection
-        yearMonthLabel.text = "2021년 \(month)월"
+        let startYear = 2021
+        let selectedYear = (currentSection / 12) + startYear
+        let selectedMonth = (1 + currentSection) % 12
+        yearMonthLabel.text = "\(selectedYear)년 \(selectedMonth == 0 ? 12 : selectedMonth)월"
     }
     
     func setTotalSectionCount() {
@@ -261,7 +270,14 @@ class MyPageViewController: UIViewController {
         currentSection = totalSectionCount
         calendarCollectionView.scrollToItem(at: IndexPath.init(row: 0, section: currentSection), at: .left, animated: true)
         
-        yearMonthLabel.text = "2021년 \(totalSectionCount + 1)월"
+        let currentMonth = (totalSectionCount + 1) % 12
+        yearMonthLabel.text = "\(currentDate.getYear())년 \(currentMonth)월"
+    }
+    
+    // 2021년 1월 / 현재년월 캘린더일때 왼쪽, 오른쪽 버튼 숨김 처리
+    func hideArrowButton() {
+        calendarLeftButton.isHidden = currentSection == 0
+        calendarRightButton.isHidden = currentSection == totalSectionCount
     }
     
     // 통신 후 data 업데이트

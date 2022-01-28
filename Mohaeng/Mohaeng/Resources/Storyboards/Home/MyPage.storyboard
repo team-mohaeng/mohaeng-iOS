@@ -433,6 +433,8 @@
                         <outlet property="bgCircleView" destination="WIJ-GA-thH" id="yXX-pP-JQG"/>
                         <outlet property="calendarBgView" destination="m8j-Aj-SRl" id="3iQ-dK-JmP"/>
                         <outlet property="calendarCollectionView" destination="P0G-AX-9Lu" id="CpC-ZZ-xIK"/>
+                        <outlet property="calendarLeftButton" destination="BJD-yt-mGw" id="QPn-nl-iI7"/>
+                        <outlet property="calendarRightButton" destination="6Ix-AC-xOm" id="YbJ-aZ-fkJ"/>
                         <outlet property="calendarShadowView" destination="zNV-Cq-MZs" id="Oq6-8s-3RP"/>
                         <outlet property="completeChallengeCountLabel" destination="oz1-LL-JBv" id="DQQ-PV-S4z"/>
                         <outlet property="completeCourseCountLabel" destination="gVo-rS-84V" id="sCs-sE-wCz"/>
