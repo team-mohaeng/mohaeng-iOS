@@ -214,7 +214,7 @@ extension FeedDetailViewController: UICollectionViewDelegateFlowLayout {
         let width: CGFloat = UIScreen.main.bounds.width
         let imageHeight: CGFloat = width
         var baseHeight: CGFloat = UIDevice.current.hasNotch ? (588 / 812) * UIScreen.main.bounds.height : 588
-        let maximumHeight: CGFloat = (672 / 812) * UIScreen.main.bounds.height
+        let maximumHeight: CGFloat = (800 / 812) * UIScreen.main.bounds.height
         let dummyCell = FeedDetailCollectionViewCell(frame: CGRect(x: 0, y: 0, width: width, height: maximumHeight))
         
         switch previousController {
