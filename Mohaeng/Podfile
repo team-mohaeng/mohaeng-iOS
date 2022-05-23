@@ -20,5 +20,6 @@ target 'Mohaeng' do
 	pod 'JTAppleCalendar'
 	pod 'KakaoSDKCommon'
 	pod 'KakaoSDKAuth'
-	pod 'KakaoSDKUser'  
+	pod 'KakaoSDKUser'
+	pod 'Siren'  
 end

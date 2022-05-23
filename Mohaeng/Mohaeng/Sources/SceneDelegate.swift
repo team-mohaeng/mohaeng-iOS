@@ -8,6 +8,8 @@
 import UIKit
 import KakaoSDKAuth
 
+import Siren
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -22,9 +24,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
        }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        let siren = Siren.shared
+        siren.presentationManager = PresentationManager(
+          appName: "Mohaeng",
+          alertTitle: "업데이트 안하고 모행?",
+          alertMessage: "모행을 아프게 했던 버그가 수정됐어. \n반드시 업데이트를 해야만 하니까 아래 버튼을 꼭 눌러줘!",
+          updateButtonTitle: "업데이트 하러가기",
+          forceLanguageLocalization: .korean
+        )
+        siren.rulesManager = RulesManager(globalRules: .critical)
+        siren.apiManager = APIManager(country: .korea) // 기준 위치 대한민국 앱스토어로 변경
+        siren.wail(performCheck: .onDemand) { _ in }
                 
         if !hasJwtToken() {
             setRootViewControllerToOnBoarding()
