@@ -28,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         siren.presentationManager = PresentationManager(
           appName: "Mohaeng",
           alertTitle: "업데이트 안하고 모행?",
-          alertMessage: "모행을 아프게 했던 버그가 수정됐어. \n반드시 업데이트를 해야만 하니까 아래 버튼을 꼭 눌러줘!",
+          alertMessage: "모행을 아프게 했던 버그가 수정됐어. \n반드시 업데이트를 해야만 하니까\n 아래 버튼을 꼭 눌러줘!",
           updateButtonTitle: "업데이트 하러가기",
           forceLanguageLocalization: .korean
         )
